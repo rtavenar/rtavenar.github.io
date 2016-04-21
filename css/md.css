@@ -47,6 +47,11 @@ h1 {
 h2 {
 	font-weight: bold;
 	}
+h2.author {
+	font-weight: normal;
+	font-style: italic;
+	text-align: right;
+	}
 h3 {
 	font-weight: normal;
 	font-style: italic;
@@ -113,6 +118,10 @@ pre {
     background-color: #f0f0f0;
     border-radius: 3px;
     border: 1px solid #ccc;
+}
+
+span.header-section-number:after {
+	content: ".";
 }
 
 /* Home Page

@@ -1,10 +1,13 @@
-# MongoDB : CC2
+---
+title : MongoDB - CC2
+author : Romain Tavenard
+---
 
 Pour cet examen de contrôle continu, tous les documents sont autorisés et l'accès à internet n'est pas interdit à l'exception stricte des moyens de discussion de type e-mails, messagerie instantanée, etc. Toute contrevenance à cette règle simple entraînera la note de 0 sans prise en compte d'aucune excuse que ce soit.
 Les questions de cet examen sont indépendantes et ne sont pas triées par ordre de difficulté, n'hésitez pas à commencer par celles qui vous semblent les plus accessibles.
 Au besoin, vous créerez les structures d'index nécessaires au bon fonctionnement de vos requêtes et reporterez dans votre document-réponse les commandes MongoDB utilisées pour cela.
 
-## Éléments utiles
+# Éléments utiles
 
 Durant cet examen de contrôle continu, vous pourriez avoir besoin des pages d'aide suivantes :
 
@@ -18,7 +21,7 @@ d = new Date("2012/03/12 21:03Z")
 ```
 le `"Z"` terminal signifie que la date est spécifiée dans le fuseau horaire de l'utilisateur et non pas en heure UTC (vous pouvez tester les deux versions avec et sans le `"Z"` final pour vous en convaincre : vous devriez observer un décalage d'une heure à cette période de l'année).
 
-## Import des données
+# Import des données
 
 1.	Importez, dans une première base `tv`, les collections contenues dans les fichiers `channels.json` et `tnt.json` disponibles sur CURSUS.
 
@@ -26,7 +29,7 @@ le `"Z"` terminal signifie que la date est spécifiée dans le fuseau horaire de
 
 **Prenez le temps d'observer la structure des documents de chacune de ces collections et notamment la hiérarchie qui peut exister entre les différents éléments au sein d'un document.**
 
-## La base `tv`
+# La base `tv`
 
 3.	Proposez une commande qui permette :
 
@@ -53,7 +56,7 @@ le `"Z"` terminal signifie que la date est spécifiée dans le fuseau horaire de
 
 13.	Affichez, pour chaque lettre, le nombre de programmes dont le titre commence par cette lettre.
 
-## La base `elec`
+# La base `elec`
 
 14.	Affichez le code INSEE des installations électriques de la base situées à moins de 50 kilomètres de Rennes.
 

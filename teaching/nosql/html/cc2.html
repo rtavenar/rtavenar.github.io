@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
+</head>
+<body>
+<h1 id="mongodb-cc2">MongoDB : CC2</h1>
+<p>Pour cet examen de contr&#244;le continu, tous les documents sont autoris&#233;s et l&#8217;acc&#232;s &#224; internet n&#8217;est pas interdit &#224; l&#8217;exception stricte des moyens de discussion de type e-mails, messagerie instantan&#233;e, etc. Toute contrevenance &#224; cette r&#232;gle simple entra&#238;nera la note de 0 sans prise en compte d&#8217;aucune excuse que ce soit. Les questions de cet examen sont ind&#233;pendantes et ne sont pas tri&#233;es par ordre de difficult&#233;, n&#8217;h&#233;sitez pas &#224; commencer par celles qui vous semblent les plus accessibles. Au besoin, vous cr&#233;erez les structures d&#8217;index n&#233;cessaires au bon fonctionnement de vos requ&#234;tes et reporterez dans votre document-r&#233;ponse les commandes MongoDB utilis&#233;es pour cela.</p>
+<h2 id="&#233;l&#233;ments-utiles">&#201;l&#233;ments utiles</h2>
+<p>Durant cet examen de contr&#244;le continu, vous pourriez avoir besoin des pages d&#8217;aide suivantes :</p>
+<ul>
+<li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/substr/" class="uri">https://docs.mongodb.org/manual/reference/operator/aggregation/substr/</a></li>
+<li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation-arithmetic/" class="uri">https://docs.mongodb.org/manual/reference/operator/aggregation-arithmetic/</a></li>
+</ul>
+<p>De plus, il sera utile de savoir que lorsque l&#8217;on &#233;crit dans un client MongoDB la commande suivante :</p>
+<pre><code>d = new Date(&quot;2012/03/12 21:03Z&quot;)</code></pre>
+<p>le <code>&quot;Z&quot;</code> terminal signifie que la date est sp&#233;cifi&#233;e dans le fuseau horaire de l&#8217;utilisateur et non pas en heure UTC (vous pouvez tester les deux versions avec et sans le <code>&quot;Z&quot;</code> final pour vous en convaincre : vous devriez observer un d&#233;calage d&#8217;une heure &#224; cette p&#233;riode de l&#8217;ann&#233;e).</p>
+<h2 id="import-des-donn&#233;es">Import des donn&#233;es</h2>
+<ol style="list-style-type: decimal">
+<li><p>Importez, dans une premi&#232;re base <code>tv</code>, les collections contenues dans les fichiers <code>channels.json</code> et <code>tnt.json</code> disponibles sur CURSUS.</p></li>
+<li><p>Importez ensuite, dans une seconde base elec, la collection contenue dans le fichier <code>instal_elec_bzh.json</code> disponible sur CURSUS.</p></li>
+</ol>
+<p><strong>Prenez le temps d&#8217;observer la structure des documents de chacune de ces collections et notamment la hi&#233;rarchie qui peut exister entre les diff&#233;rents &#233;l&#233;ments au sein d&#8217;un document.</strong></p>
+<h2 id="la-base-tv">La base <code>tv</code></h2>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Proposez une commande qui permette :</p>
+<ol style="list-style-type: lower-roman">
+<li>si la cha&#238;ne <code>&quot;L'Equipe 21&quot;</code> existe dans la collection channels, de lui ajouter l&#8217;attribut <code>num</code> ayant pour valeur <code>21</code> ;</li>
+<li>si elle n&#8217;existe pas, de la cr&#233;er en sp&#233;cifiant en plus de l&#8217;attribut <code>num</code> son <code>channel_id</code> : <code>&quot;C4132.telerama.fr&quot;</code>.</li>
+</ol></li>
+<li><p>Dans la collection <code>channels</code>, ajoutez &#224; tous les documents ne disposant pas de l&#8217;attribut <code>num</code>, un attribut <code>num</code> associ&#233; &#224; la valeur <code>-1</code>.</p></li>
+<li><p>Affichez l&#8217;ensemble des programmes TV pour lesquels le nom de <code>Laurent Weil</code> appara&#238;t dans la description.</p></li>
+<li><p>Affichez le nombre total de cat&#233;gories de programme TV diff&#233;rentes existant dans la base.</p></li>
+<li><p>Affichez, pour chaque cha&#238;ne TV, le nombre de ses programmes pour lesquels un sous-titre est renseign&#233;.</p></li>
+<li><p>Affichez les titres des programmes cens&#233;s &#234;tre en cours de diffusion le 18 Avril 2016 &#224; 17h.</p></li>
+<li><p>Affichez les titres des programmes diffus&#233;s dans leur int&#233;gralit&#233; le 18 Avril 2016 (c&#8217;est-&#224;-dire commen&#231;ant le 18 avril et se terminant le m&#234;me jour).</p></li>
+<li><p>Affichez, pour chaque cat&#233;gorie, le nombre de programmes qui y sont associ&#233;s. Vous ne retiendrez que les cat&#233;gories correspondant &#224; au moins 50 programmes et trierez les r&#233;sultats par nombre de programmes d&#233;croissants.</p></li>
+<li><p>Affichez le minimum et le maximum du nombre de cat&#233;gories par programme.</p></li>
+<li><p>Affichez, pour chaque cha&#238;ne et chaque jour, le nombre de programmes stock&#233;s dans la base. Vous trierez les r&#233;sultats par date croissante.</p></li>
+<li><p>Affichez, pour chaque lettre, le nombre de programmes dont le titre commence par cette lettre.</p></li>
+</ol>
+<h2 id="la-base-elec">La base <code>elec</code></h2>
+<ol start="14" style="list-style-type: decimal">
+<li><p>Affichez le code INSEE des installations &#233;lectriques de la base situ&#233;es &#224; moins de 50 kilom&#232;tres de Rennes.</p></li>
+<li><p>Affichez la puissance totale (c&#8217;est-&#224;-dire la somme de la puissance de toutes les installations) des installations solaires r&#233;pertori&#233;es en Ille-et-Vilaine (code INSEE d&#233;butant par 35).</p></li>
+<li><p>Affichez la puissance totale (&#233;olien, g&#233;othermie, hydraulique et solaire m&#233;lang&#233;s) des installations r&#233;pertori&#233;es dans la base.</p></li>
+<li><p>Affichez le nombre d&#8217;installations par commune, en ne conservant que les communes disposant de (strictement) plus d&#8217;une installation.</p></li>
+</ol>
+</body>
+</html>

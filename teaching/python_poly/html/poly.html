@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Romain Tavenard" />
+  <title>Polycopi&#233; pour le cours de Python</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">Polycopi&#233; pour le cours de Python</h1>
+<h2 class="author">Romain Tavenard</h2>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="#structures-de-donn&#233;es-et-structures-de-contr&#244;le"><span class="toc-section-number">2</span> Structures de donn&#233;es et structures de contr&#244;le</a><ul>
+<li><a href="#variables"><span class="toc-section-number">2.1</span> Variables</a></li>
+</ul></li>
+<li><a href="#fonctions-appels-et-d&#233;finition"><span class="toc-section-number">3</span> Fonctions : appels et d&#233;finition</a></li>
+<li><a href="#les-listes"><span class="toc-section-number">4</span> Les listes</a></li>
+<li><a href="#les-cha&#238;nes-de-caract&#232;res"><span class="toc-section-number">5</span> Les cha&#238;nes de caract&#232;res</a></li>
+<li><a href="#les-dictionnaires"><span class="toc-section-number">6</span> Les dictionnaires</a></li>
+<li><a href="#tester-son-code"><span class="toc-section-number">7</span> Tester son code</a></li>
+<li><a href="#lecture-et-&#233;criture-de-fichiers"><span class="toc-section-number">8</span> Lecture et &#233;criture de fichiers</a></li>
+</ul>
+</div>
+<h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
+<p>Ce document est une tentative de polycopi&#233; associ&#233; au module de Python pour la deuxi&#232;me ann&#233;e de licence MIASHS de l&#8217;Universit&#233; de Rennes 2. Il est distribu&#233; librement et se veut &#233;volutif, n&#8217;h&#233;sitez donc pas &#224; faire vos remarques &#224; son auteur dont vous trouverez le contact sur <a href="http://people.irisa.fr/Romain.Tavenard/">sa page web</a>.</p>
+<p>Durant la lecture de ce polycopi&#233;, vous trouverez des blocs de code tels que celui-ci :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(v):
+    <span class="cf">return</span> v <span class="op">**</span> <span class="dv">2</span>
+    
+x <span class="op">=</span> <span class="dv">5</span>
+y <span class="op">=</span> f(<span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span>)
+<span class="bu">print</span>(y)
+<span class="co"># [Sortie] 77</span></code></pre></div>
+<p>Nous prendrons notamment l&#8217;habitude de reporter les valeurs affich&#233;es par l&#8217;ex&#233;cution du programme consid&#233;r&#233; dans un terminal avec la syntaxe utilis&#233;e &#224; la derni&#232;re ligne du code ci-dessus.</p>
+<p><strong>TODO : quelques mots sur langage interpr&#233;t&#233;, console Python vs script ? dire aussi que les exemples consid&#233;r&#233;s ici se basent sur Python3 ? (notamment pour les histoires de division d&#8217;entiers)</strong></p>
+<h1 id="structures-de-donn&#233;es-et-structures-de-contr&#244;le"><span class="header-section-number">2</span> Structures de donn&#233;es et structures de contr&#244;le</h1>
+<p>Dans ce chapitre, nous allons nous int&#233;resser aux &#233;l&#233;ments de base de la syntaxe Python : les structures de donn&#233;es d&#8217;une part et les structures de contr&#244;le d&#8217;autre part. Les structures de donn&#233;es vont nous permettre de stocker dans la m&#233;moire de l&#8217;ordinateur (dans le but de les traiter ensuite) des donn&#233;es tandis que les structures de contr&#244;le vont servir &#224; d&#233;finir les interactions que nous allons avoir avec ces donn&#233;es.</p>
+<h2 id="variables"><span class="header-section-number">2.1</span> Variables</h2>
+<p>En Python, les structures de donn&#233;es sont toutes des variables, il n&#8217;existe pas de constante. Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette derni&#232;re pouvant varier au cours de l&#8217;ex&#233;cution du programme. Les variables Python sont typ&#233;es dynamiquement, ce qui signifie qu&#8217;une variable, &#224; un moment donn&#233; de l&#8217;ex&#233;cution d&#8217;un programme, a un type pr&#233;cis qui lui est attribu&#233;, mais que celui-ci peut &#233;voluer au cours de l&#8217;ex&#233;cution du programme.</p>
+<p>Les types de base existant en Python sont les suivants :</p>
+<ul>
+<li><code>int</code> : entier ;</li>
+<li><code>float</code> : nombre &#224; virgule ;</li>
+<li><code>str</code> : cha&#238;ne de caract&#232;res.</li>
+</ul>
+<p>En Python, le type d&#8217;une variable n&#8217;est pas d&#233;clar&#233; par l&#8217;utilisateur : il est d&#233;fini par l&#8217;usage (la valeur effective que l&#8217;on d&#233;cide de stocker dans la variable en question).</p>
+<p>Par exemple, l&#8217;instruction suivante en Python attribue la valeur <code>12</code> &#224; la variable <code>v</code>, qui devient donc automatiquement de type entier :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">v <span class="op">=</span> <span class="dv">12</span></code></pre></div>
+<p>Ainsi, les instructions suivantes ont toutes une incidence sur le type des variables consid&#233;r&#233;es :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">v <span class="op">=</span> <span class="dv">12</span>     <span class="co"># v est alors de type entier</span>
+c <span class="op">=</span> <span class="st">&quot;abc&quot;</span>  <span class="co"># c est de type cha&#238;ne de caract&#232;res</span>
+d <span class="op">=</span> <span class="st">&#39;abc&#39;</span>  <span class="co"># d est &#233;galement de type cha&#238;ne de caract&#232;res </span>
+           <span class="co"># les contenus de c et d sont identiques</span>
+v <span class="op">=</span> <span class="dv">12</span>.    <span class="co"># v change de type et est d&#233;sormais de type nombre &#224; virgule</span></code></pre></div>
+<p>Pour v&#233;rifier le type d&#8217;une variable, il suffit d&#8217;utiliser la fonction <code>type(.)</code> de la librairie standard :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">type</span>(v))  <span class="co"># la fonction print(.) permet d&#39;afficher </span>
+                <span class="co"># une information dans le terminal</span>
+<span class="co"># [Sortie] &lt;class &#39;float&#39;&gt;</span></code></pre></div>
+<p>Comme le montrent les exemples pr&#233;c&#233;dents, pour pouvoir utiliser des variables, on doit leur donner un nom (plac&#233; &#224; gauche du signe &#233;gal dans l&#8217;op&#233;ration d&#8217;affectation). Ces noms de variables doivent respecter certaines contraintes :</p>
+<ul>
+<li>ils doivent d&#233;buter par une lettre (minuscule ou majuscule, peu importe) ou par le symbole <code>_</code> ;</li>
+<li>ils ne doivent contenir que des lettres, des chiffres et des symboles <code>_</code> ;</li>
+<li><p>ils ne doivent pas correspondre &#224; un quelconque mot r&#233;serv&#233; du langage Python, dont voici la liste :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">and</span> <span class="kw">del</span> <span class="cf">for</span> <span class="op">is</span> <span class="cf">raise</span> <span class="cf">assert</span> <span class="cf">elif</span> <span class="im">from</span> <span class="kw">lambda</span> <span class="cf">return</span> <span class="cf">break</span> <span class="cf">else</span> <span class="kw">global</span> 
+<span class="op">not</span> <span class="cf">try</span> <span class="kw">nonlocal</span> <span class="va">True</span> <span class="va">False</span> <span class="kw">class</span> <span class="cf">except</span> <span class="cf">if</span> <span class="op">or</span> <span class="cf">while</span> <span class="cf">continue</span> <span class="im">import</span>
+<span class="cf">pass</span> <span class="cf">yield</span> <span class="va">None</span> <span class="kw">def</span> <span class="cf">finally</span> <span class="op">in</span></code></pre></div></li>
+<li><p>ils ne doivent pas correspondre &#224; des noms de fonction de la librairie standard de Python (cette derni&#232;re condition n&#8217;est en fait qu&#8217;une bonne pratique &#224; observer) : vous apprendrez au fur et &#224; mesure les noms de ces fonctions.</p></li>
+</ul>
+<p>Les noms de variable en Python sont sensibles &#224; la casse, ainsi les variables <code>maVariable</code> et <code>mavariable</code> ne pointent pas sur les m&#234;mes donn&#233;es en m&#233;moire. Pour s&#8217;en convaincre, on peut ex&#233;cuter le code suivant :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mavariable <span class="op">=</span> <span class="dv">12</span>
+maVariable <span class="op">=</span> <span class="dv">15</span>
+<span class="bu">print</span>(mavariable)
+<span class="co"># [Sortie] 12</span>
+<span class="bu">print</span>(maVariable)
+<span class="co"># [Sortie] 15</span></code></pre></div>
+<p>Comme on l&#8217;a vu plus haut, on utilise en Python l&#8217;op&#233;rateur <code>=</code> pour assigner une valeur &#224; une variable. La s&#233;mantique de cet op&#233;rateur est la suivante : &#8220;assigner la valeur contenue dans le membre de droite &#224; la variable du membre de gauche&#8221;. Ainsi, il est tout &#224; fait valide d&#8217;&#233;crire, en Python :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code></pre></div>
+<p>Pour ex&#233;cuter cette instruction, l&#8217;interpr&#233;teur Python commencera par &#233;valuer le membre de droite en utilisant la valeur courante de la variable <code>x</code>, puis affectera la valeur correspondant au r&#233;sultat de l&#8217;op&#233;ration <code>3.9 * x * (1 - x)</code> dans la variable <code>x</code>.</p>
+<p>On le voit dans l&#8217;exemple pr&#233;c&#233;dent, pour manipuler des variables, on utilisera des op&#233;rateurs (dont les plus connus sont les op&#233;rateurs arithm&#233;tiques). Le tableau suivant dresse une liste des op&#233;rateurs d&#233;finis pour les variables dont le type est l&#8217;un des types num&#233;riques (entier, nombre &#224; virgule, nombre complexe) :</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Op&#233;rateur</th>
+<th align="center">Op&#233;ration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>+</code></td>
+<td align="center">Addition</td>
+</tr>
+<tr class="even">
+<td align="center"><code>-</code></td>
+<td align="center">Soustraction</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>*</code></td>
+<td align="center">Multiplication</td>
+</tr>
+<tr class="even">
+<td align="center"><code>/</code></td>
+<td align="center">Division</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>**</code></td>
+<td align="center">&#201;l&#233;vation &#224; la puissance</td>
+</tr>
+<tr class="even">
+<td align="center"><code>%</code></td>
+<td align="center">Modulo (non d&#233;fini pour les nombres complexes)</td>
+</tr>
+</tbody>
+</table>
+<p>De plus, pour chacun de ces op&#233;rateurs, il existe un op&#233;rateur associ&#233; qui r&#233;alise successivement l&#8217;op&#233;ration demand&#233;e puis l&#8217;affectation de la nouvelle valeur &#224; la variable en question. Ainsi, l&#8217;instruction suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></code></pre></div>
+<p>qui ajoute 2 &#224; la valeur courante de <code>x</code> puis stocke le r&#233;sultat du calcul dans <code>x</code> peut se r&#233;&#233;crire :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">+=</span> <span class="dv">2</span></code></pre></div>
+<p>Ceci est purement un raccourci de notation, s&#8217;il ne vous semble pas &#233;vident &#224; ma&#238;triser au premier abord, vous pouvez vous en passer et toujours utiliser la notation <code>x = x + 2</code>.</p>
+<p>Enfin, lorsque l&#8217;&#233;valuation d&#8217;une expression implique plusieurs op&#233;rateurs, les r&#232;gles de priorit&#233; sont les suivantes (de la priorit&#233; maximale &#224; la priorit&#233; minimale) :</p>
+<ol style="list-style-type: decimal">
+<li>parenth&#232;ses ;</li>
+<li>&#233;l&#233;vation &#224; la puissance ;</li>
+<li>multiplication / division ;</li>
+<li>addition / soustraction ;</li>
+<li>de gauche &#224; droite.</li>
+</ol>
+<p>Pour prendre un exemple concret, pour &#233;valuer l&#8217;expression :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code></pre></div>
+<p>on commencera par &#233;valuer le contenu de la parenth&#232;se puis, les 2 op&#233;rations restantes &#233;tant toutes des multiplications, on les effectuera de gauche &#224; droite.</p>
+<h1 id="fonctions-appels-et-d&#233;finition"><span class="header-section-number">3</span> Fonctions : appels et d&#233;finition</h1>
+<h1 id="les-listes"><span class="header-section-number">4</span> Les listes</h1>
+<h1 id="les-cha&#238;nes-de-caract&#232;res"><span class="header-section-number">5</span> Les cha&#238;nes de caract&#232;res</h1>
+<h1 id="les-dictionnaires"><span class="header-section-number">6</span> Les dictionnaires</h1>
+<h1 id="tester-son-code"><span class="header-section-number">7</span> Tester son code</h1>
+<h1 id="lecture-et-&#233;criture-de-fichiers"><span class="header-section-number">8</span> Lecture et &#233;criture de fichiers</h1>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Romain Tavenard" />
+  <title>Python - L2 MIASHS   Examen de 2nde session</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Python - L2 MIASHS <br/> Examen de 2nde session</h1>
+<h2 class="author">Romain Tavenard</h2>
+<h3 class="date">8 juin 2016, 9h-10h</h3>
+</div>
+<p>Pour cet examen de seconde session, tous les documents sont autoris&#233;s et l&#8217;acc&#232;s &#224; internet n&#8217;est pas interdit &#224; l&#8217;exception stricte des moyens de discussion de type e-mails, messagerie instantan&#233;e, etc. Toute contrevenance &#224; cette r&#232;gle simple entra&#238;nera la note de 0 sans prise en compte d&#8217;aucune excuse que ce soit. Les questions de cet examen ne sont pas tri&#233;es par ordre de difficult&#233;, n&#8217;h&#233;sitez pas &#224; commencer par celles qui vous semblent les plus accessibles.</p>
+<h1 id="questions-ind&#233;pendantes"><span class="header-section-number">1</span> Questions ind&#233;pendantes</h1>
+<ol style="list-style-type: decimal">
+<li><p>&#201;crivez une fonction qui retourne le terme de rang <code>n</code> (o&#249; <code>n</code> est un argument de la fonction) de la suite d&#233;finie par : <span class="math display">\[\forall n \geq 1, u_n = 5 \cdot u_{n-1}^2 + 3\]</span> Lors de l&#8217;appel de cette fonction, on pourra (au choix) soit sp&#233;cifier la valeur de <span class="math inline">\(u_0\)</span>, soit laisser le programme utiliser la valeur par d&#233;faut qui sera alors <span class="math inline">\(u_0=0\)</span>.</p></li>
+<li><p>&#201;crivez une fonction <code>count_occ</code> qui prenne en entr&#233;e une liste de cha&#238;nes de caract&#232;res et une cha&#238;ne de caract&#232;re (que l&#8217;on appellera <code>motif</code>) et retourne le nombre de cha&#238;nes de la liste qui contiennent au moins une fois le <code>motif</code>. Les comparaisons devront &#234;tre insensibles &#224; la casse. On fournit ci-apr&#232;s deux exemples d&#8217;ex&#233;cution de la fonction :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;</span> <span class="bu">print</span>(count_occ([<span class="st">&quot;Romain&quot;</span>, <span class="st">&quot;Jean&quot;</span>, <span class="st">&quot;Paul&quot;</span>, <span class="st">&quot;Marie&quot;</span>], <span class="st">&quot;MA&quot;</span>))
+<span class="dv">2</span>
+<span class="op">&gt;</span> <span class="bu">print</span>(count_occ([<span class="st">&quot;Romain&quot;</span>, <span class="st">&quot;Jean&quot;</span>, <span class="st">&quot;Paul&quot;</span>, <span class="st">&quot;Marie&quot;</span>], <span class="st">&quot;je&quot;</span>))
+<span class="dv">1</span></code></pre></div></li>
+</ol>
+<h1 id="questions-li&#233;es"><span class="header-section-number">2</span> Questions li&#233;es</h1>
+<p>Si vous ne traitez pas la question 3, vous pouvez tout de m&#234;me proposer une solution pour les questions suivantes reposant sur un appel &#224; la fonction demand&#233;e pour la question 3 : vous ne serez pas doublement p&#233;nalis&#233;(e).</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>&#201;crivez une fonction <code>count_occ_lst_motifs</code> qui prenne en entr&#233;e une liste (not&#233;e <code>lst</code>) de cha&#238;nes de caract&#232;res et une liste de motifs (chaque motif &#233;tant lui-m&#234;me une cha&#238;ne de caract&#232;res) et retourne un dictionnaire indiquant, pour chaque motif, le nombre de cha&#238;nes de la liste <code>lst</code> qui le contiennent. On fournit ci-apr&#232;s un exemple d&#8217;ex&#233;cution de la fonction :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;</span> lst <span class="op">=</span> [<span class="st">&quot;Romain&quot;</span>, <span class="st">&quot;Jean&quot;</span>, <span class="st">&quot;Paul&quot;</span>, <span class="st">&quot;Marie&quot;</span>]
+<span class="op">&gt;</span> l_motifs <span class="op">=</span> [<span class="st">&quot;MA&quot;</span>, <span class="st">&quot;je&quot;</span>]
+<span class="op">&gt;</span> <span class="bu">print</span>(count_occ_lst_motifs(lst, l_motifs))
+{<span class="st">&#39;MA&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;je&#39;</span>: <span class="dv">1</span>}</code></pre></div></li>
+<li><p>&#201;crivez une fonction <code>most_frequent_motif</code> qui prenne en entr&#233;e une liste (not&#233;e <code>lst</code>) de cha&#238;nes de caract&#232;res et une liste de motifs (chaque motif &#233;tant lui-m&#234;me une cha&#238;ne de caract&#232;res) et retourne un le motif que l&#8217;on retrouve dans le plus grand nombre de cha&#238;nes de la liste <code>lst</code>. Cette fonction pourra faire appel &#224; la fonction <code>count_occ_lst_motifs</code> de la question 3.</p></li>
+<li><p>&#201;crivez une fonction <code>write_motif_frequency_csv</code> qui prenne en entr&#233;e un nom de fichier <code>filename</code>, une liste (not&#233;e <code>lst</code>) de cha&#238;nes de caract&#232;res et une liste de motifs (chaque motif &#233;tant lui-m&#234;me une cha&#238;ne de caract&#232;res) et &#233;crit au format CSV, dans le fichier dont le nom est stock&#233; dans <code>filename</code>, pour chaque motif, le nombre de cha&#238;nes de la liste <code>lst</code> qui le contiennent. Cette fonction pourra faire appel &#224; la fonction <code>count_occ_lst_motifs</code> de la question 3. On fournit ci-apr&#232;s un exemple de contenu du fichier CSV cr&#233;&#233; :</p>
+<pre><code>motif;frequency
+MA;2
+je;1</code></pre></li>
+</ol>
+</body>
+</html>

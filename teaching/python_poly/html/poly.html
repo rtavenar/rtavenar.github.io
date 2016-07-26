@@ -56,13 +56,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
 <li><a href="#structures-de-donn&#233;es-et-structures-de-contr&#244;le"><span class="toc-section-number">2</span> Structures de donn&#233;es et structures de contr&#244;le</a><ul>
 <li><a href="#variables"><span class="toc-section-number">2.1</span> Variables</a></li>
+<li><a href="#structures-de-contr&#244;le"><span class="toc-section-number">2.2</span> Structures de contr&#244;le</a><ul>
+<li><a href="#structures-conditionnelles"><span class="toc-section-number">2.2.1</span> Structures conditionnelles</a></li>
+<li><a href="#boucles"><span class="toc-section-number">2.2.2</span> Boucles</a></li>
+<li><a href="#fonctions"><span class="toc-section-number">2.2.3</span> Fonctions</a></li>
 </ul></li>
-<li><a href="#fonctions-appels-et-d&#233;finition"><span class="toc-section-number">3</span> Fonctions : appels et d&#233;finition</a></li>
-<li><a href="#les-listes"><span class="toc-section-number">4</span> Les listes</a></li>
-<li><a href="#les-cha&#238;nes-de-caract&#232;res"><span class="toc-section-number">5</span> Les cha&#238;nes de caract&#232;res</a></li>
-<li><a href="#les-dictionnaires"><span class="toc-section-number">6</span> Les dictionnaires</a></li>
-<li><a href="#tester-son-code"><span class="toc-section-number">7</span> Tester son code</a></li>
-<li><a href="#lecture-et-&#233;criture-de-fichiers"><span class="toc-section-number">8</span> Lecture et &#233;criture de fichiers</a></li>
+</ul></li>
+<li><a href="#les-listes"><span class="toc-section-number">3</span> Les listes</a></li>
+<li><a href="#les-cha&#238;nes-de-caract&#232;res"><span class="toc-section-number">4</span> Les cha&#238;nes de caract&#232;res</a></li>
+<li><a href="#les-dictionnaires"><span class="toc-section-number">5</span> Les dictionnaires</a></li>
+<li><a href="#tester-son-code"><span class="toc-section-number">6</span> Tester son code</a></li>
+<li><a href="#lecture-et-&#233;criture-de-fichiers"><span class="toc-section-number">7</span> Lecture et &#233;criture de fichiers</a></li>
 </ul>
 </div>
 <h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
@@ -85,7 +89,9 @@ y <span class="op">=</span> f(<span class="dv">3</span> <span class="op">*</span
 <ul>
 <li><code>int</code> : entier ;</li>
 <li><code>float</code> : nombre &#224; virgule ;</li>
-<li><code>str</code> : cha&#238;ne de caract&#232;res.</li>
+<li><code>complex</code> : nombre complexe (peu utilis&#233; en pratique) ;</li>
+<li><code>str</code> : cha&#238;ne de caract&#232;res ;</li>
+<li><code>bool</code> : bool&#233;en (pouvant prendre les valeurs <code>True</code> ou <code>False</code>).</li>
 </ul>
 <p>En Python, le type d&#8217;une variable n&#8217;est pas d&#233;clar&#233; par l&#8217;utilisateur : il est d&#233;fini par l&#8217;usage (la valeur effective que l&#8217;on d&#233;cide de stocker dans la variable en question).</p>
 <p>Par exemple, l&#8217;instruction suivante en Python attribue la valeur <code>12</code> &#224; la variable <code>v</code>, qui devient donc automatiquement de type entier :</p>
@@ -93,11 +99,11 @@ y <span class="op">=</span> f(<span class="dv">3</span> <span class="op">*</span
 <p>Ainsi, les instructions suivantes ont toutes une incidence sur le type des variables consid&#233;r&#233;es :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">v <span class="op">=</span> <span class="dv">12</span>     <span class="co"># v est alors de type entier</span>
 c <span class="op">=</span> <span class="st">&quot;abc&quot;</span>  <span class="co"># c est de type cha&#238;ne de caract&#232;res</span>
-d <span class="op">=</span> <span class="st">&#39;abc&#39;</span>  <span class="co"># d est &#233;galement de type cha&#238;ne de caract&#232;res </span>
+d <span class="op">=</span> <span class="st">&#39;abc&#39;</span>  <span class="co"># d est &#233;galement de type cha&#238;ne de caract&#232;res</span>
            <span class="co"># les contenus de c et d sont identiques</span>
 v <span class="op">=</span> <span class="dv">12</span>.    <span class="co"># v change de type et est d&#233;sormais de type nombre &#224; virgule</span></code></pre></div>
 <p>Pour v&#233;rifier le type d&#8217;une variable, il suffit d&#8217;utiliser la fonction <code>type(.)</code> de la librairie standard :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">type</span>(v))  <span class="co"># la fonction print(.) permet d&#39;afficher </span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">type</span>(v))  <span class="co"># la fonction print(.) permet d&#39;afficher</span>
                 <span class="co"># une information dans le terminal</span>
 <span class="co"># [Sortie] &lt;class &#39;float&#39;&gt;</span></code></pre></div>
 <p>Comme le montrent les exemples pr&#233;c&#233;dents, pour pouvoir utiliser des variables, on doit leur donner un nom (plac&#233; &#224; gauche du signe &#233;gal dans l&#8217;op&#233;ration d&#8217;affectation). Ces noms de variables doivent respecter certaines contraintes :</p>
@@ -105,7 +111,7 @@ v <span class="op">=</span> <span class="dv">12</span>.    <span class="co"># v 
 <li>ils doivent d&#233;buter par une lettre (minuscule ou majuscule, peu importe) ou par le symbole <code>_</code> ;</li>
 <li>ils ne doivent contenir que des lettres, des chiffres et des symboles <code>_</code> ;</li>
 <li><p>ils ne doivent pas correspondre &#224; un quelconque mot r&#233;serv&#233; du langage Python, dont voici la liste :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">and</span> <span class="kw">del</span> <span class="cf">for</span> <span class="op">is</span> <span class="cf">raise</span> <span class="cf">assert</span> <span class="cf">elif</span> <span class="im">from</span> <span class="kw">lambda</span> <span class="cf">return</span> <span class="cf">break</span> <span class="cf">else</span> <span class="kw">global</span> 
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">and</span> <span class="kw">del</span> <span class="cf">for</span> <span class="op">is</span> <span class="cf">raise</span> <span class="cf">assert</span> <span class="cf">elif</span> <span class="im">from</span> <span class="kw">lambda</span> <span class="cf">return</span> <span class="cf">break</span> <span class="cf">else</span> <span class="kw">global</span>
 <span class="op">not</span> <span class="cf">try</span> <span class="kw">nonlocal</span> <span class="va">True</span> <span class="va">False</span> <span class="kw">class</span> <span class="cf">except</span> <span class="cf">if</span> <span class="op">or</span> <span class="cf">while</span> <span class="cf">continue</span> <span class="im">import</span>
 <span class="cf">pass</span> <span class="cf">yield</span> <span class="va">None</span> <span class="kw">def</span> <span class="cf">finally</span> <span class="op">in</span></code></pre></div></li>
 <li><p>ils ne doivent pas correspondre &#224; des noms de fonction de la librairie standard de Python (cette derni&#232;re condition n&#8217;est en fait qu&#8217;une bonne pratique &#224; observer) : vous apprendrez au fur et &#224; mesure les noms de ces fonctions.</p></li>
@@ -171,11 +177,199 @@ maVariable <span class="op">=</span> <span class="dv">15</span>
 <p>Pour prendre un exemple concret, pour &#233;valuer l&#8217;expression :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code></pre></div>
 <p>on commencera par &#233;valuer le contenu de la parenth&#232;se puis, les 2 op&#233;rations restantes &#233;tant toutes des multiplications, on les effectuera de gauche &#224; droite.</p>
-<h1 id="fonctions-appels-et-d&#233;finition"><span class="header-section-number">3</span> Fonctions : appels et d&#233;finition</h1>
-<h1 id="les-listes"><span class="header-section-number">4</span> Les listes</h1>
-<h1 id="les-cha&#238;nes-de-caract&#232;res"><span class="header-section-number">5</span> Les cha&#238;nes de caract&#232;res</h1>
-<h1 id="les-dictionnaires"><span class="header-section-number">6</span> Les dictionnaires</h1>
-<h1 id="tester-son-code"><span class="header-section-number">7</span> Tester son code</h1>
-<h1 id="lecture-et-&#233;criture-de-fichiers"><span class="header-section-number">8</span> Lecture et &#233;criture de fichiers</h1>
+<p>De plus, lorsqu&#8217;une op&#233;ration est effectu&#233;e entre deux variables de types diff&#233;rents, le type le plus g&#233;n&#233;rique est retenu. Par exemple, si l&#8217;on multiplie un entier par un nombre &#224; virgule, le r&#233;sultat sera de type <code>float</code>. De m&#234;me, le r&#233;sultat de l&#8217;addition entre un nombre complexe et un nombre &#224; virgule est un complexe.</p>
+<p><strong>Attention.</strong> Comme indiqu&#233; en introduction, ce polycopi&#233; suppose que vous utilisez Python dans sa version 3. Il est &#224; noter qu&#8217;il existe une diff&#233;rence importante entre Python 2 et Python 3 dans la fa&#231;on d&#8217;effectuer des op&#233;rations m&#234;lant nombres entiers et flottants. Par exemple, l&#8217;op&#233;ration suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">2</span> <span class="op">/</span> <span class="dv">3</span></code></pre></div>
+<p>stockera, en Python 2, la valeur 0 (r&#233;sultat de la division <em>enti&#232;re</em> de 2 par 3) dans la variable <code>x</code> alors qu&#8217;en Python 3, la division flottante sera effectu&#233;e et ainsi <code>x</code> contiendra <code>0.666666...</code> En Python 3, si l&#8217;on souhaite effectuer une division enti&#232;re, on pourra utiliser l&#8217;op&#233;rateur <code>//</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="dv">2</span> <span class="op">//</span> <span class="dv">3</span>)
+<span class="co"># [Sortie] 0</span></code></pre></div>
+<h2 id="structures-de-contr&#244;le"><span class="header-section-number">2.2</span> Structures de contr&#244;le</h2>
+<p>Un programme est une s&#233;quence d&#8217;instructions dont l&#8217;ordre doit &#234;tre respect&#233;. Au-del&#224; de cet aspect s&#233;quentiel, on peut souhaiter :</p>
+<ul>
+<li>n&#8217;effectuer certaines instructions que si une condition est v&#233;rifi&#233;e (<a href="#structures-conditionnelles">structures conditionnelles</a>) ;</li>
+<li>r&#233;p&#233;ter certaines instructions (<a href="#boucles">boucles</a>) ;</li>
+<li>factoriser une sous-s&#233;quence d&#8217;instructions au sein d&#8217;une fonction pour pouvoir y faire appel &#224; plusieurs reprises dans le programme (<a href="#fonctions">fonctions</a>).</li>
+</ul>
+<h3 id="structures-conditionnelles"><span class="header-section-number">2.2.1</span> Structures conditionnelles</h3>
+<p>On peut donc indiquer &#224; un programme de n&#8217;ex&#233;cuter une instruction (ou une s&#233;quence d&#8217;instructions) que si une certaine condition est remplie, &#224; l&#8217;aide du mot-cl&#233; <code>if</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">12</span>
+<span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
+    <span class="bu">print</span>(<span class="st">&quot;X est positif&quot;</span>)
+    x <span class="op">=</span> <span class="dv">4</span>
+y <span class="op">=</span> <span class="dv">2</span>
+<span class="co"># [Sortie] X est positif</span></code></pre></div>
+<p>On remarque ici que la condition est termin&#233;e par le symbole <code>:</code>, de plus, la s&#233;quence d&#8217;instructions &#224; ex&#233;cuter si la condition est remplie est <em>indent&#233;e</em>, cela signifie qu&#8217;elle est d&#233;cal&#233;e d&#8217;un &#8220;cran&#8221; (g&#233;n&#233;ralement une tabulation ou 4 espaces) vers la droite. Cette indentation est une bonne pratique recommand&#233;e quel que soit le langage que vous utilisez, mais en Python, c&#8217;est m&#234;me une obligation (sinon, l&#8217;interpr&#233;teur Python ne comprendra pas o&#249; commence et o&#249; se termine la s&#233;quence &#224; ex&#233;cuter sous condition).</p>
+<p>Dans certains cas, on souhaite ex&#233;cuter une s&#233;rie d&#8217;instructions si la condition est v&#233;rifi&#233;e et une autre si elle ne l&#8217;est pas. Pour cela, on utilise le mot-cl&#233; <code>else</code> comme suit :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>
+<span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
+    <span class="bu">print</span>(<span class="st">&quot;X est positif&quot;</span>)
+    x <span class="op">=</span> <span class="dv">4</span>
+<span class="cf">else</span>:
+    <span class="bu">print</span>(<span class="st">&quot;X est n&#233;gatif&quot;</span>)
+y <span class="op">=</span> <span class="dv">5</span>
+<span class="co"># [Sortie] X est n&#233;gatif</span></code></pre></div>
+<p>L&#224; encore, on remarque que l&#8217;indentation est de rigueur pour chacun des deux blocs d&#8217;instructions. On note &#233;galement que le mot-cl&#233; <code>else</code> se trouve au m&#234;me niveau que le <code>if</code> auquel il se r&#233;f&#232;re.</p>
+<p>Enfin, de mani&#232;re plus g&#233;n&#233;rale, il est possible de d&#233;finir plusieurs comportements en fonction de plusieurs tests successifs, &#224; l&#8217;aide du mot-cl&#233; <code>elif</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>
+<span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
+    <span class="bu">print</span>(<span class="st">&quot;X est positif&quot;</span>)
+    x <span class="op">=</span> <span class="dv">4</span>
+<span class="cf">elif</span> x <span class="op">&gt;</span> <span class="op">-</span><span class="dv">2</span>:
+    <span class="bu">print</span>(<span class="st">&quot;X est compris entre -2 et 0&quot;</span>)
+<span class="cf">elif</span> x <span class="op">&gt;</span> <span class="op">-</span><span class="dv">4</span>:
+    <span class="bu">print</span>(<span class="st">&quot;X est compris entre -4 et -2&quot;</span>)
+<span class="cf">else</span>:
+    <span class="bu">print</span>(<span class="st">&quot;X est inf&#233;rieur &#224; -4&quot;</span>)
+y <span class="op">=</span> <span class="dv">5</span>
+<span class="co"># [Sortie] X est compris entre -2 et 0</span></code></pre></div>
+<p>Pour utiliser ces structures conditionnelles, il est important de ma&#238;triser les diff&#233;rents op&#233;rateurs de comparaison mis &#224; vos disposition en Python, dont voici une liste non exhaustive :</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Op&#233;rateur</th>
+<th align="center">Comparaison effectu&#233;e</th>
+<th align="center">Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>&lt;</code></td>
+<td align="center">Plus petit que</td>
+<td align="center"><code>x &lt; 0</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>&gt;</code></td>
+<td align="center">Plus grand que</td>
+<td align="center"><code>x &gt; 0</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>&lt;=</code></td>
+<td align="center">Plus petit ou &#233;gal &#224;</td>
+<td align="center"><code>x &lt;= 0</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>&gt;=</code></td>
+<td align="center">Plus grand ou &#233;gal &#224;</td>
+<td align="center"><code>x &gt;= 0</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>==</code></td>
+<td align="center">&#201;gal &#224;</td>
+<td align="center"><code>x == 0</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>!=</code></td>
+<td align="center">Diff&#233;rent de</td>
+<td align="center"><code>x != 0</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>is</code></td>
+<td align="center">Test d&#8217;&#233;galit&#233; pour le cas de la valeur <code>None</code></td>
+<td align="center"><code>x is None</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>is not</code></td>
+<td align="center">Test d&#8217;in&#233;galit&#233; pour le cas de la valeur <code>None</code></td>
+<td align="center"><code>x is not None</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>in</code></td>
+<td align="center">Test de pr&#233;sence d&#8217;une valeur dans une liste</td>
+<td align="center"><code>x in [1, 5, 7]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="boucles"><span class="header-section-number">2.2.2</span> Boucles</h3>
+<p>Il existe, en Python comme dans une grande majorit&#233; des langages de programmation, deux types de boucles :</p>
+<ul>
+<li>les boucles qui s&#8217;ex&#233;cutent tant qu&#8217;une condition est vraie ;</li>
+<li>les boucles qui r&#233;p&#232;tent la m&#234;me s&#233;rie d&#8217;instructions pour diff&#233;rentes valeurs d&#8217;une variable (appel&#233;e <em>variable de boucle</em>).</li>
+</ul>
+<p>Les premi&#232;res ont une syntaxe tr&#232;s similaire &#224; celle des structures conditionnelles simples :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">0</span>
+<span class="cf">while</span> x <span class="op">&lt;=</span> <span class="dv">10</span>:
+    <span class="bu">print</span>(x)
+    x <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span>
+y <span class="op">=</span> <span class="dv">2</span>
+<span class="co"># [Sortie] 0</span>
+<span class="co"># [Sortie] 2</span>
+<span class="co"># [Sortie] 6</span></code></pre></div>
+<p>On voit bien ici, en analysant la sortie produite par ces quelques lignes, que le contenu de la boucle est r&#233;p&#233;t&#233; plusieurs fois. En pratique, il est r&#233;p&#233;t&#233; jusqu&#8217;&#224; ce que la variable <code>x</code> prenne une valeur sup&#233;rieure &#224; 10 (14 dans notre cas). Il faut &#234;tre tr&#232;s prudent avec ces boucles <code>while</code> car il est tout &#224; fait possible de cr&#233;er une boucle dont le programme ne sortira jamais, comme dans l&#8217;exemple suivant :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">2</span>
+y <span class="op">=</span> <span class="dv">0</span>
+<span class="cf">while</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
+    y <span class="op">=</span> y <span class="op">-</span> <span class="dv">1</span>
+y <span class="op">=</span> <span class="dv">2</span></code></pre></div>
+<p>En effet, on a ici une boucle qui s&#8217;ex&#233;cutera tant que <code>x</code> est positif, or la valeur de cette variable est initialis&#233;e &#224; 2 et n&#8217;est pas modifi&#233;e au sein de la boucle, la condition sera donc toujours v&#233;rifi&#233;e et le programme ne sortira jamais de la boucle.</p>
+<p>Le second type de boucle repose en Python sur l&#8217;utilisation de listes (ou, plus pr&#233;cis&#233;ment d&#8217;it&#233;rables) dont nous reparlerons plus en d&#233;tail dans la suite de cet ouvrage. Sachez pour le moment qu&#8217;une liste est un ensemble ordonn&#233; d&#8217;&#233;l&#233;ments. On peut alors ex&#233;cuter une s&#233;rie d&#8217;instructions pour toutes les valeurs d&#8217;une liste :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> x <span class="op">in</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]:
+    <span class="bu">print</span>(x)
+y <span class="op">=</span> <span class="dv">2</span>
+<span class="co"># [Sortie] 1</span>
+<span class="co"># [Sortie] 5</span>
+<span class="co"># [Sortie] 7</span></code></pre></div>
+<h3 id="fonctions"><span class="header-section-number">2.2.3</span> Fonctions</h3>
+<p>Nous avons d&#233;j&#224; vu dans ce qui pr&#233;c&#232;de, sans le dire, des fonctions. Par exemple, lorsque l&#8217;on &#233;crit :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(x)</code></pre></div>
+<p>on demande l&#8217;appel &#224; une fonction, nomm&#233;e <code>print</code> et prenant un <strong>argument</strong> (ici, la variable <code>x</code>). La fonction <code>print</code> ne retourne pas de valeur, elle ne fait qu&#8217;afficher la valeur contenue dans <code>x</code> sur le terminal. D&#8217;autres fonctions, comme <code>type</code> dont nous avons parl&#233; plus haut, <strong>retournent une valeur</strong> et cette valeur peut &#234;tre utilis&#233;e dans la suite du programme, comme dans l&#8217;exemple suivant :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="bu">type</span>(<span class="dv">1</span>)  <span class="co"># On stocke dans x la valeur retourn&#233;e par type</span>
+y <span class="op">=</span> <span class="bu">type</span>(<span class="dv">2</span>.)
+<span class="cf">if</span> x <span class="op">==</span> y:
+    z <span class="op">=</span> <span class="dv">1</span>
+<span class="cf">else</span>:
+    z <span class="op">=</span> <span class="dv">2</span></code></pre></div>
+<h4 id="d&#233;finition-dune-fonction"><span class="header-section-number">2.2.3.1</span> D&#233;finition d&#8217;une fonction</h4>
+<p>Lorsqu&#8217;un ensemble d&#8217;instruction est susceptible d&#8217;&#234;tre utilis&#233; &#224; plusieurs occasions dans un ou plusieurs programmes, il est recommand&#233; de l&#8217;isoler au sein d&#8217;une fonction. Cela pr&#233;sentera les avantages suivants :</p>
+<ul>
+<li>en donnant un nom &#224; la fonction et en listant la liste de ses arguments, on explicite la s&#233;mantique de l&#8217;ensemble d&#8217;instructions en question, ses entr&#233;es et sorties &#233;ventuelles, ce qui rend le code beaucoup plus lisible ;</li>
+<li>s&#8217;il est n&#233;cessaire d&#8217;adapter &#224; l&#8217;avenir le code pour r&#233;soudre un <em>bug</em> ou le rendre plus g&#233;n&#233;rique, vous n&#8217;aurez &#224; modifier le code qu&#8217;&#224; un endroit (dans le corps de la fonction) et non pas &#224; chaque fois que le code est r&#233;p&#233;t&#233;.</li>
+</ul>
+<p>Pour d&#233;finir une fonction en Python, on utilise le mot-cl&#233; <code>def</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x):
+    y <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span>
+    z <span class="op">=</span> x <span class="op">+</span> y
+    <span class="cf">return</span> z <span class="op">//</span> <span class="dv">2</span></code></pre></div>
+<p>On a ici d&#233;fini une fonction</p>
+<ul>
+<li>dont le nom est <code>f</code> ;</li>
+<li>qui prend un seul argument, not&#233; <code>x</code> ;</li>
+<li>qui retourne une valeur, comme indiqu&#233; dans la ligne d&#233;butant par le mot-cl&#233; <code>return</code>.</li>
+</ul>
+<p>Il est possible, en Python, d&#8217;&#233;crire des fonctions retournant plusieurs valeurs. Pour ce faire, ces valeurs seront s&#233;par&#233;es par des virgules dans l&#8217;instruction <code>return</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x):
+    y <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span>
+    z <span class="op">=</span> x <span class="op">+</span> y
+    <span class="cf">return</span> z <span class="op">//</span> <span class="dv">2</span>, y</code></pre></div>
+<p>Enfin, en l&#8217;absence d&#8217;instruction <code>return</code>, une fonction retournera la valeur <code>None</code>.</p>
+<p>Il est &#233;galement possible d&#8217;utiliser le nom des arguments de la fonction lors de l&#8217;appel, pour ne pas risquer de se tromper dans l&#8217;ordre des arguments. Par exemple, si l&#8217;on a la fonction suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> affiche_infos_personne(poids, taille):
+    <span class="bu">print</span>(<span class="st">&quot;Poids: &quot;</span>, poids)
+    <span class="bu">print</span>(<span class="st">&quot;Taille: &quot;</span>, taille)</code></pre></div>
+<p>Les trois appels suivants sont &#233;quivalents :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">affiche_infos_personne(<span class="dv">80</span>, <span class="dv">180</span>)
+affiche_infos_personne(taille<span class="op">=</span><span class="dv">180</span>, poids<span class="op">=</span><span class="dv">80</span>)
+affiche_infos_personne(poids<span class="op">=</span><span class="dv">80</span>, taille<span class="op">=</span><span class="dv">180</span>)</code></pre></div>
+<p>&#201;videmment, pour que cela soit vraiment utile, il est hautement recommand&#233; d&#8217;utiliser des noms d&#8217;arguments explicites lors de la d&#233;finition de vos fonctions.</p>
+<h4 id="arguments-optionnels-dune-fonction"><span class="header-section-number">2.2.3.2</span> Argument(s) optionnel(s) d&#8217;une fonction</h4>
+<p>Certains arguments d&#8217;une fonction peuvent avoir une valeur par d&#233;faut, d&#233;cid&#233;e par la personne qui a &#233;crit la fonction. Dans ce cas, si l&#8217;utilisateur ne sp&#233;cifie pas explicitement de valeur pour ces arguments lors de l&#8217;appel &#224; la fonction, c&#8217;est la valeur par d&#233;faut qui sera utilis&#233;e dans la fonction, dans le cas contraire, la valeur sp&#233;cifi&#233;e sera utilis&#233;e.</p>
+<p>Par exemple, la fonction <code>print</code> dispose de plusieurs arguments facultatifs, comme le caract&#232;re par lequel terminer l&#8217;affichage (par d&#233;faut, un retour &#224; la ligne, <code>&quot;\n&quot;</code>) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&quot;La vie est belle&quot;</span>)
+<span class="bu">print</span>(<span class="st">&quot;Life is beautiful&quot;</span>)
+<span class="bu">print</span>(<span class="st">&quot;La vie est belle&quot;</span>, end<span class="op">=</span><span class="st">&quot;--&quot;</span>)
+<span class="bu">print</span>(<span class="st">&quot;Life is beautiful&quot;</span>, end<span class="op">=</span><span class="st">&quot;--&quot;</span>)
+<span class="co"># [Sortie] La vie est belle</span>
+<span class="co"># [Sortie] Life is beautiful</span>
+<span class="co"># [Sortie] La vie est belle--Life is beautiful--</span></code></pre></div>
+<p>Lorsque vous d&#233;finissez une fonction, la syntaxe &#224; utiliser pour donner une valeur par d&#233;faut &#224; un argument est la suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x, y<span class="op">=</span><span class="dv">0</span>):  <span class="co"># La valeur par d&#233;faut pour y est 0</span>
+    <span class="cf">return</span> x <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> y</code></pre></div>
+<p>Attention toutefois, les arguments facultatifs (<em>ie.</em> qui disposent d&#8217;une valeur par d&#233;faut) doivent imp&#233;rativement se trouver, dans la liste des arguments, apr&#232;s le dernier argument obligatoire. Ainsi, la d&#233;finition de fonction suivante n&#8217;est pas correcte :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x, y<span class="op">=</span><span class="dv">0</span>, z):
+    <span class="cf">return</span> x <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> y <span class="op">+</span> z</code></pre></div>
+<h1 id="les-listes"><span class="header-section-number">3</span> Les listes</h1>
+<h1 id="les-cha&#238;nes-de-caract&#232;res"><span class="header-section-number">4</span> Les cha&#238;nes de caract&#232;res</h1>
+<h1 id="les-dictionnaires"><span class="header-section-number">5</span> Les dictionnaires</h1>
+<h1 id="tester-son-code"><span class="header-section-number">6</span> Tester son code</h1>
+<h1 id="lecture-et-&#233;criture-de-fichiers"><span class="header-section-number">7</span> Lecture et &#233;criture de fichiers</h1>
 </body>
 </html>

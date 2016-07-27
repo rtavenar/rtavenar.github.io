@@ -74,9 +74,21 @@ blockquote {
 	border-left: 1px solid #ddd;
 	}
 code {
-	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
-	font-size: .9em;
+	font-family: "Menlo", "Consolas", "Monaco", monospace, serif;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding-left: .25em;
+  padding-right: .25em;
 	}
+pre code {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+pre.python-traceback {
+    color: #b50000;
+}
 a {
 	color: #2484c1;
 	text-decoration: none;
@@ -109,7 +121,7 @@ p#heart{
 .red {
 	color:#B50000;
 	}
-	
+
 pre {
     padding: 16px;
     overflow: auto;
@@ -119,10 +131,16 @@ pre {
     border: 1px solid #ccc;
 }
 
+td.lineNumbers {
+    width: 7%;
+	font-family: "Menlo", "Consolas", "Monaco", monospace, serif;
+    border: none;
+    vertical-align: middle;
+}
+
 /* Home Page
 --------------------------- */
 
 body#index li {
 	margin-bottom: 1em;
 	}
-	

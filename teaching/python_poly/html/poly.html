@@ -45,6 +45,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
   <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <div id="header">
@@ -61,12 +62,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#boucles"><span class="toc-section-number">2.2.2</span> Boucles</a></li>
 <li><a href="#fonctions"><span class="toc-section-number">2.2.3</span> Fonctions</a></li>
 </ul></li>
+<li><a href="#les-modules-en-python"><span class="toc-section-number">2.3</span> Les modules en Python</a></li>
 </ul></li>
-<li><a href="#les-listes"><span class="toc-section-number">3</span> Les listes</a></li>
-<li><a href="#les-cha&#238;nes-de-caract&#232;res"><span class="toc-section-number">4</span> Les cha&#238;nes de caract&#232;res</a></li>
-<li><a href="#les-dictionnaires"><span class="toc-section-number">5</span> Les dictionnaires</a></li>
-<li><a href="#tester-son-code"><span class="toc-section-number">6</span> Tester son code</a></li>
-<li><a href="#lecture-et-&#233;criture-de-fichiers"><span class="toc-section-number">7</span> Lecture et &#233;criture de fichiers</a></li>
+<li><a href="#les-listes"><span class="toc-section-number">3</span> Les listes</a><ul>
+<li><a href="#avant-propos-listes-et-it&#233;rables"><span class="toc-section-number">3.1</span> Avant-propos : listes et it&#233;rables</a></li>
+<li><a href="#cr&#233;ation-de-liste"><span class="toc-section-number">3.2</span> Cr&#233;ation de liste</a></li>
+<li><a href="#acc&#232;s-aux-&#233;l&#233;ments-dune-liste"><span class="toc-section-number">3.3</span> Acc&#232;s aux &#233;l&#233;ments d&#8217;une liste</a></li>
+<li><a href="#parcours-dune-liste"><span class="toc-section-number">3.4</span> Parcours d&#8217;une liste</a><ul>
+<li><a href="#parcours-par-valeurs"><span class="toc-section-number">3.4.1</span> Parcours par valeurs</a></li>
+<li><a href="#parcours-par-indices"><span class="toc-section-number">3.4.2</span> Parcours par indices</a></li>
+<li><a href="#parcours-par-valeurs-et-indices"><span class="toc-section-number">3.4.3</span> Parcours par valeurs et indices</a></li>
+</ul></li>
+<li><a href="#manipulations-de-listes"><span class="toc-section-number">3.5</span> Manipulations de listes</a><ul>
+<li><a href="#insertion-d&#233;l&#233;ment"><span class="toc-section-number">3.5.1</span> Insertion d&#8217;&#233;l&#233;ment</a></li>
+<li><a href="#suppression-d&#233;l&#233;ment"><span class="toc-section-number">3.5.2</span> Suppression d&#8217;&#233;l&#233;ment</a></li>
+<li><a href="#recherche-d&#233;l&#233;ment"><span class="toc-section-number">3.5.3</span> Recherche d&#8217;&#233;l&#233;ment</a></li>
+<li><a href="#cr&#233;ation-de-listes-composites"><span class="toc-section-number">3.5.4</span> Cr&#233;ation de listes composites</a></li>
+<li><a href="#tri-de-liste"><span class="toc-section-number">3.5.5</span> Tri de liste</a></li>
+</ul></li>
+<li><a href="#copie-de-liste"><span class="toc-section-number">3.6</span> Copie de liste</a></li>
+<li><a href="#bonus-listes-en-compr&#233;hension"><span class="toc-section-number">3.7</span> Bonus : listes en compr&#233;hension</a></li>
+</ul></li>
+<li><a href="#les-cha&#238;nes-de-caract&#232;res"><span class="toc-section-number">4</span> Les cha&#238;nes de caract&#232;res</a><ul>
+<li><a href="#conversion-dune-cha&#238;ne-en-nombre"><span class="toc-section-number">4.1</span> Conversion d&#8217;une cha&#238;ne en nombre</a></li>
+<li><a href="#analogie-avec-les-listes"><span class="toc-section-number">4.2</span> Analogie avec les listes</a></li>
+<li><a href="#tableau-des-principales-m&#233;thodes-de-la-classe-str"><span class="toc-section-number">4.3</span> Tableau des principales m&#233;thodes de la classe <code>str</code></a></li>
+</ul></li>
+<li><a href="#les-dictionnaires"><span class="toc-section-number">5</span> Les dictionnaires</a><ul>
+<li><a href="#modification-du-contenu-dun-dictionnaire"><span class="toc-section-number">5.1</span> Modification du contenu d&#8217;un dictionnaire</a></li>
+<li><a href="#lecture-du-contenu-dun-dictionnaire"><span class="toc-section-number">5.2</span> Lecture du contenu d&#8217;un dictionnaire</a></li>
+<li><a href="#parcours-dun-dictionnaire"><span class="toc-section-number">5.3</span> Parcours d&#8217;un dictionnaire</a><ul>
+<li><a href="#parcours-par-valeurs-1"><span class="toc-section-number">5.3.1</span> Parcours par valeurs</a></li>
+<li><a href="#parcours-par-cl&#233;s"><span class="toc-section-number">5.3.2</span> Parcours par cl&#233;s</a></li>
+<li><a href="#parcours-par-couples-cl&#233;svaleurs"><span class="toc-section-number">5.3.3</span> Parcours par couples cl&#233;s/valeurs</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#lecture-et-&#233;criture-de-fichiers-textuels"><span class="toc-section-number">6</span> Lecture et &#233;criture de fichiers textuels</a><ul>
+<li><a href="#lecture-de-fichiers-textuels"><span class="toc-section-number">6.1</span> Lecture de fichiers textuels</a><ul>
+<li><a href="#fichiers-textuels-g&#233;n&#233;riques"><span class="toc-section-number">6.1.1</span> Fichiers textuels g&#233;n&#233;riques</a></li>
+<li><a href="#fichiers-comma-separated-values-csv"><span class="toc-section-number">6.1.2</span> Fichiers <em>Comma-Separated Values</em> (CSV)</a></li>
+</ul></li>
+<li><a href="#&#233;criture-de-fichiers-textuels"><span class="toc-section-number">6.2</span> &#201;criture de fichiers textuels</a><ul>
+<li><a href="#fichiers-textuels-g&#233;n&#233;riques-1"><span class="toc-section-number">6.2.1</span> Fichiers textuels g&#233;n&#233;riques</a></li>
+<li><a href="#fichiers-csv"><span class="toc-section-number">6.2.2</span> Fichiers CSV</a></li>
+</ul></li>
+<li><a href="#manipulation-de-fichiers-en-python-avec-le-module-os"><span class="toc-section-number">6.3</span> Manipulation de fichiers en Python avec le module <code>os</code></a></li>
+</ul></li>
+<li><a href="#tester-son-code"><span class="toc-section-number">7</span> Tester son code</a><ul>
+<li><a href="#les-erreurs-en-python"><span class="toc-section-number">7.1</span> Les erreurs en Python</a></li>
+<li><a href="#les-tests-unitaires"><span class="toc-section-number">7.2</span> Les tests unitaires</a></li>
+<li><a href="#le-d&#233;veloppement-pilot&#233;-par-les-tests"><span class="toc-section-number">7.3</span> Le d&#233;veloppement pilot&#233; par les tests</a></li>
+</ul></li>
+<li><a href="#conclusion"><span class="toc-section-number">8</span> Conclusion</a></li>
 </ul>
 </div>
 <h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
@@ -87,14 +134,15 @@ y <span class="op">=</span> f(<span class="dv">3</span> <span class="op">*</span
 <p>En Python, les structures de donn&#233;es sont toutes des variables, il n&#8217;existe pas de constante. Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette derni&#232;re pouvant varier au cours de l&#8217;ex&#233;cution du programme. Les variables Python sont typ&#233;es dynamiquement, ce qui signifie qu&#8217;une variable, &#224; un moment donn&#233; de l&#8217;ex&#233;cution d&#8217;un programme, a un type pr&#233;cis qui lui est attribu&#233;, mais que celui-ci peut &#233;voluer au cours de l&#8217;ex&#233;cution du programme.</p>
 <p>Les types de base existant en Python sont les suivants :</p>
 <ul>
-<li><code>int</code> : entier ;</li>
-<li><code>float</code> : nombre &#224; virgule ;</li>
-<li><code>complex</code> : nombre complexe (peu utilis&#233; en pratique) ;</li>
-<li><code>str</code> : cha&#238;ne de caract&#232;res ;</li>
-<li><code>bool</code> : bool&#233;en (pouvant prendre les valeurs <code>True</code> ou <code>False</code>).</li>
+<li><code class="sourceCode python"><span class="bu">int</span></code> : entier ;</li>
+<li><code class="sourceCode python"><span class="bu">float</span></code> : nombre &#224; virgule ;</li>
+<li><code class="sourceCode python"><span class="bu">complex</span></code> : nombre complexe (peu utilis&#233; en pratique) ;</li>
+<li><code class="sourceCode python"><span class="bu">str</span></code> : cha&#238;ne de caract&#232;res ;</li>
+<li><code class="sourceCode python"><span class="bu">bool</span></code> : bool&#233;en (pouvant prendre les valeurs <code class="sourceCode python"><span class="va">True</span></code> ou <code class="sourceCode python"><span class="va">False</span></code>).</li>
 </ul>
+<p>De plus, il existe un type sp&#233;cial (<code class="sourceCode python">NoneType</code>) ne permettant qu&#8217;une seule valeur : la valeur <code class="sourceCode python"><span class="va">None</span></code> qui signifie &#8220;pas de valeur&#8221; ou &#8220;valeur manquante&#8221;.</p>
 <p>En Python, le type d&#8217;une variable n&#8217;est pas d&#233;clar&#233; par l&#8217;utilisateur : il est d&#233;fini par l&#8217;usage (la valeur effective que l&#8217;on d&#233;cide de stocker dans la variable en question).</p>
-<p>Par exemple, l&#8217;instruction suivante en Python attribue la valeur <code>12</code> &#224; la variable <code>v</code>, qui devient donc automatiquement de type entier :</p>
+<p>Par exemple, l&#8217;instruction suivante en Python attribue la valeur <code class="sourceCode python"><span class="dv">12</span></code> &#224; la variable <code class="sourceCode python">v</code>, qui devient donc automatiquement de type entier :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">v <span class="op">=</span> <span class="dv">12</span></code></pre></div>
 <p>Ainsi, les instructions suivantes ont toutes une incidence sur le type des variables consid&#233;r&#233;es :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">v <span class="op">=</span> <span class="dv">12</span>     <span class="co"># v est alors de type entier</span>
@@ -108,24 +156,24 @@ v <span class="op">=</span> <span class="dv">12</span>.    <span class="co"># v 
 <span class="co"># [Sortie] &lt;class &#39;float&#39;&gt;</span></code></pre></div>
 <p>Comme le montrent les exemples pr&#233;c&#233;dents, pour pouvoir utiliser des variables, on doit leur donner un nom (plac&#233; &#224; gauche du signe &#233;gal dans l&#8217;op&#233;ration d&#8217;affectation). Ces noms de variables doivent respecter certaines contraintes :</p>
 <ul>
-<li>ils doivent d&#233;buter par une lettre (minuscule ou majuscule, peu importe) ou par le symbole <code>_</code> ;</li>
-<li>ils ne doivent contenir que des lettres, des chiffres et des symboles <code>_</code> ;</li>
+<li>ils doivent d&#233;buter par une lettre (minuscule ou majuscule, peu importe) ou par le symbole <code class="sourceCode python">_</code> ;</li>
+<li>ils ne doivent contenir que des lettres, des chiffres et des symboles <code class="sourceCode python">_</code> ;</li>
 <li><p>ils ne doivent pas correspondre &#224; un quelconque mot r&#233;serv&#233; du langage Python, dont voici la liste :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">and</span> <span class="kw">del</span> <span class="cf">for</span> <span class="op">is</span> <span class="cf">raise</span> <span class="cf">assert</span> <span class="cf">elif</span> <span class="im">from</span> <span class="kw">lambda</span> <span class="cf">return</span> <span class="cf">break</span> <span class="cf">else</span> <span class="kw">global</span>
 <span class="op">not</span> <span class="cf">try</span> <span class="kw">nonlocal</span> <span class="va">True</span> <span class="va">False</span> <span class="kw">class</span> <span class="cf">except</span> <span class="cf">if</span> <span class="op">or</span> <span class="cf">while</span> <span class="cf">continue</span> <span class="im">import</span>
 <span class="cf">pass</span> <span class="cf">yield</span> <span class="va">None</span> <span class="kw">def</span> <span class="cf">finally</span> <span class="op">in</span></code></pre></div></li>
 <li><p>ils ne doivent pas correspondre &#224; des noms de fonction de la librairie standard de Python (cette derni&#232;re condition n&#8217;est en fait qu&#8217;une bonne pratique &#224; observer) : vous apprendrez au fur et &#224; mesure les noms de ces fonctions.</p></li>
 </ul>
-<p>Les noms de variable en Python sont sensibles &#224; la casse, ainsi les variables <code>maVariable</code> et <code>mavariable</code> ne pointent pas sur les m&#234;mes donn&#233;es en m&#233;moire. Pour s&#8217;en convaincre, on peut ex&#233;cuter le code suivant :</p>
+<p>Les noms de variable en Python sont sensibles &#224; la casse, ainsi les variables <code class="sourceCode python">maVariable</code> et <code class="sourceCode python">mavariable</code> ne pointent pas sur les m&#234;mes donn&#233;es en m&#233;moire. Pour s&#8217;en convaincre, on peut ex&#233;cuter le code suivant :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mavariable <span class="op">=</span> <span class="dv">12</span>
 maVariable <span class="op">=</span> <span class="dv">15</span>
 <span class="bu">print</span>(mavariable)
 <span class="co"># [Sortie] 12</span>
 <span class="bu">print</span>(maVariable)
 <span class="co"># [Sortie] 15</span></code></pre></div>
-<p>Comme on l&#8217;a vu plus haut, on utilise en Python l&#8217;op&#233;rateur <code>=</code> pour assigner une valeur &#224; une variable. La s&#233;mantique de cet op&#233;rateur est la suivante : &#8220;assigner la valeur contenue dans le membre de droite &#224; la variable du membre de gauche&#8221;. Ainsi, il est tout &#224; fait valide d&#8217;&#233;crire, en Python :</p>
+<p>Comme on l&#8217;a vu plus haut, on utilise en Python l&#8217;op&#233;rateur <code class="sourceCode python"><span class="op">=</span></code> pour assigner une valeur &#224; une variable. La s&#233;mantique de cet op&#233;rateur est la suivante : &#8220;assigner la valeur contenue dans le membre de droite &#224; la variable du membre de gauche&#8221;. Ainsi, il est tout &#224; fait valide d&#8217;&#233;crire, en Python :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code></pre></div>
-<p>Pour ex&#233;cuter cette instruction, l&#8217;interpr&#233;teur Python commencera par &#233;valuer le membre de droite en utilisant la valeur courante de la variable <code>x</code>, puis affectera la valeur correspondant au r&#233;sultat de l&#8217;op&#233;ration <code>3.9 * x * (1 - x)</code> dans la variable <code>x</code>.</p>
+<p>Pour ex&#233;cuter cette instruction, l&#8217;interpr&#233;teur Python commencera par &#233;valuer le membre de droite en utilisant la valeur courante de la variable <code class="sourceCode python">x</code>, puis affectera la valeur correspondant au r&#233;sultat de l&#8217;op&#233;ration <code class="sourceCode python"><span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code> dans la variable <code class="sourceCode python">x</code>.</p>
 <p>On le voit dans l&#8217;exemple pr&#233;c&#233;dent, pour manipuler des variables, on utilisera des op&#233;rateurs (dont les plus connus sont les op&#233;rateurs arithm&#233;tiques). Le tableau suivant dresse une liste des op&#233;rateurs d&#233;finis pour les variables dont le type est l&#8217;un des types num&#233;riques (entier, nombre &#224; virgule, nombre complexe) :</p>
 <table>
 <thead>
@@ -136,36 +184,36 @@ maVariable <span class="op">=</span> <span class="dv">15</span>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><code>+</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">+</span></code></td>
 <td align="center">Addition</td>
 </tr>
 <tr class="even">
-<td align="center"><code>-</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">-</span></code></td>
 <td align="center">Soustraction</td>
 </tr>
 <tr class="odd">
-<td align="center"><code>*</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">*</span></code></td>
 <td align="center">Multiplication</td>
 </tr>
 <tr class="even">
-<td align="center"><code>/</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">/</span></code></td>
 <td align="center">Division</td>
 </tr>
 <tr class="odd">
-<td align="center"><code>**</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">**</span></code></td>
 <td align="center">&#201;l&#233;vation &#224; la puissance</td>
 </tr>
 <tr class="even">
-<td align="center"><code>%</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">%</span></code></td>
 <td align="center">Modulo (non d&#233;fini pour les nombres complexes)</td>
 </tr>
 </tbody>
 </table>
 <p>De plus, pour chacun de ces op&#233;rateurs, il existe un op&#233;rateur associ&#233; qui r&#233;alise successivement l&#8217;op&#233;ration demand&#233;e puis l&#8217;affectation de la nouvelle valeur &#224; la variable en question. Ainsi, l&#8217;instruction suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></code></pre></div>
-<p>qui ajoute 2 &#224; la valeur courante de <code>x</code> puis stocke le r&#233;sultat du calcul dans <code>x</code> peut se r&#233;&#233;crire :</p>
+<p>qui ajoute 2 &#224; la valeur courante de <code class="sourceCode python">x</code> puis stocke le r&#233;sultat du calcul dans <code class="sourceCode python">x</code> peut se r&#233;&#233;crire :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">+=</span> <span class="dv">2</span></code></pre></div>
-<p>Ceci est purement un raccourci de notation, s&#8217;il ne vous semble pas &#233;vident &#224; ma&#238;triser au premier abord, vous pouvez vous en passer et toujours utiliser la notation <code>x = x + 2</code>.</p>
+<p>Ceci est purement un raccourci de notation, s&#8217;il ne vous semble pas &#233;vident &#224; ma&#238;triser au premier abord, vous pouvez vous en passer et toujours utiliser la notation <code class="sourceCode python">x <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></code>.</p>
 <p>Enfin, lorsque l&#8217;&#233;valuation d&#8217;une expression implique plusieurs op&#233;rateurs, les r&#232;gles de priorit&#233; sont les suivantes (de la priorit&#233; maximale &#224; la priorit&#233; minimale) :</p>
 <ol style="list-style-type: decimal">
 <li>parenth&#232;ses ;</li>
@@ -177,10 +225,10 @@ maVariable <span class="op">=</span> <span class="dv">15</span>
 <p>Pour prendre un exemple concret, pour &#233;valuer l&#8217;expression :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code></pre></div>
 <p>on commencera par &#233;valuer le contenu de la parenth&#232;se puis, les 2 op&#233;rations restantes &#233;tant toutes des multiplications, on les effectuera de gauche &#224; droite.</p>
-<p>De plus, lorsqu&#8217;une op&#233;ration est effectu&#233;e entre deux variables de types diff&#233;rents, le type le plus g&#233;n&#233;rique est retenu. Par exemple, si l&#8217;on multiplie un entier par un nombre &#224; virgule, le r&#233;sultat sera de type <code>float</code>. De m&#234;me, le r&#233;sultat de l&#8217;addition entre un nombre complexe et un nombre &#224; virgule est un complexe.</p>
+<p>De plus, lorsqu&#8217;une op&#233;ration est effectu&#233;e entre deux variables de types diff&#233;rents, le type le plus g&#233;n&#233;rique est retenu. Par exemple, si l&#8217;on multiplie un entier par un nombre &#224; virgule, le r&#233;sultat sera de type <code class="sourceCode python"><span class="bu">float</span></code>. De m&#234;me, le r&#233;sultat de l&#8217;addition entre un nombre complexe et un nombre &#224; virgule est un complexe.</p>
 <p><strong>Attention.</strong> Comme indiqu&#233; en introduction, ce polycopi&#233; suppose que vous utilisez Python dans sa version 3. Il est &#224; noter qu&#8217;il existe une diff&#233;rence importante entre Python 2 et Python 3 dans la fa&#231;on d&#8217;effectuer des op&#233;rations m&#234;lant nombres entiers et flottants. Par exemple, l&#8217;op&#233;ration suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">2</span> <span class="op">/</span> <span class="dv">3</span></code></pre></div>
-<p>stockera, en Python 2, la valeur 0 (r&#233;sultat de la division <em>enti&#232;re</em> de 2 par 3) dans la variable <code>x</code> alors qu&#8217;en Python 3, la division flottante sera effectu&#233;e et ainsi <code>x</code> contiendra <code>0.666666...</code> En Python 3, si l&#8217;on souhaite effectuer une division enti&#232;re, on pourra utiliser l&#8217;op&#233;rateur <code>//</code> :</p>
+<p>stockera, en Python 2, la valeur 0 (r&#233;sultat de la division <em>enti&#232;re</em> de 2 par 3) dans la variable <code class="sourceCode python">x</code> alors qu&#8217;en Python 3, la division flottante sera effectu&#233;e et ainsi <code class="sourceCode python">x</code> contiendra <code class="sourceCode python"><span class="fl">0.666666</span>...</code> En Python 3, si l&#8217;on souhaite effectuer une division enti&#232;re, on pourra utiliser l&#8217;op&#233;rateur <code class="sourceCode python"><span class="op">//</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="dv">2</span> <span class="op">//</span> <span class="dv">3</span>)
 <span class="co"># [Sortie] 0</span></code></pre></div>
 <h2 id="structures-de-contr&#244;le"><span class="header-section-number">2.2</span> Structures de contr&#244;le</h2>
@@ -196,20 +244,18 @@ maVariable <span class="op">=</span> <span class="dv">15</span>
 <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
     <span class="bu">print</span>(<span class="st">&quot;X est positif&quot;</span>)
     x <span class="op">=</span> <span class="dv">4</span>
-y <span class="op">=</span> <span class="dv">2</span>
 <span class="co"># [Sortie] X est positif</span></code></pre></div>
-<p>On remarque ici que la condition est termin&#233;e par le symbole <code>:</code>, de plus, la s&#233;quence d&#8217;instructions &#224; ex&#233;cuter si la condition est remplie est <em>indent&#233;e</em>, cela signifie qu&#8217;elle est d&#233;cal&#233;e d&#8217;un &#8220;cran&#8221; (g&#233;n&#233;ralement une tabulation ou 4 espaces) vers la droite. Cette indentation est une bonne pratique recommand&#233;e quel que soit le langage que vous utilisez, mais en Python, c&#8217;est m&#234;me une obligation (sinon, l&#8217;interpr&#233;teur Python ne comprendra pas o&#249; commence et o&#249; se termine la s&#233;quence &#224; ex&#233;cuter sous condition).</p>
-<p>Dans certains cas, on souhaite ex&#233;cuter une s&#233;rie d&#8217;instructions si la condition est v&#233;rifi&#233;e et une autre si elle ne l&#8217;est pas. Pour cela, on utilise le mot-cl&#233; <code>else</code> comme suit :</p>
+<p>On remarque ici que la condition est termin&#233;e par le symbole <code class="sourceCode python">:</code>, de plus, la s&#233;quence d&#8217;instructions &#224; ex&#233;cuter si la condition est remplie est <em>indent&#233;e</em>, cela signifie qu&#8217;elle est d&#233;cal&#233;e d&#8217;un &#8220;cran&#8221; (g&#233;n&#233;ralement une tabulation ou 4 espaces) vers la droite. Cette indentation est une bonne pratique recommand&#233;e quel que soit le langage que vous utilisez, mais en Python, c&#8217;est m&#234;me une obligation (sinon, l&#8217;interpr&#233;teur Python ne comprendra pas o&#249; commence et o&#249; se termine la s&#233;quence &#224; ex&#233;cuter sous condition).</p>
+<p>Dans certains cas, on souhaite ex&#233;cuter une s&#233;rie d&#8217;instructions si la condition est v&#233;rifi&#233;e et une autre si elle ne l&#8217;est pas. Pour cela, on utilise le mot-cl&#233; <code class="sourceCode python"><span class="cf">else</span></code> comme suit :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>
 <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
     <span class="bu">print</span>(<span class="st">&quot;X est positif&quot;</span>)
     x <span class="op">=</span> <span class="dv">4</span>
 <span class="cf">else</span>:
     <span class="bu">print</span>(<span class="st">&quot;X est n&#233;gatif&quot;</span>)
-y <span class="op">=</span> <span class="dv">5</span>
 <span class="co"># [Sortie] X est n&#233;gatif</span></code></pre></div>
-<p>L&#224; encore, on remarque que l&#8217;indentation est de rigueur pour chacun des deux blocs d&#8217;instructions. On note &#233;galement que le mot-cl&#233; <code>else</code> se trouve au m&#234;me niveau que le <code>if</code> auquel il se r&#233;f&#232;re.</p>
-<p>Enfin, de mani&#232;re plus g&#233;n&#233;rale, il est possible de d&#233;finir plusieurs comportements en fonction de plusieurs tests successifs, &#224; l&#8217;aide du mot-cl&#233; <code>elif</code> :</p>
+<p>L&#224; encore, on remarque que l&#8217;indentation est de rigueur pour chacun des deux blocs d&#8217;instructions. On note &#233;galement que le mot-cl&#233; <code class="sourceCode python"><span class="cf">else</span></code> se trouve au m&#234;me niveau que le <code class="sourceCode python"><span class="cf">if</span></code> auquel il se r&#233;f&#232;re.</p>
+<p>Enfin, de mani&#232;re plus g&#233;n&#233;rale, il est possible de d&#233;finir plusieurs comportements en fonction de plusieurs tests successifs, &#224; l&#8217;aide du mot-cl&#233; <code class="sourceCode python"><span class="cf">elif</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>
 <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
     <span class="bu">print</span>(<span class="st">&quot;X est positif&quot;</span>)
@@ -220,7 +266,6 @@ y <span class="op">=</span> <span class="dv">5</span>
     <span class="bu">print</span>(<span class="st">&quot;X est compris entre -4 et -2&quot;</span>)
 <span class="cf">else</span>:
     <span class="bu">print</span>(<span class="st">&quot;X est inf&#233;rieur &#224; -4&quot;</span>)
-y <span class="op">=</span> <span class="dv">5</span>
 <span class="co"># [Sortie] X est compris entre -2 et 0</span></code></pre></div>
 <p>Pour utiliser ces structures conditionnelles, il est important de ma&#238;triser les diff&#233;rents op&#233;rateurs de comparaison mis &#224; vos disposition en Python, dont voici une liste non exhaustive :</p>
 <table>
@@ -233,52 +278,53 @@ y <span class="op">=</span> <span class="dv">5</span>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><code>&lt;</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">&lt;</span></code></td>
 <td align="center">Plus petit que</td>
-<td align="center"><code>x &lt; 0</code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">&lt;</span> <span class="dv">0</span></code></td>
 </tr>
 <tr class="even">
-<td align="center"><code>&gt;</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">&gt;</span></code></td>
 <td align="center">Plus grand que</td>
-<td align="center"><code>x &gt; 0</code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">&gt;</span> <span class="dv">0</span></code></td>
 </tr>
 <tr class="odd">
-<td align="center"><code>&lt;=</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">&lt;=</span></code></td>
 <td align="center">Plus petit ou &#233;gal &#224;</td>
-<td align="center"><code>x &lt;= 0</code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">&lt;=</span> <span class="dv">0</span></code></td>
 </tr>
 <tr class="even">
-<td align="center"><code>&gt;=</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">&gt;=</span></code></td>
 <td align="center">Plus grand ou &#233;gal &#224;</td>
-<td align="center"><code>x &gt;= 0</code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">&gt;=</span> <span class="dv">0</span></code></td>
 </tr>
 <tr class="odd">
-<td align="center"><code>==</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">==</span></code></td>
 <td align="center">&#201;gal &#224;</td>
-<td align="center"><code>x == 0</code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">==</span> <span class="dv">0</span></code></td>
 </tr>
 <tr class="even">
-<td align="center"><code>!=</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">!=</span></code></td>
 <td align="center">Diff&#233;rent de</td>
-<td align="center"><code>x != 0</code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">!=</span> <span class="dv">0</span></code></td>
 </tr>
 <tr class="odd">
-<td align="center"><code>is</code></td>
-<td align="center">Test d&#8217;&#233;galit&#233; pour le cas de la valeur <code>None</code></td>
-<td align="center"><code>x is None</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">is</span></code></td>
+<td align="center">Test d&#8217;&#233;galit&#233; pour le cas de la valeur <code class="sourceCode python"><span class="va">None</span></code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">is</span> <span class="va">None</span></code></td>
 </tr>
 <tr class="even">
-<td align="center"><code>is not</code></td>
-<td align="center">Test d&#8217;in&#233;galit&#233; pour le cas de la valeur <code>None</code></td>
-<td align="center"><code>x is not None</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">is</span> <span class="op">not</span></code></td>
+<td align="center">Test d&#8217;in&#233;galit&#233; pour le cas de la valeur <code class="sourceCode python"><span class="va">None</span></code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">is</span> <span class="op">not</span> <span class="va">None</span></code></td>
 </tr>
 <tr class="odd">
-<td align="center"><code>in</code></td>
+<td align="center"><code class="sourceCode python"><span class="op">in</span></code></td>
 <td align="center">Test de pr&#233;sence d&#8217;une valeur dans une liste</td>
-<td align="center"><code>x in [1, 5, 7]</code></td>
+<td align="center"><code class="sourceCode python">x <span class="op">in</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]</code></td>
 </tr>
 </tbody>
 </table>
+<p>Il est notamment important de remarquer que, lorsque l&#8217;on souhaite tester l&#8217;&#233;galit&#233; entre deux valeurs, l&#8217;op&#233;rateur &#224; utiliser est <code class="sourceCode python"><span class="op">==</span></code> et non <code class="sourceCode python"><span class="op">=</span></code> qui sert lui &#224; affecter une valeur &#224; une variable.</p>
 <h3 id="boucles"><span class="header-section-number">2.2.2</span> Boucles</h3>
 <p>Il existe, en Python comme dans une grande majorit&#233; des langages de programmation, deux types de boucles :</p>
 <ul>
@@ -290,28 +336,28 @@ y <span class="op">=</span> <span class="dv">5</span>
 <span class="cf">while</span> x <span class="op">&lt;=</span> <span class="dv">10</span>:
     <span class="bu">print</span>(x)
     x <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span>
-y <span class="op">=</span> <span class="dv">2</span>
 <span class="co"># [Sortie] 0</span>
 <span class="co"># [Sortie] 2</span>
 <span class="co"># [Sortie] 6</span></code></pre></div>
-<p>On voit bien ici, en analysant la sortie produite par ces quelques lignes, que le contenu de la boucle est r&#233;p&#233;t&#233; plusieurs fois. En pratique, il est r&#233;p&#233;t&#233; jusqu&#8217;&#224; ce que la variable <code>x</code> prenne une valeur sup&#233;rieure &#224; 10 (14 dans notre cas). Il faut &#234;tre tr&#232;s prudent avec ces boucles <code>while</code> car il est tout &#224; fait possible de cr&#233;er une boucle dont le programme ne sortira jamais, comme dans l&#8217;exemple suivant :</p>
+<p>On voit bien ici, en analysant la sortie produite par ces quelques lignes, que le contenu de la boucle est r&#233;p&#233;t&#233; plusieurs fois. En pratique, il est r&#233;p&#233;t&#233; jusqu&#8217;&#224; ce que la variable <code class="sourceCode python">x</code> prenne une valeur sup&#233;rieure &#224; 10 (14 dans notre cas). Il faut &#234;tre tr&#232;s prudent avec ces boucles <code class="sourceCode python"><span class="cf">while</span></code> car il est tout &#224; fait possible de cr&#233;er une boucle dont le programme ne sortira jamais, comme dans l&#8217;exemple suivant :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">2</span>
 y <span class="op">=</span> <span class="dv">0</span>
 <span class="cf">while</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
     y <span class="op">=</span> y <span class="op">-</span> <span class="dv">1</span>
 y <span class="op">=</span> <span class="dv">2</span></code></pre></div>
-<p>En effet, on a ici une boucle qui s&#8217;ex&#233;cutera tant que <code>x</code> est positif, or la valeur de cette variable est initialis&#233;e &#224; 2 et n&#8217;est pas modifi&#233;e au sein de la boucle, la condition sera donc toujours v&#233;rifi&#233;e et le programme ne sortira jamais de la boucle.</p>
-<p>Le second type de boucle repose en Python sur l&#8217;utilisation de listes (ou, plus pr&#233;cis&#233;ment d&#8217;it&#233;rables) dont nous reparlerons plus en d&#233;tail dans la suite de cet ouvrage. Sachez pour le moment qu&#8217;une liste est un ensemble ordonn&#233; d&#8217;&#233;l&#233;ments. On peut alors ex&#233;cuter une s&#233;rie d&#8217;instructions pour toutes les valeurs d&#8217;une liste :</p>
+<p>En effet, on a ici une boucle qui s&#8217;ex&#233;cutera tant que <code class="sourceCode python">x</code> est positif, or la valeur de cette variable est initialis&#233;e &#224; 2 et n&#8217;est pas modifi&#233;e au sein de la boucle, la condition sera donc toujours v&#233;rifi&#233;e et le programme ne sortira jamais de la boucle.</p>
+<p>Le second type de boucle repose en Python sur l&#8217;utilisation de listes (ou, plus g&#233;n&#233;ralement d&#8217;it&#233;rables) dont nous reparlerons plus en d&#233;tail dans la suite de cet ouvrage. Sachez pour le moment qu&#8217;une liste est un ensemble ordonn&#233; d&#8217;&#233;l&#233;ments. On peut alors ex&#233;cuter une s&#233;rie d&#8217;instructions pour toutes les valeurs d&#8217;une liste :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> x <span class="op">in</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]:
     <span class="bu">print</span>(x)
 y <span class="op">=</span> <span class="dv">2</span>
 <span class="co"># [Sortie] 1</span>
 <span class="co"># [Sortie] 5</span>
 <span class="co"># [Sortie] 7</span></code></pre></div>
+<p>Cette syntaxe revient &#224; d&#233;finir une variable <code class="sourceCode python">x</code> qui prendra successivement pour valeur chacune des valeurs de la liste <code class="sourceCode python">[<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]</code> dans l&#8217;ordre et &#224; ex&#233;cuter le code de la boucle (ici, un appel &#224; la fonction <code class="sourceCode python"><span class="bu">print</span></code>) pour cette valeur de la variable <code class="sourceCode python">x</code>.</p>
 <h3 id="fonctions"><span class="header-section-number">2.2.3</span> Fonctions</h3>
 <p>Nous avons d&#233;j&#224; vu dans ce qui pr&#233;c&#232;de, sans le dire, des fonctions. Par exemple, lorsque l&#8217;on &#233;crit :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(x)</code></pre></div>
-<p>on demande l&#8217;appel &#224; une fonction, nomm&#233;e <code>print</code> et prenant un <strong>argument</strong> (ici, la variable <code>x</code>). La fonction <code>print</code> ne retourne pas de valeur, elle ne fait qu&#8217;afficher la valeur contenue dans <code>x</code> sur le terminal. D&#8217;autres fonctions, comme <code>type</code> dont nous avons parl&#233; plus haut, <strong>retournent une valeur</strong> et cette valeur peut &#234;tre utilis&#233;e dans la suite du programme, comme dans l&#8217;exemple suivant :</p>
+<p>on demande l&#8217;appel &#224; une fonction, nomm&#233;e <code class="sourceCode python"><span class="bu">print</span></code> et prenant un <strong>argument</strong> (ici, la variable <code class="sourceCode python">x</code>). La fonction <code class="sourceCode python"><span class="bu">print</span></code> ne retourne pas de valeur, elle ne fait qu&#8217;afficher la valeur contenue dans <code class="sourceCode python">x</code> sur le terminal. D&#8217;autres fonctions, comme <code class="sourceCode python"><span class="bu">type</span></code> dont nous avons parl&#233; plus haut, <strong>retournent une valeur</strong> et cette valeur peut &#234;tre utilis&#233;e dans la suite du programme, comme dans l&#8217;exemple suivant :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="bu">type</span>(<span class="dv">1</span>)  <span class="co"># On stocke dans x la valeur retourn&#233;e par type</span>
 y <span class="op">=</span> <span class="bu">type</span>(<span class="dv">2</span>.)
 <span class="cf">if</span> x <span class="op">==</span> y:
@@ -324,41 +370,47 @@ y <span class="op">=</span> <span class="bu">type</span>(<span class="dv">2</spa
 <li>en donnant un nom &#224; la fonction et en listant la liste de ses arguments, on explicite la s&#233;mantique de l&#8217;ensemble d&#8217;instructions en question, ses entr&#233;es et sorties &#233;ventuelles, ce qui rend le code beaucoup plus lisible ;</li>
 <li>s&#8217;il est n&#233;cessaire d&#8217;adapter &#224; l&#8217;avenir le code pour r&#233;soudre un <em>bug</em> ou le rendre plus g&#233;n&#233;rique, vous n&#8217;aurez &#224; modifier le code qu&#8217;&#224; un endroit (dans le corps de la fonction) et non pas &#224; chaque fois que le code est r&#233;p&#233;t&#233;.</li>
 </ul>
-<p>Pour d&#233;finir une fonction en Python, on utilise le mot-cl&#233; <code>def</code> :</p>
+<p>Pour d&#233;finir une fonction en Python, on utilise le mot-cl&#233; <code class="sourceCode python"><span class="kw">def</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x):
     y <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span>
     z <span class="op">=</span> x <span class="op">+</span> y
     <span class="cf">return</span> z <span class="op">//</span> <span class="dv">2</span></code></pre></div>
 <p>On a ici d&#233;fini une fonction</p>
 <ul>
-<li>dont le nom est <code>f</code> ;</li>
-<li>qui prend un seul argument, not&#233; <code>x</code> ;</li>
-<li>qui retourne une valeur, comme indiqu&#233; dans la ligne d&#233;butant par le mot-cl&#233; <code>return</code>.</li>
+<li>dont le nom est <code class="sourceCode python">f</code> ;</li>
+<li>qui prend un seul argument, not&#233; <code class="sourceCode python">x</code> ;</li>
+<li>qui retourne une valeur, comme indiqu&#233; dans la ligne d&#233;butant par le mot-cl&#233; <code class="sourceCode python"><span class="cf">return</span></code>.</li>
 </ul>
-<p>Il est possible, en Python, d&#8217;&#233;crire des fonctions retournant plusieurs valeurs. Pour ce faire, ces valeurs seront s&#233;par&#233;es par des virgules dans l&#8217;instruction <code>return</code> :</p>
+<p>Il est possible, en Python, d&#8217;&#233;crire des fonctions retournant plusieurs valeurs. Pour ce faire, ces valeurs seront s&#233;par&#233;es par des virgules dans l&#8217;instruction <code class="sourceCode python"><span class="cf">return</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x):
     y <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span>
     z <span class="op">=</span> x <span class="op">+</span> y
     <span class="cf">return</span> z <span class="op">//</span> <span class="dv">2</span>, y</code></pre></div>
-<p>Enfin, en l&#8217;absence d&#8217;instruction <code>return</code>, une fonction retournera la valeur <code>None</code>.</p>
+<p>Enfin, en l&#8217;absence d&#8217;instruction <code class="sourceCode python"><span class="cf">return</span></code>, une fonction retournera la valeur <code class="sourceCode python"><span class="va">None</span></code>.</p>
 <p>Il est &#233;galement possible d&#8217;utiliser le nom des arguments de la fonction lors de l&#8217;appel, pour ne pas risquer de se tromper dans l&#8217;ordre des arguments. Par exemple, si l&#8217;on a la fonction suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> affiche_infos_personne(poids, taille):
     <span class="bu">print</span>(<span class="st">&quot;Poids: &quot;</span>, poids)
     <span class="bu">print</span>(<span class="st">&quot;Taille: &quot;</span>, taille)</code></pre></div>
 <p>Les trois appels suivants sont &#233;quivalents :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">affiche_infos_personne(<span class="dv">80</span>, <span class="dv">180</span>)
+<span class="co"># [Sortie] Poids: 80</span>
+<span class="co"># [Sortie] Taille: 180</span>
 affiche_infos_personne(taille<span class="op">=</span><span class="dv">180</span>, poids<span class="op">=</span><span class="dv">80</span>)
-affiche_infos_personne(poids<span class="op">=</span><span class="dv">80</span>, taille<span class="op">=</span><span class="dv">180</span>)</code></pre></div>
+<span class="co"># [Sortie] Poids: 80</span>
+<span class="co"># [Sortie] Taille: 180</span>
+affiche_infos_personne(poids<span class="op">=</span><span class="dv">80</span>, taille<span class="op">=</span><span class="dv">180</span>)
+<span class="co"># [Sortie] Poids: 80</span>
+<span class="co"># [Sortie] Taille: 180</span></code></pre></div>
 <p>&#201;videmment, pour que cela soit vraiment utile, il est hautement recommand&#233; d&#8217;utiliser des noms d&#8217;arguments explicites lors de la d&#233;finition de vos fonctions.</p>
 <h4 id="arguments-optionnels-dune-fonction"><span class="header-section-number">2.2.3.2</span> Argument(s) optionnel(s) d&#8217;une fonction</h4>
 <p>Certains arguments d&#8217;une fonction peuvent avoir une valeur par d&#233;faut, d&#233;cid&#233;e par la personne qui a &#233;crit la fonction. Dans ce cas, si l&#8217;utilisateur ne sp&#233;cifie pas explicitement de valeur pour ces arguments lors de l&#8217;appel &#224; la fonction, c&#8217;est la valeur par d&#233;faut qui sera utilis&#233;e dans la fonction, dans le cas contraire, la valeur sp&#233;cifi&#233;e sera utilis&#233;e.</p>
-<p>Par exemple, la fonction <code>print</code> dispose de plusieurs arguments facultatifs, comme le caract&#232;re par lequel terminer l&#8217;affichage (par d&#233;faut, un retour &#224; la ligne, <code>&quot;\n&quot;</code>) :</p>
+<p>Par exemple, la fonction <code class="sourceCode python"><span class="bu">print</span></code> dispose de plusieurs arguments facultatifs, comme le caract&#232;re par lequel terminer l&#8217;affichage (par d&#233;faut, un retour &#224; la ligne, <code class="sourceCode python"><span class="co">&quot;\n&quot;</span></code>) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&quot;La vie est belle&quot;</span>)
+<span class="co"># [Sortie] La vie est belle</span>
 <span class="bu">print</span>(<span class="st">&quot;Life is beautiful&quot;</span>)
+<span class="co"># [Sortie] Life is beautiful</span>
 <span class="bu">print</span>(<span class="st">&quot;La vie est belle&quot;</span>, end<span class="op">=</span><span class="st">&quot;--&quot;</span>)
 <span class="bu">print</span>(<span class="st">&quot;Life is beautiful&quot;</span>, end<span class="op">=</span><span class="st">&quot;--&quot;</span>)
-<span class="co"># [Sortie] La vie est belle</span>
-<span class="co"># [Sortie] Life is beautiful</span>
 <span class="co"># [Sortie] La vie est belle--Life is beautiful--</span></code></pre></div>
 <p>Lorsque vous d&#233;finissez une fonction, la syntaxe &#224; utiliser pour donner une valeur par d&#233;faut &#224; un argument est la suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x, y<span class="op">=</span><span class="dv">0</span>):  <span class="co"># La valeur par d&#233;faut pour y est 0</span>
@@ -366,10 +418,537 @@ affiche_infos_personne(poids<span class="op">=</span><span class="dv">80</span>,
 <p>Attention toutefois, les arguments facultatifs (<em>ie.</em> qui disposent d&#8217;une valeur par d&#233;faut) doivent imp&#233;rativement se trouver, dans la liste des arguments, apr&#232;s le dernier argument obligatoire. Ainsi, la d&#233;finition de fonction suivante n&#8217;est pas correcte :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x, y<span class="op">=</span><span class="dv">0</span>, z):
     <span class="cf">return</span> x <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> y <span class="op">+</span> z</code></pre></div>
+<h2 id="les-modules-en-python"><span class="header-section-number">2.3</span> Les modules en Python</h2>
+<p>Jusqu&#8217;&#224; pr&#233;sent, nous avons utilis&#233; des fonctions (comme <code class="sourceCode python"><span class="bu">print</span></code>) issues de la librairie standard de Python. Celles-ci sont donc charg&#233;es par d&#233;faut lorsque l&#8217;on ex&#233;cute un script Python. Toutefois, il peut &#234;tre n&#233;cessaire d&#8217;avoir acc&#232;s &#224; d&#8217;autres fonctions et/ou variables, d&#233;finies dans d&#8217;autres librairies. Pour cela, il sera utile de charger le <strong>module</strong> correspondant.</p>
+<p>Prenons l&#8217;exemple du module <code class="sourceCode python">math</code> qui propose un certain nombre de fonctions math&#233;matiques usuelles (<code class="sourceCode python">sin</code> pour le calcul du sinus d&#8217;un angle, <code class="sourceCode python">sqrt</code> pour la racine carr&#233;e d&#8217;un nombre, <em>etc.</em>) ainsi que des constantes math&#233;matiques tr&#232;s utiles comme <code class="sourceCode python">pi</code>. Le code suivant charge le module en m&#233;moire puis fait appel &#224; certaines de ses fonctions et/ou variables :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> math
+
+<span class="bu">print</span>(math.sin(<span class="dv">0</span>))
+<span class="co"># [Sortie] 0.0</span>
+<span class="bu">print</span>(math.pi)
+<span class="co"># [Sortie] 3.141592653589793</span>
+<span class="bu">print</span>(math.cos(<span class="dv">2</span> <span class="op">*</span> math.pi))
+<span class="co"># [Sortie] 1.0</span>
+<span class="bu">print</span>(math.sqrt(<span class="dv">2</span>))
+<span class="co"># [Sortie] 1.4142135623730951</span></code></pre></div>
+<p>Vous remarquerez ici que l&#8217;instruction d&#8217;import du module se trouve n&#233;cessairement avant les instructions faisant r&#233;f&#233;rences aux fonctions et variables de ce module, faute de quoi ces derni&#232;res ne seraient pas d&#233;finies. De mani&#232;re g&#233;n&#233;rale, vous prendrez la bonne habitude d&#8217;&#233;crire les instructions d&#8217;import en tout d&#233;but de vos fichiers Python, pour &#233;viter tout souci.</p>
 <h1 id="les-listes"><span class="header-section-number">3</span> Les listes</h1>
+<p>En Python, les listes stockent des s&#233;quences d&#8217;&#233;l&#233;ments. Il n&#8217;est pas n&#233;cessaire que tous les &#233;l&#233;ments d&#8217;une liste soient du m&#234;me type, m&#234;me si dans les exemples que nous consid&#233;rerons, ce sera souvent le cas.</p>
+<p>On peut trouver des informaions pr&#233;cieuses sur le sujet des listes dans l&#8217;aide en ligne de Python disponible &#224; l&#8217;adresse : <a href="https://docs.python.org/3/tutorial/datastructures.html" class="uri">https://docs.python.org/3/tutorial/datastructures.html</a>.</p>
+<h2 id="avant-propos-listes-et-it&#233;rables"><span class="header-section-number">3.1</span> Avant-propos : listes et it&#233;rables</h2>
+<p>Dans la suite, nous parlerons de listes, qui est un type de donn&#233;es bien sp&#233;cifique en Python. Toutefois, une grande partie de notre propos pourra se transposer &#224; l&#8217;ensemble des it&#233;rables en Python (c&#8217;est-&#224;-dire l&#8217;ensemble des objets Python dont on peut parcourir les &#233;l&#233;ments un &#224; un).</p>
+<p>Il existe toutefois une diff&#233;rence majeure entre listes et it&#233;rables : nous verrons dans la suite de ce chapitre que l&#8217;on peut acc&#233;der au <span class="math inline">\(i\)</span>-&#232;me &#233;l&#233;ment d&#8217;une liste simplement, alors que ce n&#8217;est pas possible pour un it&#233;rable (pour ce dernier, il faudra parcourir l&#8217;ensemble de ses &#233;l&#233;ments et s&#8217;arr&#234;ter lorsque l&#8217;on est effectivement rendu au <span class="math inline">\(i\)</span>-&#232;me).</p>
+<p>Toutefois, si l&#8217;on a un it&#233;rable <code class="sourceCode python">iterable</code>, il est possible de le transformer en liste simplement &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">list</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> <span class="bu">list</span>(iterable)</code></pre></div>
+<h2 id="cr&#233;ation-de-liste"><span class="header-section-number">3.2</span> Cr&#233;ation de liste</h2>
+<p>Pour cr&#233;er une liste contenant des valeurs d&#233;finies (par exemple la liste contenant les entiers 1, 5 et 7), il est possible d&#8217;utiliser la syntaxe suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]</code></pre></div>
+<p>De la m&#234;me fa&#231;on, on peut cr&#233;er une liste vide (ne contenant aucun &#233;l&#233;ment) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">liste <span class="op">=</span> []
+<span class="bu">print</span>(<span class="bu">len</span>(liste))
+<span class="co"># [Sortie] 0</span></code></pre></div>
+<p>On voit ici la fonction <code class="sourceCode python"><span class="bu">len</span></code> qui retourne la taille d&#8217;une liste pass&#233;e en argument (ici 0).</p>
+<p>Toutefois, lorsque l&#8217;on souhaite cr&#233;er des listes longues (par exemple la liste des 1000 premiers entiers), cette m&#233;thode est peu pratique. Il existe ainsi des fonctions qui permettent de cr&#233;er de telles listes. Par exemple, la fonction <code class="sourceCode python"><span class="bu">range</span>(a, b)</code> retourne un it&#233;rable contenant les entiers de <code class="sourceCode python">a</code> (inclus) &#224; <code class="sourceCode python">b</code> (exclu) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>)     <span class="co"># l = [1, 2, 3, ..., 9]</span>
+l <span class="op">=</span> <span class="bu">range</span>(<span class="dv">10</span>)        <span class="co"># l = [0, 1, 2, ..., 9]</span>
+l <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)  <span class="co"># l = [0, 2, 4, ..., 8]</span></code></pre></div>
+<p>On remarque que, si l&#8217;on ne donne qu&#8217;un argument &#224; la fonction <code class="sourceCode python"><span class="bu">range</span></code>, l&#8217;it&#233;rable retourn&#233; d&#233;bute &#224; l&#8217;entier 0. Si, au contraire, on passe un troisi&#232;me argument &#224; la fonction <code class="sourceCode python"><span class="bu">range</span></code>, cet argument correspond au pas utilis&#233; entre deux &#233;l&#233;ments successifs.</p>
+<h2 id="acc&#232;s-aux-&#233;l&#233;ments-dune-liste"><span class="header-section-number">3.3</span> Acc&#232;s aux &#233;l&#233;ments d&#8217;une liste</h2>
+<p>Pour acc&#233;der au <span class="math inline">\(i\)</span>-&#232;me &#233;l&#233;ment d&#8217;une liste, on utilise la syntaxe :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l[i]</code></pre></div>
+<p>Attention, toutefois, le premier indice d&#8217;une liste est 0, on a donc :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+<span class="bu">print</span>(l[<span class="dv">1</span>])
+<span class="bu">print</span>(l[<span class="dv">0</span>])
+<span class="co"># [Sortie] 5</span>
+<span class="co"># [Sortie] 1</span></code></pre></div>
+<p>On peut &#233;galement acc&#233;der au dernier &#233;l&#233;ment d&#8217;une liste en demandant l&#8217;&#233;l&#233;ment d&#8217;indice <code class="sourceCode python"><span class="op">-</span><span class="dv">1</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+<span class="bu">print</span>(l[<span class="op">-</span><span class="dv">1</span>])
+<span class="bu">print</span>(l[<span class="op">-</span><span class="dv">2</span>])
+<span class="bu">print</span>(l[<span class="op">-</span><span class="dv">3</span>])
+<span class="co"># [Sortie] 7</span>
+<span class="co"># [Sortie] 5</span>
+<span class="co"># [Sortie] 1</span></code></pre></div>
+<p>De la m&#234;me fa&#231;on, on peut acc&#233;der au deuxi&#232;me &#233;l&#233;ment en partant de la fin <em>via</em> l&#8217;indice <code class="sourceCode python"><span class="op">-</span><span class="dv">2</span></code>, <em>etc.</em></p>
+<p>Ainsi, pour une liste de taille <span class="math inline">\(n\)</span>, les valeurs d&#8217;indice valides sont les entiers compris entre <span class="math inline">\(-n\)</span> et <span class="math inline">\(n - 1\)</span> (inclus).</p>
+<p>Il est &#233;galement &#224; noter que l&#8217;acc&#232;s aux &#233;l&#233;ments d&#8217;une liste peut se faire en lecture (lire la valeur stock&#233;e &#224; l&#8217;indice <code class="sourceCode python">i</code>) comme en &#233;criture (modifier la valeur stock&#233;e &#224; l&#8217;indice <code class="sourceCode python">i</code>) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+<span class="bu">print</span>(l[<span class="dv">1</span>])
+l[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span>
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] 5</span>
+<span class="co"># [Sortie] [1, 2, 7]</span></code></pre></div>
+<p>Enfin, on peut acc&#233;der &#224; une sous-partie d&#8217;une liste &#224; l&#8217;aide de la syntaxe <code class="sourceCode python">l[d:f]</code> o&#249; <code class="sourceCode python">d</code> est l&#8217;indice de d&#233;but et <code class="sourceCode python">f</code> est l&#8217;indice de fin (exclu). Ainsi, on a :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">9</span>, <span class="dv">8</span>]
+<span class="bu">print</span>(l[<span class="dv">2</span>:<span class="dv">4</span>])
+<span class="co"># [Sortie] [7, 8]</span></code></pre></div>
+<p>Lorsque l&#8217;on utilise cette syntaxe, si l&#8217;on omet l&#8217;indice de d&#233;but, la s&#233;lection commence au d&#233;but de la liste et si l&#8217;on omet l&#8217;indice de fin, elle s&#8217;&#233;tend jusqu&#8217;&#224; la fin de la liste :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">9</span>, <span class="dv">8</span>]
+<span class="bu">print</span>(l[:<span class="dv">3</span>])
+<span class="co"># [Sortie] [1, 5, 7]</span>
+<span class="bu">print</span>(l[<span class="dv">5</span>:])
+<span class="co"># [Sortie] [9, 8]</span></code></pre></div>
+<h2 id="parcours-dune-liste"><span class="header-section-number">3.4</span> Parcours d&#8217;une liste</h2>
+<p>Lorsque l&#8217;on parcourt une liste, on peut vouloir acc&#233;der :</p>
+<ul>
+<li>aux valeurs stock&#233;es dans la liste uniquement ;</li>
+<li>aux indices de la liste uniquement (m&#234;me si c&#8217;est rare) ;</li>
+<li>aux indices de la listes et aux valeurs associ&#233;es.</li>
+</ul>
+<p>Ces trois cas de figure impliquent trois parcours de liste diff&#233;rents, d&#233;crits dans ce qui suit.</p>
+<p><strong>Attention.</strong> Quel que soit le parcours de liste utilis&#233;, il est fortement d&#233;conseill&#233; de supprimer ou d&#8217;ins&#233;rer des &#233;l&#233;ments dans une liste pendant le parcours de celle-ci.</p>
+<h3 id="parcours-par-valeurs"><span class="header-section-number">3.4.1</span> Parcours par valeurs</h3>
+<p>Pour parcourir les &#233;l&#233;ments d&#8217;une liste, on utilise une boucle <code class="sourceCode python"><span class="cf">for</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+<span class="cf">for</span> elem <span class="op">in</span> l:
+    <span class="bu">print</span>(elem)
+<span class="co"># [Sortie] 1</span>
+<span class="co"># [Sortie] 5</span>
+<span class="co"># [Sortie] 7</span></code></pre></div>
+<h3 id="parcours-par-indices"><span class="header-section-number">3.4.2</span> Parcours par indices</h3>
+<p>Pour avoir acc&#232;s aux indices (positifs) de la liste, on devra utiliser un subterfuge. On sait que les indices d&#8217;une liste sont les entiers compris entre 0 (inclus) et la taille de la liste (exclu). On va donc utiliser la fonction <code class="sourceCode python"><span class="bu">range</span></code> pour cela :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+n <span class="op">=</span> <span class="bu">len</span>(l)  <span class="co"># n = 3 ici</span>
+<span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(n):
+    <span class="bu">print</span>(i)
+<span class="co"># [Sortie] 0</span>
+<span class="co"># [Sortie] 1</span>
+<span class="co"># [Sortie] 2</span></code></pre></div>
+<h3 id="parcours-par-valeurs-et-indices"><span class="header-section-number">3.4.3</span> Parcours par valeurs et indices</h3>
+<p>Dans certains cas, enfin, on a besoin de manipuler simultan&#233;ment les indices d&#8217;une listes et les valeurs associ&#233;es. Cela se fait &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">enumerate</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+<span class="cf">for</span> i, valeur <span class="op">in</span> <span class="bu">enumerate</span>(l):
+    <span class="bu">print</span>(i, valeur)
+<span class="co"># [Sortie] 0 1</span>
+<span class="co"># [Sortie] 1 5</span>
+<span class="co"># [Sortie] 2 7</span></code></pre></div>
+<p>On a donc ici une boucle <code class="sourceCode python"><span class="cf">for</span></code> pour laquelle, &#224; chaque it&#233;ration, on met &#224; jour les variables <code class="sourceCode python">i</code> (qui contient l&#8217;indice courant) et <code class="sourceCode python">valeur</code> (qui contient la valeur se trouvant &#224; l&#8217;indice <code class="sourceCode python">i</code> dans la liste <code class="sourceCode python">l</code>).</p>
+<p><strong>Exercice.</strong> &#201;crivez une fonction en Python qui permette de calculer l&#8217;argmax d&#8217;une liste, c&#8217;est-&#224;-dire l&#8217;indice auquel est stock&#233;e la valeur maximale de la liste.</p>
+<h2 id="manipulations-de-listes"><span class="header-section-number">3.5</span> Manipulations de listes</h2>
+<p>Nous pr&#233;sentons dans ce qui suit les op&#233;rations &#233;l&#233;mentaires de manipulation de listes.</p>
+<h3 id="insertion-d&#233;l&#233;ment"><span class="header-section-number">3.5.1</span> Insertion d&#8217;&#233;l&#233;ment</h3>
+<p>Pour ins&#233;rer un nouvel &#233;l&#233;ment dans une liste, il existe deux m&#233;thodes possibles :</p>
+<ul>
+<li>on peut rajouter un &#233;l&#233;ment d&#224; la fin de la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">append</code> ;</li>
+<li>on peut ins&#233;rer un &#233;l&#233;ment &#224; l&#8217;indice <code class="sourceCode python">i</code> de la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">insert</code>.</li>
+</ul>
+<p>Comme vous pouvez le remarquer, il est ici question de m&#233;thodes et non plus de fonctions. Pour l&#8217;instant, sachez que les m&#233;thodes sont des fonctions sp&#233;cifiques &#224; certains objets, comme les listes par exemples. L&#8217;appel de ces m&#233;thodes est un peu particulier, comme vous pouvez le remarquer dans ce qui suit :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+l.append(<span class="dv">2</span>)
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [1, 5, 7, 2]</span>
+l.insert(<span class="dv">2</span>, <span class="dv">0</span>)  <span class="co"># ins&#232;re la valeur 0 &#224; l&#39;indice 2</span>
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [1, 5, 0, 7, 2]</span></code></pre></div>
+<h3 id="suppression-d&#233;l&#233;ment"><span class="header-section-number">3.5.2</span> Suppression d&#8217;&#233;l&#233;ment</h3>
+<p>Si l&#8217;on souhaite, maintenant, supprimer un &#233;l&#233;ment dans une liste, deux cas de figures peuvent se pr&#233;senter :</p>
+<ul>
+<li>on peut souhaiter supprimer l&#8217;&#233;l&#233;ment situ&#233; &#224; l&#8217;indice <code class="sourceCode python">i</code> dans la liste, &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">pop</code> ;</li>
+<li>on peut souhaiter supprimer la premi&#232;re occurrence d&#8217;une valeur donn&#233;e dans la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">remove</code>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+l.pop(<span class="dv">1</span>)  <span class="co"># l&#39;&#233;l&#233;ment d&#39;indice 1 est le deuxi&#232;me &#233;l&#233;ment de la liste !</span>
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [1, 7]</span>
+l.pop()  <span class="co"># par d&#233;faut, supprime le dernier &#233;l&#233;ment de la liste</span>
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [1]</span>
+l <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">1</span>]
+l.remove(<span class="dv">1</span>)
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [7, 5]</span></code></pre></div>
+<p>On peut noter que la m&#233;thode <code class="sourceCode python">pop</code> retourne la valeur supprim&#233;e, ce qui peut s&#8217;av&#233;rer utile :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+v <span class="op">=</span> l.pop(<span class="dv">1</span>)
+<span class="bu">print</span>(v)
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] 5</span>
+<span class="co"># [Sortie] [1, 7]</span></code></pre></div>
+<h3 id="recherche-d&#233;l&#233;ment"><span class="header-section-number">3.5.3</span> Recherche d&#8217;&#233;l&#233;ment</h3>
+<p>Pour trouver l&#8217;indice de la premi&#232;re occurrence d&#8217;une valeur dans une liste, on utilisera la m&#233;thode <code class="sourceCode python">index</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+<span class="bu">print</span>(l.index(<span class="dv">7</span>))
+<span class="co"># [Sortie] 2</span></code></pre></div>
+<p>Si l&#8217;on ne cherche pas &#224; conna&#238;tre la position d&#8217;une valeur dans une liste mais simplement &#224; savoir si une valeur est pr&#233;sente dans la liste, on peut utiliser le mot-cl&#233; <code class="sourceCode python"><span class="op">in</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+<span class="cf">if</span> <span class="dv">5</span> <span class="op">in</span> l:
+    <span class="bu">print</span>(<span class="st">&quot;5 est dans l&quot;</span>)
+<span class="co"># [Sortie] 5 est dans l</span></code></pre></div>
+<h3 id="cr&#233;ation-de-listes-composites"><span class="header-section-number">3.5.4</span> Cr&#233;ation de listes composites</h3>
+<p>On peut &#233;galement concat&#233;ner deux listes (c&#8217;est-&#224;-dire mettre bout &#224; bout leur contenu) &#224; l&#8217;aide de l&#8217;op&#233;rateur <code class="sourceCode python"><span class="op">+</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+l2 <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">4</span>]
+l <span class="op">=</span> l1 <span class="op">+</span> l2
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [1, 5, 7, 3, 4]</span></code></pre></div>
+<p>Dans le m&#234;me esprit, l&#8217;op&#233;rateur <code class="sourceCode python"><span class="op">*</span></code> peut aussi &#234;tre utilis&#233; pour des listes :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>]
+l2 <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> l1
+<span class="bu">print</span>(l2)
+<span class="co"># [Sortie] [1, 5, 1, 5, 1, 5]</span></code></pre></div>
+<p>Bien entendu, vu le sens de cet op&#233;rateur, on ne peut multiplier une liste que par un entier.</p>
+<h3 id="tri-de-liste"><span class="header-section-number">3.5.5</span> Tri de liste</h3>
+<p>Enfin, on peut trier les valeurs contenues dans une liste &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">sorted</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">2</span>]
+l2 <span class="op">=</span> <span class="bu">sorted</span>(l)
+<span class="bu">print</span>(l2)
+<span class="co"># [Sortie] [2, 4, 5]</span></code></pre></div>
+<h2 id="copie-de-liste"><span class="header-section-number">3.6</span> Copie de liste</h2>
+<p>Pour la plupart des variables, en Python, la copie ne pose pas de probl&#232;me :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">a <span class="op">=</span> <span class="dv">12</span>
+b <span class="op">=</span> a
+a <span class="op">=</span> <span class="dv">5</span>
+<span class="bu">print</span>(a, b)
+<span class="co"># [Sortie] 5 12</span></code></pre></div>
+<p>Cela ne se passe pas de la m&#234;me fa&#231;on pour les listes. En effet, si <code class="sourceCode python">l</code> est une liste, lorsque l&#8217;on &#233;crit :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l2 <span class="op">=</span> l</code></pre></div>
+<p>on ne recopie pas le contenu de <code class="sourceCode python">l</code> dans <code class="sourceCode python">l2</code>, mais <code class="sourceCode python">l2</code> va &#8220;pointer&#8221; vers la m&#234;me position dans la m&#233;moire de votre ordinateur que <code class="sourceCode python">l</code>. La diff&#233;rence peut sembler mince, mais cela signifie que si l&#8217;on modifie <code class="sourceCode python">l</code> m&#234;me apr&#232;s l&#8217;instruction <code class="sourceCode python">l2 <span class="op">=</span> l</code>, la modification sera r&#233;percut&#233;e sur <code class="sourceCode python">l2</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+l2 <span class="op">=</span> l
+l[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span>
+<span class="bu">print</span>(l, l2)
+<span class="co"># [Sortie] [1, 2, 7] [1, 2, 7]</span></code></pre></div>
+<p>Lorsque l&#8217;on souhaite &#233;viter ce comportement, il faut effectuer une copie explicite de liste, &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">list</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+l2 <span class="op">=</span> <span class="bu">list</span>(l)
+l[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span>
+<span class="bu">print</span>(l, l2)
+<span class="co"># [Sortie] [1, 2, 7] [1, 5, 7]</span></code></pre></div>
+<h2 id="bonus-listes-en-compr&#233;hension"><span class="header-section-number">3.7</span> Bonus : listes en compr&#233;hension</h2>
+<p>Il est possible de cr&#233;er des listes en filtrant et/ou modifiant certains &#233;l&#233;ments d&#8217;autres listes. Supposons par exemple que l&#8217;on souhaite cr&#233;er la liste des carr&#233;s des 10 premiers entiers naturels. Le code qui suit pr&#233;sente deux fa&#231;ons &#233;quivalentes de cr&#233;er une telle liste :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Fa&#231;on &quot;classique&quot;</span>
+l <span class="op">=</span> []
+<span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
+    l.append(i <span class="op">**</span> <span class="dv">2</span>)
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
+
+<span class="co"># En utilisant les listes en compr&#233;hension</span>
+l <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span></code></pre></div>
+<p>On remarque que la syntaxe de liste en compr&#233;hension est plus compacte. On peut &#233;galement appliquer un filtre sur les &#233;l&#233;ments de la liste de d&#233;part (ici <code class="sourceCode python"><span class="bu">range</span>(<span class="dv">10</span>)</code>) &#224; consid&#233;rer &#224; l&#8217;aide du mot-cl&#233; <code class="sourceCode python"><span class="cf">if</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]
+<span class="bu">print</span>(l)
+<span class="co"># [Sortie] [0, 4, 16, 36, 64]</span></code></pre></div>
+<p>Ici, on n&#8217;a consid&#233;r&#233; que les entiers pairs.</p>
 <h1 id="les-cha&#238;nes-de-caract&#232;res"><span class="header-section-number">4</span> Les cha&#238;nes de caract&#232;res</h1>
+<p>Nous nous int&#233;ressons maintenant &#224; un autre type de donn&#233;es particulier du langage Python : les cha&#238;nes de caract&#232;res (type <code class="sourceCode python"><span class="bu">str</span></code>). Pour cr&#233;er une cha&#238;ne de caract&#232;res, il suffit d&#8217;utiliser des guillemets, simples ou doubles (les deux sont &#233;quivalents) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s1 <span class="op">=</span> <span class="st">&quot;abc&quot;</span>
+s2 <span class="op">=</span> <span class="st">&#39;bde&#39;</span></code></pre></div>
+<p>Comme pour les listes (et peut-&#234;tre m&#234;me plus encore), il est fortement conseill&#233; de se reporter &#224; l&#8217;aide en ligne d&#233;di&#233;e lorsque vous avez des doutes sur la manipulation de cha&#238;nes de caract&#232;res : <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" class="uri">https://docs.python.org/3/library/stdtypes.html#string-methods</a></p>
+<h2 id="conversion-dune-cha&#238;ne-en-nombre"><span class="header-section-number">4.1</span> Conversion d&#8217;une cha&#238;ne en nombre</h2>
+<p>Si une cha&#238;ne de caract&#232;res repr&#233;sente une valeur num&#233;rique (comme la cha&#238;ne <code class="sourceCode python"><span class="co">&#39;10.2&#39;</span></code> par exemple), on peut la transformer en un entier ou un nombre &#224; virgule, afin de l&#8217;utiliser ensuite pour des op&#233;rations arithm&#233;tiques :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&#39;10.2&#39;</span>
+f <span class="op">=</span> <span class="bu">float</span>(s)
+<span class="bu">print</span>(f)
+<span class="co"># [Sortie] 10.2</span>
+<span class="bu">print</span>(f <span class="op">==</span> s)
+<span class="co"># [Sortie] False</span>
+s <span class="op">=</span> <span class="st">&#39;10&#39;</span>
+i <span class="op">=</span> <span class="bu">int</span>(s)
+<span class="bu">print</span>(i)
+<span class="co"># [Sortie] 10</span>
+<span class="bu">print</span>(i <span class="op">==</span> s)
+<span class="co"># [Sortie] False</span></code></pre></div>
+<h2 id="analogie-avec-les-listes"><span class="header-section-number">4.2</span> Analogie avec les listes</h2>
+<p>Les cha&#238;nes de caract&#232;res se manipulent en partie comme des listes. On peut ainsi obtenir la taille d&#8217;une cha&#238;ne de caract&#232;res &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">len</span></code>, ou acc&#233;der &#224; la <span class="math inline">\(i\)</span>-&#232;me lettre d&#8217;une cha&#238;ne de caract&#232;res avec la notation <code class="sourceCode python">s[i]</code>. Comme pour les listes, il est possible d&#8217;indicer une cha&#238;ne de caract&#232;res en partant de la fin, en utilisant des indices n&#233;gatifs :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;abcdef&quot;</span>
+<span class="bu">print</span>(s[<span class="dv">0</span>])
+<span class="co"># [Sortie] a</span>
+<span class="bu">print</span>(s[<span class="op">-</span><span class="dv">1</span>])
+<span class="co"># [Sortie] f</span></code></pre></div>
+<p>De m&#234;me, on peut s&#233;lectionner des sous-parties de cha&#238;nes de caract&#232;res &#224; partir des indices de d&#233;but et de fin de la s&#233;lection. Comme pour les listes, l&#8217;indice de fin correspond au premier &#233;l&#233;ment exclu de la s&#233;lection :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;abcdef&quot;</span>
+<span class="bu">print</span>(s[<span class="dv">2</span>:<span class="dv">4</span>])
+<span class="co"># [Sortie] cd</span></code></pre></div>
+<p>Comme pour les listes, on peut concat&#233;ner deux cha&#238;nes de caract&#232;res &#224; l&#8217;aide de l&#8217;op&#233;rateur <code class="sourceCode python"><span class="op">+</span></code> ou r&#233;p&#233;ter une cha&#238;ne de caract&#232;res avec l&#8217;op&#233;rateur <code class="sourceCode python"><span class="op">*</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;ab&quot;</span> <span class="op">+</span> (<span class="st">&#39;cde&#39;</span> <span class="op">*</span> <span class="dv">3</span>)
+<span class="bu">print</span>(s)
+<span class="co"># [Sortie] abcdecdecde</span></code></pre></div>
+<p>On peut &#233;galement tester la pr&#233;sence d&#8217;une sous-cha&#238;ne de caract&#232;res dans une cha&#238;ne avec le mot-cl&#233; <code class="sourceCode python"><span class="op">in</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;abcde&quot;</span>
+<span class="bu">print</span>(<span class="st">&quot;a&quot;</span> <span class="op">in</span> s)
+<span class="co"># [Sortie] True</span>
+<span class="bu">print</span>(<span class="st">&quot;bcd&quot;</span> <span class="op">in</span> s)
+<span class="co"># [Sortie] True</span>
+<span class="bu">print</span>(<span class="st">&quot;bCd&quot;</span> <span class="op">in</span> s)
+<span class="co"># [Sortie] False</span></code></pre></div>
+<p><strong>Attention.</strong> Toutefois, l&#8217;analogie entre listes et cha&#238;nes de caract&#232;res est loin d&#8217;&#234;tre parfaite. Par exemple, on peut acc&#233;der au <span class="math inline">\(i\)</span>-&#232;me &#233;l&#233;ment d&#8217;une liste en lecture, mais pas en &#233;criture. Si <code class="sourceCode python">s</code> est une cha&#238;ne de caract&#232;res, on ne peut pas ex&#233;cuter <code class="sourceCode python">s[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&#39;c&#39;</span></code> par exemple.</p>
+<h2 id="tableau-des-principales-m&#233;thodes-de-la-classe-str"><span class="header-section-number">4.3</span> Tableau des principales m&#233;thodes de la classe <code>str</code></h2>
+<p>La liste de m&#233;thodes suivante n&#8217;est pas exhaustive, il est conseill&#233; de consulter l&#8217;aide en ligne de Python pour plus d&#8217;informations.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">M&#233;thode</th>
+<th align="center">Valeur retourn&#233;e</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code class="sourceCode python">ch.count(sub)</code></td>
+<td align="center">Nombre d&#8217;occurrences de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code class="sourceCode python">ch.endswith(suffix)</code></td>
+<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> se termine par <code class="sourceCode python">suffix</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code class="sourceCode python">ch.startswith(prefix)</code></td>
+<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> commence par <code class="sourceCode python">suffix</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code class="sourceCode python">ch.find(sub)</code></td>
+<td align="center">Indice du d&#233;but de la premi&#232;re occurrence de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code class="sourceCode python">ch.rfind(sub)</code></td>
+<td align="center">Indice du d&#233;but de la derni&#232;re occurrence de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code class="sourceCode python">ch.islower()</code></td>
+<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de caract&#232;res minuscules</td>
+</tr>
+<tr class="odd">
+<td align="center"><code class="sourceCode python">ch.isupper()</code></td>
+<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de caract&#232;res majuscules</td>
+</tr>
+<tr class="even">
+<td align="center"><code class="sourceCode python">ch.isnumeric()</code></td>
+<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de chiffres</td>
+</tr>
+<tr class="odd">
+<td align="center"><code class="sourceCode python">ch.lower()</code></td>
+<td align="center">Version minuscule de <code class="sourceCode python">ch</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code class="sourceCode python">ch.upper()</code></td>
+<td align="center">Version majuscule de <code class="sourceCode python">ch</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code class="sourceCode python">ch.replace(old, new)</code></td>
+<td align="center">Copie de <code class="sourceCode python">ch</code> dans laquelle la <em>premi&#232;re</em> occurrence de <code class="sourceCode python">old</code> a &#233;t&#233; remplac&#233;e par <code class="sourceCode python">new</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code class="sourceCode python">ch.split(sep<span class="op">=</span><span class="va">None</span>)</code></td>
+<td align="center">Liste contenant des morceaux de <code class="sourceCode python">ch</code> d&#233;coup&#233;e &#224; chaque occurrence de <code class="sourceCode python">sep</code> (n&#8217;importe quel espace par d&#233;faut)</td>
+</tr>
+<tr class="odd">
+<td align="center"><code class="sourceCode python">ch.strip()</code></td>
+<td align="center">Version &#8220;nettoy&#233;e&#8221; de <code class="sourceCode python">ch</code> dans laquelle on a enlev&#233; tous les espaces en d&#233;but et en fin de cha&#238;ne</td>
+</tr>
+</tbody>
+</table>
 <h1 id="les-dictionnaires"><span class="header-section-number">5</span> Les dictionnaires</h1>
-<h1 id="tester-son-code"><span class="header-section-number">6</span> Tester son code</h1>
-<h1 id="lecture-et-&#233;criture-de-fichiers"><span class="header-section-number">7</span> Lecture et &#233;criture de fichiers</h1>
+<p>Comme une liste, un dictionnaire est une collection de donn&#233;es. Mais, &#224; la diff&#233;rence des listes, les dictionnaires ne sont pas ordonn&#233;s (ou, tout du moins, ils le sont dans un ordre qui ne nous est pas naturel). Chaque entr&#233;e dans un dictionnaire est une association entre une <strong>cl&#233;</strong> (&#233;quivalente &#224; un indice pour une liste) et une <strong>valeur</strong>. Alors que les indices d&#8217;une liste sont forc&#233;ment les entiers compris entre 0 et la taille de la liste exclue, les cl&#233;s d&#8217;un dictionnaire sont des valeurs quelconques, la seule contrainte &#233;tant qu&#8217;on ne peut pas avoir deux fois la m&#234;me cl&#233; dans un dictionnaire. Notamment, ces cl&#233;s ne sont pas n&#233;cessairement des entiers, on utilisera en effet souvent des dictionnaires lorsque l&#8217;on souhaite stocker des valeurs associ&#233;es &#224; des cha&#238;nes de caract&#232;res (qui seront les cl&#233;s du dictionnaire).</p>
+<p>Pour d&#233;finir un dictionnaire par ses paires cl&#233;s-valeurs en Python, on peut utiliser la syntaxe suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+<span class="bu">print</span>(mon_dico)
+<span class="co"># [Sortie] {&#39;a&#39;: 123, &#39;bbb&#39;: None, &#39;z&#39;: 7}</span></code></pre></div>
+<p>On remarque ici que l&#8217;ordre dans lequel on a entr&#233; des valeurs n&#8217;est pas conserv&#233; lors de l&#8217;affichage.</p>
+<h2 id="modification-du-contenu-dun-dictionnaire"><span class="header-section-number">5.1</span> Modification du contenu d&#8217;un dictionnaire</h2>
+<p>Pour modifier la valeur associ&#233;e &#224; une cl&#233; d&#8217;un dictionnaire, la syntaxe est similaire &#224; celle utilis&#233;e pour les listes, en rempla&#231;ant les indices par les cl&#233;s :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+mon_dico[<span class="st">&quot;a&quot;</span>] <span class="op">=</span> <span class="dv">1000</span>
+<span class="bu">print</span>(mon_dico)
+<span class="co"># [Sortie] {&#39;a&#39;: 1000, &#39;bbb&#39;: None, &#39;z&#39;: 7}</span></code></pre></div>
+<p>De m&#234;me, on peut cr&#233;er une nouvelle paire cl&#233;/valeur en utilisant la m&#234;me syntaxe :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+mon_dico[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>
+<span class="bu">print</span>(mon_dico)
+<span class="co"># [Sortie] {&#39;c&#39;: -1, &#39;a&#39;: 123, &#39;bbb&#39;: None, &#39;z&#39;: 7}</span></code></pre></div>
+<p>Enfin, pour supprimer une paire cl&#233;/valeur d&#8217;un dictionnaire, on utilise le mot-cl&#233; <code class="sourceCode python"><span class="kw">del</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+<span class="kw">del</span> mon_dico[<span class="st">&quot;a&quot;</span>]
+<span class="bu">print</span>(mon_dico)
+<span class="co"># [Sortie] {&#39;bbb&#39;: None, &#39;z&#39;: 7}</span></code></pre></div>
+<h2 id="lecture-du-contenu-dun-dictionnaire"><span class="header-section-number">5.2</span> Lecture du contenu d&#8217;un dictionnaire</h2>
+<p>Pour lire la valeur associ&#233;e &#224; une cl&#233; du dictionnaire, on peut utiliser la m&#234;me syntaxe que pour les listes :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+<span class="bu">print</span>(mon_dico[<span class="st">&quot;a&quot;</span>])
+<span class="co"># [Sortie] 123</span></code></pre></div>
+<p>Par contre, si la cl&#233; demand&#233;e n&#8217;existe pas, cela g&#233;n&#232;rera une erreur. Pour &#233;viter cela, on peut utiliser la m&#233;thode <code class="sourceCode python">get</code> qui permet de d&#233;finir une valeur par d&#233;faut &#224; retourner si la cl&#233; n&#8217;existe pas :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+<span class="bu">print</span>(mon_dico.get(<span class="st">&quot;a&quot;</span>, <span class="dv">0</span>))
+<span class="co"># [Sortie] 123</span>
+<span class="bu">print</span>(mon_dico.get(<span class="st">&quot;b&quot;</span>, <span class="dv">0</span>))
+<span class="co"># [Sortie] 0</span></code></pre></div>
+<h2 id="parcours-dun-dictionnaire"><span class="header-section-number">5.3</span> Parcours d&#8217;un dictionnaire</h2>
+<p>Pour parcourir le contenu d&#8217;un dictionnaire, il existe, comme pour les listes, trois possibilit&#233;s.</p>
+<h3 id="parcours-par-valeurs-1"><span class="header-section-number">5.3.1</span> Parcours par valeurs</h3>
+<p>Si l&#8217;on souhaite uniquement acc&#233;der aux valeurs stock&#233;es dans le dictionnaire, on utilisera la m&#233;thode <code class="sourceCode python">values</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+<span class="cf">for</span> val <span class="op">in</span> mon_dico.values():
+    <span class="bu">print</span>(val)
+<span class="co"># [Sortie] 123</span>
+<span class="co"># [Sortie] None</span>
+<span class="co"># [Sortie] 7</span></code></pre></div>
+<h3 id="parcours-par-cl&#233;s"><span class="header-section-number">5.3.2</span> Parcours par cl&#233;s</h3>
+<p>Si l&#8217;on souhaite uniquement acc&#233;der aux cl&#233;s stock&#233;es dans le dictionnaire, on utilisera la m&#233;thode <code class="sourceCode python">keys</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+<span class="cf">for</span> cle <span class="op">in</span> mon_dico.keys():
+    <span class="bu">print</span>(cle)
+<span class="co"># [Sortie] a</span>
+<span class="co"># [Sortie] bbb</span>
+<span class="co"># [Sortie] z</span></code></pre></div>
+<h3 id="parcours-par-couples-cl&#233;svaleurs"><span class="header-section-number">5.3.3</span> Parcours par couples cl&#233;s/valeurs</h3>
+<p>Si l&#8217;on souhaite acc&#233;der simultan&#233;ment aux cl&#233;s stock&#233;es dans le dictionnaire et aux valeurs associ&#233;es, on utilisera la m&#233;thode <code class="sourceCode python">items</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
+<span class="cf">for</span> cle, valeur <span class="op">in</span> mon_dico.items():
+    <span class="bu">print</span>(cle, valeur)
+<span class="co"># [Sortie] a 123</span>
+<span class="co"># [Sortie] bbb None</span>
+<span class="co"># [Sortie] z 7</span></code></pre></div>
+<p><strong>Exercice.</strong> &#201;crivez un programme Python qui compte le nombre d&#8217;occurrences de chacun des mots d&#8217;une cha&#238;ne de caract&#232;res et stocke le r&#233;sultat dans un dictionnaire :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;la vie est belle c&#39;est la vie&quot;</span>
+<span class="co"># [...]</span>
+<span class="bu">print</span>(d)
+<span class="co"># [Sortie] {&quot;c&#39;est&quot;: 1, &#39;la&#39;: 2, &#39;belle&#39;: 1, &#39;est&#39;: 1, &#39;vie&#39;: 2}</span></code></pre></div>
+<h1 id="lecture-et-&#233;criture-de-fichiers-textuels"><span class="header-section-number">6</span> Lecture et &#233;criture de fichiers textuels</h1>
+<p>Dans ce chapitre, nous nous int&#233;ressons &#224; la lecture/&#233;criture de fichiers textes par un programme Python. Un premier &#233;l&#233;ment qu&#8217;il est n&#233;cessaire de ma&#238;triser pour lire ou &#233;crire des fichiers textes est la notion d&#8217;encodage. Il faut savoir qu&#8217;il existe plusieurs fa&#231;ons d&#8217;encoder un texte. Nousnous focaliserons ici sur les deux encodages que vous &#234;tes les plus susceptibles de rencontrer (mais sachez qu&#8217;il en existe bien d&#8217;autres) :</p>
+<ul>
+<li>l&#8217;encodage Unicode 8 bits (UTF-8), dont le code en python est <code class="sourceCode python"><span class="co">&quot;utf-8&quot;</span></code> ;</li>
+<li>l&#8217;encodage Latin-1 (ISO-8859-1) dont le code en python est <code class="sourceCode python"><span class="co">&quot;iso-8859-1&quot;</span></code>.</li>
+</ul>
+<p>La principale diff&#233;rence entre ces deux encodage r&#233;side dans leur fa&#231;on d&#8217;&#233;crire les accents. Ainsi, si le texte que vous lisez/&#233;crivez ne contient aucun accent ou caract&#232;res sp&#233;cial, il est probable que la question de l&#8217;encodage ne soit pas probl&#233;matique dans votre cas. Au contraire, s&#8217;il est possible que vous utilisiez de tels caract&#232;res, il faudra bien faire attention &#224; l&#8217;encodage utilis&#233;, que vous sp&#233;cifierez &#224; l&#8217;ouverture du fichier. Si votre programme doit lire un fichier, il faudra donc vous assurer de l&#8217;encodage associ&#233; &#224; ce fichier (en l&#8217;ouvrant par exemple avec un &#233;diteur de texte qui soit suffisamment avanc&#233; pour vous fournir cette information). Si vous &#233;crivez un programme qui &#233;crit un fichier, il vous faudra vous poser la question de l&#8217;utilisation future qui sera faite de ce fichier : s&#8217;il est amen&#233; &#224; &#234;tre ouvert par un autre utilisateur, il serait pertinent de vous demander quel encodage sera le moins probl&#233;matique pour cet utilisateur, par exemple.</p>
+<p>Si vous n&#8217;avez pas de contrainte ext&#233;rieure pour ce qui est de l&#8217;encodage, vous utiliserez l&#8217;encodage UTF-8 par d&#233;faut.</p>
+<h2 id="lecture-de-fichiers-textuels"><span class="header-section-number">6.1</span> Lecture de fichiers textuels</h2>
+<p>Ce que nous apellons lecture de fichiers textuels en Python consiste &#224; copier le contenu d&#8217;un fichier dans une (ou plusieurs) cha&#238;ne(s) de caract&#232;res. Cela implique deux &#233;tapes en Python :</p>
+<ol style="list-style-type: decimal">
+<li>ouvrir le fichier en lecture ;</li>
+<li>parcourir le contenu du fichier.</li>
+</ol>
+<p>La premi&#232;re &#233;tape d&#8217;ouverture du fichier en lecture est commune &#224; tous les fichiers textuels. En supposant que le nom du fichier &#224; ouvrir est stock&#233; sous forme de cha&#238;ne de caract&#232;res dans la variable <code class="sourceCode python">nom_fichier</code>, le code suivant ouvre un fichier en lecture avec l&#8217;encodage UTF-8 et stocke dans la variable <code class="sourceCode python">fp</code> un pointeur sur l&#8217;endroit o&#249; nous sommes rendus dans notre lecture du fichier (pour l&#8217;instant, le d&#233;but du fichier) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)</code></pre></div>
+<p>Le second argument (<code class="sourceCode python"><span class="co">&quot;r&quot;</span></code>) indique que le fichier doit &#234;tre ouvert en mode <em>read</em>, donc en lecture.</p>
+<h3 id="fichiers-textuels-g&#233;n&#233;riques"><span class="header-section-number">6.1.1</span> Fichiers textuels g&#233;n&#233;riques</h3>
+<p>Une fois le fichier ouvert en lecture, on peut le lire ligne par ligne &#224; l&#8217;aide de la boucle suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)
+<span class="cf">for</span> ligne <span class="op">in</span> fp.readlines():
+    <span class="bu">print</span>(ligne)</code></pre></div>
+<p>Ici, la variable <code class="sourceCode python">ligne</code>, de type cha&#238;ne de caract&#232;res, contiendra successivement le texte de chacune des lignes du fichier consid&#233;r&#233;.</p>
+<h3 id="fichiers-comma-separated-values-csv"><span class="header-section-number">6.1.2</span> Fichiers <em>Comma-Separated Values</em> (CSV)</h3>
+<p>Les fichiers <em>Comma-Separated Values</em> (CSV) permettent de stocker des donn&#233;es organis&#233;es sous la forme de tableaux dans des fichiers textuels. &#192; l&#8217;origine, ces fichiers &#233;taient organis&#233;es par ligne et au sein de chaque ligne les cellules du tableau (correspondant aux diff&#233;rentes colonnes) &#233;taient s&#233;par&#233;es par des virgules (d&#8217;o&#249; le nom de ce type de fichiers). Aujourd&#8217;hui, la d&#233;finition de ce format (<a href="https://tools.ietf.org/html/rfc4180">lien</a>) est plus g&#233;n&#233;rale que cela et diff&#233;rents d&#233;limiteurs sont accept&#233;s. Pour manipuler ces fichiers, il existe en Python un module d&#233;di&#233;, appel&#233; <code class="sourceCode python">csv</code>. Ce module contient notamment une fonction <code class="sourceCode python">reader</code> permettant de simplifier la lecture de fichiers CSV. La syntaxe d&#8217;utilisation de cette fonction est la suivante (vous remarquerez la pr&#233;sence de l&#8217;attribut <code class="sourceCode python">delimiter</code>) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> csv
+
+nom_fichier <span class="op">=</span> <span class="st">&quot;...&quot;</span> <span class="co"># &#192; remplacer par le chemin vers le fichier :)</span>
+
+<span class="co"># Contenu suppos&#233; du fichier :</span>
+<span class="co"># 1;2;3</span>
+<span class="co"># a;b</span>
+
+fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)
+<span class="cf">for</span> ligne <span class="op">in</span> csv.reader(fp, delimiter<span class="op">=</span><span class="st">&quot;;&quot;</span>):
+    <span class="cf">for</span> cellule <span class="op">in</span> ligne:
+        <span class="bu">print</span>(cellule)
+    <span class="bu">print</span>(<span class="st">&quot;Fin de ligne&quot;</span>)
+<span class="co"># [Sortie] 1</span>
+<span class="co"># [Sortie] 2</span>
+<span class="co"># [Sortie] 3</span>
+<span class="co"># [Sortie] Fin de ligne</span>
+<span class="co"># [Sortie] a</span>
+<span class="co"># [Sortie] b</span>
+<span class="co"># [Sortie] Fin de ligne</span></code></pre></div>
+<p>On remarque ici que, contrairement au cas de fichiers textuels g&#233;n&#233;riques, la variable de boucle <code class="sourceCode python">ligne</code> n&#8217;est plus une cha&#238;ne de caract&#232;res mais une liste de cha&#238;nes de caract&#232;res. Les &#233;l&#233;ments de cette liste sont les cellules du tableau repr&#233;sent&#233; par le fichier CSV.</p>
+<h2 id="&#233;criture-de-fichiers-textuels"><span class="header-section-number">6.2</span> &#201;criture de fichiers textuels</h2>
+<p>Ce que nous apellons &#233;criture de fichiers textuels en Python consiste &#224; copier le contenu d&#8217;une (ou plusieurs) cha&#238;ne(s) de caract&#232;res dans un fichier. Cela implique deux &#233;tapes en Python :</p>
+<ol style="list-style-type: decimal">
+<li>ouvrir le fichier en &#233;criture ;</li>
+<li>ajouter du contenu dans le fichier.</li>
+</ol>
+<p>La premi&#232;re &#233;tape d&#8217;ouverture du fichier en &#233;criture est commune &#224; tous les fichiers textuels. En supposant que le nom du fichier &#224; ouvrir est stock&#233; sous forme de cha&#238;ne de caract&#232;res dans la variable <code class="sourceCode python">nom_fichier</code>, le code suivant ouvre un fichier en &#233;criture avec l&#8217;encodage UTF-8 et stocke dans la variable <code class="sourceCode python">fp</code> un pointeur sur l&#8217;endroit o&#249; nous sommes rendus dans notre &#233;criture du fichier (pour l&#8217;instant, le d&#233;but du fichier) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>, newline<span class="op">=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</code></pre></div>
+<p>Le second argument (<code class="sourceCode python"><span class="co">&quot;w&quot;</span></code>) indique que le fichier doit &#234;tre ouvert en mode <em>write</em>, donc en &#233;criture.</p>
+<p>Si le fichier en question existait d&#233;j&#224;, son contenu est tout d&#8217;abord &#233;cras&#233; et on repart d&#8217;un fichier vide. Si l&#8217;on souhaite au contraire ajouter du texte &#224; la fin d&#8217;un fichier existant, on utilisera le mode <em>append</em>, symbolis&#233; par la lettre <code class="sourceCode python"><span class="co">&quot;a&quot;</span></code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;a&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>, newline<span class="op">=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</code></pre></div>
+<h3 id="fichiers-textuels-g&#233;n&#233;riques-1"><span class="header-section-number">6.2.1</span> Fichiers textuels g&#233;n&#233;riques</h3>
+<p>Pour ajouter du contenu &#224; un fichier point&#233; par la variable <code class="sourceCode python">fp</code>, il suffit ensuite d&#8217;utiliser la m&#233;thode <code class="sourceCode python">write</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp.write(<span class="st">&quot;La vie est belle</span><span class="ch">\n</span><span class="st">&quot;</span>)</code></pre></div>
+<p>Notez que, contrairement &#224; la fonction <code class="sourceCode python"><span class="bu">print</span></code> &#224; laquelle vous &#234;tes habitu&#233;, la m&#233;thode <code class="sourceCode python">write</code> ne rajoute pas de caract&#232;re de fin de ligne apr&#232;s la cha&#238;ne de caract&#232;res pass&#233;e en argument, il faut donc inclure ce caract&#232;re <code class="sourceCode python"><span class="co">&quot;\n&quot;</span></code> &#224; la fin de la cha&#238;ne de caract&#232;res pass&#233;e en argument, si vous souhaitez inclure un retour &#224; la ligne.</p>
+<h3 id="fichiers-csv"><span class="header-section-number">6.2.2</span> Fichiers CSV</h3>
+<p>Le module <code class="sourceCode python">csv</code> d&#233;j&#224; cit&#233; plus haut contient &#233;galement une fonction <code class="sourceCode python">writer</code> permettant de simplifier l&#8217;&#233;criture de fichiers CSV. La syntaxe d&#8217;utilisation de cette fonction est la suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> csv
+
+nom_fichier <span class="op">=</span> <span class="st">&quot;...&quot;</span> <span class="co"># &#192; remplacer par le chemin vers le fichier :)</span>
+
+fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>, newline<span class="op">=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)
+csvfp <span class="op">=</span> csv.writer(fp, delimiter<span class="op">=</span><span class="st">&quot;;&quot;</span>):
+csvfp.writerow([<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>])
+csvfp.writerow([<span class="dv">2</span>, <span class="dv">3</span>])
+<span class="co"># Apr&#232;s cela, le fichier contiendra les lignes suivantes :</span>
+<span class="co"># 1;5;7</span>
+<span class="co"># 2;3</span></code></pre></div>
+<p>La m&#233;thode <code class="sourceCode python">writerow</code> prend dnc une liste en argument et &#233;crit dans le fichier les &#233;l&#233;ments de cette liste, s&#233;par&#233;s par le d&#233;limiteur <code class="sourceCode python"><span class="co">&quot;;&quot;</span></code> sp&#233;cifi&#233; lors de l&#8217;appel &#224; la fonction <code class="sourceCode python">writer</code>.</p>
+<h2 id="manipulation-de-fichiers-en-python-avec-le-module-os"><span class="header-section-number">6.3</span> Manipulation de fichiers en Python avec le module <code>os</code></h2>
+<p>Lorsque l&#8217;on lit ou &#233;crit des fichiers, il est fr&#233;quent de vouloir r&#233;p&#233;ter la m&#234;me op&#233;ration sur plusieurs fichiers, par exemple sur tous les fichiers avec l&#8217;extension <code class="sourceCode python"><span class="co">&quot;.txt&quot;</span></code> d&#8217;un r&#233;pertoire donn&#233;. Pour ce faire, on peut utiliser en Python le module <code class="sourceCode python">os</code> qui propose un certain nombre de fonctions standard de manipulation de fichiers. On utilisera notamment la fonction <code class="sourceCode python">listdir</code> de ce module qui permet de lister l&#8217;ensemble des fichiers et sous-r&#233;pertoires contenus dans un r&#233;pertoire donn&#233; :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
+
+<span class="cf">for</span> nom_fichier <span class="op">in</span> os.listdir(<span class="st">&quot;donnees&quot;</span>):
+    <span class="bu">print</span>(nom_fichier)</code></pre></div>
+<p>La fonction <code class="sourceCode python">listdir</code> peut prendre indiff&#233;remment un chemin absolu ou relatif (dans notre exemple, il s&#8217;agit d&#8217;un chemin relatif qui pointe sur le sous-r&#233;pertoire <code class="sourceCode python"><span class="co">&quot;donnees&quot;</span></code> contenu dans le r&#233;pertoire de travail courant du programme).</p>
+<p>Si vous ex&#233;cutez le code ci-dessus et que votre r&#233;pertoire <code class="sourceCode python"><span class="co">&quot;donnees&quot;</span></code> n&#8217;est pas vide, vous remarquerez que le nom du fichier stock&#233; dans la variable <code class="sourceCode python">nom_fichier</code> ne contient pas le chemin vers ce fichier. Or, si l&#8217;on souhaite ensuite ouvrir ce fichier (que ce soit en lecture ou en &#233;criture), il faudra bien sp&#233;cifier ce chemin. Pour cela, on utilisera la syntaxe suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
+
+repertoire <span class="op">=</span> <span class="st">&quot;donnees&quot;</span>
+<span class="cf">for</span> nom_fichier <span class="op">in</span> os.listdir(repertoire):
+    nom_complet_fichier <span class="op">=</span> os.path.join(repertoire, nom_fichier)
+    <span class="bu">print</span>(nom_fichier)
+    <span class="bu">print</span>(nom_complet_fichier)
+    fp <span class="op">=</span> <span class="bu">open</span>(nom_complet_fichier, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)
+    <span class="co"># [...]</span></code></pre></div>
+<p>La fonction <code class="sourceCode python">path.join</code> du module <code class="sourceCode python">os</code> permet d&#8217;obtenir le chemin complet vers le fichier &#224; partir du nom du r&#233;pertoire dans lequel il se trouve et du nom du fichier isol&#233;. Il est pr&#233;f&#233;rable d&#8217;utiliser cette fonction plut&#244;t que d&#8217;effectuer la concat&#233;nation des cha&#238;nes de caract&#232;res correspondantes car la forme des chemins complets d&#233;pend du syst&#232;me d&#8217;exploitation utilis&#233;, ce que g&#232;re intelligemment <code class="sourceCode python">path.join</code>.</p>
+<h1 id="tester-son-code"><span class="header-section-number">7</span> Tester son code</h1>
+<p>Dans ce document, nous avons jusqu&#8217;&#224; pr&#233;sent suppos&#233; que tout se passait bien, que votre code ne retournait jamais d&#8217;erreur et qu&#8217;il ne contenait jamais de <em>bug</em>. Quel que soit votre niveau d&#8217;expertise en Python, ces deux hypoth&#232;ses sont peu r&#233;alistes. Nous allons donc nous int&#233;resser maintenant aux moyens de v&#233;rifier si votre code fait bien ce qu&#8217;on attend de lui et de mieux comprendre son comportement lorsque ce n&#8217;est pas le cas.</p>
+<h2 id="les-erreurs-en-python"><span class="header-section-number">7.1</span> Les erreurs en Python</h2>
+<p>&#201;tudions ce qu&#8217;il se passe lors de l&#8217;ex&#233;cution du code suivant :</p>
+<div class="sourceCode"><table class="sourceCode python numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+</pre></td><td class="sourceCode"><pre><code class="sourceCode python">x <span class="op">=</span> <span class="st">&quot;12&quot;</span>
+y <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></code></pre></td></tr></table></div>
+<p>Nous obtenons la sortie suivante :</p>
+<pre class="python-traceback"><code>Traceback (most recent call last):
+  File &quot;[...]&quot;, line 2, in &lt;module&gt;
+    y = x + 2
+TypeError: Can&#39;t convert &#39;int&#39; object to str implicitly</code></pre>
+<p>Ce type de message d&#8217;erreur ne doit pas vous effrayer, il est l&#224; pour vous aider. Il vous fournit de pr&#233;cieuses informations :</p>
+<ol style="list-style-type: decimal">
+<li>l&#8217;erreur se produit &#224; la ligne 2 de votre script Python ;</li>
+<li>le probl&#232;me est que Python ne peut pas convertir un objet de type <code class="sourceCode python"><span class="bu">int</span></code> en cha&#238;ne de caract&#232;res (<code class="sourceCode python"><span class="bu">str</span></code>) de mani&#232;re implicite.</li>
+</ol>
+<p>Reste &#224; se demander pourquoi, dans le ca pr&#233;sent, Python voudrait transformer un entier en cha&#238;ne de caract&#232;res. Pour le comprendre, rendons-nous &#224; la ligne 2 de notre script et d&#233;cortiquons-la. Dans cette ligne (<code class="sourceCode python">y <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></code>), deux op&#233;rations sont effectu&#233;es :</p>
+<ul>
+<li>la premi&#232;re consiste &#224; effectuer l&#8217;op&#233;ration <code class="sourceCode python"><span class="op">+</span></code> entre les op&#233;randes <code class="sourceCode python">x</code> et <code>2</code> ;</li>
+<li>la seconde consiste &#224; assigner le r&#233;sultat de l&#8217;op&#233;ration &#224; la variable <code class="sourceCode python">y</code>.</li>
+</ul>
+<p>Nous avons vu dans ce document que Python savait effectuer l&#8217;op&#233;ration <code class="sourceCode python"><span class="op">+</span></code> avec des op&#233;randes de types vari&#233;s (nombre <code class="sourceCode python"><span class="op">+</span></code> nombre, liste <code class="sourceCode python"><span class="op">+</span></code> liste, cha&#238;ne de caract&#232;res <code class="sourceCode python"><span class="op">+</span></code> cha&#238;ne de caract&#232;res, et il en existe d&#8217;autres). Int&#233;ressons-nous ici au type des op&#233;randes consid&#233;r&#233;es. La variable <code class="sourceCode python">x</code> telle que d&#233;finie &#224; la ligne 1 est de type cha&#238;ne de caract&#232;res. La valeur <code class="sourceCode python"><span class="dv">2</span></code> est de type entier. Il se trouve que Python n&#8217;a pas d&#233;fini d&#8217;addition entre cha&#238;ne de caract&#232;res et entier et c&#8217;est pour cela que l&#8217;on obtient une erreur. Plus pr&#233;cis&#233;ment, l&#8217;interpr&#233;teur Python nous dit : &#8220;si je pouvais convertir la valeur enti&#232;re en cha&#238;ne de caract&#232;res &#224; la vol&#233;e, je pourrais faire l&#8217;op&#233;ration <code class="sourceCode python"><span class="op">+</span></code> qui serait alors une concat&#233;nation, mais je ne me permets pas de le faire tant que vous ne l&#8217;avez pas &#233;crit de mani&#232;re explicite&#8221;.</p>
+<h2 id="les-tests-unitaires"><span class="header-section-number">7.2</span> Les tests unitaires</h2>
+<p>Pour pouvoir &#234;tre s&#251;r du code que vous &#233;crivez, il faut l&#8217;avoir test&#233; sur un ensemble d&#8217;exemples qui vous semble refl&#233;ter l&#8217;ensemble des cas de figures auxquels votre programme pourra &#234;tre confront&#233;. Or, cela repr&#233;sente un nombre de cas de figures tr&#232;s important d&#232;s lors que l&#8217;on commence &#224; &#233;crire des programmes un tant soit peu complexes. Ainsi, il est hautement recommand&#233; de d&#233;couper son code en fonctions de taille raisonnables et qui puissent &#234;tre test&#233;es ind&#233;pendamment. Les tests associ&#233;s &#224; chacune de ces fonctions sont appel&#233;s <strong>tests unitaires</strong>. Tout d&#8217;abord, en mettant en place de tels tests, vous pourrez d&#233;tecter rapidement un &#233;ventuel <em>bug</em> dans votre code et ainsi gagner beaucoup de temps de d&#233;veloppement. De plus, vous pourrez &#233;galement vous assurer que les modifications ult&#233;rieures de votre code ne modifient pas son comportement pour les cas test&#233;s. En effet, lorsque l&#8217;on ajoute une fonctionnalit&#233; &#224; un code informatique, il faut avant toute choses s&#8217;assurer que celle-ci ne cassera pas le bon fonctionnement du code dans les cas classiques d&#8217;utilisation pour lesquels il avait &#233;t&#233; &#224; l&#8217;origine con&#231;u.</p>
+<p>Prenons maintenant un exemple concret. Supposons que l&#8217;on souhaite &#233;crire une fonction <code class="sourceCode python">bissextile</code> capable de dire si une ann&#233;e est bissextile ou non. En se renseignant sur <a href="https://fr.wikipedia.org/wiki/Ann&#233;e_bissextile">le sujet</a>, on apprend qu&#8217;une ann&#233;e est bissextile si :</p>
+<ul>
+<li>si elle est divisible par 4 et non divisible par 100, ou</li>
+<li>si elle est divisible par 400.</li>
+</ul>
+<p>On en d&#233;duit un ensemble de tests adapt&#233;s :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(bissextile(<span class="dv">2004</span>))  <span class="co"># True car divisible par 4 et non par 100</span>
+<span class="bu">print</span>(bissextile(<span class="dv">1900</span>))  <span class="co"># False car divisible par 100 et non par 400</span>
+<span class="bu">print</span>(bissextile(<span class="dv">2000</span>))  <span class="co"># True car divisible par 400</span>
+<span class="bu">print</span>(bissextile(<span class="dv">1999</span>))  <span class="co"># False car divisible ni par 4 ni par 100</span></code></pre></div>
+<p>On peut alors v&#233;rifier que le comportement de notre fonction <code class="sourceCode python">bissextile</code> est bien conforme &#224; ce qui est attendu.</p>
+<h2 id="le-d&#233;veloppement-pilot&#233;-par-les-tests"><span class="header-section-number">7.3</span> Le d&#233;veloppement pilot&#233; par les tests</h2>
+<p>Le d&#233;veloppement pilot&#233; par les tests (ou <em>Test-Driven Development</em>) est une technique de programmation qui consiste &#224; r&#233;diger les tests unitaires de votre code avant m&#234;me de r&#233;diger le code lui-m&#234;me.</p>
+<p>L&#8217;int&#233;r&#234;t de cette fa&#231;on de faire est qu&#8217;elle vous obligera &#224; r&#233;fl&#233;chir aux diff&#233;rents cas d&#8217;utilisation d&#8217;une fonction avant de commencer &#224; la coder. De plus, une fois ces diff&#233;rents cas identifi&#233;s, il est probable que la structure globale de la fonction &#224; coder vous apparaisse plus clairement.</p>
+<p>Si l&#8217;on reprend l&#8217;exemple de la fonction <code class="sourceCode python">bissextile</code> cit&#233;e plus haut, on voit assez clairement qu&#8217;une fois que l&#8217;on a r&#233;dig&#233; l&#8217;ensemble de tests, la fonction sera simple &#224; coder et reprendra les diff&#233;rents cas consid&#233;r&#233;s pour les tests:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bissextile(annee):
+    <span class="cf">if</span> annee <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> annee <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:
+        <span class="cf">return</span> <span class="va">True</span>
+    <span class="cf">elif</span> annee <span class="op">%</span> <span class="dv">400</span>:
+        <span class="cf">return</span> <span class="va">True</span>
+    <span class="cf">else</span>:
+        <span class="cf">return</span> <span class="va">False</span></code></pre></div>
+<p><strong>Exercice.</strong> En utilisant les m&#233;thodes de d&#233;veloppement pr&#233;conis&#233;es dans ce chapitre, r&#233;digez le code et les tests d&#8217;un programme permettant de d&#233;terminer le lendemain d&#8217;une date fournie sous la forme de trois entiers (jour, mois, ann&#233;e).</p>
+<h1 id="conclusion"><span class="header-section-number">8</span> Conclusion</h1>
+<p>Dans ce document, nous avons abord&#233; les principes de base de la programmation en Python, tels qu&#8217;enseign&#233;s &#224; des &#233;tudiants non informaticiens de niveau Licence 2 (&#224; l&#8217;Universit&#233; de Rennes 2).</p>
+<p>Comme indiqu&#233; en introduction, ce document se veut &#233;volutif. N&#8217;h&#233;sitez donc pas &#224; faire vos remarques &#224; son auteur dont vous trouverez le contact sur <a href="http://people.irisa.fr/Romain.Tavenard/">sa page web</a>.</p>
 </body>
 </html>

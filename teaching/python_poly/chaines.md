@@ -71,22 +71,20 @@ Toutefois, l'analogie entre listes et chaînes de caractères est loin d'être p
 Par exemple, on peut accéder au $i$-ème élément d'une liste en lecture, mais pas en écriture.
 Si `s`{.python} est une chaîne de caractères, on ne peut pas exécuter `s[2] = 'c'`{.python} par exemple.
 
-## Tableau des principales méthodes de la classe `str`
+## Principales méthodes de la classe `str`
 
 La liste de méthodes suivante n'est pas exhaustive, il est conseillé de consulter l'aide en ligne de Python pour plus d'informations.
 
-| Méthode | Valeur retournée |
-|:---:|:---:|
-| `ch.count(sub)`{.python} | Nombre d'occurrences de `sub`{.python} dans `ch`{.python} |
-| `ch.endswith(suffix)`{.python} | `True`{.python} si `ch`{.python} se termine par `suffix`{.python} |
-| `ch.startswith(prefix)`{.python} | `True`{.python} si `ch`{.python} commence par `suffix`{.python} |
-| `ch.find(sub)`{.python} | Indice du début de la première occurrence de `sub`{.python} dans `ch`{.python} |
-| `ch.rfind(sub)`{.python} | Indice du début de la dernière occurrence de `sub`{.python} dans `ch`{.python} |
-| `ch.islower()`{.python} | `True`{.python} si `ch`{.python} est constituée uniquement de caractères minuscules |
-| `ch.isupper()`{.python} | `True`{.python} si `ch`{.python} est constituée uniquement de caractères majuscules |
-| `ch.isnumeric()`{.python} | `True`{.python} si `ch`{.python} est constituée uniquement de chiffres |
-| `ch.lower()`{.python} | Version minuscule de `ch`{.python} |
-| `ch.upper()`{.python} | Version majuscule de `ch`{.python} |
-| `ch.replace(old, new)`{.python} | Copie de `ch`{.python} dans laquelle la _première_ occurrence de `old`{.python} a été remplacée par `new`{.python} |
-| `ch.split(sep=None)`{.python} | Liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (n'importe quel espace par défaut) |
-| `ch.strip()`{.python} | Version "nettoyée" de `ch`{.python} dans laquelle on a enlevé tous les espaces en début et en fin de chaîne |
+* `ch.count(sub)`{.python}: Nombre d'occurrences de `sub`{.python} dans `ch`{.python}
+* `ch.endswith(suffix)`{.python}: `True`{.python} si `ch`{.python} se termine par `suffix`{.python}
+* `ch.startswith(prefix)`{.python}: `True`{.python} si `ch`{.python} commence par `suffix`{.python}
+* `ch.find(sub)`{.python}: Indice du début de la première occurrence de `sub`{.python} dans `ch`{.python}
+* `ch.rfind(sub)`{.python}: Indice du début de la dernière occurrence de `sub`{.python} dans `ch`{.python}
+* `ch.islower()`{.python}: `True`{.python} si `ch`{.python} est constituée uniquement de caractères minuscules
+* `ch.isupper()`{.python}: `True`{.python} si `ch`{.python} est constituée uniquement de caractères majuscules
+* `ch.isnumeric()`{.python}: `True`{.python} si `ch`{.python} est constituée uniquement de chiffres
+* `ch.lower()`{.python}: Version minuscule de `ch`{.python}
+* `ch.upper()`{.python}: Version majuscule de `ch`{.python}
+* `ch.replace(old, new)`{.python}: Copie de `ch`{.python} dans laquelle la _première_ occurrence de `old`{.python} a été remplacée par `new`{.python}
+* `ch.split(sep=None)`{.python}: Liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (n'importe quel espace par défaut)
+* `ch.strip()`{.python}: Version "nettoyée" de `ch`{.python} dans laquelle on a enlevé tous les espaces en début et en fin de chaîne

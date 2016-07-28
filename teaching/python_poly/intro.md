@@ -8,7 +8,7 @@ Durant la lecture de ce polycopié, vous trouverez des blocs de code tels que ce
 ```python
 def f(v):
 	return v ** 2
-	
+
 x = 5
 y = f(3 * x + 2)
 print(y)
@@ -17,5 +17,25 @@ print(y)
 
 Nous prendrons notamment l'habitude de reporter les valeurs affichées par l'exécution du programme considéré dans un terminal avec la syntaxe utilisée à la dernière ligne du code ci-dessus.
 
-**TODO : quelques mots sur langage interprété, console Python vs script ? dire aussi que les exemples considérés ici se basent sur Python3 ? (notamment pour les histoires de division d'entiers)**
+Dans ce document, nous allons donc nous intéresser au langage Python.
+Pour tester les exemples présentés au fil de ce document ou réaliser les exercices proposés, vous aurez deux possibilités.
+La première consiste à ouvrir une **console Python**, à l'aide de la commande suivante (si vous êtes sous Unix, en supposant que le symbole `$` correspond au prompt de votre _shell_) :
+```
+$ python
+Python 3.5.1 (default, Dec  9 2015, 11:28:16)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.1.76)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
 
+Lors de l'exécution de cette commande, on peut remarquer plusieurs choses.
+Tout d'abord, au démarrage, la console Python nous indique la version de Python qui est exécutée.
+Cela est important, car il existe notamment une importante différence entre les versions 2 (2.x.y) et 3 (3.x.y) de Python.
+Dans ce document, nous supposons l'utilisation de Python dans sa version 3, comme dans la console affichée plus haut.
+Enfin, une fois la console démarée, on voit apparaître un prompt Python (`>>>`) qui indique que vous pouvez, à partir de ce point, entrer du code Python et en demander l'exécution en appuyant sur la touche _retour chariot_ (ou "Entrée") de votre clavier.
+
+L'autre façon de programmer en Python, plus adaptée dès lors que l'on souhaite conserver une trace de ce qu'on a écrit, consiste à enregistrer vos commandes dans un fichier texte (en respectant la convention qui consiste à utiliser l'extension `.py` pour le nom de fichier) puis à faire exécuter votre programme par l'interpréteur Python :
+```
+$ python nom_de_mon_fichier.py
+[...]
+```

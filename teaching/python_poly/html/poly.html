@@ -86,7 +86,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#les-cha&#238;nes-de-caract&#232;res"><span class="toc-section-number">4</span> Les cha&#238;nes de caract&#232;res</a><ul>
 <li><a href="#conversion-dune-cha&#238;ne-en-nombre"><span class="toc-section-number">4.1</span> Conversion d&#8217;une cha&#238;ne en nombre</a></li>
 <li><a href="#analogie-avec-les-listes"><span class="toc-section-number">4.2</span> Analogie avec les listes</a></li>
-<li><a href="#tableau-des-principales-m&#233;thodes-de-la-classe-str"><span class="toc-section-number">4.3</span> Tableau des principales m&#233;thodes de la classe <code>str</code></a></li>
+<li><a href="#principales-m&#233;thodes-de-la-classe-str"><span class="toc-section-number">4.3</span> Principales m&#233;thodes de la classe <code>str</code></a></li>
 </ul></li>
 <li><a href="#les-dictionnaires"><span class="toc-section-number">5</span> Les dictionnaires</a><ul>
 <li><a href="#modification-du-contenu-dun-dictionnaire"><span class="toc-section-number">5.1</span> Modification du contenu d&#8217;un dictionnaire</a></li>
@@ -121,13 +121,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Durant la lecture de ce polycopi&#233;, vous trouverez des blocs de code tels que celui-ci :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(v):
     <span class="cf">return</span> v <span class="op">**</span> <span class="dv">2</span>
-    
+
 x <span class="op">=</span> <span class="dv">5</span>
 y <span class="op">=</span> f(<span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span>)
 <span class="bu">print</span>(y)
 <span class="co"># [Sortie] 77</span></code></pre></div>
 <p>Nous prendrons notamment l&#8217;habitude de reporter les valeurs affich&#233;es par l&#8217;ex&#233;cution du programme consid&#233;r&#233; dans un terminal avec la syntaxe utilis&#233;e &#224; la derni&#232;re ligne du code ci-dessus.</p>
-<p><strong>TODO : quelques mots sur langage interpr&#233;t&#233;, console Python vs script ? dire aussi que les exemples consid&#233;r&#233;s ici se basent sur Python3 ? (notamment pour les histoires de division d&#8217;entiers)</strong></p>
+<p>Dans ce document, nous allons donc nous int&#233;resser au langage Python. Pour tester les exemples pr&#233;sent&#233;s au fil de ce document ou r&#233;aliser les exercices propos&#233;s, vous aurez deux possibilit&#233;s. La premi&#232;re consiste &#224; ouvrir une <strong>console Python</strong>, &#224; l&#8217;aide de la commande suivante (si vous &#234;tes sous Unix, en supposant que le symbole <code>$</code> correspond au prompt de votre <em>shell</em>) :</p>
+<pre><code>$ python
+Python 3.5.1 (default, Dec  9 2015, 11:28:16)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.1.76)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;</code></pre>
+<p>Lors de l&#8217;ex&#233;cution de cette commande, on peut remarquer plusieurs choses. Tout d&#8217;abord, au d&#233;marrage, la console Python nous indique la version de Python qui est ex&#233;cut&#233;e. Cela est important, car il existe notamment une importante diff&#233;rence entre les versions 2 (2.x.y) et 3 (3.x.y) de Python. Dans ce document, nous supposons l&#8217;utilisation de Python dans sa version 3, comme dans la console affich&#233;e plus haut. Enfin, une fois la console d&#233;mar&#233;e, on voit appara&#238;tre un prompt Python (<code>&gt;&gt;&gt;</code>) qui indique que vous pouvez, &#224; partir de ce point, entrer du code Python et en demander l&#8217;ex&#233;cution en appuyant sur la touche <em>retour chariot</em> (ou &#8220;Entr&#233;e&#8221;) de votre clavier.</p>
+<p>L&#8217;autre fa&#231;on de programmer en Python, plus adapt&#233;e d&#232;s lors que l&#8217;on souhaite conserver une trace de ce qu&#8217;on a &#233;crit, consiste &#224; enregistrer vos commandes dans un fichier texte (en respectant la convention qui consiste &#224; utiliser l&#8217;extension <code>.py</code> pour le nom de fichier) puis &#224; faire ex&#233;cuter votre programme par l&#8217;interpr&#233;teur Python :</p>
+<pre><code>$ python nom_de_mon_fichier.py
+[...]</code></pre>
 <h1 id="structures-de-donn&#233;es-et-structures-de-contr&#244;le"><span class="header-section-number">2</span> Structures de donn&#233;es et structures de contr&#244;le</h1>
 <p>Dans ce chapitre, nous allons nous int&#233;resser aux &#233;l&#233;ments de base de la syntaxe Python : les structures de donn&#233;es d&#8217;une part et les structures de contr&#244;le d&#8217;autre part. Les structures de donn&#233;es vont nous permettre de stocker dans la m&#233;moire de l&#8217;ordinateur (dans le but de les traiter ensuite) des donn&#233;es tandis que les structures de contr&#244;le vont servir &#224; d&#233;finir les interactions que nous allons avoir avec ces donn&#233;es.</p>
 <h2 id="variables"><span class="header-section-number">2.1</span> Variables</h2>
@@ -676,70 +685,23 @@ i <span class="op">=</span> <span class="bu">int</span>(s)
 <span class="bu">print</span>(<span class="st">&quot;bCd&quot;</span> <span class="op">in</span> s)
 <span class="co"># [Sortie] False</span></code></pre></div>
 <p><strong>Attention.</strong> Toutefois, l&#8217;analogie entre listes et cha&#238;nes de caract&#232;res est loin d&#8217;&#234;tre parfaite. Par exemple, on peut acc&#233;der au <span class="math inline">\(i\)</span>-&#232;me &#233;l&#233;ment d&#8217;une liste en lecture, mais pas en &#233;criture. Si <code class="sourceCode python">s</code> est une cha&#238;ne de caract&#232;res, on ne peut pas ex&#233;cuter <code class="sourceCode python">s[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&#39;c&#39;</span></code> par exemple.</p>
-<h2 id="tableau-des-principales-m&#233;thodes-de-la-classe-str"><span class="header-section-number">4.3</span> Tableau des principales m&#233;thodes de la classe <code>str</code></h2>
+<h2 id="principales-m&#233;thodes-de-la-classe-str"><span class="header-section-number">4.3</span> Principales m&#233;thodes de la classe <code>str</code></h2>
 <p>La liste de m&#233;thodes suivante n&#8217;est pas exhaustive, il est conseill&#233; de consulter l&#8217;aide en ligne de Python pour plus d&#8217;informations.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">M&#233;thode</th>
-<th align="center">Valeur retourn&#233;e</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><code class="sourceCode python">ch.count(sub)</code></td>
-<td align="center">Nombre d&#8217;occurrences de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></td>
-</tr>
-<tr class="even">
-<td align="center"><code class="sourceCode python">ch.endswith(suffix)</code></td>
-<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> se termine par <code class="sourceCode python">suffix</code></td>
-</tr>
-<tr class="odd">
-<td align="center"><code class="sourceCode python">ch.startswith(prefix)</code></td>
-<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> commence par <code class="sourceCode python">suffix</code></td>
-</tr>
-<tr class="even">
-<td align="center"><code class="sourceCode python">ch.find(sub)</code></td>
-<td align="center">Indice du d&#233;but de la premi&#232;re occurrence de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></td>
-</tr>
-<tr class="odd">
-<td align="center"><code class="sourceCode python">ch.rfind(sub)</code></td>
-<td align="center">Indice du d&#233;but de la derni&#232;re occurrence de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></td>
-</tr>
-<tr class="even">
-<td align="center"><code class="sourceCode python">ch.islower()</code></td>
-<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de caract&#232;res minuscules</td>
-</tr>
-<tr class="odd">
-<td align="center"><code class="sourceCode python">ch.isupper()</code></td>
-<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de caract&#232;res majuscules</td>
-</tr>
-<tr class="even">
-<td align="center"><code class="sourceCode python">ch.isnumeric()</code></td>
-<td align="center"><code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de chiffres</td>
-</tr>
-<tr class="odd">
-<td align="center"><code class="sourceCode python">ch.lower()</code></td>
-<td align="center">Version minuscule de <code class="sourceCode python">ch</code></td>
-</tr>
-<tr class="even">
-<td align="center"><code class="sourceCode python">ch.upper()</code></td>
-<td align="center">Version majuscule de <code class="sourceCode python">ch</code></td>
-</tr>
-<tr class="odd">
-<td align="center"><code class="sourceCode python">ch.replace(old, new)</code></td>
-<td align="center">Copie de <code class="sourceCode python">ch</code> dans laquelle la <em>premi&#232;re</em> occurrence de <code class="sourceCode python">old</code> a &#233;t&#233; remplac&#233;e par <code class="sourceCode python">new</code></td>
-</tr>
-<tr class="even">
-<td align="center"><code class="sourceCode python">ch.split(sep<span class="op">=</span><span class="va">None</span>)</code></td>
-<td align="center">Liste contenant des morceaux de <code class="sourceCode python">ch</code> d&#233;coup&#233;e &#224; chaque occurrence de <code class="sourceCode python">sep</code> (n&#8217;importe quel espace par d&#233;faut)</td>
-</tr>
-<tr class="odd">
-<td align="center"><code class="sourceCode python">ch.strip()</code></td>
-<td align="center">Version &#8220;nettoy&#233;e&#8221; de <code class="sourceCode python">ch</code> dans laquelle on a enlev&#233; tous les espaces en d&#233;but et en fin de cha&#238;ne</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code class="sourceCode python">ch.count(sub)</code>: Nombre d&#8217;occurrences de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></li>
+<li><code class="sourceCode python">ch.endswith(suffix)</code>: <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> se termine par <code class="sourceCode python">suffix</code></li>
+<li><code class="sourceCode python">ch.startswith(prefix)</code>: <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> commence par <code class="sourceCode python">suffix</code></li>
+<li><code class="sourceCode python">ch.find(sub)</code>: Indice du d&#233;but de la premi&#232;re occurrence de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></li>
+<li><code class="sourceCode python">ch.rfind(sub)</code>: Indice du d&#233;but de la derni&#232;re occurrence de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></li>
+<li><code class="sourceCode python">ch.islower()</code>: <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de caract&#232;res minuscules</li>
+<li><code class="sourceCode python">ch.isupper()</code>: <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de caract&#232;res majuscules</li>
+<li><code class="sourceCode python">ch.isnumeric()</code>: <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de chiffres</li>
+<li><code class="sourceCode python">ch.lower()</code>: Version minuscule de <code class="sourceCode python">ch</code></li>
+<li><code class="sourceCode python">ch.upper()</code>: Version majuscule de <code class="sourceCode python">ch</code></li>
+<li><code class="sourceCode python">ch.replace(old, new)</code>: Copie de <code class="sourceCode python">ch</code> dans laquelle la <em>premi&#232;re</em> occurrence de <code class="sourceCode python">old</code> a &#233;t&#233; remplac&#233;e par <code class="sourceCode python">new</code></li>
+<li><code class="sourceCode python">ch.split(sep<span class="op">=</span><span class="va">None</span>)</code>: Liste contenant des morceaux de <code class="sourceCode python">ch</code> d&#233;coup&#233;e &#224; chaque occurrence de <code class="sourceCode python">sep</code> (n&#8217;importe quel espace par d&#233;faut)</li>
+<li><code class="sourceCode python">ch.strip()</code>: Version &#8220;nettoy&#233;e&#8221; de <code class="sourceCode python">ch</code> dans laquelle on a enlev&#233; tous les espaces en d&#233;but et en fin de cha&#238;ne</li>
+</ul>
 <h1 id="les-dictionnaires"><span class="header-section-number">5</span> Les dictionnaires</h1>
 <p>Comme une liste, un dictionnaire est une collection de donn&#233;es. Mais, &#224; la diff&#233;rence des listes, les dictionnaires ne sont pas ordonn&#233;s (ou, tout du moins, ils le sont dans un ordre qui ne nous est pas naturel). Chaque entr&#233;e dans un dictionnaire est une association entre une <strong>cl&#233;</strong> (&#233;quivalente &#224; un indice pour une liste) et une <strong>valeur</strong>. Alors que les indices d&#8217;une liste sont forc&#233;ment les entiers compris entre 0 et la taille de la liste exclue, les cl&#233;s d&#8217;un dictionnaire sont des valeurs quelconques, la seule contrainte &#233;tant qu&#8217;on ne peut pas avoir deux fois la m&#234;me cl&#233; dans un dictionnaire. Notamment, ces cl&#233;s ne sont pas n&#233;cessairement des entiers, on utilisera en effet souvent des dictionnaires lorsque l&#8217;on souhaite stocker des valeurs associ&#233;es &#224; des cha&#238;nes de caract&#232;res (qui seront les cl&#233;s du dictionnaire).</p>
 <p>Pour d&#233;finir un dictionnaire par ses paires cl&#233;s-valeurs en Python, on peut utiliser la syntaxe suivante :</p>

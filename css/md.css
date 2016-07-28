@@ -158,6 +158,10 @@ h1.title {
     margin-top: 0;
 }
 
+h1.subtitle {
+    margin-top: .5em;
+}
+
 td.lineNumbers {
     width: 7%;
 	font-family: "Menlo", "Consolas", "Monaco", monospace, serif;

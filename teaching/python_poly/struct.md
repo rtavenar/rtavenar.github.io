@@ -1,13 +1,15 @@
 # Structures de données et structures de contrôle
 
 Dans ce chapitre, nous allons nous intéresser aux éléments de base de la syntaxe Python : les structures de données d'une part et les structures de contrôle d'autre part.
-Les structures de données vont nous permettre de stocker dans la mémoire de l'ordinateur (dans le but de les traiter ensuite) des données tandis que les structures de contrôle vont servir à définir les interactions que nous allons avoir avec ces données.
+Les structures de données vont nous permettre de stocker dans la mémoire de l'ordinateur (dans le but de les traiter ensuite) des données tandis que les structures de contrôle vont servir à définir nos interactions avec ces données.
 
 ## Variables
 
-En Python, les structures de données sont toutes des variables, il n'existe pas de constante.
+En Python, les données sont stockées dans des variables, on ne peut pas définir de constante.
 Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette dernière pouvant varier au cours de l'exécution du programme.
 Les variables Python sont typées dynamiquement, ce qui signifie qu'une variable, à un moment donné de l'exécution d'un programme, a un type précis qui lui est attribué, mais que celui-ci peut évoluer au cours de l'exécution du programme.
+
+### Types des variables Python
 
 Les types de base existant en Python sont les suivants :
 
@@ -35,12 +37,14 @@ d = 'abc'  # d est également de type chaîne de caractères
 v = 12.    # v change de type et est désormais de type nombre à virgule
 ```
 
-Pour vérifier le type d'une variable, il suffit d'utiliser la fonction `type(.)` de la librairie standard :
+Pour vérifier le type d'une variable, il suffit d'utiliser la fonction `type` de la librairie standard :
 ```python
 print(type(v))  # la fonction print(.) permet d'afficher
                 # une information dans le terminal
 # [Sortie] <class 'float'>
 ```
+
+### Opération d'assignation
 
 Comme le montrent les exemples précédents, pour pouvoir utiliser des variables, on doit leur donner un nom (placé à gauche du signe égal dans l'opération d'affectation).
 Ces noms de variables doivent respecter certaines contraintes :
@@ -72,6 +76,8 @@ Ainsi, il est tout à fait valide d'écrire, en Python :
 x = 3.9 * x * (1 - x)
 ```
 Pour exécuter cette instruction, l'interpréteur Python commencera par évaluer le membre de droite en utilisant la valeur courante de la variable `x`{.python}, puis affectera la valeur correspondant au résultat de l'opération `3.9 * x * (1 - x)`{.python} dans la variable `x`{.python}.
+
+### Opérateurs et priorité
 
 On le voit dans l'exemple précédent, pour manipuler des variables, on utilisera des opérateurs (dont les plus connus sont les opérateurs arithmétiques).
 Le tableau suivant dresse une liste des opérateurs définis pour les variables dont le type est l'un des types numériques (entier, nombre à virgule, nombre complexe) :
@@ -125,7 +131,7 @@ Par exemple, l'opération suivante :
 x = 2 / 3
 ```
 
-stockera, en Python 2, la valeur 0 (résultat de la division _entière_ de 2 par 3) dans la variable `x`{.python} alors qu'en Python 3, la division flottante sera effectuée et ainsi `x`{.python} contiendra `0.666666...`{.python}
+stockera, en Python 2, la valeur 0 (résultat de la division **entière** de 2 par 3) dans la variable `x`{.python} alors qu'en Python 3, la division **flottante** sera effectuée et ainsi `x`{.python} contiendra `0.666666...`{.python}
 En Python 3, si l'on souhaite effectuer une division entière, on pourra utiliser l'opérateur `//`{.python} :
 ```python
 print(2 // 3)
@@ -137,13 +143,15 @@ print(2 // 3)
 Un programme est une séquence d'instructions dont l'ordre doit être respecté.
 Au-delà de cet aspect séquentiel, on peut souhaiter :
 
-* n'effectuer certaines instructions que si une condition est vérifiée ([structures conditionnelles](#structures-conditionnelles)) ;
-* répéter certaines instructions ([boucles](#boucles)) ;
-* factoriser une sous-séquence d'instructions au sein d'une fonction pour pouvoir y faire appel à plusieurs reprises dans le programme ([fonctions](#fonctions)).
+* n'effectuer certaines instructions que si une condition est vérifiée ;
+* répéter certaines instructions ;
+* factoriser une sous-séquence d'instructions au sein d'une fonction pour pouvoir y faire appel à plusieurs reprises dans le programme.
+
+Les structures de contrôle associées à ces différents comportements sont décrits dans la suite de cette section.
 
 ### Structures conditionnelles
 
-On peut donc indiquer à un programme de n'exécuter une instruction (ou une séquence d'instructions) que si une certaine condition est remplie, à l'aide du mot-clé `if` :
+On peut donc indiquer à un programme de n'exécuter une instruction (ou une séquence d'instructions) que si une certaine condition est remplie, à l'aide du mot-clé `if`{.python} :
 ```python
 x = 12
 if x > 0:
@@ -152,10 +160,10 @@ if x > 0:
 # [Sortie] X est positif
 ```
 
-On remarque ici que la condition est terminée par le symbole `:`{.python}, de plus, la séquence d'instructions à exécuter si la condition est remplie est _indentée_, cela signifie qu'elle est décalée d'un "cran" (généralement une tabulation ou 4 espaces) vers la droite.
-Cette indentation est une bonne pratique recommandée quel que soit le langage que vous utilisez, mais en Python, c'est même une obligation (sinon, l'interpréteur Python ne comprendra pas où commence et où se termine la séquence à exécuter sous condition).
+On remarque ici que la condition est terminée par le symbole `:`{.python}, de plus, la séquence d'instructions à exécuter si la condition est remplie est **indentée**, cela signifie qu'elle est décalée d'un "cran" (généralement une tabulation ou 4 espaces) vers la droite.
+Cette indentation est une bonne pratique recommandée quel que soit le langage que vous utilisez, mais en Python, c'est même une obligation (sinon, l'interpréteur Python ne saura pas où commence et où se termine la séquence à exécuter sous condition).
 
-Dans certains cas, on souhaite exécuter une série d'instructions si la condition est vérifiée et une autre si elle ne l'est pas.
+Dans certains cas, on souhaite exécuter une série d'instructions si la condition est vérifiée et une autre série d'instructions si elle ne l'est pas.
 Pour cela, on utilise le mot-clé `else`{.python} comme suit :
 ```python
 x = -1
@@ -185,7 +193,7 @@ else:
 # [Sortie] X est compris entre -2 et 0
 ```
 
-Pour utiliser ces structures conditionnelles, il est important de maîtriser les différents opérateurs de comparaison mis à vos disposition en Python, dont voici une liste non exhaustive :
+Pour utiliser ces structures conditionnelles, il est important de maîtriser les différents opérateurs de comparaison à votre disposition en Python, dont voici une liste non exhaustive :
 
 | Opérateur | Comparaison effectuée | Exemple |
 |:---:|:---:|:---:|
@@ -199,14 +207,16 @@ Pour utiliser ces structures conditionnelles, il est important de maîtriser les
 | `is not`{.python} | Test d'inégalité pour le cas de la valeur `None`{.python} | `x is not None`{.python} |
 | `in`{.python} | Test de présence d'une valeur dans une liste | `x in [1, 5, 7]`{.python} |
 
-Il est notamment important de remarquer que, lorsque l'on souhaite tester l'égalité entre deux valeurs, l'opérateur à utiliser est `==`{.python} et non `=`{.python} qui sert lui à affecter une valeur à une variable.
+Il est notamment important de remarquer que, lorsque l'on souhaite tester l'égalité entre deux valeurs, l'opérateur à utiliser est `==`{.python} et non `=`{.python} (qui sert à affecter une valeur à une variable).
 
 ### Boucles
 
 Il existe, en Python comme dans une grande majorité des langages de programmation, deux types de boucles :
 
 * les boucles qui s'exécutent tant qu'une condition est vraie ;
-* les boucles qui répètent la même série d'instructions pour différentes valeurs d'une variable (appelée _variable de boucle_).
+* les boucles qui répètent la même série d'instructions pour différentes valeurs d'une variable (appelée **variable de boucle**).
+
+#### Boucles `while`
 
 Les premières ont une syntaxe très similaire à celle des structures conditionnelles simples :
 ```python
@@ -233,7 +243,9 @@ y = 2
 
 En effet, on a ici une boucle qui s'exécutera tant que `x`{.python} est positif, or la valeur de cette variable est initialisée à 2 et n'est pas modifiée au sein de la boucle, la condition sera donc toujours vérifiée et le programme ne sortira jamais de la boucle.
 
-Le second type de boucle repose en Python sur l'utilisation de listes (ou, plus généralement d'itérables) dont nous reparlerons plus en détail dans la suite de cet ouvrage.
+#### Boucles `for`
+
+Le second type de boucle repose en Python sur l'utilisation de listes (ou, plus généralement, d'itérables) dont nous reparlerons plus en détail dans la suite de cet ouvrage.
 Sachez pour le moment qu'une liste est un ensemble ordonné d'éléments.
 On peut alors exécuter une série d'instructions pour toutes les valeurs d'une liste :
 ```python
@@ -270,7 +282,7 @@ else:
 
 #### Définition d'une fonction
 
-Lorsqu'un ensemble d'instruction est susceptible d'être utilisé à plusieurs occasions dans un ou plusieurs programmes, il est recommandé de l'isoler au sein d'une fonction.
+Lorsqu'un ensemble d'instructions est susceptible d'être utilisé à plusieurs occasions dans un ou plusieurs programmes, il est recommandé de l'isoler au sein d'une fonction.
 Cela présentera les avantages suivants :
 
 * en donnant un nom à la fonction et en listant la liste de ses arguments, on explicite la sémantique de l'ensemble d'instructions en question, ses entrées et sorties éventuelles, ce qui rend le code beaucoup plus lisible ;
@@ -351,7 +363,7 @@ def f(x, y=0):  # La valeur par défaut pour y est 0
 ```
 
 Attention toutefois, les arguments facultatifs (_ie._ qui disposent d'une valeur par défaut) doivent impérativement se trouver, dans la liste des arguments, après le dernier argument obligatoire.
-Ainsi, la définition de fonction suivante n'est pas correcte :
+Ainsi, la définition de fonction suivante **n'est pas correcte** :
 
 ```python
 def f(x, y=0, z):
@@ -379,5 +391,7 @@ print(math.cos(2 * math.pi))
 print(math.sqrt(2))
 # [Sortie] 1.4142135623730951
 ```
-Vous remarquerez ici que l'instruction d'import du module se trouve nécessairement avant les instructions faisant références aux fonctions et variables de ce module, faute de quoi ces dernières ne seraient pas définies.
+Vous remarquerez ici que l'instruction d'import du module se trouve nécessairement avant les instructions faisant référence aux fonctions et variables de ce module, faute de quoi ces dernières ne seraient pas définies.
 De manière générale, vous prendrez la bonne habitude d'écrire les instructions d'import en tout début de vos fichiers Python, pour éviter tout souci.
+
+**Exercice 2.1** Écrivez une fonction en Python qui prendra en argument une longueur `l` et retournera l'aire du triangle équilatéral de côté `l`.

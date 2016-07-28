@@ -1,7 +1,7 @@
 # Introduction
 
 Ce document est une tentative de polycopié associé au module de Python pour la deuxième année de licence MIASHS de l'Université de Rennes 2.
-Il est distribué librement et se veut évolutif, n'hésitez donc pas à faire vos remarques à son auteur dont vous trouverez le contact sur [sa page web](http://people.irisa.fr/Romain.Tavenard/).
+Il est distribué librement (licence [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) plus précisément) et se veut évolutif, n'hésitez donc pas à faire vos remarques à son auteur dont vous trouverez le contact sur [sa page web](http://people.irisa.fr/Romain.Tavenard/).
 
 Durant la lecture de ce polycopié, vous trouverez des blocs de code tels que celui-ci :
 
@@ -19,7 +19,7 @@ Nous prendrons notamment l'habitude de reporter les valeurs affichées par l'ex�
 
 Dans ce document, nous allons donc nous intéresser au langage Python.
 Pour tester les exemples présentés au fil de ce document ou réaliser les exercices proposés, vous aurez deux possibilités.
-La première consiste à ouvrir une **console Python**, à l'aide de la commande suivante (si vous êtes sous Unix, en supposant que le symbole `$` correspond au prompt de votre _shell_) :
+La première consiste à ouvrir une **console Python**, à l'aide de la commande suivante (si vous êtes sous Unix, en supposant que le symbole `$` corresponde au prompt de votre _shell_) :
 ```
 $ python
 Python 3.5.1 (default, Dec  9 2015, 11:28:16)

@@ -76,5 +76,84 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="bu">print</span>(argmax([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>]))
 <span class="co"># [Sortie] 1</span></code></pre></div>
+<p><strong>Exercice 4.1</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> compte_prefix(s, prefix):
+    compteur <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">for</span> mot <span class="op">in</span> s.split():
+        <span class="cf">if</span> mot.startswith(prefix):
+            compteur <span class="op">+=</span> <span class="dv">1</span>
+    <span class="cf">return</span> compteur
+
+<span class="bu">print</span>(compte_prefix(<span class="st">&quot;la vie est belle au bord du lac&quot;</span>, <span class="st">&quot;la&quot;</span>))
+<span class="co"># [Sortie] 2</span></code></pre></div>
+<p><strong>Exercice 5.1</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;la vie est belle c&#39;est la vie&quot;</span>
+d <span class="op">=</span> {}
+<span class="cf">for</span> mot <span class="op">in</span> s.split():
+    d[mot] <span class="op">=</span> d.get(mot, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span>
+<span class="bu">print</span>(d)
+<span class="co"># [Sortie] {&quot;c&#39;est&quot;: 1, &#39;la&#39;: 2, &#39;belle&#39;: 1, &#39;est&#39;: 1, &#39;vie&#39;: 2}</span></code></pre></div>
+<p><strong>Exercice 6.1</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
+
+<span class="kw">def</span> nb_lignes(nom_fichier):
+    n <span class="op">=</span> <span class="dv">0</span>
+    fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;r&quot;</span>)
+    <span class="cf">for</span> ligne <span class="op">in</span> fp.readlines():
+        n <span class="op">+=</span> <span class="dv">1</span>
+    <span class="cf">return</span> n
+
+<span class="kw">def</span> nb_lignes_repertoire(repertoire):
+    <span class="cf">for</span> nom_fichier <span class="op">in</span> os.listdir(repertoire):
+        <span class="cf">if</span> nom_fichier.endswith(<span class="st">&quot;.txt&quot;</span>):
+            nom_complet_fichier <span class="op">=</span> os.path.join(repertoire, nom_fichier)
+            n <span class="op">=</span> nb_lignes(nom_complet_fichier)
+            <span class="bu">print</span>(nom_complet_fichier, n)
+
+nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>)</code></pre></div>
+<p><strong>Exercice 7.1</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bissextile(annee):
+    <span class="cf">if</span> annee <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> annee <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:
+        <span class="cf">return</span> <span class="va">True</span>
+    <span class="cf">elif</span> annee <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span>:
+        <span class="cf">return</span> <span class="va">True</span>
+    <span class="cf">else</span>:
+        <span class="cf">return</span> <span class="va">False</span>
+
+<span class="kw">def</span> nb_jours(mois, annee):
+    <span class="cf">if</span> mois <span class="op">in</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>]:
+        <span class="cf">return</span> <span class="dv">31</span>
+    <span class="cf">elif</span> mois <span class="op">in</span> [<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">11</span>]:
+        <span class="cf">return</span> <span class="dv">30</span>
+    <span class="cf">else</span>:  <span class="co"># Mois de f&#233;vrier</span>
+        <span class="cf">if</span> bissextile(annee):
+            <span class="cf">return</span> <span class="dv">29</span>
+        <span class="cf">else</span>:
+            <span class="cf">return</span> <span class="dv">28</span>
+
+<span class="kw">def</span> lendemain(jour, mois, annee):
+    <span class="cf">if</span> jour <span class="op">&lt;</span> nb_jours(mois, annee):
+        <span class="cf">return</span> jour <span class="op">+</span> <span class="dv">1</span>, mois, annee
+    <span class="cf">elif</span> mois <span class="op">&lt;</span> <span class="dv">12</span>:  <span class="co"># Dernier jour du mois mais pas de l&#39;ann&#233;e</span>
+        <span class="cf">return</span> <span class="dv">1</span>, mois <span class="op">+</span> <span class="dv">1</span>, annee
+    <span class="cf">else</span>:  <span class="co"># Dernier jour de l&#39;ann&#233;e</span>
+        <span class="cf">return</span> <span class="dv">1</span>, <span class="dv">1</span>, annee <span class="op">+</span> <span class="dv">1</span>
+
+<span class="co"># Tests de la fonction bissextile</span>
+<span class="bu">print</span>(bissextile(<span class="dv">2004</span>))  <span class="co"># True car divisible par 4 et non par 100</span>
+<span class="bu">print</span>(bissextile(<span class="dv">1900</span>))  <span class="co"># False car divisible par 100 et non par 400</span>
+<span class="bu">print</span>(bissextile(<span class="dv">2000</span>))  <span class="co"># True car divisible par 400</span>
+<span class="bu">print</span>(bissextile(<span class="dv">1999</span>))  <span class="co"># False car divisible ni par 4 ni par 100</span>
+
+<span class="co"># Tests de la fonction nb_jours</span>
+<span class="bu">print</span>(nb_jours(<span class="dv">3</span>, <span class="dv">2010</span>))  <span class="co"># Mars : 31</span>
+<span class="bu">print</span>(nb_jours(<span class="dv">4</span>, <span class="dv">2010</span>))  <span class="co"># Avril : 30</span>
+<span class="bu">print</span>(nb_jours(<span class="dv">2</span>, <span class="dv">2010</span>))  <span class="co"># F&#233;vrier d&#39;une ann&#233;e non bissextile : 28</span>
+<span class="bu">print</span>(nb_jours(<span class="dv">2</span>, <span class="dv">2004</span>))  <span class="co"># F&#233;vrier d&#39;une ann&#233;e bissextile : 29</span>
+
+<span class="co"># Tests de la fonction lendemain</span>
+<span class="bu">print</span>(lendemain(<span class="dv">12</span>, <span class="dv">2</span>, <span class="dv">2010</span>))  <span class="co"># 13, 2, 2010</span>
+<span class="bu">print</span>(lendemain(<span class="dv">28</span>, <span class="dv">2</span>, <span class="dv">2010</span>))  <span class="co">#  1, 3, 2010</span>
+<span class="bu">print</span>(lendemain(<span class="dv">31</span>, <span class="dv">12</span>, <span class="dv">2010</span>)) <span class="co">#  1, 1, 2011</span></code></pre></div>
 </body>
 </html>

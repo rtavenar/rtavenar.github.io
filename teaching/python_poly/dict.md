@@ -13,7 +13,7 @@ print(mon_dico)
 # [Sortie] {'a': 123, 'bbb': None, 'z': 7}
 ```
 
-On remarque ici que l'ordre dans lequel on a entré des valeurs n'est pas conservé lors de l'affichage.
+On remarque ici que l'ordre dans lequel on a entré des paires clés/valeurs n'est pas conservé lors de l'affichage.
 
 ## Modification du contenu d'un dictionnaire
 
@@ -101,7 +101,7 @@ for cle, valeur in mon_dico.items():
 ```
 
 
-**Exercice.**
+**Exercice 5.1**
 Écrivez un programme Python qui compte le nombre d'occurrences de chacun des mots d'une chaîne de caractères et stocke le résultat dans un dictionnaire :
 ```python
 s = "la vie est belle c'est la vie"

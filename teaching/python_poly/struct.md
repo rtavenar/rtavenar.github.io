@@ -343,7 +343,7 @@ affiche_infos_personne(poids=80, taille=180)
 Certains arguments d'une fonction peuvent avoir une valeur par défaut, décidée par la personne qui a écrit la fonction.
 Dans ce cas, si l'utilisateur ne spécifie pas explicitement de valeur pour ces arguments lors de l'appel à la fonction, c'est la valeur par défaut qui sera utilisée dans la fonction, dans le cas contraire, la valeur spécifiée sera utilisée.
 
-Par exemple, la fonction `print`{.python} dispose de plusieurs arguments facultatifs, comme le caractère par lequel terminer l'affichage (par défaut, un retour à la ligne, `"\n"`{.python}) :
+Par exemple, la fonction `print`{.python} dispose de plusieurs arguments facultatifs, comme le caractère par lequel terminer l'affichage (par défaut, un retour à la ligne, `"\n"`{.haskell}) :
 
 ```python
 print("La vie est belle")

@@ -250,7 +250,7 @@ Bien entendu, vu le sens de cet opérateur, on ne peut multiplier une liste que 
 
 ### Tri de liste
 
-Enfin, on peut trier les valeurs contenues dans une liste à l'aide de la fonction `sorted`{.python} :
+Enfin, on peut trier les éléments contenus dans une liste à l'aide de la fonction `sorted`{.python} :
 ```python
 l = [4, 5, 2]
 l2 = sorted(l)
@@ -274,7 +274,7 @@ En effet, si `l`{.python} est une liste, lorsque l'on écrit :
 ```python
 l2 = l
 ```
-on ne recopie pas le contenu de `l`{.python} dans `l2`{.python}, mais `l2`{.python} va "pointer" vers la même position dans la mémoire de votre ordinateur que `l`{.python}.
+on ne recopie pas le contenu de `l`{.python} dans `l2`{.python}, mais on crée une variable `l2`{.python} qui va "pointer" vers la même position dans la mémoire de votre ordinateur que `l`{.python}.
 La différence peut sembler mince, mais cela signifie que si l'on modifie `l`{.python} même après l'instruction `l2 = l`{.python}, la modification sera répercutée sur `l2`{.python} :
 ```python
 l = [1, 5, 7]
@@ -284,7 +284,7 @@ print(l, l2)
 # [Sortie] [1, 2, 7] [1, 2, 7]
 ```
 
-Lorsque l'on souhaite éviter ce comportement, il faut effectuer une copie explicite de liste, à l'aide de la fonction `list`{.python} :
+Lorsque l'on souhaite éviter ce comportement, il faut effectuer une copie explicite de liste, à l'aide par exemple de la fonction `list`{.python} :
 ```python
 l = [1, 5, 7]
 l2 = list(l)
@@ -295,7 +295,7 @@ print(l, l2)
 
 ## Bonus : listes en compréhension
 
-Il est possible de créer des listes en filtrant et/ou modifiant certains éléments d'autres listes.
+Il est possible de créer des listes en filtrant et/ou modifiant certains éléments d'autres listes ou itérables.
 Supposons par exemple que l'on souhaite créer la liste des carrés des 10 premiers entiers naturels.
 Le code qui suit présente deux façons équivalentes de créer une telle liste :
 ```python

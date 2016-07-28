@@ -12,7 +12,7 @@ Comme pour les listes (et peut-être même plus encore), il est fortement consei
 
 ## Conversion d'une chaîne en nombre
 
-Si une chaîne de caractères représente une valeur numérique (comme la chaîne `'10.2'`{.python} par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l'utiliser ensuite pour des opérations arithmétiques :
+Si une chaîne de caractères représente une valeur numérique (comme la chaîne `"10.2"`{.haskell} par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l'utiliser ensuite pour des opérations arithmétiques :
 ```python
 s = '10.2'
 f = float(s)
@@ -20,12 +20,19 @@ print(f)
 # [Sortie] 10.2
 print(f == s)
 # [Sortie] False
+print(f + 2)
+# [Sortie] 12.2
+```
+
+```python
 s = '10'
 i = int(s)
 print(i)
 # [Sortie] 10
 print(i == s)
 # [Sortie] False
+print(i - 1)
+# [Sortie] 9
 ```
 
 ## Analogie avec les listes
@@ -69,22 +76,25 @@ print("bCd" in s)
 **Attention.**
 Toutefois, l'analogie entre listes et chaînes de caractères est loin d'être parfaite.
 Par exemple, on peut accéder au $i$-ème élément d'une liste en lecture, mais pas en écriture.
-Si `s`{.python} est une chaîne de caractères, on ne peut pas exécuter `s[2] = 'c'`{.python} par exemple.
+Si `s`{.python} est une chaîne de caractères, on ne peut pas exécuter `s[2] = "c"`{.python} par exemple.
 
 ## Principales méthodes de la classe `str`
 
-La liste de méthodes suivante n'est pas exhaustive, il est conseillé de consulter l'aide en ligne de Python pour plus d'informations.
+La liste de méthodes de la classe `str`{.python} qui suit n'est pas exhaustive, il est conseillé de consulter l'aide en ligne de Python pour plus d'informations.
 
-* `ch.count(sub)`{.python}: Nombre d'occurrences de `sub`{.python} dans `ch`{.python}
-* `ch.endswith(suffix)`{.python}: `True`{.python} si `ch`{.python} se termine par `suffix`{.python}
-* `ch.startswith(prefix)`{.python}: `True`{.python} si `ch`{.python} commence par `suffix`{.python}
-* `ch.find(sub)`{.python}: Indice du début de la première occurrence de `sub`{.python} dans `ch`{.python}
-* `ch.rfind(sub)`{.python}: Indice du début de la dernière occurrence de `sub`{.python} dans `ch`{.python}
-* `ch.islower()`{.python}: `True`{.python} si `ch`{.python} est constituée uniquement de caractères minuscules
-* `ch.isupper()`{.python}: `True`{.python} si `ch`{.python} est constituée uniquement de caractères majuscules
-* `ch.isnumeric()`{.python}: `True`{.python} si `ch`{.python} est constituée uniquement de chiffres
-* `ch.lower()`{.python}: Version minuscule de `ch`{.python}
-* `ch.upper()`{.python}: Version majuscule de `ch`{.python}
-* `ch.replace(old, new)`{.python}: Copie de `ch`{.python} dans laquelle la _première_ occurrence de `old`{.python} a été remplacée par `new`{.python}
-* `ch.split(sep=None)`{.python}: Liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (n'importe quel espace par défaut)
-* `ch.strip()`{.python}: Version "nettoyée" de `ch`{.python} dans laquelle on a enlevé tous les espaces en début et en fin de chaîne
+* `ch.count(sub)`{.python}: Retourne le nombre d'occurrences de `sub`{.python} dans `ch`{.python}
+* `ch.endswith(suffix)`{.python}: Retourne `True`{.python} si `ch`{.python} se termine par `suffix`{.python}
+* `ch.startswith(prefix)`{.python}: Retourne `True`{.python} si `ch`{.python} commence par `suffix`{.python}
+* `ch.find(sub)`{.python}: Retourne l'indice du début de la première occurrence de `sub`{.python} dans `ch`{.python}
+* `ch.rfind(sub)`{.python}: Retourne l'indice du début de la dernière occurrence de `sub`{.python} dans `ch`{.python}
+* `ch.islower()`{.python}: Retourne `True`{.python} si `ch`{.python} est constituée uniquement de caractères minuscules
+* `ch.isupper()`{.python}: Retourne `True`{.python} si `ch`{.python} est constituée uniquement de caractères majuscules
+* `ch.isnumeric()`{.python}: Retourne `True`{.python} si `ch`{.python} est constituée uniquement de chiffres
+* `ch.lower()`{.python}: Retourne la version minuscule de `ch`{.python}
+* `ch.upper()`{.python}: Retourne la version majuscule de `ch`{.python}
+* `ch.replace(old, new)`{.python}: Retourne une copie de `ch`{.python} dans laquelle la _première_ occurrence de `old`{.python} a été remplacée par `new`{.python}
+* `ch.split(sep=None)`{.python}: Retourne une liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (n'importe quel espace par défaut)
+* `ch.strip()`{.python}: Retourne une version "nettoyée" de `ch`{.python} dans laquelle on a enlevé tous les espaces en début et en fin de chaîne
+
+**Exercice 4.1**
+Écrivez une fonction qui prenne en argument deux chaînes de caractères `s`{.python} et `prefix`{.python} et retourne le nombre de mots de la chaîne `s`{.python} qui débutent par la chaîne `prefix`{.python}.

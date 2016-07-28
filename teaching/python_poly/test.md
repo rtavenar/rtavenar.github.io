@@ -26,7 +26,7 @@ Il vous fournit de précieuses informations :
 1. l'erreur se produit à la ligne 2 de votre script Python ;
 2. le problème est que Python ne peut pas convertir un objet de type `int`{.python} en chaîne de caractères (`str`{.python}) de manière implicite.
 
-Reste à se demander pourquoi, dans le ca présent, Python voudrait transformer un entier en chaîne de caractères.
+Reste à se demander pourquoi, dans le cas présent, Python voudrait transformer un entier en chaîne de caractères.
 Pour le comprendre, rendons-nous à la ligne 2 de notre script et décortiquons-la.
 Dans cette ligne (`y = x + 2`{.python}), deux opérations sont effectuées :
 
@@ -40,14 +40,24 @@ La valeur `2`{.python} est de type entier.
 Il se trouve que Python n'a pas défini d'addition entre chaîne de caractères et entier et c'est pour cela que l'on obtient une erreur.
 Plus précisément, l'interpréteur Python nous dit : "si je pouvais convertir la valeur entière en chaîne de caractères à la volée, je pourrais faire l'opération `+`{.python} qui serait alors une concaténation, mais je ne me permets pas de le faire tant que vous ne l'avez pas écrit de manière explicite".
 
+Maintenant que nous avons compris le sens de ce _bug_, il nous reste à le corriger.
+Si nous souhaitons faire la somme du nombre 10 (stocké sous forme de chaîne de caractères dans la variable `x`{.python}) et de la valeur 2, nous écrivons :
+```python
+x = "12"
+y = int(x) + 2
+```
+et l'addition s'effectue alors correctement entre deux valeurs numériques.
+
+
 ## Les tests unitaires
 
 Pour pouvoir être sûr du code que vous écrivez, il faut l'avoir testé sur un ensemble d'exemples qui vous semble refléter l'ensemble des cas de figures auxquels votre programme pourra être confronté.
 Or, cela représente un nombre de cas de figures très important dès lors que l'on commence à écrire des programmes un tant soit peu complexes.
-Ainsi, il est hautement recommandé de découper son code en fonctions de taille raisonnables et qui puissent être testées indépendamment.
+Ainsi, il est hautement recommandé de découper son code en fonctions de tailles raisonnables et qui puissent être testées indépendamment.
 Les tests associés à chacune de ces fonctions sont appelés **tests unitaires**.
+
 Tout d'abord, en mettant en place de tels tests, vous pourrez détecter rapidement un éventuel _bug_ dans votre code et ainsi gagner beaucoup de temps de développement. De plus, vous pourrez également vous assurer que les modifications ultérieures de votre code ne modifient pas son comportement pour les cas testés.
-En effet, lorsque l'on ajoute une fonctionnalité à un code informatique, il faut avant toute choses s'assurer que celle-ci ne cassera pas le bon fonctionnement du code dans les cas classiques d'utilisation pour lesquels il avait été à l'origine conçu.
+En effet, lorsque l'on ajoute une fonctionnalité à un programme informatique, il faut avant toute choses s'assurer que celle-ci ne cassera pas le bon fonctionnement du programme dans les cas classiques d'utilisation pour lesquels il avait été à l'origine conçu.
 
 Prenons maintenant un exemple concret.
 Supposons que l'on souhaite écrire une fonction `bissextile`{.python} capable de dire si une année est bissextile ou non.
@@ -69,7 +79,7 @@ On peut alors vérifier que le comportement de notre fonction `bissextile`{.pyth
 
 ## Le développement piloté par les tests
 
-Le développement piloté par les tests (ou _Test-Driven Development_) est une technique de programmation qui consiste à rédiger les tests unitaires de votre code avant même de rédiger le code lui-même.
+Le développement piloté par les tests (ou _Test-Driven Development_) est une technique de programmation qui consiste à rédiger les tests unitaires de votre programme avant même de rédiger le programme lui-même.
 
 L'intérêt de cette façon de faire est qu'elle vous obligera à réfléchir aux différents cas d'utilisation d'une fonction avant de commencer à la coder.
 De plus, une fois ces différents cas identifiés, il est probable que la structure globale de la fonction à coder vous apparaisse plus clairement.
@@ -79,12 +89,12 @@ Si l'on reprend l'exemple de la fonction `bissextile`{.python} citée plus haut,
 def bissextile(annee):
     if annee % 4 == 0 and annee % 100 != 0:
         return True
-    elif annee % 400:
+    elif annee % 400 == 0:
         return True
     else:
         return False
 ```
 
 
-**Exercice.**
+**Exercice 7.1**
 En utilisant les méthodes de développement préconisées dans ce chapitre, rédigez le code et les tests d'un programme permettant de déterminer le lendemain d'une date fournie sous la forme de trois entiers (jour, mois, année).

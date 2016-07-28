@@ -394,4 +394,4 @@ print(math.sqrt(2))
 Vous remarquerez ici que l'instruction d'import du module se trouve nécessairement avant les instructions faisant référence aux fonctions et variables de ce module, faute de quoi ces dernières ne seraient pas définies.
 De manière générale, vous prendrez la bonne habitude d'écrire les instructions d'import en tout début de vos fichiers Python, pour éviter tout souci.
 
-**Exercice 2.1** Écrivez une fonction en Python qui prendra en argument une longueur `l` et retournera l'aire du triangle équilatéral de côté `l`.
+**Exercice 2.1** Écrivez une fonction en Python qui prenne en argument une longueur `l` et retourne l'aire du triangle équilatéral de côté `l`.

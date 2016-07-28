@@ -14,7 +14,7 @@ epub: poly_epub solutions_epub
 html: poly_html solutions_html
 
 poly_html: $(SRC_POLY)
-	pandoc --toc -s -o html/poly.html --highlight-style pygments --columns 1000 --css ../../../css/md.css -S --normalize --ascii --number-sections --mathjax $^
+	pandoc --toc -s -o html/poly.html --highlight-style pygments --data-dir . --columns 1000 --css ../../../css/md.css -S --normalize --ascii --number-sections --mathjax $^
 
 poly_epub: $(SRC_POLY)
 	pandoc -S -o epub/poly.epub --columns 1000 -S --epub-cover-image=logo.png --epub-metadata=metadata.xml --epub-stylesheet ../../css/md_epub.css --mathml --toc $^

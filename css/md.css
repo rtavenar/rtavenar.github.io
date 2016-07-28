@@ -162,6 +162,14 @@ h1.subtitle {
     margin-top: .5em;
 }
 
+a.anchorjs-link {
+    color: #000000;
+}
+
+h1.title a.anchorjs-link, h2.author a.anchorjs-link, h1.subtitle a.anchorjs-link {
+    display: none;
+}
+
 td.lineNumbers {
     width: 7%;
 	font-family: "Menlo", "Consolas", "Monaco", monospace, serif;

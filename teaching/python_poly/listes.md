@@ -3,13 +3,13 @@
 En Python, les listes stockent des séquences d'éléments.
 Il n'est pas nécessaire que tous les éléments d'une liste soient du même type, même si dans les exemples que nous considérerons, ce sera souvent le cas.
 
-On peut trouver des informaions précieuses sur le sujet des listes dans l'aide en ligne de Python disponible à l'adresse : <https://docs.python.org/3/tutorial/datastructures.html>.
+On peut trouver des informations précieuses sur le sujet des listes dans l'aide en ligne de Python disponible à l'adresse : <https://docs.python.org/3/tutorial/datastructures.html>.
 
 ## Avant-propos : listes et itérables
 
 Dans la suite, nous parlerons de listes, qui est un type de données bien spécifique en Python. Toutefois, une grande partie de notre propos pourra se transposer à l'ensemble des itérables en Python (c'est-à-dire l'ensemble des objets Python dont on peut parcourir les éléments un à un).
 
-Il existe toutefois une différence majeure entre listes et itérables : nous verrons dans la suite de ce chapitre que l'on peut accéder au $i$-ème élément d'une liste simplement, alors que ce n'est pas possible pour un itérable (pour ce dernier, il faudra parcourir l'ensemble de ses éléments et s'arrêter lorsque l'on est effectivement rendu au $i$-ème).
+Il existe toutefois une différence majeure entre listes et itérables : nous verrons dans la suite de ce chapitre que l'on peut accéder au $i$-ème élément d'une liste simplement, alors que ce n'est généralement pas possible pour un itérable (pour ce dernier, il faudra parcourir l'ensemble de ses éléments et s'arrêter lorsque l'on est effectivement rendu au $i$-ème).
 
 Toutefois, si l'on a un itérable `iterable`{.python}, il est possible de le transformer en liste simplement à l'aide de la fonction `list`{.python} :
 ```python
@@ -18,7 +18,7 @@ l = list(iterable)
 
 ## Création de liste
 
-Pour créer une liste contenant des valeurs définies (par exemple la liste contenant les entiers 1, 5 et 7), il est possible d'utiliser la syntaxe suivante :
+Pour créer une liste contenant des éléments définis (par exemple la liste contenant les entiers 1, 5 et 7), il est possible d'utiliser la syntaxe suivante :
 ```python
 liste = [1, 5, 7]
 ```
@@ -29,10 +29,10 @@ print(len(liste))
 # [Sortie] 0
 ```
 
-On voit ici la fonction `len`{.python} qui retourne la taille d'une liste passée en argument (ici 0).
+On voit ici la fonction `len`{.python} qui retourne la taille d'une liste passée en argument (ici 0 puisque la liste est vide).
 
 Toutefois, lorsque l'on souhaite créer des listes longues (par exemple la liste des 1000 premiers entiers), cette méthode est peu pratique.
-Il existe ainsi des fonctions qui permettent de créer de telles listes.
+Heureusement, il existe des fonctions qui permettent de créer de telles listes.
 Par exemple, la fonction `range(a, b)`{.python} retourne un itérable contenant les entiers de `a`{.python} (inclus) à `b`{.python} (exclu) :
 ```python
 l = range(1, 10)     # l = [1, 2, 3, ..., 9]
@@ -71,7 +71,7 @@ De la même façon, on peut accéder au deuxième élément en partant de la fin
 
 Ainsi, pour une liste de taille $n$, les valeurs d'indice valides sont les entiers compris entre $-n$ et $n - 1$ (inclus).
 
-Il est également à noter que l'accès aux éléments d'une liste peut se faire en lecture (lire la valeur stockée à l'indice `i`{.python}) comme en écriture (modifier la valeur stockée à l'indice `i`{.python}) :
+Il est également à noter que l'accès aux éléments d'une liste peut se faire en lecture (lire l'élément stocké à l'indice `i`{.python}) comme en écriture (modifier l'élément stocké à l'indice `i`{.python}) :
 ```python
 l = [1, 5, 7]
 print(l[1])
@@ -100,16 +100,16 @@ print(l[5:])
 
 Lorsque l'on parcourt une liste, on peut vouloir accéder :
 
-* aux valeurs stockées dans la liste uniquement ;
+* aux éléments stockés dans la liste uniquement ;
 * aux indices de la liste uniquement (même si c'est rare) ;
-* aux indices de la listes et aux valeurs associées.
+* aux indices de la listes et aux éléments associés.
 
 Ces trois cas de figure impliquent trois parcours de liste différents, décrits dans ce qui suit.
 
 **Attention.**
 Quel que soit le parcours de liste utilisé, il est fortement déconseillé de supprimer ou d'insérer des éléments dans une liste pendant le parcours de celle-ci.
 
-### Parcours par valeurs
+### Parcours des éléments
 
 Pour parcourir les éléments d'une liste, on utilise une boucle `for`{.python} :
 ```python
@@ -136,22 +136,22 @@ for i in range(n):
 # [Sortie] 2
 ```
 
-### Parcours par valeurs et indices
+### Parcours par éléments et indices
 
-Dans certains cas, enfin, on a besoin de manipuler simultanément les indices d'une listes et les valeurs associées.
+Dans certains cas, enfin, on a besoin de manipuler simultanément les indices d'une listes et les éléments associés.
 Cela se fait à l'aide de la fonction `enumerate`{.python} :
 ```python
 l = [1, 5, 7]
-for i, valeur in enumerate(l):
-    print(i, valeur)
+for i, elem in enumerate(l):
+    print(i, elem)
 # [Sortie] 0 1
 # [Sortie] 1 5
 # [Sortie] 2 7
 ```
 
-On a donc ici une boucle `for`{.python} pour laquelle, à chaque itération, on met à jour les variables `i`{.python} (qui contient l'indice courant) et `valeur`{.python} (qui contient la valeur se trouvant à l'indice `i`{.python} dans la liste `l`{.python}).
+On a donc ici une boucle `for`{.python} pour laquelle, à chaque itération, on met à jour les variables `i`{.python} (qui contient l'indice courant) et `elem`{.python} (qui contient l'élément se trouvant à l'indice `i`{.python} dans la liste `l`{.python}).
 
-**Exercice.**
+**Exercice 3.1**
 Écrivez une fonction en Python qui permette de calculer l'argmax d'une liste, c'est-à-dire l'indice auquel est stockée la valeur maximale de la liste.
 
 ## Manipulations de listes
@@ -160,10 +160,10 @@ Nous présentons dans ce qui suit les opérations élémentaires de manipulation
 
 ### Insertion d'élément
 
-Pour insérer un nouvel élément dans une liste, il existe deux méthodes possibles :
+Pour insérer un nouvel élément dans une liste, on peut :
 
-* on peut rajouter un élément dà la fin de la liste à l'aide de la méthode `append`{.python} ;
-* on peut insérer un élément à l'indice `i`{.python} de la liste à l'aide de la méthode `insert`{.python}.
+* rajouter un élément à la fin de la liste à l'aide de la méthode `append`{.python} ;
+* insérer un élément à l'indice `i`{.python} de la liste à l'aide de la méthode `insert`{.python}.
 
 Comme vous pouvez le remarquer, il est ici question de méthodes et non plus de fonctions.
 Pour l'instant, sachez que les méthodes sont des fonctions spécifiques à certains objets, comme les listes par exemples.
@@ -180,10 +180,11 @@ print(l)
 
 ### Suppression d'élément
 
-Si l'on souhaite, maintenant, supprimer un élément dans une liste, deux cas de figures peuvent se présenter :
+Si l'on souhaite, maintenant, supprimer un élément dans une liste, deux cas de figures peuvent se présenter.
+On peut souhaiter :
 
-* on peut souhaiter supprimer l'élément situé à l'indice `i`{.python} dans la liste, à l'aide de la méthode `pop`{.python} ;
-* on peut souhaiter supprimer la première occurrence d'une valeur donnée dans la liste à l'aide de la méthode `remove`{.python}.
+* supprimer l'élément situé à l'indice `i`{.python} dans la liste, à l'aide de la méthode `pop`{.python} ;
+* supprimer la première occurrence d'une valeur donnée dans la liste à l'aide de la méthode `remove`{.python}.
 
 ```python
 l = [1, 5, 7]

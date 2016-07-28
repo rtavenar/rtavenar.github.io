@@ -62,5 +62,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="bu">print</span>(aire_equi(<span class="dv">1</span>.))
 <span class="co"># [Sortie] 0.4330127018922193</span></code></pre></div>
+<p><strong>Exercice 3.1</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> argmax(liste):
+    i_max <span class="op">=</span> <span class="va">None</span>
+    <span class="co"># On initialise elem_max &#224; une valeur</span>
+    <span class="co"># qui n&#39;est clairement pas le max</span>
+    elem_max <span class="op">=</span> liste[<span class="dv">0</span>] <span class="op">-</span> <span class="dv">1</span>  
+    <span class="cf">for</span> i, elem <span class="op">in</span> <span class="bu">enumerate</span>(liste):
+        <span class="cf">if</span> elem <span class="op">&gt;</span> elem_max:
+            i_max <span class="op">=</span> i
+            elem_max <span class="op">=</span> elem
+    <span class="cf">return</span> i_max
+
+<span class="bu">print</span>(argmax([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>]))
+<span class="co"># [Sortie] 1</span></code></pre></div>
 </body>
 </html>

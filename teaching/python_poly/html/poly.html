@@ -46,8 +46,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   </style>
   <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.min.js"></script>
 </head>
-<body>
+<body onload="anchors.options = {visible: 'always'}; anchors.add();">
 <div id="header">
 <h1 class="title">Polycopi&#233; pour le cours de Python</h1>
 <h2 class="author">Romain Tavenard</h2>
@@ -73,9 +74,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#cr&#233;ation-de-liste"><span class="toc-section-number">3.2</span> Cr&#233;ation de liste</a></li>
 <li><a href="#acc&#232;s-aux-&#233;l&#233;ments-dune-liste"><span class="toc-section-number">3.3</span> Acc&#232;s aux &#233;l&#233;ments d&#8217;une liste</a></li>
 <li><a href="#parcours-dune-liste"><span class="toc-section-number">3.4</span> Parcours d&#8217;une liste</a><ul>
-<li><a href="#parcours-par-valeurs"><span class="toc-section-number">3.4.1</span> Parcours par valeurs</a></li>
+<li><a href="#parcours-des-&#233;l&#233;ments"><span class="toc-section-number">3.4.1</span> Parcours des &#233;l&#233;ments</a></li>
 <li><a href="#parcours-par-indices"><span class="toc-section-number">3.4.2</span> Parcours par indices</a></li>
-<li><a href="#parcours-par-valeurs-et-indices"><span class="toc-section-number">3.4.3</span> Parcours par valeurs et indices</a></li>
+<li><a href="#parcours-par-&#233;l&#233;ments-et-indices"><span class="toc-section-number">3.4.3</span> Parcours par &#233;l&#233;ments et indices</a></li>
 </ul></li>
 <li><a href="#manipulations-de-listes"><span class="toc-section-number">3.5</span> Manipulations de listes</a><ul>
 <li><a href="#insertion-d&#233;l&#233;ment"><span class="toc-section-number">3.5.1</span> Insertion d&#8217;&#233;l&#233;ment</a></li>
@@ -96,7 +97,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#modification-du-contenu-dun-dictionnaire"><span class="toc-section-number">5.1</span> Modification du contenu d&#8217;un dictionnaire</a></li>
 <li><a href="#lecture-du-contenu-dun-dictionnaire"><span class="toc-section-number">5.2</span> Lecture du contenu d&#8217;un dictionnaire</a></li>
 <li><a href="#parcours-dun-dictionnaire"><span class="toc-section-number">5.3</span> Parcours d&#8217;un dictionnaire</a><ul>
-<li><a href="#parcours-par-valeurs-1"><span class="toc-section-number">5.3.1</span> Parcours par valeurs</a></li>
+<li><a href="#parcours-par-valeurs"><span class="toc-section-number">5.3.1</span> Parcours par valeurs</a></li>
 <li><a href="#parcours-par-cl&#233;s"><span class="toc-section-number">5.3.2</span> Parcours par cl&#233;s</a></li>
 <li><a href="#parcours-par-couples-cl&#233;svaleurs"><span class="toc-section-number">5.3.3</span> Parcours par couples cl&#233;s/valeurs</a></li>
 </ul></li>
@@ -451,24 +452,24 @@ affiche_infos_personne(poids<span class="op">=</span><span class="dv">80</span>,
 <span class="bu">print</span>(math.sqrt(<span class="dv">2</span>))
 <span class="co"># [Sortie] 1.4142135623730951</span></code></pre></div>
 <p>Vous remarquerez ici que l&#8217;instruction d&#8217;import du module se trouve n&#233;cessairement avant les instructions faisant r&#233;f&#233;rence aux fonctions et variables de ce module, faute de quoi ces derni&#232;res ne seraient pas d&#233;finies. De mani&#232;re g&#233;n&#233;rale, vous prendrez la bonne habitude d&#8217;&#233;crire les instructions d&#8217;import en tout d&#233;but de vos fichiers Python, pour &#233;viter tout souci.</p>
-<p><strong>Exercice 2.1</strong> &#201;crivez une fonction en Python qui prendra en argument une longueur <code>l</code> et retournera l&#8217;aire du triangle &#233;quilat&#233;ral de c&#244;t&#233; <code>l</code>.</p>
+<p><strong>Exercice 2.1</strong> &#201;crivez une fonction en Python qui prenne en argument une longueur <code>l</code> et retourne l&#8217;aire du triangle &#233;quilat&#233;ral de c&#244;t&#233; <code>l</code>.</p>
 <h1 id="les-listes"><span class="header-section-number">3</span> Les listes</h1>
 <p>En Python, les listes stockent des s&#233;quences d&#8217;&#233;l&#233;ments. Il n&#8217;est pas n&#233;cessaire que tous les &#233;l&#233;ments d&#8217;une liste soient du m&#234;me type, m&#234;me si dans les exemples que nous consid&#233;rerons, ce sera souvent le cas.</p>
-<p>On peut trouver des informaions pr&#233;cieuses sur le sujet des listes dans l&#8217;aide en ligne de Python disponible &#224; l&#8217;adresse : <a href="https://docs.python.org/3/tutorial/datastructures.html" class="uri">https://docs.python.org/3/tutorial/datastructures.html</a>.</p>
+<p>On peut trouver des informations pr&#233;cieuses sur le sujet des listes dans l&#8217;aide en ligne de Python disponible &#224; l&#8217;adresse : <a href="https://docs.python.org/3/tutorial/datastructures.html" class="uri">https://docs.python.org/3/tutorial/datastructures.html</a>.</p>
 <h2 id="avant-propos-listes-et-it&#233;rables"><span class="header-section-number">3.1</span> Avant-propos : listes et it&#233;rables</h2>
 <p>Dans la suite, nous parlerons de listes, qui est un type de donn&#233;es bien sp&#233;cifique en Python. Toutefois, une grande partie de notre propos pourra se transposer &#224; l&#8217;ensemble des it&#233;rables en Python (c&#8217;est-&#224;-dire l&#8217;ensemble des objets Python dont on peut parcourir les &#233;l&#233;ments un &#224; un).</p>
-<p>Il existe toutefois une diff&#233;rence majeure entre listes et it&#233;rables : nous verrons dans la suite de ce chapitre que l&#8217;on peut acc&#233;der au <span class="math inline">\(i\)</span>-&#232;me &#233;l&#233;ment d&#8217;une liste simplement, alors que ce n&#8217;est pas possible pour un it&#233;rable (pour ce dernier, il faudra parcourir l&#8217;ensemble de ses &#233;l&#233;ments et s&#8217;arr&#234;ter lorsque l&#8217;on est effectivement rendu au <span class="math inline">\(i\)</span>-&#232;me).</p>
+<p>Il existe toutefois une diff&#233;rence majeure entre listes et it&#233;rables : nous verrons dans la suite de ce chapitre que l&#8217;on peut acc&#233;der au <span class="math inline">\(i\)</span>-&#232;me &#233;l&#233;ment d&#8217;une liste simplement, alors que ce n&#8217;est g&#233;n&#233;ralement pas possible pour un it&#233;rable (pour ce dernier, il faudra parcourir l&#8217;ensemble de ses &#233;l&#233;ments et s&#8217;arr&#234;ter lorsque l&#8217;on est effectivement rendu au <span class="math inline">\(i\)</span>-&#232;me).</p>
 <p>Toutefois, si l&#8217;on a un it&#233;rable <code class="sourceCode python">iterable</code>, il est possible de le transformer en liste simplement &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">list</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> <span class="bu">list</span>(iterable)</code></pre></div>
 <h2 id="cr&#233;ation-de-liste"><span class="header-section-number">3.2</span> Cr&#233;ation de liste</h2>
-<p>Pour cr&#233;er une liste contenant des valeurs d&#233;finies (par exemple la liste contenant les entiers 1, 5 et 7), il est possible d&#8217;utiliser la syntaxe suivante :</p>
+<p>Pour cr&#233;er une liste contenant des &#233;l&#233;ments d&#233;finis (par exemple la liste contenant les entiers 1, 5 et 7), il est possible d&#8217;utiliser la syntaxe suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]</code></pre></div>
 <p>De la m&#234;me fa&#231;on, on peut cr&#233;er une liste vide (ne contenant aucun &#233;l&#233;ment) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">liste <span class="op">=</span> []
 <span class="bu">print</span>(<span class="bu">len</span>(liste))
 <span class="co"># [Sortie] 0</span></code></pre></div>
-<p>On voit ici la fonction <code class="sourceCode python"><span class="bu">len</span></code> qui retourne la taille d&#8217;une liste pass&#233;e en argument (ici 0).</p>
-<p>Toutefois, lorsque l&#8217;on souhaite cr&#233;er des listes longues (par exemple la liste des 1000 premiers entiers), cette m&#233;thode est peu pratique. Il existe ainsi des fonctions qui permettent de cr&#233;er de telles listes. Par exemple, la fonction <code class="sourceCode python"><span class="bu">range</span>(a, b)</code> retourne un it&#233;rable contenant les entiers de <code class="sourceCode python">a</code> (inclus) &#224; <code class="sourceCode python">b</code> (exclu) :</p>
+<p>On voit ici la fonction <code class="sourceCode python"><span class="bu">len</span></code> qui retourne la taille d&#8217;une liste pass&#233;e en argument (ici 0 puisque la liste est vide).</p>
+<p>Toutefois, lorsque l&#8217;on souhaite cr&#233;er des listes longues (par exemple la liste des 1000 premiers entiers), cette m&#233;thode est peu pratique. Heureusement, il existe des fonctions qui permettent de cr&#233;er de telles listes. Par exemple, la fonction <code class="sourceCode python"><span class="bu">range</span>(a, b)</code> retourne un it&#233;rable contenant les entiers de <code class="sourceCode python">a</code> (inclus) &#224; <code class="sourceCode python">b</code> (exclu) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>)     <span class="co"># l = [1, 2, 3, ..., 9]</span>
 l <span class="op">=</span> <span class="bu">range</span>(<span class="dv">10</span>)        <span class="co"># l = [0, 1, 2, ..., 9]</span>
 l <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)  <span class="co"># l = [0, 2, 4, ..., 8]</span></code></pre></div>
@@ -492,7 +493,7 @@ l <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</sp
 <span class="co"># [Sortie] 1</span></code></pre></div>
 <p>De la m&#234;me fa&#231;on, on peut acc&#233;der au deuxi&#232;me &#233;l&#233;ment en partant de la fin <em>via</em> l&#8217;indice <code class="sourceCode python"><span class="op">-</span><span class="dv">2</span></code>, <em>etc.</em></p>
 <p>Ainsi, pour une liste de taille <span class="math inline">\(n\)</span>, les valeurs d&#8217;indice valides sont les entiers compris entre <span class="math inline">\(-n\)</span> et <span class="math inline">\(n - 1\)</span> (inclus).</p>
-<p>Il est &#233;galement &#224; noter que l&#8217;acc&#232;s aux &#233;l&#233;ments d&#8217;une liste peut se faire en lecture (lire la valeur stock&#233;e &#224; l&#8217;indice <code class="sourceCode python">i</code>) comme en &#233;criture (modifier la valeur stock&#233;e &#224; l&#8217;indice <code class="sourceCode python">i</code>) :</p>
+<p>Il est &#233;galement &#224; noter que l&#8217;acc&#232;s aux &#233;l&#233;ments d&#8217;une liste peut se faire en lecture (lire l&#8217;&#233;l&#233;ment stock&#233; &#224; l&#8217;indice <code class="sourceCode python">i</code>) comme en &#233;criture (modifier l&#8217;&#233;l&#233;ment stock&#233; &#224; l&#8217;indice <code class="sourceCode python">i</code>) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 <span class="bu">print</span>(l[<span class="dv">1</span>])
 l[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span>
@@ -512,13 +513,13 @@ l[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span>
 <h2 id="parcours-dune-liste"><span class="header-section-number">3.4</span> Parcours d&#8217;une liste</h2>
 <p>Lorsque l&#8217;on parcourt une liste, on peut vouloir acc&#233;der :</p>
 <ul>
-<li>aux valeurs stock&#233;es dans la liste uniquement ;</li>
+<li>aux &#233;l&#233;ments stock&#233;s dans la liste uniquement ;</li>
 <li>aux indices de la liste uniquement (m&#234;me si c&#8217;est rare) ;</li>
-<li>aux indices de la listes et aux valeurs associ&#233;es.</li>
+<li>aux indices de la listes et aux &#233;l&#233;ments associ&#233;s.</li>
 </ul>
 <p>Ces trois cas de figure impliquent trois parcours de liste diff&#233;rents, d&#233;crits dans ce qui suit.</p>
 <p><strong>Attention.</strong> Quel que soit le parcours de liste utilis&#233;, il est fortement d&#233;conseill&#233; de supprimer ou d&#8217;ins&#233;rer des &#233;l&#233;ments dans une liste pendant le parcours de celle-ci.</p>
-<h3 id="parcours-par-valeurs"><span class="header-section-number">3.4.1</span> Parcours par valeurs</h3>
+<h3 id="parcours-des-&#233;l&#233;ments"><span class="header-section-number">3.4.1</span> Parcours des &#233;l&#233;ments</h3>
 <p>Pour parcourir les &#233;l&#233;ments d&#8217;une liste, on utilise une boucle <code class="sourceCode python"><span class="cf">for</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 <span class="cf">for</span> elem <span class="op">in</span> l:
@@ -535,23 +536,23 @@ n <span class="op">=</span> <span class="bu">len</span>(l)  <span class="co"># n
 <span class="co"># [Sortie] 0</span>
 <span class="co"># [Sortie] 1</span>
 <span class="co"># [Sortie] 2</span></code></pre></div>
-<h3 id="parcours-par-valeurs-et-indices"><span class="header-section-number">3.4.3</span> Parcours par valeurs et indices</h3>
-<p>Dans certains cas, enfin, on a besoin de manipuler simultan&#233;ment les indices d&#8217;une listes et les valeurs associ&#233;es. Cela se fait &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">enumerate</span></code> :</p>
+<h3 id="parcours-par-&#233;l&#233;ments-et-indices"><span class="header-section-number">3.4.3</span> Parcours par &#233;l&#233;ments et indices</h3>
+<p>Dans certains cas, enfin, on a besoin de manipuler simultan&#233;ment les indices d&#8217;une listes et les &#233;l&#233;ments associ&#233;s. Cela se fait &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">enumerate</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
-<span class="cf">for</span> i, valeur <span class="op">in</span> <span class="bu">enumerate</span>(l):
-    <span class="bu">print</span>(i, valeur)
+<span class="cf">for</span> i, elem <span class="op">in</span> <span class="bu">enumerate</span>(l):
+    <span class="bu">print</span>(i, elem)
 <span class="co"># [Sortie] 0 1</span>
 <span class="co"># [Sortie] 1 5</span>
 <span class="co"># [Sortie] 2 7</span></code></pre></div>
-<p>On a donc ici une boucle <code class="sourceCode python"><span class="cf">for</span></code> pour laquelle, &#224; chaque it&#233;ration, on met &#224; jour les variables <code class="sourceCode python">i</code> (qui contient l&#8217;indice courant) et <code class="sourceCode python">valeur</code> (qui contient la valeur se trouvant &#224; l&#8217;indice <code class="sourceCode python">i</code> dans la liste <code class="sourceCode python">l</code>).</p>
-<p><strong>Exercice.</strong> &#201;crivez une fonction en Python qui permette de calculer l&#8217;argmax d&#8217;une liste, c&#8217;est-&#224;-dire l&#8217;indice auquel est stock&#233;e la valeur maximale de la liste.</p>
+<p>On a donc ici une boucle <code class="sourceCode python"><span class="cf">for</span></code> pour laquelle, &#224; chaque it&#233;ration, on met &#224; jour les variables <code class="sourceCode python">i</code> (qui contient l&#8217;indice courant) et <code class="sourceCode python">elem</code> (qui contient l&#8217;&#233;l&#233;ment se trouvant &#224; l&#8217;indice <code class="sourceCode python">i</code> dans la liste <code class="sourceCode python">l</code>).</p>
+<p><strong>Exercice 3.1</strong> &#201;crivez une fonction en Python qui permette de calculer l&#8217;argmax d&#8217;une liste, c&#8217;est-&#224;-dire l&#8217;indice auquel est stock&#233;e la valeur maximale de la liste.</p>
 <h2 id="manipulations-de-listes"><span class="header-section-number">3.5</span> Manipulations de listes</h2>
 <p>Nous pr&#233;sentons dans ce qui suit les op&#233;rations &#233;l&#233;mentaires de manipulation de listes.</p>
 <h3 id="insertion-d&#233;l&#233;ment"><span class="header-section-number">3.5.1</span> Insertion d&#8217;&#233;l&#233;ment</h3>
-<p>Pour ins&#233;rer un nouvel &#233;l&#233;ment dans une liste, il existe deux m&#233;thodes possibles :</p>
+<p>Pour ins&#233;rer un nouvel &#233;l&#233;ment dans une liste, on peut :</p>
 <ul>
-<li>on peut rajouter un &#233;l&#233;ment d&#224; la fin de la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">append</code> ;</li>
-<li>on peut ins&#233;rer un &#233;l&#233;ment &#224; l&#8217;indice <code class="sourceCode python">i</code> de la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">insert</code>.</li>
+<li>rajouter un &#233;l&#233;ment &#224; la fin de la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">append</code> ;</li>
+<li>ins&#233;rer un &#233;l&#233;ment &#224; l&#8217;indice <code class="sourceCode python">i</code> de la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">insert</code>.</li>
 </ul>
 <p>Comme vous pouvez le remarquer, il est ici question de m&#233;thodes et non plus de fonctions. Pour l&#8217;instant, sachez que les m&#233;thodes sont des fonctions sp&#233;cifiques &#224; certains objets, comme les listes par exemples. L&#8217;appel de ces m&#233;thodes est un peu particulier, comme vous pouvez le remarquer dans ce qui suit :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
@@ -562,10 +563,10 @@ l.insert(<span class="dv">2</span>, <span class="dv">0</span>)  <span class="co"
 <span class="bu">print</span>(l)
 <span class="co"># [Sortie] [1, 5, 0, 7, 2]</span></code></pre></div>
 <h3 id="suppression-d&#233;l&#233;ment"><span class="header-section-number">3.5.2</span> Suppression d&#8217;&#233;l&#233;ment</h3>
-<p>Si l&#8217;on souhaite, maintenant, supprimer un &#233;l&#233;ment dans une liste, deux cas de figures peuvent se pr&#233;senter :</p>
+<p>Si l&#8217;on souhaite, maintenant, supprimer un &#233;l&#233;ment dans une liste, deux cas de figures peuvent se pr&#233;senter. On peut souhaiter :</p>
 <ul>
-<li>on peut souhaiter supprimer l&#8217;&#233;l&#233;ment situ&#233; &#224; l&#8217;indice <code class="sourceCode python">i</code> dans la liste, &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">pop</code> ;</li>
-<li>on peut souhaiter supprimer la premi&#232;re occurrence d&#8217;une valeur donn&#233;e dans la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">remove</code>.</li>
+<li>supprimer l&#8217;&#233;l&#233;ment situ&#233; &#224; l&#8217;indice <code class="sourceCode python">i</code> dans la liste, &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">pop</code> ;</li>
+<li>supprimer la premi&#232;re occurrence d&#8217;une valeur donn&#233;e dans la liste &#224; l&#8217;aide de la m&#233;thode <code class="sourceCode python">remove</code>.</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 l.pop(<span class="dv">1</span>)  <span class="co"># l&#39;&#233;l&#233;ment d&#39;indice 1 est le deuxi&#232;me &#233;l&#233;ment de la liste !</span>
@@ -749,7 +750,7 @@ mon_dico[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span 
 <span class="co"># [Sortie] 0</span></code></pre></div>
 <h2 id="parcours-dun-dictionnaire"><span class="header-section-number">5.3</span> Parcours d&#8217;un dictionnaire</h2>
 <p>Pour parcourir le contenu d&#8217;un dictionnaire, il existe, comme pour les listes, trois possibilit&#233;s.</p>
-<h3 id="parcours-par-valeurs-1"><span class="header-section-number">5.3.1</span> Parcours par valeurs</h3>
+<h3 id="parcours-par-valeurs"><span class="header-section-number">5.3.1</span> Parcours par valeurs</h3>
 <p>Si l&#8217;on souhaite uniquement acc&#233;der aux valeurs stock&#233;es dans le dictionnaire, on utilisera la m&#233;thode <code class="sourceCode python">values</code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
 <span class="cf">for</span> val <span class="op">in</span> mon_dico.values():

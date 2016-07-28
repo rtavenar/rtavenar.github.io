@@ -17,3 +17,21 @@ def aire_equi(l):
 print(aire_equi(1.))
 # [Sortie] 0.4330127018922193
 ```
+
+**Exercice 3.1**
+
+```python
+def argmax(liste):
+    i_max = None
+    # On initialise elem_max à une valeur
+    # qui n'est clairement pas le max
+    elem_max = liste[0] - 1  
+    for i, elem in enumerate(liste):
+        if elem > elem_max:
+            i_max = i
+            elem_max = elem
+    return i_max
+
+print(argmax([1, 6, 2, 4]))
+# [Sortie] 1
+```

@@ -1,20 +1,31 @@
-SRC_TURTLE=turtle.md
+all: turtle intro fonctions listes listes_avancees chaines dict fichiers numpy
 
-all: turtle
+intro: html/intro.html epub/intro.epub pdf/intro.pdf
 
-turtle: turtle_html turtle_epub turtle_pdf
+fonctions: html/fonctions.html epub/fonctions.epub pdf/fonctions.pdf
 
-pdf: turtle_pdf
+turtle: html/turtle.html epub/turtle.epub pdf/turtle.pdf
 
-epub: turtle_epub
+listes: html/listes.html epub/listes.epub pdf/listes.pdf
 
-html: turtle_html
+listes_avancees: html/listes_avancees.html epub/listes_avancees.epub pdf/listes_avancees.pdf
 
-turtle_html: $(SRC_TURTLE)
-	pandoc --self-contained -s -o html/turtle.html --highlight-style pygments --data-dir . --columns 1000 --css ../../css/md_td.css -S --normalize --ascii --number-sections --mathml $^
+chaines: html/chaines.html epub/chaines.epub pdf/chaines.pdf
 
-turtle_epub: $(SRC_TURTLE)
-	pandoc -S -o epub/turtle.epub --columns 1000 -S --epub-cover-image=logo.png --epub-metadata=metadata.xml --epub-stylesheet ../../css/md_epub.css --mathml $^
+dict: html/dict.html epub/dict.epub pdf/dict.pdf
 
-turtle_pdf: $(SRC_TURTLE)
-	pandoc -V lang=fr -o pdf/turtle.pdf --columns 1000 --variable urlcolor=cyan --number-sections $^
+fichiers: html/fichiers.html epub/fichiers.epub pdf/fichiers.pdf
+
+numpy: html/numpy.html epub/numpy.epub pdf/numpy.pdf
+
+html/%.html: %.md
+	pandoc --self-contained -s -o $@ --highlight-style pygments --data-dir . --columns 1000 --css ../../css/md_td.css -S --normalize --ascii --number-sections --mathml $^
+
+epub/%.epub: %.md
+	pandoc -S -o $@ --columns 1000 -S --epub-cover-image=logo.png --epub-metadata=metadata.xml --epub-stylesheet ../../css/md_epub.css --mathml $^
+
+pdf/%.pdf: %.md
+	pandoc -V lang=fr -o $@ --columns 1000 --variable urlcolor=cyan --number-sections $^
+
+clean:
+	rm -f epub/*.epub pdf/*.pdf html/*.html

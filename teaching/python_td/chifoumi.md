@@ -1,5 +1,9 @@
 ---
 title : "DL #1: ChiFouMi"
+subtitle: Devoir libre pour un cours dispensé à l'université de Rennes 2
+language: fr
+author: Romain Tavenard
+rights: Creative Commons CC BY-NC-SA
 ---
 
 Le but de ce premier devoir libre (DL) est d'implémenter un jeu de ChiFouMi (ou [Pierre-Feuille-Ciseau](http://fr.wikipedia.org/wiki/Pierre-feuille-ciseaux)) dans lequel l'utilisateur jouera contre l'ordinateur.

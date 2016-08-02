@@ -1,5 +1,9 @@
 ---
 title : "DL #2: Racine d'une fonction mathématique"
+subtitle: Devoir libre pour un cours dispensé à l'université de Rennes 2
+language: fr
+author: Romain Tavenard
+rights: Creative Commons CC BY-NC-SA
 ---
 
 Le but de ce deuxième devoir libre (DL) est d'implémenter un algorithme de calcul approché de la racine d'une fonction mathématique $f$ continue sur un intervalle $[a,b]$.

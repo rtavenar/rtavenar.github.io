@@ -1,5 +1,9 @@
 ---
 title : "La lecture et l'écriture de fichiers en Python"
+subtitle: Planche de TD pour un cours dispensé à l'université de Rennes 2
+language: fr
+author: Romain Tavenard
+rights: Creative Commons CC BY-NC-SA
 ---
 
 # Lecture de fichier textuel

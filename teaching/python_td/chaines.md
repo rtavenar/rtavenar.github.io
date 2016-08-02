@@ -1,5 +1,9 @@
 ---
 title : "Les chaînes de caractères en Python"
+subtitle: Planche de TD pour un cours dispensé à l'université de Rennes 2
+language: fr
+author: Romain Tavenard
+rights: Creative Commons CC BY-NC-SA
 ---
 
 Le but de cette séance est de se pencher sur l'éventail des possibilités offertes par le type `str` (_String_) en Python.

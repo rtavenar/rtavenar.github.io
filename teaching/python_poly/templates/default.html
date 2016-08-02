@@ -42,7 +42,7 @@ $if(title)$
 <div id="$idprefix$header">
 <h1 class="title">$title$</h1>
 $if(subtitle)$
-<h1 class="subtitle">$subtitle$</h1>
+<div class="subtitle">$subtitle$</div>
 $endif$
 $for(author)$
 <h2 class="author">$author$</h2>
@@ -54,6 +54,7 @@ $endif$
 $endif$
 $if(toc)$
 <div id="$idprefix$TOC">
+<h2>Table des matières</h2>
 $toc$
 </div>
 $endif$

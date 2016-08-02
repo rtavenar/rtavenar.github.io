@@ -1,9 +1,3 @@
----
-title : Polycopié pour le cours de Python
-subtitle : Solution des exercices
-author : Romain Tavenard
----
-
 **Exercice 2.1**
 
 ```python

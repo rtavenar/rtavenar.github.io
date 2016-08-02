@@ -1,5 +1,9 @@
 ---
 title : "TD : introduction à Python et PyCharm"
+subtitle: Planche de TD pour un cours dispensé à l'université de Rennes 2
+language: fr
+author: Romain Tavenard
+rights: Creative Commons CC BY-NC-SA
 ---
 
 Le but de cette séance est de réaliser vos premiers programmes en Python dans l'IDE (_Integrated Development Environment_) PyCharm.

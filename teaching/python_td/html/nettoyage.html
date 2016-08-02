@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
+  <meta name="author" content="Romain Tavenard" />
   <title>DL #5: Exercice de nettoyage de donn&#233;es</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
@@ -49,6 +50,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body onload="anchors.options = {visible: 'always'}; anchors.add();">
 <div id="header">
 <h1 class="title">DL #5: Exercice de nettoyage de donn&#233;es</h1>
+<div class="subtitle">Devoir libre pour un cours dispens&#233; &#224; l&#8217;universit&#233; de Rennes 2</div>
+<h2 class="author">Romain Tavenard</h2>
 </div>
 <p>Le module <code class="sourceCode python">csv</code> fournit, en Python, un ensemble de fonctions permettant de lire et d&#8217;&#233;crire efficacement des fichiers de donn&#233;es au format CSV. L&#8217;objet de ce devoir libre est de cr&#233;er un programme de nettoyage de fichiers de donn&#233;es se basant sur ce module <code class="sourceCode python">csv</code>. Vous allez impl&#233;menter une fonction qui prend en entr&#233;e un nom de fichier (contenant des donn&#233;es au format CSV), le d&#233;limiteur utilis&#233; dans ce fichier (virgule, point virgule, tabulation, etc.), une cha&#238;ne de caract&#232;res d&#233;signant une donn&#233;e manquante dans le fichier et, de mani&#232;re optionnelle, un nom de fichier de sortie dans lequel &#233;crire le contenu nettoy&#233; (si ce nom n&#8217;est pas fourni, le contenu nettoy&#233; sera affich&#233; dans la console).</p>
 <p>Cette fonction devra v&#233;rifier, pour chaque donn&#233;e dans le fichier, si celle-ci est num&#233;rique. Si c&#8217;est le cas, la donn&#233;e sera conserv&#233;e, sinon, elle sera remplac&#233;e par la cha&#238;ne de caract&#232;res correspondant aux donn&#233;es manquantes. Par exemple, si le fichier d&#8217;entr&#233;e contient le texte suivant :</p>

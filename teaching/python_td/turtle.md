@@ -1,5 +1,9 @@
 ---
 title : "TD : le module `turtle`"
+subtitle: Planche de TD pour un cours dispensé à l'université de Rennes 2
+language: fr
+author: Romain Tavenard
+rights: Creative Commons CC BY-NC-SA
 ---
 
 Le but de cette séance est de continuer à vous habituer à la programmation en Python et notamment aux notions de :

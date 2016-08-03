@@ -35,6 +35,8 @@ import turtle
 for i in range(100):
     turtle.forward(10 + i)
     turtle.left(90)
+
+turtle.exitonclick()  # Attend un clic avant de fermer la fenetre
 ```
 
 3. Vérifiez votre prédiction en exécutant ce code.

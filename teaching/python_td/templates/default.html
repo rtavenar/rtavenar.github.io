@@ -32,9 +32,8 @@ $endif$
 $for(header-includes)$
   $header-includes$
 $endfor$
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.min.js"></script>
 </head>
-<body onload="anchors.options = {visible: 'always'}; anchors.add();">
+<body>
 $for(include-before)$
 $include-before$
 $endfor$
@@ -43,7 +42,7 @@ $if(title)$
 <h1 class="title">$title$</h1>
 <h4 class="link-back"><a href="../index.html">Retour &agrave; la liste des &eacute;nonc&eacute;s</a></h4>
 $if(subtitle)$
-<div class="subtitle">$subtitle$</div>
+<h4 class="subtitle">$subtitle$</h4>
 $endif$
 $for(author)$
 <h2 class="author">$author$</h2>

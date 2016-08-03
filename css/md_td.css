@@ -48,9 +48,7 @@ h2 {
 	font-weight: bold;
 	}
 h2.author {
-	font-weight: normal;
-	font-style: italic;
-	text-align: right;
+	display: none;
 	}
 h4.link-back {
 	font-weight: normal;
@@ -166,15 +164,16 @@ h1.title {
     min-height: 150px;
 }
 
-h1.subtitle {
+h4.subtitle {
     margin-top: .5em;
+    margin-bottom: 2em;
 }
 
 a.anchorjs-link {
     color: #000000;
 }
 
-h1.title a.anchorjs-link, h2.author a.anchorjs-link, h1.subtitle a.anchorjs-link, h4.link-back a.anchorjs-link {
+h1.title a.anchorjs-link, h2.author a.anchorjs-link, h4.subtitle a.anchorjs-link, h4.link-back a.anchorjs-link {
     display: none;
 }
 

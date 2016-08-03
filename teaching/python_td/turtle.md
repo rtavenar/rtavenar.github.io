@@ -25,6 +25,26 @@ Lors de cette séance de TD, vous serez ammenés à faire appel aux fonctions de
 * `turtle.down()`{.python} : stopper la lévitation de la tortue ;
 * `turtle.goto(x, y)`{.python} : faire se déplacer la tortue jusqu'à la position `(x, y)`{.python}.
 
+# Lecture d'un programme
+
+2. Sans l'exécuter pour le moment, tentez de comprendre ce que fait le code suivant et de deviner ce qu'il affichera à l'écran :
+
+```python
+import turtle
+
+for i in range(100):
+    turtle.forward(10 + i)
+    turtle.left(90)
+```
+
+3. Vérifiez votre prédiction en exécutant ce code.
+
+# L'étoile à 5 branches
+
+4. Dessinez à l'écran une étoile à 5 branches similaire à celle-ci :
+
+![](img/star.png)
+
 # Le château de cartes
 
 Dans cet exercice, vous allez tenter de dessiner à l'écran un château de cartes (fait de triangles superposés) similaire à celui-ci :
@@ -33,9 +53,9 @@ Dans cet exercice, vous allez tenter de dessiner à l'écran un château de cart
 
 Pour cela, vous devrez tout d'abord être capable de tracer un triangle équilatéral à une position donnée.
 
-2. Écrivez une fonction qui prenne en entrée une position (sous la forme de deux entiers `x`{.python} et `y`{.python}) et une taille `c`{.python} et trace à l'écran un triangle équilatéral de côté `c`{.python} ayant son bord inférieur gauche situé à la position `(x, y)`{.python}.
+5. Écrivez une fonction qui prenne en entrée une position (sous la forme de deux entiers `x`{.python} et `y`{.python}) et une taille `c`{.python} et trace à l'écran un triangle équilatéral de côté `c`{.python} ayant son bord inférieur gauche situé à la position `(x, y)`{.python}.
 
-3. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} et trace à l'écran un château de cartes dont la base est constituée de `n`{.python} triangles.
+6. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} et trace à l'écran un château de cartes dont la base est constituée de `n`{.python} triangles.
 
 # L'immeuble
 
@@ -62,18 +82,18 @@ Pour cela, vous définirez 3 fonctions (à l'emplacement des points de suspensio
 * `immeuble`{.python} permettra de dessiner un immeuble tel que celui représenté ci-dessus à l'écran.
 
 ## La fonction rectangle
-4. Écrivez une fonction rectangle qui permette de tracer à l'écran un rectangle de taille et de position spécifiées lors de l'appel de la fonction.
+7. Écrivez une fonction rectangle qui permette de tracer à l'écran un rectangle de taille et de position spécifiées lors de l'appel de la fonction.
 
 ## La fonction carre
-5. Écrivez une fonction `carre`{.python} qui permette de tracer à l'écran un carré de taille et de position spécifiées lors de l'appel de la fonction.
+8. Écrivez une fonction `carre`{.python} qui permette de tracer à l'écran un carré de taille et de position spécifiées lors de l'appel de la fonction.
 Est-il nécessaire de réécrire la fonction dans son ensemble (avec les appels successifs aux fonctions du module `turtle`{.python}) ou est-ce possible de s'en sortir en une ligne de code ?
 
 ## La fonction immeuble
-6. Écrivez une fonction `immeuble`{.python} qui permette de tracer un immeuble à l'écran, connaissant son nombre d'étages et le nombre de fenêtres par étage.
+9. Écrivez une fonction `immeuble`{.python} qui permette de tracer un immeuble à l'écran, connaissant son nombre d'étages et le nombre de fenêtres par étage.
 N'hésitez pas à faire un schéma de l'immeuble sur papier pour vous rendre compte des dimensions à utiliser.
 
 ## Un peu de _tuning_
-7. Ajoutez aux fonctions nécessaires un paramètre facultatif qui permette de spécifier la couleur de remplissage des formes géométriques tracées.
+10. Ajoutez aux fonctions nécessaires un paramètre facultatif qui permette de spécifier la couleur de remplissage des formes géométriques tracées.
 Utilisez ce paramètre facultatif pour demander de tracer l'immeuble en gris (`"grey"`{.haskell}) et les fenêtres en jaune (`"yellow"`{.haskell}).
 Pour cela, vous aurez besoin des fonctions `turtle.fillcolor(couleur)`{.python}, `turtle.begin_fill()`{.python} et `turtle.end_fill()`{.python} qui s'utilisent comme suit :
 ```python

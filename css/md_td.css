@@ -52,6 +52,10 @@ h2.author {
 	font-style: italic;
 	text-align: right;
 	}
+h4.link-back {
+	font-weight: normal;
+	text-align: right;
+	}
 h3 {
 	font-weight: normal;
 	font-style: italic;
@@ -170,7 +174,7 @@ a.anchorjs-link {
     color: #000000;
 }
 
-h1.title a.anchorjs-link, h2.author a.anchorjs-link, h1.subtitle a.anchorjs-link {
+h1.title a.anchorjs-link, h2.author a.anchorjs-link, h1.subtitle a.anchorjs-link, h4.link-back a.anchorjs-link {
     display: none;
 }
 

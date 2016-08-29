@@ -17,7 +17,7 @@ poly_html: $(SRC_POLY)
 	pandoc --toc --toc-depth 2 -s -o html/poly.html --highlight-style pygments --data-dir . --columns 1000 --css ../../../css/md.css -S --normalize --ascii --number-sections --mathjax $^
 
 poly_epub: $(SRC_POLY)
-	pandoc -S -o epub/poly.epub --columns 1000 -S --epub-stylesheet ../../css/md_epub.css --mathml --toc $^
+	pandoc -S -o epub/poly.epub --columns 1000 -S --epub-stylesheet ../../css/md_epub.css --mathml --toc --toc-depth 2 $^
 
 poly_pdf: $(SRC_POLY)
 	pandoc -V lang=fr -o pdf/poly.pdf --columns 1000 --variable urlcolor=cyan --chapters --number-sections $^

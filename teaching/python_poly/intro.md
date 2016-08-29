@@ -12,7 +12,7 @@ def f(v):
 x = 5
 y = f(3 * x + 2)
 print(y)
-# [Sortie] 77
+# [Sortie] 289
 ```
 
 Nous prendrons notamment l'habitude de reporter les valeurs affichées par l'exécution du programme considéré dans un terminal avec la syntaxe utilisée à la dernière ligne du code ci-dessus.

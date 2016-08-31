@@ -397,5 +397,5 @@ De manière générale, vous prendrez la bonne habitude d'écrire les instructio
 **Exercice 2.1** Écrivez une fonction en Python qui prenne en argument une longueur `l` et retourne l'aire du triangle équilatéral de côté `l`.
 
 **Exercice 2.2** Écrivez une fonction en Python qui affiche tous les termes plus petits que 1000 de la suite $(u_n)$ définie comme :
-$$\begin{array}{ccc}u_0 & = & 2 \\
+$$\begin{array}{rcc}u_0 & = & 2 \\
 \forall n \geq 1, \, u_n & = & u_{n-1}^2\end{array}$$

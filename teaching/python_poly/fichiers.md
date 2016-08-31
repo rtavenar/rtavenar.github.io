@@ -158,3 +158,7 @@ Il est préférable d'utiliser cette fonction plutôt que d'effectuer la concat�
 
 **Exercice 6.1**
 Écrivez une fonction qui affiche, pour chaque fichier d'extension `".txt"`{.haskell} d'un répertoire passé en argument, affiche le nom du fichier ainsi que son nombre de lignes.
+
+**Exercice 6.2**
+Écrivez une fonction qui retourne le nombre de fichiers présents dans un répertoire dont le nom est passé en argument.
+Vous pourrez vous aider pour cela de la documentation du sous-module `path`{.python} du module `os`{.python} ([lien](https://docs.python.org/3.5/library/os.path.html)).

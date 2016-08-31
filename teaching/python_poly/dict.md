@@ -102,10 +102,12 @@ for cle, valeur in mon_dico.items():
 
 
 **Exercice 5.1**
-Écrivez un programme Python qui compte le nombre d'occurrences de chacun des mots d'une chaîne de caractères et stocke le résultat dans un dictionnaire :
+Écrivez une fonction qui compte le nombre d'occurrences de chacun des mots d'une chaîne de caractères et retourne le résultat sous forme de dictionnaire :
 ```python
-s = "la vie est belle c'est la vie"
 # [...]
-print(d)
+print(compte_occurrences("la vie est belle c'est la vie"))
 # [Sortie] {"c'est": 1, 'la': 2, 'belle': 1, 'est': 1, 'vie': 2}
 ```
+
+**Exercice 5.2**
+Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fournie en argument.

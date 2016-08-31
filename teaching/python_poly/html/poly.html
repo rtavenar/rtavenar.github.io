@@ -427,6 +427,8 @@ affiche_infos_personne(poids<span class="op">=</span><span class="dv">80</span>,
 <span class="co"># [Sortie] 1.4142135623730951</span></code></pre></div>
 <p>Vous remarquerez ici que l&#8217;instruction d&#8217;import du module se trouve n&#233;cessairement avant les instructions faisant r&#233;f&#233;rence aux fonctions et variables de ce module, faute de quoi ces derni&#232;res ne seraient pas d&#233;finies. De mani&#232;re g&#233;n&#233;rale, vous prendrez la bonne habitude d&#8217;&#233;crire les instructions d&#8217;import en tout d&#233;but de vos fichiers Python, pour &#233;viter tout souci.</p>
 <p><strong>Exercice 2.1</strong> &#201;crivez une fonction en Python qui prenne en argument une longueur <code>l</code> et retourne l&#8217;aire du triangle &#233;quilat&#233;ral de c&#244;t&#233; <code>l</code>.</p>
+<p><strong>Exercice 2.2</strong> &#201;crivez une fonction en Python qui affiche tous les termes plus petits que 1000 de la suite <span class="math inline">\((u_n)\)</span> d&#233;finie comme : <span class="math display">\[\begin{array}{ccc}u_0 &amp; = &amp; 2 \\
+\forall n \geq 1, \, u_n &amp; = &amp; u_{n-1}^2\end{array}\]</span></p>
 <h1 id="les-listes"><span class="header-section-number">3</span> Les listes</h1>
 <p>En Python, les listes stockent des s&#233;quences d&#8217;&#233;l&#233;ments. Il n&#8217;est pas n&#233;cessaire que tous les &#233;l&#233;ments d&#8217;une liste soient du m&#234;me type, m&#234;me si dans les exemples que nous consid&#233;rerons, ce sera souvent le cas.</p>
 <p>On peut trouver des informations pr&#233;cieuses sur le sujet des listes dans l&#8217;aide en ligne de Python disponible &#224; l&#8217;adresse : <a href="https://docs.python.org/3/tutorial/datastructures.html" class="uri">https://docs.python.org/3/tutorial/datastructures.html</a>.</p>
@@ -589,6 +591,8 @@ l2 <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span>
 l2 <span class="op">=</span> <span class="bu">sorted</span>(l)
 <span class="bu">print</span>(l2)
 <span class="co"># [Sortie] [2, 4, 5]</span></code></pre></div>
+<p><strong>Exercice 3.2</strong> &#201;crivez une fonction qui prenne deux listes en entr&#233;e et retourne l&#8217;intersection des deux listes (c&#8217;est-&#224;-dire une liste contenant tous les &#233;l&#233;ments pr&#233;sents dans les deux listes).</p>
+<p><strong>Exercice 3.3</strong> &#201;crivez une fonction qui prenne deux listes en entr&#233;e et retourne l&#8217;union des deux listes (c&#8217;est-&#224;-dire une liste contenant tous les &#233;l&#233;ments pr&#233;sents dans au moins une des deux listes) sans doublon.</p>
 <h2 id="copie-de-liste"><span class="header-section-number">3.6</span> Copie de liste</h2>
 <p>Pour la plupart des variables, en Python, la copie ne pose pas de probl&#232;me :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">a <span class="op">=</span> <span class="dv">12</span>
@@ -693,6 +697,7 @@ i <span class="op">=</span> <span class="bu">int</span>(s)
 <li><code class="sourceCode python">ch.strip()</code>: Retourne une version &#8220;nettoy&#233;e&#8221; de <code class="sourceCode python">ch</code> dans laquelle on a enlev&#233; tous les espaces en d&#233;but et en fin de cha&#238;ne</li>
 </ul>
 <p><strong>Exercice 4.1</strong> &#201;crivez une fonction qui prenne en argument deux cha&#238;nes de caract&#232;res <code class="sourceCode python">s</code> et <code class="sourceCode python">prefix</code> et retourne le nombre de mots de la cha&#238;ne <code class="sourceCode python">s</code> qui d&#233;butent par la cha&#238;ne <code class="sourceCode python">prefix</code>.</p>
+<p><strong>Exercice 4.2</strong> &#201;crivez une fonction qui prenne en argument deux cha&#238;nes de caract&#232;res <code class="sourceCode python">s</code> et <code class="sourceCode python">mot_cible</code> et retourne le nombre d&#8217;occurrences du mot <code class="sourceCode python">mot_cible</code> dans la cha&#238;ne <code class="sourceCode python">s</code> en ne tenant pas compte de la casse.</p>
 <h1 id="les-dictionnaires"><span class="header-section-number">5</span> Les dictionnaires</h1>
 <p>Comme une liste, un dictionnaire est une collection de donn&#233;es. Mais, &#224; la diff&#233;rence des listes, les dictionnaires ne sont pas ordonn&#233;s (ou, tout du moins, ils le sont dans un ordre qui ne nous est pas naturel). Chaque entr&#233;e dans un dictionnaire est une association entre une <strong>cl&#233;</strong> (&#233;quivalente &#224; un indice pour une liste) et une <strong>valeur</strong>. Alors que les indices d&#8217;une liste sont forc&#233;ment les entiers compris entre 0 et la taille de la liste exclue, les cl&#233;s d&#8217;un dictionnaire sont des valeurs quelconques, la seule contrainte &#233;tant qu&#8217;on ne peut pas avoir deux fois la m&#234;me cl&#233; dans un dictionnaire. Notamment, ces cl&#233;s ne sont pas n&#233;cessairement des entiers, on utilisera en effet souvent des dictionnaires lorsque l&#8217;on souhaite stocker des valeurs associ&#233;es &#224; des cha&#238;nes de caract&#232;res (qui seront les cl&#233;s du dictionnaire).</p>
 <p>Pour d&#233;finir un dictionnaire par ses paires cl&#233;s-valeurs en Python, on peut utiliser la syntaxe suivante :</p>
@@ -753,11 +758,11 @@ mon_dico[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span 
 <span class="co"># [Sortie] a 123</span>
 <span class="co"># [Sortie] bbb None</span>
 <span class="co"># [Sortie] z 7</span></code></pre></div>
-<p><strong>Exercice 5.1</strong> &#201;crivez un programme Python qui compte le nombre d&#8217;occurrences de chacun des mots d&#8217;une cha&#238;ne de caract&#232;res et stocke le r&#233;sultat dans un dictionnaire :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;la vie est belle c&#39;est la vie&quot;</span>
-<span class="co"># [...]</span>
-<span class="bu">print</span>(d)
+<p><strong>Exercice 5.1</strong> &#201;crivez une fonction qui compte le nombre d&#8217;occurrences de chacun des mots d&#8217;une cha&#238;ne de caract&#232;res et retourne le r&#233;sultat sous forme de dictionnaire :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># [...]</span>
+<span class="bu">print</span>(compte_occurrences(<span class="st">&quot;la vie est belle c&#39;est la vie&quot;</span>))
 <span class="co"># [Sortie] {&quot;c&#39;est&quot;: 1, &#39;la&#39;: 2, &#39;belle&#39;: 1, &#39;est&#39;: 1, &#39;vie&#39;: 2}</span></code></pre></div>
+<p><strong>Exercice 5.2</strong> &#201;crivez une fonction qui retourne la somme des <em>valeurs</em> d&#8217;un dictionnaire fournie en argument.</p>
 <h1 id="lecture-et-&#233;criture-de-fichiers-textuels"><span class="header-section-number">6</span> Lecture et &#233;criture de fichiers textuels</h1>
 <p>Dans ce chapitre, nous nous int&#233;ressons &#224; la lecture/&#233;criture de fichiers textuels par un programme Python. Un premier &#233;l&#233;ment qu&#8217;il est n&#233;cessaire de ma&#238;triser pour lire ou &#233;crire des fichiers textuels est la notion d&#8217;encodage. Il faut savoir qu&#8217;il existe plusieurs fa&#231;ons d&#8217;encoder un texte. Nous nous focaliserons ici sur les deux encodages que vous &#234;tes les plus susceptibles de rencontrer (mais sachez qu&#8217;il en existe bien d&#8217;autres) :</p>
 <ul>
@@ -852,6 +857,7 @@ repertoire <span class="op">=</span> <span class="st">&quot;donnees&quot;</span>
     <span class="co"># [...]</span></code></pre></div>
 <p>La fonction <code class="sourceCode python">path.join</code> du module <code class="sourceCode python">os</code> permet d&#8217;obtenir le chemin complet vers le fichier &#224; partir du nom du r&#233;pertoire dans lequel il se trouve et du nom du fichier isol&#233;. Il est pr&#233;f&#233;rable d&#8217;utiliser cette fonction plut&#244;t que d&#8217;effectuer la concat&#233;nation des cha&#238;nes de caract&#232;res correspondantes car la forme des chemins complets d&#233;pend du syst&#232;me d&#8217;exploitation utilis&#233;, ce que g&#232;re intelligemment <code class="sourceCode python">path.join</code>.</p>
 <p><strong>Exercice 6.1</strong> &#201;crivez une fonction qui affiche, pour chaque fichier d&#8217;extension <code class="sourceCode haskell"><span class="st">&quot;.txt&quot;</span></code> d&#8217;un r&#233;pertoire pass&#233; en argument, affiche le nom du fichier ainsi que son nombre de lignes.</p>
+<p><strong>Exercice 6.2</strong> &#201;crivez une fonction qui retourne le nombre de fichiers pr&#233;sents dans un r&#233;pertoire dont le nom est pass&#233; en argument. Vous pourrez vous aider pour cela de la documentation du sous-module <code class="sourceCode python">path</code> du module <code class="sourceCode python">os</code> (<a href="https://docs.python.org/3.5/library/os.path.html">lien</a>).</p>
 <h1 id="tester-son-code"><span class="header-section-number">7</span> Tester son code</h1>
 <p>Dans ce document, nous avons jusqu&#8217;&#224; pr&#233;sent suppos&#233; que tout se passait bien, que votre code ne retournait jamais d&#8217;erreur et qu&#8217;il ne contenait jamais de <em>bug</em>. Quel que soit votre niveau d&#8217;expertise en Python, ces deux hypoth&#232;ses sont peu r&#233;alistes. Nous allons donc nous int&#233;resser maintenant aux moyens de v&#233;rifier si votre code fait bien ce qu&#8217;on attend de lui et de mieux comprendre son comportement lorsque ce n&#8217;est pas le cas.</p>
 <h2 id="les-erreurs-en-python"><span class="header-section-number">7.1</span> Les erreurs en Python</h2>

@@ -98,3 +98,6 @@ La liste de méthodes de la classe `str`{.python} qui suit n'est pas exhaustive,
 
 **Exercice 4.1**
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s`{.python} et `prefix`{.python} et retourne le nombre de mots de la chaîne `s`{.python} qui débutent par la chaîne `prefix`{.python}.
+
+**Exercice 4.2**
+Écrivez une fonction qui prenne en argument deux chaînes de caractères `s`{.python} et `mot_cible`{.python} et retourne le nombre d'occurrences du mot `mot_cible`{.python} dans la chaîne `s`{.python} en ne tenant pas compte de la casse.

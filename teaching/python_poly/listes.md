@@ -258,6 +258,12 @@ print(l2)
 # [Sortie] [2, 4, 5]
 ```
 
+**Exercice 3.2**
+Écrivez une fonction qui prenne deux listes en entrée et retourne l'intersection des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans les deux listes).
+
+**Exercice 3.3**
+Écrivez une fonction qui prenne deux listes en entrée et retourne l'union des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans au moins une des deux listes) sans doublon.
+
 ## Copie de liste
 
 Pour la plupart des variables, en Python, la copie ne pose pas de problème :

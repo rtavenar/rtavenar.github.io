@@ -23,7 +23,7 @@ poly_pdf: $(SRC_POLY)
 	pandoc -V lang=fr -o pdf/poly.pdf --columns 1000 --variable urlcolor=cyan --chapters --number-sections $^
 
 solutions_html: $(SRC_SOLUTIONS)
-	pandoc -s -o html/solutions.html --highlight-style pygments --data-dir . --columns 1000 --css ../../../css/md.css -S --normalize --ascii --number-sections --mathjax $^
+	pandoc -s -o html/solutions.html --toc --highlight-style pygments --data-dir . --columns 1000 --css ../../../css/md.css --css ../../../css/md_solutions.css -S --normalize --ascii --mathjax $^
 
 solutions_epub: $(SRC_SOLUTIONS)
 	pandoc -S -o epub/solutions.epub --columns 1000 -S --epub-stylesheet ../../css/md_epub.css --mathml $^

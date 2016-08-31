@@ -1,4 +1,4 @@
-**Exercice 2.1**
+### Exercice 2.1
 
 ```python
 import math
@@ -11,15 +11,50 @@ def aire_equi(l):
 print(aire_equi(1.))
 # [Sortie] 0.4330127018922193
 ```
+### Exercice 2.2
 
-**Exercice 3.1**
+* Version itérative (avec une boucle)
+
+```python
+def affiche_u_n():
+    u = 2
+    while u < 1000:
+        print(u)
+        u = u ** 2
+
+affiche_u_n()
+# [Sortie] 2
+# [Sortie] 4
+# [Sortie] 16
+# [Sortie] ...
+```
+
+* Version récursive (avec des appels de fonction)
+
+```python
+def affiche_u_n(u=2):
+    if u < 1000:
+        print(u)
+        affiche_u_n(u ** 2)
+
+affiche_u_n()
+# [Sortie] 2
+# [Sortie] 4
+# [Sortie] 16
+# [Sortie] ...
+```
+
+Ici, on a fixé une valeur par défaut à l'argument `u`{.python} correspondant à l'initialisation de la suite, pour que l'appel initial se fasse comme pour la version itérative de la fonction (`affiche_u_n()`{.python})
+
+### Exercice 3.1
 
 ```python
 def argmax(liste):
     i_max = None
     # On initialise elem_max à une valeur
     # qui n'est clairement pas le max
-    elem_max = liste[0] - 1  
+    if len(liste) > 0:
+        elem_max = liste[0] - 1  
     for i, elem in enumerate(liste):
         if elem > elem_max:
             i_max = i
@@ -30,7 +65,35 @@ print(argmax([1, 6, 2, 4]))
 # [Sortie] 1
 ```
 
-**Exercice 4.1**
+### Exercice 3.2
+
+```python
+def intersection(l1, l2):
+    l_intersection = []
+    for elem in l1:
+        if elem in l2:
+            l_intersection.append(elem)
+    return l_intersection
+
+print(intersection([1, 6, 2, 4], [2, 7, 6]))
+# [Sortie] [6, 2]
+```
+
+### Exercice 3.3
+
+```python
+def union_sans_doublon(l1, l2):
+    l_union = []
+    for elem in l1 + l2:
+        if elem not in l_union:
+            l_union.append(elem)
+    return l_union
+
+print(union_sans_doublon([1, 6, 2, 4], [2, 7, 6, 2]))
+# [Sortie] [1, 6, 2, 4, 7]
+```
+
+### Exercice 4.1
 ```python
 def compte_prefix(s, prefix):
     compteur = 0
@@ -43,17 +106,42 @@ print(compte_prefix("la vie est belle au bord du lac", "la"))
 # [Sortie] 2
 ```
 
-**Exercice 5.1**
+### Exercice 4.2
 ```python
-s = "la vie est belle c'est la vie"
-d = {}
-for mot in s.split():
-    d[mot] = d.get(mot, 0) + 1
-print(d)
+def compte_sans_casse(s, mot_cible):
+    compteur = 0
+    mot_cible_minuscules = mot_cible.lower()
+    for mot in s.split():
+        if mot.lower() == mot_cible_minuscules:
+            compteur += 1
+    return compteur
+```
+
+### Exercice 5.1
+```python
+def compte_occurrences(s):
+    d = {}
+    for mot in s.split():
+        d[mot] = d.get(mot, 0) + 1
+    return d
+
+print(compte_occurrences("la vie est belle c'est la vie"))
 # [Sortie] {"c'est": 1, 'la': 2, 'belle': 1, 'est': 1, 'vie': 2}
 ```
 
-**Exercice 6.1**
+### Exercice 5.2
+```python
+def somme_valeurs(d):
+    s = 0
+    for v in d.values():
+        s += v
+    return s
+
+print(somme_valeurs({"a": 12, "zz": 1.5, "AAA": 0}}))
+# [Sortie] 13.5
+```
+
+### Exercice 6.1
 ```python
 import os
 
@@ -74,7 +162,21 @@ def nb_lignes_repertoire(repertoire):
 nb_lignes_repertoire(".")
 ```
 
-**Exercice 7.1**
+### Exercice 6.2
+```python
+import os
+
+def compte_fichiers(repertoire):
+    compteur = 0
+    for f in os.listdir(repertoire):
+        if os.path.isfile(os.path.join(repertoire, f)):
+            compteur += 1
+    return compteur
+
+print(nb_lignes_repertoire("."))
+```
+
+### Exercice 7.1
 ```python
 def bissextile(annee):
     if annee % 4 == 0 and annee % 100 != 0:

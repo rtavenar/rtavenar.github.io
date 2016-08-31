@@ -45,6 +45,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
   <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/md_solutions.css" type="text/css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.min.js"></script>
 </head>
 <body onload="anchors.options = {visible: 'always'}; anchors.add();">
@@ -53,7 +54,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="subtitle">Cours dispens&#233; &#224; l&#8217;universit&#233; de Rennes 2</div>
 <h2 class="author">Romain Tavenard</h2>
 </div>
-<p><strong>Exercice 2.1</strong></p>
+<div id="TOC">
+<h2>Table des mati&#232;res</h2>
+<ul>
+<li><a href="#exercice-2.1">Exercice 2.1</a></li>
+<li><a href="#exercice-2.2">Exercice 2.2</a></li>
+<li><a href="#exercice-3.1">Exercice 3.1</a></li>
+<li><a href="#exercice-3.2">Exercice 3.2</a></li>
+<li><a href="#exercice-3.3">Exercice 3.3</a></li>
+<li><a href="#exercice-4.1">Exercice 4.1</a></li>
+<li><a href="#exercice-4.2">Exercice 4.2</a></li>
+<li><a href="#exercice-5.1">Exercice 5.1</a></li>
+<li><a href="#exercice-5.2">Exercice 5.2</a></li>
+<li><a href="#exercice-6.1">Exercice 6.1</a></li>
+<li><a href="#exercice-6.2">Exercice 6.2</a></li>
+<li><a href="#exercice-7.1">Exercice 7.1</a></li>
+</ul>
+</div>
+<h3 id="exercice-2.1">Exercice 2.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> math
 
 <span class="kw">def</span> aire_equi(l):
@@ -63,12 +81,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="bu">print</span>(aire_equi(<span class="dv">1</span>.))
 <span class="co"># [Sortie] 0.4330127018922193</span></code></pre></div>
-<p><strong>Exercice 3.1</strong></p>
+<h3 id="exercice-2.2">Exercice 2.2</h3>
+<ul>
+<li>Version it&#233;rative (avec une boucle)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> affiche_u_n():
+    u <span class="op">=</span> <span class="dv">2</span>
+    <span class="cf">while</span> u <span class="op">&lt;</span> <span class="dv">1000</span>:
+        <span class="bu">print</span>(u)
+        u <span class="op">=</span> u <span class="op">**</span> <span class="dv">2</span>
+
+affiche_u_n()
+<span class="co"># [Sortie] 2</span>
+<span class="co"># [Sortie] 4</span>
+<span class="co"># [Sortie] 16</span>
+<span class="co"># [Sortie] ...</span></code></pre></div>
+<ul>
+<li>Version r&#233;cursive (avec des appels de fonction)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> affiche_u_n(u<span class="op">=</span><span class="dv">2</span>):
+    <span class="cf">if</span> u <span class="op">&lt;</span> <span class="dv">1000</span>:
+        <span class="bu">print</span>(u)
+        affiche_u_n(u <span class="op">**</span> <span class="dv">2</span>)
+
+affiche_u_n()
+<span class="co"># [Sortie] 2</span>
+<span class="co"># [Sortie] 4</span>
+<span class="co"># [Sortie] 16</span>
+<span class="co"># [Sortie] ...</span></code></pre></div>
+<p>Ici, on a fix&#233; une valeur par d&#233;faut &#224; l&#8217;argument <code class="sourceCode python">u</code> correspondant &#224; l&#8217;initialisation de la suite, pour que l&#8217;appel initial se fasse comme pour la version it&#233;rative de la fonction (<code class="sourceCode python">affiche_u_n()</code>)</p>
+<h3 id="exercice-3.1">Exercice 3.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> argmax(liste):
     i_max <span class="op">=</span> <span class="va">None</span>
     <span class="co"># On initialise elem_max &#224; une valeur</span>
     <span class="co"># qui n&#39;est clairement pas le max</span>
-    elem_max <span class="op">=</span> liste[<span class="dv">0</span>] <span class="op">-</span> <span class="dv">1</span>  
+    <span class="cf">if</span> <span class="bu">len</span>(liste) <span class="op">&gt;</span> <span class="dv">0</span>:
+        elem_max <span class="op">=</span> liste[<span class="dv">0</span>] <span class="op">-</span> <span class="dv">1</span>  
     <span class="cf">for</span> i, elem <span class="op">in</span> <span class="bu">enumerate</span>(liste):
         <span class="cf">if</span> elem <span class="op">&gt;</span> elem_max:
             i_max <span class="op">=</span> i
@@ -77,7 +125,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="bu">print</span>(argmax([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>]))
 <span class="co"># [Sortie] 1</span></code></pre></div>
-<p><strong>Exercice 4.1</strong></p>
+<h3 id="exercice-3.2">Exercice 3.2</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> intersection(l1, l2):
+    l_intersection <span class="op">=</span> []
+    <span class="cf">for</span> elem <span class="op">in</span> l1:
+        <span class="cf">if</span> elem <span class="op">in</span> l2:
+            l_intersection.append(elem)
+    <span class="cf">return</span> l_intersection
+
+<span class="bu">print</span>(intersection([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>], [<span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">6</span>]))
+<span class="co"># [Sortie] [6, 2]</span></code></pre></div>
+<h3 id="exercice-3.3">Exercice 3.3</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> union_sans_doublon(l1, l2):
+    l_union <span class="op">=</span> []
+    <span class="cf">for</span> elem <span class="op">in</span> l1 <span class="op">+</span> l2:
+        <span class="cf">if</span> elem <span class="op">not</span> <span class="op">in</span> l_union:
+            l_union.append(elem)
+    <span class="cf">return</span> l_union
+
+<span class="bu">print</span>(union_sans_doublon([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>], [<span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">2</span>]))
+<span class="co"># [Sortie] [1, 6, 2, 4, 7]</span></code></pre></div>
+<h3 id="exercice-4.1">Exercice 4.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> compte_prefix(s, prefix):
     compteur <span class="op">=</span> <span class="dv">0</span>
     <span class="cf">for</span> mot <span class="op">in</span> s.split():
@@ -87,14 +155,33 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="bu">print</span>(compte_prefix(<span class="st">&quot;la vie est belle au bord du lac&quot;</span>, <span class="st">&quot;la&quot;</span>))
 <span class="co"># [Sortie] 2</span></code></pre></div>
-<p><strong>Exercice 5.1</strong></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;la vie est belle c&#39;est la vie&quot;</span>
-d <span class="op">=</span> {}
-<span class="cf">for</span> mot <span class="op">in</span> s.split():
-    d[mot] <span class="op">=</span> d.get(mot, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span>
-<span class="bu">print</span>(d)
+<h3 id="exercice-4.2">Exercice 4.2</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> compte_sans_casse(s, mot_cible):
+    compteur <span class="op">=</span> <span class="dv">0</span>
+    mot_cible_minuscules <span class="op">=</span> mot_cible.lower()
+    <span class="cf">for</span> mot <span class="op">in</span> s.split():
+        <span class="cf">if</span> mot.lower() <span class="op">==</span> mot_cible_minuscules:
+            compteur <span class="op">+=</span> <span class="dv">1</span>
+    <span class="cf">return</span> compteur</code></pre></div>
+<h3 id="exercice-5.1">Exercice 5.1</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> compte_occurrences(s):
+    d <span class="op">=</span> {}
+    <span class="cf">for</span> mot <span class="op">in</span> s.split():
+        d[mot] <span class="op">=</span> d.get(mot, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span>
+    <span class="cf">return</span> d
+
+<span class="bu">print</span>(compte_occurrences(<span class="st">&quot;la vie est belle c&#39;est la vie&quot;</span>))
 <span class="co"># [Sortie] {&quot;c&#39;est&quot;: 1, &#39;la&#39;: 2, &#39;belle&#39;: 1, &#39;est&#39;: 1, &#39;vie&#39;: 2}</span></code></pre></div>
-<p><strong>Exercice 6.1</strong></p>
+<h3 id="exercice-5.2">Exercice 5.2</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> somme_valeurs(d):
+    s <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">for</span> v <span class="op">in</span> d.values():
+        s <span class="op">+=</span> v
+    <span class="cf">return</span> s
+
+<span class="bu">print</span>(somme_valeurs({<span class="st">&quot;a&quot;</span>: <span class="dv">12</span>, <span class="st">&quot;zz&quot;</span>: <span class="fl">1.5</span>, <span class="st">&quot;AAA&quot;</span>: <span class="dv">0</span>}}))
+<span class="co"># [Sortie] 13.5</span></code></pre></div>
+<h3 id="exercice-6.1">Exercice 6.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
 
 <span class="kw">def</span> nb_lignes(nom_fichier):
@@ -112,7 +199,18 @@ d <span class="op">=</span> {}
             <span class="bu">print</span>(nom_complet_fichier, n)
 
 nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>)</code></pre></div>
-<p><strong>Exercice 7.1</strong></p>
+<h3 id="exercice-6.2">Exercice 6.2</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
+
+<span class="kw">def</span> compte_fichiers(repertoire):
+    compteur <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">for</span> f <span class="op">in</span> os.listdir(repertoire):
+        <span class="cf">if</span> os.path.isfile(os.path.join(repertoire, f)):
+            compteur <span class="op">+=</span> <span class="dv">1</span>
+    <span class="cf">return</span> compteur
+
+<span class="bu">print</span>(nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>))</code></pre></div>
+<h3 id="exercice-7.1">Exercice 7.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bissextile(annee):
     <span class="cf">if</span> annee <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> annee <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:
         <span class="cf">return</span> <span class="va">True</span>

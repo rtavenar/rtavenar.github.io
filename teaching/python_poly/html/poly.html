@@ -456,25 +456,25 @@ l <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</sp
 <p>Attention, toutefois, le premier indice d&#8217;une liste est 0, on a donc :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 <span class="bu">print</span>(l[<span class="dv">1</span>])
-<span class="bu">print</span>(l[<span class="dv">0</span>])
 <span class="co"># [Sortie] 5</span>
+<span class="bu">print</span>(l[<span class="dv">0</span>])
 <span class="co"># [Sortie] 1</span></code></pre></div>
 <p>On peut &#233;galement acc&#233;der au dernier &#233;l&#233;ment d&#8217;une liste en demandant l&#8217;&#233;l&#233;ment d&#8217;indice <code class="sourceCode python"><span class="op">-</span><span class="dv">1</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 <span class="bu">print</span>(l[<span class="op">-</span><span class="dv">1</span>])
-<span class="bu">print</span>(l[<span class="op">-</span><span class="dv">2</span>])
-<span class="bu">print</span>(l[<span class="op">-</span><span class="dv">3</span>])
 <span class="co"># [Sortie] 7</span>
+<span class="bu">print</span>(l[<span class="op">-</span><span class="dv">2</span>])
 <span class="co"># [Sortie] 5</span>
+<span class="bu">print</span>(l[<span class="op">-</span><span class="dv">3</span>])
 <span class="co"># [Sortie] 1</span></code></pre></div>
 <p>De la m&#234;me fa&#231;on, on peut acc&#233;der au deuxi&#232;me &#233;l&#233;ment en partant de la fin <em>via</em> l&#8217;indice <code class="sourceCode python"><span class="op">-</span><span class="dv">2</span></code>, <em>etc.</em></p>
 <p>Ainsi, pour une liste de taille <span class="math inline">\(n\)</span>, les valeurs d&#8217;indice valides sont les entiers compris entre <span class="math inline">\(-n\)</span> et <span class="math inline">\(n - 1\)</span> (inclus).</p>
 <p>Il est &#233;galement &#224; noter que l&#8217;acc&#232;s aux &#233;l&#233;ments d&#8217;une liste peut se faire en lecture (lire l&#8217;&#233;l&#233;ment stock&#233; &#224; l&#8217;indice <code class="sourceCode python">i</code>) comme en &#233;criture (modifier l&#8217;&#233;l&#233;ment stock&#233; &#224; l&#8217;indice <code class="sourceCode python">i</code>) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 <span class="bu">print</span>(l[<span class="dv">1</span>])
+<span class="co"># [Sortie] 5</span>
 l[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span>
 <span class="bu">print</span>(l)
-<span class="co"># [Sortie] 5</span>
 <span class="co"># [Sortie] [1, 2, 7]</span></code></pre></div>
 <p>Enfin, on peut acc&#233;der &#224; une sous-partie d&#8217;une liste &#224; l&#8217;aide de la syntaxe <code class="sourceCode python">l[d:f]</code> o&#249; <code class="sourceCode python">d</code> est l&#8217;indice de d&#233;but et <code class="sourceCode python">f</code> est l&#8217;indice de fin (exclu). Ainsi, on a :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">9</span>, <span class="dv">8</span>]
@@ -559,8 +559,8 @@ l.remove(<span class="dv">1</span>)
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 v <span class="op">=</span> l.pop(<span class="dv">1</span>)
 <span class="bu">print</span>(v)
-<span class="bu">print</span>(l)
 <span class="co"># [Sortie] 5</span>
+<span class="bu">print</span>(l)
 <span class="co"># [Sortie] [1, 7]</span></code></pre></div>
 <h3 id="recherche-d&#233;l&#233;ment"><span class="header-section-number">3.5.3</span> Recherche d&#8217;&#233;l&#233;ment</h3>
 <p>Pour trouver l&#8217;indice de la premi&#232;re occurrence d&#8217;une valeur dans une liste, on utilisera la m&#233;thode <code class="sourceCode python">index</code> :</p>

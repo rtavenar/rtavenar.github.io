@@ -52,8 +52,8 @@ Attention, toutefois, le premier indice d'une liste est 0, on a donc :
 ```python
 l = [1, 5, 7]
 print(l[1])
-print(l[0])
 # [Sortie] 5
+print(l[0])
 # [Sortie] 1
 ```
 
@@ -61,10 +61,10 @@ On peut également accéder au dernier élément d'une liste en demandant l'él�
 ```python
 l = [1, 5, 7]
 print(l[-1])
-print(l[-2])
-print(l[-3])
 # [Sortie] 7
+print(l[-2])
 # [Sortie] 5
+print(l[-3])
 # [Sortie] 1
 ```
 De la même façon, on peut accéder au deuxième élément en partant de la fin _via_ l'indice `-2`{.python}, _etc._
@@ -75,9 +75,9 @@ Il est également à noter que l'accès aux éléments d'une liste peut se faire
 ```python
 l = [1, 5, 7]
 print(l[1])
+# [Sortie] 5
 l[1] = 2
 print(l)
-# [Sortie] 5
 # [Sortie] [1, 2, 7]
 ```
 
@@ -205,8 +205,8 @@ On peut noter que la méthode `pop`{.python} retourne la valeur supprimée, ce q
 l = [1, 5, 7]
 v = l.pop(1)
 print(v)
-print(l)
 # [Sortie] 5
+print(l)
 # [Sortie] [1, 7]
 ```
 

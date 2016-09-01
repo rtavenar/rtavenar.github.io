@@ -21,7 +21,7 @@ Si la valeur associée à une colonne est vide, vous la remplacerez par `None`{.
 7. Écrivez une fonction qui prend en entrée un nom de fichier et une chaîne de caractères et écrit la chaîne dans le fichier indiqué.
 8. Écrivez une fonction qui prend en entrée un nom de fichier et une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne du fichier indiqué.
 
-## 2.	L'écriture dans la console
+## L'écriture dans la console
 Vous avez déjà écrit dans la console à l'aide de la fonction `print`{.python}.
 Plus précisément, cette fonction écrit sur la sortie standard.
 Il existe deux autres flux standards.
@@ -34,6 +34,7 @@ sys.stderr.write(chaine_a_ecrire)  # Erreur standard
 ```
 
 Ainsi, ces flux sont utilisés de la même manière que les objets `file`{.python} (sauf qu'on ne les ouvre jamais).
+
 9. Écrivez une fonction qui prend en entrée une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne sur la sortie standard.
 10. Écrivez une fonction qui prend en entrée une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne sur l'erreur standard.
 

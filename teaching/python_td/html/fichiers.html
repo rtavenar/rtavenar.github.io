@@ -67,11 +67,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et une cha&#238;ne de caract&#232;res et &#233;crit la cha&#238;ne dans le fichier indiqu&#233;.</li>
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne du fichier indiqu&#233;.</li>
 </ol>
-<h2 id="l&#233;criture-dans-la-console"><span class="header-section-number">2.1</span> 2. L&#8217;&#233;criture dans la console</h2>
+<h2 id="l&#233;criture-dans-la-console"><span class="header-section-number">2.1</span> L&#8217;&#233;criture dans la console</h2>
 <p>Vous avez d&#233;j&#224; &#233;crit dans la console &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">print</span></code>. Plus pr&#233;cis&#233;ment, cette fonction &#233;crit sur la sortie standard. Il existe deux autres flux standards. Le premier, l&#8217;entr&#233;e standard, est celui duquel vous lisez des cha&#238;nes de caract&#232;res entr&#233;es par les utilisateurs lorsque vous utilisez la fonction <code class="sourceCode python"><span class="bu">input</span></code>. Enfin, le dernier flux standard est l&#8217;erreur standard, qui est le flux qui doit &#234;tre utilis&#233; pour &#233;crire les messages d&#8217;erreur g&#233;n&#233;r&#233;s par vos programmes. Pour choisir le flux de sortie que vous souhaitez utiliser, il faut importer le module <code class="sourceCode python">sys</code>, puis utiliser la syntaxe suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">sys.stdout.write(chaine_a_ecrire)  <span class="co"># Sortie standard</span>
 sys.stderr.write(chaine_a_ecrire)  <span class="co"># Erreur standard</span></code></pre></div>
-<p>Ainsi, ces flux sont utilis&#233;s de la m&#234;me mani&#232;re que les objets <code class="sourceCode python"><span class="bu">file</span></code> (sauf qu&#8217;on ne les ouvre jamais). 9. &#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur la sortie standard. 10. &#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur l&#8217;erreur standard.</p>
+<p>Ainsi, ces flux sont utilis&#233;s de la m&#234;me mani&#232;re que les objets <code class="sourceCode python"><span class="bu">file</span></code> (sauf qu&#8217;on ne les ouvre jamais).</p>
+<ol start="9" style="list-style-type: decimal">
+<li>&#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur la sortie standard.</li>
+<li>&#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur l&#8217;erreur standard.</li>
+</ol>
 <h2 id="&#233;criture-de-fichiers-csv"><span class="header-section-number">2.2</span> &#201;criture de fichiers CSV</h2>
 <ol start="11" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et un dictionnaire (qui stocke, pour chaque cl&#233;, une liste d&#8217;entiers) et &#233;crit le contenu du dictionnaire au format suivant :</li>

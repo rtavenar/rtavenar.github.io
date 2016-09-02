@@ -235,14 +235,15 @@ maVariable <span class="op">=</span> <span class="dv">15</span>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">12</span>
 <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
     <span class="bu">print</span>(<span class="st">&quot;X est positif&quot;</span>)
-    x <span class="op">=</span> <span class="dv">4</span>
-<span class="co"># [Sortie] X est positif</span></code></pre></div>
+    <span class="bu">print</span>(<span class="st">&quot;X n&#39;est pas n&#233;gatif&quot;</span>)
+<span class="co"># [Sortie] X est positif</span>
+<span class="co"># [Sortie] X n&#39;est pas n&#233;gatif</span></code></pre></div>
 <p>On remarque ici que la condition est termin&#233;e par le symbole <code class="sourceCode python">:</code>, de plus, la s&#233;quence d&#8217;instructions &#224; ex&#233;cuter si la condition est remplie est <strong>indent&#233;e</strong>, cela signifie qu&#8217;elle est d&#233;cal&#233;e d&#8217;un &#8220;cran&#8221; (g&#233;n&#233;ralement une tabulation ou 4 espaces) vers la droite. Cette indentation est une bonne pratique recommand&#233;e quel que soit le langage que vous utilisez, mais en Python, c&#8217;est m&#234;me une obligation (sinon, l&#8217;interpr&#233;teur Python ne saura pas o&#249; commence et o&#249; se termine la s&#233;quence &#224; ex&#233;cuter sous condition).</p>
 <p>Dans certains cas, on souhaite ex&#233;cuter une s&#233;rie d&#8217;instructions si la condition est v&#233;rifi&#233;e et une autre s&#233;rie d&#8217;instructions si elle ne l&#8217;est pas. Pour cela, on utilise le mot-cl&#233; <code class="sourceCode python"><span class="cf">else</span></code> comme suit :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>
 <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
     <span class="bu">print</span>(<span class="st">&quot;X est positif&quot;</span>)
-    x <span class="op">=</span> <span class="dv">4</span>
+    <span class="bu">print</span>(<span class="st">&quot;X n&#39;est pas n&#233;gatif&quot;</span>)
 <span class="cf">else</span>:
     <span class="bu">print</span>(<span class="st">&quot;X est n&#233;gatif&quot;</span>)
 <span class="co"># [Sortie] X est n&#233;gatif</span></code></pre></div>
@@ -337,8 +338,9 @@ maVariable <span class="op">=</span> <span class="dv">15</span>
 y <span class="op">=</span> <span class="dv">0</span>
 <span class="cf">while</span> x <span class="op">&gt;</span> <span class="dv">0</span>:
     y <span class="op">=</span> y <span class="op">-</span> <span class="dv">1</span>
-y <span class="op">=</span> <span class="dv">2</span></code></pre></div>
-<p>En effet, on a ici une boucle qui s&#8217;ex&#233;cutera tant que <code class="sourceCode python">x</code> est positif, or la valeur de cette variable est initialis&#233;e &#224; 2 et n&#8217;est pas modifi&#233;e au sein de la boucle, la condition sera donc toujours v&#233;rifi&#233;e et le programme ne sortira jamais de la boucle.</p>
+    <span class="bu">print</span>(y)
+<span class="bu">print</span>(<span class="st">&quot;Si on arrive ici, on a fini&quot;</span>)</code></pre></div>
+<p>En effet, on a ici une boucle qui s&#8217;ex&#233;cutera tant que <code class="sourceCode python">x</code> est positif, or la valeur de cette variable est initialis&#233;e &#224; 2 et n&#8217;est pas modifi&#233;e au sein de la boucle, la condition sera donc toujours v&#233;rifi&#233;e et le programme ne sortira jamais de la boucle. Pour information, si vous vous retrouvez dans un tel cas, vous pourrez interrompre l&#8217;ex&#233;cution du programme &#224; l&#8217;aide de la combinaison de touches <code>Ctrl + C</code>.</p>
 <h4 id="boucles-for"><span class="header-section-number">2.2.2.2</span> Boucles <code>for</code></h4>
 <p>Le second type de boucle repose en Python sur l&#8217;utilisation de listes (ou, plus g&#233;n&#233;ralement, d&#8217;it&#233;rables) dont nous reparlerons plus en d&#233;tail dans la suite de cet ouvrage. Sachez pour le moment qu&#8217;une liste est un ensemble ordonn&#233; d&#8217;&#233;l&#233;ments. On peut alors ex&#233;cuter une s&#233;rie d&#8217;instructions pour toutes les valeurs d&#8217;une liste :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> x <span class="op">in</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]:
@@ -678,7 +680,7 @@ i <span class="op">=</span> <span class="bu">int</span>(s)
 <span class="co"># [Sortie] True</span>
 <span class="bu">print</span>(<span class="st">&quot;bCd&quot;</span> <span class="op">in</span> s)
 <span class="co"># [Sortie] False</span></code></pre></div>
-<p><strong>Attention.</strong> Toutefois, l&#8217;analogie entre listes et cha&#238;nes de caract&#232;res est loin d&#8217;&#234;tre parfaite. Par exemple, on peut acc&#233;der au <span class="math inline">\(i\)</span>-&#232;me &#233;l&#233;ment d&#8217;une liste en lecture, mais pas en &#233;criture. Si <code class="sourceCode python">s</code> est une cha&#238;ne de caract&#232;res, on ne peut pas ex&#233;cuter <code class="sourceCode python">s[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;c&quot;</span></code> par exemple.</p>
+<p><strong>Attention.</strong> Toutefois, l&#8217;analogie entre listes et cha&#238;nes de caract&#232;res est loin d&#8217;&#234;tre parfaite. Par exemple, on peut acc&#233;der au <span class="math inline">\(i\)</span>-&#232;me &#233;l&#233;ment d&#8217;une cha&#238;ne de caract&#232;res en lecture, mais pas en &#233;criture. Si <code class="sourceCode python">s</code> est une cha&#238;ne de caract&#232;res, on ne peut pas ex&#233;cuter <code class="sourceCode python">s[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;c&quot;</span></code> par exemple.</p>
 <h2 id="principales-m&#233;thodes-de-la-classe-str"><span class="header-section-number">4.3</span> Principales m&#233;thodes de la classe <code>str</code></h2>
 <p>La liste de m&#233;thodes de la classe <code class="sourceCode python"><span class="bu">str</span></code> qui suit n&#8217;est pas exhaustive, il est conseill&#233; de consulter l&#8217;aide en ligne de Python pour plus d&#8217;informations.</p>
 <ul>
@@ -700,23 +702,23 @@ i <span class="op">=</span> <span class="bu">int</span>(s)
 <p><strong>Exercice 4.2</strong> &#201;crivez une fonction qui prenne en argument deux cha&#238;nes de caract&#232;res <code class="sourceCode python">s</code> et <code class="sourceCode python">mot_cible</code> et retourne le nombre d&#8217;occurrences du mot <code class="sourceCode python">mot_cible</code> dans la cha&#238;ne <code class="sourceCode python">s</code> en ne tenant pas compte de la casse.</p>
 <h1 id="les-dictionnaires"><span class="header-section-number">5</span> Les dictionnaires</h1>
 <p>Comme une liste, un dictionnaire est une collection de donn&#233;es. Mais, &#224; la diff&#233;rence des listes, les dictionnaires ne sont pas ordonn&#233;s (ou, tout du moins, ils le sont dans un ordre qui ne nous est pas naturel). Chaque entr&#233;e dans un dictionnaire est une association entre une <strong>cl&#233;</strong> (&#233;quivalente &#224; un indice pour une liste) et une <strong>valeur</strong>. Alors que les indices d&#8217;une liste sont forc&#233;ment les entiers compris entre 0 et la taille de la liste exclue, les cl&#233;s d&#8217;un dictionnaire sont des valeurs quelconques, la seule contrainte &#233;tant qu&#8217;on ne peut pas avoir deux fois la m&#234;me cl&#233; dans un dictionnaire. Notamment, ces cl&#233;s ne sont pas n&#233;cessairement des entiers, on utilisera en effet souvent des dictionnaires lorsque l&#8217;on souhaite stocker des valeurs associ&#233;es &#224; des cha&#238;nes de caract&#232;res (qui seront les cl&#233;s du dictionnaire).</p>
-<p>Pour d&#233;finir un dictionnaire par ses paires cl&#233;s-valeurs en Python, on peut utiliser la syntaxe suivante :</p>
+<p>Pour d&#233;finir un dictionnaire par ses paires cl&#233;-valeur en Python, on peut utiliser la syntaxe suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
 <span class="bu">print</span>(mon_dico)
 <span class="co"># [Sortie] {&#39;a&#39;: 123, &#39;bbb&#39;: None, &#39;z&#39;: 7}</span></code></pre></div>
-<p>On remarque ici que l&#8217;ordre dans lequel on a entr&#233; des paires cl&#233;s/valeurs n&#8217;est pas conserv&#233; lors de l&#8217;affichage.</p>
+<p>On remarque ici que l&#8217;ordre dans lequel on a entr&#233; des paires cl&#233;-valeur n&#8217;est pas conserv&#233; lors de l&#8217;affichage.</p>
 <h2 id="modification-du-contenu-dun-dictionnaire"><span class="header-section-number">5.1</span> Modification du contenu d&#8217;un dictionnaire</h2>
 <p>Pour modifier la valeur associ&#233;e &#224; une cl&#233; d&#8217;un dictionnaire, la syntaxe est similaire &#224; celle utilis&#233;e pour les listes, en rempla&#231;ant les indices par les cl&#233;s :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
 mon_dico[<span class="st">&quot;a&quot;</span>] <span class="op">=</span> <span class="dv">1000</span>
 <span class="bu">print</span>(mon_dico)
 <span class="co"># [Sortie] {&#39;a&#39;: 1000, &#39;bbb&#39;: None, &#39;z&#39;: 7}</span></code></pre></div>
-<p>De m&#234;me, on peut cr&#233;er une nouvelle paire cl&#233;/valeur en utilisant la m&#234;me syntaxe :</p>
+<p>De m&#234;me, on peut cr&#233;er une nouvelle paire cl&#233;-valeur en utilisant la m&#234;me syntaxe :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
 mon_dico[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>
 <span class="bu">print</span>(mon_dico)
 <span class="co"># [Sortie] {&#39;c&#39;: -1, &#39;a&#39;: 123, &#39;bbb&#39;: None, &#39;z&#39;: 7}</span></code></pre></div>
-<p>Enfin, pour supprimer une paire cl&#233;/valeur d&#8217;un dictionnaire, on utilise le mot-cl&#233; <code class="sourceCode python"><span class="kw">del</span></code> :</p>
+<p>Enfin, pour supprimer une paire cl&#233;-valeur d&#8217;un dictionnaire, on utilise le mot-cl&#233; <code class="sourceCode python"><span class="kw">del</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mon_dico <span class="op">=</span> {<span class="st">&quot;a&quot;</span> : <span class="dv">123</span>, <span class="st">&quot;z&quot;</span> : <span class="dv">7</span>, <span class="st">&quot;bbb&quot;</span> : <span class="va">None</span>}
 <span class="kw">del</span> mon_dico[<span class="st">&quot;a&quot;</span>]
 <span class="bu">print</span>(mon_dico)
@@ -762,7 +764,7 @@ mon_dico[<span class="st">&quot;c&quot;</span>] <span class="op">=</span> <span 
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># [...]</span>
 <span class="bu">print</span>(compte_occurrences(<span class="st">&quot;la vie est belle c&#39;est la vie&quot;</span>))
 <span class="co"># [Sortie] {&quot;c&#39;est&quot;: 1, &#39;la&#39;: 2, &#39;belle&#39;: 1, &#39;est&#39;: 1, &#39;vie&#39;: 2}</span></code></pre></div>
-<p><strong>Exercice 5.2</strong> &#201;crivez une fonction qui retourne la somme des <em>valeurs</em> d&#8217;un dictionnaire fournie en argument.</p>
+<p><strong>Exercice 5.2</strong> &#201;crivez une fonction qui retourne la somme des <em>valeurs</em> d&#8217;un dictionnaire fourni en argument.</p>
 <h1 id="lecture-et-&#233;criture-de-fichiers-textuels"><span class="header-section-number">6</span> Lecture et &#233;criture de fichiers textuels</h1>
 <p>Dans ce chapitre, nous nous int&#233;ressons &#224; la lecture/&#233;criture de fichiers textuels par un programme Python. Un premier &#233;l&#233;ment qu&#8217;il est n&#233;cessaire de ma&#238;triser pour lire ou &#233;crire des fichiers textuels est la notion d&#8217;encodage. Il faut savoir qu&#8217;il existe plusieurs fa&#231;ons d&#8217;encoder un texte. Nous nous focaliserons ici sur les deux encodages que vous &#234;tes les plus susceptibles de rencontrer (mais sachez qu&#8217;il en existe bien d&#8217;autres) :</p>
 <ul>
@@ -856,7 +858,7 @@ repertoire <span class="op">=</span> <span class="st">&quot;donnees&quot;</span>
     fp <span class="op">=</span> <span class="bu">open</span>(nom_complet_fichier, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)
     <span class="co"># [...]</span></code></pre></div>
 <p>La fonction <code class="sourceCode python">path.join</code> du module <code class="sourceCode python">os</code> permet d&#8217;obtenir le chemin complet vers le fichier &#224; partir du nom du r&#233;pertoire dans lequel il se trouve et du nom du fichier isol&#233;. Il est pr&#233;f&#233;rable d&#8217;utiliser cette fonction plut&#244;t que d&#8217;effectuer la concat&#233;nation des cha&#238;nes de caract&#232;res correspondantes car la forme des chemins complets d&#233;pend du syst&#232;me d&#8217;exploitation utilis&#233;, ce que g&#232;re intelligemment <code class="sourceCode python">path.join</code>.</p>
-<p><strong>Exercice 6.1</strong> &#201;crivez une fonction qui affiche, pour chaque fichier d&#8217;extension <code class="sourceCode haskell"><span class="st">&quot;.txt&quot;</span></code> d&#8217;un r&#233;pertoire pass&#233; en argument, affiche le nom du fichier ainsi que son nombre de lignes.</p>
+<p><strong>Exercice 6.1</strong> &#201;crivez une fonction qui affiche, pour chaque fichier d&#8217;extension <code class="sourceCode haskell"><span class="st">&quot;.txt&quot;</span></code> d&#8217;un r&#233;pertoire pass&#233; en argument, le nom du fichier ainsi que son nombre de lignes.</p>
 <p><strong>Exercice 6.2</strong> &#201;crivez une fonction qui retourne le nombre de fichiers pr&#233;sents dans un r&#233;pertoire dont le nom est pass&#233; en argument. Vous pourrez vous aider pour cela de la documentation du sous-module <code class="sourceCode python">path</code> du module <code class="sourceCode python">os</code> (<a href="https://docs.python.org/3.5/library/os.path.html">lien</a>).</p>
 <h1 id="tester-son-code"><span class="header-section-number">7</span> Tester son code</h1>
 <p>Dans ce document, nous avons jusqu&#8217;&#224; pr&#233;sent suppos&#233; que tout se passait bien, que votre code ne retournait jamais d&#8217;erreur et qu&#8217;il ne contenait jamais de <em>bug</em>. Quel que soit votre niveau d&#8217;expertise en Python, ces deux hypoth&#232;ses sont peu r&#233;alistes. Nous allons donc nous int&#233;resser maintenant aux moyens de v&#233;rifier si votre code fait bien ce qu&#8217;on attend de lui et de mieux comprendre son comportement lorsque ce n&#8217;est pas le cas.</p>

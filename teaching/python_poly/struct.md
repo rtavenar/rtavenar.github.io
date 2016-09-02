@@ -156,8 +156,9 @@ On peut donc indiquer à un programme de n'exécuter une instruction (ou une sé
 x = 12
 if x > 0:
 	print("X est positif")
-	x = 4
+	print("X n'est pas négatif")
 # [Sortie] X est positif
+# [Sortie] X n'est pas négatif
 ```
 
 On remarque ici que la condition est terminée par le symbole `:`{.python}, de plus, la séquence d'instructions à exécuter si la condition est remplie est **indentée**, cela signifie qu'elle est décalée d'un "cran" (généralement une tabulation ou 4 espaces) vers la droite.
@@ -169,7 +170,7 @@ Pour cela, on utilise le mot-clé `else`{.python} comme suit :
 x = -1
 if x > 0:
 	print("X est positif")
-	x = 4
+	print("X n'est pas négatif")
 else:
 	print("X est négatif")
 # [Sortie] X est négatif
@@ -238,10 +239,12 @@ x = 2
 y = 0
 while x > 0:
 	y = y - 1
-y = 2
+    print(y)
+print("Si on arrive ici, on a fini")
 ```
 
 En effet, on a ici une boucle qui s'exécutera tant que `x`{.python} est positif, or la valeur de cette variable est initialisée à 2 et n'est pas modifiée au sein de la boucle, la condition sera donc toujours vérifiée et le programme ne sortira jamais de la boucle.
+Pour information, si vous vous retrouvez dans un tel cas, vous pourrez interrompre l'exécution du programme à l'aide de la combinaison de touches `Ctrl + C`.
 
 #### Boucles `for`
 

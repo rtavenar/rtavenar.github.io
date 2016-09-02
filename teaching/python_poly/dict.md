@@ -6,14 +6,14 @@ Chaque entrée dans un dictionnaire est une association entre une **clé** (équ
 Alors que les indices d'une liste sont forcément les entiers compris entre 0 et la taille de la liste exclue, les clés d'un dictionnaire sont des valeurs quelconques, la seule contrainte étant qu'on ne peut pas avoir deux fois la même clé dans un dictionnaire.
 Notamment, ces clés ne sont pas nécessairement des entiers, on utilisera en effet souvent des dictionnaires lorsque l'on souhaite stocker des valeurs associées à des chaînes de caractères (qui seront les clés du dictionnaire).
 
-Pour définir un dictionnaire par ses paires clés-valeurs en Python, on peut utiliser la syntaxe suivante :
+Pour définir un dictionnaire par ses paires clé-valeur en Python, on peut utiliser la syntaxe suivante :
 ```python
 mon_dico = {"a" : 123, "z" : 7, "bbb" : None}
 print(mon_dico)
 # [Sortie] {'a': 123, 'bbb': None, 'z': 7}
 ```
 
-On remarque ici que l'ordre dans lequel on a entré des paires clés/valeurs n'est pas conservé lors de l'affichage.
+On remarque ici que l'ordre dans lequel on a entré des paires clé-valeur n'est pas conservé lors de l'affichage.
 
 ## Modification du contenu d'un dictionnaire
 
@@ -25,7 +25,7 @@ print(mon_dico)
 # [Sortie] {'a': 1000, 'bbb': None, 'z': 7}
 ```
 
-De même, on peut créer une nouvelle paire clé/valeur en utilisant la même syntaxe :
+De même, on peut créer une nouvelle paire clé-valeur en utilisant la même syntaxe :
 ```python
 mon_dico = {"a" : 123, "z" : 7, "bbb" : None}
 mon_dico["c"] = -1
@@ -33,7 +33,7 @@ print(mon_dico)
 # [Sortie] {'c': -1, 'a': 123, 'bbb': None, 'z': 7}
 ```
 
-Enfin, pour supprimer une paire clé/valeur d'un dictionnaire, on utilise le mot-clé `del`{.python} :
+Enfin, pour supprimer une paire clé-valeur d'un dictionnaire, on utilise le mot-clé `del`{.python} :
 ```python
 mon_dico = {"a" : 123, "z" : 7, "bbb" : None}
 del mon_dico["a"]
@@ -110,4 +110,4 @@ print(compte_occurrences("la vie est belle c'est la vie"))
 ```
 
 **Exercice 5.2**
-Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fournie en argument.
+Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fourni en argument.

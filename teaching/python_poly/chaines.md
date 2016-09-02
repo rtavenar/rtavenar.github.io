@@ -75,7 +75,7 @@ print("bCd" in s)
 
 **Attention.**
 Toutefois, l'analogie entre listes et chaînes de caractères est loin d'être parfaite.
-Par exemple, on peut accéder au $i$-ème élément d'une liste en lecture, mais pas en écriture.
+Par exemple, on peut accéder au $i$-ème élément d'une chaîne de caractères en lecture, mais pas en écriture.
 Si `s`{.python} est une chaîne de caractères, on ne peut pas exécuter `s[2] = "c"`{.python} par exemple.
 
 ## Principales méthodes de la classe `str`

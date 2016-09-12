@@ -220,6 +220,7 @@ Les indices de liste commencent à 0 en Python :
 | Élément | 5 | 7 | 2 | 1 |
 
 Il existe, en Python, trois façons d'itérer sur une liste :
+
 * si l'on n'a besoin que d'accéder aux éléments de la liste :
 ```python
 for element in liste:

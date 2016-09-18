@@ -99,9 +99,9 @@ else:
 
 7. Stockez, dans une variable `age`{.python}, un entier entré par l'utilisateur, puis affichez l'une des phrases suivantes, en fonction de la valeur stockée dans `age`{.python} :
 
-* "La classe d'âge est 0-19"
-* "La classe d'âge est 20-29"
-* "La classe d'âge est 30+"
+* La classe d'âge est 0-19
+* La classe d'âge est 20-29
+* La classe d'âge est 30+
 
 Pour récupérer une valeur entrée par l'utilisateur, on peut utiliser la fonction `input`{.python} :
 ```python

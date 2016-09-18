@@ -14,7 +14,7 @@ def dichotomie(f, a, b, epsilon) :
     # [...]
 ```
 
-Pour cela, proposez une condition suffisante à l'existence d'une telle racine[^2] : votre algorithme ne cherchera de racine que dans le cas où cette condition est remplie.
+Pour cela, proposez une condition suffisante à l'existence d'une telle racine[^2] : votre ne retournera de racine que dans le cas où cette condition est remplie.
 Dans le cas contraire, votre fonction retournera la valeur `None`{.python}.
 
 Une fois que l'on est sûr qu'une solution existe, nous allons utiliser la dichotomie pour s'en approcher au plus près.

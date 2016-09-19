@@ -24,11 +24,15 @@ De plus, il existe un type spécial (`NoneType`{.python}) ne permettant qu'une s
 En Python, le type d'une variable n'est pas déclaré par l'utilisateur : il est défini par l'usage (la valeur effective que l'on décide de stocker dans la variable en question).
 
 Par exemple, l'instruction suivante en Python attribue la valeur `12`{.python} à la variable `v`{.python}, qui devient donc automatiquement de type entier :
+
+
 ```python
 v = 12
 ```
 
 Ainsi, les instructions suivantes ont toutes une incidence sur le type des variables considérées :
+
+
 ```python
 v = 12     # v est alors de type entier
 c = "abc"  # c est de type chaîne de caractères
@@ -38,6 +42,8 @@ v = 12.    # v change de type et est désormais de type nombre à virgule
 ```
 
 Pour vérifier le type d'une variable, il suffit d'utiliser la fonction `type` de la librairie standard :
+
+
 ```python
 print(type(v))  # la fonction print(.) permet d'afficher
                 # une information dans le terminal
@@ -52,6 +58,8 @@ Ces noms de variables doivent respecter certaines contraintes :
 * ils doivent débuter par une lettre (minuscule ou majuscule, peu importe) ou par le symbole `_`{.python} ;
 * ils ne doivent contenir que des lettres, des chiffres et des symboles `_`{.python} ;
 * ils ne doivent pas correspondre à un quelconque mot réservé du langage Python, dont voici la liste :
+
+
 ```python
 and del for is raise assert elif from lambda return break else global
 not try nonlocal True False class except if or while continue import
@@ -60,6 +68,8 @@ pass yield None def finally in
 * ils ne doivent pas correspondre à des noms de fonction de la librairie standard de Python (cette dernière condition n'est en fait qu'une bonne pratique à observer) : vous apprendrez au fur et à mesure les noms de ces fonctions.
 
 Les noms de variable en Python sont sensibles à la casse, ainsi les variables `maVariable`{.python} et `mavariable`{.python} ne pointent pas sur les mêmes données en mémoire. Pour s'en convaincre, on peut exécuter le code suivant :
+
+
 ```python
 mavariable = 12
 maVariable = 15
@@ -72,10 +82,25 @@ print(maVariable)
 Comme on l'a vu plus haut, on utilise en Python l'opérateur `=`{.python} pour assigner une valeur à une variable.
 La sémantique de cet opérateur est la suivante : "assigner la valeur contenue dans le membre de droite à la variable du membre de gauche".
 Ainsi, il est tout à fait valide d'écrire, en Python :
+
+
 ```python
 x = 3.9 * x * (1 - x)
 ```
 Pour exécuter cette instruction, l'interpréteur Python commencera par évaluer le membre de droite en utilisant la valeur courante de la variable `x`{.python}, puis affectera la valeur correspondant au résultat de l'opération `3.9 * x * (1 - x)`{.python} dans la variable `x`{.python}.
+
+Ainsi, voici le résultat de l'exécution suivante :
+
+
+
+```python
+x = 2
+print(x)
+# [Sortie] 2
+x = 3.9 * x * (1 - x)
+print(x)
+# [Sortie] -7.8
+```
 
 ### Opérateurs et priorité
 
@@ -94,11 +119,13 @@ Le tableau suivant dresse une liste des opérateurs définis pour les variables 
 
 De plus, pour chacun de ces opérateurs, il existe un opérateur associé qui réalise successivement l'opération demandée puis l'affectation de la nouvelle valeur à la variable en question.
 Ainsi, l'instruction suivante :
+
 ```python
 x = x + 2
 ```
 
 qui ajoute 2 à la valeur courante de `x`{.python} puis stocke le résultat du calcul dans `x`{.python} peut se réécrire :
+
 ```python
 x += 2
 ```
@@ -114,6 +141,7 @@ Enfin, lorsque l'évaluation d'une expression implique plusieurs opérateurs, le
 5. de gauche à droite.
 
 Pour prendre un exemple concret, pour évaluer l'expression :
+
 ```python
 3.9 * x * (1 - x)
 ```
@@ -127,12 +155,14 @@ De même, le résultat de l'addition entre un nombre complexe et un nombre à vi
 **Attention.** Comme indiqué en introduction, ce polycopié suppose que vous utilisez Python dans sa version 3.
 Il est à noter qu'il existe une différence importante entre Python 2 et Python 3 dans la façon d'effectuer des opérations mêlant nombres entiers et flottants.
 Par exemple, l'opération suivante :
+
 ```python
 x = 2 / 3
 ```
 
 stockera, en Python 2, la valeur 0 (résultat de la division **entière** de 2 par 3) dans la variable `x`{.python} alors qu'en Python 3, la division **flottante** sera effectuée et ainsi `x`{.python} contiendra `0.666666...`{.python}
 En Python 3, si l'on souhaite effectuer une division entière, on pourra utiliser l'opérateur `//`{.python} :
+
 ```python
 print(2 // 3)
 # [Sortie] 0
@@ -151,7 +181,8 @@ Les structures de contrôle associées à ces différents comportements sont dé
 
 ### Structures conditionnelles
 
-On peut donc indiquer à un programme de n'exécuter une instruction (ou une séquence d'instructions) que si une certaine condition est remplie, à l'aide du mot-clé `if`{.python} :
+On peut indiquer à un programme de n'exécuter une instruction (ou une séquence d'instructions) que si une certaine condition est remplie, à l'aide du mot-clé `if`{.python} :
+
 ```python
 x = 12
 if x > 0:
@@ -166,6 +197,7 @@ Cette indentation est une bonne pratique recommandée quel que soit le langage q
 
 Dans certains cas, on souhaite exécuter une série d'instructions si la condition est vérifiée et une autre série d'instructions si elle ne l'est pas.
 Pour cela, on utilise le mot-clé `else`{.python} comme suit :
+
 ```python
 x = -1
 if x > 0:
@@ -179,7 +211,9 @@ else:
 Là encore, on remarque que l'indentation est de rigueur pour chacun des deux blocs d'instructions.
 On note également que le mot-clé `else`{.python} se trouve au même niveau que le `if`{.python} auquel il se réfère.
 
-Enfin, de manière plus générale, il est possible de définir plusieurs comportements en fonction de plusieurs tests successifs, à l'aide du mot-clé `elif`{.python} :
+Enfin, de manière plus générale, il est possible de définir plusieurs comportements en fonction de plusieurs tests successifs, à l'aide du mot-clé `elif`{.python}. `elif`{.python} est une contraction de `else if`{.python}, qui signifie sinon si.
+
+
 ```python
 x = -1
 if x > 0:
@@ -220,6 +254,8 @@ Il existe, en Python comme dans une grande majorité des langages de programmati
 #### Boucles `while`
 
 Les premières ont une syntaxe très similaire à celle des structures conditionnelles simples :
+
+
 ```python
 x = 0
 while x <= 10:
@@ -233,6 +269,8 @@ while x <= 10:
 On voit bien ici, en analysant la sortie produite par ces quelques lignes, que le contenu de la boucle est répété plusieurs fois.
 En pratique, il est répété jusqu'à ce que la variable `x`{.python} prenne une valeur supérieure à 10 (14 dans notre cas).
 Il faut être très prudent avec ces boucles `while`{.python} car il est tout à fait possible de créer une boucle dont le programme ne sortira jamais, comme dans l'exemple suivant :
+
+
 
 ```python
 x = 2
@@ -251,13 +289,16 @@ Pour information, si vous vous retrouvez dans un tel cas, vous pourrez interromp
 Le second type de boucle repose en Python sur l'utilisation de listes (ou, plus généralement, d'itérables) dont nous reparlerons plus en détail dans la suite de cet ouvrage.
 Sachez pour le moment qu'une liste est un ensemble ordonné d'éléments.
 On peut alors exécuter une série d'instructions pour toutes les valeurs d'une liste :
+
+
 ```python
 for x in [1, 5, 7]:
 	print(x)
-y = 2
+print("Fin de la boucle")
 # [Sortie] 1
 # [Sortie] 5
 # [Sortie] 7
+# [Sortie] Fin de la boucle
 ```
 
 Cette syntaxe revient à définir une variable `x`{.python} qui prendra successivement pour valeur chacune des valeurs de la liste `[1, 5, 7]`{.python} dans l'ordre et à exécuter le code de la boucle (ici, un appel à la fonction `print`{.python}) pour cette valeur de la variable `x`{.python}.
@@ -267,6 +308,8 @@ Cette syntaxe revient à définir une variable `x`{.python} qui prendra successi
 Nous avons déjà vu dans ce qui précède, sans le dire, des fonctions.
 Par exemple, lorsque l'on écrit :
 
+
+
 ```python
 print(x)
 ```
@@ -274,13 +317,15 @@ print(x)
 on demande l'appel à une fonction, nommée `print`{.python} et prenant un **argument** (ici, la variable `x`{.python}).
 La fonction `print`{.python} ne retourne pas de valeur, elle ne fait qu'afficher la valeur contenue dans `x`{.python} sur le terminal.
 D'autres fonctions, comme `type`{.python} dont nous avons parlé plus haut, **retournent une valeur** et cette valeur peut être utilisée dans la suite du programme, comme dans l'exemple suivant :
+
+
 ```python
 x = type(1)  # On stocke dans x la valeur retournée par type
 y = type(2.)
 if x == y:
-	z = 1
+	print("types identiques")
 else:
-	z = 2
+	print("types différents")
 ```
 
 #### Définition d'une fonction
@@ -292,6 +337,7 @@ Cela présentera les avantages suivants :
 * s'il est nécessaire d'adapter à l'avenir le code pour résoudre un _bug_ ou le rendre plus générique, vous n'aurez à modifier le code qu'à un endroit (dans le corps de la fonction) et non pas à chaque fois que le code est répété.
 
 Pour définir une fonction en Python, on utilise le mot-clé `def`{.python} :
+
 ```python
 def f(x):
 	y = 5 * x + 2
@@ -307,6 +353,7 @@ On a ici défini une fonction
 
 Il est possible, en Python, d'écrire des fonctions retournant plusieurs valeurs.
 Pour ce faire, ces valeurs seront séparées par des virgules dans l'instruction `return`{.python} :
+
 ```python
 def f(x):
 	y = 5 * x + 2
@@ -319,12 +366,14 @@ Enfin, en l'absence d'instruction `return`{.python}, une fonction retournera la 
 Il est également possible d'utiliser le nom des arguments de la fonction lors de l'appel, pour ne pas risquer de se tromper dans l'ordre des arguments.
 Par exemple, si l'on a la fonction suivante :
 
+
 ```python
 def affiche_infos_personne(poids, taille):
 	print("Poids: ", poids)
 	print("Taille: ", taille)
 ```
 Les trois appels suivants sont équivalents :
+
 
 ```python
 affiche_infos_personne(80, 180)
@@ -337,8 +386,8 @@ affiche_infos_personne(poids=80, taille=180)
 # [Sortie] Poids: 80
 # [Sortie] Taille: 180
 ```
-
-Évidemment, pour que cela soit vraiment utile, il est hautement recommandé d'utiliser des noms d'arguments explicites lors de la définition de vos fonctions.
+Notons qu'il est alors possible d'interchanger l'ordre des arguments lors de l'appel d'une fonction si on précise leur nom.
+Évidemment, pour que cela soit vraiment utile, il est hautement recommandé d'utiliser des **noms d'arguments explicites** lors de la définition de vos fonctions.
 
 
 #### Argument(s) optionnel(s) d'une fonction
@@ -347,6 +396,7 @@ Certains arguments d'une fonction peuvent avoir une valeur par défaut, décidé
 Dans ce cas, si l'utilisateur ne spécifie pas explicitement de valeur pour ces arguments lors de l'appel à la fonction, c'est la valeur par défaut qui sera utilisée dans la fonction, dans le cas contraire, la valeur spécifiée sera utilisée.
 
 Par exemple, la fonction `print`{.python} dispose de plusieurs arguments facultatifs, comme le caractère par lequel terminer l'affichage (par défaut, un retour à la ligne, `"\n"`{.haskell}) :
+
 
 ```python
 print("La vie est belle")
@@ -360,6 +410,7 @@ print("Life is beautiful", end="--")
 
 Lorsque vous définissez une fonction, la syntaxe à utiliser pour donner une valeur par défaut à un argument est la suivante :
 
+
 ```python
 def f(x, y=0):  # La valeur par défaut pour y est 0
 	return x + 5 * y
@@ -367,6 +418,7 @@ def f(x, y=0):  # La valeur par défaut pour y est 0
 
 Attention toutefois, les arguments facultatifs (_ie._ qui disposent d'une valeur par défaut) doivent impérativement se trouver, dans la liste des arguments, après le dernier argument obligatoire.
 Ainsi, la définition de fonction suivante **n'est pas correcte** :
+
 
 ```python
 def f(x, y=0, z):
@@ -382,6 +434,7 @@ Pour cela, il sera utile de charger le **module** correspondant.
 
 Prenons l'exemple du module `math`{.python} qui propose un certain nombre de fonctions mathématiques usuelles (`sin`{.python} pour le calcul du sinus d'un angle, `sqrt`{.python} pour la racine carrée d'un nombre, _etc._) ainsi que des constantes mathématiques très utiles comme `pi`{.python}.
 Le code suivant charge le module en mémoire puis fait appel à certaines de ses fonctions et/ou variables :
+
 ```python
 import math
 
@@ -397,8 +450,12 @@ print(math.sqrt(2))
 Vous remarquerez ici que l'instruction d'import du module se trouve nécessairement avant les instructions faisant référence aux fonctions et variables de ce module, faute de quoi ces dernières ne seraient pas définies.
 De manière générale, vous prendrez la bonne habitude d'écrire les instructions d'import en tout début de vos fichiers Python, pour éviter tout souci.
 
-**Exercice 2.1** Écrivez une fonction en Python qui prenne en argument une longueur `l` et retourne l'aire du triangle équilatéral de côté `l`.
+**Exercice 2.1** Écrivez une expression conditionnelle, qui à partir d'une température d'eau stockée dans une variable t indique si l'eau est à cette température est à l'état liquide, solide ou gazeux.
 
-**Exercice 2.2** Écrivez une fonction en Python qui affiche tous les termes plus petits que 1000 de la suite $(u_n)$ définie comme :
+**Exercice 2.2** Écrivez une boucle permettant d'afficher tous les chiffres impairs inférieurs à une valeur n initialement fixée. 
+
+**Exercice 2.3** Écrivez une fonction en Python qui prenne en argument une longueur `l` et retourne l'aire du triangle équilatéral de côté `l`.
+
+**Exercice 2.4** Écrivez une fonction en Python qui affiche tous les termes plus petits que 1000 de la suite $(u_n)$ définie comme :
 $$\begin{array}{rcc}u_0 & = & 2 \\
 \forall n \geq 1, \, u_n & = & u_{n-1}^2\end{array}$$

@@ -1,4 +1,47 @@
 ### Exercice 2.1
+```python
+t = -5
+if t<=0:
+	print("l'eau est sous forme solide")
+elif t<100:
+	print("l'eau est sous forme liquide")
+else : 
+	print("l'eau est sous forme gazeuse")
+#[Sortie] l'eau est sous forme solide
+```
+
+### Exercice 2.2
+* Version avec utilisation du modulo
+
+```python
+n=8
+i=0
+while(i<n):
+	if i%2!=0:
+		print(i)
+	i+=1
+
+#[Sortie] 1
+#[Sortie] 3
+#[Sortie] 5
+#[Sortie] 7
+```
+
+* Version sans utilisation du modulo
+
+```python
+n=8
+i=1
+while(i<n):
+	print(i)
+	i+=2
+
+#[Sortie] 1
+#[Sortie] 3
+#[Sortie] 5
+#[Sortie] 7
+```
+### Exercice 2.3
 
 ```python
 import math
@@ -11,7 +54,7 @@ def aire_equi(l):
 print(aire_equi(1.))
 # [Sortie] 0.4330127018922193
 ```
-### Exercice 2.2
+### Exercice 2.4
 
 * Version itérative (avec une boucle)
 

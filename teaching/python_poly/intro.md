@@ -32,7 +32,7 @@ Lors de l'exécution de cette commande, on peut remarquer plusieurs choses.
 Tout d'abord, au démarrage, la console Python nous indique la version de Python qui est exécutée.
 Cela est important, car il existe notamment une importante différence entre les versions 2 (2.x.y) et 3 (3.x.y) de Python.
 Dans ce document, nous supposons l'utilisation de Python dans sa version 3, comme dans la console affichée plus haut.
-Enfin, une fois la console démarée, on voit apparaître un prompt Python (`>>>`) qui indique que vous pouvez, à partir de ce point, entrer du code Python et en demander l'exécution en appuyant sur la touche _retour chariot_ (ou "Entrée") de votre clavier.
+Enfin, une fois la console démarrée, on voit apparaître un prompt Python (`>>>`) qui indique que vous pouvez, à partir de ce point, entrer du code Python et en demander l'exécution en appuyant sur la touche _retour chariot_ (ou "Entrée") de votre clavier.
 
 L'autre façon de programmer en Python, plus adaptée dès lors que l'on souhaite conserver une trace de ce qu'on a écrit, consiste à enregistrer vos commandes dans un fichier texte (en respectant la convention qui consiste à utiliser l'extension `.py` pour le nom de fichier) puis à faire exécuter votre programme par l'interpréteur Python :
 ```

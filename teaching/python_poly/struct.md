@@ -1,13 +1,13 @@
 # Structures de données et structures de contrôle
 
-Dans ce chapitre, nous allons nous intéresser aux éléments de base de la syntaxe Python : les structures de données d'une part et les structures de contrôle d'autre part.
-Les structures de données vont nous permettre de stocker dans la mémoire de l'ordinateur (dans le but de les traiter ensuite) des données tandis que les structures de contrôle vont servir à définir nos interactions avec ces données.
+Dans ce chapitre, on s'intéresse aux éléments de base de la syntaxe Python : les structures de données d'une part et les structures de contrôle d'autre part.
+Les structures de données vont permettre de stocker dans la mémoire de l'ordinateur (dans le but de les traiter ensuite) des données tandis que les structures de contrôle vont servir à définir nos interactions avec ces données.
 
 ## Variables
 
-En Python, les données sont stockées dans des variables, on ne peut pas définir de constante.
+En Python, les données sont stockées dans des variables.
+On ne peut pas, comme c'est le cas dans d'autres langages, définir de constante (qui sont, dans ces langages des moyen de stocker des valeurs n'ayant pas vocation à être modifiées au cours de l'exécution du programme).
 Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette dernière pouvant varier au cours de l'exécution du programme.
-Les variables Python sont typées dynamiquement, ce qui signifie qu'une variable, à un moment donné de l'exécution d'un programme, a un type précis qui lui est attribué, mais que celui-ci peut évoluer au cours de l'exécution du programme.
 
 ### Types des variables Python
 
@@ -21,10 +21,16 @@ Les types de base existant en Python sont les suivants :
 
 De plus, il existe un type spécial (`NoneType`{.python}) ne permettant qu'une seule valeur : la valeur `None`{.python} qui signifie "pas de valeur" ou "valeur manquante".
 
+Le choix du type utilisé pour une variable impliquera :
+
+ * une certaine façon d'encoder les données en mémoire (mais cette partie vous sera largement masquée, c'est l'interpréteur qui s'en chargera) ;
+ * un certain nombre d'opérations autorisées sur la variable (opérations arithmétiques sur les variables numériques, concaténation sur les chaînes de caractères, _etc._)
+
+Les variables Python sont typées dynamiquement, ce qui signifie qu'une variable, à un moment donné de l'exécution d'un programme, a un type précis qui lui est attribué, mais que celui-ci peut évoluer au cours de l'exécution du programme.
 En Python, le type d'une variable n'est pas déclaré par l'utilisateur : il est défini par l'usage (la valeur effective que l'on décide de stocker dans la variable en question).
 
-Par exemple, l'instruction suivante en Python attribue la valeur `12`{.python} à la variable `v`{.python}, qui devient donc automatiquement de type entier :
 
+Par exemple, l'instruction suivante (dite opération d'affectation) en Python attribue la valeur `12`{.python} à la variable `v`{.python}, qui devient donc automatiquement de type entier :
 
 ```python
 v = 12
@@ -50,7 +56,7 @@ print(type(v))  # la fonction print(.) permet d'afficher
 # [Sortie] <class 'float'>
 ```
 
-### Opération d'assignation
+### Opération d'affectation
 
 Comme le montrent les exemples précédents, pour pouvoir utiliser des variables, on doit leur donner un nom (placé à gauche du signe égal dans l'opération d'affectation).
 Ces noms de variables doivent respecter certaines contraintes :
@@ -63,7 +69,7 @@ Ces noms de variables doivent respecter certaines contraintes :
 ```python
 and del for is raise assert elif from lambda return break else global
 not try nonlocal True False class except if or while continue import
-pass yield None def finally in
+pass yield None def finally in as with
 ```
 * ils ne doivent pas correspondre à des noms de fonction de la librairie standard de Python (cette dernière condition n'est en fait qu'une bonne pratique à observer) : vous apprendrez au fur et à mesure les noms de ces fonctions.
 
@@ -79,8 +85,8 @@ print(maVariable)
 # [Sortie] 15
 ```
 
-Comme on l'a vu plus haut, on utilise en Python l'opérateur `=`{.python} pour assigner une valeur à une variable.
-La sémantique de cet opérateur est la suivante : "assigner la valeur contenue dans le membre de droite à la variable du membre de gauche".
+Comme on l'a vu plus haut, on utilise en Python l'opérateur `=`{.python} pour affecter une valeur à une variable.
+La sémantique de cet opérateur est la suivante : "affecter la valeur contenue dans le membre de droite à la variable du membre de gauche".
 Ainsi, il est tout à fait valide d'écrire, en Python :
 
 
@@ -115,6 +121,7 @@ Le tableau suivant dresse une liste des opérateurs définis pour les variables 
 | `/`{.python} | Division |
 | `**`{.python} | Élévation à la puissance |
 | `%`{.python} | Modulo (non défini pour les nombres complexes) |
+| `//`{.python} | Division |
 
 
 De plus, pour chacun de ces opérateurs, il existe un opérateur associé qui réalise successivement l'opération demandée puis l'affectation de la nouvelle valeur à la variable en question.
@@ -146,7 +153,7 @@ Pour prendre un exemple concret, pour évaluer l'expression :
 3.9 * x * (1 - x)
 ```
 
-on commencera par évaluer le contenu de la parenthèse puis, les 2 opérations restantes étant toutes des multiplications, on les effectuera de gauche à droite.
+l'interpréteur Python commencera par évaluer le contenu de la parenthèse puis, les 2 opérations restantes étant toutes des multiplications, il les effectuera de gauche à droite.
 
 De plus, lorsqu'une opération est effectuée entre deux variables de types différents, le type le plus générique est retenu.
 Par exemple, si l'on multiplie un entier par un nombre à virgule, le résultat sera de type `float`{.python}.

@@ -61,7 +61,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#structures-de-donn&#233;es-et-structures-de-contr&#244;le"><span class="toc-section-number">2</span> Structures de donn&#233;es et structures de contr&#244;le</a><ul>
 <li><a href="#variables"><span class="toc-section-number">2.1</span> Variables</a><ul>
 <li><a href="#types-des-variables-python"><span class="toc-section-number">2.1.1</span> Types des variables Python</a></li>
-<li><a href="#op&#233;ration-dassignation"><span class="toc-section-number">2.1.2</span> Op&#233;ration d&#8217;assignation</a></li>
+<li><a href="#op&#233;ration-daffectation"><span class="toc-section-number">2.1.2</span> Op&#233;ration d&#8217;affectation</a></li>
 <li><a href="#op&#233;rateurs-et-priorit&#233;"><span class="toc-section-number">2.1.3</span> Op&#233;rateurs et priorit&#233;</a></li>
 </ul></li>
 <li><a href="#structures-de-contr&#244;le"><span class="toc-section-number">2.2</span> Structures de contr&#244;le</a><ul>
@@ -140,14 +140,14 @@ Python 3.5.1 (default, Dec  9 2015, 11:28:16)
 [GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.1.76)] on darwin
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt;</code></pre>
-<p>Lors de l&#8217;ex&#233;cution de cette commande, on peut remarquer plusieurs choses. Tout d&#8217;abord, au d&#233;marrage, la console Python nous indique la version de Python qui est ex&#233;cut&#233;e. Cela est important, car il existe notamment une importante diff&#233;rence entre les versions 2 (2.x.y) et 3 (3.x.y) de Python. Dans ce document, nous supposons l&#8217;utilisation de Python dans sa version 3, comme dans la console affich&#233;e plus haut. Enfin, une fois la console d&#233;mar&#233;e, on voit appara&#238;tre un prompt Python (<code>&gt;&gt;&gt;</code>) qui indique que vous pouvez, &#224; partir de ce point, entrer du code Python et en demander l&#8217;ex&#233;cution en appuyant sur la touche <em>retour chariot</em> (ou &#8220;Entr&#233;e&#8221;) de votre clavier.</p>
+<p>Lors de l&#8217;ex&#233;cution de cette commande, on peut remarquer plusieurs choses. Tout d&#8217;abord, au d&#233;marrage, la console Python nous indique la version de Python qui est ex&#233;cut&#233;e. Cela est important, car il existe notamment une importante diff&#233;rence entre les versions 2 (2.x.y) et 3 (3.x.y) de Python. Dans ce document, nous supposons l&#8217;utilisation de Python dans sa version 3, comme dans la console affich&#233;e plus haut. Enfin, une fois la console d&#233;marr&#233;e, on voit appara&#238;tre un prompt Python (<code>&gt;&gt;&gt;</code>) qui indique que vous pouvez, &#224; partir de ce point, entrer du code Python et en demander l&#8217;ex&#233;cution en appuyant sur la touche <em>retour chariot</em> (ou &#8220;Entr&#233;e&#8221;) de votre clavier.</p>
 <p>L&#8217;autre fa&#231;on de programmer en Python, plus adapt&#233;e d&#232;s lors que l&#8217;on souhaite conserver une trace de ce qu&#8217;on a &#233;crit, consiste &#224; enregistrer vos commandes dans un fichier texte (en respectant la convention qui consiste &#224; utiliser l&#8217;extension <code>.py</code> pour le nom de fichier) puis &#224; faire ex&#233;cuter votre programme par l&#8217;interpr&#233;teur Python :</p>
 <pre><code>$ python nom_de_mon_fichier.py
 [...]</code></pre>
 <h1 id="structures-de-donn&#233;es-et-structures-de-contr&#244;le"><span class="header-section-number">2</span> Structures de donn&#233;es et structures de contr&#244;le</h1>
-<p>Dans ce chapitre, nous allons nous int&#233;resser aux &#233;l&#233;ments de base de la syntaxe Python : les structures de donn&#233;es d&#8217;une part et les structures de contr&#244;le d&#8217;autre part. Les structures de donn&#233;es vont nous permettre de stocker dans la m&#233;moire de l&#8217;ordinateur (dans le but de les traiter ensuite) des donn&#233;es tandis que les structures de contr&#244;le vont servir &#224; d&#233;finir nos interactions avec ces donn&#233;es.</p>
+<p>Dans ce chapitre, on s&#8217;int&#233;resse aux &#233;l&#233;ments de base de la syntaxe Python : les structures de donn&#233;es d&#8217;une part et les structures de contr&#244;le d&#8217;autre part. Les structures de donn&#233;es vont permettre de stocker dans la m&#233;moire de l&#8217;ordinateur (dans le but de les traiter ensuite) des donn&#233;es tandis que les structures de contr&#244;le vont servir &#224; d&#233;finir nos interactions avec ces donn&#233;es.</p>
 <h2 id="variables"><span class="header-section-number">2.1</span> Variables</h2>
-<p>En Python, les donn&#233;es sont stock&#233;es dans des variables, on ne peut pas d&#233;finir de constante. Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette derni&#232;re pouvant varier au cours de l&#8217;ex&#233;cution du programme. Les variables Python sont typ&#233;es dynamiquement, ce qui signifie qu&#8217;une variable, &#224; un moment donn&#233; de l&#8217;ex&#233;cution d&#8217;un programme, a un type pr&#233;cis qui lui est attribu&#233;, mais que celui-ci peut &#233;voluer au cours de l&#8217;ex&#233;cution du programme.</p>
+<p>En Python, les donn&#233;es sont stock&#233;es dans des variables. On ne peut pas, comme c&#8217;est le cas dans d&#8217;autres langages, d&#233;finir de constante (qui sont, dans ces langages des moyen de stocker des valeurs n&#8217;ayant pas vocation &#224; &#234;tre modifi&#233;es au cours de l&#8217;ex&#233;cution du programme). Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette derni&#232;re pouvant varier au cours de l&#8217;ex&#233;cution du programme.</p>
 <h3 id="types-des-variables-python"><span class="header-section-number">2.1.1</span> Types des variables Python</h3>
 <p>Les types de base existant en Python sont les suivants :</p>
 <ul>
@@ -158,8 +158,13 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 <li><code class="sourceCode python"><span class="bu">bool</span></code> : bool&#233;en (pouvant prendre les valeurs <code class="sourceCode python"><span class="va">True</span></code> ou <code class="sourceCode python"><span class="va">False</span></code>).</li>
 </ul>
 <p>De plus, il existe un type sp&#233;cial (<code class="sourceCode python">NoneType</code>) ne permettant qu&#8217;une seule valeur : la valeur <code class="sourceCode python"><span class="va">None</span></code> qui signifie &#8220;pas de valeur&#8221; ou &#8220;valeur manquante&#8221;.</p>
-<p>En Python, le type d&#8217;une variable n&#8217;est pas d&#233;clar&#233; par l&#8217;utilisateur : il est d&#233;fini par l&#8217;usage (la valeur effective que l&#8217;on d&#233;cide de stocker dans la variable en question).</p>
-<p>Par exemple, l&#8217;instruction suivante en Python attribue la valeur <code class="sourceCode python"><span class="dv">12</span></code> &#224; la variable <code class="sourceCode python">v</code>, qui devient donc automatiquement de type entier :</p>
+<p>Le choix du type utilis&#233; pour une variable impliquera :</p>
+<ul>
+<li>une certaine fa&#231;on d&#8217;encoder les donn&#233;es en m&#233;moire (mais cette partie vous sera largement masqu&#233;e, c&#8217;est l&#8217;interpr&#233;teur qui s&#8217;en chargera) ;</li>
+<li>un certain nombre d&#8217;op&#233;rations autoris&#233;es sur la variable (op&#233;rations arithm&#233;tiques sur les variables num&#233;riques, concat&#233;nation sur les cha&#238;nes de caract&#232;res, <em>etc.</em>)</li>
+</ul>
+<p>Les variables Python sont typ&#233;es dynamiquement, ce qui signifie qu&#8217;une variable, &#224; un moment donn&#233; de l&#8217;ex&#233;cution d&#8217;un programme, a un type pr&#233;cis qui lui est attribu&#233;, mais que celui-ci peut &#233;voluer au cours de l&#8217;ex&#233;cution du programme. En Python, le type d&#8217;une variable n&#8217;est pas d&#233;clar&#233; par l&#8217;utilisateur : il est d&#233;fini par l&#8217;usage (la valeur effective que l&#8217;on d&#233;cide de stocker dans la variable en question).</p>
+<p>Par exemple, l&#8217;instruction suivante (dite op&#233;ration d&#8217;affectation) en Python attribue la valeur <code class="sourceCode python"><span class="dv">12</span></code> &#224; la variable <code class="sourceCode python">v</code>, qui devient donc automatiquement de type entier :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">v <span class="op">=</span> <span class="dv">12</span></code></pre></div>
 <p>Ainsi, les instructions suivantes ont toutes une incidence sur le type des variables consid&#233;r&#233;es :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">v <span class="op">=</span> <span class="dv">12</span>     <span class="co"># v est alors de type entier</span>
@@ -171,7 +176,7 @@ v <span class="op">=</span> <span class="dv">12</span>.    <span class="co"># v 
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">type</span>(v))  <span class="co"># la fonction print(.) permet d&#39;afficher</span>
                 <span class="co"># une information dans le terminal</span>
 <span class="co"># [Sortie] &lt;class &#39;float&#39;&gt;</span></code></pre></div>
-<h3 id="op&#233;ration-dassignation"><span class="header-section-number">2.1.2</span> Op&#233;ration d&#8217;assignation</h3>
+<h3 id="op&#233;ration-daffectation"><span class="header-section-number">2.1.2</span> Op&#233;ration d&#8217;affectation</h3>
 <p>Comme le montrent les exemples pr&#233;c&#233;dents, pour pouvoir utiliser des variables, on doit leur donner un nom (plac&#233; &#224; gauche du signe &#233;gal dans l&#8217;op&#233;ration d&#8217;affectation). Ces noms de variables doivent respecter certaines contraintes :</p>
 <ul>
 <li>ils doivent d&#233;buter par une lettre (minuscule ou majuscule, peu importe) ou par le symbole <code class="sourceCode python">_</code> ;</li>
@@ -180,7 +185,7 @@ v <span class="op">=</span> <span class="dv">12</span>.    <span class="co"># v 
 </ul>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">and</span> <span class="kw">del</span> <span class="cf">for</span> <span class="op">is</span> <span class="cf">raise</span> <span class="cf">assert</span> <span class="cf">elif</span> <span class="im">from</span> <span class="kw">lambda</span> <span class="cf">return</span> <span class="cf">break</span> <span class="cf">else</span> <span class="kw">global</span>
 <span class="op">not</span> <span class="cf">try</span> <span class="kw">nonlocal</span> <span class="va">True</span> <span class="va">False</span> <span class="kw">class</span> <span class="cf">except</span> <span class="cf">if</span> <span class="op">or</span> <span class="cf">while</span> <span class="cf">continue</span> <span class="im">import</span>
-<span class="cf">pass</span> <span class="cf">yield</span> <span class="va">None</span> <span class="kw">def</span> <span class="cf">finally</span> <span class="op">in</span></code></pre></div>
+<span class="cf">pass</span> <span class="cf">yield</span> <span class="va">None</span> <span class="kw">def</span> <span class="cf">finally</span> <span class="op">in</span> <span class="im">as</span> <span class="cf">with</span></code></pre></div>
 <ul>
 <li>ils ne doivent pas correspondre &#224; des noms de fonction de la librairie standard de Python (cette derni&#232;re condition n&#8217;est en fait qu&#8217;une bonne pratique &#224; observer) : vous apprendrez au fur et &#224; mesure les noms de ces fonctions.</li>
 </ul>
@@ -191,7 +196,7 @@ maVariable <span class="op">=</span> <span class="dv">15</span>
 <span class="co"># [Sortie] 12</span>
 <span class="bu">print</span>(maVariable)
 <span class="co"># [Sortie] 15</span></code></pre></div>
-<p>Comme on l&#8217;a vu plus haut, on utilise en Python l&#8217;op&#233;rateur <code class="sourceCode python"><span class="op">=</span></code> pour assigner une valeur &#224; une variable. La s&#233;mantique de cet op&#233;rateur est la suivante : &#8220;assigner la valeur contenue dans le membre de droite &#224; la variable du membre de gauche&#8221;. Ainsi, il est tout &#224; fait valide d&#8217;&#233;crire, en Python :</p>
+<p>Comme on l&#8217;a vu plus haut, on utilise en Python l&#8217;op&#233;rateur <code class="sourceCode python"><span class="op">=</span></code> pour affecter une valeur &#224; une variable. La s&#233;mantique de cet op&#233;rateur est la suivante : &#8220;affecter la valeur contenue dans le membre de droite &#224; la variable du membre de gauche&#8221;. Ainsi, il est tout &#224; fait valide d&#8217;&#233;crire, en Python :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code></pre></div>
 <p>Pour ex&#233;cuter cette instruction, l&#8217;interpr&#233;teur Python commencera par &#233;valuer le membre de droite en utilisant la valeur courante de la variable <code class="sourceCode python">x</code>, puis affectera la valeur correspondant au r&#233;sultat de l&#8217;op&#233;ration <code class="sourceCode python"><span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code> dans la variable <code class="sourceCode python">x</code>.</p>
 <p>Ainsi, voici le r&#233;sultat de l&#8217;ex&#233;cution suivante :</p>
@@ -235,6 +240,10 @@ x <span class="op">=</span> <span class="fl">3.9</span> <span class="op">*</span
 <td align="center"><code class="sourceCode python"><span class="op">%</span></code></td>
 <td align="center">Modulo (non d&#233;fini pour les nombres complexes)</td>
 </tr>
+<tr class="odd">
+<td align="center"><code class="sourceCode python"><span class="op">//</span></code></td>
+<td align="center">Division</td>
+</tr>
 </tbody>
 </table>
 <p>De plus, pour chacun de ces op&#233;rateurs, il existe un op&#233;rateur associ&#233; qui r&#233;alise successivement l&#8217;op&#233;ration demand&#233;e puis l&#8217;affectation de la nouvelle valeur &#224; la variable en question. Ainsi, l&#8217;instruction suivante :</p>
@@ -252,7 +261,7 @@ x <span class="op">=</span> <span class="fl">3.9</span> <span class="op">*</span
 </ol>
 <p>Pour prendre un exemple concret, pour &#233;valuer l&#8217;expression :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> x)</code></pre></div>
-<p>on commencera par &#233;valuer le contenu de la parenth&#232;se puis, les 2 op&#233;rations restantes &#233;tant toutes des multiplications, on les effectuera de gauche &#224; droite.</p>
+<p>l&#8217;interpr&#233;teur Python commencera par &#233;valuer le contenu de la parenth&#232;se puis, les 2 op&#233;rations restantes &#233;tant toutes des multiplications, il les effectuera de gauche &#224; droite.</p>
 <p>De plus, lorsqu&#8217;une op&#233;ration est effectu&#233;e entre deux variables de types diff&#233;rents, le type le plus g&#233;n&#233;rique est retenu. Par exemple, si l&#8217;on multiplie un entier par un nombre &#224; virgule, le r&#233;sultat sera de type <code class="sourceCode python"><span class="bu">float</span></code>. De m&#234;me, le r&#233;sultat de l&#8217;addition entre un nombre complexe et un nombre &#224; virgule est un complexe.</p>
 <p><strong>Attention.</strong> Comme indiqu&#233; en introduction, ce polycopi&#233; suppose que vous utilisez Python dans sa version 3. Il est &#224; noter qu&#8217;il existe une diff&#233;rence importante entre Python 2 et Python 3 dans la fa&#231;on d&#8217;effectuer des op&#233;rations m&#234;lant nombres entiers et flottants. Par exemple, l&#8217;op&#233;ration suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">2</span> <span class="op">/</span> <span class="dv">3</span></code></pre></div>

@@ -18,6 +18,7 @@ f_0=f_1=1 \\
 f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 \end{array}$$
 
+
 # Fonctions et procédures en Python
 
 2. Proposez une implémentation récursive du calcul de la somme des `n`{.python} premiers entiers.

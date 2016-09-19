@@ -335,10 +335,11 @@ affiche_bonjour(<span class="dv">1200</span>)</code></pre></div>
 </tr>
 </tbody>
 </table>
-<p>Il existe, en Python, trois fa&#231;ons d&#8217;it&#233;rer sur une liste : * si l&#8217;on n&#8217;a besoin que d&#8217;acc&#233;der aux &#233;l&#233;ments de la liste :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> element <span class="op">in</span> liste:
-    <span class="co"># [...]</span></code></pre></div>
+<p>Il existe, en Python, trois fa&#231;ons d&#8217;it&#233;rer sur une liste :</p>
 <ul>
+<li><p>si l&#8217;on n&#8217;a besoin que d&#8217;acc&#233;der aux &#233;l&#233;ments de la liste :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> element <span class="op">in</span> liste:
+<span class="co"># [...]</span></code></pre></div></li>
 <li><p>si l&#8217;on a besoin d&#8217;acc&#233;der &#224; la fois aux &#233;l&#233;ments de la liste et &#224; leurs indices :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> indice, element <span class="op">in</span> <span class="bu">enumerate</span>(liste):
 <span class="co"># [...]</span></code></pre></div></li>
@@ -357,11 +358,11 @@ affiche_bonjour(<span class="dv">1200</span>)</code></pre></div>
     <span class="co"># [...]</span>
     <span class="cf">return</span> jour</code></pre></div>
 <blockquote>
-<p>Si l&#8217;on souhaite ne pas avoir &#224; tester toutes les valeurs de <code class="sourceCode python">i</code> possible, l&#8217;astuce consiste &#224; construire une liste contenant, &#224; la suite, les cha&#238;nes de caract&#232;res correspondant aux jours de la semaine puis &#224; retourner l&#8217;&#233;l&#233;ment &#224; la position <code class="sourceCode python">i<span class="dv">+1</span></code> (car le premier indice d&#8217;une liste est <code class="sourceCode python"><span class="dv">0</span></code>) dans la liste :</p>
+<p>Si l&#8217;on souhaite ne pas avoir &#224; tester toutes les valeurs de <code class="sourceCode python">i</code> possible, l&#8217;astuce consiste &#224; construire une liste contenant, &#224; la suite, les cha&#238;nes de caract&#232;res correspondant aux jours de la semaine puis &#224; retourner l&#8217;&#233;l&#233;ment &#224; la position <code class="sourceCode python">i<span class="dv">-1</span></code> (car le premier indice d&#8217;une liste est <code class="sourceCode python"><span class="dv">0</span></code>) dans la liste :</p>
 </blockquote>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> jour_semaine_bis(i):
     liste_jours <span class="op">=</span> [<span class="st">&quot;Lundi&quot;</span>, <span class="st">&quot;Mardi&quot;</span>, <span class="st">&quot;Mercredi&quot;</span>, <span class="st">&quot;Jeudi&quot;</span>, <span class="st">&quot;Vendredi&quot;</span>, <span class="st">&quot;Samedi&quot;</span>, <span class="st">&quot;Dimanche&quot;</span>]
-    <span class="cf">return</span> liste_jours[i<span class="dv">+1</span>]</code></pre></div>
+    <span class="cf">return</span> liste_jours[i<span class="dv">-1</span>]</code></pre></div>
 <blockquote>
 <p>Pour tester cette fonction, il suffit de tester quelques valeurs car ici, l&#8217;impl&#233;mentation est g&#233;n&#233;rique (on n&#8217;a pas une clause de <code class="sourceCode python"><span class="cf">if</span></code> pour chaque valeur de <code class="sourceCode python">i</code>) :</p>
 </blockquote>

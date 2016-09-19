@@ -220,6 +220,7 @@ Les indices de liste commencent à 0 en Python :
 | Élément | 5 | 7 | 2 | 1 |
 
 Il existe, en Python, trois façons d'itérer sur une liste :
+
 * si l'on n'a besoin que d'accéder aux éléments de la liste :
 ```python
 for element in liste:
@@ -246,11 +247,11 @@ def jour_semaine_bis(i):
     # [...]
     return jour
 ```
-> Si l'on souhaite ne pas avoir à tester toutes les valeurs de `i`{.python} possible, l'astuce consiste à construire une liste contenant, à la suite, les chaînes de caractères correspondant aux jours de la semaine puis à retourner l'élément à la position `i+1`{.python} (car le premier indice d'une liste est `0`{.python}) dans la liste :
+> Si l'on souhaite ne pas avoir à tester toutes les valeurs de `i`{.python} possible, l'astuce consiste à construire une liste contenant, à la suite, les chaînes de caractères correspondant aux jours de la semaine puis à retourner l'élément à la position `i-1`{.python} (car le premier indice d'une liste est `0`{.python}) dans la liste :
 ```python
 def jour_semaine_bis(i):
     liste_jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
-    return liste_jours[i+1]
+    return liste_jours[i-1]
 ```
 > Pour tester cette fonction, il suffit de tester quelques valeurs car ici, l'implémentation est générique (on n'a pas une clause de `if`{.python} pour chaque valeur de `i`{.python}) :
 ```python

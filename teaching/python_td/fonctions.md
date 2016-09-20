@@ -21,13 +21,15 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 
 # Fonctions et procédures en Python
 
-2. Écrivez une fonction en Python qui affiche les carrés des `n`{.python} premiers entiers (où `n`{.python} est un argument de la fonction).
+2. Proposez une implémentation récursive du calcul de la somme des `n`{.python} premiers entiers. On écrira une fonction `somme_entier`{.python} qui prend en argument la valeur de `n`{.python} et renvoie la somme des entiers.
 
-3. Proposez une implémentation récursive du calcul de la somme des `n`{.python} premiers entiers (où `n`{.python} est un argument de la fonction).
+3. Implémentez en Python l'algorithme élaboré à la maison. On écrira une fonction `fibonacci` qui prend en argument le rang `n` et renvoie la valeur du terme.
 
-4. Implémentez en Python l'algorithme élaboré à la maison.
+4. Écrivez une fonction `duree_secondes`{.python} qui prend en argument une durée en heures, minutes, secondes, exprimée sous la forme de trois variable, et qui renvoie la durée équivalente en nombre de secondes.
 
-5. Écrivez une fonction `table`{.python} qui prenne pour argument une base et affiche la table de multiplication de cette base. Par exemple `table(5)`{.python} affichera la table de 5, soit une sortie de la forme :
+5. Écrivez une fonction `delta_secondes`{.python} qui retourne la différence (en secondes) entre deux durées exprimées en heures, minutes, secondes.
+
+6. Écrivez une fonction `table`{.python} qui prenne pour argument une base et affiche la table de multiplication de cette base. Par exemple `table(5)`{.python} affichera la table de 5, soit une sortie de la forme :
 ```
 5*1=5
 5*2=10
@@ -35,17 +37,7 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 5*10=50
 ```
 
-6. Écrivez une fonction `aire_surface_rectangle`{.python} qui retourne l'aire et la surface d'un rectangle dont les longueurs des côtés sont passés en argument.
-
-7. Écrivez une fonction `duree_secondes`{.python} ayant pour prototype :
-
-```python
-def duree_secondes(h1, m1, s1, h2, m2, s2):
-    [...]
-```
-
-et retournant la durée écoulée (en secondes) entre les horaires `h1:m1:s1` et `h2:m2:s2`.
-Il sera pour cela recommandé de passer par la définition d'une fonction transformant un triplet `h, m, s`{.python} en horaire converti en secondes.
+7. Écrivez une fonction `aire_surface_rectangle`{.python} qui retourne l'aire et la surface d'un rectangle dont les longueurs des côtés sont passés en argument.
 
 8. Analysez la structure des paroles de la chanson _La jument de Michao_ et écrivez une fonction qui affiche ces paroles dans le terminal pour un nombre d'années `n`{.python} initial passé en argument. Voici la structure de la chanson pour `n=4` :
 
@@ -100,6 +92,8 @@ Par exemple `table_multiplication(5, 4, 7)`{.python} affichera une sortie de la 
 5*6=30
 5*7=35
 ```
+
+Notez qu'un appel à `table_multiplication(5)`{.python} devra avoir le même effet qu'un appel à `table(5)`{.python}
 
 # Exercice de synthèse
 

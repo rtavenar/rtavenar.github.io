@@ -457,9 +457,9 @@ print(math.sqrt(2))
 Vous remarquerez ici que l'instruction d'import du module se trouve nécessairement avant les instructions faisant référence aux fonctions et variables de ce module, faute de quoi ces dernières ne seraient pas définies.
 De manière générale, vous prendrez la bonne habitude d'écrire les instructions d'import en tout début de vos fichiers Python, pour éviter tout souci.
 
-**Exercice 2.1** Écrivez une expression conditionnelle, qui à partir d'une température d'eau stockée dans une variable t indique si l'eau est à cette température est à l'état liquide, solide ou gazeux.
+**Exercice 2.1** Écrivez une expression conditionnelle, qui à partir d'une température d'eau stockée dans une variable `t` affiche dans le terminal si l'eau à cette température est à l'état liquide, solide ou gazeux.
 
-**Exercice 2.2** Écrivez une boucle permettant d'afficher tous les chiffres impairs inférieurs à une valeur n initialement fixée. 
+**Exercice 2.2** Écrivez une boucle permettant d'afficher tous les chiffres impairs inférieurs à une valeur `n` initialement fixée.
 
 **Exercice 2.3** Écrivez une fonction en Python qui prenne en argument une longueur `l` et retourne l'aire du triangle équilatéral de côté `l`.
 

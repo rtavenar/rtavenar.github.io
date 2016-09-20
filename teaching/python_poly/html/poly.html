@@ -45,7 +45,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
   <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.min.js"></script>
 </head>
 <body onload="anchors.options = {visible: 'always'}; anchors.add();">
@@ -554,6 +554,7 @@ l[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span>
 <span class="co"># [Sortie] 1</span>
 <span class="co"># [Sortie] 5</span>
 <span class="co"># [Sortie] 7</span></code></pre></div>
+<p>Dans cet exemple, la variable <code>elem</code> va prendre successivement pour valeur chacun des &#233;l&#233;ments de la liste.</p>
 <h3 id="parcours-par-indices"><span class="header-section-number">3.4.2</span> Parcours par indices</h3>
 <p>Pour avoir acc&#232;s aux indices (positifs) de la liste, on devra utiliser un subterfuge. On sait que les indices d&#8217;une liste sont les entiers compris entre 0 (inclus) et la taille de la liste (exclu). On va donc utiliser la fonction <code class="sourceCode python"><span class="bu">range</span></code> pour cela :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>]
@@ -572,6 +573,7 @@ n <span class="op">=</span> <span class="bu">len</span>(l)  <span class="co"># n
 <span class="co"># [Sortie] 1 5</span>
 <span class="co"># [Sortie] 2 7</span></code></pre></div>
 <p>On a donc ici une boucle <code class="sourceCode python"><span class="cf">for</span></code> pour laquelle, &#224; chaque it&#233;ration, on met &#224; jour les variables <code class="sourceCode python">i</code> (qui contient l&#8217;indice courant) et <code class="sourceCode python">elem</code> (qui contient l&#8217;&#233;l&#233;ment se trouvant &#224; l&#8217;indice <code class="sourceCode python">i</code> dans la liste <code class="sourceCode python">l</code>).</p>
+<p>Pour tous ces parcours de listes, il est conseill&#233; d&#8217;utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des &#233;l&#233;ments manipul&#233;s. Par exemples, on pourra utiliser <code>i</code> ou <code>j</code> pour noter des indices, mais on pr&#233;f&#232;rera <code>elem</code> ou <code>val</code> pour d&#233;signer les &#233;l&#233;ments de la liste.</p>
 <p><strong>Exercice 3.1</strong> &#201;crivez une fonction en Python qui permette de calculer l&#8217;argmax d&#8217;une liste, c&#8217;est-&#224;-dire l&#8217;indice auquel est stock&#233;e la valeur maximale de la liste.</p>
 <h2 id="manipulations-de-listes"><span class="header-section-number">3.5</span> Manipulations de listes</h2>
 <p>Nous pr&#233;sentons dans ce qui suit les op&#233;rations &#233;l&#233;mentaires de manipulation de listes.</p>
@@ -603,7 +605,7 @@ l.pop()  <span class="co"># par d&#233;faut, supprime le dernier &#233;l&#233;me
 <span class="bu">print</span>(l)
 <span class="co"># [Sortie] [1]</span>
 l <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">1</span>]
-l.remove(<span class="dv">1</span>)
+l.remove(<span class="dv">1</span>) <span class="co"># supprime la premi&#232;re occurence de 1 dans la liste</span>
 <span class="bu">print</span>(l)
 <span class="co"># [Sortie] [7, 5]</span></code></pre></div>
 <p>On peut noter que la m&#233;thode <code class="sourceCode python">pop</code> retourne la valeur supprim&#233;e, ce qui peut s&#8217;av&#233;rer utile :</p>

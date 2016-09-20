@@ -137,24 +137,45 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 \end{array}</annotation></semantics></math></p>
 <h1 id="fonctions-et-proc&#233;dures-en-python"><span class="header-section-number">2</span> Fonctions et proc&#233;dures en Python</h1>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Proposez une impl&#233;mentation r&#233;cursive du calcul de la somme des <code class="sourceCode python">n</code> premiers entiers.</p></li>
+<li><p>&#201;crivez une fonction en Python qui affiche les carr&#233;s des <code class="sourceCode python">n</code> premiers entiers (o&#249; <code class="sourceCode python">n</code> est un argument de la fonction).</p></li>
+<li><p>Proposez une impl&#233;mentation r&#233;cursive du calcul de la somme des <code class="sourceCode python">n</code> premiers entiers (o&#249; <code class="sourceCode python">n</code> est un argument de la fonction).</p></li>
 <li><p>Impl&#233;mentez en Python l&#8217;algorithme &#233;labor&#233; &#224; la maison.</p></li>
 <li><p>&#201;crivez une fonction <code class="sourceCode python">table</code> qui prenne pour argument une base et affiche la table de multiplication de cette base. Par exemple <code class="sourceCode python">table(<span class="dv">5</span>)</code> affichera la table de 5, soit une sortie de la forme :</p>
 <pre><code>5*1=5
 5*2=10
 [...]
 5*10=50</code></pre></li>
+<li><p>&#201;crivez une fonction <code class="sourceCode python">aire_surface_rectangle</code> qui retourne l&#8217;aire et la surface d&#8217;un rectangle dont les longueurs des c&#244;t&#233;s sont pass&#233;s en argument.</p></li>
+<li><p>&#201;crivez une fonction <code class="sourceCode python">duree_secondes</code> ayant pour prototype :</p></li>
 </ol>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> duree_secondes(h1, m1, s1, h2, m2, s2):
+    [...]</code></pre></div>
+<p>et retournant la dur&#233;e &#233;coul&#233;e (en secondes) entre les horaires <code>h1:m1:s1</code> et <code>h2:m2:s2</code>. Il sera pour cela recommand&#233; de passer par la d&#233;finition d&#8217;une fonction transformant un triplet <code class="sourceCode python">h, m, s</code> en horaire converti en secondes.</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Analysez la structure des paroles de la chanson <em>La jument de Michao</em> et &#233;crivez une fonction qui affiche ces paroles dans le terminal pour un nombre d&#8217;ann&#233;es <code class="sourceCode python">n</code> initial pass&#233; en argument. Voici la structure de la chanson pour <code>n=4</code> :</li>
+</ol>
+<blockquote>
+<p>C&#8217;est dans 4 ans je m&#8217;en irai. J&#8217;entends le loup et le renard chanter. {2x}</p>
+<p>J&#8217;entends le loup, le renard et la belette. J&#8217;entends le loup et le renard chanter. {2x}</p>
+<p>C&#8217;est dans 3 ans je m&#8217;en irai. La jument de Michao a pass&#233; dans le pr&#233;.</p>
+<p>La jument de Michao et son petit poulain. A pass&#233; dans le pr&#233; et mang&#233; tout le foin. {2x}</p>
+<p>L&#8217;hiver viendra les gars, l&#8217;hiver viendra. La jument de Michao, elle s&#8217;en repentira. {2x}</p>
+<p>C&#8217;est dans 2 ans je m&#8217;en irai. J&#8217;entends le loup et le renard chanter. {2x}</p>
+<p>J&#8217;entends le loup, le renard et la belette. J&#8217;entends le loup et le renard chanter. {2x}</p>
+<p>C&#8217;est dans 1 ans je m&#8217;en irai. La jument de Michao a pass&#233; dans le pr&#233;.</p>
+<p>La jument de Michao et son petit poulain. A pass&#233; dans le pr&#233; et mang&#233; tout le foin. {2x}</p>
+<p>L&#8217;hiver viendra les gars, l&#8217;hiver viendra. La jument de Michao, elle s&#8217;en repentira. {2x}</p>
+</blockquote>
 <h1 id="arguments-facultatifs-et-valeurs-par-d&#233;faut"><span class="header-section-number">3</span> Arguments facultatifs et valeurs par d&#233;faut</h1>
-<ol start="5" style="list-style-type: decimal">
-<li><p>&#201;crivez une version am&#233;lior&#233;e de la fonction <code class="sourceCode python">table</code>, que vous appellerez <code class="sourceCode python">table_multiplication</code>, qui prend en entr&#233;e une base, un multiplicateur de d&#233;but et un autre de fin et affiche la table de multiplication de cette base entre les deux bornes fournies. Par exemple <code class="sourceCode python">table_multiplication(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">7</span>)</code> affichera une sortie de la forme :</p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>&#201;crivez une version am&#233;lior&#233;e de la fonction <code class="sourceCode python">table</code>, que vous appellerez <code class="sourceCode python">table_multiplication</code>, qui prenne en entr&#233;e une base, un multiplicateur de d&#233;but et un autre de fin et affiche la table de multiplication de cette base entre les deux bornes fournies. Par exemple <code class="sourceCode python">table_multiplication(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">7</span>)</code> affichera une sortie de la forme :</p>
 <pre><code>5*4=20
 5*5=25
 5*6=30
 5*7=35</code></pre></li>
 </ol>
 <h1 id="exercice-de-synth&#232;se"><span class="header-section-number">4</span> Exercice de synth&#232;se</h1>
-<ol start="6" style="list-style-type: decimal">
+<ol start="9" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui calcule l&#8217;aire d&#8217;une ellipse. Si l&#8217;argument correspondant au demi-petit axe n&#8217;est pas sp&#233;cifi&#233;, on supposera qu&#8217;il s&#8217;agit d&#8217;un cercle et que donc le demi-petit axe est &#233;gal au demi-grand axe.</li>
 </ol>
 </body>

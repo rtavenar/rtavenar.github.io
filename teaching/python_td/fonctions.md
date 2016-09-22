@@ -37,7 +37,7 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 5*10=50
 ```
 
-7. Écrivez une fonction `aire_surface_rectangle`{.python} qui retourne l'aire et la surface d'un rectangle dont les longueurs des côtés sont passés en argument.
+7. Écrivez une fonction `aire_preimetre_rectangle`{.python} qui retourne l'aire et le périmètre d'un rectangle dont les longueurs des côtés sont passés en argument.
 
 8. Analysez la structure des paroles de la chanson _La jument de Michao_ et écrivez une fonction qui affiche ces paroles dans le terminal pour un nombre d'années `n`{.python} initial passé en argument. Voici la structure de la chanson pour `n=4` :
 

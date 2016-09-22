@@ -27,7 +27,7 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 
 4. Écrivez une fonction `duree_secondes`{.python} qui prend en argument une durée en heures, minutes, secondes, exprimée sous la forme de trois variable, et qui renvoie la durée équivalente en nombre de secondes.
 
-5. Écrivez une fonction `delta_secondes`{.python} qui retourne la différence (en secondes) entre deux durées exprimées en heures, minutes, secondes.
+5. Écrivez une fonction `delta_secondes`{.python} qui retourne la différence (en secondes) entre deux durées exprimées en heures, minutes, secondes. On considère que la première durée est toujours supérieure à la seconde.
 
 6. Écrivez une fonction `table`{.python} qui prenne pour argument une base et affiche la table de multiplication de cette base. Par exemple `table(5)`{.python} affichera la table de 5, soit une sortie de la forme :
 ```

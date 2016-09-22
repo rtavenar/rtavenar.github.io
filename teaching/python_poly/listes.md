@@ -152,7 +152,7 @@ for i, elem in enumerate(l):
 
 On a donc ici une boucle `for`{.python} pour laquelle, à chaque itération, on met à jour les variables `i`{.python} (qui contient l'indice courant) et `elem`{.python} (qui contient l'élément se trouvant à l'indice `i`{.python} dans la liste `l`{.python}).
 
-Pour tous ces parcours de listes, il est conseillé d'utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemples, on pourra utiliser `i` ou `j` pour noter des indices, mais on préfèrera `elem` ou `val` pour désigner les éléments de la liste.
+Pour tous ces parcours de listes, il est conseillé d'utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemple, on pourra utiliser `i` ou `j` pour noter des indices, mais on préfèrera `elem` ou `val` pour désigner les éléments de la liste.
 
 **Exercice 3.1**
 Écrivez une fonction en Python qui permette de calculer l'argmax d'une liste, c'est-à-dire l'indice auquel est stockée la valeur maximale de la liste.

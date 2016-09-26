@@ -12,7 +12,8 @@ Comme pour les listes (et peut-être même plus encore), il est fortement consei
 
 ## Conversion d'une chaîne en nombre
 
-Si une chaîne de caractères représente une valeur numérique (comme la chaîne `"10.2"`{.haskell} par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l'utiliser ensuite pour des opérations arithmétiques :
+Si une chaîne de caractères représente une valeur numérique (comme la chaîne `"10.2"`{.haskell} par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l'utiliser ensuite pour des opérations arithmétiques. On utilise pour cela les fonctions de conversion, respectivement `int`{.python} et `float`{.python}.
+
 ```python
 s = '10.2'
 f = float(s)
@@ -42,6 +43,8 @@ On peut ainsi obtenir la taille d'une chaîne de caractères à l'aide de la fon
 Comme pour les listes, il est possible d'indicer une chaîne de caractères en partant de la fin, en utilisant des indices négatifs :
 ```python
 s = "abcdef"
+print(len(s))
+# [Sortie] 6
 print(s[0])
 # [Sortie] a
 print(s[-1])

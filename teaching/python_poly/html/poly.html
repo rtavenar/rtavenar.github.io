@@ -691,7 +691,7 @@ l <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</sp
 s2 <span class="op">=</span> <span class="st">&#39;bde&#39;</span></code></pre></div>
 <p>Comme pour les listes (et peut-&#234;tre m&#234;me plus encore), il est fortement conseill&#233; de se reporter &#224; l&#8217;aide en ligne d&#233;di&#233;e lorsque vous avez des doutes sur la manipulation de cha&#238;nes de caract&#232;res : <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" class="uri">https://docs.python.org/3/library/stdtypes.html#string-methods</a></p>
 <h2 id="conversion-dune-cha&#238;ne-en-nombre"><span class="header-section-number">4.1</span> Conversion d&#8217;une cha&#238;ne en nombre</h2>
-<p>Si une cha&#238;ne de caract&#232;res repr&#233;sente une valeur num&#233;rique (comme la cha&#238;ne <code class="sourceCode haskell"><span class="st">&quot;10.2&quot;</span></code> par exemple), on peut la transformer en un entier ou un nombre &#224; virgule, afin de l&#8217;utiliser ensuite pour des op&#233;rations arithm&#233;tiques :</p>
+<p>Si une cha&#238;ne de caract&#232;res repr&#233;sente une valeur num&#233;rique (comme la cha&#238;ne <code class="sourceCode haskell"><span class="st">&quot;10.2&quot;</span></code> par exemple), on peut la transformer en un entier ou un nombre &#224; virgule, afin de l&#8217;utiliser ensuite pour des op&#233;rations arithm&#233;tiques. On utilise pour cela les fonctions de conversion, respectivement <code class="sourceCode python"><span class="bu">int</span></code> et <code class="sourceCode python"><span class="bu">float</span></code>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&#39;10.2&#39;</span>
 f <span class="op">=</span> <span class="bu">float</span>(s)
 <span class="bu">print</span>(f)
@@ -711,6 +711,8 @@ i <span class="op">=</span> <span class="bu">int</span>(s)
 <h2 id="analogie-avec-les-listes"><span class="header-section-number">4.2</span> Analogie avec les listes</h2>
 <p>Les cha&#238;nes de caract&#232;res se manipulent en partie comme des listes. On peut ainsi obtenir la taille d&#8217;une cha&#238;ne de caract&#232;res &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">len</span></code>, ou acc&#233;der &#224; la <span class="math inline">\(i\)</span>-&#232;me lettre d&#8217;une cha&#238;ne de caract&#232;res avec la notation <code class="sourceCode python">s[i]</code>. Comme pour les listes, il est possible d&#8217;indicer une cha&#238;ne de caract&#232;res en partant de la fin, en utilisant des indices n&#233;gatifs :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s <span class="op">=</span> <span class="st">&quot;abcdef&quot;</span>
+<span class="bu">print</span>(<span class="bu">len</span>(s))
+<span class="co"># [Sortie] 6</span>
 <span class="bu">print</span>(s[<span class="dv">0</span>])
 <span class="co"># [Sortie] a</span>
 <span class="bu">print</span>(s[<span class="op">-</span><span class="dv">1</span>])

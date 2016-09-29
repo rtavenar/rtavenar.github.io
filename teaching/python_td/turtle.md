@@ -51,21 +51,10 @@ turtle.exitonclick()  # Attend un clic avant de fermer la fenetre
 
 ![](img/star.png)
 
-# Le château de cartes
-
-Dans cet exercice, vous allez tenter de dessiner à l'écran un château de cartes (fait de triangles superposés) similaire à celui-ci :
-
-![](img/pyramide.tiff)
-
-Pour cela, vous devrez tout d'abord être capable de tracer un triangle équilatéral à une position donnée.
-
-5. Écrivez une fonction qui prenne en entrée une position (sous la forme de deux entiers `x`{.python} et `y`{.python}) et une taille `c`{.python} et trace à l'écran un triangle équilatéral de côté `c`{.python} ayant son bord inférieur gauche situé à la position `(x, y)`{.python}.
-
-6. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} et trace à l'écran un château de cartes dont la base est constituée de `n`{.python} triangles.
-
 # L'immeuble
 
 Pour cet exercice, votre code final devra ressembler à :
+
 ```python
 import turtle
 
@@ -97,14 +86,29 @@ Est-il nécessaire de réécrire la fonction dans son ensemble (avec les appels 
 ## La fonction immeuble
 9. Écrivez une fonction `immeuble`{.python} qui permette de tracer un immeuble à l'écran, connaissant son nombre d'étages et le nombre de fenêtres par étage.
 N'hésitez pas à faire un schéma de l'immeuble sur papier pour vous rendre compte des dimensions à utiliser.
+Vous définirez au sein de la fonction `immeuble`{.python} les grandeurs caractéristiques nécessaires (taille des fenêtres, espace inter-fenêtres, _etc._).
 
 ## Un peu de _tuning_
 10. Ajoutez aux fonctions nécessaires un paramètre facultatif qui permette de spécifier la couleur de remplissage des formes géométriques tracées.
 Utilisez ce paramètre facultatif pour demander de tracer l'immeuble en gris (`"grey"`{.haskell}) et les fenêtres en jaune (`"yellow"`{.haskell}).
 Pour cela, vous aurez besoin des fonctions `turtle.fillcolor(couleur)`{.python}, `turtle.begin_fill()`{.python} et `turtle.end_fill()`{.python} qui s'utilisent comme suit :
+
 ```python
 turtle.fillcolor(couleur)
 turtle.begin_fill()
 # Ici, tracer le polygone
 turtle.end_fill()
 ```
+
+# Pour aller plus loin : le château de cartes
+
+Dans cet exercice, vous allez tenter de dessiner à l'écran un château de cartes (fait de triangles superposés) similaire à celui-ci :
+
+![](img/pyramide.tiff)
+
+Pour cela, vous devrez tout d'abord être capable de tracer un triangle équilatéral à une position donnée.
+
+5. Écrivez une fonction qui prenne en entrée une position (sous la forme de deux entiers `x`{.python} et `y`{.python}) et une taille `c`{.python} et trace à l'écran un triangle équilatéral de côté `c`{.python} ayant son bord inférieur gauche situé à la position `(x, y)`{.python}.
+
+6. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} et trace à l'écran un château de cartes dont la base est constituée de `n`{.python} triangles.
+Vous définirez au sein de cette fonction une variable correspondant à la taille des triangles du château de cartes.

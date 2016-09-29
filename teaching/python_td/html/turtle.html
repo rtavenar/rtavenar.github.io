@@ -118,19 +118,19 @@ turtle.exitonclick()  <span class="co"># Attend un clic avant de fermer la fenet
 <li><code class="sourceCode python">immeuble</code> permettra de dessiner un immeuble tel que celui repr&#233;sent&#233; ci-dessus &#224; l&#8217;&#233;cran.</li>
 </ul>
 <h2 id="la-fonction-rectangle"><span class="header-section-number">5.1</span> La fonction rectangle</h2>
-<ol start="7" style="list-style-type: decimal">
+<ol start="5" style="list-style-type: decimal">
 <li>&#201;crivez une fonction rectangle qui permette de tracer &#224; l&#8217;&#233;cran un rectangle de taille et de position sp&#233;cifi&#233;es lors de l&#8217;appel de la fonction.</li>
 </ol>
 <h2 id="la-fonction-carre"><span class="header-section-number">5.2</span> La fonction carre</h2>
-<ol start="8" style="list-style-type: decimal">
+<ol start="6" style="list-style-type: decimal">
 <li>&#201;crivez une fonction <code class="sourceCode python">carre</code> qui permette de tracer &#224; l&#8217;&#233;cran un carr&#233; de taille et de position sp&#233;cifi&#233;es lors de l&#8217;appel de la fonction. Est-il n&#233;cessaire de r&#233;&#233;crire la fonction dans son ensemble (avec les appels successifs aux fonctions du module <code class="sourceCode python">turtle</code>) ou est-ce possible de s&#8217;en sortir en une ligne de code ?</li>
 </ol>
 <h2 id="la-fonction-immeuble"><span class="header-section-number">5.3</span> La fonction immeuble</h2>
-<ol start="9" style="list-style-type: decimal">
+<ol start="7" style="list-style-type: decimal">
 <li>&#201;crivez une fonction <code class="sourceCode python">immeuble</code> qui permette de tracer un immeuble &#224; l&#8217;&#233;cran, connaissant son nombre d&#8217;&#233;tages et le nombre de fen&#234;tres par &#233;tage. N&#8217;h&#233;sitez pas &#224; faire un sch&#233;ma de l&#8217;immeuble sur papier pour vous rendre compte des dimensions &#224; utiliser. Vous d&#233;finirez au sein de la fonction <code class="sourceCode python">immeuble</code> les grandeurs caract&#233;ristiques n&#233;cessaires (taille des fen&#234;tres, espace inter-fen&#234;tres, <em>etc.</em>).</li>
 </ol>
 <h2 id="un-peu-de-tuning"><span class="header-section-number">5.4</span> Un peu de <em>tuning</em></h2>
-<ol start="10" style="list-style-type: decimal">
+<ol start="8" style="list-style-type: decimal">
 <li>Ajoutez aux fonctions n&#233;cessaires un param&#232;tre facultatif qui permette de sp&#233;cifier la couleur de remplissage des formes g&#233;om&#233;triques trac&#233;es. Utilisez ce param&#232;tre facultatif pour demander de tracer l&#8217;immeuble en gris (<code class="sourceCode haskell"><span class="st">&quot;grey&quot;</span></code>) et les fen&#234;tres en jaune (<code class="sourceCode haskell"><span class="st">&quot;yellow&quot;</span></code>). Pour cela, vous aurez besoin des fonctions <code class="sourceCode python">turtle.fillcolor(couleur)</code>, <code class="sourceCode python">turtle.begin_fill()</code> et <code class="sourceCode python">turtle.end_fill()</code> qui s&#8217;utilisent comme suit :</li>
 </ol>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">turtle.fillcolor(couleur)
@@ -144,7 +144,7 @@ turtle.end_fill()</code></pre></div>
 
 </div>
 <p>Pour cela, vous devrez tout d&#8217;abord &#234;tre capable de tracer un triangle &#233;quilat&#233;ral &#224; une position donn&#233;e.</p>
-<ol start="5" style="list-style-type: decimal">
+<ol start="9" style="list-style-type: decimal">
 <li><p>&#201;crivez une fonction qui prenne en entr&#233;e une position (sous la forme de deux entiers <code class="sourceCode python">x</code> et <code class="sourceCode python">y</code>) et une taille <code class="sourceCode python">c</code> et trace &#224; l&#8217;&#233;cran un triangle &#233;quilat&#233;ral de c&#244;t&#233; <code class="sourceCode python">c</code> ayant son bord inf&#233;rieur gauche situ&#233; &#224; la position <code class="sourceCode python">(x, y)</code>.</p></li>
 <li><p>&#201;crivez une fonction qui prenne en entr&#233;e un nombre <code class="sourceCode python">n</code> et trace &#224; l&#8217;&#233;cran un ch&#226;teau de cartes dont la base est constitu&#233;e de <code class="sourceCode python">n</code> triangles. Vous d&#233;finirez au sein de cette fonction une variable correspondant &#224; la taille des triangles du ch&#226;teau de cartes.</p></li>
 </ol>

@@ -22,11 +22,13 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 La première chose à faire pour pouvoir manipuler des listes est d'apprendre comment les définir en Python.
 Il existe pour cela plusieurs syntaxes possibles (nous ne les verrons pas toutes aujourd'hui et reviendrons sur ce point lors d'un prochain TD).
 Le cas le plus simple est celui pour lequel la liste que l'on souhaite créer est de taille suffisamment réduite pour pouvoir l'écrire de manière explicite :
+
 ```python
 ma_liste = [1, 7, 9, 12]
 ```
 
 Toutefois, dans certains cas, on souhaitera générer des listes très longues, par exemple, la liste des entiers de 0 à $n - 1$ (avec $n$ possiblement grand):
+
 ```python
 ma_liste = range(n)  # Entiers de 0 à n-1
 ma_liste = range(n0, n)  # Entiers de n0 à n-1
@@ -35,9 +37,10 @@ ma_liste = range(n0, n)  # Entiers de n0 à n-1
 2. Affichez la liste obtenue : que remarquez-vous ?
 
 En fait, je vous ai menti, la fonction `range`{.python} ne retourne pas une liste mais un itérateur (`iterator`).
-Un itérateur est un flux de valeurs pour lequel la principale opération disponible est de demander la valeur suivante .
+Un itérateur est un flux de valeurs pour lequel la principale opération disponible est de demander la valeur suivante.
 Ainsi, si l'on souhaite juste parcourir de manière linéaire l'ensemble des entiers entre 0 et $n - 1$, il n'y aura pas de différence entre l'utilisation d'une liste et celle d'un itérateur : la syntaxe Python sera la même et vous aurez même tendance à oublier que vous ne manipulez pas exactement une liste.
 Si toutefois vous deviez à tout prix manipuler une liste (mais cela est peu probable), il est possible de transformer un itérateur en liste :
+
 ```python
 ma_liste = list(range(n))
 ```
@@ -47,6 +50,7 @@ ma_liste = list(range(n))
 3. Proposez une implémentation du pseudo-code réalisé à la première question de ce TD.
 Comparez le nombre d'opérations élémentaires de cette implémentation et de son pendant récursif.
 Pour cela, on pourra afficher un symbole `"."`{.haskell} sur la console à chaque itération :
+
 ```python
 print(".", end="")
 ```

@@ -53,28 +53,36 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h4 class="subtitle">Planche de TD pour un cours dispens&#233; &#224; l&#8217;universit&#233; de Rennes 2</h4>
 <h2 class="author">Romain Tavenard</h2>
 </div>
-<h1 id="lecture-de-fichier-textuel"><span class="header-section-number">1</span> Lecture de fichier textuel</h1>
+<h1 id="travail-&#224;-pr&#233;parer-chez-vous-avant-la-s&#233;ance"><span class="header-section-number">1</span> Travail &#224; pr&#233;parer chez vous avant la s&#233;ance</h1>
 <ol style="list-style-type: decimal">
+<li>Pr&#233;parez la derni&#232;re question de cette planche de TD concernant l&#8217;utilisation de l&#8217;API Google Maps. Pour cela :</li>
+</ol>
+<ul>
+<li>Cr&#233;ez-vous une cl&#233; pour cette API (<a href="https://developers.google.com/maps/documentation/elevation/get-api-key">lien</a>) ;</li>
+<li>R&#233;fl&#233;chissez &#224; la forme que devra prendre votre requ&#234;te (param&#232;tres, format de sortie, <em>etc.</em>).</li>
+</ul>
+<h1 id="lecture-de-fichier-textuel"><span class="header-section-number">2</span> Lecture de fichier textuel</h1>
+<ol start="2" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et retourne le nombre de mots non vides contenus dans le fichier en question (on suppose que les mots sont s&#233;par&#233;s par des espaces).</li>
 <li>Utilisez le module <code class="sourceCode python">os</code> et la fonction cod&#233;e pr&#233;c&#233;demment pour afficher, fichier par fichier, le nombre de mots des fichiers de votre r&#233;pertoire <code class="sourceCode haskell"><span class="st">&quot;data&quot;</span></code> dont l&#8217;extension est <code class="sourceCode haskell"><span class="st">&quot;.txt&quot;</span></code>.</li>
 </ol>
-<h1 id="&#233;criture-de-fichier-textuel"><span class="header-section-number">2</span> &#201;criture de fichier textuel</h1>
-<ol start="3" style="list-style-type: decimal">
+<h1 id="&#233;criture-de-fichier-textuel"><span class="header-section-number">3</span> &#201;criture de fichier textuel</h1>
+<ol start="4" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et une cha&#238;ne de caract&#232;res et &#233;crit la cha&#238;ne dans le fichier indiqu&#233;.</li>
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne du fichier indiqu&#233;.</li>
 </ol>
-<h2 id="l&#233;criture-dans-la-console"><span class="header-section-number">2.1</span> L&#8217;&#233;criture dans la console</h2>
+<h2 id="l&#233;criture-dans-la-console"><span class="header-section-number">3.1</span> L&#8217;&#233;criture dans la console</h2>
 <p>Vous avez d&#233;j&#224; &#233;crit dans la console &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">print</span></code>. Plus pr&#233;cis&#233;ment, cette fonction &#233;crit sur la sortie standard. Il existe deux autres flux standards. Le premier, l&#8217;entr&#233;e standard, est celui duquel vous lisez des cha&#238;nes de caract&#232;res entr&#233;es par les utilisateurs lorsque vous utilisez la fonction <code class="sourceCode python"><span class="bu">input</span></code>. Enfin, le dernier flux standard est l&#8217;erreur standard, qui est le flux qui doit &#234;tre utilis&#233; pour &#233;crire les messages d&#8217;erreur g&#233;n&#233;r&#233;s par vos programmes. Pour choisir le flux de sortie que vous souhaitez utiliser, il faut importer le module <code class="sourceCode python">sys</code>, puis utiliser la syntaxe suivante :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">sys.stdout.write(chaine_a_ecrire)  <span class="co"># Sortie standard</span>
 sys.stderr.write(chaine_a_ecrire)  <span class="co"># Erreur standard</span></code></pre></div>
 <p>Ainsi, ces flux sont utilis&#233;s de la m&#234;me mani&#232;re que les objets <code class="sourceCode python"><span class="bu">file</span></code> (sauf qu&#8217;on ne les ouvre jamais).</p>
-<ol start="5" style="list-style-type: decimal">
+<ol start="6" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur la sortie standard.</li>
 <li>&#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur l&#8217;erreur standard.</li>
 </ol>
-<h1 id="fichers-texte-structur&#233;s"><span class="header-section-number">3</span> Fichers texte structur&#233;s</h1>
-<h2 id="fichiers-csv"><span class="header-section-number">3.1</span> Fichiers CSV</h2>
-<ol start="7" style="list-style-type: decimal">
+<h1 id="fichers-texte-structur&#233;s"><span class="header-section-number">4</span> Fichers texte structur&#233;s</h1>
+<h2 id="fichiers-csv"><span class="header-section-number">4.1</span> Fichiers CSV</h2>
+<ol start="8" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui retourne le nombre de lignes et de colonnes (le nombre de colonnes d&#8217;un fichier CSV est &#233;gal au nombre maximum de champs des lignes de ce fichier) d&#8217;un fichier CSV dont le nom est fourni en argument.</li>
 <li>Appliquez cette fonction pour d&#233;terminer les nombres de lignes et colonnes de chacun des fichiers de votre r&#233;pertoire <code class="sourceCode haskell"><span class="st">&quot;data&quot;</span></code> dont l&#8217;extension est <code class="sourceCode haskell"><span class="st">&quot;.csv&quot;</span></code>.</li>
 <li>Reprenez la premi&#232;re question du TD sur les dictionnaires et adaptez la pour prendre en entr&#233;e non plus une cha&#238;ne de caract&#232;res &#224; d&#233;couper en lignes et colonnes mais un nom de fichier &#224; lire (vous pourrez tester cette fonction avec le fichier <code class="sourceCode haskell"><span class="st">&quot;data/etudiants.csv&quot;</span></code>).</li>
@@ -86,8 +94,8 @@ sys.stderr.write(chaine_a_ecrire)  <span class="co"># Erreur standard</span></co
 <li>la premi&#232;re colonne indique la cl&#233; consid&#233;r&#233;e ;</li>
 <li>les autres colonnes sont constitu&#233;es des donn&#233;es stock&#233;es pour cette cl&#233;.</li>
 </ul>
-<h2 id="fichiers-json"><span class="header-section-number">3.2</span> Fichiers JSON</h2>
-<ol start="12" style="list-style-type: decimal">
+<h2 id="fichiers-json"><span class="header-section-number">4.2</span> Fichiers JSON</h2>
+<ol start="13" style="list-style-type: decimal">
 <li>Le fichier <code>rando_gps.json</code> fournit des s&#233;ries de positions GPS correspondant &#224; des traces GPS de sorties randonn&#233;e de M. Toulemonde. &#201;crivez un programme calculant les d&#233;nivel&#233;s cumul&#233;s positif et n&#233;gatif de chacune de ces randonn&#233;es. Pour cela, vous utiliserez l&#8217;API <a href="https://developers.google.com/maps/documentation/elevation/intro"><code>Google Maps Elevation</code></a> pour laquelle vous aurez au pr&#233;alable <a href="https://developers.google.com/maps/documentation/elevation/get-api-key">demand&#233; une cl&#233;</a>.</li>
 </ol>
 </body>

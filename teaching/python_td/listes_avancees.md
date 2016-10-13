@@ -74,35 +74,35 @@ print(sorted([1, 7, 32, 2, 9, 5], reverse=True))
 
 Le tutoriel Python spécifique au tri de listes donne un aperçu de ce que l'on peut faire avec cette fonction `sorted`{.python} : [https://docs.python.org/3/howto/sorting.html](https://docs.python.org/3/howto/sorting.html).
 Un paramètre utile de cette fonction est le paramètre `key`{.python}.
-Celui-ci spécifie une fonction que l'on appliquera aux éléments de notre liste avant de les classer.
+Celui-ci spécifie une fonction que l'on appliquera aux éléments de notre liste avant de les trier.
 Ainsi, lorsque l'on souhaite effectuer un tri qui soit insensible à la casse, il est possible d'appliquer la fonction `str.lower`{.python} (_ie_, la méthode `lower`{.python} de la classe `str`{.python}) aux éléments avant d'effectuer le tri :
 ```python
 sorted(ma_liste_de_str, key=str.lower)
 ```
 
-Ce paramètre peut également être utilisé lorsque l'on souhaite trier une liste de tuples.
+Ce paramètre peut également être utilisé lorsque l'on souhaite trier une liste de listes.
 Pour reprendre l'exemple du tutoriel précédemment cité, supposons que l'on souhaite trier la liste suivante :
 ```python
-student_tuples = [
-    ('john', 'A', 10),
-    ('jane', 'B', 12),
-    ('dave', 'B', 10)]
+etudiants = [
+    ['john', 'A', 10],
+    ['jane', 'B', 12],
+    ['dave', 'B', 10]]
 ```
 
-Il s'agit d'une liste de tuples dans laquelle le premier élément de chaque tuple est le prénom de l'élève, le second son groupe de TD et le troisième son âge.
-Si l'on applique le tri directement sur cette liste, le tri sera effectué d'abord sur le premier élément du tuple puis, en cas d'égalité, sur le deuxième et enfin, sur le troisième.
+Il s'agit d'une liste de listes dans laquelle le premier élément de chaque liste intérieure est le prénom de l'élève, le deuxième son groupe de TD et le troisième son âge.
+Si l'on applique le tri directement sur la liste `etudiants`, le tri sera effectué d'abord sur le premier élément des listes intérieures puis, en cas d'égalité, sur le deuxième et enfin, sur le troisième.
 Or, il se peut que l'on souhaite trier les étudiants par âge.
 
-7. Pour cela, codez une fonction `troisieme_element`{.python} qui retourne le troisième élément d'un tuple passé en argument.
+7. Pour cela, codez une fonction `troisieme_element`{.python} qui retourne le troisième élément d'une liste passée en argument.
 
 Ensuite, on utilise la fonction de tri comme suit :
 ```python
-sorted(student_tuples, key=troisieme_element)
+sorted(etudiants, key=troisieme_element)
 ```
 
-8. On souhaite maintenant effectuer un tri d'abord sur l'âge puis sur le prénom. Pour cela, écrivez une fonction qui, à partir d'un tuple de 3 éléments retourne un nouveau tuple constitué des troisième et deuxième élément du tuple fourni en argument. Utilisez cette fonction pour trier la liste d'étudiants d'abord sur l'âge puis sur le prénom.
+8. On souhaite maintenant effectuer un tri d'abord sur l'âge puis sur le prénom. Pour cela, écrivez une fonction qui, à partir d'une liste de 3 éléments retourne une nouvelle liste constituée des troisième et premier élément de la liste fournie en argument. Utilisez cette fonction pour trier la liste d'étudiants d'abord sur l'âge puis sur le prénom.
 
-# Listes de listes
+# Matrices
 Dans certains cas, il est utile de manipuler des données sous forme de matrice.
 Or le type matrice n'existe pas dans la librairie standard de Python (nous verrons dans la suite qu'une librairie spécialisée existe, toutefois, permettant d'effectuer des manipulations avancées de matrices).
 

@@ -59,8 +59,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>V&#233;rifier que vous connaissez les r&#232;gles des jeux :</p></li>
 </ol>
 <ul>
-<li>Tic-tac-toe : https://fr.wikipedia.org/wiki/Tic-tac-toe</li>
-<li>Mastermind : https://fr.wikipedia.org/wiki/Mastermind</li>
+<li>Tic-tac-toe : <a href="https://fr.wikipedia.org/wiki/Tic-tac-toe" class="uri">https://fr.wikipedia.org/wiki/Tic-tac-toe</a></li>
+<li>Mastermind : <a href="https://fr.wikipedia.org/wiki/Mastermind" class="uri">https://fr.wikipedia.org/wiki/Mastermind</a></li>
 </ul>
 <h1 id="philosophie-du-sujet"><span class="header-section-number">2</span> Philosophie du sujet</h1>
 <p>Lorsqu&#8217;on souhaite r&#233;soudre un probl&#232;me, il est souvent n&#233;cessaire de le d&#233;composer en sous-fonctions. En TD d&#8217;informatique, les sujets que vous recevez sont souvent d&#233;j&#224; &#8220;pr&#233;-mach&#233;s&#8221; par les enseignants : ils r&#233;fl&#233;chissent pour vous aux structures de donn&#233;es, &#224; la signature des fonctions &#224; utiliser, ainsi qu&#8217;&#224; l&#8217;appel de la fonction principale pour r&#233;soudre un probl&#232;me global.</p>
@@ -83,24 +83,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># C'est au tour du joueur  X</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 0</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
-<span class="co"># - X - </span>
-<span class="co"># - - - </span>
-<span class="co"># - - - </span>
-<span class="co"># </span>
+<span class="co"># - X -</span>
+<span class="co"># - - -</span>
+<span class="co"># - - -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  O</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 0</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
-<span class="co"># - X O </span>
-<span class="co"># - - - </span>
-<span class="co"># - - - </span>
-<span class="co"># </span>
+<span class="co"># - X O</span>
+<span class="co"># - - -</span>
+<span class="co"># - - -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  X</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
-<span class="co"># - X O </span>
-<span class="co"># - X - </span>
-<span class="co"># - - - </span>
-<span class="co"># </span>
+<span class="co"># - X O</span>
+<span class="co"># - X -</span>
+<span class="co"># - - -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  O</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
@@ -108,82 +108,82 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co"># C'est au tour du joueur  O</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
-<span class="co"># - X O </span>
-<span class="co"># - X O </span>
-<span class="co"># - - - </span>
-<span class="co"># </span>
+<span class="co"># - X O</span>
+<span class="co"># - X O</span>
+<span class="co"># - - -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  X</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
-<span class="co"># - X O </span>
-<span class="co"># - X O </span>
-<span class="co"># - X - </span>
-<span class="co"># </span>
+<span class="co"># - X O</span>
+<span class="co"># - X O</span>
+<span class="co"># - X -</span>
+<span class="co">#</span>
 <span class="co"># Joueur X a gagn&#233;</span></code></pre></div></li>
 <li><p>Trace 2 (match nul) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># C'est au tour du joueur  X</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 0</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
-<span class="co"># - X - </span>
-<span class="co"># - - - </span>
-<span class="co"># - - - </span>
-<span class="co"># </span>
+<span class="co"># - X -</span>
+<span class="co"># - - -</span>
+<span class="co"># - - -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  O</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
-<span class="co"># - X - </span>
-<span class="co"># - - O </span>
-<span class="co"># - - - </span>
-<span class="co"># </span>
+<span class="co"># - X -</span>
+<span class="co"># - - O</span>
+<span class="co"># - - -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  X</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
-<span class="co"># - X - </span>
-<span class="co"># - - O </span>
-<span class="co"># - X - </span>
-<span class="co"># </span>
+<span class="co"># - X -</span>
+<span class="co"># - - O</span>
+<span class="co"># - X -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  O</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
-<span class="co"># - X - </span>
-<span class="co"># - O O </span>
-<span class="co"># - X - </span>
-<span class="co"># </span>
+<span class="co"># - X -</span>
+<span class="co"># - O O</span>
+<span class="co"># - X -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  X</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 1</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 0</span>
-<span class="co"># - X - </span>
-<span class="co"># X O O </span>
-<span class="co"># - X - </span>
-<span class="co"># </span>
+<span class="co"># - X -</span>
+<span class="co"># X O O</span>
+<span class="co"># - X -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  O</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 0</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 0</span>
-<span class="co"># O X - </span>
-<span class="co"># X O O </span>
-<span class="co"># - X - </span>
-<span class="co"># </span>
+<span class="co"># O X -</span>
+<span class="co"># X O O</span>
+<span class="co"># - X -</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  X</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
-<span class="co"># O X - </span>
-<span class="co"># X O O </span>
-<span class="co"># - X X </span>
-<span class="co"># </span>
+<span class="co"># O X -</span>
+<span class="co"># X O O</span>
+<span class="co"># - X X</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  O</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 0</span>
-<span class="co"># O X - </span>
-<span class="co"># X O O </span>
-<span class="co"># O X X </span>
-<span class="co"># </span>
+<span class="co"># O X -</span>
+<span class="co"># X O O</span>
+<span class="co"># O X X</span>
+<span class="co">#</span>
 <span class="co"># C'est au tour du joueur  X</span>
 <span class="co"># Dans quelle ligne souhaitez-vous jouer ? (0, 1 ou 2) 0</span>
 <span class="co"># Dans quelle colonne souhaitez-vous jouer ? (0, 1 ou 2) 2</span>
-<span class="co"># O X X </span>
-<span class="co"># X O O </span>
-<span class="co"># O X X </span>
-<span class="co"># </span>
+<span class="co"># O X X</span>
+<span class="co"># X O O</span>
+<span class="co"># O X X</span>
+<span class="co">#</span>
 <span class="co"># Match nul</span></code></pre></div></li>
 </ul></li>
 </ul>
@@ -195,20 +195,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>on fabriquera des combinaisons de 4 pions de couleurs diff&#233;rentes, parmi 6 couleurs repr&#233;sent&#233;es par leur initiale.</li>
 <li><p>on souhaite obtenir les traces d&#8217;ex&#233;cution suivantes :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Les couleurs disponibles sont : ('B', 'R', 'J', 'V', 'O', 'M')</span>
-<span class="co"># Entrer la valeur de la case 0O</span>
-<span class="co"># Entrer la valeur de la case 1M</span>
-<span class="co"># Entrer la valeur de la case 2R</span>
-<span class="co"># Entrer la valeur de la case 3J</span>
+<span class="co"># Entrer la valeur de la case 0 O</span>
+<span class="co"># Entrer la valeur de la case 1 M</span>
+<span class="co"># Entrer la valeur de la case 2 R</span>
+<span class="co"># Entrer la valeur de la case 3 J</span>
 <span class="co"># Tentative  1  |  ['O', 'M', 'R', 'J']  |  ['Blanc', 'Noir']</span>
-<span class="co"># Entrer la valeur de la case 0B</span>
-<span class="co"># Entrer la valeur de la case 1J</span>
-<span class="co"># Entrer la valeur de la case 2R</span>
-<span class="co"># Entrer la valeur de la case 3V</span>
+<span class="co"># Entrer la valeur de la case 0 B</span>
+<span class="co"># Entrer la valeur de la case 1 J</span>
+<span class="co"># Entrer la valeur de la case 2 R</span>
+<span class="co"># Entrer la valeur de la case 3 V</span>
 <span class="co"># Tentative  2  |  ['B', 'J', 'R', 'V']  |  ['Blanc', 'Blanc', 'Noir', 'Noir']</span>
-<span class="co"># Entrer la valeur de la case 0V</span>
-<span class="co"># Entrer la valeur de la case 1J</span>
-<span class="co"># Entrer la valeur de la case 2R</span>
-<span class="co"># Entrer la valeur de la case 3B</span>
+<span class="co"># Entrer la valeur de la case 0 V</span>
+<span class="co"># Entrer la valeur de la case 1 J</span>
+<span class="co"># Entrer la valeur de la case 2 R</span>
+<span class="co"># Entrer la valeur de la case 3 B</span>
 <span class="co"># Tentative  3  |  ['V', 'J', 'R', 'B']  |  ['Noir', 'Noir', 'Noir', 'Noir']</span>
 <span class="co"># Bravo, vous avez r&#233;ussi en  3 essais</span></code></pre></div></li>
 </ul>

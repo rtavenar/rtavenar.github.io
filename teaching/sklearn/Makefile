@@ -1,4 +1,4 @@
-TARGETS=intro
+TARGETS=intro svm
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

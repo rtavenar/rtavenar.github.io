@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Romain Tavenard  (inspiré de ce post de blog)" />
+  <title>Tutoriel scikit-learn :  Latent Dirichlet Allocation</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../../css/slides.css" />
+  <script type="text/javascript">/*<![CDATA[*/
+  /*
+  March 19, 2004 MathHTML (c) Peter Jipsen http://www.chapman.edu/~jipsen
+  Released under the GNU General Public License version 2 or later.
+  See the GNU General Public License (at http://www.gnu.org/copyleft/gpl.html)
+  for more details.
+  */
+  
+  function convertMath(node) {// for Gecko
+    if (node.nodeType==1) {
+      var newnode =
+        document.createElementNS("http://www.w3.org/1998/Math/MathML",
+          node.nodeName.toLowerCase());
+      for(var i=0; i < node.attributes.length; i++)
+        newnode.setAttribute(node.attributes[i].nodeName,
+          node.attributes[i].value);
+      for (var i=0; i<node.childNodes.length; i++) {
+        var st = node.childNodes[i].nodeValue;
+        if (st==null || st.slice(0,1)!=" " && st.slice(0,1)!="\n")
+          newnode.appendChild(convertMath(node.childNodes[i]));
+      }
+      return newnode;
+    }
+    else return node;
+  }
+  
+  function convert() {
+    var mmlnode = document.getElementsByTagName("math");
+    var st,str,node,newnode;
+    for (var i=0; i<mmlnode.length; i++)
+      if (document.createElementNS!=null)
+        mmlnode[i].parentNode.replaceChild(convertMath(mmlnode[i]),mmlnode[i]);
+      else { // convert for IE
+        str = "";
+        node = mmlnode[i];
+        while (node.nodeName!="/MATH") {
+          st = node.nodeName.toLowerCase();
+          if (st=="#text") str += node.nodeValue;
+          else {
+            str += (st.slice(0,1)=="/" ? "</m:"+st.slice(1) : "<m:"+st);
+            if (st.slice(0,1)!="/")
+               for(var j=0; j < node.attributes.length; j++)
+                 if (node.attributes[j].value!="italic" &&
+                   node.attributes[j].value!="" &&
+                   node.attributes[j].value!="inherit" &&
+                   node.attributes[j].value!=undefined)
+                   str += " "+node.attributes[j].nodeName+"="+
+                       "\""+node.attributes[j].value+"\"";
+            str += ">";
+          }
+          node = node.nextSibling;
+          node.parentNode.removeChild(node.previousSibling);
+        }
+        str += "</m:math>";
+        newnode = document.createElement("span");
+        node.parentNode.replaceChild(newnode,node);
+        newnode.innerHTML = str;
+      }
+  }
+  
+  if (document.createElementNS==null) {
+    document.write("<object id=\"mathplayer\"\
+    classid=\"clsid:32F66A20-7614-11D4-BD11-00104BD3F987\"></object>");
+    document.write("<?import namespace=\"m\" implementation=\"#mathplayer\"?>");
+  }
+  if(typeof window.addEventListener != 'undefined'){
+    window.addEventListener('load', convert, false);
+  }
+  if(typeof window.attachEvent != 'undefined') {
+    window.attachEvent('onload', convert);
+  }
+  /*]]>*/
+  </script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Tutoriel <code>scikit-learn</code> : <br />Latent Dirichlet Allocation</h1>
+  <p class="author">
+Romain Tavenard <br />(inspiré de <a href="http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/">ce post de blog</a>)
+  </p>
+</div>
+<div id="le-modèle-latent-dirichlet-allocation" class="slide section level1">
+<h1>Le modèle <em>Latent Dirichlet Allocation</em></h1>
+<h2 id="exemple-introductif-12">Exemple introductif (1/2)</h2>
+<p>Considérons le corpus textuel suivant :</p>
+<ol style="list-style-type: decimal">
+<li>J'aime manger des brocolis et des bananes.</li>
+<li>J'ai mangé un smoothie banane épinard au petit déjeuner.</li>
+<li>Les chinchillas et les chatons sont mignons.</li>
+<li>Ma soeur a adopté un chaton hier.</li>
+<li>Regarde ce mignon petit hamster en train de manger du brocoli.</li>
+</ol>
+</div>
+<div id="le-modèle-latent-dirichlet-allocation-1" class="slide section level1">
+<h1>Le modèle <em>Latent Dirichlet Allocation</em></h1>
+<h2 id="exemple-introductif-22">Exemple introductif (2/2)</h2>
+<p>Le principe de <em>Latent Dirichlet Allocation</em> est de découvrir des thèmes (appelés <em>topics</em>) contenus dans ces phrases. Par exemple, si on cherche 2 <em>topics</em> dans ces phrases, on pourrait obtenir :</p>
+<ul>
+<li>Phrases 1 et 2: 100% <em>Topic</em> A</li>
+<li>Phrases 3 et 4: 100% <em>Topic</em> B</li>
+<li>Phrase 5: 60% <em>Topic</em> A, 40% <em>Topic</em> B</li>
+<li><em>Topic</em> A: 30% brocoli, 15% banane, 10% petit déjeuner, 10% manger, ...<br />(interprétation : thème &quot;nourriture&quot;)</li>
+<li><em>Topic</em> B: 20% chinchillas, 20% chatons, 20% mignons, 15% hamster, ...<br />(interprétation : thème &quot;animaux&quot;)</li>
+</ul>
+</div>
+<div id="le-modèle-latent-dirichlet-allocation-2" class="slide section level1">
+<h1>Le modèle <em>Latent Dirichlet Allocation</em></h1>
+<h2 id="modèle-génératif-en-toutes-lettres">Modèle génératif en toutes lettres</h2>
+<ul>
+<li>1 document = mélange de <em>topics</em></li>
+<li>Modèle génératif (supposant un ensemble de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> <em>topics</em> connu)
+<ol style="list-style-type: decimal">
+<li>Tirer un nombre de mots dans le document (<em>eg.</em> selon une distribution de Poisson)</li>
+<li>Tirer une loi multinomiale pour le document (selon une loi de Dirichlet de paramètre <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>)</li>
+<li>Tirer chaque mot du document de la manière suivante :
+<ol style="list-style-type: decimal">
+<li>Tirer un <em>topic</em> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> (selon la loi tirée en 2.)</li>
+<li>Tirer un mot <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> selon la loi associée au <em>topic</em> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math></li>
+<li>ajouter ce mot au document</li>
+</ol></li>
+</ol></li>
+</ul>
+</div>
+<div id="le-modèle-latent-dirichlet-allocation-3" class="slide section level1">
+<h1>Le modèle <em>Latent Dirichlet Allocation</em></h1>
+<h2 id="modèle-génératif-en-python-numpy">Modèle génératif : en Python / <code>numpy</code></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> gen_doc(p_wz, lmbda, alpha_dir):
+    <span class="co"># p_wz est p(w|z) la loi associée à chaque topic</span>
+    <span class="co"># (sous forme de matrice de taille k x n où n est le nombre de mots)</span>
+    <span class="co"># lmbda est le paramètre de la loi de Poisson (sous forme de flottant)</span>
+    <span class="co"># alpha_dir est le paramètre de la loi de Dirichlet</span>
+    <span class="co"># (sous forme de vecteur de taille k)</span>
+    k, n <span class="op">=</span> p_wz.shape
+    n_words_in_doc <span class="op">=</span> np.random.poisson(lmbda)
+    p_zd <span class="op">=</span> np.random.dirichlet(alpha_dir)  <span class="co"># p(z|d=current_doc)</span>
+    counts <span class="op">=</span> np.zeros((n, ))
+    <span class="cf">for</span> wi <span class="op">in</span> <span class="bu">range</span>(n_words_in_doc):
+        zi <span class="op">=</span> np.random.choice(np.arange(k), p<span class="op">=</span>p_zd)  <span class="co"># Choix du topic</span>
+        wi <span class="op">=</span> np.random.choice(np.arange(n), p<span class="op">=</span>p_wz)  <span class="co"># Choix du mot</span>
+        counts[wi] <span class="op">+=</span> <span class="dv">1</span>
+    <span class="cf">return</span> counts</code></pre></div>
+</div>
+<div id="le-modèle-latent-dirichlet-allocation-4" class="slide section level1">
+<h1>Le modèle <em>Latent Dirichlet Allocation</em></h1>
+<h2 id="apprentissage-le-cas-du-collapsed-gibbs-sampler">Apprentissage : le cas du <em>Collapsed Gibbs Sampler</em></h2>
+<p><strong>Objectif :</strong> on a des mots dans les documents, on veut trouver le <em>topic</em> duquel provient chaque mot.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Initialisation :</strong> Associer (au hasard) un <em>topic</em> à chaque mot de chaque document</li>
+<li>Répéter plusieurs fois :
+<ol style="list-style-type: decimal">
+<li>Pour chaque mot <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">w_{ij}</annotation></semantics></math> de chaque document <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>j</mi></msub><annotation encoding="application/x-tex">d_j</annotation></semantics></math>
+<ol style="list-style-type: decimal">
+<li>Mettre à jour <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="prefix">|</mo><mi>d</mi><mo>=</mo><msub><mi>d</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(z|d=d_j)</annotation></semantics></math> et <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>=</mo><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(w=w_{ij}|z)</annotation></semantics></math> selon les comptes actuels (en excluant <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">z_{ij}</annotation></semantics></math>)</li>
+<li>Tirer <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> selon la loi <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="prefix">|</mo><mi>d</mi><mo>=</mo><msub><mi>d</mi><mi>j</mi></msub><mo>,</mo><mi>w</mi><mo>=</mo><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>∝</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="prefix">|</mo><mi>d</mi><mo>=</mo><msub><mi>d</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>=</mo><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(z|d=d_j,w=w_{ij}) \propto p(z|d=d_j) \cdot p(w=w_{ij}|z)</annotation></semantics></math></li>
+</ol></li>
+</ol></li>
+</ol>
+<p>En fait, légèrement plus fin que ça, en prenant en compte les probabilités <em>a priori</em> pour le calcul de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="prefix">|</mo><mi>d</mi><mo>=</mo><msub><mi>d</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(z|d=d_j)</annotation></semantics></math> et <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>=</mo><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(w=w_{ij}|z)</annotation></semantics></math>.</p>
+</div>
+</body>
+</html>

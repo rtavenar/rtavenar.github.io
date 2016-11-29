@@ -4,8 +4,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Romain Tavenard" />
-  <title>La lecture et l&#8217;&#233;criture de fichiers en Python</title>
+  <meta name="author" content="Aur&#233;lie Lemaitre, Romain Tavenard" />
+  <title>API web d&#8217;acc&#232;s aux donn&#233;es</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -48,37 +48,39 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 <body>
 <div id="header">
-<h1 class="title">La lecture et l&#8217;&#233;criture de fichiers en Python</h1>
+<h1 class="title">API web d&#8217;acc&#232;s aux donn&#233;es</h1>
 <h4 class="link-back"><a href="../index.html">Retour &#224; la liste des &#233;nonc&#233;s</a></h4>
 <h4 class="subtitle">Planche de TD pour un cours dispens&#233; &#224; l&#8217;universit&#233; de Rennes 2</h4>
-<h2 class="author">Romain Tavenard</h2>
+<h2 class="author">Aur&#233;lie Lemaitre, Romain Tavenard</h2>
 </div>
-<h1 id="lecture-de-fichier-textuel"><span class="header-section-number">1</span> Lecture de fichier textuel</h1>
+<h1 id="travail-&#224;-pr&#233;parer-chez-vous-avant-la-s&#233;ance"><span class="header-section-number">1</span> Travail &#224; pr&#233;parer chez vous avant la s&#233;ance</h1>
+<ol style="list-style-type: decimal">
+<li>Pr&#233;parez la premi&#232;re question de cette planche de TD concernant l&#8217;utilisation de l&#8217;API Google Maps. Pour cela :</li>
+</ol>
+<ul>
+<li>Cr&#233;ez-vous une cl&#233; pour cette API (<a href="https://developers.google.com/maps/documentation/elevation/get-api-key">lien</a>) ;</li>
+<li><p>&#201;crivez, pour la position suivante, la requ&#234;te n&#233;cessaire pour obtenir l&#8217;&#233;l&#233;vation du point en question <em>via</em> Google Maps Elevation API :</p>
+<pre><code>longitude : -1.426533
+latitude : 48.005135</code></pre></li>
+</ul>
+<h1 id="&#233;nonc&#233;"><span class="header-section-number">2</span> &#201;nonc&#233;</h1>
+<p>Le fichier <code>rando_gps.json</code> fournit des s&#233;ries de positions GPS correspondant &#224; des traces GPS de sorties randonn&#233;e de M. Toulemonde. On cherchera dans ce TD &#224; &#233;crire un programme calculant les d&#233;nivel&#233;s cumul&#233;s positif et n&#233;gatif de chacune de ces randonn&#233;es. Pour cela, vous utiliserez l&#8217;API <a href="https://developers.google.com/maps/documentation/elevation/intro"><code>Google Maps Elevation</code></a> pour laquelle vous aurez au pr&#233;alable <a href="https://developers.google.com/maps/documentation/elevation/get-api-key">demand&#233; une cl&#233;</a>.</p>
 <ol start="2" style="list-style-type: decimal">
-<li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et retourne le nombre de mots non vides contenus dans le fichier en question (on suppose que les mots sont s&#233;par&#233;s par des espaces).</li>
-<li>Utilisez le module <code class="sourceCode python">os</code> et la fonction cod&#233;e pr&#233;c&#233;demment pour afficher, fichier par fichier, le nombre de mots des fichiers de votre r&#233;pertoire <code class="sourceCode haskell"><span class="st">&quot;data&quot;</span></code> dont l&#8217;extension est <code class="sourceCode haskell"><span class="st">&quot;.txt&quot;</span></code>.</li>
-</ol>
-<h1 id="&#233;criture-de-fichier-textuel"><span class="header-section-number">2</span> &#201;criture de fichier textuel</h1>
-<ol start="4" style="list-style-type: decimal">
-<li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et une cha&#238;ne de caract&#232;res et &#233;crit la cha&#238;ne dans le fichier indiqu&#233;.</li>
-<li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne du fichier indiqu&#233;.</li>
-</ol>
-<h2 id="l&#233;criture-dans-la-console"><span class="header-section-number">2.1</span> L&#8217;&#233;criture dans la console</h2>
-<p>Vous avez d&#233;j&#224; &#233;crit dans la console &#224; l&#8217;aide de la fonction <code class="sourceCode python"><span class="bu">print</span></code>. Plus pr&#233;cis&#233;ment, cette fonction &#233;crit sur la sortie standard. Il existe deux autres flux standards. Le premier, l&#8217;entr&#233;e standard, est celui duquel vous lisez des cha&#238;nes de caract&#232;res entr&#233;es par les utilisateurs lorsque vous utilisez la fonction <code class="sourceCode python"><span class="bu">input</span></code>. Enfin, le dernier flux standard est l&#8217;erreur standard, qui est le flux qui doit &#234;tre utilis&#233; pour &#233;crire les messages d&#8217;erreur g&#233;n&#233;r&#233;s par vos programmes. Pour choisir le flux de sortie que vous souhaitez utiliser, il faut importer le module <code class="sourceCode python">sys</code>, puis utiliser la syntaxe suivante :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">sys.stdout.write(chaine_a_ecrire)  <span class="co"># Sortie standard</span>
-sys.stderr.write(chaine_a_ecrire)  <span class="co"># Erreur standard</span></code></pre></div>
-<p>Ainsi, ces flux sont utilis&#233;s de la m&#234;me mani&#232;re que les objets <code class="sourceCode python"><span class="bu">file</span></code> (sauf qu&#8217;on ne les ouvre jamais).</p>
-<ol start="6" style="list-style-type: decimal">
-<li>&#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur la sortie standard.</li>
-<li>&#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur l&#8217;erreur standard.</li>
-</ol>
-<h1 id="fichers-texte-structur&#233;s"><span class="header-section-number">3</span> Fichers texte structur&#233;s</h1>
-<h2 id="fichiers-csv"><span class="header-section-number">3.1</span> Fichiers CSV</h2>
-<ol start="8" style="list-style-type: decimal">
-<li>&#201;crivez une fonction qui retourne le nombre de lignes et de colonnes (le nombre de colonnes d&#8217;un fichier CSV est &#233;gal au nombre maximum de champs des lignes de ce fichier) d&#8217;un fichier CSV dont le nom est fourni en argument.</li>
-<li>Appliquez cette fonction pour d&#233;terminer les nombres de lignes et colonnes de chacun des fichiers de votre r&#233;pertoire <code class="sourceCode haskell"><span class="st">&quot;data&quot;</span></code> dont l&#8217;extension est <code class="sourceCode haskell"><span class="st">&quot;.csv&quot;</span></code>.</li>
-<li>Reprenez la premi&#232;re question du TD sur les dictionnaires et adaptez la pour prendre en entr&#233;e non plus une cha&#238;ne de caract&#232;res &#224; d&#233;couper en lignes et colonnes mais un nom de fichier &#224; lire (vous pourrez tester cette fonction avec le fichier <code class="sourceCode haskell"><span class="st">&quot;data/etudiants.csv&quot;</span></code>).</li>
-<li>&#201;crivez une fonction en Python qui prend en entr&#233;e un nom de fichier au format CSV et retourne le contenu de ce fichier sous forme de liste de dictionnaires : les cl&#233;s &#233;tant les en-t&#234;tes de colonnes (&#233;crites en premi&#232;re ligne du fichier) et les valeurs &#233;tant la valeur associ&#233;e &#224; la ligne courante. Si la valeur associ&#233;e &#224; une colonne est vide, vous la remplacerez par <code class="sourceCode python"><span class="va">None</span></code>.</li>
+<li><p>&#201;crivez une fonction qui prenne en entr&#233;e une position GPS et une cl&#233; Google Maps Elevation API et retourne l&#8217;&#233;l&#233;vation de la position. La position GPS sera pass&#233;e sous la forme d&#8217;un dictionnaire tel que :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">coord <span class="op">=</span> {<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.426533</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.005135</span>}</code></pre></div></li>
+<li><p>&#201;crivez une fonction qui prenne en entr&#233;e une liste de positions GPS (chacune cod&#233;e sous la forme d&#8217;un dictionnaire tel que pr&#233;c&#233;demment) et une cl&#233; Google Maps Elevation API et retourne une liste d&#8217;&#233;l&#233;vations. Vous pourrez utiliser l&#8217;exemple suivant pour vos tests :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">lst_gps <span class="op">=</span> [{<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.426533</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.005135</span>},
+       {<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.418127</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">47.986058</span>},
+       {<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.427611</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">47.989871</span>},
+       {<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.430202</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.000354</span>}]</code></pre></div></li>
+<li><p>&#201;crivez une fonction qui prenne en entr&#233;e une liste de positions GPS et une cl&#233; Google Maps Elevation API et retourne la somme des d&#233;nivel&#233;s positifs (d&#8217;une part) et n&#233;gatifs (d&#8217;autre part). Par exemple, si on a une liste de coordonn&#233;es GPS pour lesquelles on a obtenu les &#233;l&#233;vations suivantes :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[<span class="fl">38.11611938476562</span>, <span class="fl">68.63338470458984</span>, <span class="fl">54.59960174560547</span>, <span class="fl">36.41928482055664</span>]</code></pre></div>
+<p>on devrait retourner la paire de valeurs :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(<span class="fl">30.517265319824226</span>, <span class="fl">32.2140998840332</span>)</code></pre></div></li>
+<li><p>&#201;crivez une fonction qui prenne en entr&#233;e un nom de fichier JSON (contenant des informations sur diverses randonn&#233;es) et une cl&#233; Google Maps Elevation API et affiche, pour chaque randonn&#233;e, son nom (attribut <code class="sourceCode haskell"><span class="st">&quot;name&quot;</span></code>) et la somme de ses d&#233;nivel&#233;s positifs (d&#8217;une part) et n&#233;gatifs (d&#8217;autre part). Pour le fichier <code>rando_gps.json</code>, on doit obtenir une sortie du type :</p>
+<pre><code>[TraceGPS Le long de la quincampoix - Pire-sur-Seiche] D+: 111.4m, D-: 111.4m
+[TraceGPS Issued  Messac - CIRCUIT DU PORT] D+: 31.7m, D-: 31.7m
+[TraceGPS Issued  Coemes-Retiers] D+: 417.9m, D-: 417.9m</code></pre></li>
 </ol>
 </body>
 </html>

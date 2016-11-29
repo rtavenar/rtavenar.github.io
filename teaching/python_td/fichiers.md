@@ -6,12 +6,6 @@ author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
-# Travail à préparer chez vous avant la séance
-
-1. Préparez la dernière question de cette planche de TD concernant l'utilisation de l'API Google Maps. Pour cela :
-* Créez-vous une clé pour cette API ([lien](https://developers.google.com/maps/documentation/elevation/get-api-key)) ;
-* Réfléchissez à la forme que devra prendre votre requête (paramètres, format de sortie, _etc._).
-
 # Lecture de fichier textuel
 
 2. Écrivez une fonction qui prend en entrée un nom de fichier et retourne le nombre de mots non vides contenus dans le fichier en question (on suppose que les mots sont séparés par des espaces).
@@ -48,12 +42,3 @@ Ainsi, ces flux sont utilisés de la même manière que les objets `file`{.pytho
 10. Reprenez la première question du TD sur les dictionnaires et adaptez la pour prendre en entrée non plus une chaîne de caractères à découper en lignes et colonnes mais un nom de fichier à lire (vous pourrez tester cette fonction avec le fichier `"data/etudiants.csv"`{.haskell}).
 11. Écrivez une fonction en Python qui prend en entrée un nom de fichier au format CSV et retourne le contenu de ce fichier sous forme de liste de dictionnaires : les clés étant les en-têtes de colonnes (écrites en première ligne du fichier) et les valeurs étant la valeur associée à la ligne courante.
 Si la valeur associée à une colonne est vide, vous la remplacerez par `None`{.python}.
-12. Écrivez une fonction qui prend en entrée un nom de fichier et un dictionnaire (qui stocke, pour chaque clé, une liste d'entiers) et écrit le contenu du dictionnaire au format suivant :
-
-* chaque ligne correspond à une clé du dictionnaire ;
-* la première colonne indique la clé considérée ;
-* les autres colonnes sont constituées des données stockées pour cette clé.
-
-## Fichiers JSON
-
-13. Le fichier `rando_gps.json` fournit des séries de positions GPS correspondant à des traces GPS de sorties randonnée de M. Toulemonde. Écrivez un programme calculant les dénivelés cumulés positif et négatif de chacune de ces randonnées. Pour cela, vous utiliserez l'API [`Google Maps Elevation`](https://developers.google.com/maps/documentation/elevation/intro) pour laquelle vous aurez au préalable [demandé une clé](https://developers.google.com/maps/documentation/elevation/get-api-key).

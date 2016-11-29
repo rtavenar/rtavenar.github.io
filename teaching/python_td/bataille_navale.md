@@ -9,14 +9,19 @@ rights: Creative Commons CC BY-NC-SA
 
 1. Vérifier que vous connaissez les règles du jeu de bataille navale ([lien](https://fr.wikipedia.org/wiki/Bataille_navale_(jeu))).
 
-2. En lisant l'énoncé de ce TD, réfléchissez aux structures de données à utiliser pour représenter :
-* la grille secrète (contenant la position des navires à couler) ;
-* la grille des coups du joueur.
+2. En lisant soigneuseument les traces d'exécution ci-dessous, répondez aux questions suivantes :
+* Que joue le joueur ?
+* Quelles sont les différentes réponses possibles du système ?
+
+3. Réfléchir aux structures de données à utiliser pour mémoriser la position des bateaux ainsi que les différents coups du joueur.
+
+4. Réfléchir à une méthode permettant de traduire les coordonnées sous forme lettre/chiffre vers un numéro de ligne et de colonne.
+Exemple : `"B2"`{.haskell} donne "2ème ligne, 2ème colonne".
 
 
 # Énoncé
 
-3. Programmez (en Python) un jeu de bataille navale pour lequel la position des navires sera lue dans un fichier annexe dont voici un exemple contenant 2 navires nommés respectivement `1` et `2` :
+5. Programmez (en Python) un jeu de bataille navale pour lequel la position des navires sera lue dans un fichier annexe dont voici un exemple contenant 2 navires nommés respectivement `1` et `2` :
 ```
 1,D1,D2,D3
 2,E4,F4

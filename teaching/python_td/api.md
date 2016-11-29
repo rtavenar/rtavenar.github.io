@@ -31,20 +31,18 @@ coord = {"lon": -1.426533, "lat": 48.005135}
 3. Écrivez une fonction qui prenne en entrée une liste de positions GPS (chacune codée sous la forme d'un dictionnaire tel que précédemment) et une clé Google Maps Elevation API et retourne une liste d'élévations.
 Vous pourrez utiliser l'exemple suivant pour vos tests :
 ```python
-lst_gps = [{"lon": -1.426533, "lat": 48.005135},
-           {"lon": -1.418127, "lat": 47.986058},
-           {"lon": -1.427611, "lat": 47.989871},
-           {"lon": -1.430202, "lat": 48.000354}]
+lst_gps = [{"lon": -1.426533, "lat": 48.005135}, {"lon": -1.418127, "lat": 47.986058},
+           {"lon": -1.427611, "lat": 47.989871}, {"lon": -1.430202, "lat": 48.000354}]
 ```
 
 4. Écrivez une fonction qui prenne en entrée une liste de positions GPS et une clé Google Maps Elevation API et retourne la somme des dénivelés positifs (d'une part) et négatifs (d'autre part).
 Par exemple, si on a une liste de coordonnées GPS pour lesquelles on a obtenu les élévations suivantes :
 ```python
-[38.11611938476562, 68.63338470458984, 54.59960174560547, 36.41928482055664]
+[38.11, 68.63, 54.60, 36.42]
 ```
 on devrait retourner la paire de valeurs :
 ```python
-(30.517265319824226, 32.2140998840332)
+(30.52, 32.21)
 ```
 
 5. Écrivez une fonction qui prenne en entrée un nom de fichier JSON (contenant des informations sur diverses randonnées) et une clé Google Maps Elevation API et affiche, pour chaque randonnée, son nom (attribut `"name"`{.haskell}) et la somme de ses dénivelés positifs (d'une part) et négatifs (d'autre part).

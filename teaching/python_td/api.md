@@ -31,8 +31,10 @@ coord = {"lon": -1.426533, "lat": 48.005135}
 3. Écrivez une fonction qui prenne en entrée une liste de positions GPS (chacune codée sous la forme d'un dictionnaire tel que précédemment) et une clé Google Maps Elevation API et retourne une liste d'élévations.
 Vous pourrez utiliser l'exemple suivant pour vos tests :
 ```python
-lst_gps = [{"lon": -1.426533, "lat": 48.005135}, {"lon": -1.418127, "lat": 47.986058},
-           {"lon": -1.427611, "lat": 47.989871}, {"lon": -1.430202, "lat": 48.000354}]
+lst_gps = [{"lon": -1.426533, "lat": 48.005135},
+           {"lon": -1.418127, "lat": 47.986058},
+           {"lon": -1.427611, "lat": 47.989871},
+           {"lon": -1.430202, "lat": 48.000354}]
 ```
 
 4. Écrivez une fonction qui prenne en entrée une liste de positions GPS et une clé Google Maps Elevation API et retourne la somme des dénivelés positifs (d'une part) et négatifs (d'autre part).

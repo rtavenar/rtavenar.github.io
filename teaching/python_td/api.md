@@ -50,7 +50,7 @@ on devrait retourner la paire de valeurs :
 5. Écrivez une fonction qui prenne en entrée un nom de fichier JSON (contenant des informations sur diverses randonnées) et une clé Google Maps Elevation API et affiche, pour chaque randonnée, son nom (attribut `"name"`{.haskell}) et la somme de ses dénivelés positifs (d'une part) et négatifs (d'autre part).
 Pour le fichier `rando_gps.json`, on doit obtenir une sortie du type :
 ```
-[TraceGPS Le long de la quincampoix - Pire-sur-Seiche] D+: 111.4m, D-: 111.4m
-[TraceGPS Issued  Messac - CIRCUIT DU PORT] D+: 31.7m, D-: 31.7m
-[TraceGPS Issued  Coemes-Retiers] D+: 417.9m, D-: 417.9m
+TraceGPS Le long de la quincampoix - Pire-sur-Seiche D+:  111.39449691772464 , D-:  111.38713455200201
+TraceGPS Issued  Messac - CIRCUIT DU PORT D+:  31.650634765625 , D-:  31.650634765625
+TraceGPS Issued  Coemes-Retiers D+:  417.91231536865234 , D-:  417.91231536865223
 ```

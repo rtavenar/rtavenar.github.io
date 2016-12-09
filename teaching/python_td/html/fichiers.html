@@ -54,12 +54,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 class="author">Romain Tavenard</h2>
 </div>
 <h1 id="lecture-de-fichier-textuel"><span class="header-section-number">1</span> Lecture de fichier textuel</h1>
-<ol start="2" style="list-style-type: decimal">
+<ol style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et retourne le nombre de mots non vides contenus dans le fichier en question (on suppose que les mots sont s&#233;par&#233;s par des espaces).</li>
 <li>Utilisez le module <code class="sourceCode python">os</code> et la fonction cod&#233;e pr&#233;c&#233;demment pour afficher, fichier par fichier, le nombre de mots des fichiers de votre r&#233;pertoire <code class="sourceCode haskell"><span class="st">&quot;data&quot;</span></code> dont l&#8217;extension est <code class="sourceCode haskell"><span class="st">&quot;.txt&quot;</span></code>.</li>
 </ol>
 <h1 id="&#233;criture-de-fichier-textuel"><span class="header-section-number">2</span> &#201;criture de fichier textuel</h1>
-<ol start="4" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et une cha&#238;ne de caract&#232;res et &#233;crit la cha&#238;ne dans le fichier indiqu&#233;.</li>
 <li>&#201;crivez une fonction qui prend en entr&#233;e un nom de fichier et une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne du fichier indiqu&#233;.</li>
 </ol>
@@ -68,13 +68,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">sys.stdout.write(chaine_a_ecrire)  <span class="co"># Sortie standard</span>
 sys.stderr.write(chaine_a_ecrire)  <span class="co"># Erreur standard</span></code></pre></div>
 <p>Ainsi, ces flux sont utilis&#233;s de la m&#234;me mani&#232;re que les objets <code class="sourceCode python"><span class="bu">file</span></code> (sauf qu&#8217;on ne les ouvre jamais).</p>
-<ol start="6" style="list-style-type: decimal">
+<ol start="5" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur la sortie standard.</li>
 <li>&#201;crivez une fonction qui prend en entr&#233;e une liste de cha&#238;nes de caract&#232;res et &#233;crit chaque cha&#238;ne de la liste dans une nouvelle ligne sur l&#8217;erreur standard.</li>
 </ol>
 <h1 id="fichers-texte-structur&#233;s"><span class="header-section-number">3</span> Fichers texte structur&#233;s</h1>
 <h2 id="fichiers-csv"><span class="header-section-number">3.1</span> Fichiers CSV</h2>
-<ol start="8" style="list-style-type: decimal">
+<ol start="7" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui retourne le nombre de lignes et de colonnes (le nombre de colonnes d&#8217;un fichier CSV est &#233;gal au nombre maximum de champs des lignes de ce fichier) d&#8217;un fichier CSV dont le nom est fourni en argument.</li>
 <li>Appliquez cette fonction pour d&#233;terminer les nombres de lignes et colonnes de chacun des fichiers de votre r&#233;pertoire <code class="sourceCode haskell"><span class="st">&quot;data&quot;</span></code> dont l&#8217;extension est <code class="sourceCode haskell"><span class="st">&quot;.csv&quot;</span></code>.</li>
 <li>Reprenez la premi&#232;re question du TD sur les dictionnaires et adaptez la pour prendre en entr&#233;e non plus une cha&#238;ne de caract&#232;res &#224; d&#233;couper en lignes et colonnes mais un nom de fichier &#224; lire (vous pourrez tester cette fonction avec le fichier <code class="sourceCode haskell"><span class="st">&quot;data/etudiants.csv&quot;</span></code>).</li>

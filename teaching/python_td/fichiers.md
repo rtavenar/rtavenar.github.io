@@ -8,13 +8,13 @@ rights: Creative Commons CC BY-NC-SA
 
 # Lecture de fichier textuel
 
-2. Écrivez une fonction qui prend en entrée un nom de fichier et retourne le nombre de mots non vides contenus dans le fichier en question (on suppose que les mots sont séparés par des espaces).
-3. Utilisez le module `os`{.python} et la fonction codée précédemment pour afficher, fichier par fichier, le nombre de mots des fichiers de votre répertoire `"data"`{.haskell} dont l'extension est `".txt"`{.haskell}.
+1. Écrivez une fonction qui prend en entrée un nom de fichier et retourne le nombre de mots non vides contenus dans le fichier en question (on suppose que les mots sont séparés par des espaces).
+2. Utilisez le module `os`{.python} et la fonction codée précédemment pour afficher, fichier par fichier, le nombre de mots des fichiers de votre répertoire `"data"`{.haskell} dont l'extension est `".txt"`{.haskell}.
 
 # Écriture de fichier textuel
 
-4. Écrivez une fonction qui prend en entrée un nom de fichier et une chaîne de caractères et écrit la chaîne dans le fichier indiqué.
-5. Écrivez une fonction qui prend en entrée un nom de fichier et une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne du fichier indiqué.
+3. Écrivez une fonction qui prend en entrée un nom de fichier et une chaîne de caractères et écrit la chaîne dans le fichier indiqué.
+4. Écrivez une fonction qui prend en entrée un nom de fichier et une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne du fichier indiqué.
 
 ## L'écriture dans la console
 Vous avez déjà écrit dans la console à l'aide de la fonction `print`{.python}.
@@ -30,15 +30,15 @@ sys.stderr.write(chaine_a_ecrire)  # Erreur standard
 
 Ainsi, ces flux sont utilisés de la même manière que les objets `file`{.python} (sauf qu'on ne les ouvre jamais).
 
-6. Écrivez une fonction qui prend en entrée une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne sur la sortie standard.
-7. Écrivez une fonction qui prend en entrée une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne sur l'erreur standard.
+5. Écrivez une fonction qui prend en entrée une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne sur la sortie standard.
+6. Écrivez une fonction qui prend en entrée une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne sur l'erreur standard.
 
 # Fichers texte structurés
 
 ## Fichiers CSV
 
-8. Écrivez une fonction qui retourne le nombre de lignes et de colonnes (le nombre de colonnes d'un fichier CSV est égal au nombre maximum de champs des lignes de ce fichier) d'un fichier CSV dont le nom est fourni en argument.
-9. Appliquez cette fonction pour déterminer les nombres de lignes et colonnes de chacun des fichiers de votre répertoire `"data"`{.haskell} dont l'extension est `".csv"`{.haskell}.
-10. Reprenez la première question du TD sur les dictionnaires et adaptez la pour prendre en entrée non plus une chaîne de caractères à découper en lignes et colonnes mais un nom de fichier à lire (vous pourrez tester cette fonction avec le fichier `"data/etudiants.csv"`{.haskell}).
-11. Écrivez une fonction en Python qui prend en entrée un nom de fichier au format CSV et retourne le contenu de ce fichier sous forme de liste de dictionnaires : les clés étant les en-têtes de colonnes (écrites en première ligne du fichier) et les valeurs étant la valeur associée à la ligne courante.
+7. Écrivez une fonction qui retourne le nombre de lignes et de colonnes (le nombre de colonnes d'un fichier CSV est égal au nombre maximum de champs des lignes de ce fichier) d'un fichier CSV dont le nom est fourni en argument.
+8. Appliquez cette fonction pour déterminer les nombres de lignes et colonnes de chacun des fichiers de votre répertoire `"data"`{.haskell} dont l'extension est `".csv"`{.haskell}.
+9. Reprenez la première question du TD sur les dictionnaires et adaptez la pour prendre en entrée non plus une chaîne de caractères à découper en lignes et colonnes mais un nom de fichier à lire (vous pourrez tester cette fonction avec le fichier `"data/etudiants.csv"`{.haskell}).
+10. Écrivez une fonction en Python qui prend en entrée un nom de fichier au format CSV et retourne le contenu de ce fichier sous forme de liste de dictionnaires : les clés étant les en-têtes de colonnes (écrites en première ligne du fichier) et les valeurs étant la valeur associée à la ligne courante.
 Si la valeur associée à une colonne est vide, vous la remplacerez par `None`{.python}.

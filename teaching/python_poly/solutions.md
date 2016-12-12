@@ -5,7 +5,7 @@ if t<=0:
 	print("l'eau est sous forme solide")
 elif t<100:
 	print("l'eau est sous forme liquide")
-else : 
+else :
 	print("l'eau est sous forme gazeuse")
 #[Sortie] l'eau est sous forme solide
 ```
@@ -220,6 +220,27 @@ print(nb_lignes_repertoire("."))
 ```
 
 ### Exercice 7.1
+```python
+import urllib.request
+import json
+
+def temps_trajet(ville_origine, ville_destination, cle_gmaps_api):
+    url = "https://maps.googleapis.com/maps/api/directions/json?"
+    url += "origin=" + ville_origine
+    url += "&destination=" + ville_destination
+    url += "&key=" + cle_gmaps_api
+    print(url)
+    fp = urllib.request.urlopen(url)
+    contenu = fp.read().decode("utf-8")
+    d = json.loads(contenu)
+    secondes = d["routes"][0]["legs"][0]["duration"]["value"]
+    return secondes
+
+# Utilisez votre clé Google Maps API
+print(temps_trajet("Rennes", "Saint-Malo", "..."))
+```
+
+### Exercice 8.1
 ```python
 def bissextile(annee):
     if annee % 4 == 0 and annee % 100 != 0:

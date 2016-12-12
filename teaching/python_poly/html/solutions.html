@@ -71,6 +71,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#exercice-6.1">Exercice 6.1</a></li>
 <li><a href="#exercice-6.2">Exercice 6.2</a></li>
 <li><a href="#exercice-7.1">Exercice 7.1</a></li>
+<li><a href="#exercice-8.1">Exercice 8.1</a></li>
 </ul>
 </div>
 <h3 id="exercice-2.1">Exercice 2.1</h3>
@@ -79,7 +80,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <span class="bu">print</span>(<span class="st">&quot;l&#39;eau est sous forme solide&quot;</span>)
 <span class="cf">elif</span> t<span class="op">&lt;</span><span class="dv">100</span>:
     <span class="bu">print</span>(<span class="st">&quot;l&#39;eau est sous forme liquide&quot;</span>)
-<span class="cf">else</span> : 
+<span class="cf">else</span> :
     <span class="bu">print</span>(<span class="st">&quot;l&#39;eau est sous forme gazeuse&quot;</span>)
 <span class="co">#[Sortie] l&#39;eau est sous forme solide</span></code></pre></div>
 <h3 id="exercice-2.2">Exercice 2.2</h3>
@@ -250,6 +251,23 @@ nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>)</code></pre></div>
 
 <span class="bu">print</span>(nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>))</code></pre></div>
 <h3 id="exercice-7.1">Exercice 7.1</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> urllib.request
+<span class="im">import</span> json
+
+<span class="kw">def</span> temps_trajet(ville_origine, ville_destination, cle_gmaps_api):
+    url <span class="op">=</span> <span class="st">&quot;https://maps.googleapis.com/maps/api/directions/json?&quot;</span>
+    url <span class="op">+=</span> <span class="st">&quot;origin=&quot;</span> <span class="op">+</span> ville_origine
+    url <span class="op">+=</span> <span class="st">&quot;&amp;destination=&quot;</span> <span class="op">+</span> ville_destination
+    url <span class="op">+=</span> <span class="st">&quot;&amp;key=&quot;</span> <span class="op">+</span> cle_gmaps_api
+    <span class="bu">print</span>(url)
+    fp <span class="op">=</span> urllib.request.urlopen(url)
+    contenu <span class="op">=</span> fp.read().decode(<span class="st">&quot;utf-8&quot;</span>)
+    d <span class="op">=</span> json.loads(contenu)
+    secondes <span class="op">=</span> d[<span class="st">&quot;routes&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;legs&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;duration&quot;</span>][<span class="st">&quot;value&quot;</span>]
+    <span class="cf">return</span> secondes
+
+<span class="bu">print</span>(temps_trajet(<span class="st">&quot;Rennes&quot;</span>, <span class="st">&quot;Saint-Malo&quot;</span>, <span class="st">&quot;...&quot;</span>)) <span class="co"># Utilisez votre cl&#233; Google Maps API</span></code></pre></div>
+<h3 id="exercice-8.1">Exercice 8.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bissextile(annee):
     <span class="cf">if</span> annee <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> annee <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:
         <span class="cf">return</span> <span class="va">True</span>

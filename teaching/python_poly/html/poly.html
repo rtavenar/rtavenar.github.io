@@ -45,7 +45,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
   <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.min.js"></script>
 </head>
 <body onload="anchors.options = {visible: 'always'}; anchors.add();">
@@ -108,6 +108,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#lecture-de-fichiers-textuels"><span class="toc-section-number">6.1</span> Lecture de fichiers textuels</a><ul>
 <li><a href="#fichiers-textuels-g&#233;n&#233;riques"><span class="toc-section-number">6.1.1</span> Fichiers textuels g&#233;n&#233;riques</a></li>
 <li><a href="#fichiers-comma-separated-values-csv"><span class="toc-section-number">6.1.2</span> Fichiers <em>Comma-Separated Values</em> (CSV)</a></li>
+<li><a href="#fichiers-javascript-object-notation-json"><span class="toc-section-number">6.1.3</span> Fichiers <em>JavaScript Object Notation</em> (JSON)</a></li>
 </ul></li>
 <li><a href="#&#233;criture-de-fichiers-textuels"><span class="toc-section-number">6.2</span> &#201;criture de fichiers textuels</a><ul>
 <li><a href="#fichiers-textuels-g&#233;n&#233;riques-1"><span class="toc-section-number">6.2.1</span> Fichiers textuels g&#233;n&#233;riques</a></li>
@@ -115,12 +116,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#manipulation-de-fichiers-en-python-avec-le-module-os"><span class="toc-section-number">6.3</span> Manipulation de fichiers en Python avec le module <code>os</code></a></li>
 </ul></li>
-<li><a href="#tester-son-code"><span class="toc-section-number">7</span> Tester son code</a><ul>
-<li><a href="#les-erreurs-en-python"><span class="toc-section-number">7.1</span> Les erreurs en Python</a></li>
-<li><a href="#les-tests-unitaires"><span class="toc-section-number">7.2</span> Les tests unitaires</a></li>
-<li><a href="#le-d&#233;veloppement-pilot&#233;-par-les-tests"><span class="toc-section-number">7.3</span> Le d&#233;veloppement pilot&#233; par les tests</a></li>
+<li><a href="#r&#233;cup&#233;ration-de-donn&#233;es-&#224;-partir-dapi-web"><span class="toc-section-number">7</span> R&#233;cup&#233;ration de donn&#233;es &#224; partir d&#8217;API web</a><ul>
+<li><a href="#requ&#234;tes-http-en-python"><span class="toc-section-number">7.1</span> Requ&#234;tes HTTP en Python</a><ul>
+<li><a href="#format-dune-requ&#234;te-http"><span class="toc-section-number">7.1.1</span> Format d&#8217;une requ&#234;te HTTP</a></li>
+<li><a href="#utilisation-du-module-urllib.request"><span class="toc-section-number">7.1.2</span> Utilisation du module <code>urllib.request</code></a></li>
 </ul></li>
-<li><a href="#conclusion"><span class="toc-section-number">8</span> Conclusion</a></li>
+</ul></li>
+<li><a href="#tester-son-code"><span class="toc-section-number">8</span> Tester son code</a><ul>
+<li><a href="#les-erreurs-en-python"><span class="toc-section-number">8.1</span> Les erreurs en Python</a></li>
+<li><a href="#les-tests-unitaires"><span class="toc-section-number">8.2</span> Les tests unitaires</a></li>
+<li><a href="#le-d&#233;veloppement-pilot&#233;-par-les-tests"><span class="toc-section-number">8.3</span> Le d&#233;veloppement pilot&#233; par les tests</a></li>
+</ul></li>
+<li><a href="#conclusion"><span class="toc-section-number">9</span> Conclusion</a></li>
 </ul>
 </div>
 <h1 id="introduction"><span class="header-section-number">1</span> Introduction</h1>
@@ -864,6 +871,64 @@ fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span cla
 <span class="co"># [Sortie] b</span>
 <span class="co"># [Sortie] Fin de ligne</span></code></pre></div>
 <p>On remarque ici que, contrairement au cas de fichiers textuels g&#233;n&#233;riques, la variable de boucle <code class="sourceCode python">ligne</code> n&#8217;est plus une cha&#238;ne de caract&#232;res mais une liste de cha&#238;nes de caract&#232;res. Les &#233;l&#233;ments de cette liste sont les cellules du tableau repr&#233;sent&#233; par le fichier CSV.</p>
+<h3 id="fichiers-javascript-object-notation-json"><span class="header-section-number">6.1.3</span> Fichiers <em>JavaScript Object Notation</em> (JSON)</h3>
+<p>Les fichiers <em>JavaScript Object Notation</em> (JSON) permettent de stocker des donn&#233;es structur&#233;es (par exemple avec une organisation hi&#233;rarchique). Un document JSON s&#8217;apparente &#224; un dictionnaire en Python (&#224; la nuance pr&#232;s que les cl&#233;s d&#8217;un document JSON sont forc&#233;ment des cha&#238;nes de caract&#232;res). Voici un exemple de document JSON :</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;num_etudiant&quot;</span><span class="fu">:</span> <span class="st">&quot;21300000&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;notes&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">12</span><span class="ot">,</span> <span class="dv">5</span><span class="ot">,</span> <span class="dv">14</span><span class="ot">]</span><span class="fu">,</span>
+    <span class="dt">&quot;date_de_naissance&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;jour&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span>
+        <span class="dt">&quot;mois&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span>
+        <span class="dt">&quot;annee&quot;</span><span class="fu">:</span> <span class="dv">1995</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p>En Python, pour lire de tels fichiers, on dispose du module <code>json</code> qui contient une fonction <code>load</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
+
+nom_fichier <span class="op">=</span> <span class="st">&quot;...&quot;</span> <span class="co"># &#192; remplacer par le chemin vers le fichier :)</span>
+
+<span class="co"># Contenu suppos&#233; du fichier :</span>
+<span class="co"># {</span>
+<span class="co">#    &quot;num_etudiant&quot;: &quot;21300000&quot;,</span>
+<span class="co">#    &quot;notes&quot;: [12, 5, 14],</span>
+<span class="co">#    &quot;date_de_naissance&quot;: {</span>
+<span class="co">#        &quot;jour&quot;: 1,</span>
+<span class="co">#        &quot;mois&quot;: 1,</span>
+<span class="co">#        &quot;annee&quot;: 1995</span>
+<span class="co">#    }</span>
+<span class="co"># }</span>
+
+fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)
+d <span class="op">=</span> json.load(fp)
+<span class="bu">print</span>(d)
+<span class="co"># [Sortie] {&quot;notes&quot;: [12, 5, 14], &quot;date_de_naissance&quot;:</span>
+<span class="co"># [Suite ]  {&quot;jour&quot;: 1, &quot;annee&quot;: 1995, &quot;mois&quot;: 1},</span>
+<span class="co"># [Suite ]  &quot;num_etudiant&quot;: &quot;21300000&quot;}</span></code></pre></div>
+<p>Il est &#224; noter qu&#8217;un fichier JSON peut &#233;galement contenir une liste de dictionnaires, comme dans l&#8217;exemple suivant :</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="ot">[</span><span class="fu">{</span>
+    <span class="dt">&quot;num_etudiant&quot;</span><span class="fu">:</span> <span class="st">&quot;21300000&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;notes&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">12</span><span class="ot">,</span> <span class="dv">5</span><span class="ot">,</span> <span class="dv">14</span><span class="ot">]</span><span class="fu">,</span>
+    <span class="dt">&quot;date_de_naissance&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;jour&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span>
+        <span class="dt">&quot;mois&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span>
+        <span class="dt">&quot;annee&quot;</span><span class="fu">:</span> <span class="dv">1995</span>
+    <span class="fu">}</span>
+<span class="fu">}</span><span class="ot">,</span>
+<span class="fu">{</span>
+    <span class="dt">&quot;num_etudiant&quot;</span><span class="fu">:</span> <span class="st">&quot;21300001&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;notes&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">14</span><span class="ot">]</span><span class="fu">,</span>
+    <span class="dt">&quot;date_de_naissance&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;jour&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span>
+        <span class="dt">&quot;mois&quot;</span><span class="fu">:</span> <span class="dv">6</span><span class="fu">,</span>
+        <span class="dt">&quot;annee&quot;</span><span class="fu">:</span> <span class="dv">1989</span>
+    <span class="fu">}</span>
+<span class="fu">}</span><span class="ot">]</span></code></pre></div>
+<p>Dans ce cas, <code>json.load</code> retournera une liste de dictionnaires au lieu d&#8217;un dictionnaire, bien &#233;videmment.</p>
+<p>Enfin, si l&#8217;on a stock&#233; dans une variable une cha&#238;ne de caract&#232;res dont le contenu correspond &#224; un document JSON, on peut &#233;galement la transformer en dictionnaire (ou en liste de dictionnaires) &#224; l&#8217;aide de la fonction <code>json.loads</code> (attention au &#8220;s&#8221; final) :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">ch <span class="op">=</span> <span class="st">&#39;{&quot;num_etudiant&quot;: &quot;21300000&quot;,  &quot;notes&quot;: [12, 5, 14]}&#39;</span>
+d <span class="op">=</span> json.loads(ch)  <span class="co"># loads : load (from) string</span>
+<span class="bu">print</span>(d)
+<span class="co"># [Sortie] {&quot;notes&quot;: [12, 5, 14], &quot;num_etudiant&quot;: &quot;21300000&quot;}</span></code></pre></div>
 <h2 id="&#233;criture-de-fichiers-textuels"><span class="header-section-number">6.2</span> &#201;criture de fichiers textuels</h2>
 <p>Ce que nous apellons &#233;criture de fichiers textuels en Python consiste &#224; copier le contenu d&#8217;une (ou plusieurs) cha&#238;ne(s) de caract&#232;res dans un fichier. Cela implique deux &#233;tapes en Python :</p>
 <ol style="list-style-type: decimal">
@@ -913,9 +978,64 @@ repertoire <span class="op">=</span> <span class="st">&quot;donnees&quot;</span>
 <p>La fonction <code class="sourceCode python">path.join</code> du module <code class="sourceCode python">os</code> permet d&#8217;obtenir le chemin complet vers le fichier &#224; partir du nom du r&#233;pertoire dans lequel il se trouve et du nom du fichier isol&#233;. Il est pr&#233;f&#233;rable d&#8217;utiliser cette fonction plut&#244;t que d&#8217;effectuer la concat&#233;nation des cha&#238;nes de caract&#232;res correspondantes car la forme des chemins complets d&#233;pend du syst&#232;me d&#8217;exploitation utilis&#233;, ce que g&#232;re intelligemment <code class="sourceCode python">path.join</code>.</p>
 <p><strong>Exercice 6.1</strong> &#201;crivez une fonction qui affiche, pour chaque fichier d&#8217;extension <code class="sourceCode haskell"><span class="st">&quot;.txt&quot;</span></code> d&#8217;un r&#233;pertoire pass&#233; en argument, le nom du fichier ainsi que son nombre de lignes.</p>
 <p><strong>Exercice 6.2</strong> &#201;crivez une fonction qui retourne le nombre de fichiers pr&#233;sents dans un r&#233;pertoire dont le nom est pass&#233; en argument. Vous pourrez vous aider pour cela de la documentation du sous-module <code class="sourceCode python">path</code> du module <code class="sourceCode python">os</code> (<a href="https://docs.python.org/3.5/library/os.path.html">lien</a>).</p>
-<h1 id="tester-son-code"><span class="header-section-number">7</span> Tester son code</h1>
+<h1 id="r&#233;cup&#233;ration-de-donn&#233;es-&#224;-partir-dapi-web"><span class="header-section-number">7</span> R&#233;cup&#233;ration de donn&#233;es &#224; partir d&#8217;API web</h1>
+<p>De nombreux services web fournissent des API (<em>Application Programming Interface</em>) pour mettre des donn&#233;es &#224; disposition du grand public. Le principe de fonctionnement de ces API est le suivant : l&#8217;utilisateur effectue une requ&#234;te sous la forme d&#8217;une requ&#234;te HTTP, le service web met en forme les donn&#233;es correspondant &#224; la requ&#234;te et les renvoie &#224; l&#8217;utilisateur, dans un format d&#233;fini &#224; l&#8217;avance.</p>
+<p>Voici une liste (tr&#232;s loin d&#8217;&#234;tre exhaustive) d&#8217;API web d&#8217;acc&#232;s aux donn&#233;es :</p>
+<ul>
+<li>Google Maps
+<ul>
+<li>Directions API : permet de calculer des itin&#233;raires ;</li>
+<li>Elevation API : permet de calculer l&#8217;altitude d&#8217;un point sur le globe terrestre ;</li>
+<li>Distance Matrix API : permet de calculer des distances entre points du globe ;</li>
+<li>Geocoding API : permet d&#8217;associer une coordonn&#233;e GPS &#224; une adresse.</li>
+</ul></li>
+<li>Facebook
+<ul>
+<li>Facebook Graph API : permet de r&#233;cup&#233;rer des informations sur des utilisateurs Facebook ;</li>
+</ul></li>
+<li>STAR (Transports en commun rennais)
+<ul>
+<li>Horaires des bus</li>
+<li>Disponibilit&#233; des v&#233;los dans les relais V&#233;loStar</li>
+</ul></li>
+</ul>
+<p>Pour manipuler en Python de telles donn&#233;es, il faudra donc &#234;tre capable :</p>
+<ol style="list-style-type: decimal">
+<li>d&#8217;envoyer une requ&#234;te HTTP et de r&#233;cup&#233;rer le r&#233;sultat ;</li>
+<li>de transformer le r&#233;sultat en une variable Python facilement manipulable.</li>
+</ol>
+<p>Pour ce qui est du second point, la plupart des API web offrent la possibilit&#233; de r&#233;cup&#233;rer les donn&#233;es au format JSON. Nous avons vu pr&#233;c&#233;demment dans ce cours que ce format &#233;tait facilement manipulable en Python, notamment parce qu&#8217;il est tr&#232;s proche de la notion de dictionnaire. Ce chapitre se focalise donc sur la r&#233;alisation de requ&#234;tes HTTP en Python.</p>
+<h2 id="requ&#234;tes-http-en-python"><span class="header-section-number">7.1</span> Requ&#234;tes HTTP en Python</h2>
+<h3 id="format-dune-requ&#234;te-http"><span class="header-section-number">7.1.1</span> Format d&#8217;une requ&#234;te HTTP</h3>
+<p>Dans un premier temps, &#233;tudions le format d&#8217;une requ&#234;te HTTP, telle que vous en effectuez des dizaines chaque jour, par l&#8217;interm&#233;diaire de votre navigateur web :</p>
+<pre><code>http://people.irisa.fr/Romain.Tavenard/index.php?page=3</code></pre>
+<p>Dans l&#8217;URL pr&#233;c&#233;dente, on distingue 4 sous parties :</p>
+<ul>
+<li><code>http://</code> indique le protocole &#224; utiliser pour effectuer la requ&#234;te (ici HTTP). Dans ce chapitre, nous ne nous int&#233;resserones qu&#8217;aux protocoles HTTP et HTTPS (version s&#233;curis&#233;e du protocole HTTP) ;</li>
+<li><code>people.irisa.fr</code> est le nom de domaine du serveur (<em>ie.</em> de la machine) &#224; contacter pour obtenir une r&#233;ponse ;</li>
+<li><code>/Romain.Tavenard/index.php</code> indique le chemin du fichier &#224; r&#233;cup&#233;rer sur cette machine ;</li>
+<li><code>?page=3</code> indique que l&#8217;on doit passer la valeur <code>3</code> au param&#232;tre <code>page</code> lors de la requ&#234;te.</li>
+</ul>
+<p>De la m&#234;me fa&#231;on, lors d&#8217;un appel &#224; une API web, on sp&#233;cifiera le protocole &#224; utiliser, la machine &#224; contacter, le chemin vers la ressource voulue et un certain nombre de param&#232;tres qui d&#233;criront notre requ&#234;te. Voici un exemple de requ&#234;te &#224; une API web (l&#8217;API Google Maps Directions en l&#8217;occurrence) :</p>
+<pre><code>https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&amp;destination=Montreal</code></pre>
+<p>Vous pouvez copier/coller cette URL dans la barre d&#8217;adresse de votre navigateur et observer ce que vous obtenez en retour. Observez que le r&#233;sultat de cette requ&#234;te est retourn&#233; au format JSON. En fait, si vous &#233;tudiez plus pr&#233;cis&#233;ment l&#8217;URL fournie, vous verrez que c&#8217;est nous qui avons demand&#233; &#224; obtenir le r&#233;sultat dans ce format. De plus, on a sp&#233;cifi&#233; dans l&#8217;URL que l&#8217;on souhaitait obtenir les informations d&#8217;itin&#233;raire pour aller de Toronto (param&#232;tre <code>origin</code>) &#224; Montreal (param&#232;tre <code>destination</code>).</p>
+<p>En plus de ces param&#232;tres, il est souvent utile (pour pouvoir profiter pleinement des fonctionnalit&#233;s des API) de sp&#233;cifier une cl&#233; d&#8217;API sous la forme d&#8217;un param&#232;tre suppl&#233;mentaire (nomm&#233; <code>key</code> dans les API Google Maps par exemple). Ainsi, la requ&#234;te pr&#233;c&#233;dente deviendrait :</p>
+<pre><code>https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&amp;destination=Montreal&amp;key=VOTRE_CLE</code></pre>
+<p>dans laquelle vous devrez remplacer <code>VOTRE_CLE</code> par une cl&#233; que vous aurez pr&#233;alablement g&#233;n&#233;r&#233;e et qui vous permettra d&#8217;utiliser le serive web de mani&#232;re authentifi&#233;e.</p>
+<h3 id="utilisation-du-module-urllib.request"><span class="header-section-number">7.1.2</span> Utilisation du module <code>urllib.request</code></h3>
+<p>La section pr&#233;c&#233;dente proposait un rappel sur le format des requ&#234;tes HTTP et vous avez &#233;t&#233; invit&#233;s &#224; effectuer des requ&#234;tes HTTP &#224; l&#8217;aide de votre navigateur. Si maintenant on souhaite r&#233;cup&#233;rer de mani&#232;re automatique le r&#233;sultat d&#8217;une requ&#234;te HTTP pour le manipuler en Python, le plus commode est d&#8217;effectuer la requ&#234;te HTTP depuis Python. Pour cela, on utilise le module <code>urllib.request</code>. Ce module contient notamment une fonction <code>urlopen</code> qui se comporte (presque) comme la fonction <code>open</code> que vous connaissez qui permet de lire le contenu d&#8217;un fichier stock&#233; sur votre disque dur :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> urllib.request
+
+url <span class="op">=</span> <span class="st">&quot;...&quot;</span>  <span class="co"># Stockez ici votre requ&#234;te HTTP</span>
+
+fp <span class="op">=</span> urllib.request.urlopen(url)
+contenu <span class="op">=</span> fp.read().decode(<span class="st">&quot;utf-8&quot;</span>)</code></pre></div>
+<p>On voit ici deux nuances par rapport &#224; l&#8217;utilisation de la fonction <code>open</code>. Tout d&#8217;abord, il n&#8217;existe pas de fonction <code>readlines</code> permettant de lire le r&#233;sultat de la requ&#234;te HTTP ligne par ligne, on utilisera donc la fonction <code>read</code>. De toute fa&#231;on, pour le cas de la lecture d&#8217;un r&#233;sultat au format JSON, il n&#8217;aurait pas &#233;t&#233; pertinent de lire le r&#233;sultat ligne par ligne car il faut avoir acc&#232;s &#224; l&#8217;ensemble du document JSON pour pouvoir le traiter avec le module <code>json</code>. Ensuite, on ne peut pas d&#233;finir l&#8217;encodage &#224; utiliser pour la lecture lors de l&#8217;appel &#224; <code>urlopen</code>. On le fait donc dans un deuxi&#232;me temps &#224; l&#8217;aide de la m&#233;thode <code>decode</code>.</p>
+<p>Une fois ces quelques lignes ex&#233;cut&#233;es, la variable <code>contenu</code> contient une cha&#238;ne de caract&#232;res correspondant au document JSON retourn&#233; par l&#8217;API. Il suffit donc alors d&#8217;utiliser le module <code>json</code> pour transformer cette cha&#238;ne de caract&#232;res en donn&#233;es manipulables en Python.</p>
+<p><strong>Exercice 7.1</strong> &#201;crivez une fonction qui prenne en entr&#233;e une cl&#233; d&#8217;API Google Maps et deux villes et retourne le temps de trajet (en secondes) pr&#233;vu par Google Maps API pour aller d&#8217;une ville &#224; l&#8217;autre.</p>
+<h1 id="tester-son-code"><span class="header-section-number">8</span> Tester son code</h1>
 <p>Dans ce document, nous avons jusqu&#8217;&#224; pr&#233;sent suppos&#233; que tout se passait bien, que votre code ne retournait jamais d&#8217;erreur et qu&#8217;il ne contenait jamais de <em>bug</em>. Quel que soit votre niveau d&#8217;expertise en Python, ces deux hypoth&#232;ses sont peu r&#233;alistes. Nous allons donc nous int&#233;resser maintenant aux moyens de v&#233;rifier si votre code fait bien ce qu&#8217;on attend de lui et de mieux comprendre son comportement lorsque ce n&#8217;est pas le cas.</p>
-<h2 id="les-erreurs-en-python"><span class="header-section-number">7.1</span> Les erreurs en Python</h2>
+<h2 id="les-erreurs-en-python"><span class="header-section-number">8.1</span> Les erreurs en Python</h2>
 <p>&#201;tudions ce qu&#8217;il se passe lors de l&#8217;ex&#233;cution du code suivant :</p>
 <div class="sourceCode"><table class="sourceCode python numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
 2
@@ -941,7 +1061,7 @@ TypeError: Can&#39;t convert &#39;int&#39; object to str implicitly</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="st">&quot;12&quot;</span>
 y <span class="op">=</span> <span class="bu">int</span>(x) <span class="op">+</span> <span class="dv">2</span></code></pre></div>
 <p>et l&#8217;addition s&#8217;effectue alors correctement entre deux valeurs num&#233;riques.</p>
-<h2 id="les-tests-unitaires"><span class="header-section-number">7.2</span> Les tests unitaires</h2>
+<h2 id="les-tests-unitaires"><span class="header-section-number">8.2</span> Les tests unitaires</h2>
 <p>Pour pouvoir &#234;tre s&#251;r du code que vous &#233;crivez, il faut l&#8217;avoir test&#233; sur un ensemble d&#8217;exemples qui vous semble refl&#233;ter l&#8217;ensemble des cas de figures auxquels votre programme pourra &#234;tre confront&#233;. Or, cela repr&#233;sente un nombre de cas de figures tr&#232;s important d&#232;s lors que l&#8217;on commence &#224; &#233;crire des programmes un tant soit peu complexes. Ainsi, il est hautement recommand&#233; de d&#233;couper son code en fonctions de tailles raisonnables et qui puissent &#234;tre test&#233;es ind&#233;pendamment. Les tests associ&#233;s &#224; chacune de ces fonctions sont appel&#233;s <strong>tests unitaires</strong>.</p>
 <p>Tout d&#8217;abord, en mettant en place de tels tests, vous pourrez d&#233;tecter rapidement un &#233;ventuel <em>bug</em> dans votre code et ainsi gagner beaucoup de temps de d&#233;veloppement. De plus, vous pourrez &#233;galement vous assurer que les modifications ult&#233;rieures de votre code ne modifient pas son comportement pour les cas test&#233;s. En effet, lorsque l&#8217;on ajoute une fonctionnalit&#233; &#224; un programme informatique, il faut avant toute choses s&#8217;assurer que celle-ci ne cassera pas le bon fonctionnement du programme dans les cas classiques d&#8217;utilisation pour lesquels il avait &#233;t&#233; &#224; l&#8217;origine con&#231;u.</p>
 <p>Prenons maintenant un exemple concret. Supposons que l&#8217;on souhaite &#233;crire une fonction <code class="sourceCode python">bissextile</code> capable de dire si une ann&#233;e est bissextile ou non. En se renseignant sur <a href="https://fr.wikipedia.org/wiki/Ann&#233;e_bissextile">le sujet</a>, on apprend qu&#8217;une ann&#233;e est bissextile si :</p>
@@ -955,7 +1075,7 @@ y <span class="op">=</span> <span class="bu">int</span>(x) <span class="op">+</s
 <span class="bu">print</span>(bissextile(<span class="dv">2000</span>))  <span class="co"># True car divisible par 400</span>
 <span class="bu">print</span>(bissextile(<span class="dv">1999</span>))  <span class="co"># False car divisible ni par 4 ni par 100</span></code></pre></div>
 <p>On peut alors v&#233;rifier que le comportement de notre fonction <code class="sourceCode python">bissextile</code> est bien conforme &#224; ce qui est attendu.</p>
-<h2 id="le-d&#233;veloppement-pilot&#233;-par-les-tests"><span class="header-section-number">7.3</span> Le d&#233;veloppement pilot&#233; par les tests</h2>
+<h2 id="le-d&#233;veloppement-pilot&#233;-par-les-tests"><span class="header-section-number">8.3</span> Le d&#233;veloppement pilot&#233; par les tests</h2>
 <p>Le d&#233;veloppement pilot&#233; par les tests (ou <em>Test-Driven Development</em>) est une technique de programmation qui consiste &#224; r&#233;diger les tests unitaires de votre programme avant m&#234;me de r&#233;diger le programme lui-m&#234;me.</p>
 <p>L&#8217;int&#233;r&#234;t de cette fa&#231;on de faire est qu&#8217;elle vous obligera &#224; r&#233;fl&#233;chir aux diff&#233;rents cas d&#8217;utilisation d&#8217;une fonction avant de commencer &#224; la coder. De plus, une fois ces diff&#233;rents cas identifi&#233;s, il est probable que la structure globale de la fonction &#224; coder vous apparaisse plus clairement.</p>
 <p>Si l&#8217;on reprend l&#8217;exemple de la fonction <code class="sourceCode python">bissextile</code> cit&#233;e plus haut, on voit assez clairement qu&#8217;une fois que l&#8217;on a r&#233;dig&#233; l&#8217;ensemble de tests, la fonction sera simple &#224; coder et reprendra les diff&#233;rents cas consid&#233;r&#233;s pour les tests:</p>
@@ -967,7 +1087,7 @@ y <span class="op">=</span> <span class="bu">int</span>(x) <span class="op">+</s
     <span class="cf">else</span>:
         <span class="cf">return</span> <span class="va">False</span></code></pre></div>
 <p><strong>Exercice 7.1</strong> En utilisant les m&#233;thodes de d&#233;veloppement pr&#233;conis&#233;es dans ce chapitre, r&#233;digez le code et les tests d&#8217;un programme permettant de d&#233;terminer le lendemain d&#8217;une date fournie sous la forme de trois entiers (jour, mois, ann&#233;e).</p>
-<h1 id="conclusion"><span class="header-section-number">8</span> Conclusion</h1>
+<h1 id="conclusion"><span class="header-section-number">9</span> Conclusion</h1>
 <p>Dans ce document, nous avons abord&#233; les principes de base de la programmation en Python, tels qu&#8217;enseign&#233;s &#224; des &#233;tudiants non informaticiens de niveau Licence 2 (&#224; l&#8217;Universit&#233; de Rennes 2).</p>
 <p>Comme indiqu&#233; en introduction, ce document se veut &#233;volutif. N&#8217;h&#233;sitez donc pas &#224; faire vos remarques &#224; son auteur dont vous trouverez le contact sur <a href="http://people.irisa.fr/Romain.Tavenard/">sa page web</a>.</p>
 </body>

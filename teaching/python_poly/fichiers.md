@@ -75,6 +75,78 @@ for ligne in csv.reader(fp, delimiter=";"):
 On remarque ici que, contrairement au cas de fichiers textuels génériques, la variable de boucle `ligne`{.python} n'est plus une chaîne de caractères mais une liste de chaînes de caractères.
 Les éléments de cette liste sont les cellules du tableau représenté par le fichier CSV.
 
+### Fichiers _JavaScript Object Notation_ (JSON)
+
+Les fichiers _JavaScript Object Notation_ (JSON) permettent de stocker des données structurées (par exemple avec une organisation hiérarchique). Un document JSON s'apparente à un dictionnaire en Python (à la nuance près que les clés d'un document JSON sont forcément des chaînes de caractères).
+Voici un exemple de document JSON :
+```json
+{
+    "num_etudiant": "21300000",
+    "notes": [12, 5, 14],
+    "date_de_naissance": {
+        "jour": 1,
+        "mois": 1,
+        "annee": 1995
+    }
+}
+```
+
+En Python, pour lire de tels fichiers, on dispose du module `json` qui contient une fonction `load` :
+```python
+import json
+
+nom_fichier = "..." # À remplacer par le chemin vers le fichier :)
+
+# Contenu supposé du fichier :
+# {
+#    "num_etudiant": "21300000",
+#    "notes": [12, 5, 14],
+#    "date_de_naissance": {
+#        "jour": 1,
+#        "mois": 1,
+#        "annee": 1995
+#    }
+# }
+
+fp = open(nom_fichier, "r", encoding="utf-8")
+d = json.load(fp)
+print(d)
+# [Sortie] {"notes": [12, 5, 14], "date_de_naissance":
+# [Suite ]  {"jour": 1, "annee": 1995, "mois": 1},
+# [Suite ]  "num_etudiant": "21300000"}
+```
+
+Il est à noter qu'un fichier JSON peut également contenir une liste de dictionnaires, comme dans l'exemple suivant :
+```json
+[{
+    "num_etudiant": "21300000",
+    "notes": [12, 5, 14],
+    "date_de_naissance": {
+        "jour": 1,
+        "mois": 1,
+        "annee": 1995
+    }
+},
+{
+    "num_etudiant": "21300001",
+    "notes": [14],
+    "date_de_naissance": {
+        "jour": 1,
+        "mois": 6,
+        "annee": 1989
+    }
+}]
+```
+Dans ce cas, `json.load` retournera une liste de dictionnaires au lieu d'un dictionnaire, bien évidemment.
+
+Enfin, si l'on a stocké dans une variable une chaîne de caractères dont le contenu correspond à un document JSON, on peut également la transformer en dictionnaire (ou en liste de dictionnaires) à l'aide de la fonction `json.loads` (attention au "s" final) :
+```python
+ch = '{"num_etudiant": "21300000",  "notes": [12, 5, 14]}'
+d = json.loads(ch)  # loads : load (from) string
+print(d)
+# [Sortie] {"notes": [12, 5, 14], "num_etudiant": "21300000"}
+```
+
 ## Écriture de fichiers textuels
 
 Ce que nous apellons écriture de fichiers textuels en Python consiste à copier le contenu d'une (ou plusieurs) chaîne(s) de caractères dans un fichier.

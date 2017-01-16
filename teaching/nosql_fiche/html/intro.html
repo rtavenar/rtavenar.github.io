@@ -23,7 +23,7 @@
 <p>Si un message d&#8217;erreur s&#8217;affiche, c&#8217;est probablement parce que, pour une raison ou pour une autre, vous n&#8217;avez pas le droit d&#8217;&#233;crire dans le r&#233;pertoire <code>/export/db/</code>. Dans ce cas, vous pouvez cr&#233;er un sous-r&#233;pertoire &#224; utiliser pour votre serveur <code>mongodb</code> :</p>
 <pre><code>mkdir /export/db/monnomdelogin</code></pre>
 <p>Et le lancement de votre serveur s&#8217;effectue alors via la commande :</p>
-<pre><code>mongod --port 1234 --dbpath /export/db/</code></pre>
+<pre><code>mongod --port 1234 --dbpath /export/db/monnomdelogin</code></pre>
 <h1 id="fen&#234;tre-client"><span class="header-section-number">2</span> Fen&#234;tre &#8220;client&#8221;</h1>
 <p>Une fois le serveur lanc&#233;, vous pouvez d&#233;marrer, <strong>dans un autre terminal</strong>, un client <code>mongodb</code> :</p>
 <pre><code>mongo localhost:1234</code></pre>

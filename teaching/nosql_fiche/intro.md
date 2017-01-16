@@ -25,7 +25,7 @@ mkdir /export/db/monnomdelogin
 Et le lancement de votre serveur s'effectue alors via la commande :
 
 ```
-mongod --port 1234 --dbpath /export/db/
+mongod --port 1234 --dbpath /export/db/monnomdelogin
 ```
 
 # Fenêtre "client"

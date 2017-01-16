@@ -186,6 +186,8 @@ td.lineNumbers {
     width: 40%;
 }
 
+img[alt=fullwidth] { width: 100%; }
+
 /*div#TOC, div#header {
 	position: fixed;
 	background-color: #FFFFFF;

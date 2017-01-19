@@ -266,7 +266,8 @@ nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>)</code></pre></div>
     secondes <span class="op">=</span> d[<span class="st">&quot;routes&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;legs&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;duration&quot;</span>][<span class="st">&quot;value&quot;</span>]
     <span class="cf">return</span> secondes
 
-<span class="bu">print</span>(temps_trajet(<span class="st">&quot;Rennes&quot;</span>, <span class="st">&quot;Saint-Malo&quot;</span>, <span class="st">&quot;...&quot;</span>)) <span class="co"># Utilisez votre cl&#233; Google Maps API</span></code></pre></div>
+<span class="co"># Utilisez votre cl&#233; Google Maps API</span>
+<span class="bu">print</span>(temps_trajet(<span class="st">&quot;Rennes&quot;</span>, <span class="st">&quot;Saint-Malo&quot;</span>, <span class="st">&quot;...&quot;</span>))</code></pre></div>
 <h3 id="exercice-8.1">Exercice 8.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bissextile(annee):
     <span class="cf">if</span> annee <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> annee <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:

@@ -52,8 +52,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h4 class="subtitle">Corrig&#233; de TD pour un cours dispens&#233; &#224;&#160; l&#8217;universit&#233; de Rennes 2</h4>
 <h2 class="author">Romain Tavenard</h2>
 </div>
-<h1 id="avant-propos"><span class="header-section-number">1</span> Avant-propos</h1>
-<p>Les bases de donn&#233;es utilis&#233;es ici sont les m&#234;mes que celles utilis&#233;es lors du TD2. Si besoin, pensez &#224;&#160; les recharger sur le serveur.</p>
+<h1 id="chargement-des-bases-food-et-discours"><span class="header-section-number">1</span> Chargement des bases <code>food</code> et <code>discours</code></h1>
+<p>Chargez les bases <code>food</code> (nouvelle version) et <code>discours</code> disponibles sous forme d&#8217;archive zip (que vous pourrez extraire dans le r&#233;pertoire <code>bdd_json_bson/</code>) sur CURSUS &#224; l&#8217;aide des commandes suivantes :</p>
+<pre><code>mongorestore --host host_name:port_num -d food2 /chemin/vers/food/
+mongorestore --host host_name:port_num -d discours /chemin/vers/discours/</code></pre>
 <h1 id="requ&#234;tes-textuelles"><span class="header-section-number">2</span> Requ&#234;tes textuelles</h1>
 <p>Lorsque l&#8217;on souhaite interroger des champs textuels, il existe, en plus des outils pr&#233;c&#233;demment introduits, deux m&#233;thodes sp&#233;cifiques :</p>
 <ol style="list-style-type: decimal">

@@ -6,9 +6,13 @@ author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
-# Avant-propos
+# Chargement des bases `food` et `discours`
 
-Les bases de données utilisées ici sont les mêmes que celles utilisées lors du TD2. Si besoin, pensez à  les recharger sur le serveur.
+Chargez les bases `food` (nouvelle version) et `discours` disponibles sous forme d’archive zip (que vous pourrez extraire dans le répertoire `bdd_json_bson/`) sur CURSUS à l’aide des commandes suivantes :
+```
+mongorestore --host host_name:port_num -d food2 /chemin/vers/food/
+mongorestore --host host_name:port_num -d discours /chemin/vers/discours/
+```
 
 # Requêtes textuelles
 Lorsque l'on souhaite interroger des champs textuels, il existe, en plus des outils précédemment introduits, deux méthodes spécifiques :

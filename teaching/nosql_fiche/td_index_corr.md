@@ -102,7 +102,7 @@ Liens utiles :
 * <http://docs.mongodb.org/master/core/index-text/>
 * <http://docs.mongodb.org/master/core/index-single/>
 
-10. Récupérez le fichier `NYfood_formatted_2.json` sur CURSUS. Importez le sous la forme d'une nouvelle collection dans une nouvelle base et créez sur cette collection quatre index :
+10. Réimportez le fichier `NYfood.json` dans une nouvelle collection d'une nouvelle base. Créez sur cette collection quatre index :
 
 * un index géospatial sur la localisation des restaurants ;
 * un index textuel couvrant tous les champs textuels de la collection ;

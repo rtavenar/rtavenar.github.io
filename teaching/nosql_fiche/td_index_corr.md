@@ -50,7 +50,7 @@ MongoDB permet d'obtenir un certain nombre d'informations sur le déroulement d'
 
 Le nombre de documents parcourus a chuté : une fois un premier document trouvé, la requête s'arrête.
 
-4. Répétez encore cette opération en cherchant maintenant l'utilisateur `"username499999"`{.javascript}. Que remarquez-vous ?
+4. Répétez encore cette opération en cherchant maintenant l'utilisateur `"user499999"`{.javascript}. Que remarquez-vous ?
 
 Dans ce cas, il faut parcourir tous les documents avant de finir par trouver le bon.
 

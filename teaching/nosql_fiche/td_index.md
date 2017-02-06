@@ -35,7 +35,7 @@ MongoDB permet d'obtenir un certain nombre d'informations sur le déroulement d'
 
 3. Même chose en ne demandant de retourner qu'un utilisateur. Que remarquez-vous ?
 
-4. Répétez encore cette opération en cherchant maintenant l'utilisateur `"username499999"`{.javascript}. Que remarquez-vous ?
+4. Répétez encore cette opération en cherchant maintenant l'utilisateur `"user499999"`{.javascript}. Que remarquez-vous ?
 
 # Avec un index
 

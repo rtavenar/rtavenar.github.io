@@ -38,7 +38,9 @@ pre, form, fieldset, input, textarea, blockquote, th, td, section, figure {
 }
 
 pre {
+    font-family: Consolas,monospace;
 	white-space: pre-wrap;
+    font-size: .8em;
 	border: 1px solid;
 }
 

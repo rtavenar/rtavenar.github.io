@@ -11,7 +11,7 @@ function GetAjaxObject() {
     }
     return xmlHttp;
 }
-var blacklist=[519490, 662905, 1254455];
+var blacklist=[519490, 662905, 1254455, 916970];
 var idhal='rtavenar';
 var num_paper=0;
 var header_pub = "<p>This publication list is generated automatically from my <a href=\"https://halshs.archives-ouvertes.fr/index/index\">HAL</a> record. You can also have a look at my <a href=\"http://scholar.google.com/citations?user=wn1XFWMAAAAJ&amp;hl=fr\">Google Scholar Profile</a> if you prefer.</p>";
@@ -42,11 +42,8 @@ var hals={
                 return'';
             }
             s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
-            if(typeof doc.uri_s=='undefined'){
-                s+='<span class="doc_title">'+doc.title_s[doc.title_s.length-1]+'</span>'+'. ';
-            } else {
-                s+='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
-            }
+            s += titleWithLink(doc);
+
             s+='<span class="doc_booktitle">'+'In '+doc.journalTitle_s+'</span>';var s_='';
             if(typeof doc.volume_s!='undefined'&&doc.volume_s!='')
                 s_+=', vol. '+doc.volume_s;
@@ -79,11 +76,7 @@ var hals={
                 return'';
             }
             s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
-            if(typeof doc.uri_s=='undefined'){
-                s+='<span class="doc_title">'+doc.title_s[doc.title_s.length-1]+'</span>'+'. ';
-            } else {
-                s+='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
-            }
+            s += titleWithLink(doc);
             s+='<span class="doc_booktitle">'+'In Proceedings of the '+doc.conferenceTitle_s+'</span>';
             if(typeof doc.city_s!='undefined'&&typeof doc.country_s!='undefined'){
                 s+=', ';
@@ -102,11 +95,7 @@ var hals={
                 return'';
             }
             s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
-            if(typeof doc.uri_s=='undefined'){
-                s+='<span class="doc_title">'+doc.title_s[doc.title_s.length-1]+'</span>'+'. ';
-            } else {
-                s+='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
-            }
+            s += titleWithLink(doc);
             s+='<span class="doc_booktitle">'+'In '+doc.bookTitle_s+'</span>';
             if(typeof doc.city_s!='undefined'&&typeof doc.country_s!='undefined'){
                 s+=', ';
@@ -125,11 +114,7 @@ var hals={
                 return'';
             }
             s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
-            if(typeof doc.uri_s=='undefined'){
-                s+='<span class="doc_title">'+doc.title_s[doc.title_s.length-1]+'</span>'+'. ';
-            } else {
-                s+='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
-            }
+            s += titleWithLink(doc);
             if(typeof doc.number_s!='undefined'&&doc.number_s.length>0){
                 s+='<span class="doc_booktitle">Report '+doc.number_s[0].split(';')[0];
                 if(typeof doc.authorityInstitution_s!='undefined')
@@ -149,11 +134,7 @@ var hals={
         }
         if(doc.docType_s=='THESE'||doc.docType_s=='HDR'){
             s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
-            if(typeof doc.uri_s=='undefined'){
-                s+='<span class="doc_title">'+doc.title_s[doc.title_s.length-1]+'</span>'+'. ';
-            } else {
-                s+='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
-            }
+            s += titleWithLink(doc);
             //s+=clean(doc.docType_s,doctypes)+'. ';
             s+=doc.authorityInstitution_s.join(' ');
             if(typeof doc.labStructAcronym_s!='undefined'){
@@ -176,11 +157,7 @@ var hals={
                 return'';
             }
             s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
-            if(typeof doc.uri_s=='undefined'){
-                s+='<span class="doc_title">'+doc.title_s[doc.title_s.length-1]+'</span>'+'. ';
-            }else{
-                s+='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
-            }
+            s += titleWithLink(doc);
             if(typeof doc.number_s!='undefined'&&doc.number_s.length>0){
                 s+='<span class="doc_booktitle">Patent <a class="doc_links_hal" target="_blank" href="https://www.google.com/patents/'+doc.number_s[0].split(';')[0]+'">'+doc.number_s[0].split(';')[0]+'</a>';
                 if(typeof doc.country_s!='undefined'){
@@ -243,6 +220,17 @@ var hals={
     function ifndef(x,val){
         return(typeof x=='undefined')?val:x;
     }
+    function titleWithLink(doc) {
+        s = "";
+        if(typeof doc.fileMain_s != 'undefined') {
+            s +='<span class="doc_title"><a class="doc_links_hal_pdf" target="_blank" href="'+doc.fileMain_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
+        } else if (typeof doc.uri_s=='undefined'){
+            s +='<span class="doc_title">'+doc.title_s[doc.title_s.length-1]+'</span>'+'. ';
+        } else {
+            s +='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
+        }
+        return s;
+    }
     function formatPublicationGroup(docs,group_key,header){
         var s=header;
         docs.sort(function(x,y){return 14*(y.producedDateY_i-x.producedDateY_i)+ifndef(y.producedDateM_i,13)-ifndef(x.producedDateM_i,13);});
@@ -284,7 +272,7 @@ var hals={
     };
     jQuery(document).ready(function(){fetchPublications("publications","producedDateY_i",[],header_pub);});
     jQuery(document).ready(function(){fetchPublications("ml_env","",[1343211, 1228397, 906292],"");});
-    jQuery(document).ready(function(){fetchPublications("ml_ts","",[1339007,1357973,1321327,916970],"");});
+    jQuery(document).ready(function(){fetchPublications("ml_ts","",[1339007,1357973,1321327,912512],"");});
     jQuery(document).ready(function(){fetchPublications("topic_models","",[872048, 906292],"");});
     jQuery(document).ready(function(){fetchPublications("ir","",[862176,567877,672897,639225,566883,601242,561797],"");});
     jQuery(document).ready(function(){fetchPublications("smartenv","",[1138500,1138508,1138512],"");});

@@ -201,7 +201,7 @@ var hals={
                         }
                     }
                 }else{
-                    document.getElementById(target_id).innerHTML='<span class="error">An error has occured.</span>';
+                    document.getElementById(target_id).innerHTML='<p><span class="error">An error has occured.</span></p>';
                 }
             }
         }

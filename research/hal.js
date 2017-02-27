@@ -41,7 +41,7 @@ var hals={
                 console.error('Missing fields in document '+doc.docid+' ('+doc.docType_s+')');
                 return'';
             }
-            s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
+            s += authors(doc);
             s += titleWithLink(doc);
 
             s+='<span class="doc_booktitle">'+'In '+doc.journalTitle_s+'</span>';var s_='';
@@ -75,7 +75,7 @@ var hals={
                 console.error('Missing fields in document '+doc.docid+' ('+doc.docType_s+')');
                 return'';
             }
-            s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
+            s += authors(doc);
             s += titleWithLink(doc);
             s+='<span class="doc_booktitle">'+'In Proceedings of the '+doc.conferenceTitle_s+'</span>';
             if(typeof doc.city_s!='undefined'&&typeof doc.country_s!='undefined'){
@@ -94,7 +94,7 @@ var hals={
                 console.error('Missing fields in document '+doc.docid+' ('+doc.docType_s+')');
                 return'';
             }
-            s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
+            s += authors(doc);
             s += titleWithLink(doc);
             s+='<span class="doc_booktitle">'+'In '+doc.bookTitle_s+'</span>';
             if(typeof doc.city_s!='undefined'&&typeof doc.country_s!='undefined'){
@@ -113,7 +113,7 @@ var hals={
                 console.error('Missing fields in document '+doc.docid+' ('+doc.docType_s+')');
                 return'';
             }
-            s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
+            s += authors(doc);
             s += titleWithLink(doc);
             if(typeof doc.number_s!='undefined'&&doc.number_s.length>0){
                 s+='<span class="doc_booktitle">Report '+doc.number_s[0].split(';')[0];
@@ -133,7 +133,7 @@ var hals={
             }
         }
         if(doc.docType_s=='THESE'||doc.docType_s=='HDR'){
-            s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
+            s += authors(doc);
             s += titleWithLink(doc);
             //s+=clean(doc.docType_s,doctypes)+'. ';
             s+=doc.authorityInstitution_s.join(' ');
@@ -156,7 +156,7 @@ var hals={
                 console.error('Missing fields in document '+doc.docid+' ('+doc.docType_s+')');
                 return'';
             }
-            s+='<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
+            s += authors(doc);
             s += titleWithLink(doc);
             if(typeof doc.number_s!='undefined'&&doc.number_s.length>0){
                 s+='<span class="doc_booktitle">Patent <a class="doc_links_hal" target="_blank" href="https://www.google.com/patents/'+doc.number_s[0].split(';')[0]+'">'+doc.number_s[0].split(';')[0]+'</a>';
@@ -220,6 +220,7 @@ var hals={
     function ifndef(x,val){
         return(typeof x=='undefined')?val:x;
     }
+
     function titleWithLink(doc) {
         s = "";
         if(typeof doc.fileMain_s != 'undefined') {
@@ -231,6 +232,12 @@ var hals={
         }
         return s;
     }
+
+    function authors(doc) {
+        s = '<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
+        return s;
+    }
+
     function formatPublicationGroup(docs,group_key,header){
         var s=header;
         docs.sort(function(x,y){return 14*(y.producedDateY_i-x.producedDateY_i)+ifndef(y.producedDateM_i,13)-ifndef(x.producedDateM_i,13);});

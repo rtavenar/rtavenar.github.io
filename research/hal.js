@@ -201,7 +201,7 @@ var hals={
                         }
                     }
                 }else{
-                    document.getElementById(target_id).innerHTML='<p><span class="error">An error has occured. Publications could not be retrieved from HAL. Check out my <a href=\"http://scholar.google.com/citations?user=wn1XFWMAAAAJ&amp;hl=fr\">Google Scholar Profile</a> instead.</span></p>';
+                    document.getElementById(target_id).innerHTML='<p><span class="error">An error has occured, publications could not be retrieved from HAL. Check out my <a href=\"http://scholar.google.com/citations?user=wn1XFWMAAAAJ&amp;hl=fr\">Google Scholar Profile</a> instead.</span></p>';
                 }
             }
         }

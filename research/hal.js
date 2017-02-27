@@ -44,7 +44,8 @@ var hals={
             s += authors(doc);
             s += titleWithLink(doc);
 
-            s+='<span class="doc_booktitle">'+'In '+doc.journalTitle_s+'</span>';var s_='';
+            s+='<span class="doc_booktitle">'+'In '+doc.journalTitle_s+'</span>';
+            var s_='';
             if(typeof doc.volume_s!='undefined'&&doc.volume_s!='')
                 s_+=', vol. '+doc.volume_s;
             else
@@ -60,12 +61,7 @@ var hals={
                     s_+=', p. '+doc.page_s;
             else
                 console.warn('Missing field (page) in document '+doc.docid+' ('+doc.title_s+')');
-            if(typeof doc.producedDateY_i!='undefined'){
-                s_+=', ';
-                if(typeof doc.producedDateM_i!='undefined')
-                    s_+=month[doc.producedDateM_i]+' ';
-            }
-            s_+=doc.producedDateY_i+'. ';
+            s_+=date(doc, ", ");
             s+=s_;
             if(typeof doc.journalPublisher_s!='undefined')
                 s+=clean(doc.journalPublisher_s,publishers)+'. ';
@@ -82,12 +78,7 @@ var hals={
                 s+=', ';
                 s+=doc.city_s+', '+clean(doc.country_s.toUpperCase(),countries);
             }
-            if(typeof doc.producedDateY_i!='undefined'){
-                s+=', ';
-                if(typeof doc.producedDateM_i!='undefined')
-                    s+=month[doc.producedDateM_i]+' ';
-                    s+=doc.producedDateY_i+'. ';
-            }
+            s += date(doc, ", ");
         }
         if(doc.docType_s=='COUV'){
             if(doc.authFullName_s.length<1||typeof doc.title_s=='undefined'){
@@ -101,12 +92,7 @@ var hals={
                 s+=', ';
                 s+=doc.city_s+', '+clean(doc.country_s.toUpperCase(),countries);
             }
-            if(typeof doc.producedDateY_i!='undefined'){
-                s+=', ';
-                if(typeof doc.producedDateM_i!='undefined')
-                    s+=month[doc.producedDateM_i]+' ';
-                    s+=doc.producedDateY_i+'. ';
-            }
+            s += date(doc, ", ");
         }
         if(doc.docType_s=='REPORT' || doc.docType_s=='UNDEFINED'){
             if(doc.authFullName_s.length<1||typeof doc.title_s=='undefined'){
@@ -126,11 +112,7 @@ var hals={
                     s+='pp. '+doc.page_s+'. ';
                 else
                     s+='p. '+doc.page_s+'. ';
-            if(typeof doc.producedDateY_i!='undefined'){
-                if(typeof doc.producedDateM_i!='undefined')
-                    s+=month[doc.producedDateM_i]+' ';
-                s+=doc.producedDateY_i+'. ';
-            }
+            s += date(doc, "");
         }
         if(doc.docType_s=='THESE'||doc.docType_s=='HDR'){
             s += authors(doc);
@@ -144,12 +126,8 @@ var hals={
                     s+=labStructName_s.replace(/(,)([A-Za-z0-9])/,'$1 $2');
                 }
             }
-            s+='. ';
-            if(typeof doc.defenseDateY_i!='undefined'){
-                if(typeof doc.defenseDateM_i!='undefined')
-                    s+=month[doc.defenseDateM_i]+' ';
-                    s+=doc.defenseDateY_i+'. ';
-                }
+            s += '. ';
+            s += date(doc, "");
         }
         if(doc.docType_s=='PATENT'){
             if(doc.authFullName_s.length<1||typeof doc.title_s=='undefined'){
@@ -165,11 +143,7 @@ var hals={
                 }
                 s+='</span>'+'. ';
             }
-            if(typeof doc.producedDateY_i!='undefined'){
-                if(typeof doc.producedDateM_i!='undefined')
-                    s+=month[doc.producedDateM_i]+' ';
-                s+=doc.producedDateY_i+'. ';
-            }
+            s += date(doc, "");
         }
         if(group_key!='docType_s'){
             if(typeof doc.doiId_s!='undefined'&&doc.doiId_s!=''){
@@ -235,6 +209,17 @@ var hals={
 
     function authors(doc) {
         s = '<span class="doc_authors">'+doc.authFullName_s.join(', ')+'. '+'</span>';
+        return s;
+    }
+
+    function date(doc, preffix) {
+        s = "";
+        if(typeof doc.producedDateY_i!='undefined'){
+            s += preffix;
+            if(typeof doc.producedDateM_i!='undefined')
+                s+=month[doc.producedDateM_i]+' ';
+            s+=doc.producedDateY_i+'. ';
+        }
         return s;
     }
 

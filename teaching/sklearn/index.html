@@ -1,67 +1,137 @@
-<html>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html><!--<![endif]-->
 	<head>
-        <title>Tutoriel scikit-learn (M2 Stats, Rennes 2)</title>
-        <link rel="stylesheet" href="../../css/md.css" type="text/css" />
-    </head>
-	<body>
-        <h1 style="margin-top: 0;">Tutoriel <code>scikit-learn</code> &agrave; destination des M2 Stats de l'Universit&eacute; de Rennes 2</h1>
-        <h2 style="margin-top: 0;">Liens vers les diff&eacute;rentes parties du tutoriel (en anglais)</h2>
-        <ol start="0">
-            <li>
-                <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/00_Introduction.ipynb">Introduction</a></span>
-                <br />
-                <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/00b_Scaling.ipynb">Bonus 1 : Standardisation des données</a></span>
-                <br />
-                <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/00c_CategoricalData.ipynb">Bonus 2 : Cas des variables cat&eacute;gorielles</a></span>
-            </li>
-            <li>
-                <span class="item-text">
-                    <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/01_SVM.ipynb">Classification supervis&eacute;e : SVM</a>
-                </span>
-            </li>
-            <li>
-                <span class="item-text">
-                    <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/02_RandomForests.ipynb">Classification supervis&eacute;e : Random Forest</a>
-                </span>
-            </li>
-            <li>
-                <span class="item-text">
-                    <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/03_KMeans.ipynb">Clustering : k-means</a>
-                </span>
-            </li>
-            <li>
-                <span class="item-text">
-                    <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/04_Regression_VariableSelection.ipynb">R&eacute;gression et s&eacute;lection de variable</a>
-                </span>
-            </li>
-            <li>
-                <span class="item-text">
-                    <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/05_PCA.ipynb">Analyse en Composantes Principales</a>
-                </span>
-            </li>
-            <li>
-                <span class="item-text">
-                    <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/06_LatentDirichletAllocation.ipynb">Latent Dirichlet Allocation</a>
-                </span>
-                <span class="item-link">
-                    [<a href="slides_lda.html">LDA en quelques diapos</a>]
-                </span>
-            </li>
-            <li>
-                <span class="item-text">
-                    S&eacute;lection de mod&egrave;le
-                </span>
-                <span class="item-link">
-                    [<a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/07_ModelSelection.ipynb">sklearn v0.18</a>]
-                    [<a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/07_ModelSelection_v0.17.ipynb">sklearn v0.17</a>]
-                </span>
-            </li>
-        </ol>
-        <h2>Code source</h2>
-        Pour t&eacute;l&eacute;charger le code source de ces &eacute;nonc&eacute;s, les modifier et
-    (&eacute;ventuellement) me proposer vos am&eacute;liorations, vous pouvez utiliser
-        <code>git</code> :
-        <pre>git clone https://github.com/rtavenar/rtavenar.github.io.git</pre>
+		<title>Enseignement |  Romain Tavenard</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<link rel='stylesheet' id='sds-google-web-font-css'  href='http://fonts.googleapis.com/css?family=Lato%3A400&#038;ver=4.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='socialize-based--css'  href='../../research/css/style.css' type='text/css' media='all' />
+		<script language="javascript" type="text/javascript">
+			function showHide(shID) {
+			   if (document.getElementById(shID)) {
+			      if (document.getElementById(shID).style.display != 'none') {
+			         document.getElementById(shID).style.display = 'none';
+			      } else {
+			         document.getElementById(shID).style.display = 'block';
+			      }
+			   }
+			}
+	</script>
+	</head>
+	<body lang="fr-FR" class="page page-template no-customize-support custom-background">
+		<!-- Header	-->
+		<header id="header" class="cf">
+			<div class="in">
+				<section class="logo-box logo-box-no-header-cta logo-box-full-width">
+					<div id="title-slogan">
+						<p id="title" class="site-title site-title-no-logo no-logo">Romain Tavenard</p>
+						<p id="slogan" class="slogan ">
+							Supports de cours<br />Université de Rennes 2
+						</p>
+					</div>
 
-    </body>
+					<nav class="primary-nav-container">
+					<ul id="primary-nav" class="primary-nav menu">
+						<li id="menu-item-2" class="menu-item">
+                            <a href="../index.html"><i class="fa fa-home fa-2x"></i><p class="menu-text">Accueil</p></a>
+                        </li>
+    						<li id="menu-item-2" class="menu-item">
+                                <a href="../python/index.html"><i class="fa fa-code fa-2x"></i><p class="menu-text">Programmation <br />(Python)</p></a>
+                            </li>
+                        <li id="menu-item-3" class="menu-item">
+                            <a href="../nosql/index.html"><i class="fa fa-database fa-2x"></i><p class="menu-text">BDD NoSQL <br />(MongoDB)</p></a>
+                        </li>
+                        <li id="menu-item-4" class="menu-item current-menu-item">
+                            <a href="index.html"><i class="fa fa-cogs fa-2x"></i><p class="menu-text">Machine learning <br />(sklearn)</p></a>
+                        </li>
+                        <li id="menu-item-5" class="menu-item">
+                            <a href="../research/index.html"><i class="fa fa-flask fa-2x"></i><p class="menu-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Recherche</p></a>
+                        </li>
+                    </ul>
+					</nav>
+				</section>
+			</div>
+		</header>
+		<div class="in">
+			<section>
+				<article class="content">
+					<section class="post">
+						<article class="post-content">
+                            <h2 style="margin-top: 0;">Tutoriel <code>scikit-learn</code> &agrave; destination des M2 Stats de l'Universit&eacute; de Rennes 2</h2>
+                            <ol start="0">
+                                <li>
+                                    <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/00_Introduction.ipynb">Introduction</a></span>
+                                    <br />
+                                    <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/00b_Scaling.ipynb">Bonus 1 : Standardisation des données</a></span>
+                                    <br />
+                                    <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/00c_CategoricalData.ipynb">Bonus 2 : Cas des variables cat&eacute;gorielles</a></span>
+                                </li>
+                                <li>
+                                    <span class="item-text">
+                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/01_SVM.ipynb">Classification supervis&eacute;e : SVM</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="item-text">
+                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/02_RandomForests.ipynb">Classification supervis&eacute;e : Random Forest</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="item-text">
+                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/03_KMeans.ipynb">Clustering : k-means</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="item-text">
+                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/04_Regression_VariableSelection.ipynb">R&eacute;gression et s&eacute;lection de variable</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="item-text">
+                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/05_PCA.ipynb">Analyse en Composantes Principales</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="item-text">
+                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/06_LatentDirichletAllocation.ipynb">Latent Dirichlet Allocation</a>
+                                    </span>
+                                    <span class="item-link">
+                                        [<a href="slides_lda.html">LDA en quelques diapos</a>]
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="item-text">
+                                        S&eacute;lection de mod&egrave;le
+                                    </span>
+                                    <span class="item-link">
+                                        [<a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/07_ModelSelection.ipynb">sklearn v0.18</a>]
+                                        [<a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/sklearn/notebooks/07_ModelSelection_v0.17.ipynb">sklearn v0.17</a>]
+                                    </span>
+                                </li>
+                            </ol>
+
+							<section class="clear"></section>
+
+						</article>
+					</section>
+				</article>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="in">
+				<section class="footer">
+					<p class="condensed">
+						This website uses a customized version of the Socialized Lite theme for Wordpress.
+					</p>
+				</section>
+			</div>
+		</footer>
+	</body>
 </html>

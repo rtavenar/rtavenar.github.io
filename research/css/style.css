@@ -424,7 +424,9 @@ h3.project {
     color: #3c639a;
 }
 
-
+span.item-link {
+    float: right;
+}
 
 
 @media only screen and (max-width : 1000px) {

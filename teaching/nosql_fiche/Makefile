@@ -1,4 +1,4 @@
-TARGETS=intro td_mongoshell td_mongoshell_corr td_reqsupp td_reqsupp_corr td_textgeo td_textgeo_corr td_index td_index_corr td_aggregate td_aggregate_corr
+TARGETS=intro td_mongoshell td_mongoshell_corr td_reqsupp td_reqsupp_corr td_textgeo td_textgeo_corr td_index td_index_corr td_aggregate td_aggregate_corr td_cud_corr td_cud
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

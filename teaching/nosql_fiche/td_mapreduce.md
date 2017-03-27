@@ -120,4 +120,4 @@ Proposez une requête qui permette de classer les liens selon ce critère.
 
 # Pour aller plus loin
 
-5. Supposons maintenant que nous ayons, dans une collection, des documents constitués de deux attributs : `"x"`{.haskell} et `"y"`{.haskell}. Proposez un moyen, dans le formalisme _Map Reduce_, de calculer le coefficient de régression linéaire $\hat{\beta}$ optimal au sens des moindres carrés. Vérifiez votre résultat en proposant une autre solution utilisant les opérateurs d'agrégation.
+5. Supposons maintenant que nous ayons, dans une collection, des documents constitués de deux attributs : `"x"`{.haskell} et `"y"`{.haskell} (_cf._ `reg.json`). Proposez un moyen, dans le formalisme _Map Reduce_, de calculer le coefficient de régression linéaire $\hat{\beta}$ optimal au sens des moindres carrés. Vérifiez votre résultat en proposant une autre solution utilisant les opérateurs d'agrégation.

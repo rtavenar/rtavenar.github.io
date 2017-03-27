@@ -246,5 +246,33 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">}</span>
 
 <span class="va">db</span>.<span class="va">links</span>.<span class="at">mapReduce</span>(map_tags<span class="op">,</span> reduce_tags<span class="op">,</span> <span class="st">&quot;output_tags&quot;</span>)</code></pre></div>
+<h1 id="pour-aller-plus-loin"><span class="header-section-number">3</span> Pour aller plus loin</h1>
+<ol start="5" style="list-style-type: decimal">
+<li>Supposons maintenant que nous ayons, dans une collection, des documents constitu&#233;s de deux attributs : <code class="sourceCode haskell"><span class="st">&quot;x&quot;</span></code> et <code class="sourceCode haskell"><span class="st">&quot;y&quot;</span></code> (<em>cf.</em> <code>reg.json</code>). Proposez un moyen, dans le formalisme <em>Map Reduce</em>, de calculer le coefficient de r&#233;gression lin&#233;aire <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>&#946;</mi><mo accent="true">^</mo></mover><annotation encoding="application/x-tex">\hat{\beta}</annotation></semantics></math> optimal au sens des moindres carr&#233;s. V&#233;rifiez votre r&#233;sultat en proposant une autre solution utilisant les op&#233;rateurs d&#8217;agr&#233;gation.</li>
+</ol>
+<p><strong>NB:</strong> vous pourrez utiliser pour cela l&#8217;argument <code>finalize</code> des <a href="https://docs.mongodb.com/manual/reference/method/db.collection.mapReduce/">options de <code>mapReduce</code></a> qui prend pour valeur une fonction <code>f</code> de la forme :</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">fuunction <span class="at">f</span>(cle<span class="op">,</span> document) <span class="op">{</span>
+    [...]
+    <span class="cf">return</span> document_modifi&#233;<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">map_reg</span>() <span class="op">{</span>
+    <span class="kw">var</span> xx <span class="op">=</span> <span class="kw">this</span>.<span class="at">x</span> <span class="op">*</span> <span class="kw">this</span>.<span class="at">x</span><span class="op">;</span>
+    <span class="kw">var</span> xy <span class="op">=</span> <span class="kw">this</span>.<span class="at">x</span> <span class="op">*</span> <span class="kw">this</span>.<span class="at">y</span><span class="op">;</span>
+    <span class="at">emit</span>(<span class="dv">0</span><span class="op">,</span> <span class="op">{</span><span class="st">&quot;xx&quot;</span><span class="op">:</span> xx<span class="op">,</span> <span class="st">&quot;xy&quot;</span><span class="op">:</span> xy<span class="op">}</span>)<span class="op">;</span>
+<span class="op">}</span>
+<span class="kw">function</span> <span class="at">reduce_reg</span>(key<span class="op">,</span> emits) <span class="op">{</span>
+    s_xx <span class="op">=</span> <span class="dv">0</span>.<span class="op">;</span>
+    s_xy <span class="op">=</span> <span class="dv">0</span>.<span class="op">;</span>
+    <span class="cf">for</span> (<span class="kw">var</span> i <span class="kw">in</span> emits) <span class="op">{</span>
+        s_xx <span class="op">+=</span> emits[i][<span class="st">&quot;xx&quot;</span>]<span class="op">;</span>
+        s_xy <span class="op">+=</span> emits[i][<span class="st">&quot;xy&quot;</span>]<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="cf">return</span> <span class="op">{</span><span class="st">&quot;xx&quot;</span><span class="op">:</span> s_xx<span class="op">,</span> <span class="st">&quot;xy&quot;</span><span class="op">:</span> s_xy<span class="op">};</span>
+<span class="op">}</span>
+<span class="kw">function</span> <span class="at">finalize_reg</span>(key<span class="op">,</span> doc_final) <span class="op">{</span>
+    <span class="cf">return</span> <span class="op">{</span><span class="st">&quot;beta&quot;</span><span class="op">:</span> <span class="va">doc_final</span>.<span class="at">xy</span> / <span class="va">doc_final</span>.<span class="at">xx</span><span class="op">};</span>
+<span class="op">}</span>
+
+<span class="va">db</span>.<span class="va">reg</span>.<span class="at">mapReduce</span>(map_reg<span class="op">,</span> reduce_reg<span class="op">,</span> <span class="op">{</span><span class="st">&quot;out&quot;</span><span class="op">:</span> <span class="st">&quot;output_reg&quot;</span><span class="op">,</span> <span class="st">&quot;finalize&quot;</span><span class="op">:</span> finalize_reg<span class="op">}</span>)</code></pre></div>
 </body>
 </html>

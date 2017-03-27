@@ -200,7 +200,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Supposons maintenant que nous ayons, dans une collection, des documents constitu&#233;s de deux attributs : <code class="sourceCode haskell"><span class="st">&quot;x&quot;</span></code> et <code class="sourceCode haskell"><span class="st">&quot;y&quot;</span></code> (<em>cf.</em> <code>reg.json</code>). Proposez un moyen, dans le formalisme <em>Map Reduce</em>, de calculer le coefficient de r&#233;gression lin&#233;aire <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>&#946;</mi><mo accent="true">^</mo></mover><annotation encoding="application/x-tex">\hat{\beta}</annotation></semantics></math> optimal au sens des moindres carr&#233;s. V&#233;rifiez votre r&#233;sultat en proposant une autre solution utilisant les op&#233;rateurs d&#8217;agr&#233;gation.</li>
 </ol>
 <p><strong>NB:</strong> vous pourrez utiliser pour cela l&#8217;argument <code>finalize</code> des <a href="https://docs.mongodb.com/manual/reference/method/db.collection.mapReduce/">options de <code>mapReduce</code></a> qui prend pour valeur une fonction <code>f</code> de la forme :</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">fuunction <span class="at">f</span>(cle<span class="op">,</span> document) <span class="op">{</span>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">f</span>(cle<span class="op">,</span> document) <span class="op">{</span>
     [...]
     <span class="cf">return</span> document_modifi&#233;<span class="op">;</span>
 <span class="op">}</span></code></pre></div>

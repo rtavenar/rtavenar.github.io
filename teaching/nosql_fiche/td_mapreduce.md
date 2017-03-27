@@ -125,7 +125,7 @@ Proposez une requête qui permette de classer les liens selon ce critère.
 **NB:** vous pourrez utiliser pour cela l'argument `finalize` des [options de `mapReduce`](https://docs.mongodb.com/manual/reference/method/db.collection.mapReduce/) qui prend pour valeur une fonction `f` de la forme :
 
 ```javascript
-fuunction f(cle, document) {
+function f(cle, document) {
     [...]
     return document_modifié;
 }

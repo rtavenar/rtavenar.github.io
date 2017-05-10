@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Romain Tavenard" />
+  <title>R&#233;seaux de neurones  (Notes de cours)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.min.js"></script>
+</head>
+<body onload="anchors.options = {visible: 'always'}; anchors.add();">
+<div id="header">
+<h1 class="title">R&#233;seaux de neurones <br />(Notes de cours)</h1>
+<div class="subtitle">Cours dispens&#233; &#224; l&#8217;universit&#233; de Rennes 2</div>
+<h2 class="author">Romain Tavenard</h2>
+</div>
+<div id="TOC">
+<h2>Table des mati&#232;res</h2>
+<ul>
+<li><a href="#pr&#233;ambule"><span class="toc-section-number">1</span> Pr&#233;ambule</a><ul>
+<li><a href="#contenu-du-cours"><span class="toc-section-number">1.1</span> Contenu du cours</a></li>
+</ul></li>
+<li><a href="#r&#233;gression-logistique-et-perceptron"><span class="toc-section-number">2</span> R&#233;gression logistique et perceptron</a><ul>
+<li><a href="#retour-sur-la-r&#233;gression-logistique"><span class="toc-section-number">2.1</span> Retour sur la r&#233;gression logistique</a></li>
+<li><a href="#le-perceptron-notations-et-repr&#233;sentation"><span class="toc-section-number">2.2</span> Le perceptron : notations et repr&#233;sentation</a><ul>
+<li><a href="#poids"><span class="toc-section-number">2.2.1</span> Poids</a></li>
+<li><a href="#fonction-dactivation"><span class="toc-section-number">2.2.2</span> Fonction d&#8217;activation</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#perceptron-multi-couches"><span class="toc-section-number">3</span> Perceptron multi-couches</a><ul>
+<li><a href="#cas-dun-r&#233;seau-de-neurones-&#224;-une-couche-cach&#233;e"><span class="toc-section-number">3.1</span> Cas d&#8217;un r&#233;seau de neurones &#224; une couche cach&#233;e</a><ul>
+<li><a href="#calcul-de-gradient"><span class="toc-section-number">3.1.1</span> Calcul de gradient</a></li>
+<li><a href="#visualisation-de-fronti&#232;res-apprises"><span class="toc-section-number">3.1.2</span> Visualisation de fronti&#232;res apprises</a></li>
+</ul></li>
+<li><a href="#cas-multi-couches"><span class="toc-section-number">3.2</span> Cas multi-couches</a><ul>
+<li><a href="#calcul-de-gradient-1"><span class="toc-section-number">3.2.1</span> Calcul de gradient</a></li>
+</ul></li>
+<li><a href="#quelques-consid&#233;rations-pratiques"><span class="toc-section-number">3.3</span> Quelques consid&#233;rations pratiques</a><ul>
+<li><a href="#initialisation-des-poids-du-r&#233;seau"><span class="toc-section-number">3.3.1</span> Initialisation des poids du r&#233;seau</a></li>
+<li><a href="#r&#233;gularisation"><span class="toc-section-number">3.3.2</span> R&#233;gularisation</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#r&#233;seaux-de-neurones-convolutionnels"><span class="toc-section-number">4</span> R&#233;seaux de neurones convolutionnels</a><ul>
+<li><a href="#motivation"><span class="toc-section-number">4.1</span> Motivation</a></li>
+<li><a href="#mise-en-oeuvre"><span class="toc-section-number">4.2</span> Mise en oeuvre</a></li>
+<li><a href="#apprentissage-par-transfert-et-fine-tuning"><span class="toc-section-number">4.3</span> Apprentissage par transfert et <em>fine-tuning</em></a></li>
+</ul></li>
+<li><a href="#mise-en-oeuvre-avec-tensorflow"><span class="toc-section-number">5</span> Mise en oeuvre avec <code>TensorFlow</code></a></li>
+</ul>
+</div>
+<h1 id="pr&#233;ambule"><span class="header-section-number">1</span> Pr&#233;ambule</h1>
+<p>Ce document est un ensemble de notes associ&#233;es au module de classification supervis&#233;e pour la deuxi&#232;me ann&#233;e de master de Statistiques de l&#8217;Universit&#233; de Rennes 2, et plus particuli&#232;rement la partie sur les r&#233;seaux de neurones. Il est distribu&#233; librement (sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> plus pr&#233;cis&#233;ment) et se veut &#233;volutif, n&#8217;h&#233;sitez donc pas &#224; faire vos remarques &#224; son auteur dont vous trouverez le contact sur <a href="http://rtavenar.github.io/">sa page web</a>.</p>
+<h2 id="contenu-du-cours"><span class="header-section-number">1.1</span> Contenu du cours</h2>
+<h1 id="r&#233;gression-logistique-et-perceptron"><span class="header-section-number">2</span> R&#233;gression logistique et perceptron</h1>
+<h2 id="retour-sur-la-r&#233;gression-logistique"><span class="header-section-number">2.1</span> Retour sur la r&#233;gression logistique</h2>
+<h2 id="le-perceptron-notations-et-repr&#233;sentation"><span class="header-section-number">2.2</span> Le perceptron : notations et repr&#233;sentation</h2>
+<h3 id="poids"><span class="header-section-number">2.2.1</span> Poids</h3>
+<h3 id="fonction-dactivation"><span class="header-section-number">2.2.2</span> Fonction d&#8217;activation</h3>
+<h1 id="perceptron-multi-couches"><span class="header-section-number">3</span> Perceptron multi-couches</h1>
+<p><a href="http://cs231n.github.io/neural-networks-1/" class="uri">http://cs231n.github.io/neural-networks-1/</a></p>
+<h2 id="cas-dun-r&#233;seau-de-neurones-&#224;-une-couche-cach&#233;e"><span class="header-section-number">3.1</span> Cas d&#8217;un r&#233;seau de neurones &#224; une couche cach&#233;e</h2>
+<h3 id="calcul-de-gradient"><span class="header-section-number">3.1.1</span> Calcul de gradient</h3>
+<h3 id="visualisation-de-fronti&#232;res-apprises"><span class="header-section-number">3.1.2</span> Visualisation de fronti&#232;res apprises</h3>
+<p>Exemple int&#233;ressant : <a href="http://cs231n.github.io/neural-networks-case-study/" class="uri">http://cs231n.github.io/neural-networks-case-study/</a></p>
+<h2 id="cas-multi-couches"><span class="header-section-number">3.2</span> Cas multi-couches</h2>
+<h3 id="calcul-de-gradient-1"><span class="header-section-number">3.2.1</span> Calcul de gradient</h3>
+<p><a href="http://cs231n.github.io/optimization-2/" class="uri">http://cs231n.github.io/optimization-2/</a></p>
+<h2 id="quelques-consid&#233;rations-pratiques"><span class="header-section-number">3.3</span> Quelques consid&#233;rations pratiques</h2>
+<h3 id="initialisation-des-poids-du-r&#233;seau"><span class="header-section-number">3.3.1</span> Initialisation des poids du r&#233;seau</h3>
+<h3 id="r&#233;gularisation"><span class="header-section-number">3.3.2</span> R&#233;gularisation</h3>
+<p><a href="http://cs231n.github.io/neural-networks-2/" class="uri">http://cs231n.github.io/neural-networks-2/</a></p>
+<h4 id="r&#233;gularisations-l1l2"><span class="header-section-number">3.3.2.1</span> R&#233;gularisations L1/L2</h4>
+<h4 id="utilisation-du-dropout"><span class="header-section-number">3.3.2.2</span> Utilisation du <em>dropout</em></h4>
+<h1 id="r&#233;seaux-de-neurones-convolutionnels"><span class="header-section-number">4</span> R&#233;seaux de neurones convolutionnels</h1>
+<h2 id="motivation"><span class="header-section-number">4.1</span> Motivation</h2>
+<h2 id="mise-en-oeuvre"><span class="header-section-number">4.2</span> Mise en oeuvre</h2>
+<p><a href="http://cs231n.github.io/convolutional-networks/" class="uri">http://cs231n.github.io/convolutional-networks/</a></p>
+<h2 id="apprentissage-par-transfert-et-fine-tuning"><span class="header-section-number">4.3</span> Apprentissage par transfert et <em>fine-tuning</em></h2>
+<p><a href="http://cs231n.github.io/transfer-learning/" class="uri">http://cs231n.github.io/transfer-learning/</a></p>
+<h1 id="mise-en-oeuvre-avec-tensorflow"><span class="header-section-number">5</span> Mise en oeuvre avec <code>TensorFlow</code></h1>
+<p>??</p>
+</body>
+</html>

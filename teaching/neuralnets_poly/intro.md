@@ -1,3 +1,5 @@
+[note]: # (8h CM, 8h TD - incluant sklearn SVM, bagging, forets)
+
 # Préambule
 
 Ce document est un ensemble de notes associées au module de classification supervisée pour la deuxième année de master de Statistiques de l'Université de Rennes 2, et plus particulièrement la partie sur les réseaux de neurones.

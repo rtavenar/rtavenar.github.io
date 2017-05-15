@@ -21,6 +21,15 @@ Exemple intéressant : <http://cs231n.github.io/neural-networks-case-study/>
 
 [comment]: # (Montrer pourquoi faire du backprop pour des raisons de complexité)
 
+### Visualisation
+
+Comprendre qu'on apprend une représentation (eg PCA améliorée) suivie d'un classifieur linéaire (logistic regression)
+
+* <https://rajarsheem.wordpress.com/2017/05/04/neural-networks-dynamics/>
+* <http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/>
+
+### Exemples adversaires
+
 ## Quelques considérations pratiques
 
 ### Initialisation des poids du réseau

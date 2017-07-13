@@ -154,7 +154,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 <h1 id="structures-de-donn&#233;es-et-structures-de-contr&#244;le"><span class="header-section-number">2</span> Structures de donn&#233;es et structures de contr&#244;le</h1>
 <p>Dans ce chapitre, on s&#8217;int&#233;resse aux &#233;l&#233;ments de base de la syntaxe Python : les structures de donn&#233;es d&#8217;une part et les structures de contr&#244;le d&#8217;autre part. Les structures de donn&#233;es vont permettre de stocker dans la m&#233;moire de l&#8217;ordinateur (dans le but de les traiter ensuite) des donn&#233;es tandis que les structures de contr&#244;le vont servir &#224; d&#233;finir nos interactions avec ces donn&#233;es.</p>
 <h2 id="variables"><span class="header-section-number">2.1</span> Variables</h2>
-<p>En Python, les donn&#233;es sont stock&#233;es dans des variables. On ne peut pas, comme c&#8217;est le cas dans d&#8217;autres langages, d&#233;finir de constante (qui sont, dans ces langages des moyen de stocker des valeurs n&#8217;ayant pas vocation &#224; &#234;tre modifi&#233;es au cours de l&#8217;ex&#233;cution du programme). Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette derni&#232;re pouvant varier au cours de l&#8217;ex&#233;cution du programme.</p>
+<p>En Python, les donn&#233;es sont stock&#233;es dans des variables. On ne peut pas, comme c&#8217;est le cas dans d&#8217;autres langages, d&#233;finir de constante (qui sont, dans ces langages, des moyens de stocker des valeurs n&#8217;ayant pas vocation &#224; &#234;tre modifi&#233;es au cours de l&#8217;ex&#233;cution du programme). Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette derni&#232;re pouvant varier au cours de l&#8217;ex&#233;cution du programme.</p>
 <h3 id="types-des-variables-python"><span class="header-section-number">2.1.1</span> Types des variables Python</h3>
 <p>Les types de base existant en Python sont les suivants :</p>
 <ul>
@@ -746,7 +746,7 @@ i <span class="op">=</span> <span class="bu">int</span>(s)
 <ul>
 <li><code class="sourceCode python">ch.count(sub)</code>: Retourne le nombre d&#8217;occurrences de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></li>
 <li><code class="sourceCode python">ch.endswith(suffix)</code>: Retourne <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> se termine par <code class="sourceCode python">suffix</code></li>
-<li><code class="sourceCode python">ch.startswith(prefix)</code>: Retourne <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> commence par <code class="sourceCode python">suffix</code></li>
+<li><code class="sourceCode python">ch.startswith(prefix)</code>: Retourne <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> commence par <code class="sourceCode python">prefix</code></li>
 <li><code class="sourceCode python">ch.find(sub)</code>: Retourne l&#8217;indice du d&#233;but de la premi&#232;re occurrence de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></li>
 <li><code class="sourceCode python">ch.rfind(sub)</code>: Retourne l&#8217;indice du d&#233;but de la derni&#232;re occurrence de <code class="sourceCode python">sub</code> dans <code class="sourceCode python">ch</code></li>
 <li><code class="sourceCode python">ch.islower()</code>: Retourne <code class="sourceCode python"><span class="va">True</span></code> si <code class="sourceCode python">ch</code> est constitu&#233;e uniquement de caract&#232;res minuscules</li>
@@ -755,7 +755,7 @@ i <span class="op">=</span> <span class="bu">int</span>(s)
 <li><code class="sourceCode python">ch.lower()</code>: Retourne la version minuscule de <code class="sourceCode python">ch</code></li>
 <li><code class="sourceCode python">ch.upper()</code>: Retourne la version majuscule de <code class="sourceCode python">ch</code></li>
 <li><code class="sourceCode python">ch.replace(old, new)</code>: Retourne une copie de <code class="sourceCode python">ch</code> dans laquelle la <em>premi&#232;re</em> occurrence de <code class="sourceCode python">old</code> a &#233;t&#233; remplac&#233;e par <code class="sourceCode python">new</code></li>
-<li><code class="sourceCode python">ch.split(sep<span class="op">=</span><span class="va">None</span>)</code>: Retourne une liste contenant des morceaux de <code class="sourceCode python">ch</code> d&#233;coup&#233;e &#224; chaque occurrence de <code class="sourceCode python">sep</code> (n&#8217;importe quel espace par d&#233;faut)</li>
+<li><code class="sourceCode python">ch.split(sep<span class="op">=</span><span class="va">None</span>)</code>: Retourne une liste contenant des morceaux de <code class="sourceCode python">ch</code> d&#233;coup&#233;e &#224; chaque occurrence de <code class="sourceCode python">sep</code> (par d&#233;faut, la cha&#238;ne est decoup&#233;e &#224; chaque espace ou retour &#224; la ligne)</li>
 <li><code class="sourceCode python">ch.strip()</code>: Retourne une version &#8220;nettoy&#233;e&#8221; de <code class="sourceCode python">ch</code> dans laquelle on a enlev&#233; tous les espaces en d&#233;but et en fin de cha&#238;ne</li>
 </ul>
 <p><strong>Exercice 4.1</strong> &#201;crivez une fonction qui prenne en argument deux cha&#238;nes de caract&#232;res <code class="sourceCode python">s</code> et <code class="sourceCode python">prefix</code> et retourne le nombre de mots de la cha&#238;ne <code class="sourceCode python">s</code> qui d&#233;butent par la cha&#238;ne <code class="sourceCode python">prefix</code>.</p>
@@ -930,16 +930,20 @@ d <span class="op">=</span> json.loads(ch)  <span class="co"># loads : load (fro
 <span class="bu">print</span>(d)
 <span class="co"># [Sortie] {&quot;notes&quot;: [12, 5, 14], &quot;num_etudiant&quot;: &quot;21300000&quot;}</span></code></pre></div>
 <h2 id="&#233;criture-de-fichiers-textuels"><span class="header-section-number">6.2</span> &#201;criture de fichiers textuels</h2>
-<p>Ce que nous apellons &#233;criture de fichiers textuels en Python consiste &#224; copier le contenu d&#8217;une (ou plusieurs) cha&#238;ne(s) de caract&#232;res dans un fichier. Cela implique deux &#233;tapes en Python :</p>
+<p>Ce que nous apellons &#233;criture de fichiers textuels en Python consiste &#224; copier le contenu d&#8217;une (ou plusieurs) cha&#238;ne(s) de caract&#232;res dans un fichier. Cela implique trois &#233;tapes en Python :</p>
 <ol style="list-style-type: decimal">
 <li>ouvrir le fichier en &#233;criture ;</li>
-<li>ajouter du contenu dans le fichier.</li>
+<li>ajouter du contenu dans le fichier ;</li>
+<li>fermer le fichier.</li>
 </ol>
 <p>La premi&#232;re &#233;tape d&#8217;ouverture du fichier en &#233;criture est commune &#224; tous les types de fichiers textuels. En supposant que le nom du fichier &#224; ouvrir est stock&#233; sous forme de cha&#238;ne de caract&#232;res dans la variable <code class="sourceCode python">nom_fichier</code>, le code suivant ouvre un fichier en &#233;criture avec l&#8217;encodage UTF-8 et stocke dans la variable <code class="sourceCode python">fp</code> un pointeur sur l&#8217;endroit o&#249; nous sommes rendus dans notre &#233;criture du fichier (pour l&#8217;instant, le d&#233;but du fichier) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>, newline<span class="op">=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</code></pre></div>
 <p>Le second argument (<code class="sourceCode haskell"><span class="st">&quot;w&quot;</span></code>) indique que le fichier doit &#234;tre ouvert en mode <em>write</em>, donc en &#233;criture.</p>
 <p>Si le fichier en question existait d&#233;j&#224;, son contenu est tout d&#8217;abord &#233;cras&#233; et on repart d&#8217;un fichier vide. Si l&#8217;on souhaite au contraire ajouter du texte &#224; la fin d&#8217;un fichier existant, on utilisera le mode <em>append</em>, symbolis&#233; par la lettre <code class="sourceCode haskell"><span class="st">&quot;a&quot;</span></code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;a&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>, newline<span class="op">=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</code></pre></div>
+<p>Une fois les instructions d&#8217;&#233;criture ex&#233;cut&#233;es (voir plus bas), on doit fermer le fichier pour s&#8217;assurer que l&#8217;&#233;criture sera effective :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp.close()</code></pre></div>
+<p>Il est &#224; noter que l&#8217;on peut, dans certains cas, se dispenser de fermer explicitement le fichier. Par exemple, si notre code est inclus dans un script Python, d&#232;s la fin de l&#8217;ex&#233;cution du script, tous les fichiers ouverts en &#233;criture par le script sont automatiquement ferm&#233;s.</p>
 <h3 id="fichiers-textuels-g&#233;n&#233;riques-1"><span class="header-section-number">6.2.1</span> Fichiers textuels g&#233;n&#233;riques</h3>
 <p>Pour ajouter du contenu &#224; un fichier point&#233; par la variable <code class="sourceCode python">fp</code>, il suffit ensuite d&#8217;utiliser la m&#233;thode <code class="sourceCode python">write</code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fp.write(<span class="st">&quot;La vie est belle</span><span class="ch">\n</span><span class="st">&quot;</span>)</code></pre></div>
@@ -951,9 +955,10 @@ d <span class="op">=</span> json.loads(ch)  <span class="co"># loads : load (fro
 nom_fichier <span class="op">=</span> <span class="st">&quot;...&quot;</span> <span class="co"># &#192; remplacer par le chemin vers le fichier :)</span>
 
 fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>, newline<span class="op">=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)
-csvfp <span class="op">=</span> csv.writer(fp, delimiter<span class="op">=</span><span class="st">&quot;;&quot;</span>):
+csvfp <span class="op">=</span> csv.writer(fp, delimiter<span class="op">=</span><span class="st">&quot;;&quot;</span>)
 csvfp.writerow([<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>])
 csvfp.writerow([<span class="dv">2</span>, <span class="dv">3</span>])
+fp.close()
 <span class="co"># Apr&#232;s cela, le fichier contiendra les lignes suivantes :</span>
 <span class="co"># 1;5;7</span>
 <span class="co"># 2;3</span></code></pre></div>
@@ -1011,7 +1016,7 @@ repertoire <span class="op">=</span> <span class="st">&quot;donnees&quot;</span>
 <pre><code>http://people.irisa.fr/Romain.Tavenard/index.php?page=3</code></pre>
 <p>Dans l&#8217;URL pr&#233;c&#233;dente, on distingue 4 sous parties :</p>
 <ul>
-<li><code>http://</code> indique le protocole &#224; utiliser pour effectuer la requ&#234;te (ici HTTP). Dans ce chapitre, nous ne nous int&#233;resserones qu&#8217;aux protocoles HTTP et HTTPS (version s&#233;curis&#233;e du protocole HTTP) ;</li>
+<li><code>http://</code> indique le protocole &#224; utiliser pour effectuer la requ&#234;te (ici HTTP). Dans ce chapitre, nous ne nous int&#233;resserons qu&#8217;aux protocoles HTTP et HTTPS (version s&#233;curis&#233;e du protocole HTTP) ;</li>
 <li><code>people.irisa.fr</code> est le nom de domaine du serveur (<em>ie.</em> de la machine) &#224; contacter pour obtenir une r&#233;ponse ;</li>
 <li><code>/Romain.Tavenard/index.php</code> indique le chemin du fichier &#224; r&#233;cup&#233;rer sur cette machine ;</li>
 <li><code>?page=3</code> indique que l&#8217;on doit passer la valeur <code>3</code> au param&#232;tre <code>page</code> lors de la requ&#234;te.</li>
@@ -1057,7 +1062,7 @@ TypeError: Can&#39;t convert &#39;int&#39; object to str implicitly</code></pre>
 <li>la seconde consiste &#224; assigner le r&#233;sultat de l&#8217;op&#233;ration &#224; la variable <code class="sourceCode python">y</code>.</li>
 </ul>
 <p>Nous avons vu dans ce document que Python savait effectuer l&#8217;op&#233;ration <code class="sourceCode python"><span class="op">+</span></code> avec des op&#233;randes de types vari&#233;s (nombre <code class="sourceCode python"><span class="op">+</span></code> nombre, liste <code class="sourceCode python"><span class="op">+</span></code> liste, cha&#238;ne de caract&#232;res <code class="sourceCode python"><span class="op">+</span></code> cha&#238;ne de caract&#232;res, et il en existe d&#8217;autres). Int&#233;ressons-nous ici au type des op&#233;randes consid&#233;r&#233;es. La variable <code class="sourceCode python">x</code> telle que d&#233;finie &#224; la ligne 1 est de type cha&#238;ne de caract&#232;res. La valeur <code class="sourceCode python"><span class="dv">2</span></code> est de type entier. Il se trouve que Python n&#8217;a pas d&#233;fini d&#8217;addition entre cha&#238;ne de caract&#232;res et entier et c&#8217;est pour cela que l&#8217;on obtient une erreur. Plus pr&#233;cis&#233;ment, l&#8217;interpr&#233;teur Python nous dit : &#8220;si je pouvais convertir la valeur enti&#232;re en cha&#238;ne de caract&#232;res &#224; la vol&#233;e, je pourrais faire l&#8217;op&#233;ration <code class="sourceCode python"><span class="op">+</span></code> qui serait alors une concat&#233;nation, mais je ne me permets pas de le faire tant que vous ne l&#8217;avez pas &#233;crit de mani&#232;re explicite&#8221;.</p>
-<p>Maintenant que nous avons compris le sens de ce <em>bug</em>, il nous reste &#224; le corriger. Si nous souhaitons faire la somme du nombre 10 (stock&#233; sous forme de cha&#238;ne de caract&#232;res dans la variable <code class="sourceCode python">x</code>) et de la valeur 2, nous &#233;crivons :</p>
+<p>Maintenant que nous avons compris le sens de ce <em>bug</em>, il nous reste &#224; le corriger. Si nous souhaitons faire la somme du nombre 12 (stock&#233; sous forme de cha&#238;ne de caract&#232;res dans la variable <code class="sourceCode python">x</code>) et de la valeur 2, nous &#233;crivons :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="st">&quot;12&quot;</span>
 y <span class="op">=</span> <span class="bu">int</span>(x) <span class="op">+</span> <span class="dv">2</span></code></pre></div>
 <p>et l&#8217;addition s&#8217;effectue alors correctement entre deux valeurs num&#233;riques.</p>

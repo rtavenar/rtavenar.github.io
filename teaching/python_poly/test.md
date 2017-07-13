@@ -41,7 +41,7 @@ Il se trouve que Python n'a pas défini d'addition entre chaîne de caractères 
 Plus précisément, l'interpréteur Python nous dit : "si je pouvais convertir la valeur entière en chaîne de caractères à la volée, je pourrais faire l'opération `+`{.python} qui serait alors une concaténation, mais je ne me permets pas de le faire tant que vous ne l'avez pas écrit de manière explicite".
 
 Maintenant que nous avons compris le sens de ce _bug_, il nous reste à le corriger.
-Si nous souhaitons faire la somme du nombre 10 (stocké sous forme de chaîne de caractères dans la variable `x`{.python}) et de la valeur 2, nous écrivons :
+Si nous souhaitons faire la somme du nombre 12 (stocké sous forme de chaîne de caractères dans la variable `x`{.python}) et de la valeur 2, nous écrivons :
 ```python
 x = "12"
 y = int(x) + 2

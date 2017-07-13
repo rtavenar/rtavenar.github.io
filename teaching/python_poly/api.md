@@ -37,7 +37,7 @@ http://people.irisa.fr/Romain.Tavenard/index.php?page=3
 
 Dans l'URL précédente, on distingue 4 sous parties :
 
-* `http://` indique le protocole à utiliser pour effectuer la requête (ici HTTP). Dans ce chapitre, nous ne nous intéresserones qu'aux protocoles HTTP et HTTPS (version sécurisée du protocole HTTP) ;
+* `http://` indique le protocole à utiliser pour effectuer la requête (ici HTTP). Dans ce chapitre, nous ne nous intéresserons qu'aux protocoles HTTP et HTTPS (version sécurisée du protocole HTTP) ;
 * `people.irisa.fr` est le nom de domaine du serveur (_ie._ de la machine) à contacter pour obtenir une réponse ;
 * `/Romain.Tavenard/index.php` indique le chemin du fichier à récupérer sur cette machine ;
 * `?page=3` indique que l'on doit passer la valeur `3` au paramètre `page` lors de la requête.

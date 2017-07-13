@@ -87,7 +87,7 @@ La liste de méthodes de la classe `str`{.python} qui suit n'est pas exhaustive,
 
 * `ch.count(sub)`{.python}: Retourne le nombre d'occurrences de `sub`{.python} dans `ch`{.python}
 * `ch.endswith(suffix)`{.python}: Retourne `True`{.python} si `ch`{.python} se termine par `suffix`{.python}
-* `ch.startswith(prefix)`{.python}: Retourne `True`{.python} si `ch`{.python} commence par `suffix`{.python}
+* `ch.startswith(prefix)`{.python}: Retourne `True`{.python} si `ch`{.python} commence par `prefix`{.python}
 * `ch.find(sub)`{.python}: Retourne l'indice du début de la première occurrence de `sub`{.python} dans `ch`{.python}
 * `ch.rfind(sub)`{.python}: Retourne l'indice du début de la dernière occurrence de `sub`{.python} dans `ch`{.python}
 * `ch.islower()`{.python}: Retourne `True`{.python} si `ch`{.python} est constituée uniquement de caractères minuscules
@@ -96,7 +96,7 @@ La liste de méthodes de la classe `str`{.python} qui suit n'est pas exhaustive,
 * `ch.lower()`{.python}: Retourne la version minuscule de `ch`{.python}
 * `ch.upper()`{.python}: Retourne la version majuscule de `ch`{.python}
 * `ch.replace(old, new)`{.python}: Retourne une copie de `ch`{.python} dans laquelle la _première_ occurrence de `old`{.python} a été remplacée par `new`{.python}
-* `ch.split(sep=None)`{.python}: Retourne une liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (n'importe quel espace par défaut)
+* `ch.split(sep=None)`{.python}: Retourne une liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (par défaut, la chaîne est decoupée à chaque espace ou retour à la ligne)
 * `ch.strip()`{.python}: Retourne une version "nettoyée" de `ch`{.python} dans laquelle on a enlevé tous les espaces en début et en fin de chaîne
 
 **Exercice 4.1**

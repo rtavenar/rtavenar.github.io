@@ -8,6 +8,7 @@
   <title>R&#233;seaux de neurones  (Notes de cours)</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="../../../css/md.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.min.js"></script>
 </head>
 <body onload="anchors.options = {visible: 'always'}; anchors.add();">
@@ -27,15 +28,16 @@
 <li><a href="#le-perceptron-notations-et-repr&#233;sentation"><span class="toc-section-number">2.2</span> Le perceptron : notations et repr&#233;sentation</a><ul>
 <li><a href="#poids"><span class="toc-section-number">2.2.1</span> Poids</a></li>
 <li><a href="#fonction-dactivation"><span class="toc-section-number">2.2.2</span> Fonction d&#8217;activation</a></li>
+<li><a href="#calcul-de-gradient"><span class="toc-section-number">2.2.3</span> Calcul de gradient</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#perceptron-multi-couches"><span class="toc-section-number">3</span> Perceptron multi-couches</a><ul>
 <li><a href="#cas-dun-r&#233;seau-de-neurones-&#224;-une-couche-cach&#233;e"><span class="toc-section-number">3.1</span> Cas d&#8217;un r&#233;seau de neurones &#224; une couche cach&#233;e</a><ul>
-<li><a href="#calcul-de-gradient"><span class="toc-section-number">3.1.1</span> Calcul de gradient</a></li>
+<li><a href="#calcul-de-gradient-1"><span class="toc-section-number">3.1.1</span> Calcul de gradient</a></li>
 <li><a href="#visualisation-de-fronti&#232;res-apprises"><span class="toc-section-number">3.1.2</span> Visualisation de fronti&#232;res apprises</a></li>
 </ul></li>
 <li><a href="#cas-multi-couches"><span class="toc-section-number">3.2</span> Cas multi-couches</a><ul>
-<li><a href="#calcul-de-gradient-1"><span class="toc-section-number">3.2.1</span> Calcul de gradient</a></li>
+<li><a href="#calcul-de-gradient-2"><span class="toc-section-number">3.2.1</span> Calcul de gradient</a></li>
 <li><a href="#visualisation"><span class="toc-section-number">3.2.2</span> Visualisation</a></li>
 <li><a href="#exemples-adversaires"><span class="toc-section-number">3.2.3</span> Exemples adversaires</a></li>
 </ul></li>
@@ -49,7 +51,7 @@
 <li><a href="#mise-en-oeuvre"><span class="toc-section-number">4.2</span> Mise en oeuvre</a></li>
 <li><a href="#apprentissage-par-transfert-et-fine-tuning"><span class="toc-section-number">4.3</span> Apprentissage par transfert et <em>fine-tuning</em></a></li>
 </ul></li>
-<li><a href="#mise-en-oeuvre-avec-tensorflow"><span class="toc-section-number">5</span> Mise en oeuvre avec <code>TensorFlow</code></a></li>
+<li><a href="#mise-en-oeuvre-avec-keras"><span class="toc-section-number">5</span> Mise en oeuvre avec <code>keras</code></a></li>
 </ul>
 </div>
 <h1 id="pr&#233;ambule"><span class="header-section-number">1</span> Pr&#233;ambule</h1>
@@ -57,17 +59,30 @@
 <h2 id="contenu-du-cours"><span class="header-section-number">1.1</span> Contenu du cours</h2>
 <h1 id="r&#233;gression-logistique-et-perceptron"><span class="header-section-number">2</span> R&#233;gression logistique et perceptron</h1>
 <h2 id="retour-sur-la-r&#233;gression-logistique"><span class="header-section-number">2.1</span> Retour sur la r&#233;gression logistique</h2>
+<p>Dans la suite, nous nous focaliserons sur le cas de la classification binaire, mais tout ce qui est discut&#233; dans ce document est bien entendu g&#233;n&#233;ralisable au cas multi-classes. Dans le cas de la r&#233;gression logistique, le mod&#232;le est le suivant :</p>
+<p><a name="eq:model_logistic_reg"></a><span style="display: inline-block; position: relative; width: 100%"><span class="math display">\[\log \frac{P(1|X)}{1-P(1|X)} = \beta_0 + \sum_j \beta_j x_j\]</span><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(1)</span></span> </p>
+<p>ce qui nous donne :</p>
+<p><a name="eq:proba_logistic_reg"></a><span style="display: inline-block; position: relative; width: 100%"><span class="math display">\[P(1|X) = \frac{1}{1 + e^{\beta_0 + \sum_j \beta_j x_j}}\]</span><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(2)</span></span> </p>
+<p>Cela nous am&#232;ne &#224; chercher &#224; maximiser la log-vraisemblance qui s&#8217;&#233;crit :</p>
+<p><a name="eq:loglikelihood_logistic_reg"></a><span style="display: inline-block; position: relative; width: 100%"><span class="math display">\[\ell(\beta) = \sum_i y_i P(1|X_i) + (1 - y_i) \log (1 - P(1|X_i))\]</span><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(3)</span></span> </p>
+<p>En r&#233;introduisant les formules (<a href="#eq:model_logistic_reg">1</a>) et (<a href="#eq:proba_logistic_reg">2</a>), on obtient la quantit&#233; suivante &#224; maximiser (ou son oppos&#233; &#224; minimiser, c&#8217;est &#233;gal) :</p>
+<p><a name="eq:loglikelihood_logistic_reg_final"></a><span style="display: inline-block; position: relative; width: 100%"><span class="math display">\[\ell(\beta) = \sum_i - \log (1 + e^{\beta_0 + \sum_j \beta_j x_{ij}}) + y_i (\beta_0 + \sum_j \beta_j x_{ij})\]</span><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(4)</span></span> </p>
+<p>Pour minimiser cette quantit&#233;, on va effectuer une descente de gradient, et on devra donc calculer <span class="math inline">\(\frac{\partial{\ell}}{\partial{\beta}}\)</span> :</p>
+<p><a name="eq:grad_logistic_reg_beta0"></a><span style="display: inline-block; position: relative; width: 100%"><span class="math display">\[\frac{\partial{\ell}}{\partial{\beta_0}} = \sum_i - \frac{e^{\beta_0 + \sum_j \beta_j x_{ij}}}{1 + e^{\beta_0 + \sum_j \beta_j x_{ij}}} + y_i\]</span><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(5)</span></span>  <a name="eq:grad_logistic_reg"></a><span style="display: inline-block; position: relative; width: 100%"><span class="math display">\[\forall j \geq 1, \frac{\partial{\ell}}{\partial{\beta_j}} = \sum_i - \frac{e^{\beta_0 + \sum_j \beta_j x_{ij}}}{1 + e^{\beta_0 + \sum_j \beta_j x_{ij}}}x_{ij} + y_i x_{ij}\]</span><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(6)</span></span> </p>
 <h2 id="le-perceptron-notations-et-repr&#233;sentation"><span class="header-section-number">2.2</span> Le perceptron : notations et repr&#233;sentation</h2>
 <h3 id="poids"><span class="header-section-number">2.2.1</span> Poids</h3>
 <h3 id="fonction-dactivation"><span class="header-section-number">2.2.2</span> Fonction d&#8217;activation</h3>
+<h3 id="calcul-de-gradient"><span class="header-section-number">2.2.3</span> Calcul de gradient</h3>
+<p>Blabla je parle de l&#8217;&#233;quation (<a href="#eq:description">7</a>) qui est super.</p>
+<p><a name="eq:description"></a><span style="display: inline-block; position: relative; width: 100%"><span class="math display">\[ y = mx + b \]</span><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(7)</span></span> </p>
 <h1 id="perceptron-multi-couches"><span class="header-section-number">3</span> Perceptron multi-couches</h1>
 <p><a href="http://cs231n.github.io/neural-networks-1/" class="uri">http://cs231n.github.io/neural-networks-1/</a></p>
 <h2 id="cas-dun-r&#233;seau-de-neurones-&#224;-une-couche-cach&#233;e"><span class="header-section-number">3.1</span> Cas d&#8217;un r&#233;seau de neurones &#224; une couche cach&#233;e</h2>
-<h3 id="calcul-de-gradient"><span class="header-section-number">3.1.1</span> Calcul de gradient</h3>
+<h3 id="calcul-de-gradient-1"><span class="header-section-number">3.1.1</span> Calcul de gradient</h3>
 <h3 id="visualisation-de-fronti&#232;res-apprises"><span class="header-section-number">3.1.2</span> Visualisation de fronti&#232;res apprises</h3>
 <p>Exemple int&#233;ressant : <a href="http://cs231n.github.io/neural-networks-case-study/" class="uri">http://cs231n.github.io/neural-networks-case-study/</a></p>
 <h2 id="cas-multi-couches"><span class="header-section-number">3.2</span> Cas multi-couches</h2>
-<h3 id="calcul-de-gradient-1"><span class="header-section-number">3.2.1</span> Calcul de gradient</h3>
+<h3 id="calcul-de-gradient-2"><span class="header-section-number">3.2.1</span> Calcul de gradient</h3>
 <p><a href="http://cs231n.github.io/optimization-2/" class="uri">http://cs231n.github.io/optimization-2/</a></p>
 <h3 id="visualisation"><span class="header-section-number">3.2.2</span> Visualisation</h3>
 <p>Comprendre qu&#8217;on apprend une repr&#233;sentation (eg PCA am&#233;lior&#233;e) suivie d&#8217;un classifieur lin&#233;aire (logistic regression)</p>
@@ -88,8 +103,7 @@
 <p><a href="http://cs231n.github.io/convolutional-networks/" class="uri">http://cs231n.github.io/convolutional-networks/</a></p>
 <h2 id="apprentissage-par-transfert-et-fine-tuning"><span class="header-section-number">4.3</span> Apprentissage par transfert et <em>fine-tuning</em></h2>
 <p><a href="http://cs231n.github.io/transfer-learning/" class="uri">http://cs231n.github.io/transfer-learning/</a></p>
-<h1 id="mise-en-oeuvre-avec-tensorflow"><span class="header-section-number">5</span> Mise en oeuvre avec <code>TensorFlow</code></h1>
-<p>&#201;ventuellement en les faisant utiliser <a href="https://github.com/rtavenar/tf_standardmodels" class="uri">https://github.com/rtavenar/tf_standardmodels</a>. Mais alors, ce n&#8217;est plus vraiment une mise en oeuvre avec TensorFlow car les mod&#232;les sont cod&#233;s pour eux.</p>
-<p>Sinon, pour un truc plus g&#233;n&#233;rique : <a href="Keras">https://keras.io</a>.</p>
+<h1 id="mise-en-oeuvre-avec-keras"><span class="header-section-number">5</span> Mise en oeuvre avec <code>keras</code></h1>
+<p><a href="Keras">https://keras.io</a>.</p>
 </body>
 </html>

@@ -150,10 +150,11 @@ print(d)
 ## Écriture de fichiers textuels
 
 Ce que nous apellons écriture de fichiers textuels en Python consiste à copier le contenu d'une (ou plusieurs) chaîne(s) de caractères dans un fichier.
-Cela implique deux étapes en Python :
+Cela implique trois étapes en Python :
 
 1. ouvrir le fichier en écriture ;
-2. ajouter du contenu dans le fichier.
+2. ajouter du contenu dans le fichier ;
+3. fermer le fichier.
 
 La première étape d'ouverture du fichier en écriture est commune à tous les types de fichiers textuels.
 En supposant que le nom du fichier à ouvrir est stocké sous forme de chaîne de caractères dans la variable `nom_fichier`{.python}, le code suivant ouvre un fichier en écriture avec l'encodage UTF-8 et stocke dans la variable `fp`{.python} un pointeur sur l'endroit où nous sommes rendus dans notre écriture du fichier (pour l'instant, le début du fichier) :
@@ -168,6 +169,15 @@ Si l'on souhaite au contraire ajouter du texte à la fin d'un fichier existant, 
 ```python
 fp = open(nom_fichier, "a", encoding="utf-8", newline="\n")
 ```
+
+Une fois les instructions d'écriture exécutées (voir plus bas), on doit fermer le fichier pour s'assurer que l'écriture sera effective :
+
+```python
+fp.close()
+```
+
+Il est à noter que l'on peut, dans certains cas, se dispenser de fermer explicitement le fichier.
+Par exemple, si notre code est inclus dans un script Python, dès la fin de l'exécution du script, tous les fichiers ouverts en écriture par le script sont automatiquement fermés.
 
 ### Fichiers textuels génériques
 
@@ -187,9 +197,10 @@ import csv
 nom_fichier = "..." # À remplacer par le chemin vers le fichier :)
 
 fp = open(nom_fichier, "w", encoding="utf-8", newline="\n")
-csvfp = csv.writer(fp, delimiter=";"):
+csvfp = csv.writer(fp, delimiter=";")
 csvfp.writerow([1, 5, 7])
 csvfp.writerow([2, 3])
+fp.close()
 # Après cela, le fichier contiendra les lignes suivantes :
 # 1;5;7
 # 2;3

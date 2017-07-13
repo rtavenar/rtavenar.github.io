@@ -6,7 +6,7 @@ Les structures de données vont permettre de stocker dans la mémoire de l'ordin
 ## Variables
 
 En Python, les données sont stockées dans des variables.
-On ne peut pas, comme c'est le cas dans d'autres langages, définir de constante (qui sont, dans ces langages des moyen de stocker des valeurs n'ayant pas vocation à être modifiées au cours de l'exécution du programme).
+On ne peut pas, comme c'est le cas dans d'autres langages, définir de constante (qui sont, dans ces langages, des moyens de stocker des valeurs n'ayant pas vocation à être modifiées au cours de l'exécution du programme).
 Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette dernière pouvant varier au cours de l'exécution du programme.
 
 ### Types des variables Python

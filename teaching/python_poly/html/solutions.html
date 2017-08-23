@@ -63,15 +63,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#exercice-2.4">Exercice 2.4</a></li>
 <li><a href="#exercice-3.1">Exercice 3.1</a></li>
 <li><a href="#exercice-3.2">Exercice 3.2</a></li>
-<li><a href="#exercice-3.3">Exercice 3.3</a></li>
 <li><a href="#exercice-4.1">Exercice 4.1</a></li>
 <li><a href="#exercice-4.2">Exercice 4.2</a></li>
+<li><a href="#exercice-4.3">Exercice 4.3</a></li>
 <li><a href="#exercice-5.1">Exercice 5.1</a></li>
 <li><a href="#exercice-5.2">Exercice 5.2</a></li>
 <li><a href="#exercice-6.1">Exercice 6.1</a></li>
 <li><a href="#exercice-6.2">Exercice 6.2</a></li>
 <li><a href="#exercice-7.1">Exercice 7.1</a></li>
+<li><a href="#exercice-7.2">Exercice 7.2</a></li>
 <li><a href="#exercice-8.1">Exercice 8.1</a></li>
+<li><a href="#exercice-9.1">Exercice 9.1</a></li>
 </ul>
 </div>
 <h3 id="exercice-2.1">Exercice 2.1</h3>
@@ -151,6 +153,34 @@ affiche_u_n()
 <span class="co"># [Sortie] ...</span></code></pre></div>
 <p>Ici, on a fix&#233; une valeur par d&#233;faut &#224; l&#8217;argument <code class="sourceCode python">u</code> correspondant &#224; l&#8217;initialisation de la suite, pour que l&#8217;appel initial se fasse comme pour la version it&#233;rative de la fonction (<code class="sourceCode python">affiche_u_n()</code>)</p>
 <h3 id="exercice-3.1">Exercice 3.1</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> datetime
+
+interv1_date1 <span class="op">=</span> datetime.datetime(<span class="dv">1920</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">32</span>)
+interv1_date2 <span class="op">=</span> datetime.datetime(<span class="dv">1920</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">53</span>)
+duree1 <span class="op">=</span> interv1_date2 <span class="op">-</span> interv1_date1
+
+interv2_date1 <span class="op">=</span> datetime.datetime(<span class="dv">1999</span>, <span class="dv">12</span>, <span class="dv">30</span>, <span class="dv">17</span>, <span class="dv">12</span>)
+interv2_date2 <span class="op">=</span> datetime.datetime(<span class="dv">2000</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">15</span>, <span class="dv">53</span>)
+duree2 <span class="op">=</span> interv2_date2 <span class="op">-</span> interv2_date1
+
+<span class="cf">if</span> duree1 <span class="op">&gt;</span> duree2:
+    <span class="bu">print</span>(<span class="st">&quot;Le premier intervalle est le plus grand.&quot;</span>)
+<span class="cf">else</span>:
+    <span class="bu">print</span>(<span class="st">&quot;Le second intervalle est le plus grand.&quot;</span>)</code></pre></div>
+<h3 id="exercice-3.2">Exercice 3.2</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> datetime
+
+duree_annee_normale <span class="op">=</span> <span class="dv">365</span> <span class="op">*</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>
+
+<span class="cf">for</span> annee <span class="op">in</span> <span class="bu">range</span>(<span class="dv">2010</span>, <span class="dv">2031</span>):
+    date_debut <span class="op">=</span> datetime.datetime(annee, <span class="dv">1</span>, <span class="dv">1</span>)
+    date_fin <span class="op">=</span> datetime.datetime(annee <span class="op">+</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)
+    duree_anne_courante <span class="op">=</span> date_fin <span class="op">-</span> date_debut
+    <span class="cf">if</span> duree_anne_courante.total_seconds() <span class="op">&gt;</span> duree_annee_normale:
+        <span class="bu">print</span>(annee, <span class="st">&quot;est bissextile&quot;</span>)
+    <span class="cf">else</span>:
+        <span class="bu">print</span>(annee, <span class="st">&quot;n&#39;est pas bissextile&quot;</span>)</code></pre></div>
+<h3 id="exercice-4.1">Exercice 4.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> argmax(liste):
     i_max <span class="op">=</span> <span class="va">None</span>
     <span class="co"># On initialise elem_max &#224; une valeur</span>
@@ -165,7 +195,7 @@ affiche_u_n()
 
 <span class="bu">print</span>(argmax([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>]))
 <span class="co"># [Sortie] 1</span></code></pre></div>
-<h3 id="exercice-3.2">Exercice 3.2</h3>
+<h3 id="exercice-4.2">Exercice 4.2</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> intersection(l1, l2):
     l_intersection <span class="op">=</span> []
     <span class="cf">for</span> elem <span class="op">in</span> l1:
@@ -175,7 +205,7 @@ affiche_u_n()
 
 <span class="bu">print</span>(intersection([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>], [<span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">6</span>]))
 <span class="co"># [Sortie] [6, 2]</span></code></pre></div>
-<h3 id="exercice-3.3">Exercice 3.3</h3>
+<h3 id="exercice-4.3">Exercice 4.3</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> union_sans_doublon(l1, l2):
     l_union <span class="op">=</span> []
     <span class="cf">for</span> elem <span class="op">in</span> l1 <span class="op">+</span> l2:
@@ -185,7 +215,7 @@ affiche_u_n()
 
 <span class="bu">print</span>(union_sans_doublon([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">4</span>], [<span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">2</span>]))
 <span class="co"># [Sortie] [1, 6, 2, 4, 7]</span></code></pre></div>
-<h3 id="exercice-4.1">Exercice 4.1</h3>
+<h3 id="exercice-5.1">Exercice 5.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> compte_prefix(s, prefix):
     compteur <span class="op">=</span> <span class="dv">0</span>
     <span class="cf">for</span> mot <span class="op">in</span> s.split():
@@ -195,7 +225,7 @@ affiche_u_n()
 
 <span class="bu">print</span>(compte_prefix(<span class="st">&quot;la vie est belle au bord du lac&quot;</span>, <span class="st">&quot;la&quot;</span>))
 <span class="co"># [Sortie] 2</span></code></pre></div>
-<h3 id="exercice-4.2">Exercice 4.2</h3>
+<h3 id="exercice-5.2">Exercice 5.2</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> compte_sans_casse(s, mot_cible):
     compteur <span class="op">=</span> <span class="dv">0</span>
     mot_cible_minuscules <span class="op">=</span> mot_cible.lower()
@@ -203,7 +233,7 @@ affiche_u_n()
         <span class="cf">if</span> mot.lower() <span class="op">==</span> mot_cible_minuscules:
             compteur <span class="op">+=</span> <span class="dv">1</span>
     <span class="cf">return</span> compteur</code></pre></div>
-<h3 id="exercice-5.1">Exercice 5.1</h3>
+<h3 id="exercice-6.1">Exercice 6.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> compte_occurrences(s):
     d <span class="op">=</span> {}
     <span class="cf">for</span> mot <span class="op">in</span> s.split():
@@ -212,7 +242,7 @@ affiche_u_n()
 
 <span class="bu">print</span>(compte_occurrences(<span class="st">&quot;la vie est belle c&#39;est la vie&quot;</span>))
 <span class="co"># [Sortie] {&quot;c&#39;est&quot;: 1, &#39;la&#39;: 2, &#39;belle&#39;: 1, &#39;est&#39;: 1, &#39;vie&#39;: 2}</span></code></pre></div>
-<h3 id="exercice-5.2">Exercice 5.2</h3>
+<h3 id="exercice-6.2">Exercice 6.2</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> somme_valeurs(d):
     s <span class="op">=</span> <span class="dv">0</span>
     <span class="cf">for</span> v <span class="op">in</span> d.values():
@@ -221,7 +251,7 @@ affiche_u_n()
 
 <span class="bu">print</span>(somme_valeurs({<span class="st">&quot;a&quot;</span>: <span class="dv">12</span>, <span class="st">&quot;zz&quot;</span>: <span class="fl">1.5</span>, <span class="st">&quot;AAA&quot;</span>: <span class="dv">0</span>}}))
 <span class="co"># [Sortie] 13.5</span></code></pre></div>
-<h3 id="exercice-6.1">Exercice 6.1</h3>
+<h3 id="exercice-7.1">Exercice 7.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
 
 <span class="kw">def</span> nb_lignes(nom_fichier):
@@ -239,7 +269,7 @@ affiche_u_n()
             <span class="bu">print</span>(nom_complet_fichier, n)
 
 nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>)</code></pre></div>
-<h3 id="exercice-6.2">Exercice 6.2</h3>
+<h3 id="exercice-7.2">Exercice 7.2</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
 
 <span class="kw">def</span> compte_fichiers(repertoire):
@@ -250,7 +280,7 @@ nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>)</code></pre></div>
     <span class="cf">return</span> compteur
 
 <span class="bu">print</span>(nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>))</code></pre></div>
-<h3 id="exercice-7.1">Exercice 7.1</h3>
+<h3 id="exercice-8.1">Exercice 8.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> urllib.request
 <span class="im">import</span> json
 
@@ -268,7 +298,7 @@ nb_lignes_repertoire(<span class="st">&quot;.&quot;</span>)</code></pre></div>
 
 <span class="co"># Utilisez votre cl&#233; Google Maps API</span>
 <span class="bu">print</span>(temps_trajet(<span class="st">&quot;Rennes&quot;</span>, <span class="st">&quot;Saint-Malo&quot;</span>, <span class="st">&quot;...&quot;</span>))</code></pre></div>
-<h3 id="exercice-8.1">Exercice 8.1</h3>
+<h3 id="exercice-9.1">Exercice 9.1</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bissextile(annee):
     <span class="cf">if</span> annee <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> annee <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:
         <span class="cf">return</span> <span class="va">True</span>

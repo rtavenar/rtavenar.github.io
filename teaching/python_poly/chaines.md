@@ -99,8 +99,8 @@ La liste de méthodes de la classe `str`{.python} qui suit n'est pas exhaustive,
 * `ch.split(sep=None)`{.python}: Retourne une liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (par défaut, la chaîne est decoupée à chaque espace ou retour à la ligne)
 * `ch.strip()`{.python}: Retourne une version "nettoyée" de `ch`{.python} dans laquelle on a enlevé tous les espaces en début et en fin de chaîne
 
-**Exercice 4.1**
+**Exercice 5.1**
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s`{.python} et `prefix`{.python} et retourne le nombre de mots de la chaîne `s`{.python} qui débutent par la chaîne `prefix`{.python}.
 
-**Exercice 4.2**
+**Exercice 5.2**
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s`{.python} et `mot_cible`{.python} et retourne le nombre d'occurrences du mot `mot_cible`{.python} dans la chaîne `s`{.python} en ne tenant pas compte de la casse.

@@ -15,7 +15,7 @@ Les types de base existant en Python sont les suivants :
 
 * `int`{.python} : entier ;
 * `float`{.python} : nombre à virgule ;
-* `complex`{.python} : nombre complexe (peu utilisé en pratique) ;
+* `complex`{.python} : nombre complexe (peu utilisé en pratique dans ce cours) ;
 * `str`{.python} : chaîne de caractères ;
 * `bool`{.python} : booléen (pouvant prendre les valeurs `True`{.python} ou `False`{.python}).
 

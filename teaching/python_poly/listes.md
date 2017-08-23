@@ -154,7 +154,7 @@ On a donc ici une boucle `for`{.python} pour laquelle, à chaque itération, on 
 
 Pour tous ces parcours de listes, il est conseillé d'utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemple, on pourra utiliser `i` ou `j` pour noter des indices, mais on préfèrera `elem` ou `val` pour désigner les éléments de la liste.
 
-**Exercice 3.1**
+**Exercice 4.1**
 Écrivez une fonction en Python qui permette de calculer l'argmax d'une liste, c'est-à-dire l'indice auquel est stockée la valeur maximale de la liste.
 
 ## Manipulations de listes
@@ -261,10 +261,10 @@ print(l2)
 # [Sortie] [2, 4, 5]
 ```
 
-**Exercice 3.2**
+**Exercice 4.2**
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'intersection des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans les deux listes).
 
-**Exercice 3.3**
+**Exercice 4.3**
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'union des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans au moins une des deux listes) sans doublon.
 
 ## Copie de liste

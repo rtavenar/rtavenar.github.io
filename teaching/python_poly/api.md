@@ -84,5 +84,5 @@ On le fait donc dans un deuxième temps à l'aide de la méthode `decode`.
 Une fois ces quelques lignes exécutées, la variable `contenu` contient une chaîne de caractères correspondant au document JSON retourné par l'API.
 Il suffit donc alors d'utiliser le module `json` pour transformer cette chaîne de caractères en données manipulables en Python.
 
-**Exercice 7.1**
+**Exercice 8.1**
 Écrivez une fonction qui prenne en entrée une clé d'API Google Maps et deux villes et retourne le temps de trajet (en secondes) prévu par Google Maps API pour aller d'une ville à l'autre.

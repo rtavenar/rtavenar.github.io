@@ -92,6 +92,42 @@ Ici, on a fixé une valeur par défaut à l'argument `u`{.python} correspondant 
 ### Exercice 3.1
 
 ```python
+import datetime
+
+interv1_date1 = datetime.datetime(1920, 1, 2, 7, 32)
+interv1_date2 = datetime.datetime(1920, 3, 4, 5, 53)
+duree1 = interv1_date2 - interv1_date1
+
+interv2_date1 = datetime.datetime(1999, 12, 30, 17, 12)
+interv2_date2 = datetime.datetime(2000, 3, 1, 15, 53)
+duree2 = interv2_date2 - interv2_date1
+
+if duree1 > duree2:
+    print("Le premier intervalle est le plus grand.")
+else:
+    print("Le second intervalle est le plus grand.")
+```
+
+### Exercice 3.2
+
+```python
+import datetime
+
+duree_annee_normale = 365 * 24 * 60 * 60
+
+for annee in range(2010, 2031):
+    date_debut = datetime.datetime(annee, 1, 1)
+    date_fin = datetime.datetime(annee + 1, 1, 1)
+    duree_anne_courante = date_fin - date_debut
+    if duree_anne_courante.total_seconds() > duree_annee_normale:
+        print(annee, "est bissextile")
+    else:
+        print(annee, "n'est pas bissextile")
+```
+
+### Exercice 4.1
+
+```python
 def argmax(liste):
     i_max = None
     # On initialise elem_max à une valeur
@@ -108,7 +144,7 @@ print(argmax([1, 6, 2, 4]))
 # [Sortie] 1
 ```
 
-### Exercice 3.2
+### Exercice 4.2
 
 ```python
 def intersection(l1, l2):
@@ -122,7 +158,7 @@ print(intersection([1, 6, 2, 4], [2, 7, 6]))
 # [Sortie] [6, 2]
 ```
 
-### Exercice 3.3
+### Exercice 4.3
 
 ```python
 def union_sans_doublon(l1, l2):
@@ -136,7 +172,7 @@ print(union_sans_doublon([1, 6, 2, 4], [2, 7, 6, 2]))
 # [Sortie] [1, 6, 2, 4, 7]
 ```
 
-### Exercice 4.1
+### Exercice 5.1
 ```python
 def compte_prefix(s, prefix):
     compteur = 0
@@ -149,7 +185,7 @@ print(compte_prefix("la vie est belle au bord du lac", "la"))
 # [Sortie] 2
 ```
 
-### Exercice 4.2
+### Exercice 5.2
 ```python
 def compte_sans_casse(s, mot_cible):
     compteur = 0
@@ -160,7 +196,7 @@ def compte_sans_casse(s, mot_cible):
     return compteur
 ```
 
-### Exercice 5.1
+### Exercice 6.1
 ```python
 def compte_occurrences(s):
     d = {}
@@ -172,7 +208,7 @@ print(compte_occurrences("la vie est belle c'est la vie"))
 # [Sortie] {"c'est": 1, 'la': 2, 'belle': 1, 'est': 1, 'vie': 2}
 ```
 
-### Exercice 5.2
+### Exercice 6.2
 ```python
 def somme_valeurs(d):
     s = 0
@@ -184,7 +220,7 @@ print(somme_valeurs({"a": 12, "zz": 1.5, "AAA": 0}}))
 # [Sortie] 13.5
 ```
 
-### Exercice 6.1
+### Exercice 7.1
 ```python
 import os
 
@@ -205,7 +241,7 @@ def nb_lignes_repertoire(repertoire):
 nb_lignes_repertoire(".")
 ```
 
-### Exercice 6.2
+### Exercice 7.2
 ```python
 import os
 
@@ -219,7 +255,7 @@ def compte_fichiers(repertoire):
 print(nb_lignes_repertoire("."))
 ```
 
-### Exercice 7.1
+### Exercice 8.1
 ```python
 import urllib.request
 import json
@@ -240,7 +276,7 @@ def temps_trajet(ville_origine, ville_destination, cle_gmaps_api):
 print(temps_trajet("Rennes", "Saint-Malo", "..."))
 ```
 
-### Exercice 8.1
+### Exercice 9.1
 ```python
 def bissextile(annee):
     if annee % 4 == 0 and annee % 100 != 0:

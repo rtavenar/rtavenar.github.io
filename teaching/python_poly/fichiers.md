@@ -239,9 +239,9 @@ for nom_fichier in os.listdir(repertoire):
 La fonction `path.join`{.python} du module `os`{.python} permet d'obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
 Il est préférable d'utiliser cette fonction plutôt que d'effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d'exploitation utilisé, ce que gère intelligemment `path.join`{.python}.
 
-**Exercice 6.1**
+**Exercice 7.1**
 Écrivez une fonction qui affiche, pour chaque fichier d'extension `".txt"`{.haskell} d'un répertoire passé en argument, le nom du fichier ainsi que son nombre de lignes.
 
-**Exercice 6.2**
+**Exercice 7.2**
 Écrivez une fonction qui retourne le nombre de fichiers présents dans un répertoire dont le nom est passé en argument.
 Vous pourrez vous aider pour cela de la documentation du sous-module `path`{.python} du module `os`{.python} ([lien](https://docs.python.org/3.5/library/os.path.html)).

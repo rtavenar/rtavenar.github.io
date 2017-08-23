@@ -96,5 +96,5 @@ def bissextile(annee):
 ```
 
 
-**Exercice 8.1**
+**Exercice 9.1**
 En utilisant les méthodes de développement préconisées dans ce chapitre, rédigez le code et les tests d'un programme permettant de déterminer le lendemain d'une date fournie sous la forme de trois entiers (jour, mois, année).

@@ -1,4 +1,4 @@
-SRC_POLY=header.md intro.md struct.md listes.md chaines.md dict.md fichiers.md api.md test.md conclusion.md
+SRC_POLY=header.md intro.md struct.md dates.md listes.md chaines.md dict.md fichiers.md api.md test.md conclusion.md
 SRC_SOLUTIONS=header_solutions.md solutions.md
 
 all: poly solutions

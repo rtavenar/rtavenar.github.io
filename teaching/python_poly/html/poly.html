@@ -527,12 +527,12 @@ d3 <span class="op">=</span> datetime.datetime(<span class="dv">2017</span>, <sp
 
 <span class="bu">print</span>(d1 <span class="op">&gt;</span> d3)
 <span class="co"># [Sortie] False</span></code></pre></div>
-<p>Il existe d&#8217;autres moyens de construire des variables de type date. On peut g&#233;n&#233;rer une date correspondant &#224; l&#8217;heure actuelle avec la fonction <code>now()</code> du module <code>datetime</code> :</p>
+<p>Il existe d&#8217;autres moyens de construire des variables de type date. On peut g&#233;n&#233;rer une date correspondant &#224; l&#8217;heure actuelle avec la fonction <code>now</code> du module <code>datetime</code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date_actuelle <span class="op">=</span> datetime.now()</code></pre></div>
 <h2 id="transformation-dune-date-en-cha&#238;ne-de-caract&#232;res"><span class="header-section-number">3.1</span> Transformation d&#8217;une date en cha&#238;ne de caract&#232;res</h2>
-<p>Si l&#8217;on souhaite transformer une date en cha&#238;ne de caract&#232;res (par exemple pour l&#8217;afficher), on peut lui appliquer la fonction <code>str()</code> :</p>
+<p>Si l&#8217;on souhaite transformer une date en cha&#238;ne de caract&#232;res (par exemple pour l&#8217;afficher), on peut lui appliquer la fonction <code>str</code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">str</span>(datetime.datetime(<span class="dv">2017</span>, <span class="dv">8</span>, <span class="dv">27</span>)))</code></pre></div>
-<p>Dans ce cas, on ne peut pas g&#233;rer la fa&#231;on dont se fait cette transformation. Pour contourner cette limitation, il convient alors d&#8217;utiliser <code>strftime()</code> :</p>
+<p>Dans ce cas, on ne peut pas g&#233;rer la fa&#231;on dont se fait cette transformation. Pour contourner cette limitation, il convient alors d&#8217;utiliser <code>strftime</code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">d1 <span class="op">=</span> datetime.datetime(...)
 s <span class="op">=</span> d1.strftime(<span class="bu">format</span>)</code></pre></div>
 <p>L&#8217;attribut <code>format</code> que l&#8217;on passe &#224; cette fonction va servir &#224; d&#233;finir comment on souhaite repr&#233;senter la date en question. Il s&#8217;agit d&#8217;une cha&#238;ne de caract&#232;res qui pourra contenir les &#233;l&#233;ments suivants :</p>
@@ -567,7 +567,7 @@ s <span class="op">=</span> d1.strftime(<span class="bu">format</span>)</code></
 </tbody>
 </table>
 <p>Remarquez que la casse n&#8217;est pas neutre pour les codes &#224; utiliser : <code>%M</code> et <code>%m</code> ont des significations tout &#224; fait diff&#233;rentes. Notez &#233;galement qu&#8217;il existe d&#8217;autres codes permettant de g&#233;n&#233;rer des cha&#238;nes de caract&#232;res plus vari&#233;es encore. Une liste de ces codes est disponible sur <a href="https://docs.python.org/3.5/library/datetime.html#strftime-and-strptime-behavior">la page d&#8217;aide du module <code>datetime</code></a>.</p>
-<p>Vous pouvez vous r&#233;f&#233;rer aux exemples ci-dessous pour mieux comprendre le fonctionnement de la fonction <code>strftime()</code> :</p>
+<p>Vous pouvez vous r&#233;f&#233;rer aux exemples ci-dessous pour mieux comprendre le fonctionnement de la fonction <code>strftime</code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">d <span class="op">=</span> datetime.datetime(<span class="dv">2017</span>, <span class="dv">8</span>, <span class="dv">27</span>, <span class="dv">17</span>, <span class="dv">23</span>)
 
 <span class="bu">print</span>(d.strftime(<span class="st">&quot;</span><span class="sc">%d</span><span class="st">-%m-%y, %H:%M&quot;</span>))
@@ -581,7 +581,7 @@ s <span class="op">=</span> d1.strftime(<span class="bu">format</span>)</code></
 
 <span class="bu">print</span>(d.strftime(<span class="st">&quot;</span><span class="sc">%d</span><span class="st">/%m/%y %Hh%M&quot;</span>))
 <span class="co"># [Sortie] 27/08/17 17h23</span></code></pre></div>
-<p>Il est &#233;galement possible d&#8217;effectuer l&#8217;op&#233;ration inverse (lire une date contenue dans une cha&#238;ne de caract&#232;res, &#233;tant donn&#233; un format connu). Cela se fait avec la fonction <code>strptime()</code> (attention aux confusions possibles entre <code>strftime()</code> et <code>strptime()</code>) :</p>
+<p>Il est &#233;galement possible d&#8217;effectuer l&#8217;op&#233;ration inverse (lire une date contenue dans une cha&#238;ne de caract&#232;res, &#233;tant donn&#233; un format connu). Cela se fait avec la fonction <code>strptime</code> (attention aux confusions possibles entre <code>strftime</code> et <code>strptime</code>) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">d1 <span class="op">=</span> datetime.strptime(chaine_a_lire, <span class="bu">format</span>)</code></pre></div>
 <p>Voici deux exemples d&#8217;utilisation de cette fonction :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">d1 <span class="op">=</span> datetime.strptime(<span class="st">&quot;2017/8/27, 17:23&quot;</span>, <span class="st">&quot;%y/%m/</span><span class="sc">%d</span><span class="st">, %H:%M&quot;</span>)

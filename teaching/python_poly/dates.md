@@ -58,7 +58,7 @@ print(d1 > d3)
 ```
 
 Il existe d'autres moyens de construire des variables de type date.
-On peut générer une date correspondant à l'heure actuelle avec la fonction `now()` du module `datetime` :
+On peut générer une date correspondant à l'heure actuelle avec la fonction `now` du module `datetime` :
 
 ```python
 date_actuelle = datetime.now()
@@ -66,14 +66,14 @@ date_actuelle = datetime.now()
 
 ## Transformation d'une date en chaîne de caractères
 
-Si l'on souhaite transformer une date en chaîne de caractères (par exemple pour l'afficher), on peut lui appliquer la fonction `str()` :
+Si l'on souhaite transformer une date en chaîne de caractères (par exemple pour l'afficher), on peut lui appliquer la fonction `str` :
 
 ```python
 print(str(datetime.datetime(2017, 8, 27)))
 ```
 
 Dans ce cas, on ne peut pas gérer la façon dont se fait cette transformation.
-Pour contourner cette limitation, il convient alors d'utiliser `strftime()` :
+Pour contourner cette limitation, il convient alors d'utiliser `strftime` :
 
 ```python
 d1 = datetime.datetime(...)
@@ -95,7 +95,7 @@ Remarquez que la casse n'est pas neutre pour les codes à utiliser : `%M` et `%m
 Notez également qu'il existe d'autres codes permettant de générer des chaînes de caractères plus variées encore.
 Une liste de ces codes est disponible sur [la page d'aide du module `datetime`](https://docs.python.org/3.5/library/datetime.html#strftime-and-strptime-behavior).
 
-Vous pouvez vous référer aux exemples ci-dessous pour mieux comprendre le fonctionnement de la fonction `strftime()` :
+Vous pouvez vous référer aux exemples ci-dessous pour mieux comprendre le fonctionnement de la fonction `strftime` :
 
 ```python
 d = datetime.datetime(2017, 8, 27, 17, 23)
@@ -114,7 +114,7 @@ print(d.strftime("%d/%m/%y %Hh%M"))
 ```
 
 Il est également possible d'effectuer l'opération inverse (lire une date contenue dans une chaîne de caractères, étant donné un format connu).
-Cela se fait avec la fonction `strptime()` (attention aux confusions possibles entre `strftime()` et `strptime()`) :
+Cela se fait avec la fonction `strptime` (attention aux confusions possibles entre `strftime` et `strptime`) :
 
 ```python
 d1 = datetime.strptime(chaine_a_lire, format)

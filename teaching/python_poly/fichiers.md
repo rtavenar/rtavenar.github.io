@@ -26,6 +26,7 @@ Cela implique deux étapes en Python :
 
 La première étape d'ouverture du fichier en lecture est commune à tous les types de fichiers textuels.
 En supposant que le nom du fichier à ouvrir soit stocké sous forme de chaîne de caractères dans la variable `nom_fichier`{.python}, le code suivant ouvre un fichier en lecture avec l'encodage UTF-8 et stocke dans la variable `fp`{.python} un pointeur sur l'endroit où nous sommes rendus dans notre lecture du fichier (pour l'instant, le début du fichier) :
+
 ```python
 fp = open(nom_fichier, "r", encoding="utf-8")
 ```
@@ -35,11 +36,13 @@ Le second argument (`"r"`{.haskell}) indique que le fichier doit être ouvert en
 ### Fichiers textuels génériques
 
 Une fois le fichier ouvert en lecture, on peut le lire ligne par ligne à l'aide de la boucle suivante :
+
 ```python
 fp = open(nom_fichier, "r", encoding="utf-8")
 for ligne in fp.readlines():
     print(ligne)
 ```
+
 Ici, la variable `ligne`{.python}, de type chaîne de caractères, contiendra successivement le texte de chacune des lignes du fichier considéré.
 
 ### Fichiers _Comma-Separated Values_ (CSV)
@@ -198,6 +201,7 @@ print(d)
 ```
 
 Il est à noter qu'un fichier JSON peut également contenir une liste de dictionnaires, comme dans l'exemple suivant :
+
 ```json
 [{
     "num_etudiant": "21300000",
@@ -218,6 +222,7 @@ Il est à noter qu'un fichier JSON peut également contenir une liste de diction
     }
 }]
 ```
+
 Dans ce cas, `json.load` retournera une liste de dictionnaires au lieu d'un dictionnaire, bien évidemment.
 
 Enfin, si l'on a stocké dans une variable une chaîne de caractères dont le contenu correspond à un document JSON, on peut également la transformer en dictionnaire (ou en liste de dictionnaires) à l'aide de la fonction `json.loads` (attention au "s" final) :
@@ -239,6 +244,7 @@ Cela implique trois étapes en Python :
 
 La première étape d'ouverture du fichier en écriture est commune à tous les types de fichiers textuels.
 En supposant que le nom du fichier à ouvrir est stocké sous forme de chaîne de caractères dans la variable `nom_fichier`{.python}, le code suivant ouvre un fichier en écriture avec l'encodage UTF-8 et stocke dans la variable `fp`{.python} un pointeur sur l'endroit où nous sommes rendus dans notre écriture du fichier (pour l'instant, le début du fichier) :
+
 ```python
 fp = open(nom_fichier, "w", encoding="utf-8", newline="\n")
 ```
@@ -247,6 +253,7 @@ Le second argument (`"w"`{.haskell}) indique que le fichier doit être ouvert en
 
 Si le fichier en question existait déjà, son contenu est tout d'abord écrasé et on repart d'un fichier vide.
 Si l'on souhaite au contraire ajouter du texte à la fin d'un fichier existant, on utilisera le mode _append_, symbolisé par la lettre `"a"`{.haskell} :
+
 ```python
 fp = open(nom_fichier, "a", encoding="utf-8", newline="\n")
 ```
@@ -263,15 +270,18 @@ Par exemple, si notre code est inclus dans un script Python, dès la fin de l'ex
 ### Fichiers textuels génériques
 
 Pour ajouter du contenu à un fichier pointé par la variable `fp`{.python}, il suffit ensuite d'utiliser la méthode `write`{.python} :
+
 ```python
 fp.write("La vie est belle\n")
 ```
+
 Notez que, contrairement à la fonction `print`{.python} à laquelle vous êtes habitué, la méthode `write`{.python} ne rajoute pas de caractère de fin de ligne après la chaîne de caractères passée en argument, il faut donc inclure ce caractère `"\n"`{.haskell} à la fin de la chaîne de caractères passée en argument, si vous souhaitez inclure un retour à la ligne.
 
 ### Fichiers CSV
 
 Le module `csv`{.python} déjà cité plus haut contient également une fonction `writer`{.python} permettant de simplifier l'écriture de fichiers CSV.
 La syntaxe d'utilisation de cette fonction est la suivante :
+
 ```python
 import csv
 
@@ -286,6 +296,7 @@ fp.close()
 # 1;5;7
 # 2;3
 ```
+
 La méthode `writerow`{.python} prend donc une liste en argument et écrit dans le fichier les éléments de cette liste, séparés par le délimiteur `";"`{.haskell} spécifié lors de l'appel à la fonction `writer`{.python}.
 Le retour à la ligne est écrit directement par la méthode `writerow`{.python}, vous n'avez pas à vous en occuper.
 
@@ -294,6 +305,7 @@ Le retour à la ligne est écrit directement par la méthode `writerow`{.python}
 Lorsque l'on lit ou écrit des fichiers, il est fréquent de vouloir répéter la même opération sur plusieurs fichiers, par exemple sur tous les fichiers avec l'extension `".txt"`{.haskell} d'un répertoire donné.
 Pour ce faire, on peut utiliser en Python le module `os`{.python} qui propose un certain nombre de fonctions standard de manipulation de fichiers.
 On utilisera notamment la fonction `listdir`{.python} de ce module qui permet de lister l'ensemble des fichiers et sous-répertoires contenus dans un répertoire donné :
+
 ```python
 import os
 
@@ -306,6 +318,7 @@ La fonction `listdir`{.python} peut prendre indifféremment un chemin absolu ou 
 Si vous exécutez le code ci-dessus et que votre répertoire `"donnees"`{.haskell} n'est pas vide, vous remarquerez que le nom du fichier stocké dans la variable `nom_fichier`{.python} ne contient pas le chemin vers ce fichier.
 Or, si l'on souhaite ensuite ouvrir ce fichier (que ce soit en lecture ou en écriture), il faudra bien spécifier ce chemin.
 Pour cela, on utilisera la syntaxe suivante :
+
 ```python
 import os
 
@@ -317,6 +330,7 @@ for nom_fichier in os.listdir(repertoire):
     fp = open(nom_complet_fichier, "r", encoding="utf-8")
     # [...]
 ```
+
 La fonction `path.join`{.python} du module `os`{.python} permet d'obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
 Il est préférable d'utiliser cette fonction plutôt que d'effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d'exploitation utilisé, ce que gère intelligemment `path.join`{.python}.
 

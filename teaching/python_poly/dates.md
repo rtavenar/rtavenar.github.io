@@ -85,7 +85,7 @@ Il s'agit d'une chaîne de caractères qui pourra contenir les éléments suivan
 
 | Code | Signification |
 | --- | --- |
-| `%y` | Année |
+| `%Y` | Année |
 | `%m` | Mois |
 | `%d` | Jour |
 | `%H` | Heure |
@@ -100,31 +100,31 @@ Vous pouvez vous référer aux exemples ci-dessous pour mieux comprendre le fonc
 ```python
 d = datetime.datetime(2017, 8, 27, 17, 23)
 
-print(d.strftime("%d-%m-%y, %H:%M"))
-# [Sortie] 27-08-17, 17:23
+print(d.strftime("%d-%m-%Y, %H:%M"))
+# [Sortie] 27-08-2017, 17:23
 
-print(d.strftime("%d-%m-%y"))
-# [Sortie] 27-08-17
+print(d.strftime("%d-%m-%Y"))
+# [Sortie] 27-08-2017
 
 print(d.strftime("%H:%M"))
 # [Sortie] 17:23
 
-print(d.strftime("%d/%m/%y %Hh%M"))
-# [Sortie] 27/08/17 17h23
+print(d.strftime("%d/%m/%Y %Hh%M"))
+# [Sortie] 27/08/2017 17h23
 ```
 
 Il est également possible d'effectuer l'opération inverse (lire une date contenue dans une chaîne de caractères, étant donné un format connu).
-Cela se fait avec la fonction `strptime` (attention aux confusions possibles entre `strftime` et `strptime`) :
+Cela se fait avec la fonction `datetime.strptime` (attention aux confusions possibles entre `strftime` et `datetime.strptime`) :
 
 ```python
-d1 = datetime.strptime(chaine_a_lire, format)
+d1 = datetime.datetime.strptime(chaine_a_lire, format)
 ```
 
 Voici deux exemples d'utilisation de cette fonction :
 
 ```python
-d1 = datetime.strptime("2017/8/27, 17:23", "%y/%m/%d, %H:%M")
-d2 = datetime.strptime("27-08-2017", "%d-%m-%y")
+d1 = datetime.datetime.strptime("2017/8/27, 17:23", "%Y/%m/%d, %H:%M")
+d2 = datetime.datetime.strptime("27-08-2017", "%d-%m-%Y")
 ```
 
 ## Calcul de temps écoulé

@@ -89,7 +89,7 @@ Une fois ces quelques lignes exécutées, la variable `contenu` contient une cha
 Il suffit donc alors d'utiliser le module `json` pour transformer cette chaîne de caractères en données manipulables en Python.
 
 En pratique, dans de nombreux cas, des modules Python existent pour permettre d'utiliser les API grand public sans avoir à gérer les requêtes HTTP directement.
-C'est par exemple le cas des modules `googlemaps` (qui permet d'accéder à toutes les API Google Maps citées plus haut) ou `tweepy` (pour l'API Twitter).
+C'est par exemple le cas des modules [`googlemaps`](https://googlemaps.github.io/google-maps-services-python/docs/) (qui permet d'accéder à toutes les API Google Maps citées plus haut) ou [`tweepy`](http://docs.tweepy.org/en/latest/) (pour l'API Twitter).
 
 **Exercice 8.1**
 Écrivez une fonction qui prenne en entrée une clé d'API Google Maps et deux villes et retourne le temps de trajet (en secondes) prévu par Google Maps API pour aller d'une ville à l'autre.

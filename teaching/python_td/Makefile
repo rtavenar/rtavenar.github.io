@@ -1,4 +1,4 @@
-TARGETS=intro fonctions turtle listes listes_avancees chaines dict fichiers numpy chifoumi racine premier kpg nettoyage entrainement entrainement_nocorr tdinverse corrigemastermind corrigetictactoe bataille_navale api
+TARGETS=intro fonctions turtle listes_dates listes_avancees chaines dict fichiers numpy chifoumi racine premier kpg nettoyage entrainement entrainement_nocorr tdinverse corrigemastermind corrigetictactoe bataille_navale api
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

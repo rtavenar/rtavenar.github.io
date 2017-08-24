@@ -59,20 +59,41 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <ul>
 <li>Cr&#233;ez-vous une cl&#233; pour cette API (<a href="https://developers.google.com/maps/documentation/elevation/get-api-key">lien</a>) ;</li>
+<li><p>&#201;crivez cette cl&#233; d&#8217;API dans un fichier JSON au format suivant :</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+<span class="dt">&quot;API_KEY&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span>
+<span class="fu">}</span></code></pre></div></li>
 <li><p>&#201;crivez, pour la position suivante, la requ&#234;te n&#233;cessaire pour obtenir l&#8217;altitude du point en question <em>via</em> Google Maps Elevation API :</p>
 <pre><code>longitude : -1.426533
 latitude : 48.005135</code></pre></li>
+<li><p>Effectuez cette requ&#234;te &#224; l&#8217;aide du module <code>urllib.request</code> comme vu en cours (votre code devra aller lire votre cl&#233; d&#8217;API dans le fichier &#224; l&#8217;aide du module <code>json</code>).</p></li>
 </ul>
 <h1 id="&#233;nonc&#233;"><span class="header-section-number">2</span> &#201;nonc&#233;</h1>
-<p>Le fichier <code>rando_gps.json</code> fournit des s&#233;ries de positions GPS correspondant &#224; des traces GPS de sorties randonn&#233;e de M. Toulemonde. On cherchera dans ce TD &#224; &#233;crire un programme calculant les d&#233;nivel&#233;s cumul&#233;s positif et n&#233;gatif de chacune de ces randonn&#233;es. Pour cela, vous utiliserez l&#8217;API <a href="https://developers.google.com/maps/documentation/elevation/intro"><code>Google Maps Elevation</code></a> pour laquelle vous aurez au pr&#233;alable <a href="https://developers.google.com/maps/documentation/elevation/get-api-key">demand&#233; une cl&#233;</a>.</p>
+<p>Le fichier <code>rando_gps.json</code> fournit des s&#233;ries de positions GPS correspondant &#224; des traces GPS de sorties randonn&#233;e de M. Toulemonde. On cherchera dans ce TD &#224; &#233;crire un programme calculant les d&#233;nivel&#233;s cumul&#233;s positif et n&#233;gatif de chacune de ces randonn&#233;es. Pour cela, vous utiliserez l&#8217;API <a href="https://developers.google.com/maps/documentation/elevation/intro"><code>Google Maps Elevation</code></a> <em>via</em> le module Python <code>googlemaps</code>.</p>
+<h2 id="pr&#233;sentation-du-module-googlemaps"><span class="header-section-number">2.1</span> Pr&#233;sentation du module <code>googlemaps</code></h2>
+<p>Ce module, dont la documentation est accessible <a href="https://googlemaps.github.io/google-maps-services-python/docs/">l&#224;</a>, fournit des fonctions permettant d&#8217;interroger les diff&#233;rentes API Google Maps (Directions, Elevation, <em>etc.</em>).</p>
+<p>Pour utiliser cette API, il faut tout d&#8217;abord cr&#233;er un client que l&#8217;on initialise en lui fournissant notre cl&#233; d&#8217;API :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gmaps <span class="op">=</span> googlemaps.Client(key<span class="op">=</span>votre_cle_d_api)</code></pre></div>
+<p>Ensuite, on appelle, pour ce client, la fonction correspondant &#224; l&#8217;API qui nous int&#233;resse. Par exemple, l&#8217;instruction :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">list_routes <span class="op">=</span> gmaps.directions(origin<span class="op">=</span><span class="st">&quot;Rennes&quot;</span>,
+                               destination<span class="op">=</span><span class="st">&quot;Marseille&quot;</span>)</code></pre></div>
+<p>permettra de stocker dans la variable <code>list_routes</code> une liste d&#8217;itin&#233;raires propos&#233;s par l&#8217;API Directions pour aller de Rennes &#224; Marseille.</p>
+<p>Notez que, comme indiqu&#233; dans la documentation, les positions g&#233;ographiques peuvent &#234;tre pass&#233;es sous plusieurs formes. On retiendra notamment ici les deux formes les plus utiles :</p>
+<ul>
+<li>une cha&#238;ne de caract&#232;re d&#233;finissant un lieu (comme illustr&#233; pr&#233;c&#233;demment) ;</li>
+<li>un dictionnaire (ayant deux cl&#233;s <code class="sourceCode haskell"><span class="st">&quot;lng&quot;</span></code> et <code class="sourceCode haskell"><span class="st">&quot;lat&quot;</span></code>) identifiant les coordonn&#233;es GPS &#224; utiliser.</li>
+</ul>
+<h2 id="mise-en-pratique"><span class="header-section-number">2.2</span> Mise en pratique</h2>
 <ol start="2" style="list-style-type: decimal">
 <li><p>&#201;crivez une fonction qui prenne en entr&#233;e une position GPS et une cl&#233; Google Maps Elevation API et retourne l&#8217;altitude de la position. La position GPS sera pass&#233;e sous la forme d&#8217;un dictionnaire tel que :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">coord <span class="op">=</span> {<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.426533</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.005135</span>}</code></pre></div></li>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">coord <span class="op">=</span> {<span class="st">&quot;lng&quot;</span>: <span class="op">-</span><span class="fl">1.426533</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.005135</span>}</code></pre></div></li>
 <li><p>&#201;crivez une fonction qui prenne en entr&#233;e une liste de positions GPS (chacune cod&#233;e sous la forme d&#8217;un dictionnaire tel que pr&#233;c&#233;demment) et une cl&#233; Google Maps Elevation API et retourne une liste d&#8217;altitudes. Vous pourrez utiliser l&#8217;exemple suivant pour vos tests :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">lst_gps <span class="op">=</span> [{<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.426533</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.005135</span>},
-       {<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.418127</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">47.986058</span>},
-       {<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.427611</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">47.989871</span>},
-       {<span class="st">&quot;lon&quot;</span>: <span class="op">-</span><span class="fl">1.430202</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.000354</span>}]</code></pre></div></li>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">lst_gps <span class="op">=</span> [
+  {<span class="st">&quot;lng&quot;</span>: <span class="op">-</span><span class="fl">1.426533</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.005135</span>},
+  {<span class="st">&quot;lng&quot;</span>: <span class="op">-</span><span class="fl">1.418127</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">47.986058</span>},
+  {<span class="st">&quot;lng&quot;</span>: <span class="op">-</span><span class="fl">1.427611</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">47.989871</span>},
+  {<span class="st">&quot;lng&quot;</span>: <span class="op">-</span><span class="fl">1.430202</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.000354</span>}
+]</code></pre></div></li>
 <li><p>&#201;crivez une fonction qui prenne en entr&#233;e une liste de positions GPS et une cl&#233; Google Maps Elevation API et retourne la somme des d&#233;nivel&#233;s positifs (d&#8217;une part) et n&#233;gatifs (d&#8217;autre part). Par exemple, si on a une liste de coordonn&#233;es GPS pour lesquelles on a obtenu les altitudes suivantes :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[<span class="fl">38.11</span>, <span class="fl">68.63</span>, <span class="fl">54.60</span>, <span class="fl">36.42</span>]</code></pre></div>
 <p>on devrait retourner la paire de valeurs :</p>

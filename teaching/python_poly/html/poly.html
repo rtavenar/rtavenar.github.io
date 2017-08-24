@@ -993,6 +993,66 @@ fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span cla
 <span class="co"># [Sortie] b</span>
 <span class="co"># [Sortie] Fin de ligne</span></code></pre></div>
 <p>On remarque ici que, contrairement au cas de fichiers textuels g&#233;n&#233;riques, la variable de boucle <code class="sourceCode python">ligne</code> n&#8217;est plus une cha&#238;ne de caract&#232;res mais une liste de cha&#238;nes de caract&#232;res. Les &#233;l&#233;ments de cette liste sont les cellules du tableau repr&#233;sent&#233; par le fichier CSV.</p>
+<h4 id="cas-des-fichiers-&#224;-en-t&#234;te"><span class="header-section-number">7.1.2.1</span> Cas des fichiers &#224; en-t&#234;te</h4>
+<p>Souvent, les fichiers CSV comprennent une premi&#232;re ligne d&#8217;en-t&#234;te, comme dans l&#8217;exemple suivant :</p>
+<pre class="csv"><code>NOM;PRENOM;AGE
+Lemarchand;John;23
+Trias;Anne;</code></pre>
+<p>Si l&#8217;on souhaite que, lors de la lecture du fichier CSV, chaque ligne soit repr&#233;sent&#233;e par un dictionnaire dont les cl&#233;s sont les noms de colonnes (lus dans l&#8217;en-t&#234;te) et les valeurs associ&#233;es sont celles lues dans la ligne courante, on utilisera <code>csv.DictReader</code> au lieu de <code>csv.reader</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> csv
+
+nom_fichier <span class="op">=</span> <span class="st">&quot;...&quot;</span> <span class="co"># &#192; remplacer par le chemin vers le fichier :)</span>
+
+<span class="co"># Contenu suppos&#233; du fichier :</span>
+<span class="co"># NOM;PRENOM;AGE</span>
+<span class="co"># Lemarchand;John;23</span>
+<span class="co"># Trias;Anne;</span>
+
+fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)
+<span class="cf">for</span> ligne <span class="op">in</span> csv.DictReader(fp, delimiter<span class="op">=</span><span class="st">&quot;;&quot;</span>):
+    <span class="cf">for</span> cle, valeur <span class="op">in</span> ligne.items():
+        <span class="bu">print</span>(cle, valeur)
+    <span class="bu">print</span>(<span class="st">&quot;--Fin de ligne--&quot;</span>)
+<span class="co"># [Sortie] AGE 23</span>
+<span class="co"># [Sortie] NOM Lemarchand</span>
+<span class="co"># [Sortie] PRENOM John</span>
+<span class="co"># [Sortie] --Fin de ligne--</span>
+<span class="co"># [Sortie] AGE</span>
+<span class="co"># [Sortie] NOM Trias</span>
+<span class="co"># [Sortie] PRENOM Anne</span>
+<span class="co"># [Sortie] --Fin de ligne--</span></code></pre></div>
+<h4 id="un-peu-de-magie"><span class="header-section-number">7.1.2.2</span> Un peu de magie&#8230;</h4>
+<p>Dans certains cas, on ne sait pas &#224; l&#8217;avance quel d&#233;limiteur est utilis&#233; pour le fichier CSV &#224; lire. On peut demander au module CSV de deviner le <em>dialecte</em><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> d&#8217;un fichier en lisant le d&#233;but de ce fichier. Dans ce cas, la lecture du fichier se fera en 4 &#233;tapes :</p>
+<ol style="list-style-type: decimal">
+<li>Ouverture du fichier en lecture ;</li>
+<li>Lecture des <em>n</em> premiers caract&#232;res du fichier pour tenter de deviner son dialecte ;</li>
+<li>&#8220;Rembobinage&#8221; du fichier pour recommencer la lecture au d&#233;but ;</li>
+<li>Lecture du fichier en utilisant le dialecte d&#233;tect&#233; &#224; l&#8217;&#233;tape 2.</li>
+</ol>
+<p>Le choix du param&#232;tre <em>n</em> doit &#234;tre un compromis : il faut lire suffisamment de caract&#232;res pour que la d&#233;tection de dialecte soit fiable, tout en sachant que lire beaucoup de caract&#232;res prendra du temps. En pratique, lire les 1000 premiers caract&#232;res d&#8217;un fichier est souvent suffisant pour d&#233;terminer son dialecte.</p>
+<p>On obtient alors une syntaxe du type :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> csv
+
+nom_fichier <span class="op">=</span> <span class="st">&quot;...&quot;</span> <span class="co"># &#192; remplacer par le chemin vers le fichier :)</span>
+
+<span class="co"># Contenu suppos&#233; du fichier :</span>
+<span class="co"># 1,2,3</span>
+<span class="co"># a,b</span>
+
+fp <span class="op">=</span> <span class="bu">open</span>(nom_fichier, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)  <span class="co"># &#201;tape 1.</span>
+dialecte <span class="op">=</span> csv.Sniffer().sniff(fp.read(<span class="dv">1000</span>))  <span class="co"># &#201;tape 2.</span>
+fp.seek(<span class="dv">0</span>)                                     <span class="co"># &#201;tape 3. &#192; ne pas oublier !</span>
+<span class="cf">for</span> ligne <span class="op">in</span> csv.reader(fp, dialect<span class="op">=</span>dialecte): <span class="co"># &#201;tape 4.</span>
+    <span class="cf">for</span> cellule <span class="op">in</span> ligne:
+        <span class="bu">print</span>(cellule)
+    <span class="bu">print</span>(<span class="st">&quot;Fin de ligne&quot;</span>)
+<span class="co"># [Sortie] 1</span>
+<span class="co"># [Sortie] 2</span>
+<span class="co"># [Sortie] 3</span>
+<span class="co"># [Sortie] Fin de ligne</span>
+<span class="co"># [Sortie] a</span>
+<span class="co"># [Sortie] b</span>
+<span class="co"># [Sortie] Fin de ligne</span></code></pre></div>
 <h3 id="fichiers-javascript-object-notation-json"><span class="header-section-number">7.1.3</span> Fichiers <em>JavaScript Object Notation</em> (JSON)</h3>
 <p>Les fichiers <em>JavaScript Object Notation</em> (JSON) permettent de stocker des donn&#233;es structur&#233;es (par exemple avec une organisation hi&#233;rarchique). Un document JSON s&#8217;apparente &#224; un dictionnaire en Python (&#224; la nuance pr&#232;s que les cl&#233;s d&#8217;un document JSON sont forc&#233;ment des cha&#238;nes de caract&#232;res). Voici un exemple de document JSON :</p>
 <div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
@@ -1217,5 +1277,11 @@ y <span class="op">=</span> <span class="bu">int</span>(x) <span class="op">+</s
 <h1 id="conclusion"><span class="header-section-number">10</span> Conclusion</h1>
 <p>Dans ce document, nous avons abord&#233; les principes de base de la programmation en Python, tels qu&#8217;enseign&#233;s &#224; des &#233;tudiants non informaticiens de niveau Licence 2 (&#224; l&#8217;Universit&#233; de Rennes 2).</p>
 <p>Comme indiqu&#233; en introduction, ce document se veut &#233;volutif. N&#8217;h&#233;sitez donc pas &#224; faire vos remarques &#224; son auteur dont vous trouverez le contact sur <a href="http://people.irisa.fr/Romain.Tavenard/">sa page web</a>.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Le <em>dialecte</em> d&#8217;un fichier CSV d&#233;finit, en fait, bien plus que le caract&#232;re de s&#233;paration des cellules, comme d&#233;crit dans <a href="https://tools.ietf.org/html/rfc4180">ce document</a>.<a href="#fnref1">&#8617;</a></p></li>
+</ol>
+</div>
 </body>
 </html>

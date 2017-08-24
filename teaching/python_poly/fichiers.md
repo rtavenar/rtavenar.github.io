@@ -50,6 +50,7 @@ Aujourd'hui, la définition de ce format ([lien](https://tools.ietf.org/html/rfc
 Pour manipuler ces fichiers, il existe en Python un module dédié, appelé `csv`{.python}.
 Ce module contient notamment une fonction `reader`{.python} permettant de simplifier la lecture de fichiers CSV.
 La syntaxe d'utilisation de cette fonction est la suivante (vous remarquerez la présence de l'attribut `delimiter`{.python}) :
+
 ```python
 import csv
 
@@ -72,8 +73,88 @@ for ligne in csv.reader(fp, delimiter=";"):
 # [Sortie] b
 # [Sortie] Fin de ligne
 ```
+
 On remarque ici que, contrairement au cas de fichiers textuels génériques, la variable de boucle `ligne`{.python} n'est plus une chaîne de caractères mais une liste de chaînes de caractères.
 Les éléments de cette liste sont les cellules du tableau représenté par le fichier CSV.
+
+#### Cas des fichiers à en-tête
+
+Souvent, les fichiers CSV comprennent une première ligne d'en-tête, comme dans l'exemple suivant :
+
+```csv
+NOM;PRENOM;AGE
+Lemarchand;John;23
+Trias;Anne;
+```
+
+Si l'on souhaite que, lors de la lecture du fichier CSV, chaque ligne soit représentée par un dictionnaire dont les clés sont les noms de colonnes (lus dans l'en-tête) et les valeurs associées sont celles lues dans la ligne courante, on utilisera `csv.DictReader` au lieu de `csv.reader` :
+
+```python
+import csv
+
+nom_fichier = "..." # À remplacer par le chemin vers le fichier :)
+
+# Contenu supposé du fichier :
+# NOM;PRENOM;AGE
+# Lemarchand;John;23
+# Trias;Anne;
+
+fp = open(nom_fichier, "r", encoding="utf-8")
+for ligne in csv.DictReader(fp, delimiter=";"):
+    for cle, valeur in ligne.items():
+        print(cle, valeur)
+    print("--Fin de ligne--")
+# [Sortie] AGE 23
+# [Sortie] NOM Lemarchand
+# [Sortie] PRENOM John
+# [Sortie] --Fin de ligne--
+# [Sortie] AGE
+# [Sortie] NOM Trias
+# [Sortie] PRENOM Anne
+# [Sortie] --Fin de ligne--
+```
+
+#### Un peu de magie...
+
+Dans certains cas, on ne sait pas à l'avance quel délimiteur est utilisé pour le fichier CSV à lire. On peut demander au module CSV de deviner le _dialecte_[^dialect] d'un fichier en lisant le début de ce fichier.
+Dans ce cas, la lecture du fichier se fera en 4 étapes :
+
+1. Ouverture du fichier en lecture ;
+2. Lecture des _n_ premiers caractères du fichier pour tenter de deviner son dialecte ;
+3. "Rembobinage" du fichier pour recommencer la lecture au début ;
+4. Lecture du fichier en utilisant le dialecte détecté à l'étape 2.
+
+Le choix du paramètre _n_ doit être un compromis : il faut lire suffisamment de caractères pour que la détection de dialecte soit fiable, tout en sachant que lire beaucoup de caractères prendra du temps.
+En pratique, lire les 1000 premiers caractères d'un fichier est souvent suffisant pour déterminer son dialecte.
+
+On obtient alors une syntaxe du type :
+
+```python
+import csv
+
+nom_fichier = "..." # À remplacer par le chemin vers le fichier :)
+
+# Contenu supposé du fichier :
+# 1,2,3
+# a,b
+
+fp = open(nom_fichier, "r", encoding="utf-8")  # Étape 1.
+dialecte = csv.Sniffer().sniff(fp.read(1000))  # Étape 2.
+fp.seek(0)                                     # Étape 3. À ne pas oublier !
+for ligne in csv.reader(fp, dialect=dialecte): # Étape 4.
+    for cellule in ligne:
+        print(cellule)
+    print("Fin de ligne")
+# [Sortie] 1
+# [Sortie] 2
+# [Sortie] 3
+# [Sortie] Fin de ligne
+# [Sortie] a
+# [Sortie] b
+# [Sortie] Fin de ligne
+```
+
+[^dialect]: Le _dialecte_ d'un fichier CSV définit, en fait, bien plus que le caractère de séparation des cellules, comme décrit dans [ce document](https://tools.ietf.org/html/rfc4180).
 
 ### Fichiers _JavaScript Object Notation_ (JSON)
 

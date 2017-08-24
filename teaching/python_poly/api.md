@@ -9,11 +9,13 @@ Voici une liste (très loin d'être exhaustive) d'API web d'accès aux données 
     * Elevation API : permet de calculer l'altitude d'un point sur le globe terrestre ;
     * Distance Matrix API : permet de calculer des distances entre points du globe ;
     * Geocoding API : permet d'associer une coordonnée GPS à une adresse.
+* Twitter
+    * Twitter API : permet de récupérer des informations sur les utilisateurs du réseau et leurs _tweets_.
 * Facebook
-    * Facebook Graph API : permet de récupérer des informations sur des utilisateurs Facebook ;
+    * Facebook Graph API : permet de récupérer des informations sur des utilisateurs Facebook .
 * STAR (Transports en commun rennais)
-    * Horaires des bus
-    * Disponibilité des vélos dans les relais VéloStar
+    * Horaires des bus ;
+    * Disponibilité des vélos dans les relais VéloStar.
 
 
 Pour manipuler en Python de telles données, il faudra donc être capable :
@@ -29,12 +31,14 @@ Ce chapitre se focalise donc sur la réalisation de requêtes HTTP en Python.
 
 ### Format d'une requête HTTP
 
-Dans un premier temps, étudions le format d'une requête HTTP, telle que vous en effectuez des dizaines chaque jour, par l'intermédiaire de votre navigateur web :
+Dans un premier temps, étudions le format d'une requête HTTP, telle que vous en effectuez des dizaines chaque jour, par l'intermédiaire de votre navigateur web.
+Lorsque vous entrez dans la barre d'adresse de votre navigateur l'URL suivante :
 
 ```
 http://people.irisa.fr/Romain.Tavenard/index.php?page=3
 ```
 
+votre navigateur va envoyer une requête au serveur concerné (cette requête ne contiendra pas uniquement l'URL visée mais aussi d'autres informations sur lesquelles nous ne nous attarderons pas ici).
 Dans l'URL précédente, on distingue 4 sous parties :
 
 * `http://` indique le protocole à utiliser pour effectuer la requête (ici HTTP). Dans ce chapitre, nous ne nous intéresserons qu'aux protocoles HTTP et HTTPS (version sécurisée du protocole HTTP) ;
@@ -49,7 +53,7 @@ https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=
 ```
 
 Vous pouvez copier/coller cette URL dans la barre d'adresse de votre navigateur et observer ce que vous obtenez en retour.
-Observez que le résultat de cette requête est retourné au format JSON.
+Observez que le résultat de cette requête est au format JSON.
 En fait, si vous étudiez plus précisément l'URL fournie, vous verrez que c'est nous qui avons demandé à obtenir le résultat dans ce format.
 De plus, on a spécifié dans l'URL que l'on souhaitait obtenir les informations d'itinéraire pour aller de Toronto (paramètre `origin`) à Montreal (paramètre `destination`).
 
@@ -83,6 +87,9 @@ On le fait donc dans un deuxième temps à l'aide de la méthode `decode`.
 
 Une fois ces quelques lignes exécutées, la variable `contenu` contient une chaîne de caractères correspondant au document JSON retourné par l'API.
 Il suffit donc alors d'utiliser le module `json` pour transformer cette chaîne de caractères en données manipulables en Python.
+
+En pratique, dans de nombreux cas, des modules Python existent pour permettre d'utiliser les API grand public sans avoir à gérer les requêtes HTTP directement.
+C'est par exemple le cas des modules `googlemaps` (qui permet d'accéder à toutes les API Google Maps citées plus haut) ou `tweepy` (pour l'API Twitter).
 
 **Exercice 8.1**
 Écrivez une fonction qui prenne en entrée une clé d'API Google Maps et deux villes et retourne le temps de trajet (en secondes) prévu par Google Maps API pour aller d'une ville à l'autre.

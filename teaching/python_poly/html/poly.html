@@ -1176,14 +1176,18 @@ repertoire <span class="op">=</span> <span class="st">&quot;donnees&quot;</span>
 <li>Distance Matrix API : permet de calculer des distances entre points du globe ;</li>
 <li>Geocoding API : permet d&#8217;associer une coordonn&#233;e GPS &#224; une adresse.</li>
 </ul></li>
+<li>Twitter
+<ul>
+<li>Twitter API : permet de r&#233;cup&#233;rer des informations sur les utilisateurs du r&#233;seau et leurs <em>tweets</em>.</li>
+</ul></li>
 <li>Facebook
 <ul>
-<li>Facebook Graph API : permet de r&#233;cup&#233;rer des informations sur des utilisateurs Facebook ;</li>
+<li>Facebook Graph API : permet de r&#233;cup&#233;rer des informations sur des utilisateurs Facebook .</li>
 </ul></li>
 <li>STAR (Transports en commun rennais)
 <ul>
-<li>Horaires des bus</li>
-<li>Disponibilit&#233; des v&#233;los dans les relais V&#233;loStar</li>
+<li>Horaires des bus ;</li>
+<li>Disponibilit&#233; des v&#233;los dans les relais V&#233;loStar.</li>
 </ul></li>
 </ul>
 <p>Pour manipuler en Python de telles donn&#233;es, il faudra donc &#234;tre capable :</p>
@@ -1194,9 +1198,9 @@ repertoire <span class="op">=</span> <span class="st">&quot;donnees&quot;</span>
 <p>Pour ce qui est du second point, la plupart des API web offrent la possibilit&#233; de r&#233;cup&#233;rer les donn&#233;es au format JSON. Nous avons vu pr&#233;c&#233;demment dans ce cours que ce format &#233;tait facilement manipulable en Python, notamment parce qu&#8217;il est tr&#232;s proche de la notion de dictionnaire. Ce chapitre se focalise donc sur la r&#233;alisation de requ&#234;tes HTTP en Python.</p>
 <h2 id="requ&#234;tes-http-en-python"><span class="header-section-number">8.1</span> Requ&#234;tes HTTP en Python</h2>
 <h3 id="format-dune-requ&#234;te-http"><span class="header-section-number">8.1.1</span> Format d&#8217;une requ&#234;te HTTP</h3>
-<p>Dans un premier temps, &#233;tudions le format d&#8217;une requ&#234;te HTTP, telle que vous en effectuez des dizaines chaque jour, par l&#8217;interm&#233;diaire de votre navigateur web :</p>
+<p>Dans un premier temps, &#233;tudions le format d&#8217;une requ&#234;te HTTP, telle que vous en effectuez des dizaines chaque jour, par l&#8217;interm&#233;diaire de votre navigateur web. Lorsque vous entrez dans la barre d&#8217;adresse de votre navigateur l&#8217;URL suivante :</p>
 <pre><code>http://people.irisa.fr/Romain.Tavenard/index.php?page=3</code></pre>
-<p>Dans l&#8217;URL pr&#233;c&#233;dente, on distingue 4 sous parties :</p>
+<p>votre navigateur va envoyer une requ&#234;te au serveur concern&#233; (cette requ&#234;te ne contiendra pas uniquement l&#8217;URL vis&#233;e mais aussi d&#8217;autres informations sur lesquelles nous ne nous attarderons pas ici). Dans l&#8217;URL pr&#233;c&#233;dente, on distingue 4 sous parties :</p>
 <ul>
 <li><code>http://</code> indique le protocole &#224; utiliser pour effectuer la requ&#234;te (ici HTTP). Dans ce chapitre, nous ne nous int&#233;resserons qu&#8217;aux protocoles HTTP et HTTPS (version s&#233;curis&#233;e du protocole HTTP) ;</li>
 <li><code>people.irisa.fr</code> est le nom de domaine du serveur (<em>ie.</em> de la machine) &#224; contacter pour obtenir une r&#233;ponse ;</li>
@@ -1205,7 +1209,7 @@ repertoire <span class="op">=</span> <span class="st">&quot;donnees&quot;</span>
 </ul>
 <p>De la m&#234;me fa&#231;on, lors d&#8217;un appel &#224; une API web, on sp&#233;cifiera le protocole &#224; utiliser, la machine &#224; contacter, le chemin vers la ressource voulue et un certain nombre de param&#232;tres qui d&#233;criront notre requ&#234;te. Voici un exemple de requ&#234;te &#224; une API web (l&#8217;API Google Maps Directions en l&#8217;occurrence) :</p>
 <pre><code>https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&amp;destination=Montreal</code></pre>
-<p>Vous pouvez copier/coller cette URL dans la barre d&#8217;adresse de votre navigateur et observer ce que vous obtenez en retour. Observez que le r&#233;sultat de cette requ&#234;te est retourn&#233; au format JSON. En fait, si vous &#233;tudiez plus pr&#233;cis&#233;ment l&#8217;URL fournie, vous verrez que c&#8217;est nous qui avons demand&#233; &#224; obtenir le r&#233;sultat dans ce format. De plus, on a sp&#233;cifi&#233; dans l&#8217;URL que l&#8217;on souhaitait obtenir les informations d&#8217;itin&#233;raire pour aller de Toronto (param&#232;tre <code>origin</code>) &#224; Montreal (param&#232;tre <code>destination</code>).</p>
+<p>Vous pouvez copier/coller cette URL dans la barre d&#8217;adresse de votre navigateur et observer ce que vous obtenez en retour. Observez que le r&#233;sultat de cette requ&#234;te est au format JSON. En fait, si vous &#233;tudiez plus pr&#233;cis&#233;ment l&#8217;URL fournie, vous verrez que c&#8217;est nous qui avons demand&#233; &#224; obtenir le r&#233;sultat dans ce format. De plus, on a sp&#233;cifi&#233; dans l&#8217;URL que l&#8217;on souhaitait obtenir les informations d&#8217;itin&#233;raire pour aller de Toronto (param&#232;tre <code>origin</code>) &#224; Montreal (param&#232;tre <code>destination</code>).</p>
 <p>En plus de ces param&#232;tres, il est souvent utile (pour pouvoir profiter pleinement des fonctionnalit&#233;s des API) de sp&#233;cifier une cl&#233; d&#8217;API sous la forme d&#8217;un param&#232;tre suppl&#233;mentaire (nomm&#233; <code>key</code> dans les API Google Maps par exemple). Ainsi, la requ&#234;te pr&#233;c&#233;dente deviendrait :</p>
 <pre><code>https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&amp;destination=Montreal&amp;key=VOTRE_CLE</code></pre>
 <p>dans laquelle vous devrez remplacer <code>VOTRE_CLE</code> par une cl&#233; que vous aurez pr&#233;alablement g&#233;n&#233;r&#233;e et qui vous permettra d&#8217;utiliser le service web de mani&#232;re authentifi&#233;e.</p>
@@ -1219,6 +1223,7 @@ fp <span class="op">=</span> urllib.request.urlopen(url)
 contenu <span class="op">=</span> fp.read().decode(<span class="st">&quot;utf-8&quot;</span>)</code></pre></div>
 <p>On voit ici deux nuances par rapport &#224; l&#8217;utilisation de la fonction <code>open</code>. Tout d&#8217;abord, il n&#8217;existe pas de fonction <code>readlines</code> permettant de lire le r&#233;sultat de la requ&#234;te HTTP ligne par ligne, on utilisera donc la fonction <code>read</code>. De toute fa&#231;on, pour le cas de la lecture d&#8217;un r&#233;sultat au format JSON, il n&#8217;aurait pas &#233;t&#233; pertinent de lire le r&#233;sultat ligne par ligne car il faut avoir acc&#232;s &#224; l&#8217;ensemble du document JSON pour pouvoir le traiter avec le module <code>json</code>. Ensuite, on ne peut pas d&#233;finir l&#8217;encodage &#224; utiliser pour la lecture lors de l&#8217;appel &#224; <code>urlopen</code>. On le fait donc dans un deuxi&#232;me temps &#224; l&#8217;aide de la m&#233;thode <code>decode</code>.</p>
 <p>Une fois ces quelques lignes ex&#233;cut&#233;es, la variable <code>contenu</code> contient une cha&#238;ne de caract&#232;res correspondant au document JSON retourn&#233; par l&#8217;API. Il suffit donc alors d&#8217;utiliser le module <code>json</code> pour transformer cette cha&#238;ne de caract&#232;res en donn&#233;es manipulables en Python.</p>
+<p>En pratique, dans de nombreux cas, des modules Python existent pour permettre d&#8217;utiliser les API grand public sans avoir &#224; g&#233;rer les requ&#234;tes HTTP directement. C&#8217;est par exemple le cas des modules <code>googlemaps</code> (qui permet d&#8217;acc&#233;der &#224; toutes les API Google Maps cit&#233;es plus haut) ou <code>tweepy</code> (pour l&#8217;API Twitter).</p>
 <p><strong>Exercice 8.1</strong> &#201;crivez une fonction qui prenne en entr&#233;e une cl&#233; d&#8217;API Google Maps et deux villes et retourne le temps de trajet (en secondes) pr&#233;vu par Google Maps API pour aller d&#8217;une ville &#224; l&#8217;autre.</p>
 <h1 id="tester-son-code"><span class="header-section-number">9</span> Tester son code</h1>
 <p>Dans ce document, nous avons jusqu&#8217;&#224; pr&#233;sent suppos&#233; que tout se passait bien, que votre code ne retournait jamais d&#8217;erreur et qu&#8217;il ne contenait jamais de <em>bug</em>. Quel que soit votre niveau d&#8217;expertise en Python, ces deux hypoth&#232;ses sont peu r&#233;alistes. Nous allons donc nous int&#233;resser maintenant aux moyens de v&#233;rifier si votre code fait bien ce qu&#8217;on attend de lui et de mieux comprendre son comportement lorsque ce n&#8217;est pas le cas.</p>

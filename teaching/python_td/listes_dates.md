@@ -59,12 +59,14 @@ ma_liste = list(range(n))
 Le type date (plus précisément le type `datetime` qui permet de représenter conjointement une date et une heure) est défini dans le module `datetime`.
 Commencez donc par ajouter l'instruction d'importation de ce module **en début de votre script Python**.
 
-5. Supposons que soit stocké, dans une chaîne de caractères `s`{.python}, le contenu suivant : `"24-08, 2017, 16:53"`.
+5. Supposons que soit stocké, dans une chaîne de caractères `s`{.python}, le contenu suivant : `"24-08, 2017, 16:53"`{.python}.
 Chargez cette date dans une variable `d1` de type `datetime` et affichez le contenu de cette variable.
 
-6. Combien d'heures se sont écoulées depuis `d1` ?
+6. Écrivez une fonction qui prenne en entrée une date et retourne le nombre d'heures écoulées depuis cette date.
+Combien d'heures se sont écoulées depuis `d1` ?
 
-7.
+7. Écrivez une fonction qui prenne en entrée une date `d0` et retourne la date située un mois après `d0`.
+À quelle date sera-t-on rendus dans un mois ?
 
 # Exercice de synthèse
 

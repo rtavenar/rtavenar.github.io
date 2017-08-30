@@ -34,46 +34,79 @@ Dans ce modèle, on suppose :
 $$y_i = f\left(\beta_0 + \sum_j \beta_j x_{i,j}\right) + \epsilon_i$$
 
 et on note
-$$\hat{y_i} = f\left(\beta_0 + \sum_j \beta_j x_{i,j}\right).$$
+$$\begin{array}{rcl}
+  o_i & = & \beta_0 + \sum_j \beta_j x_{i,j} \\
+  \hat{y_i} = a_i & = & f(o_i) = f\left(\beta_0 + \sum_j \beta_j x_{i,j}\right)
+\end{array}
+$$
+
 
 Les paramètres de ce modèle sont les $\beta_j$ et la fonction $f$ est appelée fonction d'activation.
 
+![halfwidth](img/tikz_perceptron.png "Représentation d'un perceptron")
+<br />
 Pour cette fonction d'activation, plusieurs choix sont possibles.
 On peut citer pour exemples les fonctions sigmoïde et _ReLU_ (Rectified Linear Unit) :
 
-$$f_1(x) = \frac{1}{1 + e^{-x}}$$
-$$f_2(x) = ReLU(x) = \begin{cases} x, & \text{si } x\geq 0\\
+$$\begin{array}{rcl}
+  f_1(o_i) & = & \frac{1}{1 + e^{-o_i}} \\
+  f_2(o_i) & = & ReLU(o_i) = \begin{cases} o_i, & \text{si } o_i \geq 0\\
                                    0, & \text{sinon}
-                     \end{cases}$$
+                     \end{cases}
+\end{array}
+$$
 
-![fullwidth](img/sigmoid.png "Fonction sigmoïde")
-![fullwidth](img/relu.png "Fonction ReLU")
-
+![halfwidth](img/sigmoid.png "Fonction sigmoïde")
+![halfwidth](img/relu.png "Fonction ReLU")
+<br />
 Puisque nous en aurons besoin par la suite, nous pouvons d'ores et déjà calculer la dérivée de ces fonctions :
-$$\frac{\partial{f_1}}{\partial{x}} = f_1(x) \cdot (1 - f_1(x))$$
-$$\frac{\partial{f_2}}{\partial{x}} = \begin{cases} 1, & \text{si } x > 0\\
-                                   0, & \text{sinon}
-                     \end{cases}$$
+
+$$\begin{array}{rcl}
+  \frac{\partial{f_1}}{\partial{o_i}} & = & f_1(o_i) \cdot (1 - f_1(o_i)) \\
+  \frac{\partial{f_2}}{\partial{o_i}} & = & \begin{cases} 1, & \text{si } o_i > 0\\
+                                   0, & \text{si } o_i < 0
+                     \end{cases}
+\end{array}
+$$
+
 Notez que $f_2$ n'est pas dérivable en 0.
 On choisit par convention de prolonger sa dérivée en 0 par la valeur 0.
 Il faut comprendre ici que ce calcul de dérivée nous servira à effectuer notre descente de gradient.
-En pratique, la probabilité que l'on ait à évaluer $\frac{\partial{f_2}}{\partial{x}}$ en 0 est nulle et donc ce cas ne se présentera pas à nous.
+En pratique, la probabilité que l'on ait à évaluer $\frac{\partial{f_2}}{\partial{o_i}}$ en 0 est nulle.
+
+### Optimisation en pratique
 
 Considérons une fois encore le problème de régression aux moindres carrés ordinaires avec ce modèle.
-On cherche donc à minimiser $L(\beta) = \frac{1}{2} \sum_i (y_i - \hat{y_i})^2$ et l'on n'a, cette fois, plus d'expression analytique pour les $\beta_j$.
+On cherche donc à minimiser
+$$L(\beta) = \frac{1}{2} \sum_i (y_i - \hat{y_i})^2 = \frac{1}{2} \sum_i \underbrace{(y_i - a_i)^2}_{L_i(\beta)}$$
+et l'on n'a, cette fois, plus d'expression analytique pour les $\beta_j$ optimaux.
 On va donc chercher à effectuer une descente de gradient.
 
-Pour cela, on doit calculer $\frac{\partial{L}}{\partial{\beta_j}}$ pour $j = 0 \dots D$ où $D$ est la dimension de l'espace dans lequel vivent nos $x_i$.
+Pour cela, on doit calculer $\frac{\partial{L_i}}{\partial{\beta_j}}$ pour tout $i$ et pour $j = 0 \dots D$ où $D$ est la dimension de l'espace dans lequel vivent nos $x_i$.
+
+Avant toute chose, rappelons la règle de dérivation en chaîne qui nous sera utilie par la suite :
+
+> Si $z=f(y)$ et $y=g(x)$, alors on a :
+> $$\frac{\partial{f}}{\partial{x}} = \frac{\partial{f}}{\partial{y}} \cdot \frac{\partial{y}}{\partial{x}}$$
+
+Revenons maintenant à nos $\frac{\partial{L_i}}{\partial{\beta_j}}$.
 On sépare le cas $j=0$ et on obtient :
 
-$$\frac{\partial{L}}{\partial{\beta_0}} = 1$$
+$$\begin{array}{rcl}
+  \frac{\partial{L_i}}{\partial{\beta_0}} & = & \frac{\partial{L_i}}{\partial{a_i}} \cdot \frac{\partial{a_i}}{\partial{o_i}} \cdot \frac{\partial{o_i}}{\partial{\beta_0}} \\
+  & = & (y_i - a_i) \cdot \frac{\partial{a_i}}{\partial{o_i}} \cdot 1 \\
+    \forall j > 0, \, \frac{\partial{L_i}}{\partial{\beta_j}} & = & \frac{\partial{L_i}}{\partial{a_i}} \cdot \frac{\partial{a_i}}{\partial{o_i}} \cdot \frac{\partial{o_i}}{\partial{\beta_j}} \\
+    & = & (y_i - a_i) \cdot \frac{\partial{a_i}}{\partial{o_i}} \cdot x_{i,j} \\
+ \end{array}
+$$
 
-### Poids
+où $\frac{\partial{a_i}}{\partial{o_i}}$ vaut $\frac{\partial{f_1}}{\partial{o_i}}$ ou $\frac{\partial{f_2}}{\partial{o_i}}$ selon la fonction d'activation choisie.
+Par exemple, dans le cas de la fonction d'activation sigmoïde, on aura :
+$$\frac{\partial{a_i}}{\partial{o_i}} = a_i \cdot (1 - a_i).$$
 
-### Fonction d'activation
+En pratique, pour effectuer notre descente de gradient, on effectuera les opérations suivantes pour chaque exemple d'apprentissage $(x_i, y_i)$ :
 
-### Calcul de gradient
+1. Calculer $a_i$ puis l'erreur $\epsilon_i = y_i - a_i$ (passe _forward_) ;
+2. Utiliser ces quantités pour calculer les $\frac{\partial{L_i}}{\partial{\beta_j}}$ (rétropropagation, ou _backpropagation_);
 
-Blabla je parle de l'équation (@eq:description) qui est super.
-
-$$ y = mx + b $$ {#eq:description}
+Finalement, on calculera $\frac{\partial{L}}{\partial{\beta_j}}$ comme la somme des $\frac{\partial{L_i}}{\partial{\beta_j}}$ et on mettra à jour les $\beta_j$ selon ce qui est indiqué par l'algorithme de descente de gradient choisi.

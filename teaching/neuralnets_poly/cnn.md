@@ -9,3 +9,5 @@
 ## Apprentissage par transfert et _fine-tuning_
 
 <http://cs231n.github.io/transfer-learning/>
+
+## Exemples adversaires

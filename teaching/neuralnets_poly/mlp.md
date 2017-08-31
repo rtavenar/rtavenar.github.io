@@ -10,8 +10,8 @@
 
 Exemple intéressant : <http://cs231n.github.io/neural-networks-case-study/>
 
-[comment]: # (Montrer que l'augmentation du nombre de neurones dans la couche permet d'apprendre des frontières plus complexes.)
-[comment]: # (Finir par le théorème (?) qui dit que c'est mieux d'avoir plus de couches que juste une couche avec pleins de neurones.)
+[comment1]: # (Montrer que l'augmentation du nombre de neurones dans la couche permet d'apprendre des frontières plus complexes.)
+[comment2]: # (Finir par le théorème (?) qui dit que c'est mieux d'avoir plus de couches que juste une couche avec pleins de neurones.)
 
 ## Cas multi-couches
 
@@ -19,7 +19,7 @@ Exemple intéressant : <http://cs231n.github.io/neural-networks-case-study/>
 
 <http://cs231n.github.io/optimization-2/>
 
-[comment]: # (Montrer pourquoi faire du backprop pour des raisons de complexité)
+[comment3]: # (Montrer pourquoi faire du backprop pour des raisons de complexité)
 
 ### Visualisation
 
@@ -28,14 +28,12 @@ Comprendre qu'on apprend une représentation (eg PCA améliorée) suivie d'un cl
 * <https://rajarsheem.wordpress.com/2017/05/04/neural-networks-dynamics/>
 * <http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/>
 
-### Exemples adversaires
-
 ## Quelques considérations pratiques
 
 ### Initialisation des poids du réseau
 
-[comment]: # (Approche historique (random).)
-[comment]: # (Approche _deep learning_ : _Stacked Auto-encoders_.)
+[comment4]: # (Approche historique (random).)
+[comment5]: # (Approche _deep learning_ : _Stacked Auto-encoders_.)
 
 ### Régularisation
 

@@ -480,5 +480,36 @@ TypeError: list indices must be integers, not float</code></pre>
 </blockquote>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(mediane([<span class="dv">1</span>, <span class="dv">12</span>, <span class="dv">5</span>]))
 <span class="bu">print</span>(mediane([<span class="dv">1</span>, <span class="dv">12</span>, <span class="dv">5</span>, <span class="dv">20</span>]))</code></pre></div>
+<ol start="12" style="list-style-type: decimal">
+<li>&#201;crivez une fonction qui prenne en entr&#233;e (i) une liste <code>l</code> de cha&#238;nes de caract&#232;res repr&#233;sentant des dates et (ii) une cha&#238;ne de caract&#232;re d&#233;finissant le format de date utilis&#233; dans la liste. Cette fonction devra retourner une liste des dates contenues dans <code>l</code> transform&#233;es au format <code>datetime.datetime</code>.</li>
+</ol>
+<blockquote>
+<p><strong>Correction.</strong> La fonction &#224; coder ici prend en entr&#233;e une liste <code>l</code> et une cha&#238;ne de caract&#232;res et retourne une liste :</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> transforme_dates(l, <span class="bu">format</span>):
+    <span class="co"># [...]</span>
+    <span class="cf">return</span> l_transformee</code></pre></div>
+<blockquote>
+<p>On a (au moins) deux moyens de construire la liste <code>l_transformee</code> : soit on part d&#8217;une liste vide qu&#8217;on peuple au fur et &#224; mesure, soit on utilise les listes en compr&#233;hension. Commen&#231;ons par pr&#233;senter la premi&#232;re option :</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> transforme_dates(l, <span class="bu">format</span>):
+    l_transformee <span class="op">=</span> []
+    <span class="cf">for</span> d <span class="op">in</span> l:  <span class="co"># Ici, on utilise un parcours par valeurs, les indices ne nous int&#233;ressent pas</span>
+        l_transformee <span class="op">=</span> datetime.datetime.strptime(d, <span class="bu">format</span>)
+    <span class="cf">return</span> l_transformee</code></pre></div>
+<blockquote>
+<p>On teste cette fonction avec une liste de cha&#238;nes de caract&#232;res non tri&#233;e :</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(transforme_dates([<span class="st">&quot;16h12, 22/09/2017&quot;</span>,
+                        <span class="st">&quot;9h23, 31/12/1993&quot;</span>,
+                        <span class="st">&quot;12h56, 08/02/2010&quot;</span>,
+                        <span class="co">&quot;0h00, 01/01/1900&quot;</span>],
+                       <span class="co">&quot;%Hh%M, %d/%m/%Y&quot;</span>))</code></pre></div>
+<blockquote>
+<p>L&#8217;alternative aurait &#233;t&#233; d&#8217;utiliser une notation plus compacte (mais &#233;quivalente) :</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> transforme_dates(l, <span class="bu">format</span>):
+    l_transformee <span class="op">=</span> [datetime.datetime.strptime(d, <span class="bu">format</span>) <span class="cf">for</span> d <span class="op">in</span> l]
+    <span class="cf">return</span> l_transformee</code></pre></div>
 </body>
 </html>

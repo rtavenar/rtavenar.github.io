@@ -65,8 +65,8 @@ Chargez cette date dans une variable `d1` de type `datetime` et affichez le cont
 6. Écrivez une fonction qui prenne en entrée une date et retourne le nombre d'heures écoulées depuis cette date.
 Combien d'heures se sont écoulées depuis `d1` ?
 
-7. Écrivez une fonction qui prenne en entrée une date `d0` et retourne la date située un mois après `d0`.
-À quelle date sera-t-on rendus dans un mois ?
+7. Écrivez une fonction qui prenne en entrée une date `d0` et retourne la date située une semaine après `d0`.
+À quelle date sera-t-on rendus dans une semaine ?
 
 # Exercice de synthèse
 

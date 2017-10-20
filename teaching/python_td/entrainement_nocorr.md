@@ -83,3 +83,5 @@ Remarquez que, dans les trois exemples précédents, un soin particulier est app
 10. Écrivez une fonction qui prenne en entrée une liste de chaînes de caractères et les affiche dans l'ordre lexicographique.
 
 11. Écrivez une fonction qui retourne la médiane des valeurs stockées dans une liste.
+
+12. Écrivez une fonction qui prenne en entrée (i) une liste `l` de chaînes de caractères représentant des dates et (ii) une chaîne de caractère définissant le format de date utilisé dans la liste. Cette fonction devra retourner une liste des dates contenues dans `l` transformées au format `datetime.datetime`.

@@ -58,10 +58,10 @@ print(d1 > d3)
 ```
 
 Il existe d'autres moyens de construire des variables de type date.
-On peut générer une date correspondant à l'heure actuelle avec la fonction `now` du module `datetime` :
+On peut générer une date correspondant à l'heure actuelle avec la fonction `datetime.now` du module `datetime` :
 
 ```python
-date_actuelle = datetime.now()
+date_actuelle = datetime.datetime.now()
 ```
 
 ## Transformation d'une date en chaîne de caractères

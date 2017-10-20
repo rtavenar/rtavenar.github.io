@@ -376,3 +376,34 @@ def mediane(liste):
 print(mediane([1, 12, 5]))
 print(mediane([1, 12, 5, 20]))
 ```
+
+12. Écrivez une fonction qui prenne en entrée (i) une liste `l` de chaînes de caractères représentant des dates et (ii) une chaîne de caractère définissant le format de date utilisé dans la liste. Cette fonction devra retourner une liste des dates contenues dans `l` transformées au format `datetime.datetime`.
+
+> **Correction.** La fonction à coder ici prend en entrée une liste `l` et une chaîne de caractères et retourne une liste :
+```python
+def transforme_dates(l, format):
+    # [...]
+    return l_transformee
+```
+> On a (au moins) deux moyens de construire la liste `l_transformee` : soit on part d'une liste vide qu'on peuple au fur et à mesure, soit on utilise les listes en compréhension. Commençons par présenter la première option :
+```python
+def transforme_dates(l, format):
+    l_transformee = []
+    for d in l:  # Ici, on utilise un parcours par valeurs, les indices ne nous intéressent pas
+        l_transformee = datetime.datetime.strptime(d, format)
+    return l_transformee
+```
+> On teste cette fonction avec une liste de chaînes de caractères non triée :
+```python
+print(transforme_dates(["16h12, 22/09/2017",
+                        "9h23, 31/12/1993",
+                        "12h56, 08/02/2010",
+                        "0h00, 01/01/1900"],
+                       "%Hh%M, %d/%m/%Y"))
+```
+> L'alternative aurait été d'utiliser une notation plus compacte (mais équivalente) :
+```python
+def transforme_dates(l, format):
+    l_transformee = [datetime.datetime.strptime(d, format) for d in l]
+    return l_transformee
+```

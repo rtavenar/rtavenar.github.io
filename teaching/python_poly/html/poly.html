@@ -527,8 +527,8 @@ d3 <span class="op">=</span> datetime.datetime(<span class="dv">2017</span>, <sp
 
 <span class="bu">print</span>(d1 <span class="op">&gt;</span> d3)
 <span class="co"># [Sortie] False</span></code></pre></div>
-<p>Il existe d&#8217;autres moyens de construire des variables de type date. On peut g&#233;n&#233;rer une date correspondant &#224; l&#8217;heure actuelle avec la fonction <code>now</code> du module <code>datetime</code> :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date_actuelle <span class="op">=</span> datetime.now()</code></pre></div>
+<p>Il existe d&#8217;autres moyens de construire des variables de type date. On peut g&#233;n&#233;rer une date correspondant &#224; l&#8217;heure actuelle avec la fonction <code>datetime.now</code> du module <code>datetime</code> :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date_actuelle <span class="op">=</span> datetime.datetime.now()</code></pre></div>
 <h2 id="transformation-dune-date-en-cha&#238;ne-de-caract&#232;res"><span class="header-section-number">3.1</span> Transformation d&#8217;une date en cha&#238;ne de caract&#232;res</h2>
 <p>Si l&#8217;on souhaite transformer une date en cha&#238;ne de caract&#232;res (par exemple pour l&#8217;afficher), on peut lui appliquer la fonction <code>str</code> :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">str</span>(datetime.datetime(<span class="dv">2017</span>, <span class="dv">8</span>, <span class="dv">27</span>)))</code></pre></div>

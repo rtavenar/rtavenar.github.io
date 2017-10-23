@@ -33,6 +33,12 @@ $for(header-includes)$
   $header-includes$
 $endfor$
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.min.js"></script>
+<script type="text/javascript">
+  var fileref=document.createElement('script');
+  fileref.setAttribute("type","text/javascript");
+  fileref.setAttribute("src", "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML");
+  document.getElementsByTagName("head")[0].appendChild(fileref);
+</script>
 </head>
 <body onload="anchors.options = {visible: 'always'}; anchors.add();">
 $for(include-before)$

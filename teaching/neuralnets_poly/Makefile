@@ -11,7 +11,7 @@ epub: poly_epub
 html: poly_html
 
 poly_html: $(SRC_POLY)
-	pandoc --toc -s --self-contained -o html/poly.html --highlight-style pygments --data-dir . --columns 1000 --css ../../css/md.css -S --normalize --ascii --number-sections --mathml --filter pandoc-eqnos $^
+	pandoc --toc -s --self-contained -o html/poly.html --highlight-style pygments --data-dir . --columns 1000 --css ../../css/md.css -S --normalize --ascii --number-sections --mathjax="" --filter pandoc-eqnos $^
 
 poly_epub: $(SRC_POLY)
 	pandoc -S -o epub/poly.epub --columns 1000 -S --epub-stylesheet ../../css/md_epub.css --mathml --toc --filter pandoc-eqnos $^

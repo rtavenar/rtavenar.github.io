@@ -263,7 +263,7 @@ var hals={
         document.getElementById(target_id).innerHTML=formatPublicationsByGroup(hals[target_id],group_key,header);
     };
     jQuery(document).ready(function(){fetchPublications("publications","producedDateY_i",[],header_pub);});
-    jQuery(document).ready(function(){fetchPublications("ml_env","",[01515283, 1343211, 1228397, 906292],"");});
+    jQuery(document).ready(function(){fetchPublications("ml_env","",[01515283, 01620604, 1343211, 1228397, 906292],"");});
     jQuery(document).ready(function(){fetchPublications("ml_ts","",[1565207,1561461,1339007,1357973,1321327,912512],"");});
     jQuery(document).ready(function(){fetchPublications("topic_models","",[872048, 906292],"");});
     jQuery(document).ready(function(){fetchPublications("ir","",[862176,567877,672897,639225,566883,601242,561797],"");});

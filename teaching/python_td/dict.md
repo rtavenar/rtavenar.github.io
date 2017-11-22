@@ -41,7 +41,7 @@ Par exemple :
 ventes={"Dupont":14, "Hervy":19, "Geoffroy":15, "Layec":21}
 ```
 a. Écrire une fonction qui prend en entrée un tel dictionnaire et renvoie le nombre total de ventes dans la société.
-b. Écrire une fonction qui prend en entrée un tel dictionnaire et renvoie le nom du vendeur ayant réalisé le plus de ventes. Si plusieurs vandeurs sont _ex-aequo_ sur ce critère, la fonction devra retourner le nom de l'un d'entre eux.
+b. Écrire une fonction qui prend en entrée un tel dictionnaire et renvoie le nom du vendeur ayant réalisé le plus de ventes. Si plusieurs vendeurs sont _ex-aequo_ sur ce critère, la fonction devra retourner le nom de l'un d'entre eux.
 
 5. Écrivez une fonction qui prend en entrée un dictionnaire associant à un nom une liste de notes et qui retourne la liste des noms des personnes qui ont la moyenne la plus élevée (s'il y a des _ex-aequo_, cette liste contiendra plusieurs éléments, sinon, elle n'en contiendra qu'un) et la moyenne correspondante.
 On pourra utiliser le dictionnaire suivant pour tester la fonction ainsi écrite :

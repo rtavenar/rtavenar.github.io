@@ -1,4 +1,4 @@
-TARGETS=numpy
+TARGETS=numpy sklearn
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

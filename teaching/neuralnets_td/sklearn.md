@@ -58,10 +58,12 @@ validation croisée, qui sont listés sur
 [cette page](http://scikit-learn.org/stable/modules/classes.html#splitter-classes).
 
 6. Définissez un objet `cv` de la classe `KFold`. Exécutez le code suivant :
+
 ```python
 for train, valid in cv.split(X_train, y_train):
     print(train, valid)
 ```
+
 Qu'est-ce qui est affiché ?
 
 7. Faites de même avec des objets des classes `StratifiedKFold` et `LeaveOneOut`

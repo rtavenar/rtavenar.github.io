@@ -83,11 +83,13 @@ mon_classifieur.predict(X_test)</code></pre></div>
 <h1 id="validation-crois&#233;e"><span class="header-section-number">3</span> Validation crois&#233;e</h1>
 <p>Il existe dans <code>sklearn</code> de nombreux it&#233;rateurs permettant de faire de la validation crois&#233;e, qui sont list&#233;s sur <a href="http://scikit-learn.org/stable/modules/classes.html#splitter-classes">cette page</a>.</p>
 <ol start="6" style="list-style-type: decimal">
-<li><p>D&#233;finissez un objet <code>cv</code> de la classe <code>KFold</code>. Ex&#233;cutez le code suivant :</p>
+<li>D&#233;finissez un objet <code>cv</code> de la classe <code>KFold</code>. Ex&#233;cutez le code suivant :</li>
+</ol>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> train, valid <span class="op">in</span> cv.split(X_train, y_train):
-<span class="bu">print</span>(train, valid)</code></pre></div>
-<p>Qu&#8217;est-ce qui est affich&#233; ?</p></li>
-<li><p>Faites de m&#234;me avec des objets des classes <code>StratifiedKFold</code> et <code>LeaveOneOut</code> et v&#233;rifiez que, m&#234;me en ne m&#233;langeant pas les donn&#233;es (c&#8217;est-&#224;-dire sans sp&#233;cifier <code>shuffle=True</code>), les d&#233;coupages obtenus sont diff&#233;rents.</p></li>
+    <span class="bu">print</span>(train, valid)</code></pre></div>
+<p>Qu&#8217;est-ce qui est affich&#233; ?</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Faites de m&#234;me avec des objets des classes <code>StratifiedKFold</code> et <code>LeaveOneOut</code> et v&#233;rifiez que, m&#234;me en ne m&#233;langeant pas les donn&#233;es (c&#8217;est-&#224;-dire sans sp&#233;cifier <code>shuffle=True</code>), les d&#233;coupages obtenus sont diff&#233;rents.</li>
 </ol>
 <h1 id="s&#233;lection-de-mod&#232;le"><span class="header-section-number">4</span> S&#233;lection de mod&#232;le</h1>
 <p>En pratique, vous n&#8217;utiliserez pas vous m&#234;me ces appels aux m&#233;thodes <code>split()</code> des it&#233;rateurs de validation crois&#233;e, car il existe dans <code>sklearn</code> un outil tr&#232;s pratique pour vous aider lors de votre &#233;tape de s&#233;lection de mod&#232;le.</p>

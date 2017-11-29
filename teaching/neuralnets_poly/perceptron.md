@@ -110,3 +110,31 @@ En pratique, pour effectuer notre descente de gradient, on effectuera les opéra
 2. Utiliser ces quantités pour calculer les $\frac{\partial{L_i}}{\partial{\beta_j}}$ (rétropropagation, ou _backpropagation_);
 
 Finalement, on calculera $\frac{\partial{L}}{\partial{\beta_j}}$ comme la somme des $\frac{\partial{L_i}}{\partial{\beta_j}}$ et on mettra à jour les $\beta_j$ selon ce qui est indiqué par l'algorithme de descente de gradient choisi.
+
+On remarque ici que cette descente de gradient sera très facilement parallélisable.
+En effet, les $\frac{\partial{L_i}}{\partial{\beta}}$ peuvent être calculés de manière indépendante (et notamment en parallèle) et l'algorithme complet vu comme un exemple de _Map-Reduce_.
+
+### Cas de la classification multi-classes
+
+Lorsque le problème auquel on est confronté est un problème de classification binaire, le modèle de perceptron présenté plus haut peut convenir, où la valeur de sortie est interprétée comme la probabilité (prédite par le modèle) d'être en présence d'une instance de la classe `1`.
+Pour cela, il faut bien entendu utiliser une fonction d'activation dont l'image est $[0, 1]$.
+
+En revanche, lorsque l'on a affaire à un problème de classification multi-classes (avec un nombre de classes $K > 2$), on devra utiliser plusieurs perceptrons (un pour chaque classe à prédire) tel que celui-ci :
+
+![halfwidth](img/tikz_perceptron_multiclass.png "Cas d'un problème à 3 classes")
+<br />
+Il faudra alors avoir recours à une fonction d'activation un peu particulière qui garantisse que la somme des probabilités prédites pour chacune des classes soit égale à 1.
+Pour cela, on utilise généralement la fonction $softmax$ définie comme :
+
+$$\forall 1 \leq k \leq K, \, \, f_3(o_{i, k}) =  softmax(o_{i, k}) = \frac{e^{o_{i, k}}}{\sum_{k'=1}^K e^{o_{i, k'}}}$$
+
+On peut aisément montrer que $f_3$ :
+
+* a pour image $]0, 1[$ ;
+* est dérivable en tout point de $\mathbb{R}$ ;
+* vérifie la propriété $\forall i, \, \sum_k f_3(o_{i, k}) = 1$.
+
+On vient ici de construire un réseau de neurones à une couche.
+Les trois perceptrons (ou neurones) utilisés ici sont connectés aux mêmes entrées, on dit donc qu'ils appartiennent à la même couche.
+
+Dans la suite de ce cours, on s'intéressera aux réseaux de neurones multi-couches.

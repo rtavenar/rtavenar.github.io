@@ -1,4 +1,4 @@
-TARGETS=enonce
+TARGETS=enonce tweepy_gmaps
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

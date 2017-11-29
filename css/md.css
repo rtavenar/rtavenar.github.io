@@ -187,7 +187,7 @@ td.lineNumbers {
 }
 
 img[alt=fullwidth] { width: 100%; }
-img[alt=halfwidth] { width: 45%; align: center; }
+img[alt=halfwidth] { width: 45%; margin-left: auto; margin-right: auto;}
 
 /*div#TOC, div#header {
 	position: fixed;

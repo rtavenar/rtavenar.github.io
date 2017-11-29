@@ -1,4 +1,4 @@
-SRC_POLY=header.md intro.md perceptron.md mlp.md cnn.md rnn.md tf.md
+SRC_POLY=header.md intro.md perceptron.md mlp.md #cnn.md rnn.md keras.md
 
 all: poly
 

@@ -60,7 +60,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="obtenir-une-cl&#233;-dapi-google-maps"><span class="header-section-number">2.1</span> Obtenir une cl&#233; d&#8217;API Google Maps</h2>
 <p>Pour obtenir une cl&#233; d&#8217;API Google Maps, vous devrez avoir un compte GMail puis, &#233;tant connect&#233; &#224; ce compte, acc&#233;der &#224; <a href="https://console.developers.google.com/apis/dashboard">la page de gestion de vos cl&#233;s d&#8217;API</a>. Sur cette page, dans l&#8217;onglet &#8220;Identifiants&#8221;, vous pourrez cr&#233;er une nouvelle cl&#233; d&#8217;API.</p>
 <p>Une fois la cl&#233; cr&#233;&#233;e, vous pourrez vous identifier dans le module <code>googlemaps</code> avec les commandes suivantes :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">api <span class="op">=</span> googlemaps.GoogleMaps(api_key)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">api <span class="op">=</span> googlemaps.Client(api_key)</code></pre></div>
 <h2 id="exemple-dutilisation"><span class="header-section-number">2.2</span> Exemple d&#8217;utilisation</h2>
 <p>La documentation du module <code>googlemaps</code> (dont l&#8217;adresse est donn&#233;e plus haut) fournit des exemples assez explicites et simples. Par exemple, pour ce qui est du calcul d&#8217;itin&#233;raire, l&#8217;exemple suivant est fourni :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">directions <span class="op">=</span> api.directions(address, destination)</code></pre></div>

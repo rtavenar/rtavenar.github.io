@@ -75,3 +75,9 @@ Les principales actions que vous pourrez effectuer depuis `tweepy` seront :
 * Supprimer un tweet à partir de son identifiant [[lien](http://tweepy.readthedocs.io/en/v3.5.0/api.html#API.destroy_status)]
 
 Un objet de type `Status` représente un tweet et il possède un nombre important d'attributs (voir [ici](https://gist.github.com/jaymcgrath/367c521f1dd786bc5a05ec3eeeb1cb04#file-tweepy-status-object-public-properties-and-methods) pour une liste exhaustive).
+
+Par exemple, pour accéder à l'attribut `created_at` de la variable `s` de type `Status`, on écrira :
+
+```python
+s.created_at
+```

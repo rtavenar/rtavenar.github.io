@@ -69,9 +69,9 @@ api = tweepy.API(auth)
 Les principales actions que vous pourrez effectuer depuis `tweepy` seront :
 
 * Obtenir la `timeline` (liste de tweets) pour un utilisateur à partir de son identifiant [[lien](http://tweepy.readthedocs.io/en/v3.5.0/api.html#API.user_timeline)] ;
-  * retourne une liste d'objets de type `Status` (voir plus bas)
+    * retourne une liste d'objets de type `Status` (voir plus bas)
 * Poster un tweet [[lien](http://tweepy.readthedocs.io/en/v3.5.0/api.html#API.update_status)] ;
-  * retourne un objet `Status` représentant le tweet envoyé
+    * retourne un objet `Status` représentant le tweet envoyé
 * Supprimer un tweet à partir de son identifiant [[lien](http://tweepy.readthedocs.io/en/v3.5.0/api.html#API.destroy_status)]
 
 Un objet de type `Status` représente un tweet et il possède un nombre important d'attributs (voir [ici](https://gist.github.com/jaymcgrath/367c521f1dd786bc5a05ec3eeeb1cb04#file-tweepy-status-object-public-properties-and-methods) pour une liste exhaustive).

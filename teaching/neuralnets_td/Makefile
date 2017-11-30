@@ -1,4 +1,4 @@
-TARGETS=numpy sklearn
+TARGETS=numpy sklearn keras1
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

@@ -113,7 +113,16 @@ model.fit(X_train, y_train, verbose<span class="op">=</span><span class="dv">2</
 <li><p>Appliquez une r&#233;gularisation de type <span class="math inline">\(L_1\)</span> &#224; chacune des couches de votre r&#233;seau. L&#8217;aide disponible <a href="https://keras.io/regularizers/">ici</a> devrait vous aider.</p></li>
 <li><p>Au lieu de la r&#233;gularisation <span class="math inline">\(L_1\)</span>, choisissez de mettre en place une strat&#233;gie de <a href="https://keras.io/layers/core/#dropout"><em>Drop-Out</em></a> pour aider &#224; la r&#233;gularisation de votre r&#233;seau. Vous &#233;teindrez &#224; chaque &#233;tape 10% des poids de votre r&#233;seau.</p></li>
 </ol>
-<h1 id="mod&#232;les-keras-dans-sklearn"><span class="header-section-number">5</span> Mod&#232;les <code>keras</code> dans <code>sklearn</code></h1>
+<h1 id="algorithme-doptimisation-et-vitesse-de-convergence"><span class="header-section-number">5</span> Algorithme d&#8217;optimisation et vitesse de convergence</h1>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Modifiez la m&#233;thode d&#8217;optimisation choisie. Vous pourrez notamment essayer les algorithmes <code>&quot;rmsprop&quot;</code> et <code>&quot;adam&quot;</code>, reconnus pour leurs performances.</p></li>
+<li><p>En utilisant l&#8217;aide fournie <a href="https://keras.io/optimizers/">ici</a>, faites varier le param&#232;tre <code>lr</code> (<em>learning rate</em>) &#224; l&#8217;extr&#234;me pour observer :</p></li>
+</ol>
+<ul>
+<li>l&#8217;instabilit&#233; des performances lorsque celui-ci est trop grand ;</li>
+<li>la lenteur de la convergence lorsque celui-ci est trop petit.</li>
+</ul>
+<h1 id="mod&#232;les-keras-dans-sklearn"><span class="header-section-number">6</span> Mod&#232;les <code>keras</code> dans <code>sklearn</code></h1>
 <p>Il est possible de transformer vos mod&#232;les <code>keras</code> (en tout cas, ceux qui sont de type <code>Sequential</code>) en mod&#232;les <code>sklearn</code>. Cela a notamment pour avantage de vous permettre d&#8217;utiliser les fonctionnalit&#233;s de s&#233;lection de mod&#232;les vues lors du TD pr&#233;c&#233;dent.</p>
 <p>Pour cela, vous devrez utiliser au choix l&#8217;une des classes <code>KerasClassifier</code> ou <code>KerasRegressor</code> (selon le probl&#232;me de <em>machine learning</em> auquel vous &#234;tes confront&#233;) du module <code>keras.wrappers.scikit-learn</code>.</p>
 <p>Le principe de fonctionnement de ces deux classes est le m&#234;me :</p>
@@ -125,27 +134,27 @@ clf.predict(X_test)</code></pre></div>
 <li>des param&#232;tres de votre fonction <code>ma_fonction</code> ;</li>
 <li>des param&#232;tres pass&#233;s au mod&#232;le lors de sa compilation (appel &#224; la m&#233;thode <code>compile()</code>) ou de son apprentissage (appel &#224; la m&#233;thode <code>fit()</code>).</li>
 </ul>
-<ol start="8" style="list-style-type: decimal">
+<ol start="10" style="list-style-type: decimal">
 <li><p>Cr&#233;ez un r&#233;seau &#224; deux couches cach&#233;es transform&#233; en objet <code>sklearn</code> en sp&#233;cifiant, lors de sa construction, le nombre d&#8217;it&#233;rations et la taille des <em>batchs</em> de votre descente de gradient par <em>mini-batchs</em>. Vous pourrez utiliser la m&#233;thode <code>score()</code> des objets <code>sklearn</code> pour &#233;valuer ce mod&#232;le.</p></li>
 <li><p>Utilisez les outils de validation crois&#233;e de <code>sklearn</code> pour choisir entre les algorithmes d&#8217;optimisation <code>&quot;rmsprop&quot;</code> et <code>&quot;sgd&quot;</code>.</p></li>
 </ol>
-<h1 id="la-notion-de-callback"><span class="header-section-number">6</span> La notion de <code>Callback</code></h1>
+<h1 id="la-notion-de-callback"><span class="header-section-number">7</span> La notion de <code>Callback</code></h1>
 <p>Les <em>Callbacks</em> sont des outils qui, dans <code>keras</code>, permettent d&#8217;avoir un oeil sur ce qui se passe lors de l&#8217;apprentissage et, &#233;ventuellement, d&#8217;agir sur cet apprentissage.</p>
 <p>Le premier <em>callback</em> auquel vous pouvez acc&#233;der simplement est retourn&#233; lors de l&#8217;appel &#224; la m&#233;thode <code>fit()</code> (sur un objet <code>keras</code>, pas <code>sklearn</code>). Ce <em>callback</em> est un objet qui poss&#232;de un attribut <code>history</code>. Cet attribut est un dictionnaire dont les cl&#233;s sont les m&#233;triques suivies lors de l&#8217;apprentissage. &#192; chacune de ces cl&#233;s est associ&#233; un vecteur indiquant comment la quantit&#233; en question a &#233;volu&#233; au fil des it&#233;rations.</p>
-<ol start="10" style="list-style-type: decimal">
+<ol start="12" style="list-style-type: decimal">
 <li>Tracez les courbes d&#8217;&#233;volution du taux de bonnes classifications sur les jeux d&#8217;entrainement et de validation.</li>
 </ol>
 <p>La mise en place d&#8217;autres <em>callbacks</em> doit &#234;tre explicite. Elle se fait en passant une liste de <em>callbacks</em> lors de l&#8217;appel &#224; la m&#233;thode <code>fit()</code>. Lorsque l&#8217;apprentissage prend beaucoup de temps, la m&#233;thode pr&#233;c&#233;dente n&#8217;est pas satisfaisante car il est n&#233;cessaire d&#8217;attendre la fin du processus d&#8217;apprentissage avant de visualiser ces courbes. Dans ce cas, le <em>callback</em> <a href="https://keras.io/callbacks/#tensorboard"><code>TensorBoard</code></a> peut s&#8217;av&#233;rer tr&#232;s pratique.</p>
-<ol start="11" style="list-style-type: decimal">
+<ol start="13" style="list-style-type: decimal">
 <li>Visualisez dans une page TensorBoard l&#8217;&#233;volution des m&#233;triques <code>&quot;loss&quot;</code> et <code>&quot;accuracy&quot;</code> lors de l&#8217;apprentissage d&#8217;un mod&#232;le.</li>
 </ol>
 <p>De m&#234;me, lorsque l&#8217;apprentissage est long, il peut s&#8217;av&#233;rer souhaitable d&#8217;enregistrer des mod&#232;les interm&#233;diaires, dans le cas o&#249; un plantage arriverait par exemple. Cela peut se faire &#224; l&#8217;aide du <em>callback</em> <a href="https://keras.io/callbacks/#modelcheckpoint"><code>ModelCheckpoint</code></a>.</p>
-<ol start="12" style="list-style-type: decimal">
+<ol start="14" style="list-style-type: decimal">
 <li><p>Mettez en place un enregistrement des mod&#232;les interm&#233;diaires toutes les 2 it&#233;rations, en n&#8217;enregistrant un mod&#232;le que si le risque calcul&#233; sur le jeu de validation est plus faible que celui de tous les autres mod&#232;les enregistr&#233;s aux it&#233;rations pr&#233;c&#233;dentes.</p></li>
 <li><p>Mettez en oeuvre une politique d&#8217;arr&#234;t pr&#233;coce de l&#8217;apprentissage au cas o&#249; le risque calcul&#233; sur le jeu de validation n&#8217;a pas diminu&#233; depuis au moins 5 it&#233;rations (en utilisant le <em>callback</em> <a href="https://keras.io/callbacks/#earlystopping"><code>EarlyStopping</code></a>).</p></li>
 </ol>
-<h1 id="exercice-de-synth&#232;se"><span class="header-section-number">7</span> Exercice de synth&#232;se</h1>
-<ol start="14" style="list-style-type: decimal">
+<h1 id="exercice-de-synth&#232;se"><span class="header-section-number">8</span> Exercice de synth&#232;se</h1>
+<ol start="16" style="list-style-type: decimal">
 <li>Mettez en place une validation crois&#233;e pour choisir la structure (nombre de couches, nombre de neurones par couche) et l&#8217;algorithme d&#8217;optimisation idoines pour le probl&#232;me li&#233; au jeu de donn&#233;es <em>Boston Housing</em> (pour lequel une fonction de pr&#233;paration des donn&#233;es est fournie dans le module <code>dataset_utils</code>).</li>
 </ol>
 </body>

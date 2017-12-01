@@ -107,6 +107,18 @@ stratégie de [_Drop-Out_](https://keras.io/layers/core/#dropout) pour aider à 
 régularisation de votre réseau.
 Vous éteindrez à chaque étape 10\% des poids de votre réseau.
 
+# Algorithme d'optimisation et vitesse de convergence
+
+8. Modifiez la méthode d'optimisation choisie. Vous pourrez notamment essayer
+les algorithmes `"rmsprop"` et `"adam"`, reconnus pour leurs performances.
+
+9. En utilisant l'aide fournie [ici](https://keras.io/optimizers/), faites
+varier le paramètre `lr` (_learning rate_) à l'extrême pour observer :
+
+* l'instabilité des performances lorsque celui-ci est trop grand ;
+* la lenteur de la convergence lorsque celui-ci est trop petit.
+
+
 # Modèles `keras` dans `sklearn`
 
 Il est possible de transformer vos modèles `keras` (en tout cas, ceux qui sont
@@ -136,12 +148,12 @@ peuvent être :
 * des paramètres passés au modèle lors de sa compilation (appel à la méthode
     `compile()`) ou de son apprentissage (appel à la méthode `fit()`).
 
-8. Créez un réseau à deux couches cachées transformé en objet `sklearn` en
+10. Créez un réseau à deux couches cachées transformé en objet `sklearn` en
 spécifiant, lors de sa construction, le nombre d'itérations et la taille des
 _batchs_ de votre descente de gradient par _mini-batchs_. Vous pourrez
 utiliser la méthode `score()` des objets `sklearn` pour évaluer ce modèle.
 
-9. Utilisez les outils de validation croisée de `sklearn` pour choisir entre
+11. Utilisez les outils de validation croisée de `sklearn` pour choisir entre
 les algorithmes d'optimisation `"rmsprop"` et `"sgd"`.
 
 # La notion de `Callback`
@@ -157,7 +169,7 @@ dictionnaire dont les clés sont les métriques suivies lors de l'apprentissage.
 À chacune de ces clés est associé un vecteur indiquant comment la quantité en
 question a évolué au fil des itérations.
 
-10. Tracez les courbes d'évolution du taux de bonnes classifications sur les
+12. Tracez les courbes d'évolution du taux de bonnes classifications sur les
 jeux d'entrainement et de validation.
 
 La mise en place d'autres _callbacks_ doit être explicite. Elle se fait en
@@ -168,7 +180,7 @@ d'apprentissage avant de visualiser ces courbes. Dans ce cas, le _callback_
 [`TensorBoard`](https://keras.io/callbacks/#tensorboard) peut s'avérer très
 pratique.
 
-11. Visualisez dans une page TensorBoard l'évolution des métriques `"loss"`
+13. Visualisez dans une page TensorBoard l'évolution des métriques `"loss"`
 et `"accuracy"` lors de l'apprentissage d'un modèle.
 
 De même, lorsque l'apprentissage est long, il peut s'avérer souhaitable
@@ -176,19 +188,19 @@ d'enregistrer des modèles intermédiaires, dans le cas où un plantage arrivera
 par exemple. Cela peut se faire à l'aide du _callback_
 [`ModelCheckpoint`](https://keras.io/callbacks/#modelcheckpoint).
 
-12. Mettez en place un enregistrement des modèles intermédiaires toutes les 2
+14. Mettez en place un enregistrement des modèles intermédiaires toutes les 2
 itérations, en n'enregistrant un modèle que si le risque calculé sur le jeu de
 validation est plus faible que celui de tous les autres modèles enregistrés
 aux itérations précédentes.
 
-13. Mettez en oeuvre une politique d'arrêt précoce de l'apprentissage au cas où
+15. Mettez en oeuvre une politique d'arrêt précoce de l'apprentissage au cas où
 le risque calculé sur le jeu de validation n'a pas diminué depuis au moins 5
 itérations (en utilisant le _callback_
 [`EarlyStopping`](https://keras.io/callbacks/#earlystopping)).
 
 # Exercice de synthèse
 
-14. Mettez en place une validation croisée pour choisir la structure (nombre de
+16. Mettez en place une validation croisée pour choisir la structure (nombre de
     couches, nombre de neurones par couche) et l'algorithme d'optimisation
     idoines pour le problème lié au jeu de données _Boston Housing_ (pour lequel
         une fonction de préparation des données est fournie dans le module

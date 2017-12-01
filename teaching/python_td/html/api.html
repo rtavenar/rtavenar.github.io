@@ -68,9 +68,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 latitude : 48.005135</code></pre></li>
 <li><p>Effectuez cette requ&#234;te &#224; l&#8217;aide du module <code>urllib.request</code> comme vu en cours (votre code devra aller lire votre cl&#233; d&#8217;API dans le fichier &#224; l&#8217;aide du module <code>json</code>).</p></li>
 </ul>
-<h1 id="&#233;nonc&#233;"><span class="header-section-number">2</span> &#201;nonc&#233;</h1>
+<h1 id="cas-des-ordinateurs-de-luniversit&#233;-de-rennes-2"><span class="header-section-number">2</span> Cas des ordinateurs de l&#8217;Universit&#233; de Rennes 2</h1>
+<p>Sur les ordinateurs de l&#8217;Universit&#233; de Rennes 2, les modules <code>tweepy</code> et <code>googlemaps</code> ne sont pas install&#233;s par d&#233;faut. Pour pouvoir les utiliser, il va donc falloir commencer par les installer. Pour cela, vous devrez :</p>
+<ol style="list-style-type: lower-alpha">
+<li>Ouvrir le logiciel <code>Anaconda Prompt</code> (bienvenue dans le monde merveilleux des lignes de commande :)</li>
+<li><p>Entrer successivement les lignes suivantes (ligne par ligne, en attendant &#224; chaque fois que l&#8217;installation du module courant soit finie avant de passer au suivant) :</p>
+<pre><code>pip install --user tweepy
+pip install --user googlemaps==2.4</code></pre></li>
+</ol>
+<p>Une fois cela fait, vous pouvez fermer la fen&#234;tre <code>Anaconda Prompt</code> et vous devriez pouvoir utiliser ces modules sans soucis (au moins pour la dur&#233;e de votre session, potentiellement un peu plus que cela si vous restez sur la m&#234;me machine) dans PyCharm.</p>
+<h1 id="&#233;nonc&#233;"><span class="header-section-number">3</span> &#201;nonc&#233;</h1>
 <p>Le fichier <code>rando_gps.json</code> fournit des s&#233;ries de positions GPS correspondant &#224; des traces GPS de sorties randonn&#233;e de M. Toulemonde. On cherchera dans ce TD &#224; &#233;crire un programme calculant les d&#233;nivel&#233;s cumul&#233;s positif et n&#233;gatif de chacune de ces randonn&#233;es. Pour cela, vous utiliserez l&#8217;API <a href="https://developers.google.com/maps/documentation/elevation/intro"><code>Google Maps Elevation</code></a> <em>via</em> le module Python <code>googlemaps</code>.</p>
-<h2 id="pr&#233;sentation-du-module-googlemaps"><span class="header-section-number">2.1</span> Pr&#233;sentation du module <code>googlemaps</code></h2>
+<h2 id="pr&#233;sentation-du-module-googlemaps"><span class="header-section-number">3.1</span> Pr&#233;sentation du module <code>googlemaps</code></h2>
 <p>Ce module, dont la documentation est accessible <a href="https://googlemaps.github.io/google-maps-services-python/docs/">l&#224;</a>, fournit des fonctions permettant d&#8217;interroger les diff&#233;rentes API Google Maps (Directions, Elevation, <em>etc.</em>).</p>
 <p>Pour utiliser cette API, il faut tout d&#8217;abord cr&#233;er un client que l&#8217;on initialise en lui fournissant notre cl&#233; d&#8217;API :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gmaps <span class="op">=</span> googlemaps.Client(key<span class="op">=</span>votre_cle_d_api)</code></pre></div>
@@ -83,7 +92,7 @@ latitude : 48.005135</code></pre></li>
 <li>une cha&#238;ne de caract&#232;re d&#233;finissant un lieu (comme illustr&#233; pr&#233;c&#233;demment) ;</li>
 <li>un dictionnaire (ayant deux cl&#233;s <code class="sourceCode haskell"><span class="st">&quot;lng&quot;</span></code> et <code class="sourceCode haskell"><span class="st">&quot;lat&quot;</span></code>) identifiant les coordonn&#233;es GPS &#224; utiliser.</li>
 </ul>
-<h2 id="mise-en-pratique"><span class="header-section-number">2.2</span> Mise en pratique</h2>
+<h2 id="mise-en-pratique"><span class="header-section-number">3.2</span> Mise en pratique</h2>
 <ol start="2" style="list-style-type: decimal">
 <li><p>&#201;crivez une fonction qui prenne en entr&#233;e une position GPS et une cl&#233; Google Maps Elevation API et retourne l&#8217;altitude de la position. La position GPS sera pass&#233;e sous la forme d&#8217;un dictionnaire tel que :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">coord <span class="op">=</span> {<span class="st">&quot;lng&quot;</span>: <span class="op">-</span><span class="fl">1.426533</span>, <span class="st">&quot;lat&quot;</span>: <span class="fl">48.005135</span>}</code></pre></div></li>

@@ -23,6 +23,22 @@ latitude : 48.005135
 * Effectuez cette requête à l'aide du module `urllib.request` comme vu en cours (votre code devra aller lire votre clé d'API dans le fichier à l'aide du module `json`).
 
 
+# Cas des ordinateurs de l'Université de Rennes 2
+
+Sur les ordinateurs de l'Université de Rennes 2, les modules `tweepy` et `googlemaps` ne sont pas installés par défaut.
+Pour pouvoir les utiliser, il va donc falloir commencer par les installer.
+Pour cela, vous devrez :
+
+a. Ouvrir le logiciel `Anaconda Prompt` (bienvenue dans le monde merveilleux des lignes de commande :)
+b. Entrer successivement les lignes suivantes (ligne par ligne, en attendant à chaque fois que l'installation du module courant soit finie avant de passer au suivant) :
+```
+pip install --user tweepy
+pip install --user googlemaps==2.4
+```
+
+Une fois cela fait, vous pouvez fermer la fenêtre `Anaconda Prompt` et vous devriez pouvoir utiliser ces modules sans soucis (au moins pour la durée de votre session, potentiellement un peu plus que cela si vous restez sur la même machine) dans PyCharm.
+
+
 # Énoncé
 
 Le fichier `rando_gps.json` fournit des séries de positions GPS correspondant à des traces GPS de sorties randonnée de M. Toulemonde.

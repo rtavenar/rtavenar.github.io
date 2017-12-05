@@ -9,6 +9,9 @@ rights: Creative Commons CC BY-NC-SA
 
 1. Préparez la première question de cette planche de TD concernant l'utilisation de l'API Google Maps. Pour cela :
 * Créez-vous une clé pour cette API ([lien](https://developers.google.com/maps/documentation/elevation/get-api-key)) ;
+* Activez (via le "Tableau de bord") pour cette clé d'API, les deux API suivantes :
+  * Google Maps Directions API
+  * Google Maps Elevation API
 * Écrivez cette clé d'API dans un fichier JSON au format suivant :
 ```json
 {

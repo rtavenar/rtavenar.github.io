@@ -18,7 +18,8 @@ rights: Creative Commons CC BY-NC-SA
     "API_KEY": "..."
 }
 ```
-* Écrivez, pour la position suivante, la requête nécessaire pour obtenir l'altitude du point en question _via_ Google Maps Elevation API :
+* Écrivez, pour la position suivante, la requête nécessaire pour obtenir l'altitude du point en question _via_ Google Maps Elevation API
+([lien vers la page de documentation de cette API](https://developers.google.com/maps/documentation/elevation/intro)) :
 ```
 longitude : -1.426533
 latitude : 48.005135

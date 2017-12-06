@@ -17,7 +17,7 @@ Dans les exemples qui suivent, on supposera donc que ces clés d'API sont stock�
 
 # Le module `googlemaps`
 
-Ce module, dont la documentation est accessible à l'adresse <http://py-googlemaps.sourceforge.net> permet d'accéder à plusieurs API Google Maps.
+Ce module, dont la documentation est accessible à l'adresse <https://googlemaps.github.io/google-maps-services-python/docs/> permet d'accéder à plusieurs API Google Maps.
 Les principales fonctionnalités qu'il offre sont le _geocoding_ (récupérer une adresse postale à partir d'un couple longitude/latitude et _vice versa_) et le calcul d'itinéraire.
 
 ## Obtenir une clé d'API Google Maps

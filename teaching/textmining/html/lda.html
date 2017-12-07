@@ -95,14 +95,15 @@ talk.religion.misc 20</code></pre>
 <h1 id="impact-du-param&#232;tre-eta"><span class="header-section-number">1</span> Impact du param&#232;tre <span class="math inline">\(\eta\)</span></h1>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Observez l&#8217;impact du param&#232;tre <span class="math inline">\(\eta\)</span> sur la probabilit&#233; moyenne d&#8217;apparition des <em>topics</em> dans les documents. Cette probabilit&#233; moyenne d&#8217;apparition des <em>topics</em> dans les documents est une quantit&#233; importante qui permet de se rendre compte de l&#8217;importance relative de chacun des topics dans le m&#233;lange.</p></li>
-<li></li>
+<li><p>Quels sont les indices des 5 <em>topics</em> les plus importants extraits par LDA ? Et quels sont les 20 mots les plus probables dans chacun de ces <em>topics</em> ?</p></li>
+<li><p>Faites de m&#234;me document par document, pour 5 documents de votre choix.</p></li>
 </ol>
 <h1 id="exercice-de-synth&#232;se"><span class="header-section-number">2</span> Exercice de synth&#232;se</h1>
 <p>On souhaite maintenant se focaliser sur un probl&#232;me de classification supervis&#233;e &#224; deux classes entre les articles issus des <em>newsgroups</em> <code>soc.religion.christian</code> et <code>comp.sys.mac.hardware</code>. Pour cela, un nouveau fichier de donn&#233;es a &#233;t&#233; pr&#233;par&#233; sur CURSUS, appel&#233; <code>20newsgroup_binary.npz</code></p>
 <p>Cr&#233;ez un mod&#232;le de classification supervis&#233;e qui fonctionne en deux &#233;tapes :</p>
 <ol style="list-style-type: lower-alpha">
 <li>Extraire une repr&#233;sentation LDA des documents du sous-corpus en question ;</li>
-<li>Effectuer une classification SVM &#224; noyau lin&#233;aire.</li>
+<li>Effectuer une classification SVM &#224; noyau lin&#233;aire dans l&#8217;espace des <em>topics</em> LDA.</li>
 </ol>
 <p>Vous devrez effectuer une validation crois&#233;e pour choisir le nombre de composantes de la d&#233;composition LDA et l&#8217;hyper-param&#232;tre <span class="math inline">\(C\)</span> du SVM.</p>
 <p>Quel est le contenu des <em>topics</em> des plus discriminants pour cette classification ?</p>

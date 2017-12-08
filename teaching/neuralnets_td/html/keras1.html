@@ -132,7 +132,7 @@ clf.predict(X_test)</code></pre></div>
 <p>Une fois construit, l&#8217;objet <code>clf</code> s&#8217;utilise donc exactement comme un classifieur <code>sklearn</code>. L&#8217;attribut <code>build_fn</code> prend le nom d&#8217;une fonction qui retourne un mod&#232;le <code>keras</code>. Les autres param&#232;tres pass&#233;s lors de la construction du classifieur peuvent &#234;tre :</p>
 <ul>
 <li>des param&#232;tres de votre fonction <code>ma_fonction</code> ;</li>
-<li>des param&#232;tres pass&#233;s au mod&#232;le lors de sa compilation (appel &#224; la m&#233;thode <code>compile()</code>) ou de son apprentissage (appel &#224; la m&#233;thode <code>fit()</code>).</li>
+<li>des param&#232;tres pass&#233;s au mod&#232;le lors de son apprentissage (appel &#224; la m&#233;thode <code>fit()</code>).</li>
 </ul>
 <ol start="10" style="list-style-type: decimal">
 <li><p>Cr&#233;ez un r&#233;seau &#224; deux couches cach&#233;es transform&#233; en objet <code>sklearn</code> en sp&#233;cifiant, lors de sa construction, le nombre d&#8217;it&#233;rations et la taille des <em>batchs</em> de votre descente de gradient par <em>mini-batchs</em>. Vous pourrez utiliser la m&#233;thode <code>score()</code> des objets <code>sklearn</code> pour &#233;valuer ce mod&#232;le.</p></li>

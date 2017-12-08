@@ -145,8 +145,8 @@ L'attribut `build_fn` prend le nom d'une fonction qui retourne un modèle
 peuvent être :
 
 * des paramètres de votre fonction `ma_fonction` ;
-* des paramètres passés au modèle lors de sa compilation (appel à la méthode
-    `compile()`) ou de son apprentissage (appel à la méthode `fit()`).
+* des paramètres passés au modèle lors de son apprentissage (appel à la
+    méthode `fit()`).
 
 10. Créez un réseau à deux couches cachées transformé en objet `sklearn` en
 spécifiant, lors de sa construction, le nombre d'itérations et la taille des

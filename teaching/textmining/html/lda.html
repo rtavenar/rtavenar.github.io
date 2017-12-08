@@ -61,7 +61,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h4 class="subtitle">Planche de TD pour un cours dispens&#233; &#224; l&#8217;universit&#233; de Rennes 2</h4>
 <h2 class="author">Romain Tavenard</h2>
 </div>
-<p>Dans cette s&#233;ance, nous nous focaliserons sur la manipulation d&#8217;un mod&#232;le de type <em>topic model</em> vu en cours : le mod&#232;le <em>Latent Dirichlet Allocation</em>.</p>
+<p>Dans cette s&#233;ance, nous nous focaliserons sur la manipulation d&#8217;un mod&#232;le de type <em>topic model</em> vu en cours : le mod&#232;le <em>Latent Dirichlet Allocation</em> (<a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html">lien vers l&#8217;aide <code>sklearn</code></a>).</p>
 <p>Pour s&#8217;entrainer &#224; manipuler ce mod&#232;le, vous allez utiliser un (petit) sous-ensemble d&#8217;un jeu de donn&#233;es &#8220;historique&#8221; du domaine de la fouille de texte qui se nomme <code>20 Newsgroup</code> et qui consiste, comme son nom l&#8217;indique, en de courts documents textuels issus de 20 forums (<em>newsgroups</em>) th&#233;matiques diff&#233;rents.</p>
 <p>Pour charger ces donn&#233;es enregistr&#233;es au format <code>numpy</code> compress&#233;, vous utiliserez la fonction <code>numpy.load</code> comme suit (apr&#232;s avoir t&#233;l&#233;charg&#233; le fichier <code>20newsgroup.npz</code> sur CURSUS) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">content <span class="op">=</span> numpy.load(<span class="st">&quot;20newsgroup.npz&quot;</span>)

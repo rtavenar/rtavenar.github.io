@@ -7,7 +7,8 @@ rights: Creative Commons CC BY-NC-SA
 ---
 
 Dans cette séance, nous nous focaliserons sur la manipulation d'un modèle de
-type _topic model_ vu en cours : le modèle _Latent Dirichlet Allocation_.
+type _topic model_ vu en cours : le modèle _Latent Dirichlet Allocation_
+([lien vers l'aide `sklearn`](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html)).
 
 Pour s'entrainer à manipuler ce modèle, vous allez utiliser un (petit)
 sous-ensemble d'un jeu de données "historique" du domaine de la fouille de texte
@@ -75,7 +76,7 @@ compte de l'importance relative de chacun des topics dans le mélange.
 3. Quels sont les indices des 5 _topics_ les plus importants extraits par LDA ?
 Et quels sont les 20 mots les plus probables dans chacun de ces _topics_ ?
 
-4. Faites de même document par document, pour 5 documents de votre choix. 
+4. Faites de même document par document, pour 5 documents de votre choix.
 
 # Exercice de synthèse
 

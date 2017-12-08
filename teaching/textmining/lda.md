@@ -66,9 +66,9 @@ talk.religion.misc 20
 définis ? Parmi ces termes, combien sont présents dans au moins un document du
 corpus ?
 
-# Impact du paramètre $\eta$
+# Impact du paramètre $\alpha$
 
-2. Observez l'impact du paramètre $\eta$ sur la probabilité moyenne d'apparition
+2. Observez l'impact du paramètre $\alpha$ sur la probabilité moyenne d'apparition
 des _topics_ dans les documents. Cette probabilité moyenne d'apparition des
 _topics_ dans les documents est une quantité importante qui permet de se rendre
 compte de l'importance relative de chacun des topics dans le mélange.

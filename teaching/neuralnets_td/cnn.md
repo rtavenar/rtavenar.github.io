@@ -116,7 +116,7 @@ couches du réseau (typiquement les couches complètement connectées) revient �
 n'apprendre que le classifieur adapté à son problème.
 
 Pour trouver des modèles à utiliser en `keras`, vous pouvez par exemple jeter
-un oeil [ici](https://github.com/fchollet/deep-learning-models) (ou utiliser
+un oeil [ici](https://keras.io/applications/) (ou utiliser
     les mots-clé `"keras model zoo"`).
 
 ## En pratique dans keras

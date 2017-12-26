@@ -106,10 +106,18 @@ En pratique, lorsque l'on vise une tâche de classification d'image, il est
 recommandé de ne pas ré-apprendre un réseau à partir de 0, mais de plutôt partir
 d'un réseau pré-appris (notamment par des équipes de recherche disposant de
     machines bien plus puissantes que celles dont vous disposez) et de
-n'effectuer qu'une adaptataion des dernières couches du réseau.
+n'effectuer qu'une adaptation des dernières couches du réseau.
 En effet, comme pour les réseaux complètement connectés, les premières couches
 du réseaux doivent être vues comme des couches d'extraction de descriptions
-alors que les couches finales
+alors que les couches finales sont spécifiques au problème de classification
+visé. Ré-utiliser les premières couches revient donc à extraire une
+représentation discriminante des images alors que ré-apprendre les dernières
+couches du réseau (typiquement les couches complètement connectées) revient à
+n'apprendre que le classifieur adapté à son problème.
+
+Pour trouver des modèles à utiliser en `keras`, vous pouvez par exemple jeter
+un oeil [ici](https://github.com/fchollet/deep-learning-models) (ou utiliser
+    les mots-clé `"keras model zoo"`).
 
 ## En pratique dans keras
 

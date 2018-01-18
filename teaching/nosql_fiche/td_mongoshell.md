@@ -148,6 +148,7 @@ Enfin, le mot-clé `$exists` permet de ne retourner que les documents dans lesqu
 12. Affichez le nom de toutes les boulangeries du Bronx commençant par la lettre `"P"`{.javascript}.
 
 Lorsque l'on souhaite effectuer un test sur une date, on utilisera toujours des opérateurs de comparaison. Toutefois, pour comparer les dates d'une base à des dates de référence, il faudra :
+
 * que les dates de la base soient bien codées au format date (ISODate en MongoDB) ;
 * que les dates de référence soient des variables au format date, déclarées à l'aide d'une commande du type :
 
@@ -168,12 +169,14 @@ Enfin, il est possible de combiner plusieurs conditions à l'aide de l'opérateu
 ```
 
 La commande précédente retournera ainsi l'ensemble des documents vérifiant au moins une des deux conditions suivantes :
+
 * `"x" = 1`{.javascript}
 * `"y" = "zzz"`{.javascript}
 
 De la même façon, l'opérateur `$nor` permet de ne retourner que les documents ne vérifiant aucune des conditions spécifiées.
 
 16. Affichez la liste des étudiants qui vérifient l'une des deux conditions suivantes :
+
 * de sexe féminin ;
 * dont le prénom commence par la lettre `"M"`{.javascript}
 

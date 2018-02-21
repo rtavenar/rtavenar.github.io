@@ -81,7 +81,7 @@ Le nombre de documents parcourus pour effectuer la requête est maintenant égal
 > db.users.find({"age": 20}).sort({"created":1}).explain(
     "executionStats")
 > db.users.find({"age": 20, "name":
-    {$gt: "user100000", $lt: "user500000"}).explain("executionStats")
+    {$gt: "user100000", $lt: "user500000"}}).explain("executionStats")
 ```
 
 8. Mettez en place un index composé sur les clés `"age"`{.javascript} et `"name"`{.javascript} (dans cet ordre).
@@ -102,7 +102,7 @@ Liens utiles :
 * <http://docs.mongodb.org/master/core/index-text/>
 * <http://docs.mongodb.org/master/core/index-single/>
 
-10. Importez le fichier `NYfood_formatted.json` dans une nouvelle collection d'une nouvelle base. Créez sur cette collection quatre index :
+10. Passez à la base `food`. Créez sur la collection `NYfood` de cette base quatre index :
 
 * un index géospatial sur la localisation des restaurants ;
 * un index textuel couvrant tous les champs textuels de la collection ;

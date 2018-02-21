@@ -64,7 +64,7 @@ Liens utiles :
 * <http://docs.mongodb.org/master/core/index-text/>
 * <http://docs.mongodb.org/master/core/index-single/>
 
-10. Importez le fichier `NYfood_formatted.json` dans une nouvelle collection d'une nouvelle base. Créez sur cette collection quatre index :
+10. Passez à la base `food`. Créez sur la collection `NYfood` de cette base quatre index :
 
 * un index géospatial sur la localisation des restaurants ;
 * un index textuel couvrant tous les champs textuels de la collection ;

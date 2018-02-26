@@ -9,7 +9,7 @@ rights: Creative Commons CC BY-NC-SA
 # Chargement de la base `discours`
 
 0. Chargez la base `elections2007` disponible sous forme de fichier JSON sur CURSUS et nommez la collection contenant ces données `discours` (_cf._ l'aide de la commande `mongoimport` si besoin).
-Ajoutez, sur l'attribut `content` de la collection `discours`, un index textuel.
+Ajoutez, sur l'attribut `content` de la collection `discours`, un index textuel en langue française (_cf._ [doc de MongoDB](https://docs.mongodb.com/manual/tutorial/specify-language-for-text-index/)).
 
 a. Dans votre terminal "annexe" (si votre serveur tourne sur le port `1234`) :
 
@@ -28,7 +28,7 @@ Si vous n'avez plus la base `food` à votre disposition sur votre serveur MongoD
 
 # Requêtes textuelles
 
-Pour cette partie, vous travaillerez sur la base `discours`.
+Pour cette partie, vous travaillerez sur la base `elections2007`.
 
 ## Expressions régulières
 

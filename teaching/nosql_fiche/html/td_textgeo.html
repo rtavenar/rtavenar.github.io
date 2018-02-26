@@ -54,11 +54,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <h1 id="chargement-de-la-base-discours"><span class="header-section-number">1</span> Chargement de la base <code>discours</code></h1>
 <ol start="0" style="list-style-type: decimal">
-<li>Chargez la base <code>elections2007</code> disponible sous forme de fichier JSON sur CURSUS et nommez la collection contenant ces donn&#233;es <code>discours</code> (<em>cf.</em> l&#8217;aide de la commande <code>mongoimport</code> si besoin). Ajoutez, sur l&#8217;attribut <code>content</code> de la collection <code>discours</code>, un index textuel.</li>
+<li>Chargez la base <code>elections2007</code> disponible sous forme de fichier JSON sur CURSUS et nommez la collection contenant ces donn&#233;es <code>discours</code> (<em>cf.</em> l&#8217;aide de la commande <code>mongoimport</code> si besoin). Ajoutez, sur l&#8217;attribut <code>content</code> de la collection <code>discours</code>, un index textuel en langue fran&#231;aise (<em>cf.</em> <a href="https://docs.mongodb.com/manual/tutorial/specify-language-for-text-index/">doc de MongoDB</a>).</li>
 </ol>
 <p>Si vous n&#8217;avez plus la base <code>food</code> &#224; votre disposition sur votre serveur MongoDB, il faudra la recharger &#233;galement, et mettre en place l&#8217;index g&#233;o-spatial comme vu au TD pr&#233;c&#233;dent.</p>
 <h1 id="requ&#234;tes-textuelles"><span class="header-section-number">2</span> Requ&#234;tes textuelles</h1>
-<p>Pour cette partie, vous travaillerez sur la base <code>discours</code>.</p>
+<p>Pour cette partie, vous travaillerez sur la base <code>elections2007</code>.</p>
 <h2 id="expressions-r&#233;guli&#232;res"><span class="header-section-number">2.1</span> Expressions r&#233;guli&#232;res</h2>
 <p>Lorsque l&#8217;on souhaite interroger des champs textuels, il existe, en plus des outils pr&#233;c&#233;demment introduits, deux m&#233;thodes sp&#233;cifiques :</p>
 <ol style="list-style-type: decimal">
@@ -150,8 +150,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Ainsi, il faudra veiller &#224;&#160; ce que les polygones que vous cr&#233;ez sont bien ferm&#233;s (les derni&#232;res coordonn&#233;es sont &#233;gales aux premi&#232;res).</p>
 <ol start="10" style="list-style-type: decimal">
 <li><p>Trouver les restaurants les plus proches de Crown Heights (suppos&#233; ponctuel de coordonn&#233;es approximatives <code>[-73.923, 40.676]</code>).</p></li>
-<li><p>Trouver les restaurants chinois les plus proches de Crown Heights (voir la doc MongoDB si besoin).</p></li>
-<li><p>M&#234;me question en ne conservant que les restaurants situ&#233;s &#224;&#160; moins de 500m de Crown Heights.</p></li>
+<li><p>Trouver les restaurants chinois les plus proches de Crown Heights.</p></li>
+<li><p>M&#234;me question en ne conservant que les restaurants situ&#233;s &#224;&#160; moins de 500m de Crown Heights (voir la doc MongoDB si besoin).</p></li>
 <li><p>Trouver tous les restaurants du quartier d&#8217;East Village &#224;&#160; New York (vous pourrez utiliser Google Maps pour conna&#238;tre les coordonn&#233;es du polygone entourant ce quartier).</p></li>
 </ol>
 </body>

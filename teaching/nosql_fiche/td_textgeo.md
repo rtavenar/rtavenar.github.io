@@ -9,13 +9,13 @@ rights: Creative Commons CC BY-NC-SA
 # Chargement de la base `discours`
 
 0. Chargez la base `elections2007` disponible sous forme de fichier JSON sur CURSUS et nommez la collection contenant ces données `discours` (_cf._ l'aide de la commande `mongoimport` si besoin).
-Ajoutez, sur l'attribut `content` de la collection `discours`, un index textuel.
+Ajoutez, sur l'attribut `content` de la collection `discours`, un index textuel en langue française (_cf._ [doc de MongoDB](https://docs.mongodb.com/manual/tutorial/specify-language-for-text-index/)).
 
 Si vous n'avez plus la base `food` à votre disposition sur votre serveur MongoDB, il faudra la recharger également, et mettre en place l'index géo-spatial comme vu au TD précédent.
 
 # Requêtes textuelles
 
-Pour cette partie, vous travaillerez sur la base `discours`.
+Pour cette partie, vous travaillerez sur la base `elections2007`.
 
 ## Expressions régulières
 
@@ -152,8 +152,8 @@ Ainsi, il faudra veiller à  ce que les polygones que vous créez sont bien fer
 
 10. Trouver les restaurants les plus proches de Crown Heights (supposé ponctuel de coordonnées approximatives `[-73.923, 40.676]`).
 
-11. Trouver les restaurants chinois les plus proches de Crown Heights (voir la doc MongoDB si besoin).
+11. Trouver les restaurants chinois les plus proches de Crown Heights.
 
-12. Même question en ne conservant que les restaurants situés à  moins de 500m de Crown Heights.
+12. Même question en ne conservant que les restaurants situés à  moins de 500m de Crown Heights (voir la doc MongoDB si besoin).
 
 13. Trouver tous les restaurants du quartier d'East Village à  New York (vous pourrez utiliser Google Maps pour connaître les coordonnées du polygone entourant ce quartier).

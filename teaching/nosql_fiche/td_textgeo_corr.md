@@ -6,15 +6,32 @@ author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
-# Chargement des bases `food` et `discours`
+# Chargement de la base `discours`
 
-Chargez les bases `food` (nouvelle version) et `discours` disponibles sous forme d’archive zip (que vous pourrez extraire dans le répertoire `bdd_json_bson/`) sur CURSUS à l’aide des commandes suivantes :
+0. Chargez la base `elections2007` disponible sous forme de fichier JSON sur CURSUS et nommez la collection contenant ces données `discours` (_cf._ l'aide de la commande `mongoimport` si besoin).
+Ajoutez, sur l'attribut `content` de la collection `discours`, un index textuel.
+
+a. Dans votre terminal "annexe" (si votre serveur tourne sur le port `1234`) :
+
+```bash
+mongoimport --host localhost:1234 --jsonArray --db elections2007 --collection discours --file discours.json
 ```
-mongorestore --host host_name:port_num -d food2 /chemin/vers/food/
-mongorestore --host host_name:port_num -d discours /chemin/vers/discours/
+
+b. Dans votre terminal "client" :
+
+```javascript
+> use elections2007
+> db.discours.createIndex({"content": "text"})
 ```
+
+Si vous n'avez plus la base `food` à votre disposition sur votre serveur MongoDB, il faudra la recharger également, et mettre en place l'index géo-spatial comme vu au TD précédent.
 
 # Requêtes textuelles
+
+Pour cette partie, vous travaillerez sur la base `discours`.
+
+## Expressions régulières
+
 Lorsque l'on souhaite interroger des champs textuels, il existe, en plus des outils précédemment introduits, deux méthodes spécifiques :
 
 1.	l'utilisation d'expressions régulières ;
@@ -60,10 +77,12 @@ En langage MongoDB, une requête utilisant une expression régulière sera de la
 > db.discours.find({"name": /-.* / })
 ```
 
+## Requêtes de type "moteur de recherche"
+
 Dans certains cas, on souhaitera chercher dans des champs textuels comme on le ferait à  l'aide d'un moteur de recherche. Pour cela, il faut qu'un index spécifique soit mis en place sur le champ en question. Nous verrons plus tard dans ce cours la notion d'index, mais vous pouvez dès maintenant vérifier qu'un tel index existe :
 
 ```javascript
-> db.system.indexes.find()
+> db.nomDeLaCollection.getIndexes()
 ```
 
 Lorsqu'un tel index existe, MongoDB saura que c'est sur le champ correspondant qu'il faudra effectuer les requêtes textuelles et il ne sera donc plus utile de le préciser. On obtiendra alors une requête de la forme :
@@ -72,7 +91,7 @@ Lorsqu'un tel index existe, MongoDB saura que c'est sur le champ correspondant q
 > db.nomDeLaCollection.find({$text : {$search : "ma requête"}})
 ```
 
-Par défaut, lorsque l'on effectue une requête contenant plusieurs termes, un OU logique est effectué : les documents retournés sont ceux qui contiennent au moins l'un des termes.
+Par défaut, lorsque l'on effectue une requête contenant plusieurs termes, un `OU` logique est effectué : les documents retournés sont ceux qui contiennent au moins l'un des termes.
 On peut également effectuer une requête impliquant une expression exacte, qui sera encadrée de guillemets échappés par un caractère `"\"`{.javascript} :
 
 ```javascript
@@ -80,13 +99,13 @@ On peut également effectuer une requête impliquant une expression exacte, qui 
 ```
 
 Enfin, on peut exclure les documents contenant certains termes en précédant chacun de ces termes par le symbole `"-"`{.javascript}.
-Toutefois, si l'on mélange plusieurs types de conditions, un ET logique est effectué entre les différents types, comme par exemple :
+Toutefois, si l'on mélange plusieurs types de conditions, un `ET` logique est effectué entre les différents types, comme par exemple :
 
 * chaîne exacte et termes isolés ;
 * deux chaînes exactes distinctes ;
 * inclusion de certains termes et exclusion d'autre termes.
 
-Par exemple, la requête suivante retournera tous les documents contenant le terme `"bla"`{.javascript} ET ne contenant pas le terme `"bli"`{.javascript} :
+Par exemple, la requête suivante retournera tous les documents contenant le terme `"bla"`{.javascript} `ET` ne contenant pas le terme `"bli"`{.javascript} :
 
 ```javascript
 > db.nomDeLaCollection.find({$text : {$search : "bla -bli"}})
@@ -155,11 +174,11 @@ Dans le cas de données géo-spatiales, on peut avoir à  effectuer des requêt
 
 Pour cela, il faut tout d'abord s'assurer qu'un index géo-spatial (de type `2dsphere` pour des coordonnées à  la surface de la terre) existe sur le champ visé.
 
-9. Chargez la base `food` (nouvelle version, que vous appellerez `food2` pour éviter les conflits entre les deux versions de la base) et vérifiez qu'un index géo-spatial existe sur l'un de ses champs.
+9. Vérifiez qu'un index géo-spatial existe sur l'un des champs de la collection `NYfood` de la base `food`.
 
 ```javascript
-> use food2
-> db.system.indexes.find()
+> use food
+> db.NYfood.getIndexes()
 ```
 
 MongoDB définit trois mots-clés correspondant aux situations définies précédemment :
@@ -205,7 +224,7 @@ Ainsi, il faudra veiller à  ce que les polygones que vous créez sont bien fer
                   "cuisine": "Chinese"})
 ```
 
-12. Même question en ne conservant que les restaurants situés à  moins de 500m de Crown Heights.
+12. Même question en ne conservant que les restaurants situés à  moins de 500m de Crown Heights (voir la doc MongoDB si besoin).
 
 ```javascript
 > db.NYfood.find({"address.loc": {$near: {$geometry: CrownHeights,

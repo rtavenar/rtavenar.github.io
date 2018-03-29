@@ -68,6 +68,10 @@ Vous savez déjà que les attributs de type date doivent être considérés de f
 
 17. Même chose en triant les dates par ordre croissant.
 
+# Questions avancées
+
 18. Référez-vous à [l'aide du mot-clé $out](https://docs.mongodb.org/manual/reference/operator/aggregation/out/#out-aggregation) pour générer une nouvelle collection, appelée `summary`, dans la base `food` qui contienne les statistiques pour chaque année et chaque quartier des nombres moyen, minimum et maximum de notes obtenues par restaurant. Les données seront triées pour faire apparaître les années les plus récentes en premières et, pour une même année, les quartiers par ordre alphabétique.
 
 19. Passez à la base `etudiants` et calculez, pour chaque étudiant, sa moyenne. Vous pourrez pour cela utiliser (une ou) des fonctions de calcul horizontal dont l'aide se trouve à l'adresse : <https://docs.mongodb.org/v3.0/reference/operator/aggregation-arithmetic/>
+
+20. Quel est le jour durant lequel ont été données le plus de notes pour des restaurants de `"Manhattan"` ?

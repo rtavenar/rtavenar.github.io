@@ -9,13 +9,35 @@ rights: Creative Commons CC BY-NC-SA
 Le but de cette séance est de réaliser vos premiers programmes en Python dans l'IDE (_Integrated Development Environment_) PyCharm.
 Sachez que la documentation Python est de très bonne qualité : utilisez-la ([https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)).
 
-# Travail à préparer chez vous avant la séance
+# Avant-propos
+Lors de ce TD, vous allez créer, sur votre disque `M:/`, un répertoire dans lequel vous travaillerez **tout au long du semestre**.
+Sauf indication contraire, vous créerez, **pour chaque séance de TD, un nouveau fichier Python** dans lequel vous écrirez votre code.
+Pour ce premier TD, vous serez guidés (un peu plus bas dans cet énoncé) dans la création de votre répertoire/projet Python et du fichier Python correspondant au TD1.
+
+De plus, vous prendrez la bonne habitude de renseigner, en commentaire de votre code, les tests effectués pour vérifier le bon fonctionnement de votre code.
+Par exemple, plutôt que :
+
+```python
+x = input("Entre une valeur :")
+print(12)
+```
+
+vous écrirez :
+
+```python
+x = input("Entre une valeur :")
+print(x)
+# [Entrée] Entre une valeur : 12
+# [Sortie] 12
+```
+
+# Échauffement
 1.	Écrivez, en pseudo-code, un algorithme permettant, étant données 3 longueurs `a`{.python}, `b`{.python} et `c`{.python} d'afficher s'il est ou non possible de construire un triangle ayant ces longueurs pour côtés et, le cas échéant, si ce triangle est équilatéral, isocèle, rectangle ou quelconque. **Attention :** un triangle peut être à la fois isocèle et rectangle.
 
 # Prise en main de PyCharm
 Démarrez PyCharm (qui se trouve dans le dossier Développement du menu Démarrer, sous l'item JetBrains) et créez un nouveau projet nommé L2_Python dans un endroit bien identifié (vous utiliserez ce projet tout au long du semestre) de votre disque `M:/`. Pour ce projet, sélectionnez l'interpréteur `Python 3.4.0` (dont le chemin est `C:/Python34/python.exe` sur les ordinateurs de l'Université).
 
-Ajoutez le répertoire `data/` (contenu dans le fichier de données mis à votre disposition sur CURSUS) à votre projet. Pour cela, il suffit de décompresser l'archive dans le répertoire de votre projet (en utilisant votre gestionnaire d'archive préféré) et le dossier apparaîtra dans l'arborescence de votre projet dans PyCharm.
+Ajoutez le répertoire `data/` (dans lequel se trouvera le contenu dans le fichier de données mis à votre disposition sur CURSUS) à votre projet. Pour cela, il suffit de décompresser l'archive dans le répertoire de votre projet (en utilisant votre gestionnaire d'archive préféré) et le dossier apparaîtra dans l'arborescence de votre projet dans PyCharm.
 
 Ajoutez un nouveau fichier Python à votre projet, que vous nommerez `td1`.
 
@@ -55,11 +77,13 @@ Entrez quelques lignes de code élémentaire pour vous familiariser avec cette c
 Le langage Python est un langage fortement typé, ce qui signifie que chaque variable, à chaque instant, ne peut être que d'un type.
 Par contre, ce typage est dynamique, ce qui signifie qu'à la déclaration d'une variable, il n'est pas nécessaire de déclarer son type : c'est la valeur qu'on affectera à la variable qui déterminera son type.
 La déclaration d'une variable est donc une instruction du type :
+
 ```python
 ma_variable = 12
 ```
 
 Il est possible de connaître le type d'une variable en utilisant la fonction `type`{.python} :
+
 ```python
 print(type(ma_variable))
 ```
@@ -76,18 +100,21 @@ Répétez l'opération avec les valeurs suivantes :
 * `10 / 2`
 
 Il est possible, en Python, d'affecter des valeurs à plusieurs variables en même temps :
+
 ```python
 premiere_variable, deuxieme_variable = 12, "abc"
 ```
 
 6. Utilisez cette astuce pour intervertir les valeurs de deux variables en une seule ligne de code.
-Pour afficher les valeurs des deux variables, on pourra utiliser la syntaxe (on peut, de la sorte, afficher un nombre quelconque de variables séparées par des virgules dans l'appel de la fonction `print`{.python}) :
+Pour afficher les valeurs des deux variables, on pourra utiliser la syntaxe :
+
 ```python
-print(premiere_variable, deuxieme_variable)
+print("{} {}".format(premiere_variable, deuxieme_variable))
 ```
 
 # Structures conditionnelles
 La syntaxe des structures conditionnelles en Python est de la forme suivante :
+
 ```python
 if condition1:
     # [...]
@@ -104,6 +131,7 @@ else:
 * La classe d'âge est 30+
 
 Pour récupérer une valeur entrée par l'utilisateur, on peut utiliser la fonction `input`{.python} :
+
 ```python
 valeur_entree = input("Entrez votre âge : ")
 ```
@@ -113,12 +141,22 @@ Pour pouvoir comparer cette valeur aux bornes des différents intervalles, il se
 # Boucles
 
 8. Écrivez une boucle qui permette d'afficher les valeurs contenues dans une liste. La sortie affichée dans la fenêtre _Run_ de PyCharm devra être de la forme (pour une liste définie par `lst = [1, 7, 5, 3, 6]`{.python}) :
+
 ```
 La liste lst contient : 1
 La liste lst contient : 7
 La liste lst contient : 5
 La liste lst contient : 3
 La liste lst contient : 6
+```
+
+Pour afficher une chaîne de caractères composée d'une partie de texte fixe et d'une autre correspondant au contenu d'une variable, on utilise la méthode `format()`, comme dans l'exemple suivant :
+
+```python
+prenom = "Antoine"
+nom = "Griezmann"
+annee_naissance = 1991
+print("{} {} est né en {}".format(prenom, nom, annee_naissance))
 ```
 
 9. Écrivez une nouvelle boucle affichant, avec les valeurs contenues dans une liste, leur indice.

@@ -32,7 +32,7 @@ print(x)
 ```
 
 # Échauffement
-1.	Écrivez, en pseudo-code, un algorithme permettant, étant données 3 longueurs `a`{.python}, `b`{.python} et `c`{.python} d'afficher s'il est ou non possible de construire un triangle ayant ces longueurs pour côtés et, le cas échéant, si ce triangle est équilatéral, isocèle, rectangle ou quelconque. **Attention :** un triangle peut être à la fois isocèle et rectangle.
+1.	Écrivez **sur papier**, en pseudo-code, un algorithme permettant, étant données 3 longueurs `a`{.python}, `b`{.python} et `c`{.python} d'afficher s'il est ou non possible de construire un triangle ayant ces longueurs pour côtés et, le cas échéant, si ce triangle est équilatéral, isocèle, rectangle ou quelconque. **Attention :** un triangle peut être à la fois isocèle et rectangle.
 
 # Prise en main de PyCharm
 Démarrez PyCharm (qui se trouve dans le dossier Développement du menu Démarrer, sous l'item JetBrains) et créez un nouveau projet nommé L2_Python dans un endroit bien identifié (vous utiliserez ce projet tout au long du semestre) de votre disque `M:/`. Pour ce projet, sélectionnez l'interpréteur `Python 3.4.0` (dont le chemin est `C:/Python34/python.exe` sur les ordinateurs de l'Université).

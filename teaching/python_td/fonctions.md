@@ -11,7 +11,7 @@ Comme d'habitude, un rappel : la documentation Python est de très bonne qualit�
 
 # Échauffement
 
-1. Écrivez, en pseudo-code, un algorithme **récursif** (c'est-à-dire dans lequel une fonction `f` contient un ou plusieurs appels à la même fonction `f` avec des paramètres différents) permettant de calculer le terme de rang $n$ de la suite de Fibonacci définie par :
+1. Écrivez, sur papier et en pseudo-code, un algorithme **récursif** (c'est-à-dire dans lequel une fonction `f` contient un ou plusieurs appels à la même fonction `f` avec des paramètres différents) permettant de calculer le terme de rang $n$ de la suite de Fibonacci définie par :
 
 $$\begin{array}{l}
 f_0=f_1=1 \\

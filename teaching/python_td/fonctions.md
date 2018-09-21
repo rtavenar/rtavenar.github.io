@@ -9,9 +9,9 @@ rights: Creative Commons CC BY-NC-SA
 Le but de cette séance est de manipuler vos premières fonctions en Python.
 Comme d'habitude, un rappel : la documentation Python est de très bonne qualité : utilisez-la ([https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)).
 
-# Travail à préparer chez vous avant la séance
+# Échauffement
 
-1. Écrivez, en pseudo-code, un algorithme **récursif** permettant de calculer le terme de rang $n$ de la suite de Fibonacci définie par :
+1. Écrivez, en pseudo-code, un algorithme **récursif** (c'est-à-dire dans lequel une fonction `f` contient un ou plusieurs appels à la même fonction `f` avec des paramètres différents) permettant de calculer le terme de rang $n$ de la suite de Fibonacci définie par :
 
 $$\begin{array}{l}
 f_0=f_1=1 \\
@@ -97,5 +97,5 @@ Notez qu'un appel à `table_multiplication(5)`{.python} devra avoir le même eff
 
 # Exercice de synthèse
 
-11. Écrivez une fonction qui calcule l'aire d'une ellipse.
+11. Écrivez une fonction qui calcule l'[aire d'une ellipse](https://fr.wikipedia.org/wiki/Aire_de_surfaces_usuelles#Ellipse).
 Si l'argument correspondant au demi-petit axe n'est pas spécifié, on supposera qu'il s'agit d'un cercle et que donc le demi-petit axe est égal au demi-grand axe.

@@ -23,7 +23,7 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 
 2. Proposez une implémentation récursive du calcul de la somme des `n`{.python} premiers entiers. On écrira une fonction `somme_entier`{.python} qui prend en argument la valeur de `n`{.python} et renvoie la somme des entiers.
 
-3. Implémentez en Python l'algorithme élaboré à la maison. On écrira une fonction `fibonacci` qui prend en argument le rang `n` et renvoie la valeur du terme.
+3. Implémentez en Python l'algorithme élaboré en échauffement. On écrira une fonction `fibonacci` qui prend en argument le rang `n` et renvoie la valeur du terme.
 
 4. Écrivez une fonction `duree_secondes`{.python} qui prend en argument une durée en heures, minutes, secondes, exprimée sous la forme de trois variables, et qui renvoie la durée équivalente en nombre de secondes.
 

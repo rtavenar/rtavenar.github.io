@@ -14,7 +14,25 @@ Le but de cette séance est de continuer à vous habituer à la programmation en
 
 Pour cela, nous manipulerons le module `turtle`{.python} dont le principe est de suivre dans une fenêtre l'évolution d'une tortue (symbolisée par une flèche) qui suivra vos instructions à la lettre.
 
-# Travail à préparer chez vous avant la séance
+# Organisation de votre code
+
+Pour ce TD, vous créerez un nouveau fichier `td3.py` dans le répertoire que vous avez créé à la première séance.
+Dans ce fichier, votre code sera organisé de la manière suivante :
+
+```python
+def immeuble(n_etages, n_fenetres):
+    [...]
+
+# Tests
+immeuble(n_etages=3, n_fenetres=2)
+[...]
+```
+
+Notamment, vous définirez vos fonctions en début de fichier et les appels seront listés en fin de fichier. De cette manière, vous pourrez, d'une question à l'autre, réutiliser les fonctions déjà codées au besoin.
+
+Si vous souhaitez, à un certain moment, ne plus ré-exécuter vos tests de début de TD, il suffira de commenter les appels de fonction correspondants (et pas les fonctions elles-mêmes !).
+
+# Échauffement
 
 1. Quels sont les prototypes (liste d'arguments et leur type, liste de valeurs de retours et leur type) des fonctions `rectangle`, `carre` et `immeuble` présentées dans la section [L'immeuble] ci-dessous ?
 

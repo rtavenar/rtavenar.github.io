@@ -15,6 +15,25 @@ rights: Creative Commons CC BY-NC-SA
 Le but de cette séance est de manipuler vos premières fonctions en Python.
 Comme d'habitude, un rappel : la documentation Python est de très bonne qualité : utilisez-la ([https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)).
 
+# Organisation de votre code
+
+Pour ce TD, vous créerez un nouveau fichier `td2.py` dans le répertoire que vous avez créé à la première séance.
+Dans ce fichier, votre code sera organisé de la manière suivante :
+
+```python
+def fibonacci(n):
+    [...]
+
+def mon_autre_fonction(truc, machin):
+    [...]
+
+# Tests
+print(fibonacci(3))
+# [Sortie] 3
+```
+
+Notamment, vous définirez vos fonctions en début de fichier et les appels seront listés en fin de fichier. De cette manière, vous pourrez, d'une question à l'autre, réutiliser les fonctions déjà codées au besoin.
+
 # Échauffement
 
 1. Écrivez, sur papier et en pseudo-code, un algorithme **récursif** (c'est-à-dire dans lequel une fonction `f` contient un ou plusieurs appels à la même fonction `f` avec des paramètres différents) permettant de calculer le terme de rang $n$ de la suite de Fibonacci définie par :
@@ -24,24 +43,24 @@ f_0=f_1=1 \\
 f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 \end{array}$$
 
+2. Implémentez en Python l'algorithme précédent. On écrira une fonction `fibonacci` qui prend en argument le rang `n` et renvoie la valeur du terme.
+
 
 # Fonctions et procédures en Python
 
-2. Proposez une implémentation récursive du calcul de la somme des `n`{.python} premiers entiers. On écrira une fonction `somme_entier`{.python} qui prend en argument la valeur de `n`{.python} et renvoie la somme des entiers.
+3. Écrivez une fonction `duree_secondes`{.python} qui prend en argument une durée en heures, minutes, secondes, exprimée sous la forme de trois variables, et qui renvoie la durée équivalente en nombre de secondes.
 
-3. Implémentez en Python l'algorithme élaboré en échauffement. On écrira une fonction `fibonacci` qui prend en argument le rang `n` et renvoie la valeur du terme.
+4. Écrivez une fonction `delta_secondes`{.python} qui retourne la différence (en secondes) entre deux durées exprimées en heures, minutes, secondes. On considère que la première durée est toujours supérieure à la seconde.
 
-4. Écrivez une fonction `duree_secondes`{.python} qui prend en argument une durée en heures, minutes, secondes, exprimée sous la forme de trois variables, et qui renvoie la durée équivalente en nombre de secondes.
-
-5. Écrivez une fonction `delta_secondes`{.python} qui retourne la différence (en secondes) entre deux durées exprimées en heures, minutes, secondes. On considère que la première durée est toujours supérieure à la seconde.
-
-6. Écrivez une fonction `table`{.python} qui prenne pour argument une base et affiche la table de multiplication de cette base. Par exemple `table(5)`{.python} affichera la table de 5, soit une sortie de la forme :
+5. Écrivez une fonction `table`{.python} qui prenne pour argument une base et affiche la table de multiplication de cette base. Par exemple `table(5)`{.python} affichera la table de 5, soit une sortie de la forme :
 ```
 5*1=5
 5*2=10
 [...]
 5*10=50
 ```
+
+6. Proposez une implémentation récursive du calcul de la somme des `n`{.python} premiers entiers. On écrira une fonction `somme_entier`{.python} qui prend en argument la valeur de `n`{.python} et renvoie la somme des entiers.
 
 7. Écrivez une fonction `aire_perimetre_rectangle`{.python} qui retourne l'aire et le périmètre d'un rectangle dont les longueurs des côtés sont passés en argument.
 

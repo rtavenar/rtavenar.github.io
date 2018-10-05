@@ -126,8 +126,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h4 class="subtitle">Planche de TD pour un cours dispens&#233; &#224; l&#8217;universit&#233; de Rennes 2</h4>
 <h2 class="author">Romain Tavenard</h2>
 </div>
+<h1 id="todo-td-fonctions"><span class="header-section-number">1</span> TODO TD fonctions</h1>
+<ul>
+<li>Bouger Question 2 plus bas (ils ne sont pas &#224; l&#8217;aise avec la r&#233;cursion, ne la mettre qu&#8217;apr&#180;s les dur&#233;es)</li>
+<li>Expliciter 1 fichier, et son organisation</li>
+</ul>
 <p>Le but de cette s&#233;ance est de manipuler vos premi&#232;res fonctions en Python. Comme d&#8217;habitude, un rappel : la documentation Python est de tr&#232;s bonne qualit&#233; : utilisez-la (<a href="https://docs.python.org/3/tutorial/" class="uri">https://docs.python.org/3/tutorial/</a>).</p>
-<h1 id="&#233;chauffement"><span class="header-section-number">1</span> &#201;chauffement</h1>
+<h1 id="organisation-de-votre-code"><span class="header-section-number">2</span> Organisation de votre code</h1>
+<p>Pour ce TD, vous cr&#233;erez un nouveau fichier <code>td2.py</code> dans le r&#233;pertoire que vous avez cr&#233;&#233; &#224; la premi&#232;re s&#233;ance. Dans ce fichier, votre code sera organis&#233; de la mani&#232;re suivante :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fibonacci(n):
+    [...]
+
+<span class="kw">def</span> mon_autre_fonction(truc, machin):
+    [...]
+
+<span class="co"># Tests</span>
+<span class="bu">print</span>(fibonacci(<span class="dv">3</span>))
+<span class="co"># [Sortie] 3</span></code></pre></div>
+<p>Notamment, vous d&#233;finirez vos fonctions en d&#233;but de fichier et les appels seront list&#233;s en fin de fichier. De cette mani&#232;re, vous pourrez, d&#8217;une question &#224; l&#8217;autre, r&#233;utiliser les fonctions d&#233;j&#224; cod&#233;es au besoin.</p>
+<h1 id="&#233;chauffement"><span class="header-section-number">3</span> &#201;chauffement</h1>
 <ol style="list-style-type: decimal">
 <li>&#201;crivez, sur papier et en pseudo-code, un algorithme <strong>r&#233;cursif</strong> (c&#8217;est-&#224;-dire dans lequel une fonction <code>f</code> contient un ou plusieurs appels &#224; la m&#234;me fonction <code>f</code> avec des param&#232;tres diff&#233;rents) permettant de calculer le terme de rang <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> de la suite de Fibonacci d&#233;finie par :</li>
 </ol>
@@ -135,10 +152,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 f_0=f_1=1 \\
 f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 \end{array}</annotation></semantics></math></p>
-<h1 id="fonctions-et-proc&#233;dures-en-python"><span class="header-section-number">2</span> Fonctions et proc&#233;dures en Python</h1>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Proposez une impl&#233;mentation r&#233;cursive du calcul de la somme des <code class="sourceCode python">n</code> premiers entiers. On &#233;crira une fonction <code class="sourceCode python">somme_entier</code> qui prend en argument la valeur de <code class="sourceCode python">n</code> et renvoie la somme des entiers.</p></li>
-<li><p>Impl&#233;mentez en Python l&#8217;algorithme &#233;labor&#233; en &#233;chauffement. On &#233;crira une fonction <code>fibonacci</code> qui prend en argument le rang <code>n</code> et renvoie la valeur du terme.</p></li>
+<li>Impl&#233;mentez en Python l&#8217;algorithme pr&#233;c&#233;dent. On &#233;crira une fonction <code>fibonacci</code> qui prend en argument le rang <code>n</code> et renvoie la valeur du terme.</li>
+</ol>
+<h1 id="fonctions-et-proc&#233;dures-en-python"><span class="header-section-number">4</span> Fonctions et proc&#233;dures en Python</h1>
+<ol start="3" style="list-style-type: decimal">
 <li><p>&#201;crivez une fonction <code class="sourceCode python">duree_secondes</code> qui prend en argument une dur&#233;e en heures, minutes, secondes, exprim&#233;e sous la forme de trois variables, et qui renvoie la dur&#233;e &#233;quivalente en nombre de secondes.</p></li>
 <li><p>&#201;crivez une fonction <code class="sourceCode python">delta_secondes</code> qui retourne la diff&#233;rence (en secondes) entre deux dur&#233;es exprim&#233;es en heures, minutes, secondes. On consid&#232;re que la premi&#232;re dur&#233;e est toujours sup&#233;rieure &#224; la seconde.</p></li>
 <li><p>&#201;crivez une fonction <code class="sourceCode python">table</code> qui prenne pour argument une base et affiche la table de multiplication de cette base. Par exemple <code class="sourceCode python">table(<span class="dv">5</span>)</code> affichera la table de 5, soit une sortie de la forme :</p>
@@ -146,6 +164,7 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 5*2=10
 [...]
 5*10=50</code></pre></li>
+<li><p>Proposez une impl&#233;mentation r&#233;cursive du calcul de la somme des <code class="sourceCode python">n</code> premiers entiers. On &#233;crira une fonction <code class="sourceCode python">somme_entier</code> qui prend en argument la valeur de <code class="sourceCode python">n</code> et renvoie la somme des entiers.</p></li>
 <li><p>&#201;crivez une fonction <code class="sourceCode python">aire_perimetre_rectangle</code> qui retourne l&#8217;aire et le p&#233;rim&#232;tre d&#8217;un rectangle dont les longueurs des c&#244;t&#233;s sont pass&#233;s en argument.</p></li>
 <li><p>Analysez la structure des paroles de la chanson <em>La jument de Michao</em> et &#233;crivez une fonction qui affiche ces paroles dans le terminal pour un nombre d&#8217;ann&#233;es <code class="sourceCode python">n</code> initial pass&#233; en argument. Voici la structure de la chanson pour <code>n=4</code> :</p></li>
 </ol>
@@ -161,7 +180,7 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 <p>La jument de Michao et son petit poulain. A pass&#233; dans le pr&#233; et mang&#233; tout le foin. {2x}</p>
 <p>L&#8217;hiver viendra les gars, l&#8217;hiver viendra. La jument de Michao, elle s&#8217;en repentira. {2x}</p>
 </blockquote>
-<h1 id="arguments-facultatifs-et-valeurs-par-d&#233;faut"><span class="header-section-number">3</span> Arguments facultatifs et valeurs par d&#233;faut</h1>
+<h1 id="arguments-facultatifs-et-valeurs-par-d&#233;faut"><span class="header-section-number">5</span> Arguments facultatifs et valeurs par d&#233;faut</h1>
 <ol start="9" style="list-style-type: decimal">
 <li><p>&#201;crivez une fonction <code class="sourceCode python">somme</code> qui prenne en entr&#233;e 2, 3, ou 4 nombres et en retourne la somme.</p></li>
 <li><p>&#201;crivez une version am&#233;lior&#233;e de la fonction <code class="sourceCode python">table</code>, que vous appellerez <code class="sourceCode python">table_multiplication</code>, qui prenne en entr&#233;e une base, un multiplicateur de d&#233;but et un autre de fin et affiche la table de multiplication de cette base entre les deux bornes fournies. Par exemple <code class="sourceCode python">table_multiplication(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">7</span>)</code> affichera une sortie de la forme :</p></li>
@@ -171,7 +190,7 @@ f_n=f_{n-1}+f_{n-2}, \forall n \geq 2 \\
 5*6=30
 5*7=35</code></pre>
 <p>Notez qu&#8217;un appel &#224; <code class="sourceCode python">table_multiplication(<span class="dv">5</span>)</code> devra avoir le m&#234;me effet qu&#8217;un appel &#224; <code class="sourceCode python">table(<span class="dv">5</span>)</code></p>
-<h1 id="exercice-de-synth&#232;se"><span class="header-section-number">4</span> Exercice de synth&#232;se</h1>
+<h1 id="exercice-de-synth&#232;se"><span class="header-section-number">6</span> Exercice de synth&#232;se</h1>
 <ol start="11" style="list-style-type: decimal">
 <li>&#201;crivez une fonction qui calcule l&#8217;<a href="https://fr.wikipedia.org/wiki/Aire_de_surfaces_usuelles#Ellipse">aire d&#8217;une ellipse</a>. Si l&#8217;argument correspondant au demi-petit axe n&#8217;est pas sp&#233;cifi&#233;, on supposera qu&#8217;il s&#8217;agit d&#8217;un cercle et que donc le demi-petit axe est &#233;gal au demi-grand axe.</li>
 </ol>

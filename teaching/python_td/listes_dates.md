@@ -54,23 +54,41 @@ ma_liste = list(range(n))
 
 4. Écrivez une fonction qui prend en entrée une liste et un élément (par exemple un entier) et retourne une version de la liste passée en argument dans laquelle toutes les occurrences de cet élément ont été supprimées.
 
+## Copie de liste
+
+La copie de liste en Python est un exercice délicat.
+En effet, si l'on crée une première liste `liste1`{.python} puis que l'on écrit
+```python
+liste2 = liste1
+```
+le contenu de `liste1`{.python} ne sera pas recopié dans `liste2`{.python}, les deux objets ne feront qu'un.
+Cela signifie notamment que si l'on modifie l'une des deux listes, la modification sera répercutée sur l'autre liste.
+
+5. Pour vous en convaincre, mettez en œuvre ce scénario et affichez le contenu des deux listes après modification de l'une des deux.
+
+Ainsi, si l'on veut copier le contenu d'une liste dans une autre, on devra utiliser une astuce syntaxique.
+Deux approches sont possibles.
+La première utilise une liste en compréhension, la deuxième la fonction `list`{.python} qui effectue une copie de la liste passée en argument.
+
+6. Mettez en œuvre ces deux approches et vérifiez que le problème observé lors de la manipulation précédente ne se pose plus.
+
 # Les dates
 
 Le type date (plus précisément le type `datetime` qui permet de représenter conjointement une date et une heure) est défini dans le module `datetime`.
 Commencez donc par ajouter l'instruction d'importation de ce module **en début de votre script Python**.
 
-5. Supposons que soit stocké, dans une chaîne de caractères `s`{.python}, le contenu suivant : `"24-08, 2017, 16:53"`{.python}.
+7. Supposons que soit stocké, dans une chaîne de caractères `s`{.python}, le contenu suivant : `"24-08, 2017, 16:53"`{.python}.
 Chargez cette date dans une variable `d1` de type `datetime` et affichez le contenu de cette variable.
 
-6. Écrivez une fonction qui prenne en entrée une date et retourne le nombre d'heures écoulées depuis cette date.
+8. Écrivez une fonction qui prenne en entrée une date et retourne le nombre d'heures écoulées depuis cette date.
 Combien d'heures se sont écoulées depuis `d1` ?
 
-7. Écrivez une fonction qui prenne en entrée une date `d0` et retourne la date située une semaine après `d0`.
+9. Écrivez une fonction qui prenne en entrée une date `d0` et retourne la date située une semaine après `d0`.
 À quelle date sera-t-on rendus dans une semaine ?
 
 # Exercice de synthèse
 
-8. Écrivez une fonction qui prenne en entrée (i) une liste de chaînes de caractères représentant des dates et (ii) une chaîne de caractère définissant le format de date utilisé dans la liste.
+10. Écrivez une fonction qui prenne en entrée (i) une liste de chaînes de caractères représentant des dates et (ii) une chaîne de caractère définissant le format de date utilisé dans la liste.
 Votre fonction devra retourner la durée la plus grande (en valeur absolue) entre deux dates consécutives de la liste.
 Vous pourrez par exemple tester votre fonction avec la liste suivante :
 

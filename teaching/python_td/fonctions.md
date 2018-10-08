@@ -6,11 +6,6 @@ author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
-# TODO TD fonctions
-
-* Bouger Question 2 plus bas (ils ne sont pas à l'aise avec la récursion, ne la mettre qu'apr´s les durées)
-* Expliciter 1 fichier, et son organisation
-
 
 Le but de cette séance est de manipuler vos premières fonctions en Python.
 Comme d'habitude, un rappel : la documentation Python est de très bonne qualité : utilisez-la ([https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)).

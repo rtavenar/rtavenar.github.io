@@ -95,7 +95,7 @@ La liste de méthodes de la classe `str`{.python} qui suit n'est pas exhaustive,
 * `ch.isnumeric()`{.python}: Retourne `True`{.python} si `ch`{.python} est constituée uniquement de chiffres
 * `ch.lower()`{.python}: Retourne la version minuscule de `ch`{.python}
 * `ch.upper()`{.python}: Retourne la version majuscule de `ch`{.python}
-* `ch.replace(old, new)`{.python}: Retourne une copie de `ch`{.python} dans laquelle la _première_ occurrence de `old`{.python} a été remplacée par `new`{.python}
+* `ch.replace(old, new)`{.python}: Retourne une copie de `ch`{.python} dans laquelle toutes les occurrences de `old`{.python} ont été remplacées par `new`{.python}
 * `ch.split(sep=None)`{.python}: Retourne une liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (par défaut, la chaîne est decoupée à chaque espace ou retour à la ligne)
 * `ch.strip()`{.python}: Retourne une version "nettoyée" de `ch`{.python} dans laquelle on a enlevé tous les espaces en début et en fin de chaîne
 

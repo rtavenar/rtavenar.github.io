@@ -13,7 +13,7 @@ Comme d'habitude, un rappel : la documentation Python est de très bonne qualit�
 * pour les listes : [https://docs.python.org/3/tutorial/datastructures.html](https://docs.python.org/3/tutorial/datastructures.html) ;
 * pour les dates : [https://docs.python.org/3.5/library/datetime.html](https://docs.python.org/3.5/library/datetime.html).
 
-# Travail à préparer chez vous avant la séance
+# Échauffement
 
 1. Écrivez, en pseudo-code, un algorithme calculant la différence minimale (en valeur absolue) entre éléments consécutifs d'une liste fournie en entrée.
 Par exemple, pour la liste `[1, 3, 5, 4]`, la différence retournée devra être `1` (la différence entre les deux derniers éléments de la liste).
@@ -101,4 +101,4 @@ l_dates = [
 ]
 ```
 
-**N.B.** : Pour calculer la valeur absolue d'une quantité numérique, on pourra utiliser la fonction `abs` du module `math`.
+**N.B.** : Pour calculer la valeur absolue d'une quantité numérique, on pourra utiliser la fonction `abs`.

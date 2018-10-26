@@ -13,7 +13,7 @@ rights: Creative Commons CC BY-NC-SA
 # Énoncé
 
 Dans ce projet, vous allez permettre à un utilisateur Twitter d'afficher tous les Tweets de son fil d'actualités contenant un certain mot-clé.
-Pour ce faire, l'utilisateur devra entrer son `user_id` ainsi que le mot-clé à rechercher et le programme affichera, dans l'ordre chronologique inverse (du plus récent au plus ancient), la liste des Tweets émis ou re-tweetés par un utilisateur qu'il/elle suit.
+Pour ce faire, l'utilisateur devra entrer son `user_id` ainsi que le mot-clé à rechercher et le programme affichera, dans l'ordre chronologique inverse (du plus récent au plus ancien), la liste des Tweets émis ou re-tweetés par un utilisateur qu'il/elle suit.
 En pratique, on n'affichera pas tous les Tweets du fil d'actualité contenant le mot-clé, mais seulement ceux datant, au plus, d'un certain nombre de jours `max_jours` lui aussi specifié par l'utilisateur.
 
 # Données à votre disposition (étape 1)

@@ -59,7 +59,10 @@
 <li>prendre garde &#224; la dimension des donn&#233;es fournies en entr&#233;e au mod&#232;le car une couche convolutionnelle 2D s&#8217;attend &#224; recevoir des donn&#233;es de dimension <code>(n_x, n_y, c)</code> o&#249; <code>n_x</code> est la dimension horizontale de l&#8217;image (en nombre de pixels), <code>n_y</code> est la dimension verticale de l&#8217;image et <code>c</code> son nombre de canaux (si l&#8217;image est en niveaux de gris, on aura <code>c=1</code>, si elle est en RVB, on aura <code>c=3</code>) ;</li>
 <li>jeter un oeil aux couches de type <a href="https://keras.io/layers/core/#flatten"><code>Flatten</code></a> (&#224; vous de deviner &#224; quel moment elles pourraient vous &#234;tre utiles).</li>
 </ul>
-<h1 id="&#233;nonc&#233;-du-devoir-maison"><span class="header-section-number">2</span> &#201;nonc&#233; du devoir maison</h1>
-<p><strong>Sans r&#233;utiliser de r&#233;seau pr&#233;-entrain&#233;</strong>, mettez en oeuvre une m&#233;thode de s&#233;lection de mod&#232;le convolutionnel qui obtienne les meilleures performances possibles sur le jeu de donn&#233;es MNIST d&#233;j&#224; vu en TD (qu&#8217;il faudra probablement retravailler pour que les donn&#233;es soient au bon format pour votre mod&#232;le). Comparez les performances de ce mod&#232;le &#224; celles d&#8217;un mod&#232;le <em>fully connected</em> ayant un nombre &#233;quivalent de param&#232;tres.</p>
+<h1 id="td"><span class="header-section-number">2</span> TD</h1>
+<ol style="list-style-type: decimal">
+<li><p><strong>Sans r&#233;utiliser de r&#233;seau pr&#233;-entrain&#233;</strong>, mettez en oeuvre la structure du r&#233;seau LeNet ci-dessus sur le jeu de donn&#233;es MNIST d&#233;j&#224; vu en TD (qu&#8217;il faudra probablement retravailler pour que les donn&#233;es soient au bon format pour votre mod&#232;le). Comparez les performances de ce mod&#232;le &#224; celles d&#8217;un mod&#232;le <em>fully connected</em> ayant un nombre &#233;quivalent de param&#232;tres.</p></li>
+<li><p>M&#234;me chose en vous basant sur un r&#233;seau pr&#233;-entrain&#233;.</p></li>
+</ol>
 </body>
 </html>

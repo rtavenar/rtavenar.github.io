@@ -135,11 +135,11 @@ couche convolutionnelle 2D s'attend à recevoir des données de dimension
 [`Flatten`](https://keras.io/layers/core/#flatten) (à vous de deviner à quel
     moment elles pourraient vous être utiles).
 
-# Énoncé du devoir maison
+# TD
 
-**Sans réutiliser de réseau pré-entrainé**, mettez en oeuvre une méthode de
-sélection de modèle convolutionnel qui obtienne les meilleures performances
-possibles sur le jeu de données MNIST déjà vu en TD (qu'il faudra probablement
+1. **Sans réutiliser de réseau pré-entrainé**, mettez en oeuvre la structure du réseau LeNet ci-dessus sur le jeu de données MNIST déjà vu en TD (qu'il faudra probablement
 retravailler pour que les données soient au bon format pour votre modèle).
 Comparez les performances de ce modèle à celles d'un modèle _fully connected_
 ayant un nombre équivalent de paramètres.
+
+2. Même chose en vous basant sur un réseau pré-entrainé.

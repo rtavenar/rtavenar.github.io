@@ -7,7 +7,7 @@ rights: Creative Commons CC BY-NC-SA
 
 # Dates importantes
 
-* Rendu intermédiaire : au plus tard le 23/11/18, 23h59
+* Rendu intermédiaire : au plus tard le 30/11/18, 23h59
 * Rendu final : au plus tard le 21/12/18, 23h59
 
 # Énoncé
@@ -18,7 +18,10 @@ En pratique, on n'affichera pas tous les Tweets du fil d'actualité contenant le
 
 # Données à votre disposition (étape 1)
 
-Dans un premier temps (et jusqu'au rendu intermédiaire), vous disposerez de 3 fichiers :
+Données à votre disposition (étape 1)
+---
+
+Dans un premier temps (et jusqu'au rendu intermédiaire), votre programme prendra en entrée 3 fichiers :
 
 a. Un fichier `followers.txt` de la forme :
 
@@ -67,6 +70,8 @@ c. Un fichier `retweets.json` de la forme :
 
 associant à chaque identifiant de tweet la liste de ses re-tweets (définis par un nom d'utilisateur et une date de
 re-tweet).
+
+Pour ce premier rendu, **vous devrez vous-mêmes créer des fichiers de test** qui soient pertinents pour le problème étudié et évaluer votre programme sur ces fichiers.
 
 <!-- # Données à votre disposition (étape 2)
 

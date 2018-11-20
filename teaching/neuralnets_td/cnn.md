@@ -142,4 +142,48 @@ retravailler pour que les données soient au bon format pour votre modèle).
 Comparez les performances de ce modèle à celles d'un modèle _fully connected_
 ayant un nombre équivalent de paramètres.
 
-2. Même chose en vous basant sur un réseau pré-entrainé.
+
+
+2. **Cette fois en utilisant un réseau pré-entrainé**, classifiez le jeu de données d'images contenues dans le répertoire `images/`. Pour cela, vous utiliserez le code suivant pour lire les données :
+
+```python
+from keras.preprocessing import image
+
+
+# TODO: définir votre modèle ici
+
+# Data
+batch_size = 64
+datagen = image.ImageDataGenerator(validation_split=.2,
+                                   preprocessing_function=preprocess_input)
+train_generator = datagen.flow_from_directory(
+    'images',
+    target_size=(150, 150),
+    batch_size=batch_size,
+    class_mode='binary',
+    shuffle=True,
+    subset='training')
+
+validation_generator = datagen.flow_from_directory(
+    'images',
+    target_size=(150, 150),
+    batch_size=batch_size,
+    class_mode='binary',
+    subset='validation')
+
+model.fit_generator(generator=train_generator,
+                    steps_per_epoch=train_generator.samples // batch_size,
+                    epochs=30,
+                    validation_data=validation_generator,
+                    validation_steps=validation_generator.samples // batch_size)
+```
+
+Vous pourrez également vous inspirer de [cet exemple](https://keras.io/applications/#fine-tune-inceptionv3-on-a-new-set-of-classes)
+pour comprendre comment ne réapprendre que les couches _fully connected_ d'un
+réseau en `keras`.
+
+Vous vous baserez pour cet exercice sur un modèle `InceptionV3`. Pour pouvoir utiliser ce modèle sur le réseau MASS, entrez la commande suivante dans un terminal (cette commande crée un lien symbolique depuis votre repertoire `.keras` vers le répertoire `/data/deep/models` qui contient une version du modèle en question) :
+
+```
+cp models ~/.keras/models
+```

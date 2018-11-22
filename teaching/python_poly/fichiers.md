@@ -18,7 +18,7 @@ Si vous n'avez pas de contrainte extérieure pour ce qui est de l'encodage, vous
 
 ## Lecture de fichiers textuels
 
-Ce que nous apellons lecture de fichiers textuels en Python consiste à copier le contenu d'un fichier dans une (ou plusieurs) chaîne(s) de caractères.
+Ce que nous appelons lecture de fichiers textuels en Python consiste à copier le contenu d'un fichier dans une (ou plusieurs) chaîne(s) de caractères.
 Cela implique deux étapes en Python :
 
 1. ouvrir le fichier en lecture ;

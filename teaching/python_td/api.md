@@ -54,7 +54,7 @@ Créez donc, dans le répertoire `"data"`{.haskell}, un fichier `credentials.jso
 
 où les `"..."` seront remplacés par vos identifiants fournis par l'interface Twitter.
 
-3. Écrivez une fonction qui prend en entrée le nom du fichier à lire et retourne une variable d'accès à l'API Twitter correspondant aux identifiants lus dans le fichier en question.  **TODO: trouver un meilleur nom pour variable d'accès à l'API**
+3. Écrivez une fonction qui prend en entrée le nom du fichier à lire et retourne une variable d'accès à l'API Twitter correspondant aux identifiants lus dans le fichier en question.
 
 4. Écrivez une fonction qui prend en entrée la variable d'accès à l'API et retourne la liste des 2 derniers tweets de l'utilisateur identifié.
 

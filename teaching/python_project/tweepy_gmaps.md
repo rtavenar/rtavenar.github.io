@@ -220,4 +220,10 @@ De la même manière, il existe un type de données spécifique pour décrire un
 * `utc_offset`
 * `verified`
 
+Pour un utilisateur stocké dans une variable `u`, on peut accéder aux identifiants de ses _followers_ à l'aide de la fonction `followers_ids` :
+
+```python
+l = u.followers_ids()
+``` 
+
 Pour plus de manipulations sur les utilisateurs Twitter ou les Tweets, référez vous à [l'aide en ligne Tweepy](http://tweepy.readthedocs.io/en/v3.5.0/api.html).

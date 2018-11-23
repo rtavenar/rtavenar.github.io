@@ -7,37 +7,20 @@ rights: Creative Commons CC BY-NC-SA
 ---
 # Travail à préparer chez vous avant la séance
 
-1. Préparez la première question de cette planche de TD concernant l'utilisation de l'API Google Maps. Pour cela :
-* Créez-vous une clé pour cette API ([lien](https://developers.google.com/maps/documentation/elevation/get-api-key)) ;
-* Activez (via le "Tableau de bord") pour cette clé d'API, les deux API suivantes :
-  * Google Maps Directions API
-  * Google Maps Elevation API
-* Écrivez cette clé d'API dans un fichier JSON au format suivant :
-```json
-{
-    "API_KEY": "..."
-}
-```
-* Écrivez, pour la position suivante, la requête nécessaire pour obtenir l'altitude du point en question _via_ Google Maps Elevation API
-([lien vers la page de documentation de cette API](https://developers.google.com/maps/documentation/elevation/intro)) :
-```
-longitude : -1.426533
-latitude : 48.005135
-```
-* Effectuez cette requête à l'aide du module `urllib.request` comme vu en cours (votre code devra aller lire votre clé d'API dans le fichier à l'aide du module `json`).
+1. Préparez un compte Twitter à utiliser pendant la séance.
+Pour cela, vous pourrez soit utiliser un compte Twitter existant, soit en créer un pour l'occasion. Ensuite, vous devrez suivre les indications fournies [ici](TODO) **TODO URL** pour créer une "Application", c'est-à-dire un cadre dans lequel vous aurez le droit de faire des requêtes à l'API Twitter depuis votre code Python.
 
 
 # Cas des ordinateurs de l'Université de Rennes 2
 
-Sur les ordinateurs de l'Université de Rennes 2, les modules `tweepy` et `googlemaps` ne sont pas installés par défaut.
-Pour pouvoir les utiliser, il va donc falloir commencer par les installer.
+Sur les ordinateurs de l'Université de Rennes 2, le module `tweepy` n'est pas installé par défaut.
+Pour pouvoir l'utiliser, il va donc falloir commencer par l'installer.
 Pour cela, vous devrez :
 
 a. Ouvrir le logiciel `Anaconda Prompt` (bienvenue dans le monde merveilleux des lignes de commande :)
-b. Entrer successivement les lignes suivantes (ligne par ligne, en attendant à chaque fois que l'installation du module courant soit finie avant de passer au suivant) :
+b. Entrer la ligne suivante :
 ```
-pip install --user tweepy
-pip install --user googlemaps==2.4
+pip install --user tweepy==3.5.0
 ```
 
 Une fois cela fait, vous pouvez fermer la fenêtre `Anaconda Prompt` et vous devriez pouvoir utiliser ces modules sans soucis (au moins pour la durée de votre session, potentiellement un peu plus que cela si vous restez sur la même machine) dans PyCharm.
@@ -45,67 +28,45 @@ Une fois cela fait, vous pouvez fermer la fenêtre `Anaconda Prompt` et vous dev
 
 # Énoncé
 
-Le fichier `rando_gps.json` fournit des séries de positions GPS correspondant à des traces GPS de sorties randonnée de M. Toulemonde.
-On cherchera dans ce TD à écrire un programme calculant les dénivelés cumulés positif et négatif de chacune de ces randonnées.
-Pour cela, vous utiliserez l'API [`Google Maps Elevation`](https://developers.google.com/maps/documentation/elevation/intro) _via_ le module Python `googlemaps`.
+Dans ce TD, vous utiliserez le module `tweepy` pour manipuler des données issues de l'API Twitter.
+Il est fortement conseillé de vous aider des deux documents suivants pour ce TD :
 
-## Présentation du module `googlemaps`
-
-Ce module, dont la documentation est accessible [là](https://googlemaps.github.io/google-maps-services-python/docs/), fournit des fonctions permettant d'interroger les différentes API Google Maps (Directions, Elevation, _etc._).
-
-Pour utiliser cette API, il faut tout d'abord créer un client que l'on initialise en lui fournissant notre clé d'API :
-
-```python
-gmaps = googlemaps.Client(key=votre_cle_d_api)
-```
-
-Ensuite, on appelle, pour ce client, la fonction correspondant à l'API qui nous intéresse.
-Par exemple, l'instruction :
-```python
-list_routes = gmaps.directions(origin="Rennes",
-                               destination="Marseille")
-```
-permettra de stocker dans la variable `list_routes` une liste d'itinéraires proposés par l'API Directions pour aller de Rennes à Marseille.
-
-Notez que, comme indiqué dans la documentation, les positions géographiques peuvent être passées sous plusieurs formes.
-On retiendra notamment ici les deux formes les plus utiles :
-
-* une chaîne de caractère définissant un lieu (comme illustré précédemment) ;
-* un dictionnaire (ayant deux clés `"lng"`{.haskell} et `"lat"`{.haskell}) identifiant les coordonnées GPS à utiliser.
+* [l'aide en ligne de tweepy](http://tweepy.readthedocs.io/en/v3.5.0/api.html)
+* [le document d'explication fourni pour ce cours](http://rtavenar.github.io/teaching/python_project/html/tweepy_gmaps.html)
 
 ## Mise en pratique
 
-2. Écrivez une fonction qui prenne en entrée une position GPS et une clé Google Maps Elevation API et retourne l'altitude de la position.
-La position GPS sera passée sous la forme d'un dictionnaire tel que :
-```python
-coord = {"lng": -1.426533, "lat": 48.005135}
+2. Pour commencer, vous allez devoir vous authentifier sur l'API Twitter.
+Comme indiqué en cours, vous ne devrez jamais laisser apparaître vos identifiants dans votre code Python.
+Créez donc, dans le répertoire `"data"`{.haskell}, un fichier `credentials.json` qui ait le format suivant :
+
+```json
+{
+    "twitter": {
+        "CONSUMER_KEY": "...",
+        "CONSUMER_SECRET": "...",
+        "ACCESS_TOKEN": "...",
+        "ACCESS_TOKEN_SECRET": "..."
+    },
+    "googlemaps": {}
+}
 ```
 
-3. Écrivez une fonction qui prenne en entrée une liste de positions GPS (chacune codée sous la forme d'un dictionnaire tel que précédemment) et une clé Google Maps Elevation API et retourne une liste d'altitudes.
-Vous pourrez utiliser l'exemple suivant pour vos tests :
-```python
-lst_gps = [
-  {"lng": -1.426533, "lat": 48.005135},
-  {"lng": -1.418127, "lat": 47.986058},
-  {"lng": -1.427611, "lat": 47.989871},
-  {"lng": -1.430202, "lat": 48.000354}
-]
-```
+où les `"..."` seront remplacés par vos identifiants fournis par l'interface Twitter.
 
-4. Écrivez une fonction qui prenne en entrée une liste de positions GPS et une clé Google Maps Elevation API et retourne la somme des dénivelés positifs (d'une part) et négatifs (d'autre part).
-Par exemple, si on a une liste de coordonnées GPS pour lesquelles on a obtenu les altitudes suivantes :
-```python
-[38.11, 68.63, 54.60, 36.42]
-```
-on devrait retourner la paire de valeurs :
-```python
-(30.52, 32.21)
-```
+3. Écrivez une fonction qui prend en entrée le nom du fichier à lire et retourne une variable d'accès à l'API Twitter correspondant aux identifiants lus dans le fichier en question.  **TODO: trouver un meilleur nom pour variable d'accès à l'API**
 
-5. Écrivez une fonction qui prenne en entrée un nom de fichier JSON (contenant des informations sur diverses randonnées) et une clé Google Maps Elevation API et affiche, pour chaque randonnée, son nom (attribut `"name"`{.haskell}) et la somme de ses dénivelés positifs (d'une part) et négatifs (d'autre part).
-Pour le fichier `rando_gps.json`, on doit obtenir une sortie du type :
-```
-TraceGPS Le long de la quincampoix - Pire-sur-Seiche D+:  111.39449691772464 , D-:  111.38713455200201
-TraceGPS Issued  Messac - CIRCUIT DU PORT D+:  31.650634765625 , D-:  31.650634765625
-TraceGPS Issued  Coemes-Retiers D+:  417.91231536865234 , D-:  417.91231536865223
-```
+4. Écrivez une fonction qui prend en entrée la variable d'accès à l'API et retourne la liste des 2 derniers tweets de l'utilisateur identifié.
+
+5. Écrivez une fonction qui prend un tweet en entrée (de type `Status`) et retourne le texte du tweet en question.
+
+6. En utilisant la fonction de la question précédente, écrivez une fonction qui prend une liste de tweets en entrée et retourne la liste des textes des tweets en question.
+
+7. Écrivez une fonction qui prend en entrée un tweet (de type `Status`) et retourne l'identifiant de son auteur.
+
+8. Le fichier `tweets.csv` disponible sur CURSUS contient une liste de Tweets que vous allez maintenant poster. Pour chaque tweet, on fournit son texte ainsi que sa position GPS. Copiez ce fichier dans votre répertoire `"data"`{.haskell} et écrivez une fonction qui prend en entrée la variable d'accès à l'API et le chemin vers le fichier contenant les tweets et poste l'ensemble des Tweets contenus dans ce fichier.
+Au texte contenu dans le fichier, vous ajouterez la mention `"Ceci est un faux tweet posté depuis mon TD de Python"`. Vérifier que les Tweets apparaissent bien sur votre compte Twitter, avec la localisation voulue.
+
+9. Améliorez la fonction de la question précédente pour qu'elle retourne la liste des identifiants des tweets créés.
+
+10. Écrivez une fonction qui prend en entrée la variable d'accès à l'API et une liste d'identifiants de tweets et supprime tous les tweets correspondants.

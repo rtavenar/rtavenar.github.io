@@ -8,7 +8,7 @@ rights: Creative Commons CC BY-NC-SA
 # Travail à préparer chez vous avant la séance
 
 1. Préparez un compte Twitter à utiliser pendant la séance.
-Pour cela, vous pourrez soit utiliser un compte Twitter existant, soit en créer un pour l'occasion. Ensuite, vous devrez suivre les indications fournies [ici](TODO) **TODO URL** pour créer une "Application", c'est-à-dire un cadre dans lequel vous aurez le droit de faire des requêtes à l'API Twitter depuis votre code Python.
+Pour cela, vous pourrez soit utiliser un compte Twitter existant, soit en créer un pour l'occasion. Ensuite, vous devrez suivre les indications fournies [ici](../../python_project/html/tweepy_createapp.html) pour créer une "Application", c'est-à-dire un cadre dans lequel vous aurez le droit de faire des requêtes à l'API Twitter depuis votre code Python.
 
 
 # Cas des ordinateurs de l'Université de Rennes 2

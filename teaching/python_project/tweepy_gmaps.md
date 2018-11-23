@@ -24,74 +24,12 @@ Attention, il ne faut jamais écrire dans vos scripts Python ces clés "en dur",
 Dans le cadre du projet `Twitter`, par exemple, cela vous permettra de rendre votre code Python sans avoir à divulguer au correcteur vos clés d'API (qui doivent rester secrètes, au même titre qu'un mot de passe).
 Dans les exemples qui suivent, on supposera donc que ces clés d'API sont stockées dans des variables (dont le contenu a été défini en lisant un fichier de clés, typiquement un fichier JSON).
 
-# Le module `googlemaps`
-
-Ce module, dont la documentation est accessible à l'adresse <https://googlemaps.github.io/google-maps-services-python/docs/> permet d'accéder à plusieurs API Google Maps.
-Les principales fonctionnalités qu'il offre sont le _geocoding_ (récupérer une adresse postale à partir d'un couple longitude/latitude et _vice versa_) et le calcul d'itinéraire.
-
-## Obtenir une clé d'API Google Maps
-
-Pour obtenir une clé d'API Google Maps, vous devrez avoir un compte GMail puis, étant connecté à ce compte, accéder à [la page de gestion de vos clés d'API](https://console.developers.google.com/apis/dashboard).
-Sur cette page, dans l'onglet "Identifiants", vous pourrez créer une nouvelle clé d'API.
-**TODO: plus de détails ici**
-
-Une fois la clé créée, vous pourrez vous identifier dans le module `googlemaps` avec la commande suivante :
-
-```python
-import googlemaps
-
-[...]
-
-acces_api = googlemaps.Client(api_key)
-```
-
-## Exemple de fonctions de l'API Google Maps
-
-La documentation du module `googlemaps` liste de manière exhaustive les fonctions que fournit cette API.
-Dans cette partie, nous allons nous concentrer sur 3 de ces fonctions.
-Dans tous les cas, vous devrez porter un soin particulier à l'analyse de la structure de données retournée par ces fonctions.
-
-### La fonction `directions`
-
-L'un des services les plus important est celui permettant de calculer un itinéraire à partir d'un point d'origine et d'une destination.
-Cette fonction s'utilise comme suit :
-
-```python
-directions = acces_api.directions(address, destination)
-```
-
-où `address` est l'origine du trajet et `destination` le point d'arrivée.
-Les paramètres `address` et `destination` peuvent être soit des chaînes de caractères (ex : `"Rennes"`), soit des dictionnaires fournissant la longitude et la latitude du point à considérer (ex : `{"lng": -1.764416, "lat": 48.137123}`).
-De plus, il est possible de fournir des paramètres facultatifs à cette fonction, comme documenté [ici](https://googlemaps.github.io/google-maps-services-python/docs/index.html#googlemaps.Client.directions).
-
-### La fonction `elevation`
-
-Il est également possible de récupérer l'altitude d'un point (ou d'une série de points) de données à l'aide de la fonction `elevation` qui s'utilise comme suit :
-
-```python
-altitudes = acces_api.directions(locations)
-```
-
-où `locations` est soit une liste de points (au même format que les paramètres `address` ou `destination` de la section précédente) ou bien un seul point de données.
-
-### La fonction `geocode`
-
-Il peut également s'avérer utile de récupérer, à partir d'une description textuelle d'un lieu, ses coordonnées GPS.
-C'est ce que propose la fonction `geocode`qui s'utilise comme suit :
-
-```python
-coord_gps = acces_api.geocode(address)
-```
-
-où `address` est une chaîne de caractères représentant un lieu dont on souhaite connaître les coordonnées GPS.
-De plus, il est possible de fournir des paramètres facultatifs à cette fonction, comme documenté [ici](https://googlemaps.github.io/google-maps-services-python/docs/index.html#googlemaps.Client.geocode).
-
 # Tweepy
 
 ## Obtenir des identifiants pour l'API Twitter
 
 Pour travailler avec l'API Twitter, vous devrez posséder un compte Twitter, puis, étant connecté à ce compte, visiter la page <https://apps.twitter.com> et y créer une "Application".
-Une aide détaillée de cette procédure de création d'application est disponible [ici](TODO)  **TODO URL**.
+Une aide détaillée de cette procédure de création d'application est disponible [ici](tweepy_createapp.html).
 Une fois cette application créée, vous devrez, dans l'onglet "Keys and Access tokens", créer :
 
  * une clé d'API (aussi appelée "Consumer Key") et sa clé secrète ;
@@ -224,6 +162,67 @@ Pour un utilisateur stocké dans une variable `u`, on peut accéder aux identifi
 
 ```python
 l = u.followers_ids()
-``` 
+```
 
 Pour plus de manipulations sur les utilisateurs Twitter ou les Tweets, référez vous à [l'aide en ligne Tweepy](http://tweepy.readthedocs.io/en/v3.5.0/api.html).
+
+# Le module `googlemaps`
+
+Ce module, dont la documentation est accessible à l'adresse <https://googlemaps.github.io/google-maps-services-python/docs/> permet d'accéder à plusieurs API Google Maps.
+Les principales fonctionnalités qu'il offre sont le _geocoding_ (récupérer une adresse postale à partir d'un couple longitude/latitude et _vice versa_) et le calcul d'itinéraire.
+
+## Obtenir une clé d'API Google Maps
+
+Pour obtenir une clé d'API Google Maps, vous devrez avoir un compte GMail puis, étant connecté à ce compte, accéder à [la page de gestion de vos clés d'API](https://console.developers.google.com/apis/dashboard).
+Sur cette page, dans l'onglet "Identifiants", vous pourrez créer une nouvelle clé d'API.
+
+Une fois la clé créée, vous pourrez vous identifier dans le module `googlemaps` avec la commande suivante :
+
+```python
+import googlemaps
+
+[...]
+
+acces_api = googlemaps.Client(api_key)
+```
+
+## Exemple de fonctions de l'API Google Maps
+
+La documentation du module `googlemaps` liste de manière exhaustive les fonctions que fournit cette API.
+Dans cette partie, nous allons nous concentrer sur 3 de ces fonctions.
+Dans tous les cas, vous devrez porter un soin particulier à l'analyse de la structure de données retournée par ces fonctions.
+
+### La fonction `directions`
+
+L'un des services les plus important est celui permettant de calculer un itinéraire à partir d'un point d'origine et d'une destination.
+Cette fonction s'utilise comme suit :
+
+```python
+directions = acces_api.directions(address, destination)
+```
+
+où `address` est l'origine du trajet et `destination` le point d'arrivée.
+Les paramètres `address` et `destination` peuvent être soit des chaînes de caractères (ex : `"Rennes"`), soit des dictionnaires fournissant la longitude et la latitude du point à considérer (ex : `{"lng": -1.764416, "lat": 48.137123}`).
+De plus, il est possible de fournir des paramètres facultatifs à cette fonction, comme documenté [ici](https://googlemaps.github.io/google-maps-services-python/docs/index.html#googlemaps.Client.directions).
+
+### La fonction `elevation`
+
+Il est également possible de récupérer l'altitude d'un point (ou d'une série de points) de données à l'aide de la fonction `elevation` qui s'utilise comme suit :
+
+```python
+altitudes = acces_api.directions(locations)
+```
+
+où `locations` est soit une liste de points (au même format que les paramètres `address` ou `destination` de la section précédente) ou bien un seul point de données.
+
+### La fonction `geocode`
+
+Il peut également s'avérer utile de récupérer, à partir d'une description textuelle d'un lieu, ses coordonnées GPS.
+C'est ce que propose la fonction `geocode`qui s'utilise comme suit :
+
+```python
+coord_gps = acces_api.geocode(address)
+```
+
+où `address` est une chaîne de caractères représentant un lieu dont on souhaite connaître les coordonnées GPS.
+De plus, il est possible de fournir des paramètres facultatifs à cette fonction, comme documenté [ici](https://googlemaps.github.io/google-maps-services-python/docs/index.html#googlemaps.Client.geocode).

@@ -20,7 +20,7 @@ Pour cela, vous devrez :
 a. Ouvrir le logiciel `Anaconda Prompt` (bienvenue dans le monde merveilleux des lignes de commande :)
 b. Entrer la ligne suivante :
 ```
-pip install --user tweepy==3.5.0
+pip install --user tweepy
 ```
 
 Une fois cela fait, vous pouvez fermer la fenêtre `Anaconda Prompt` et vous devriez pouvoir utiliser ces modules sans soucis (au moins pour la durée de votre session, potentiellement un peu plus que cela si vous restez sur la même machine) dans PyCharm.
@@ -31,7 +31,7 @@ Une fois cela fait, vous pouvez fermer la fenêtre `Anaconda Prompt` et vous dev
 Dans ce TD, vous utiliserez le module `tweepy` pour manipuler des données issues de l'API Twitter.
 Il est fortement conseillé de vous aider des deux documents suivants pour ce TD :
 
-* [l'aide en ligne de tweepy](http://tweepy.readthedocs.io/en/v3.5.0/api.html)
+* [l'aide en ligne de tweepy](http://tweepy.readthedocs.io/en/v3.6.0/api.html)
 * [le document d'explication fourni pour ce cours](http://rtavenar.github.io/teaching/python_project/html/tweepy_gmaps.html)
 
 ## Mise en pratique

@@ -84,7 +84,7 @@ acces_api <span class="op">=</span> tweepy.API(auth)</code></pre></div>
 </ul>
 <p>Voici un exemple d&#8217;utilisation de ces trois fonctions (pour plus de d&#233;tails sur les arguments facultatifs que l&#8217;on peut leur fournir, vous pourrez vous r&#233;f&#233;rer au lien fourni pour chaque fonction) :</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Liste des tweets les plus r&#233;cents du compte officiel de l'UR2</span>
-list_tweets <span class="op">=</span> access_api.timeline(<span class="st">&quot;univrennes_2&quot;</span>)
+list_tweets <span class="op">=</span> access_api.user_timeline(<span class="st">&quot;univrennes_2&quot;</span>)
 
 <span class="co"># Poste un tweet dont le texte est 'Coucou' depuis le compte identifi&#233;</span>
 tweet <span class="op">=</span> access_api.update_status(<span class="st">&quot;Coucou&quot;</span>)

@@ -57,7 +57,7 @@ Voici un exemple d'utilisation de ces trois fonctions (pour plus de détails sur
 
 ```python
 # Liste des tweets les plus récents du compte officiel de l'UR2
-list_tweets = access_api.timeline("univrennes_2")
+list_tweets = access_api.user_timeline("univrennes_2")
 
 # Poste un tweet dont le texte est 'Coucou' depuis le compte identifié
 tweet = access_api.update_status("Coucou")

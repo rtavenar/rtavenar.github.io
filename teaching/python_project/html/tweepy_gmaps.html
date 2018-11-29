@@ -52,10 +52,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h4 class="link-back"><a href="../../python/index.html">Retour &#224; la liste des &#233;nonc&#233;s</a></h4>
 <h2 class="author">Romain Tavenard</h2>
 </div>
-<p>Dans la suite, vous trouverez des &#233;l&#233;ments pour vous aider &#224; utiliser les modules Python <code>tweepy</code> (version 3.5.0) et <code>googlemaps</code> (v. 3.0.2). Pour installer ces modules sur un ordinateur de l&#8217;Universit&#233; (ou sur votre ordinateur si vous disposez d&#8217;Anaconda), ouvrez <code>Anaconda Prompt</code> et entrez les commandes suivantes dans le terminal :</p>
-<pre><code>pip install --user tweepy==3.5.0
+<p>Dans la suite, vous trouverez des &#233;l&#233;ments pour vous aider &#224; utiliser les modules Python <code>tweepy</code> et <code>googlemaps</code> (v. 3.0.2). Pour installer ces modules sur un ordinateur de l&#8217;Universit&#233; (ou sur votre ordinateur si vous disposez d&#8217;Anaconda), ouvrez <code>Anaconda Prompt</code> et entrez les commandes suivantes dans le terminal :</p>
+<pre><code>pip install --user tweepy
 pip install --user googlemaps==3.0.2</code></pre>
-<p><strong>TODO: test sur BVE</strong></p>
 <p>Ce document n&#8217;est absolument pas exhaustif, mais il a vocation &#224; centraliser des &#233;l&#233;ments utiles en pratique et parfois insuffisamment document&#233;s.</p>
 <h1 id="avant-propos-les-cl&#233;s-dapi"><span class="header-section-number">1</span> Avant-propos : les cl&#233;s d&#8217;API</h1>
 <p>Pour utiliser ces modules, la premi&#232;re chose &#224; faire sera de pr&#233;ciser votre cl&#233; d&#8217;API. Attention, il ne faut jamais &#233;crire dans vos scripts Python ces cl&#233;s &#8220;en dur&#8221;, mais plut&#244;t les lire dans un fichier annexe. Dans le cadre du projet <code>Twitter</code>, par exemple, cela vous permettra de rendre votre code Python sans avoir &#224; divulguer au correcteur vos cl&#233;s d&#8217;API (qui doivent rester secr&#232;tes, au m&#234;me titre qu&#8217;un mot de passe). Dans les exemples qui suivent, on supposera donc que ces cl&#233;s d&#8217;API sont stock&#233;es dans des variables (dont le contenu a &#233;t&#233; d&#233;fini en lisant un fichier de cl&#233;s, typiquement un fichier JSON).</p>

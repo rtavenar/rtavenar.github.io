@@ -5,15 +5,13 @@ author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
-Dans la suite, vous trouverez des éléments pour vous aider à utiliser les modules Python `tweepy` (version 3.5.0) et `googlemaps` (v. 3.0.2).
+Dans la suite, vous trouverez des éléments pour vous aider à utiliser les modules Python `tweepy` et `googlemaps` (v. 3.0.2).
 Pour installer ces modules sur un ordinateur de l'Université (ou sur votre ordinateur si vous disposez d'Anaconda), ouvrez `Anaconda Prompt` et entrez les commandes suivantes dans le terminal :
 
 ```
-pip install --user tweepy==3.5.0
+pip install --user tweepy
 pip install --user googlemaps==3.0.2
 ```
-
-**TODO: test sur BVE**
 
 Ce document n'est absolument pas exhaustif, mais il a vocation à centraliser des éléments  utiles en pratique et parfois insuffisamment documentés.
 

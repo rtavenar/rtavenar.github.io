@@ -71,7 +71,7 @@ b. Sélectionnez "Paramètres et confidentialité" dans les préférences de vot
 c. Dans le menu "Confidentialité et sécurité", cochez la case "Tweeter avec une localisation" puis validez en bas de la page en cliquant sur "Enregistrer les modifications".
 
 8. Le fichier `tweets.csv` disponible sur CURSUS contient une liste de Tweets que vous allez maintenant poster. Pour chaque tweet, on fournit son texte ainsi que sa position GPS. Copiez ce fichier dans votre répertoire `"data"`{.haskell} et écrivez une fonction qui prend en entrée la variable d'accès à l'API et le chemin vers le fichier contenant les tweets et poste l'ensemble des Tweets contenus dans ce fichier.
-Au texte contenu dans le fichier, vous ajouterez la mention `"Ceci est un faux tweet posté depuis mon TD de Python"`. Vérifier que les Tweets apparaissent bien sur votre compte Twitter, avec la localisation voulue.
+Au texte contenu dans le fichier, vous ajouterez la mention `"Ceci est un faux tweet posté depuis mon TD de Python"`. Vérifiez que les Tweets apparaissent bien sur votre compte Twitter, avec la localisation voulue.
 
 9. Améliorez la fonction de la question précédente pour qu'elle retourne la liste des identifiants des tweets créés.
 

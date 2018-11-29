@@ -64,7 +64,8 @@ où les `"..."` seront remplacés par vos identifiants fournis par l'interface T
 
 7. Écrivez une fonction qui prend en entrée un tweet (de type `Status`) et retourne l'identifiant de son auteur.
 
-Pour la suite, vous devrez avoir activé la fonctionnalité de localisation de vos tweets sur la plateforme twitter. Pour cela :
+**Pour la suite, vous devrez avoir activé la fonctionnalité de localisation de vos tweets** sur la plateforme twitter. Pour cela :
+
 a. Rendez vous, dans un navigateur web, sur votre compte twitter : <https://twitter.com/>
 b. Sélectionnez "Paramètres et confidentialité" dans les préférences de votre compte
 c. Dans le menu "Confidentialité et sécurité", cochez la case "Tweeter avec une localisation" puis validez en bas de la page en cliquant sur "Enregistrer les modifications".

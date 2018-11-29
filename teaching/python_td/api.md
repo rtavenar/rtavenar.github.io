@@ -64,6 +64,11 @@ où les `"..."` seront remplacés par vos identifiants fournis par l'interface T
 
 7. Écrivez une fonction qui prend en entrée un tweet (de type `Status`) et retourne l'identifiant de son auteur.
 
+Pour la suite, vous devrez avoir activé la fonctionnalité de localisation de vos tweets sur la plateforme twitter. Pour cela :
+a. Rendez vous, dans un navigateur web, sur votre compte twitter : <https://twitter.com/>
+b. Sélectionnez "Paramètres et confidentialité" dans les préférences de votre compte
+c. Dans le menu "Confidentialité et sécurité", cochez la case "Tweeter avec une localisation" puis validez en bas de la page en cliquant sur "Enregistrer les modifications".
+
 8. Le fichier `tweets.csv` disponible sur CURSUS contient une liste de Tweets que vous allez maintenant poster. Pour chaque tweet, on fournit son texte ainsi que sa position GPS. Copiez ce fichier dans votre répertoire `"data"`{.haskell} et écrivez une fonction qui prend en entrée la variable d'accès à l'API et le chemin vers le fichier contenant les tweets et poste l'ensemble des Tweets contenus dans ce fichier.
 Au texte contenu dans le fichier, vous ajouterez la mention `"Ceci est un faux tweet posté depuis mon TD de Python"`. Vérifier que les Tweets apparaissent bien sur votre compte Twitter, avec la localisation voulue.
 

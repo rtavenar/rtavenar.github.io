@@ -16,7 +16,7 @@ Dans ce projet, vous allez permettre à un utilisateur Twitter d'afficher tous l
 Pour ce faire, l'utilisateur devra entrer son `user_id` ainsi que le mot-clé à rechercher et le programme affichera, dans l'ordre chronologique inverse (du plus récent au plus ancien), la liste des Tweets émis ou re-tweetés par un utilisateur qu'il/elle suit.
 En pratique, on n'affichera pas tous les Tweets du fil d'actualité contenant le mot-clé, mais seulement ceux datant, au plus, d'un certain nombre de jours `max_jours` lui aussi specifié par l'utilisateur.
 
-# Données à votre disposition (étape 1)
+# Données à votre disposition
 
 Données à votre disposition (étape 1)
 ---
@@ -73,11 +73,26 @@ re-tweet).
 
 Pour ce premier rendu, **vous devrez vous-mêmes créer des fichiers de test** qui soient pertinents pour le problème étudié et évaluer votre programme sur ces fichiers.
 
-<!-- # Données à votre disposition (étape 2)
+Données à votre disposition (étape 2)
+---
 
 Dans un deuxième temps (rendu numéro 2), ces informations ne vous seront plus fournies sous la forme de fichiers mais
-seront à récupérer via le module `Tweepy` directement sur Twitter (on vous transmettra alors les identifiants des
-utilisateurs à considérer).
+seront à récupérer via le module `Tweepy` directement sur Twitter.
 
 Pour cela, le code que vous aurez produit à l'étape 1 sera conservé et seules les instructions de récupération des
-données devront être modifiées. -->
+données devront être modifiées.
+
+Les trois comptes Twitter à considérer sont les suivants :
+
+- @suspect_robert
+- @suspect_jeanmi
+- @HenriSuspect
+
+Et pour tester votre code, vous rechercherez les tweets :
+
+- datant de moins de 50 jours
+- visibles par @suspect_robert
+- contenant le mot-clé "coupable"
+
+Comme indiqué en CM, vous ne travaillerez pas directement sur la timeline d'un
+utilisateur mais sur la liste de ses tweets : vous devrez donc créer une fonction qui récupère, pour un utilisateur donné, ses tweets (et non pas tous les tweets de sa timeline).

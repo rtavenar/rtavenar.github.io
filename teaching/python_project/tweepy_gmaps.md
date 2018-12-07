@@ -45,7 +45,7 @@ acces_api = tweepy.API(auth)
 
 Les principales actions que vous pourrez effectuer depuis `tweepy` seront :
 
-* Obtenir la `timeline` (liste de tweets) pour un utilisateur à partir de son identifiant [[lien](http://tweepy.readthedocs.io/en/v3.5.0/api.html#API.user_timeline)] ;
+* Obtenir la _timeline_ (liste de tweets) pour un utilisateur à partir de son identifiant [[lien](http://tweepy.readthedocs.io/en/v3.5.0/api.html#API.user_timeline)] ;
     * retourne une liste d'objets de type `Status` (voir plus bas)
 
 * Poster un tweet [[lien](http://tweepy.readthedocs.io/en/v3.5.0/api.html#API.update_status)] ;

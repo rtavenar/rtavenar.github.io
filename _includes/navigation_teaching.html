@@ -11,8 +11,9 @@
 
             <nav class="primary-nav-container">
             <ul id="primary-nav" class="primary-nav menu">
+                {% assign full_url = (page.url | append: "index.html") %}
                 {% for item in site.data.navigation_teaching %}
-                    <li class={% if page.url == item.link %}"menu-item current-menu-item"{% else %}"menu-item"{% endif %}>
+                    <li class={% if full_url == item.link %}"menu-item current-menu-item"{% else %}"menu-item"{% endif %}>
                         <a href="{{ item.link }}">
                             <i class="fa {{ item.fa-item }} fa-2x"></i>
                             <p class="menu-text">{{ item.name }}</p>

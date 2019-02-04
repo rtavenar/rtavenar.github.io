@@ -1,194 +1,127 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html><!--<![endif]-->
-	<head>
-		<title>Enseignement |  Romain Tavenard</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-		<link rel='stylesheet' id='sds-google-web-font-css'  href='http://fonts.googleapis.com/css?family=Lato%3A400&#038;ver=4.0' type='text/css' media='all' />
-		<link rel='stylesheet' id='socialize-based--css'  href='../../research/css/style.css' type='text/css' media='all' />
-		<script language="javascript" type="text/javascript">
-			function showHide(shID) {
-			   if (document.getElementById(shID)) {
-			      if (document.getElementById(shID).style.display != 'none') {
-			         document.getElementById(shID).style.display = 'none';
-			      } else {
-			         document.getElementById(shID).style.display = 'block';
-			      }
-			   }
-			}
-	</script>
-	</head>
-	<body lang="fr-FR" class="page page-template no-customize-support custom-background">
-		<!-- Header	-->
-		<header id="header" class="cf">
-			<div class="in">
-				<section class="logo-box logo-box-no-header-cta logo-box-full-width">
-					<div id="title-slogan">
-						<p id="title" class="site-title site-title-no-logo no-logo">Romain Tavenard</p>
-						<p id="slogan" class="slogan ">
-							Supports de cours<br />Université de Rennes 2
-						</p>
-					</div>
-
-					<nav class="primary-nav-container">
-					<ul id="primary-nav" class="primary-nav menu">
-						<li id="menu-item-2" class="menu-item">
-                            <a href="../index.html"><i class="fa fa-home fa-2x"></i><p class="menu-text">Accueil</p></a>
+---
+layout: default
+title: Machine Learning
+section: teaching
+---
+<div class="in">
+	<section>
+		<article class="content">
+			<section class="post">
+				<article class="post-content">
+                    <h1>Machine learning</h1>
+                    Vous trouverez ci-dessous les supports pour les séances de travaux pratiques. Les supports de cours sont disponibles sur CURSUS (le moodle de l'Université de Rennes 2).
+                    <h2>Tutoriel <code>sklearn</code> (notebooks)</h2>
+                    <ol start="0">
+                        <li>
+                            <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00_Introduction.ipynb">Introduction</a></span>
+                            <br />
+                            <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00b_Scaling.ipynb">Bonus 1 : Standardisation des données</a></span>
+                            <br />
+                            <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00c_CategoricalData.ipynb">Bonus 2 : Cas des variables cat&eacute;gorielles</a></span>
                         </li>
-    						<li id="menu-item-2" class="menu-item">
-                                <a href="../python/index.html"><i class="fa fa-code fa-2x"></i><p class="menu-text">Programmation <br />(Python)</p></a>
-                            </li>
-                        <li id="menu-item-3" class="menu-item">
-                            <a href="../nosql/index.html"><i class="fa fa-database fa-2x"></i><p class="menu-text">BDD NoSQL <br />(MongoDB)</p></a>
+                        <li>
+                            <span class="item-text">
+                                <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/01_SVM.ipynb">Classification supervis&eacute;e : SVM</a>
+                            </span>
                         </li>
-                        <li id="menu-item-4" class="menu-item current-menu-item">
-                            <a href="index.html"><i class="fa fa-cogs fa-2x"></i><p class="menu-text">Machine learning <br />(sklearn, keras)</p></a>
+                        <li>
+                            <span class="item-text">
+                                <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/02_RandomForests.ipynb">Classification supervis&eacute;e : Random Forest</a>
+                            </span>
                         </li>
-                        <li id="menu-item-5" class="menu-item">
-                            <a href="../../research/index.html"><i class="fa fa-flask fa-2x"></i><p class="menu-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Recherche</p></a>
+                        <li>
+                            <span class="item-text">
+                                <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/03_KMeans.ipynb">Clustering : k-means</a>
+                            </span>
                         </li>
-                    </ul>
-					</nav>
-				</section>
-			</div>
-		</header>
-		<div class="in">
-			<section>
-				<article class="content">
-					<section class="post">
-						<article class="post-content">
-                            <h1>Machine learning</h1>
-                            Vous trouverez ci-dessous les supports pour les séances de travaux pratiques. Les supports de cours sont disponibles sur CURSUS (le moodle de l'Université de Rennes 2).
-                            <h2>Tutoriel <code>sklearn</code> (notebooks)</h2>
-                            <ol start="0">
-                                <li>
-                                    <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00_Introduction.ipynb">Introduction</a></span>
-                                    <br />
-                                    <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00b_Scaling.ipynb">Bonus 1 : Standardisation des données</a></span>
-                                    <br />
-                                    <span class="item-text"><a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00c_CategoricalData.ipynb">Bonus 2 : Cas des variables cat&eacute;gorielles</a></span>
-                                </li>
-                                <li>
-                                    <span class="item-text">
-                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/01_SVM.ipynb">Classification supervis&eacute;e : SVM</a>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text">
-                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/02_RandomForests.ipynb">Classification supervis&eacute;e : Random Forest</a>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text">
-                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/03_KMeans.ipynb">Clustering : k-means</a>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text">
-                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/04_Regression_VariableSelection.ipynb">R&eacute;gression et s&eacute;lection de variable</a>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text">
-                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/05_PCA.ipynb">Analyse en Composantes Principales</a>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text">
-                                        <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/06_LatentDirichletAllocation.ipynb">Latent Dirichlet Allocation</a>
-                                    </span>
-                                    <!--<span class="item-link">
-                                        [<a href="slides_lda.html">LDA en quelques diapos</a>]
-                                    </span>-->
-                                </li>
-                                <li>
-                                    <span class="item-text">
-                                        S&eacute;lection de mod&egrave;le
-                                    </span>
-                                    <span class="item-link">
-                                        [<a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection.ipynb">sklearn v0.18+</a>]
-                                        [<a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection_v0.17.ipynb">sklearn v0.17</a>]
-                                    </span>
-                                </li>
-                            </ol>
+                        <li>
+                            <span class="item-text">
+                                <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/04_Regression_VariableSelection.ipynb">R&eacute;gression et s&eacute;lection de variable</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="item-text">
+                                <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/05_PCA.ipynb">Analyse en Composantes Principales</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="item-text">
+                                <a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/06_LatentDirichletAllocation.ipynb">Latent Dirichlet Allocation</a>
+                            </span>
+                            <!--<span class="item-link">
+                                [<a href="slides_lda.html">LDA en quelques diapos</a>]
+                            </span>-->
+                        </li>
+                        <li>
+                            <span class="item-text">
+                                S&eacute;lection de mod&egrave;le
+                            </span>
+                            <span class="item-link">
+                                [<a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection.ipynb">sklearn v0.18+</a>]
+                                [<a href="http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection_v0.17.ipynb">sklearn v0.17</a>]
+                            </span>
+                        </li>
+                    </ol>
 
-							<section class="clear"></section>
+					<section class="clear"></section>
 
-                            <h2>Supports de TD : Machine learning en Python (<code>sklearn</code>)</h2>
-                            <ol>
-                                <li>
-                                    <span class="item-text"><code>pandas</code>, <code>numpy</code>, <code>matplotlib</code> &amp; introduction à <code>sklearn</code></span>
-                                    <span class="item-link">
-                                    [<a href="../neuralnets_td/html/numpy.html">HTML</a>]
-                                    [<a href="../neuralnets_td/epub/numpy.epub">EPUB</a>]
-                                    [<a href="../neuralnets_td/pdf/numpy.pdf">PDF</a>]
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text"><code>sklearn</code> : sélection de modèle</span>
-                                    <span class="item-link">
-                                    [<a href="../neuralnets_td/html/sklearn.html">HTML</a>]
-                                    [<a href="../neuralnets_td/epub/sklearn.epub">EPUB</a>]
-                                    [<a href="../neuralnets_td/pdf/sklearn.pdf">PDF</a>]
-                                    </span>
-                                </li>
-                            </ol>
-                            <h2>Supports de TD : Réseaux de neurones et deep learning (<code>keras</code>)</h2>
-                            <ol>
-                                <li>
-                                    <span class="item-text">Perceptron multi-couches</span>
-                                    <span class="item-link">
-                                    [<a href="../neuralnets_td/html/keras1.html">HTML</a>]
-                                    [<a href="../neuralnets_td/epub/keras1.epub">EPUB</a>]
-                                    [<a href="../neuralnets_td/pdf/keras1.pdf">PDF</a>]
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text">Validation croisée</span>
-                                    <span class="item-link">
-                                    [<a href="../neuralnets_td/html/keras2.html">HTML</a>]
-                                    [<a href="../neuralnets_td/epub/keras2.epub">EPUB</a>]
-                                    [<a href="../neuralnets_td/pdf/keras2.pdf">PDF</a>]
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text">Réseaux de neurones convolutionnels</span>
-                                    <span class="item-link">
-                                    [<a href="../neuralnets_td/html/cnn.html">HTML</a>]
-                                    [<a href="../neuralnets_td/epub/cnn.epub">EPUB</a>]
-                                    [<a href="../neuralnets_td/pdf/cnn.pdf">PDF</a>]
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="item-text">Données séquentielles</span>
-                                    <span class="item-link">
-                                    [<a href="../neuralnets_td/html/sequences.html">HTML</a>]
-                                    [<a href="../neuralnets_td/epub/sequences.epub">EPUB</a>]
-                                    [<a href="../neuralnets_td/pdf/sequences.pdf">PDF</a>]
-                                    </span>
-                                </li>
-                            </ol>
+                    <h2>Supports de TD : Machine learning en Python (<code>sklearn</code>)</h2>
+                    <ol>
+                        <li>
+                            <span class="item-text"><code>pandas</code>, <code>numpy</code>, <code>matplotlib</code> &amp; introduction à <code>sklearn</code></span>
+                            <span class="item-link">
+                            [<a href="../neuralnets_td/html/numpy.html">HTML</a>]
+                            [<a href="../neuralnets_td/epub/numpy.epub">EPUB</a>]
+                            [<a href="../neuralnets_td/pdf/numpy.pdf">PDF</a>]
+                            </span>
+                        </li>
+                        <li>
+                            <span class="item-text"><code>sklearn</code> : sélection de modèle</span>
+                            <span class="item-link">
+                            [<a href="../neuralnets_td/html/sklearn.html">HTML</a>]
+                            [<a href="../neuralnets_td/epub/sklearn.epub">EPUB</a>]
+                            [<a href="../neuralnets_td/pdf/sklearn.pdf">PDF</a>]
+                            </span>
+                        </li>
+                    </ol>
+                    <h2>Supports de TD : Réseaux de neurones et deep learning (<code>keras</code>)</h2>
+                    <ol>
+                        <li>
+                            <span class="item-text">Perceptron multi-couches</span>
+                            <span class="item-link">
+                            [<a href="../neuralnets_td/html/keras1.html">HTML</a>]
+                            [<a href="../neuralnets_td/epub/keras1.epub">EPUB</a>]
+                            [<a href="../neuralnets_td/pdf/keras1.pdf">PDF</a>]
+                            </span>
+                        </li>
+                        <li>
+                            <span class="item-text">Validation croisée</span>
+                            <span class="item-link">
+                            [<a href="../neuralnets_td/html/keras2.html">HTML</a>]
+                            [<a href="../neuralnets_td/epub/keras2.epub">EPUB</a>]
+                            [<a href="../neuralnets_td/pdf/keras2.pdf">PDF</a>]
+                            </span>
+                        </li>
+                        <li>
+                            <span class="item-text">Réseaux de neurones convolutionnels</span>
+                            <span class="item-link">
+                            [<a href="../neuralnets_td/html/cnn.html">HTML</a>]
+                            [<a href="../neuralnets_td/epub/cnn.epub">EPUB</a>]
+                            [<a href="../neuralnets_td/pdf/cnn.pdf">PDF</a>]
+                            </span>
+                        </li>
+                        <li>
+                            <span class="item-text">Données séquentielles</span>
+                            <span class="item-link">
+                            [<a href="../neuralnets_td/html/sequences.html">HTML</a>]
+                            [<a href="../neuralnets_td/epub/sequences.epub">EPUB</a>]
+                            [<a href="../neuralnets_td/pdf/sequences.pdf">PDF</a>]
+                            </span>
+                        </li>
+                    </ol>
 
-						</article>
-					</section>
 				</article>
 			</section>
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="in">
-				<section class="footer">
-					<p class="condensed">
-						This website uses a customized version of the Socialized Lite theme for Wordpress.
-					</p>
-				</section>
-			</div>
-		</footer>
-	</body>
-</html>
+		</article>
+	</section>
+</div>

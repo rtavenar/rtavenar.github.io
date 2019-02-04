@@ -1,0 +1,15 @@
+- name: Bio &amp; Contact
+  link: /research/bio.html
+  fa-item: fa-at
+- name: Projects
+  link: /research/projects.html
+  fa-item: fa-flask
+- name: Publications
+  link: /research/pub.html
+  fa-item: fa-book
+- name: Code &amp; data
+  link: /research/src.html
+  fa-item: fa-code
+- name: <i class="fa fa-arrow-right" aria-hidden="true"></i> Teaching
+  link: ../teaching/index.html
+  fa-item: fa-graduation-cap

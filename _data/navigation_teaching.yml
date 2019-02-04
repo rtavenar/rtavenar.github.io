@@ -1,0 +1,15 @@
+- name: Accueil
+  link: /teaching/index.html
+  fa-item: fa-home
+- name: Programmation <br />(Python)
+  link: /teaching/python/index.html
+  fa-item: fa-code
+- name: BDD NoSQL <br />(MongoDB)
+  link: /teaching/nosql/index.html
+  fa-item: fa-database
+- name: Machine learning <br />(sklearn, keras)
+  link: /teaching/ml/index.html
+  fa-item: fa-cogs
+- name: <i class="fa fa-arrow-right" aria-hidden="true"></i> Recherche
+  link: ../reseach/bio.html
+  fa-item: fa-flask

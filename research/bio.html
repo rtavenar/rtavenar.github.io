@@ -1,117 +1,49 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html><!--<![endif]-->
-	<head>
-		<title>Bio &amp; Contact |  Romain Tavenard</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-		<link rel='stylesheet' id='sds-google-web-font-css'  href='http://fonts.googleapis.com/css?family=Lato%3A400&#038;ver=4.0' type='text/css' media='all' />
-		<link rel='stylesheet' id='socialize-based--css'  href='css/style.css' type='text/css' media='all' />
-		<script language="javascript" type="text/javascript">
-			function showHide(shID) {
-			   if (document.getElementById(shID)) {
-			      if (document.getElementById(shID).style.display != 'none') {
-			         document.getElementById(shID).style.display = 'none';
-			      } else {
-			         document.getElementById(shID).style.display = 'block';
-			      }
-			   }
-			}
-	</script>
-	</head>
-	<body lang="fr-FR" class="page page-template no-customize-support custom-background">
-		<!-- Header	-->
-		<header id="header" class="cf">
-			<div class="in">
-				<section class="logo-box logo-box-no-header-cta logo-box-full-width">
-					<div id="title-slogan">
-						<p id="title" class="site-title site-title-no-logo no-logo">Romain Tavenard</p>
-						<p id="slogan" class="slogan ">
-							Assistant Professor (MCF)<br />
-							Université de Rennes 2 / LETG-COSTEL<!--<br />Associate member at IRISA-Obelix group-->
-						</p>
-					</div>
+---
+layout: default
+title: Bio &amp; Contact
+section: research
+---
+<div class="in">
+	<section>
+		<article class="content">
+			<section class="post">
+				<article class="post-content">
+					<h2>Contact</h2>
+					<p>
+						E-mail: <a class="obfuscated" onclick="var aaa='@'; var m='romain.tavenard'+aaa+'univ-rennes2.fr';       this.innerHTML = m;       this.title = m;       this.href = 'mail'+'to:'+m;       this.onclick = null;       return false;       ">click to reveal</a><br />
+						Phone: +33 (0)2 99 14 18 19<br />
+						Office: A240 (Villejean, Rennes, France)<br />
+						<a href="https://www.google.com/maps/place/Université+Rennes+2/@48.118075,-1.703345,17z/">My University on Google Maps</a>
+					</p>
 
-					<nav class="primary-nav-container">
-					<ul id="primary-nav" class="primary-nav menu">
-						<li id="menu-item-1" class="menu-item current-menu-item">
-                            <a href="bio.html"><i class="fa fa-at fa-2x"></i><p class="menu-text">Bio &amp; Contact</p></a>
-                        </li>
-                        <li id="menu-item-2" class="menu-item">
-                            <a href="projects.html"><i class="fa fa-flask fa-2x"></i><p class="menu-text">Projects</p></a>
-                        </li>
-                        <li id="menu-item-3" class="menu-item">
-                            <a href="pub.html"><i class="fa fa-book fa-2x"></i><p class="menu-text">Publications</p></a>
-                        </li>
-                        <li id="menu-item-4" class="menu-item">
-                            <a href="src.html"><i class="fa fa-code fa-2x"></i><p class="menu-text">Code &amp; data</p></a>
-                        </li>
-                        <li id="menu-item-5" class="menu-item">
-                            <a href="../teaching/index.html"><i class="fa fa-graduation-cap fa-2x"></i><p class="menu-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Teaching</p></a>
-                        </li>
-                    </ul>
-					</nav>
-				</section>
-			</div>
-		</header>
-		<div class="in">
-			<section>
-				<article class="content">
-					<section class="post">
-						<article class="post-content">
-							<h2>Contact</h2>
-							<p>
-								E-mail: <a class="obfuscated" onclick="var aaa='@'; var m='romain.tavenard'+aaa+'univ-rennes2.fr';       this.innerHTML = m;       this.title = m;       this.href = 'mail'+'to:'+m;       this.onclick = null;       return false;       ">click to reveal</a><br />
-								Phone: +33 (0)2 99 14 18 19<br />
-								Office: A240 (Villejean, Rennes, France)<br />
-								<a href="https://www.google.com/maps/place/Université+Rennes+2/@48.118075,-1.703345,17z/">My University on Google Maps</a>
-							</p>
-
-							<h2>Bio</h2>
-							<p>I graduated from École Centrale de Lyon and ENS Cachan/Rennes, and received my PhD degree from University of Rennes 1 in 2011.
+					<h2>Bio</h2>
+					<p>I graduated from École Centrale de Lyon and ENS Cachan/Rennes, and received my PhD degree from University of Rennes 1 in 2011.
 After 2 years as a post-doctoral fellow at Idiap Research Institute, I am now an assistant professor at University of Rennes 2.
 Here, I investigate dedicated machine learning methods for environmental time series.</p>
 
-							<h2>News</h2>
-							<ul>
-                                <li><a href="projects/mats.html">MATS project</a> on machine learning for time series has been funded by ANR. We will be looking for a highly qualified PhD student starting in 2019! If you are interested, contact me.</li>
-                                <li><a href="https://arxiv.org/abs/1805.09114">Optimal Transport for Structured Data</a>: Titouan's recent work is available on ArXiV.</li>
-                                <li>Check out <a href="https://github.com/rtavenar/tslearn"><code>tslearn</code>: a machine learning toolkit dedicated to time series data</a>.</li>
-							</ul>
+					<h2>News</h2>
+					<ul>
+                        <li><a href="projects/mats.html">MATS project</a> on machine learning for time series has been funded by ANR. We will be looking for a highly qualified PhD student starting in 2019! If you are interested, contact me.</li>
+                        <li><a href="https://arxiv.org/abs/1805.09114">Optimal Transport for Structured Data</a>: Titouan's recent work is available on ArXiV.</li>
+                        <li>Check out <a href="https://github.com/rtavenar/tslearn"><code>tslearn</code>: a machine learning toolkit dedicated to time series data</a>.</li>
+					</ul>
 
-							<h2>Students (past &amp; present)</h2>
-							<ul>
-                                <li>Yichang Wang (PhD student, 2018-2021)</li>
-                                <li><a href="https://tvayer.github.io">Titouan Vayer</a> (PhD student, 2017-2020)</li>
-								<li><a href="http://people.irisa.fr/Adeline.Bailly/">Adeline Bailly</a> (PhD student, 2015-2018)</li>
-								<li><a href="https://papayoun.github.io">Pierre Gloaguen</a> (Postdoc, 2017-2018)</li>
-								<li>Arnaud Lods (MSc student, 2017)</li>
-								<li>Arthur Le Guennec (MSc student, 2016)</li>
-								<li>Léo Henry (Bachelor student, 2016)</li>
-								<li>Anh Quang Nguyen (MSc student, 2014)</li>
-							</ul>
+					<h2>Students (past &amp; present)</h2>
+					<ul>
+                        <li>Yichang Wang (PhD student, 2018-2021)</li>
+                        <li><a href="https://tvayer.github.io">Titouan Vayer</a> (PhD student, 2017-2020)</li>
+						<li><a href="http://people.irisa.fr/Adeline.Bailly/">Adeline Bailly</a> (PhD student, 2015-2018)</li>
+						<li><a href="https://papayoun.github.io">Pierre Gloaguen</a> (Postdoc, 2017-2018)</li>
+						<li>Arnaud Lods (MSc student, 2017)</li>
+						<li>Arthur Le Guennec (MSc student, 2016)</li>
+						<li>Léo Henry (Bachelor student, 2016)</li>
+						<li>Anh Quang Nguyen (MSc student, 2014)</li>
+					</ul>
 
-							<section class="clear"></section>
+					<section class="clear"></section>
 
-						</article>
-					</section>
 				</article>
 			</section>
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="in">
-				<section class="footer">
-					<p class="condensed">
-						This website uses a customized version of the Socialized Lite theme for Wordpress.
-					</p>
-				</section>
-			</div>
-		</footer>
-	</body>
-</html>
+		</article>
+	</section>
+</div>

@@ -11,5 +11,5 @@
   link: /teaching/ml/index.html
   fa-item: fa-cogs
 - name: <i class="fa fa-arrow-right" aria-hidden="true"></i> Recherche
-  link: ../reseach/bio.html
+  link: /research/bio.html
   fa-item: fa-flask

@@ -1,211 +1,141 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html><!--<![endif]-->
-	<head>
-		<title>Projects |  Romain Tavenard</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-		<link rel='stylesheet' id='sds-google-web-font-css'  href='http://fonts.googleapis.com/css?family=Lato%3A400&#038;ver=4.0' type='text/css' media='all' />
-		<link rel='stylesheet' id='socialize-based--css'  href='/css/style.css' type='text/css' media='all' />
-		<script language="javascript" type="text/javascript">
-			function showHide(shID) {
-			   if (document.getElementById(shID)) {
-			      if (document.getElementById(shID).style.display != 'none') {
-			         document.getElementById(shID).style.display = 'none';
-			      } else {
-			         document.getElementById(shID).style.display = 'block';
-			      }
-			   }
-			}
-	    </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="hal.js"></script>
-	</head>
-	<body lang="fr-FR" class="page page-template no-customize-support custom-background">
-		<!-- Header	-->
-		<header id="header" class="cf">
-			<div class="in">
-				<section class="logo-box logo-box-no-header-cta logo-box-full-width">
-					<div id="title-slogan">
-						<p id="title" class="site-title site-title-no-logo no-logo">Romain Tavenard</p>
-						<p id="slogan" class="slogan ">
-							Assistant Professor (MCF)<br />
-							Université de Rennes 2 / LETG-COSTEL<!--<br />Associate member at IRISA-Obelix group-->
-						</p>
-					</div>
+---
+layout: default
+title: Projects
+section: research
+---
+<div class="in">
+	<section>
+		<article class="content">
+			<!-- ML for Environmental Time Series -->
+			<section class="post">
+				<header class="post-header">
+					<h2 class="post-title">Machine Learning for Environmental Data</h2>
+				</header>
+				<article class="post-content">
+					<img src="/assets/images/map_cropped.png" class="project" />
 
-					<nav class="primary-nav-container">
-					<ul id="primary-nav" class="primary-nav menu">
-						<li id="menu-item-1" class="menu-item">
-                            <a href="bio.html"><i class="fa fa-at fa-2x"></i><p class="menu-text">Bio &amp; Contact</p></a>
-                        </li>
-                        <li id="menu-item-2" class="menu-item current-menu-item">
-                            <a href="projects.html"><i class="fa fa-flask fa-2x"></i><p class="menu-text">Projects</p></a>
-                        </li>
-                        <li id="menu-item-3" class="menu-item">
-                            <a href="pub.html"><i class="fa fa-book fa-2x"></i><p class="menu-text">Publications</p></a>
-                        </li>
-                        <li id="menu-item-4" class="menu-item">
-                            <a href="src.html"><i class="fa fa-code fa-2x"></i><p class="menu-text">Code &amp; data</p></a>
-                        </li>
-                        <li id="menu-item-5" class="menu-item">
-                            <a href="../teaching/index.html"><i class="fa fa-graduation-cap fa-2x"></i><p class="menu-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Teaching</p></a>
-                        </li>
+					<p>
+						A lot of environmental data are timestamped.
+						Designing ML techniques that can handle this time dimension can often lead to much improved performance.
+						We have so far turned our focus on 2 different types of environmental data: chemistry data in streams and remote sensing data (such as satellite image time series).
+					</p>
+
+					<h3 class="project">Related funded projects</h3>
+                    <ul>
+                        <li><a href="projects/mats.html">MATS (ANR JCJC, 2019-2023)</a></li>
                     </ul>
-					</nav>
-				</section>
-			</div>
-		</header>
-		<div class="in">
-			<section>
-				<article class="content">
-					<!-- ML for Environmental Time Series -->
-					<section class="post">
-						<header class="post-header">
-							<h2 class="post-title">Machine Learning for Environmental Data</h2>
-						</header>
-						<article class="post-content">
-							<img src="img/map_cropped.png" class="project" />
 
-							<p>
-								A lot of environmental data are timestamped.
-								Designing ML techniques that can handle this time dimension can often lead to much improved performance.
-								We have so far turned our focus on 2 different types of environmental data: chemistry data in streams and remote sensing data (such as satellite image time series).
-							</p>
+					<h3 class="project">Related papers</h3>
+                    <div id="ml_env">
+                    </div>
 
-							<h3 class="project">Related funded projects</h3>
-                            <ul>
-                                <li><a href="projects/mats.html">MATS (ANR JCJC, 2019-2023)</a></li>
-                            </ul>
+					<h3 class="project">Related dataset</h3>
+                    <ul>
+                        <li><a href="https://github.com/a-bailly/time_series_data/tree/master/gee_tsda">GEE-TSDA</a>: a remote sensing dataset to evaluate domain adaptation on time series</li>
+                    </ul>
+					<section class="clear"></section>
 
-							<h3 class="project">Related papers</h3>
-                            <div id="ml_env">
-                            </div>
-
-							<h3 class="project">Related dataset</h3>
-                            <ul>
-                                <li><a href="https://github.com/a-bailly/time_series_data/tree/master/gee_tsda">GEE-TSDA</a>: a remote sensing dataset to evaluate domain adaptation on time series</li>
-                            </ul>
-							<section class="clear"></section>
-
-						</article>
-					</section>
-
-					<!-- ML for Time Series -->
-					<section class="post">
-						<header class="post-header">
-							<h2 class="post-title">Machine Learning &amp; Time Series</h2>
-						</header>
-						<article class="post-content">
-							<img src="img/dtw.svg" class="project" />
-
-							<p>
-								This section gathers Machine Learning tools dedicated to time series with no specific focus on environmental data.
-							</p>
-
-							<h3 class="project">Related funded projects</h3>
-                            <ul>
-                                <li><a href="projects/mats.html">MATS (ANR JCJC, 2019-2023)</a></li>
-                            </ul>
-
-							<h3 class="project">Related papers</h3>
-                            <div id="ml_ts">
-                            </div>
-
-							<h3 class="project">Related source code</h3>
-							<ul>
-								<li><a href="https://github.com/rtavenar/tslearn">tslearn: A machine learning toolkit dedicated to time-series data</a></li>
-								<li><a href="https://github.com/rtavenar/LDPS">Learning DTW-Preserving Shapelets</a></li>
-								<li><a href="https://github.com/rtavenar/CostAware_ECTS">Cost-Aware Early Classification of Time Series</a></li>
-								<li><a href="https://github.com/a-bailly/dbotsw">Dense Bag-of-Temporal-SIFT-Words (Adeline Bailly's code)</a></li>
-							</ul>
-
-
-							<section class="clear"></section>
-
-						</article>
-					</section>
-
-					<!-- Action recognition -->
-					<section id="post-7" class="post-7 page type-page status-publish hentry post cf">
-						<header class="post-header">
-							<h2 class="post-title">Time-Sensitive Graphical Models</h2>
-						</header>
-						<article class="post-content">
-							<img src="img/hdlsm-supervised.svg" class="project" />
-
-							<p>
-								We have been using time-sensitive topic models (such as Probabilistic Latent Semantic Motifs or Hierarchical Dirichlet Latent Semantic Motifs) to perform action recognition in videos.
-								We are still investigating the design of richer models to better capture information from streams of numerical features.
-							</p>
-
-							<h3 class="project">Related papers</h3>
-                            <div id="topic_models">
-                            </div>
-							<section class="clear"></section>
-
-						</article>
-					</section>
-
-					<!-- Main PhD Project -->
-					<section id="post-7" class="post-7 page type-page status-publish hentry post cf">
-						<header class="post-header">
-							<h2 class="post-title">Indexing &amp; IR [Past]</h2>
-						</header>
-						<article class="post-content">
-							<img src="img/lbub.svg" class="project" />
-
-							<p>
-								Our main goal in this project was to introduce new indexing schemes that were able to efficiently deal with time series.
-								One contribution in this field was iSAX+, an approximate-lower-bound-based indexing scheme for DTW.
-								Some works about vector data indexing are also cited here.
-							</p>
-
-							<h3 class="project">Related papers</h3>
-                            <div id="ir">
-                            </div>
-							<section class="clear"></section>
-
-						</article>
-					</section>
-
-					<!-- Sensor data mining -->
-					<section id="post-7" class="post-7 page type-page status-publish hentry post cf">
-						<header class="post-header">
-							<h2 class="post-title">Time Series Mining for Smart Environments [Past]</h2>
-						</header>
-						<article class="post-content">
-							<img src="img/smartenv.png" class="project" />
-
-							<p>
-								The growing use of lots of low-level sensors instead of few higher-level ones implies the use of dedicated pattern extraction methods.
-								To do so, we have worked on the already existing T-patterns algorithm so that it can efficiently scale up to larger volumes of data.
-							</p>
-
-							<h3 class="project">Related papers</h3>
-                            <div id="smartenv">
-                            </div>
-							<section class="clear"></section>
-
-						</article>
-					</section>
 				</article>
 			</section>
-		</div>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="in">
-				<section class="footer">
-					<p class="condensed">
-						This website uses a customized version of the Socialized Lite theme for Wordpress.
+			<!-- ML for Time Series -->
+			<section class="post">
+				<header class="post-header">
+					<h2 class="post-title">Machine Learning &amp; Time Series</h2>
+				</header>
+				<article class="post-content">
+					<img src="/assets/images/dtw.svg" class="project" />
+
+					<p>
+						This section gathers Machine Learning tools dedicated to time series with no specific focus on environmental data.
 					</p>
-				</section>
-			</div>
-		</footer>
-	</body>
-</html>
+
+					<h3 class="project">Related funded projects</h3>
+                    <ul>
+                        <li><a href="projects/mats.html">MATS (ANR JCJC, 2019-2023)</a></li>
+                    </ul>
+
+					<h3 class="project">Related papers</h3>
+                    <div id="ml_ts">
+                    </div>
+
+					<h3 class="project">Related source code</h3>
+					<ul>
+						<li><a href="https://github.com/rtavenar/tslearn">tslearn: A machine learning toolkit dedicated to time-series data</a></li>
+						<li><a href="https://github.com/rtavenar/LDPS">Learning DTW-Preserving Shapelets</a></li>
+						<li><a href="https://github.com/rtavenar/CostAware_ECTS">Cost-Aware Early Classification of Time Series</a></li>
+						<li><a href="https://github.com/a-bailly/dbotsw">Dense Bag-of-Temporal-SIFT-Words (Adeline Bailly's code)</a></li>
+					</ul>
+
+
+					<section class="clear"></section>
+
+				</article>
+			</section>
+
+			<!-- Action recognition -->
+			<section id="post-7" class="post-7 page type-page status-publish hentry post cf">
+				<header class="post-header">
+					<h2 class="post-title">Time-Sensitive Graphical Models</h2>
+				</header>
+				<article class="post-content">
+					<img src="/assets/images/hdlsm-supervised.svg" class="project" />
+
+					<p>
+						We have been using time-sensitive topic models (such as Probabilistic Latent Semantic Motifs or Hierarchical Dirichlet Latent Semantic Motifs) to perform action recognition in videos.
+						We are still investigating the design of richer models to better capture information from streams of numerical features.
+					</p>
+
+					<h3 class="project">Related papers</h3>
+                    <div id="topic_models">
+                    </div>
+					<section class="clear"></section>
+
+				</article>
+			</section>
+
+			<!-- Main PhD Project -->
+			<section id="post-7" class="post-7 page type-page status-publish hentry post cf">
+				<header class="post-header">
+					<h2 class="post-title">Indexing &amp; IR [Past]</h2>
+				</header>
+				<article class="post-content">
+					<img src="/assets/images/lbub.svg" class="project" />
+
+					<p>
+						Our main goal in this project was to introduce new indexing schemes that were able to efficiently deal with time series.
+						One contribution in this field was iSAX+, an approximate-lower-bound-based indexing scheme for DTW.
+						Some works about vector data indexing are also cited here.
+					</p>
+
+					<h3 class="project">Related papers</h3>
+                    <div id="ir">
+                    </div>
+					<section class="clear"></section>
+
+				</article>
+			</section>
+
+			<!-- Sensor data mining -->
+			<section id="post-7" class="post-7 page type-page status-publish hentry post cf">
+				<header class="post-header">
+					<h2 class="post-title">Time Series Mining for Smart Environments [Past]</h2>
+				</header>
+				<article class="post-content">
+					<img src="/assets/images/smartenv.png" class="project" />
+
+					<p>
+						The growing use of lots of low-level sensors instead of few higher-level ones implies the use of dedicated pattern extraction methods.
+						To do so, we have worked on the already existing T-patterns algorithm so that it can efficiently scale up to larger volumes of data.
+					</p>
+
+					<h3 class="project">Related papers</h3>
+                    <div id="smartenv">
+                    </div>
+					<section class="clear"></section>
+
+				</article>
+			</section>
+		</article>
+	</section>
+</div>

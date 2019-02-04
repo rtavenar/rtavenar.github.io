@@ -1,0 +1,41 @@
+- title: Machine Learning for Environmental Data
+  image: map_cropped.png
+  text: "A lot of environmental data are timestamped. Designing ML techniques that can handle this time dimension can often lead to much improved performance. We have so far turned our focus on 2 different types of environmental data: chemistry data in streams and remote sensing data (such as satellite image time series)."
+  fundings:
+  - name: MATS (ANR JCJC, 2019-2023)
+    url: /research/projects/mats.html
+  div_id: ml_env
+  datasets:
+  - name: GEE-TSDA
+    url: "https://github.com/a-bailly/time_series_data/tree/master/gee_tsda"
+    description: ": a remote sensing dataset to evaluate domain adaptation on time series"
+- title: Machine Learning &amp; Time Series
+  image: dtw.svg
+  text: This section gathers Machine Learning tools dedicated to time series with no specific focus on environmental data.
+  fundings:
+  - name: MATS (ANR JCJC, 2019-2023)
+    url: /research/projects/mats.html
+  div_id: ml_ts
+  codes:
+  - name: tslearn
+    url: "https://github.com/rtavenar/tslearn"
+    description: ": A machine learning toolkit dedicated to time-series data"
+  - name: Learning DTW-Preserving Shapelets
+    url: "https://github.com/rtavenar/LDPS"
+  - name: Cost-Aware Early Classification of Time Series
+    url: "https://github.com/rtavenar/CostAware_ECTS"
+  - name: Dense Bag-of-Temporal-SIFT-Words
+    url: "https://github.com/a-bailly/dbotsw"
+    description: " (Adeline Bailly's code)"
+- title: Time-Sensitive Graphical Models
+  image: hdlsm-supervised.svg
+  text: "We have been using time-sensitive topic models (such as Probabilistic Latent Semantic Motifs or Hierarchical Dirichlet Latent Semantic Motifs) to perform action recognition in videos. We are still investigating the design of richer models to better capture information from streams of numerical features."
+  div_id: topic_models
+- title: Indexing &amp; IR [Past]
+  image: lbub.svg
+  text: "Our main goal in this project was to introduce new indexing schemes that were able to efficiently deal with time series. One contribution in this field was iSAX+, an approximate-lower-bound-based indexing scheme for DTW. Some works about vector data indexing are also cited here."
+  div_id: ir
+- title: Time Series Mining for Smart Environments [Past]
+  image: smartenv.png
+  text: "The growing use of lots of low-level sensors instead of few higher-level ones implies the use of dedicated pattern extraction methods. To do so, we have worked on the already existing T-patterns algorithm so that it can efficiently scale up to larger volumes of data."
+  div_id: smartenv

@@ -12,54 +12,16 @@ section: teaching
                         les M1 Stats de l'Universit&eacute; de Rennes 2</h2>
                     <h3>Liens vers les sujets de TD</h3>
                     <ol>
-                        <li>
-                            <span class="item-text">Le shell MongoDB</span>
-                            <span class="item-link">
-                            [<a href="../nosql_fiche/html/td_mongoshell.html">HTML</a>]
-                            [<a href="../nosql_fiche/epub/td_mongoshell.epub">EPUB</a>]
-                            [<a href="../nosql_fiche/pdf/td_mongoshell.pdf">PDF</a>]
-                            </span>
-                        </li>
-                        <li>
-                            <span class="item-text">Requ&ecirc;tes compl&eacute;mentaires</span>
-                            <span class="item-link">
-                            [<a href="../nosql_fiche/html/td_reqsupp.html">HTML</a>]
-                            [<a href="../nosql_fiche/epub/td_reqsupp.epub">EPUB</a>]
-                            [<a href="../nosql_fiche/pdf/td_reqsupp.pdf">PDF</a>]
-                            </span>
-                        </li>
-                        <li>
-                            <span class="item-text">Les index</span>
-                            <span class="item-link">
-                            [<a href="../nosql_fiche/html/td_index.html">HTML</a>]
-                            [<a href="../nosql_fiche/epub/td_index.epub">EPUB</a>]
-                            [<a href="../nosql_fiche/pdf/td_index.pdf">PDF</a>]
-                            </span>
-                        </li>
-                        <li>
-                            <span class="item-text">Requ&ecirc;tes textuelles et g&eacute;ospatiales</span>
-                            <span class="item-link">
-                            [<a href="../nosql_fiche/html/td_textgeo.html">HTML</a>]
-                            [<a href="../nosql_fiche/epub/td_textgeo.epub">EPUB</a>]
-                            [<a href="../nosql_fiche/pdf/td_textgeo.pdf">PDF</a>]
-                            </span>
-                        </li>
-                        <li>
-                            <span class="item-text">Requ&ecirc;tes d'agr&eacute;gation</span>
-                            <span class="item-link">
-                            [<a href="../nosql_fiche/html/td_aggregate.html">HTML</a>]
-                            [<a href="../nosql_fiche/epub/td_aggregate.epub">EPUB</a>]
-                            [<a href="../nosql_fiche/pdf/td_aggregate.pdf">PDF</a>]
-                            </span>
-                        </li>
-                        <li>
-                            <span class="item-text">Requ&ecirc;tes de modification</span>
-                            <span class="item-link">
-                            [<a href="../nosql_fiche/html/td_cud.html">HTML</a>]
-                            [<a href="../nosql_fiche/epub/td_cud.epub">EPUB</a>]
-                            [<a href="../nosql_fiche/pdf/td_cud.pdf">PDF</a>]
-                            </span>
-                        </li>
+                        {% for item in site.data.teaching.nosql %}
+                            <li>
+                                <span class="item-text">{{ item.name }}</span>
+                                <span class="item-link">
+                                [<a href="{{ item.html-link }}">HTML</a>]
+                                [<a href="{{ item.epub-link }}">EPUB</a>]
+                                [<a href="{{ item.pdf-link }}">PDF</a>]
+                                </span>
+                            </li>
+                        {% endfor %}
                     </ol>
 
 					<section class="clear"></section>

@@ -23,7 +23,13 @@ section: research
                 </header>
 				<article class="post-content">
 					<ul>
-                        <li><a href="https://github.com/a-bailly/time_series_data/tree/master/gee_tsda">GEE-TSDA</a>: a remote sensing dataset to evaluate domain adaptation on time series</li>
+                        {% for project in site.data.research.projects %}
+                                {% if project.datasets %}
+                                    {% for dataset in project.datasets %}
+                                    <li><a href="{{ dataset.url }}">{{ dataset.name }}</a>{{ dataset.description }}</li>
+                                    {% endfor %}
+                                {% endif %}
+                        {% endfor %}
                     </ul>
 					<section class="clear"></section>
 				</article>

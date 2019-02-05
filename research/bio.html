@@ -23,21 +23,20 @@ Here, I investigate dedicated machine learning methods for environmental time se
 
 					<h2>News</h2>
 					<ul>
-                        <li><a href="projects/mats.html">MATS project</a> on machine learning for time series has been funded by ANR. We will be looking for a highly qualified PhD student starting in 2019! If you are interested, contact me.</li>
-                        <li><a href="https://arxiv.org/abs/1805.09114">Optimal Transport for Structured Data</a>: Titouan's recent work is available on ArXiV.</li>
-                        <li>Check out <a href="https://github.com/rtavenar/tslearn"><code>tslearn</code>: a machine learning toolkit dedicated to time series data</a>.</li>
+                        {% for news in site.data.research.news %}
+                            <li><a href="{{ news.url }}">{{ news.title }}</a>{{ news.description }}</li>
+                        {% endfor %}
 					</ul>
 
 					<h2>Students (past &amp; present)</h2>
 					<ul>
-                        <li>Yichang Wang (PhD student, 2018-2021)</li>
-                        <li><a href="https://tvayer.github.io">Titouan Vayer</a> (PhD student, 2017-2020)</li>
-						<li><a href="http://people.irisa.fr/Adeline.Bailly/">Adeline Bailly</a> (PhD student, 2015-2018)</li>
-						<li><a href="https://papayoun.github.io">Pierre Gloaguen</a> (Postdoc, 2017-2018)</li>
-						<li>Arnaud Lods (MSc student, 2017)</li>
-						<li>Arthur Le Guennec (MSc student, 2016)</li>
-						<li>Léo Henry (Bachelor student, 2016)</li>
-						<li>Anh Quang Nguyen (MSc student, 2014)</li>
+                        {% for student in site.data.research.students %}
+                            {% if student.url %}
+                                <li><a href="{{ student.url }}">{{ student.name }}</a> ({{ student.level }}, {{ student.year }})</li>
+                            {% else %}
+                                <li>{{ student.name }} ({{ student.level }}, {{ student.year }})</li>
+                            {% endif %}
+                        {% endfor %}
 					</ul>
 
 					<section class="clear"></section>

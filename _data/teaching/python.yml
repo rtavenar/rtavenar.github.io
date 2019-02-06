@@ -10,6 +10,10 @@ sections:
     items:
     - name: "&Eacute;nonc&eacute; du projet"
       html-link: ../python_project/html/enonce_2018.html
+    - name: "Activer son profil d&eacute;veloppeur Twitter"
+      html-link: ../python_project/html/tweepy_createapp.html
+    - name: "Aide-m&eacute;moire <code>tweepy</code> et <code>googlemaps</code>"
+      html-link: ../python_project/html/tweepy_gmaps.html
   - title: "Liens vers les sujets de TD"
     items:
     - name: "Introduction &agrave; Python et PyCharm"
@@ -24,8 +28,6 @@ sections:
       html-link: ../python_td/html/listes_avancees.html
     - name: "Analyse et d&eacute;composition de probl&egrave;mes"
       html-link: ../python_td/html/tdinverse.html
-    - name: "Les cha&icirc;nes de caract&egrave;res en Python"
-      html-link: ../python_td/html/chaines.html
     - name: "Les dictionnaires en Python"
       html-link: ../python_td/html/dict.html
     - name: "La lecture et l'&eacute;criture de fichiers en Python"
@@ -34,9 +36,3 @@ sections:
       html-link: ../python_td/html/api.html
     - name: "Bataille navale"
       html-link: ../python_td/html/bataille_navale.html
-    - name: "Le calcul num&eacute;rique en Python"
-      html-link: ../python_td/html/numpy.html
-    - name: "TD d'entrainement &agrave; mi-semestre (sans correction)"
-      html-link: ../python_td/html/entrainement_nocorr.html
-    - name: "TD d'entrainement &agrave; mi-semestre (avec correction)"
-      html-link: ../python_td/html/entrainement.html

@@ -36,18 +36,21 @@
         			<section class="post">
         				<article class="post-content">
                             <h2>{{ site.data.teaching[page.id].course-title }}</h2>
+                            {{ site.data.teaching[page.id].course-details }}
                             {% for section in site.data.teaching[page.id].sections %}
                             <h3>{{ section.title }}</h3>
                             {% if section.items %}
                             <ol>
                                 {% for item in section.items %}
-                                    <li>
+                                    <li {% if item.index %}value="{{ item.index }}"{% endif %}>
                                         <span class="item-text">{{ item.name }}</span>
+                                        {% if item.html-link %}
                                         <span class="item-link">
                                         [<a href="{{ item.html-link }}">HTML</a>]
                                         [<a href="{{ item.html-link | replace: "html", "epub" }}">EPUB</a>]
                                         [<a href="{{ item.html-link | replace: "html", "pdf" }}">PDF</a>]
                                         </span>
+                                        {% endif %}
                                     </li>
                                 {% endfor %}
                             </ol>

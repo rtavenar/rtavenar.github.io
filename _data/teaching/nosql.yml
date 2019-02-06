@@ -1,24 +1,16 @@
-- name: Le shell MongoDB
-  html-link: ../nosql_fiche/html/td_mongoshell.html
-  epub-link: ../nosql_fiche/epub/td_mongoshell.epub
-  pdf-link: ../nosql_fiche/pdf/td_mongoshell.pdf
-- name: Requ&ecirc;tes compl&eacute;mentaires
-  html-link: ../nosql_fiche/html/td_reqsupp.html
-  epub-link: ../nosql_fiche/epub/td_reqsupp.epub
-  pdf-link: ../nosql_fiche/pdf/td_reqsupp.pdf
-- name: Les index
-  html-link: ../nosql_fiche/html/td_index.html
-  epub-link: ../nosql_fiche/epub/td_index.epub
-  pdf-link: ../nosql_fiche/pdf/td_index.pdf
-- name: Requ&ecirc;tes textuelles et g&eacute;ospatiales
-  html-link: ../nosql_fiche/html/td_textgeo.html
-  epub-link: ../nosql_fiche/epub/td_textgeo.epub
-  pdf-link: ../nosql_fiche/pdf/td_textgeo.pdf
-- name: ¸Requ&ecirc;tes d'agr&eacute;gation
-  html-link: ../nosql_fiche/html/td_aggregate.html
-  epub-link: ../nosql_fiche/epub/td_aggregate.epub
-  pdf-link: ../nosql_fiche/pdf/td_aggregate.pdf
-- name: Requ&ecirc;tes de modification
-  html-link: ../nosql_fiche/html/td_cud.html
-  epub-link: ../nosql_fiche/epub/td_cud.epub
-  pdf-link: ../nosql_fiche/pdf/td_cud.pdf
+course-title: "Page du cours de NoSQL (MongoDB) pour les M1 Stats de l'Université de Rennes 2"
+sections:
+  - title: "Liens vers les sujets de TD"
+    items:
+    - name: Le shell MongoDB
+      html-link: ../nosql_fiche/html/td_mongoshell.html
+    - name: Requ&ecirc;tes compl&eacute;mentaires
+      html-link: ../nosql_fiche/html/td_reqsupp.html
+    - name: Les index
+      html-link: ../nosql_fiche/html/td_index.html
+    - name: Requ&ecirc;tes textuelles et g&eacute;ospatiales
+      html-link: ../nosql_fiche/html/td_textgeo.html
+    - name: ¸Requ&ecirc;tes d'agr&eacute;gation
+      html-link: ../nosql_fiche/html/td_aggregate.html
+    - name: Requ&ecirc;tes de modification
+      html-link: ../nosql_fiche/html/td_cud.html

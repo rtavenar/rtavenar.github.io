@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html><!--<![endif]-->
+	<head>
+		<title>{{ page.title }} |  Romain Tavenard</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<link rel='stylesheet' id='sds-google-web-font-css'  href='http://fonts.googleapis.com/css?family=Lato%3A400&#038;ver=4.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='socialize-based--css'  href='/assets/css/style.css' type='text/css' media='all' />
+        {% if page.url == "/research/pub.html" or page.url == "/research/projects.html" %}
+		<script language="javascript" type="text/javascript">
+			function showHide(shID) {
+			   if (document.getElementById(shID)) {
+			      if (document.getElementById(shID).style.display != 'none') {
+			         document.getElementById(shID).style.display = 'none';
+			      } else {
+			         document.getElementById(shID).style.display = 'block';
+			      }
+			   }
+			}
+	    </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/assets/js/hal.js"></script>
+        {% endif %}
+	</head>
+    <body lang="fr-FR" class="page page-template no-customize-support custom-background">
+        {% include navigation_teaching.html %}
+
+        <div class="in">
+        	<section>
+        		<article class="content">
+        			<section class="post">
+        				<article class="post-content">
+                            <h2>{{ site.data.teaching[page.id].course-title }}</h2>
+                            {% for section in site.data.teaching[page.id].sections %}
+                            <h3>{{ section.title }}</h3>
+                            {% if section.items %}
+                            <ol>
+                                {% for item in section.items %}
+                                    <li>
+                                        <span class="item-text">{{ item.name }}</span>
+                                        <span class="item-link">
+                                        [<a href="{{ item.html-link }}">HTML</a>]
+                                        [<a href="{{ item.html-link | replace: "html", "epub" }}">EPUB</a>]
+                                        [<a href="{{ item.html-link | replace: "html", "pdf" }}">PDF</a>]
+                                        </span>
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                            {% endif %}
+                            {% endfor %}
+
+        					<section class="clear"></section>
+
+        				</article>
+        			</section>
+        		</article>
+        	</section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+course-title: "Page du cours de Python pour les L2 MIASHS de l'Universit&eacute; de Rennes 2"
+sections:
+  - title: "Liens relatifs au polycopi&eacute;"
+    items:
+    - name: "Polycopi&eacute;"
+      html-link: ../python_poly/html/poly.html
+    - name: "Corrig&eacute; des exercices du polycopi&eacute;"
+      html-link: ../python_poly/html/solutions.html
+  - title: "Liens relatifs au projet Twitter"
+    items:
+    - name: "&Eacute;nonc&eacute; du projet"
+      html-link: ../python_project/html/enonce_2018.html
+  - title: "Liens vers les sujets de TD"
+    items:
+    - name: "Introduction &agrave; Python et PyCharm"
+      html-link: ../python_td/html/intro.html
+    - name: "Les fonctions en Python"
+      html-link: ../python_td/html/fonctions.html
+    - name: "Utilisation du module <code>turtle</code>"
+      html-link: ../python_td/html/turtle.html
+    - name: "Les listes et les dates en Python"
+      html-link: ../python_td/html/listes_dates.html
+    - name: "Manipulations avanc&eacute;es de listes en Python"
+      html-link: ../python_td/html/listes_avancees.html
+    - name: "Analyse et d&eacute;composition de probl&egrave;mes"
+      html-link: ../python_td/html/tdinverse.html
+    - name: "Les cha&icirc;nes de caract&egrave;res en Python"
+      html-link: ../python_td/html/chaines.html
+    - name: "Les dictionnaires en Python"
+      html-link: ../python_td/html/dict.html
+    - name: "La lecture et l'&eacute;criture de fichiers en Python"
+      html-link: ../python_td/html/fichiers.html
+    - name: "Les API web d'acc&egrave;s aux donn&eacute;es"
+      html-link: ../python_td/html/api.html
+    - name: "Bataille navale"
+      html-link: ../python_td/html/bataille_navale.html
+    - name: "Le calcul num&eacute;rique en Python"
+      html-link: ../python_td/html/numpy.html
+    - name: "TD d'entrainement &agrave; mi-semestre (sans correction)"
+      html-link: ../python_td/html/entrainement_nocorr.html
+    - name: "TD d'entrainement &agrave; mi-semestre (avec correction)"
+      html-link: ../python_td/html/entrainement.html

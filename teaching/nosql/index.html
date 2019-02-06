@@ -1,33 +1,6 @@
 ---
-layout: default
+layout: default_course
 title: NoSQL (MongoDB)
 section: teaching
+id: nosql
 ---
-<div class="in">
-	<section>
-		<article class="content">
-			<section class="post">
-				<article class="post-content">
-                    <h2>Page du cours de NoSQL (MongoDB) pour
-                        les M1 Stats de l'Universit&eacute; de Rennes 2</h2>
-                    <h3>Liens vers les sujets de TD</h3>
-                    <ol>
-                        {% for item in site.data.teaching.nosql %}
-                            <li>
-                                <span class="item-text">{{ item.name }}</span>
-                                <span class="item-link">
-                                [<a href="{{ item.html-link }}">HTML</a>]
-                                [<a href="{{ item.epub-link }}">EPUB</a>]
-                                [<a href="{{ item.pdf-link }}">PDF</a>]
-                                </span>
-                            </li>
-                        {% endfor %}
-                    </ol>
-
-					<section class="clear"></section>
-
-				</article>
-			</section>
-		</article>
-	</section>
-</div>

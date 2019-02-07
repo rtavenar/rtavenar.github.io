@@ -22,8 +22,6 @@ Pour chacune des deux manipulations suivantes, vous proposerez deux versions : l
 
 3. Affichez les titres (mais pas les autres clés) de tous les posts de la base.
 
-4. Affichez la liste des posts de l'auteur Romain Tavenard. Pour cela, il faudra récupérer l'identifiant de cet auteur dans une variable, à l'aide d'un appel à `findOne()`, puis utiliser cette variable dans la requête finale.
-
 # La base `etudiants`
 
 5. Affichez la liste des étudiantes sans note.

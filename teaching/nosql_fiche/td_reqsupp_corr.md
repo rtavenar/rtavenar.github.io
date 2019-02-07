@@ -42,14 +42,6 @@ Pour chacune des deux manipulations suivantes, vous proposerez deux versions : l
 > db.blog.posts.find({}, {"title": true, "_id": false})
 ```
 
-4. Affichez la liste des posts de l'auteur Romain Tavenard. Pour cela, il faudra récupérer l'identifiant de cet auteur dans une variable, à l'aide d'un appel à `findOne()`, puis utiliser cette variable dans la requête finale.
-
-```javascript
-> author_id = db.blog.authors.findOne({"firstname": "Romain",
-                                       "lastname": "Tavenard"})["_id"]
-> db.blog.posts.find({"author_id": author_id})
-```
-
 # La base `etudiants`
 
 5. Affichez la liste des étudiantes sans note.

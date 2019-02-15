@@ -124,10 +124,9 @@ Pour cela, il faut tout d'abord s'assurer qu'un index géo-spatial (de type `2ds
 MongoDB définit trois mots-clés correspondant aux situations définies précédemment :
 
 * `$near` ;
-* `$within` ;
-* `$intersects`.
+* `$within`.
 
-La syntaxe correspondante est toujours de la même forme (remplacer `$near` par `$within` ou `$intersects` au besoin) :
+La syntaxe correspondante est toujours de la même forme (remplacer `$near` par `$within` au besoin) :
 
 ```javascript
 > db.nomDeLaCollection.find({"clé": {$near : {$geometry : ref}}})
@@ -139,7 +138,7 @@ où `ref` est une variable correspondant à  la référence à  laquelle on so
 ```javascript
 > var ref = {"type": "Point", "coordinates": [longitude, latitude]}
 ```
-* un polygone dans le cas des mots-clés `$within` et `$intersects` :
+* un polygone dans le cas du mots-clé `$within` :
 ```javascript
 > var ref = {"type": "Polygon", "coordinates": [[[long1, lat1],
                                                  [long2, lat2],

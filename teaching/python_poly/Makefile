@@ -14,19 +14,19 @@ epub: poly_epub solutions_epub
 html: poly_html solutions_html
 
 poly_html: $(SRC_POLY)
-	pandoc --toc -s -o html/poly.html --highlight-style pygments --data-dir . --columns 1000 --css ../../../css/md.css -S --normalize --ascii --number-sections --mathjax $^
+	pandoc --toc --self-contained -s -o html/poly.html --highlight-style pygments --data-dir . --columns 1000 --css ../css_md/md.css -S --normalize --ascii --number-sections --mathml $^
 
 poly_epub: $(SRC_POLY)
-	pandoc -S -o epub/poly.epub --columns 1000 -S --epub-stylesheet ../../css/md_epub.css --mathml --toc $^
+	pandoc -S -o epub/poly.epub --columns 1000 -S --epub-stylesheet ../css_md/md_epub.css --mathml --toc $^
 
 poly_pdf: $(SRC_POLY)
 	pandoc -V lang=fr -o pdf/poly.pdf --columns 1000 --variable urlcolor=cyan --chapters --number-sections $^
 
 solutions_html: $(SRC_SOLUTIONS)
-	pandoc -s -o html/solutions.html --toc --highlight-style pygments --data-dir . --columns 1000 --css ../../../css/md.css --css ../../../css/md_solutions.css -S --normalize --ascii --mathjax $^
+	pandoc --self-contained -s -o html/solutions.html --toc --highlight-style pygments --data-dir . --columns 1000 --css ../css_md/md_solutions.css -S --normalize --ascii --mathml $^
 
 solutions_epub: $(SRC_SOLUTIONS)
-	pandoc -S -o epub/solutions.epub --columns 1000 -S --epub-stylesheet ../../css/md_epub.css --mathml $^
+	pandoc -S -o epub/solutions.epub --columns 1000 -S --epub-stylesheet ../css_md/md_epub.css --mathml $^
 
 solutions_pdf: $(SRC_SOLUTIONS)
 	pandoc -V lang=fr -o pdf/solutions.pdf --columns 1000 --variable urlcolor=cyan $^

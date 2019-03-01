@@ -12,11 +12,11 @@ section: research
 					<h2 class="post-title">{{ seminaire.name }}</h2>
 				</header>
 				<article class="post-content">
-                    {{ if seminaire.url }}
+                    {% if seminaire.url %}
 					<p>
 						<a href="{{ seminaire.url }}">Page web</a>
 					</p>
-                    {{ endif }}
+                    {% endif %}
                     <p>
                             Date : {{ seminaire.date }}<br />
                             Lieu : {{ seminaire.place }}<br />

@@ -1,0 +1,33 @@
+---
+layout: default
+title: Seminaire
+section: research
+---
+<div class="in">
+	<section>
+		<article class="content">
+            {% for seminaire in site.data.research.seminaire %}
+			<section class="page type-page status-publish hentry post cf">
+				<header class="post-header">
+					<h2 class="post-title">{{ seminaire.name }}</h2>
+				</header>
+				<article class="post-content">
+                    {{ if seminaire.url }}
+					<p>
+						<a href="{{ seminaire.url }}">Page web</a>
+					</p>
+                    {{ endif }}
+                    <p>
+                            Date : {{ seminaire.date }}<br />
+                            Lieu : {{ seminaire.place }}<br />
+                            Titre : {{ seminaire.title }}<br />
+                            R&eacute;sum&eacute; : {{ seminaire.abstract }}
+                    </p>
+					<section class="clear"></section>
+
+				</article>
+			</section>
+            {% endfor %}
+		</article>
+	</section>
+</div>

@@ -14,5 +14,5 @@
   url: "https://sites.google.com/site/mtanpham89/"
   date: "28/03/2019, 11h"
   place: "N104"
-  title: "TBD"
-  abstract: "TBD"
+  title: "Graph of keypoints for remote sensing image analysis"
+  abstract: "We present a novel graph-based approach for remote sensing image analysis. In such an approach, keypoints are first extracted to represent and characterize the image. A similarity graph is then constructed from these points and the analysis from the graph’s spatial and spectral domains provides us powerful tools to tackle different remote sensing tasks. Our approach does not require any stationary condition within remote sensing imagery and is able to deal with large-size image data. Some examples on classification of optical satellite images, change detection and glacier flow measurement from synthetic radar aperture (SAR) data are illustrated in order to evaluate and confirm the effectiveness of the proposed strategy."

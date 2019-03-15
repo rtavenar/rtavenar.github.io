@@ -242,18 +242,26 @@ Vous savez déjà que les attributs de type date doivent être considérés de f
                       ])
 ```
 
-19. Passez à la base `etudiants` et calculez, pour chaque étudiant, sa moyenne. Vous pourrez pour cela utiliser (une ou) des fonctions de calcul horizontal dont l'aide se trouve à l'adresse : <https://docs.mongodb.org/v3.0/reference/operator/aggregation-arithmetic/>
+19. Passez à la base `etudiants` et calculez, pour chaque étudiant, sa moyenne.
 
 ```javascript
 > db.notes.aggregate([
                         {$unwind: "$notes"},
-                        {$group: {_id: "$nom", somme: {$sum: "$notes"}, nb: {$sum: 1}}},
-                        {$project: {moyenne: {$divide: ["$somme", "$nb"]}}}
+                        {$group: {_id: "$nom", moyenne: {avg: "$notes"}}}
                       ])
 ```
 
 20. Quel est le jour durant lequel ont été données le plus de notes pour des restaurants de `"Manhattan"` ?
 
 ```javascript
-TODO
+> db.NYfood.aggregate([
+                        {$match: {"borough": "Manhattan"}},
+                        {$unwind: "$grades"},
+                        {$group: {_id: {day: {$dayOfMonth: "$grades.date"},
+                                        month: {$month: "$grades.date"},
+                                        year: {$year: "$grades.date"}},
+                                  n_notes: {$sum: 1}}},
+                        {$sort: {"n_notes": -1}},
+                        {$limit: 1}
+])
 ```

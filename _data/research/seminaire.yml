@@ -10,6 +10,16 @@
   place: "N323"
   title: "Prediction and influence of the occurrence of events in complex sequences"
   abstract: "For several years now, a new phenomenon related to digital data is emerging: data which is increasingly voluminous, varied and rapid, appears and becomes available, it is often referred to as complex data. Complex data is very rich in hidden information, which increases its predictive and detection power. For many years, prediction and detection models in the data mining literature have been proposed for so-called simple data (from a single source, with a clear structure, etc.). However, the generalization and predominance of complex data leads to new challenges, mainly related to taking into account the new characteristics of this data in the modeling process. Consequently, proposing new models adapted to complex data has become essential to better detect, predict and even influence the future, which represents the main challenge that I have chosen to address during my research. This presentation covers my contributions for mining complex data, with a focus on complex sequences, by proposing models for: (i) events prediction, (ii) emergence detection, (iii) events influence and (iv) anomaly detection."
+- name: "Geoffrey Roman Gimenez"
+  url: "https://www.linkedin.com/in/geoffreyromanjimenez/?originalSubdomain=fr"
+  date: "21/03/2019, 14h"
+  place: "N104"
+  title: "Science des données et apprentissage statistique pour l'extraction de connaissances à partir de données et d'images"
+  abstract: "Dans le cadre de ce séminaire, je présenterai une partie de mes travaux de recherche portant sur l'utilisation de méthodes de sciences des données et d'apprentissage statistique (machine/deep-learning, modélisation/fouille/visualisation de données) pour l’extraction de connaissances à partir de données et d’images.
+
+Les premiers travaux que je présenterai porteront sur l'utilisation du transfert d'apprentissage pour la détection de structure au sein de documents manuscrits historiques, en l'absence de vérité-terrain.
+J’exposerai ensuite mes travaux sur la ré-identification de véhicules par l'utilisation des espaces latents de réseaux convolutifs profonds.
+Je finirai sur la présentation des différents travaux que je mène actuellement sur la modélisation, la fouille et la visualisation de (méta-)données hétérogènes issues des systèmes de vidéoprotection."
 - name: "Minh-Tan Pham"
   url: "https://sites.google.com/site/mtanpham89/"
   date: "28/03/2019, 11h"

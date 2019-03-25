@@ -24,8 +24,15 @@ Je finirai sur la présentation des différents travaux que je mène actuellemen
   url: "https://team.inria.fr/kerdata/pedro-silva/"
   date: "21/03/2019, 17h"
   place: "N104"
-  title: "TBD"
-  abstract: "TBD"
+  title: "Application placement on Clouds, Edge and other Hybrid Infrastructures: a journey."
+  abstract: "In this presentation I will present my recent work on application placement on hybrid infrastructures. First
+I will discuss an approach for modeling and calculating distributed application placement on very large 
+multi-cloud infrastructures based on efficient bin-packing and graph-homomorphism 
+heuristics. Then I will move to a discussion about challenges related to placing distributed applications
+on Edge infrastructures. In special, I discuss current work on (i) a first approach for the placement of 
+stream processing applications and (ii) benchmarking Edge processing frameworks.
+Finally, I close the presentation with two collaboration projects where Edge computing and application placement
+have an central role."
 - name: "Minh-Tan Pham"
   url: "https://sites.google.com/site/mtanpham89/"
   date: "28/03/2019, 11h"

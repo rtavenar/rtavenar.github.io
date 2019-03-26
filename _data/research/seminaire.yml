@@ -26,10 +26,10 @@ Je finirai sur la présentation des différents travaux que je mène actuellemen
   place: "N104"
   title: "Application placement on Clouds, Edge and other Hybrid Infrastructures: a journey."
   abstract: "In this presentation I will present my recent work on application placement on hybrid infrastructures. First
-I will discuss an approach for modeling and calculating distributed application placement on very large 
-multi-cloud infrastructures based on efficient bin-packing and graph-homomorphism 
+I will discuss an approach for modeling and calculating distributed application placement on very large
+multi-cloud infrastructures based on efficient bin-packing and graph-homomorphism
 heuristics. Then I will move to a discussion about challenges related to placing distributed applications
-on Edge infrastructures. In special, I discuss current work on (i) a first approach for the placement of 
+on Edge infrastructures. In special, I discuss current work on (i) a first approach for the placement of
 stream processing applications and (ii) benchmarking Edge processing frameworks.
 Finally, I close the presentation with two collaboration projects where Edge computing and application placement
 have an central role."
@@ -43,5 +43,6 @@ have an central role."
   url: "https://scholar.google.fr/citations?user=SfRNXY4AAAAJ&hl=fr"
   date: "04/04/2019, 11h"
   place: "N104"
-  title: "TBD"
-  abstract: "TBD"
+  title: "Deux cas d'études : Extension des HMMs à la théorie des probabilités imprécises pour la reconnaissance de gestes techniques et reconnaissance automatique d'écriture manuscrite dans des ouvrages particuliers."
+  abstract: "La reconnaissance de gestes est généralement réalisée par l'emploi d'un modèle de séquences (modèles de Markov à états cachés, réseaux de neurones, …) permettant la prise en compte de l'évolution temporelle de la gestuelle pour la décision. On s'intéressera ici aux modèles de Markov à états cachés (HMMs). Les gestes techniques sont des gestes particuliers et précis dont la reconnaissance automatique peut être une tâche difficile due au petit nombre de données supervisées, à des données potentiellement bruitées et à des classes déséquilibrées. Les estimations faites au sein des HMMs peuvent être biaisées par de telles données. Nous proposons une extension des HMMs à la théorie des probabilités imprécises en considérant d'une part une information a priori sur les classes et d'autre part des ensembles convexes de probabilités pour renforcer la fiabilité du modèle en prédiction.
+  En reconnaissance d'écriture manuscrite, les systèmes de référence associent un réseau de neurones et un modèle de langage. Le réseau de neurones permet d'identifier des caractères dans des images de lignes de texte (OCR) tandis que le modèle de langues apporte des corrections linguistiques aux prédictions de l'OCR. Cependant, ces deux modèles nécessitent de nombreuses données pour apprentissage. Ceci limite leurs capacités pour la reconnaissance d'un ouvrage manuscrit particulier pour lequel il n'est pas possible d'avoir de nombreux exemples d'apprentissage et pour lequel un système générique (appris sur diverses données issues d'autres auteurs) produit généralement des transcriptions insatisfaisantes. Nous présentons ici une vue des différents travaux menés pour concevoir un système de reconnaissance automatique d'écriture manuscrite permettant l'analyse d'ouvrages particuliers, où seuls quelques lignes transcrites sont disponibles pour l'apprentissage de modèles spécifiques au document."

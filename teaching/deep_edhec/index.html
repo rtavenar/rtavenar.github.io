@@ -1,0 +1,26 @@
+---
+layout: default_edhec
+title: Deep Learning course @ EDHEC
+section: teaching
+---
+<div class="in">
+	<section class="post">
+        <article>
+            <h1>{{ site.data.teaching.dl_edhec.course-title }}</h1>
+            {{ site.data.teaching.dl_edhec.description }}
+        </article>
+        {% for item in site.data.teaching.dl_edhec.items %}
+            <article class="post-content">
+                <h2>{{ forloop.index }}. {{ item.title }}</h2>
+                {{ item.description }}
+                {% if item.links %}
+                <ul>
+                    {% for l in item.links %}
+                    <li><a href="{{ l.url }}">{{ l.text }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </article>
+        {% endfor %}
+	</section>
+</div>

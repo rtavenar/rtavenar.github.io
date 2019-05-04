@@ -1,0 +1,14 @@
+course-title: "Deep learning"
+description: "This page gathers material for the Deep Learning course at EDHEC
+(Spring semester, 2019).
+Instructor for this course is <a href=\"http://rtavenar.github.io\">Romain Tavenard</a>, assistant professor at Université de Rennes (@rtavenar on <a href=\"https://twitter.com/rtavenar\">twitter</a> and <a href=\"https://github.com/rtavenar\">github</a>)."
+items:
+- title: "An introduction to deep learning"
+  description: "Course details and basics of neural networks."
+  links:
+  - text: "Slides (pdf)"
+    url: "data/intro_dl_tavenard.pdf"
+- title: "Fully-connected models"
+  links:
+  - text: "Pre-requisite (Google Colab)"
+    url: "https://colab.research.google.com/drive/1I1OjF3lhOrSNnYOFpnMh0gM__Yjwa1aU"

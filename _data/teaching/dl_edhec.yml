@@ -8,7 +8,9 @@ items:
   links:
   - text: "Slides (pdf)"
     url: "data/intro_dl_tavenard.pdf"
-- title: "Fully-connected models"
-  links:
   - text: "Pre-requisite (Google Colab)"
     url: "https://colab.research.google.com/drive/1I1OjF3lhOrSNnYOFpnMh0gM__Yjwa1aU"
+- title: "Fully-connected models"
+  links:
+  - text: "Multi-Layer Perceptron (Google Colab)"
+    url: "https://colab.research.google.com/drive/1TdaahaiW4BgMr4Z1tmbQIQc-YWt_PCHd"

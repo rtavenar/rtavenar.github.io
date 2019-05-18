@@ -14,3 +14,12 @@ items:
   links:
   - text: "Multi-Layer Perceptron (Google Colab)"
     url: "https://colab.research.google.com/drive/1TdaahaiW4BgMr4Z1tmbQIQc-YWt_PCHd"
+- title: "Convolutional models"
+  description: "An overview of 2d convolutional neural networks."
+  links:
+  - text: "Slides (pdf)"
+    url: "data/convnets_tavenard.pdf"
+  - text: "ConvNets 101 (Google Colab)"
+    url: "TODO"
+  - text: "Fine-tuning a ConvNet (Google Colab)"
+    url: "TODO"

@@ -14,12 +14,22 @@ items:
   links:
   - text: "Multi-Layer Perceptron (Google Colab)"
     url: "https://colab.research.google.com/drive/1TdaahaiW4BgMr4Z1tmbQIQc-YWt_PCHd"
-- title: "Convolutional models"
+- title: "Images and Convolutional models"
   description: "An overview of 2d convolutional neural networks."
   links:
   - text: "Slides (pdf)"
     url: "data/convnets_tavenard.pdf"
-  - text: "ConvNets 101 (Google Colab)"
-    url: "TODO"
-  - text: "Fine-tuning a ConvNet (Google Colab)"
-    url: "TODO"
+  - text: "Images and ConvNets (Google Colab)"
+    url: "https://colab.research.google.com/drive/1Cr58HYDNMH2DAQwRaouKYXSJ_n-6am3S"
+- title: "Sequences"
+  description: "1d convolutional neural networks and recurrent neural networks for sequential data."
+  links:
+  - text: "Slides (pdf)"
+    url: "data/sequences_tavenard.pdf"
+- title: "Generative models"
+  description: "Variational Auto-Encoders, GANs"
+  links:
+  - text: "Slides (pdf)"
+    url: "data/generative_tavenard.pdf"
+  - text: "Generative models (Google Colab)"
+    url: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"

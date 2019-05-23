@@ -14,6 +14,8 @@ items:
   links:
   - text: "Multi-Layer Perceptron (Google Colab)"
     url: "https://colab.research.google.com/drive/1TdaahaiW4BgMr4Z1tmbQIQc-YWt_PCHd"
+  - text: "Multi-Layer Perceptron (ggogle Colab, corrected)"
+    url: "https://colab.research.google.com/drive/1FRt1YhlUiYR4Zhr9qtNTHmqR1QX96SXI"
 - title: "Images and Convolutional models"
   description: "An overview of 2d convolutional neural networks."
   links:

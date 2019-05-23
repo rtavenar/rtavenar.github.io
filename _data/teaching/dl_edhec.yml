@@ -23,6 +23,8 @@ items:
     url: "data/convnets_tavenard.pdf"
   - text: "Images and ConvNets (Google Colab)"
     url: "https://colab.research.google.com/drive/1Cr58HYDNMH2DAQwRaouKYXSJ_n-6am3S"
+  - text: "Images and ConvNets (Google Colab, corrected)"
+    url: "https://colab.research.google.com/drive/1HZ012oS7lsYYyMW11CwF5JoTRcxFFI-u"
 - title: "Sequences"
   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
   links:

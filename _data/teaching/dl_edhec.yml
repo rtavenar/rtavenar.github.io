@@ -14,7 +14,7 @@ items:
   links:
   - text: "Multi-Layer Perceptron (Google Colab)"
     url: "https://colab.research.google.com/drive/1TdaahaiW4BgMr4Z1tmbQIQc-YWt_PCHd"
-  - text: "Multi-Layer Perceptron (Google Colab, corrected)"
+  - text: "Multi-Layer Perceptron (Google Colab, with correction)"
     url: "https://colab.research.google.com/drive/1FRt1YhlUiYR4Zhr9qtNTHmqR1QX96SXI"
 - title: "Images and Convolutional models"
   description: "An overview of 2d convolutional neural networks."
@@ -23,7 +23,7 @@ items:
     url: "data/convnets_tavenard.pdf"
   - text: "Images and ConvNets (Google Colab)"
     url: "https://colab.research.google.com/drive/1Cr58HYDNMH2DAQwRaouKYXSJ_n-6am3S"
-  - text: "Images and ConvNets (Google Colab, corrected)"
+  - text: "Images and ConvNets (Google Colab, with correction)"
     url: "https://colab.research.google.com/drive/1HZ012oS7lsYYyMW11CwF5JoTRcxFFI-u"
 - title: "Sequences"
   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
@@ -37,3 +37,8 @@ items:
     url: "data/generative_tavenard.pdf"
   - text: "Generative models (Google Colab)"
     url: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
+# - title: "Assignment"
+#   description: "Final lab session"
+#   links:
+#   - text: "Link to Google Colab"
+#     url: "https://colab.research.google.com/drive/1calHvnxOznITrrT6yj2hW5uTdosViJPJ"

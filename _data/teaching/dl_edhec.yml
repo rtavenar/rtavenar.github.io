@@ -37,8 +37,10 @@ items:
     url: "data/generative_tavenard.pdf"
   - text: "Generative models (Google Colab)"
     url: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
-# - title: "Assignment"
-#   description: "Final lab session"
-#   links:
-#   - text: "Link to Google Colab"
-#     url: "https://colab.research.google.com/drive/1calHvnxOznITrrT6yj2hW5uTdosViJPJ"
+  - text: "Generative models (Google Colab, with correction)"
+    url: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
+- title: "Assignment"
+  description: "Final lab session"
+  links:
+  - text: "Link to Google Colab"
+    url: "https://colab.research.google.com/drive/1calHvnxOznITrrT6yj2hW5uTdosViJPJ"

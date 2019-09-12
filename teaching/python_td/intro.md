@@ -6,15 +6,22 @@ author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
-Le but de cette séance est de réaliser vos premiers programmes en Python dans l'IDE (_Integrated Development Environment_) PyCharm.
-Sachez que la documentation Python est de très bonne qualité : utilisez-la ([https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)).
+Le but de cette séance est de réaliser vos premiers programmes en Python dans
+l'IDE (_Integrated Development Environment_) PyCharm.
+Sachez que la documentation Python est de très bonne qualité : utilisez-la
+([https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)).
 
 # Avant-propos
-Lors de ce TD, vous allez créer, sur votre disque `M:/`, un répertoire dans lequel vous travaillerez **tout au long du semestre**.
-Sauf indication contraire, vous créerez, **pour chaque séance de TD, un nouveau fichier Python** dans lequel vous écrirez votre code.
-Pour ce premier TD, vous serez guidés (un peu plus bas dans cet énoncé) dans la création de votre répertoire/projet Python et du fichier Python correspondant au TD1.
+Lors de ce TD, vous allez créer, sur votre disque `M:/`, un répertoire dans
+lequel vous travaillerez **tout au long du semestre**.
+Sauf indication contraire, vous créerez, **pour chaque séance de TD, un nouveau
+fichier Python** dans lequel vous écrirez votre code.
+Pour ce premier TD, vous serez guidés (un peu plus bas dans cet énoncé) dans la
+création de votre répertoire/projet Python et du fichier Python correspondant
+au TD1.
 
-De plus, vous prendrez la bonne habitude de renseigner, en commentaire de votre code, les tests effectués pour vérifier le bon fonctionnement de votre code.
+De plus, vous prendrez la bonne habitude de renseigner, en commentaire de votre
+code, les tests effectués pour vérifier le bon fonctionnement de votre code.
 Par exemple, plutôt que :
 
 ```python
@@ -35,9 +42,7 @@ print(x)
 Démarrez PyCharm (qui se trouve dans le dossier Développement du menu Démarrer,
     sous l'item JetBrains) et créez un nouveau projet nommé L2_Python dans un
     endroit bien identifié (vous utiliserez ce projet tout au long du semestre)
-    de votre disque `M:/`. Pour ce projet, sélectionnez l'interpréteur
-    `Python 3.4.0` (dont le chemin est `C:/Python34/python.exe` sur les
-        ordinateurs de l'Université).
+    de votre disque `M:/`.
 
 Ajoutez le répertoire `data/` (dans lequel se trouvera le contenu dans le
     fichier de données mis à votre disposition sur CURSUS) à votre projet. Pour
@@ -271,7 +276,7 @@ Lorsque la valeur 20 est dépassée, imposez de sortir de la boucle.
 
 # Exercice de synthèse
 
-14. Écrivez un programme qui convertit une note scolaire entrée par 
+14. Écrivez un programme qui convertit une note scolaire entrée par
 l'utilisateur (on vérifiera que celle-ci est bien comprise entre 0 et 20 et on
     affichera un message d'erreur sinon) en appréciation selon le barème
     suivant :

@@ -98,6 +98,7 @@ La liste de méthodes de la classe `str`{.python} qui suit n'est pas exhaustive,
 * `ch.replace(old, new)`{.python}: Retourne une copie de `ch`{.python} dans laquelle toutes les occurrences de `old`{.python} ont été remplacées par `new`{.python}
 * `ch.split(sep=None)`{.python}: Retourne une liste contenant des morceaux de `ch`{.python} découpée à chaque occurrence de `sep`{.python} (par défaut, la chaîne est decoupée à chaque espace ou retour à la ligne)
 * `ch.strip()`{.python}: Retourne une version "nettoyée" de `ch`{.python} dans laquelle on a enlevé tous les espaces en début et en fin de chaîne
+* `ch.format(...)`{.python}: Remplace les caractères `{}` dans la chaîne `ch` par le contenu des variables passées en argument (voir [ici](#anchor-format) pour un exemple d'utilisation)
 
 **Exercice 5.1**
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s`{.python} et `prefix`{.python} et retourne le nombre de mots de la chaîne `s`{.python} qui débutent par la chaîne `prefix`{.python}.

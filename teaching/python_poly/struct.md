@@ -108,6 +108,16 @@ print(x)
 # [Sortie] -7.8
 ```
 
+<a name="anchor-format"></a>
+Si l'on souhaite obtenir un affichage plus riche, on pourra utiliser la méthode `format`{.python} comme suit :
+
+```python
+x = 2
+x = 3.9 * x * (1 - x)
+print("La valeur courante de x est {}".format(x))
+# [Sortie] La valeur courante de x est -7.8
+```
+
 ### Opérateurs et priorité
 
 On le voit dans l'exemple précédent, pour manipuler des variables, on utilisera des opérateurs (dont les plus connus sont les opérateurs arithmétiques).

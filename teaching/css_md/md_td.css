@@ -238,3 +238,38 @@ article {
     font-family: pochoir;
     src: url('Pochoir_pleine.ttf');
 }
+
+
+/* Impression
+-------------------------------------------------------- */
+@media print{
+body {
+	font-size: initial;
+	line-height: 1.3;
+	}
+	
+p#heart{
+	font-size: 1em;
+	}
+
+h1.title {
+	font-size: 2.5em;
+	background-size: 100px;
+}
+
+/*Pour masquer le lien permettant de voir les autres sujets*/
+.link-back {
+	display:none;
+}
+
+/*Pour forcer l'affichage des images d'arrière plan, c'est à dire le logo*/
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+    color-adjust: exact !important;                 /*Firefox*/
+}
+blockquote{
+font-size:0.9em;
+line-height:1.1;
+}
+
+}

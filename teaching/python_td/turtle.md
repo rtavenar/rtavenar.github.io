@@ -38,7 +38,7 @@ Si vous souhaitez, à un certain moment, ne plus ré-exécuter vos tests de déb
 
 # Présentation du module `turtle`
 
-Lors de cette séance de TD, vous serez ammenés à faire appel aux fonctions de base du module `turtle`{.python} suivantes :
+Lors de cette séance de TD, vous serez amenés à faire appel aux fonctions de base du module `turtle`{.python} suivantes :
 
 * `turtle.forward(dist)`{.python} : faire avancer la tortue de `dist`{.python} unités ;
 * `turtle.left(alpha)`{.python} : faire tourner la tortue sur la gauche d'un angle de `alpha`{.python} degrés ;
@@ -88,14 +88,15 @@ L'exécution de ce code devra faire dérouler à l'écran une animation se termi
 
 ![](img/immeuble.png)
 
-Pour cela, vous définirez 3 fonctions (à l'emplacement des points de suspension dans l'extrait de code ci-dessus) :
+Pour cela, vous définirez 4 fonctions (à l'emplacement des points de suspension dans l'extrait de code ci-dessus) :
 
+* `position`{.python} permettra de placer la tortue à la position spécifiée, sans que celle-ci ne laisse de trace à l'écran ;
 * `rectangle`{.python} permettra de dessiner un rectangle à l'écran ;
 * `carre`{.python} permettra de dessiner un carré à l'écran ;
 * `immeuble`{.python} permettra de dessiner un immeuble tel que celui représenté ci-dessus à l'écran.
 
 ## La fonction rectangle
-5. Écrivez une fonction rectangle qui permette de tracer à l'écran un rectangle de taille et de position spécifiées lors de l'appel de la fonction.
+5. Écrivez une fonction rectangle qui permette de tracer à l'écran un rectangle de taille et de position spécifiées lors de l'appel de la fonction. Pour coder cette fonction rectangle, vous devrez au passage également implémenter la fonction `position`{.python} décrite ci-dessus.
 
 ## La fonction carre
 6. Écrivez une fonction `carre`{.python} qui permette de tracer à l'écran un carré de taille et de position spécifiées lors de l'appel de la fonction.
@@ -128,5 +129,7 @@ Pour cela, vous devrez tout d'abord être capable de tracer un triangle équilat
 
 9. Écrivez une fonction qui prenne en entrée une position (sous la forme de deux entiers `x`{.python} et `y`{.python}) et une taille `c`{.python} et trace à l'écran un triangle équilatéral de côté `c`{.python} ayant son bord inférieur gauche situé à la position `(x, y)`{.python}.
 
-10. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} et trace à l'écran un château de cartes dont la base est constituée de `n`{.python} triangles.
+10. Avant de passer à la question suivante, importez le module `math` de Python qui permet d'accéder à des fonctions usuelles telles que le [sinus](https://docs.python.org/3.7/library/math.html#math.sin), le [cosinus](https://docs.python.org/3.7/library/math.html#math.cos) ou la [racine carrée](https://docs.python.org/3.7/library/math.html#math.sqrt). À quel endroit dans votre fichier Python devez-vous écrire cette instruction d'import ?
+
+11. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} et trace à l'écran un château de cartes dont la base est constituée de `n`{.python} triangles.
 Vous définirez au sein de cette fonction une variable correspondant à la taille des triangles du château de cartes.

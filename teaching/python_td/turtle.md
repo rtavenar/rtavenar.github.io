@@ -32,10 +32,6 @@ Notamment, vous définirez vos fonctions en début de fichier et les appels sero
 
 Si vous souhaitez, à un certain moment, ne plus ré-exécuter vos tests de début de TD, il suffira de commenter les appels de fonction correspondants (et pas les fonctions elles-mêmes !).
 
-# Échauffement
-
-1. Quels sont les prototypes (liste d'arguments et leur type, liste de valeurs de retours et leur type) des fonctions `rectangle`, `carre` et `immeuble` présentées dans la section [L'immeuble] ci-dessous ?
-
 # Présentation du module `turtle`
 
 Lors de cette séance de TD, vous serez amenés à faire appel aux fonctions de base du module `turtle`{.python} suivantes :
@@ -49,7 +45,7 @@ Lors de cette séance de TD, vous serez amenés à faire appel aux fonctions de 
 
 # Lecture d'un programme
 
-2. Sans l'exécuter pour le moment, tentez de comprendre ce que fait le code suivant et de deviner ce qu'il affichera à l'écran :
+1. Sans l'exécuter pour le moment, tentez de comprendre ce que fait le code suivant et de deviner ce qu'il affichera à l'écran :
 
 ```python
 import turtle
@@ -61,13 +57,17 @@ for i in range(100):
 turtle.exitonclick()  # Attend un clic avant de fermer la fenetre
 ```
 
-3. Vérifiez votre prédiction en exécutant ce code.
+2. Vérifiez votre prédiction en exécutant ce code.
 
 # L'étoile à 5 branches
 
-4. Dessinez à l'écran une étoile à 5 branches similaire à celle-ci :
+3. Dessinez à l'écran une étoile à 5 branches similaire à celle-ci :
 
 ![](img/star.png)
+
+# Sur papier
+
+4. Quels sont les prototypes (liste d'arguments et leur type, liste de valeurs de retours et leur type) des fonctions `rectangle`, `carre` et `immeuble` présentées dans la section [L'immeuble] ci-dessous ?
 
 # L'immeuble
 
@@ -95,20 +95,23 @@ Pour cela, vous définirez 4 fonctions (à l'emplacement des points de suspensio
 * `carre`{.python} permettra de dessiner un carré à l'écran ;
 * `immeuble`{.python} permettra de dessiner un immeuble tel que celui représenté ci-dessus à l'écran.
 
+## La fonction position
+5. Écrivez une fonction `position`{.python} qui permette de placer la tortue à la position spécifiée, sans que celle-ci ne laisse de trace à l'écran
+
 ## La fonction rectangle
-5. Écrivez une fonction rectangle qui permette de tracer à l'écran un rectangle de taille et de position spécifiées lors de l'appel de la fonction. Pour coder cette fonction rectangle, vous devrez au passage également implémenter la fonction `position`{.python} décrite ci-dessus.
+6. Écrivez une fonction `rectangle`{.python} qui permette de tracer à l'écran un rectangle de taille et de position spécifiées lors de l'appel de la fonction.
 
 ## La fonction carre
-6. Écrivez une fonction `carre`{.python} qui permette de tracer à l'écran un carré de taille et de position spécifiées lors de l'appel de la fonction.
+7. Écrivez une fonction `carre`{.python} qui permette de tracer à l'écran un carré de taille et de position spécifiées lors de l'appel de la fonction.
 Est-il nécessaire de réécrire la fonction dans son ensemble (avec les appels successifs aux fonctions du module `turtle`{.python}) ou est-ce possible de s'en sortir en une ligne de code ?
 
 ## La fonction immeuble
-7. Écrivez une fonction `immeuble`{.python} qui permette de tracer un immeuble à l'écran, connaissant son nombre d'étages et le nombre de fenêtres par étage.
+8. Écrivez une fonction `immeuble`{.python} qui permette de tracer un immeuble à l'écran, connaissant son nombre d'étages et le nombre de fenêtres par étage.
 N'hésitez pas à faire un schéma de l'immeuble sur papier pour vous rendre compte des dimensions à utiliser.
 Vous définirez au sein de la fonction `immeuble`{.python} les grandeurs caractéristiques nécessaires (taille des fenêtres, espace inter-fenêtres, _etc._).
 
 ## Un peu de _tuning_
-8. Ajoutez aux fonctions nécessaires un paramètre facultatif qui permette de spécifier la couleur de remplissage des formes géométriques tracées.
+9. Ajoutez aux fonctions nécessaires un paramètre facultatif qui permette de spécifier la couleur de remplissage des formes géométriques tracées.
 Utilisez ce paramètre facultatif pour demander de tracer l'immeuble en gris (`"grey"`{.haskell}) et les fenêtres en jaune (`"yellow"`{.haskell}).
 Pour cela, vous aurez besoin des fonctions `turtle.fillcolor(couleur)`{.python}, `turtle.begin_fill()`{.python} et `turtle.end_fill()`{.python} qui s'utilisent comme suit :
 
@@ -127,9 +130,9 @@ Dans cet exercice, vous allez tenter de dessiner à l'écran un château de cart
 
 Pour cela, vous devrez tout d'abord être capable de tracer un triangle équilatéral à une position donnée.
 
-9. Écrivez une fonction qui prenne en entrée une position (sous la forme de deux entiers `x`{.python} et `y`{.python}) et une taille `c`{.python} et trace à l'écran un triangle équilatéral de côté `c`{.python} ayant son bord inférieur gauche situé à la position `(x, y)`{.python}.
+10. Écrivez une fonction qui prenne en entrée une position (sous la forme de deux entiers `x`{.python} et `y`{.python}) et une taille `c`{.python} et trace à l'écran un triangle équilatéral de côté `c`{.python} ayant son bord inférieur gauche situé à la position `(x, y)`{.python}.
 
-10. Avant de passer à la question suivante, importez le module `math` de Python qui permet d'accéder à des fonctions usuelles telles que le [sinus](https://docs.python.org/3.7/library/math.html#math.sin), le [cosinus](https://docs.python.org/3.7/library/math.html#math.cos) ou la [racine carrée](https://docs.python.org/3.7/library/math.html#math.sqrt). À quel endroit dans votre fichier Python devez-vous écrire cette instruction d'import ?
+11. Avant de passer à la question suivante, importez le module `math` de Python qui permet d'accéder à des fonctions usuelles telles que le [sinus](https://docs.python.org/3.7/library/math.html#math.sin), le [cosinus](https://docs.python.org/3.7/library/math.html#math.cos) ou la [racine carrée](https://docs.python.org/3.7/library/math.html#math.sqrt). À quel endroit dans votre fichier Python devez-vous écrire cette instruction d'import ?
 
-11. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} et trace à l'écran un château de cartes dont la base est constituée de `n`{.python} triangles.
+12. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} et trace à l'écran un château de cartes dont la base est constituée de `n`{.python} triangles.
 Vous définirez au sein de cette fonction une variable correspondant à la taille des triangles du château de cartes.

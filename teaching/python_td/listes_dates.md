@@ -77,7 +77,7 @@ La première utilise une liste en compréhension, la deuxième la fonction `list
 Le type date (plus précisément le type `datetime` qui permet de représenter conjointement une date et une heure) est défini dans le module `datetime`.
 Commencez donc par ajouter l'instruction d'importation de ce module **en début de votre script Python**.
 
-7. Supposons que soit stocké, dans une chaîne de caractères `s`{.python}, le contenu suivant : `"24-08, 2017, 16:53"`{.python}.
+7. Supposons que soit stocké, dans une chaîne de caractères `s`{.python}, le contenu suivant : `"24-08, 2019, 16:53"`{.python}.
 Chargez cette date dans une variable `d1` de type `datetime` et affichez le contenu de cette variable.
 
 8. Écrivez une fonction qui prenne en entrée une date et retourne le nombre d'heures écoulées depuis cette date.
@@ -88,16 +88,16 @@ Combien d'heures se sont écoulées depuis `d1` ?
 
 # Exercice de synthèse
 
-10. Écrivez une fonction qui prenne en entrée (i) une liste de chaînes de caractères représentant des dates et (ii) une chaîne de caractère définissant le format de date utilisé dans la liste.
+10. Écrivez une fonction qui prenne en entrée (i) une liste de chaînes de caractères représentant des dates et (ii) une chaîne de caractères définissant le format de date utilisé dans la liste.
 Votre fonction devra retourner la durée la plus grande (en valeur absolue) entre deux dates consécutives de la liste.
 Vous pourrez par exemple tester votre fonction avec la liste suivante :
 
 ```python
 l_dates = [
-    "16h12, 22/09/2017",
-    "9h23, 31/12/1993",
-    "12h56, 08/02/2010",
-    "0h00, 01/01/1900"
+    "16h12, 22/09/2019",
+    "9h23, 31/12/2018",
+    "12h56, 08/02/2019",
+    "0h00, 01/01/2019"
 ]
 ```
 

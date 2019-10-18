@@ -390,7 +390,7 @@ def transforme_dates(l, format):
 def transforme_dates(l, format):
     l_transformee = []
     for d in l:  # Ici, on utilise un parcours par valeurs, les indices ne nous intéressent pas
-        l_transformee = datetime.datetime.strptime(d, format)
+        l_transformee.append(datetime.datetime.strptime(d, format))
     return l_transformee
 ```
 > On teste cette fonction avec une liste de chaînes de caractères non triée :

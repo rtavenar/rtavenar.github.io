@@ -72,5 +72,5 @@ correspondante.
 On pourra utiliser le dictionnaire suivant pour tester la fonction ainsi
 écrite :
 ```python
-notes = {"Romain": [1, 5, 12], "Jean": [15, 16, 19], "Robert": [5, 12], "Michel": []}
+notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]}
 ```

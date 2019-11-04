@@ -47,8 +47,12 @@
                                         {% if item.html-link %}
                                         <span class="item-link">
                                         [<a href="{{ item.html-link }}">HTML</a>]
+                                        {% unless item.skip-epub %}
                                         [<a href="{{ item.html-link | replace: "html", "epub" }}">EPUB</a>]
+                                        {% endunless %}
+                                        {% unless item.skip-pdf %}
                                         [<a href="{{ item.html-link | replace: "html", "pdf" }}">PDF</a>]
+                                        {% endunless %}
                                         </span>
                                         {% endif %}
                                     </li>

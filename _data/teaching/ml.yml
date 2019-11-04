@@ -1,10 +1,10 @@
 course-title: "Page du cours de Machine Learning en Python pour les M2 Stats/Data Science de l'Universit&eacute; de Rennes 2"
 sections:
-  - title: "Cours magistraux"
+  - title: "Transparents de cours"
     items:
-    - name: "<a href=\"pdf/mlp.pdf\">Perceptron multi-couches</a>"
-    - name: "<a href=\"pdf/sequences.pdf\">Donn&eacute;es s&eacute;quentielles</a>"
-  - title: "Tutoriel <code>sklearn</code> (notebooks, en anglais)"
+    - name: "<a href=\"pdf/00_scikit-learn.pdf\">Machine learning en Python: <code>scikit-learn</code></a>"
+    - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"
+  - title: "Tutoriels <code>sklearn</code> (notebooks)"
     items:
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00_Introduction.ipynb\">Introduction</a><br /><a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00b_Scaling.ipynb\">Bonus 1 : Standardisation des données</a><br /><a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00c_CategoricalData.ipynb\">Bonus 2 : Cas des variables cat&eacute;gorielles</a>"
       index: 0
@@ -13,21 +13,24 @@ sections:
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/03_KMeans.ipynb\">Clustering : k-means</a>"
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/04_Regression_VariableSelection.ipynb\">R&eacute;gression et s&eacute;lection de variable</a>"
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/05_PCA.ipynb\">Analyse en Composantes Principales</a>"
-    - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/06_LatentDirichletAllocation.ipynb\">Latent Dirichlet Allocation</a>"
+    # - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/06_LatentDirichletAllocation.ipynb\">Latent Dirichlet Allocation</a>"
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection.ipynb\">S&eacute;lection de mod&egrave;le</a> (sklearn v0.18+)"
-  - title: "TD : Machine learning en Python (<code>sklearn</code>)"
-    items:
-    - name: "<code>pandas</code>, <code>numpy</code>, <code>matplotlib</code> &amp; introduction &agrave; <code>sklearn</code></span>"
-      html-link: "../neuralnets_td/html/numpy.html"
-    - name: "<code>sklearn</code> : s&eacute;lection de mod&egrave;le"
-      html-link: "../neuralnets_td/html/sklearn.html"
+    - name: "<a href=\"https://scikit-learn.org/stable/modules/compose.html\">Les Pipelines (lien vers la doc scikit-learn)</a>"
   - title: "TD : Réseaux de neurones et deep learning (<code>keras</code>)"
     items:
+    - name: "Pré-requis (Google Colab)"
+      html-link: "https://colab.research.google.com/drive/1I1OjF3lhOrSNnYOFpnMh0gM__Yjwa1aU"
+      skip-epub: True
+      skip-pdf: True
     - name: "Perceptron multi-couches"
-      html-link: "../neuralnets_td/html/keras1.html"
-    - name: "Validation crois&eacute;e"
-      html-link: "../neuralnets_td/html/keras2.html"
-    - name: "R&eacute;seaux de neurones convolutionnels"
-      html-link: "../neuralnets_td/html/cnn.html"
-    - name: "Donn&eacute;es s&eacute;quentielles (convolutions 1d &amp; r&eacute;seaux r&eacute;currents)"
-      html-link: "../neuralnets_td/html/sequences.html"
+      html-link: "https://colab.research.google.com/drive/1TdaahaiW4BgMr4Z1tmbQIQc-YWt_PCHd"
+      skip-epub: True
+      skip-pdf: True
+    # - name: "R&eacute;seaux de neurones convolutionnels"
+    #   html-link: "https://colab.research.google.com/drive/1Cr58HYDNMH2DAQwRaouKYXSJ_n-6am3S"
+    #   skip-epub: True
+    #   skip-pdf: True
+    # - name: "Modèles génératifs"
+    #   html-link: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
+    #   skip-epub: True
+    #   skip-pdf: True

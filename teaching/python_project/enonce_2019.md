@@ -9,7 +9,6 @@ rights: Creative Commons CC BY-NC-SA
 
 * Groupes de 2 étudiants **du même groupe de TD**
 * Déclaration des groupes :
-  * via CURSUS (dépôt créé)
   * au plus tard le jeudi 21/11/2019, pendant la séance de TD
   * si pas inscrit dans un groupe à cette date : note de 0 au projet
 * Rendu final : au plus tard le vendredi 13/12/2019, 23h59

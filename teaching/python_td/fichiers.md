@@ -85,8 +85,10 @@ Ainsi, ces flux sont utilisés de la même manière que les objets `file`{.pytho
 ## Fichiers CSV
 
 9. Écrivez une fonction qui retourne le nombre de lignes et de colonnes (le nombre de colonnes d'un fichier CSV est égal au nombre maximum de champs des lignes de ce fichier) d'un fichier CSV dont le nom est fourni en argument.
+On supposera que le séparateur à utiliser pour les fichiers CSV est `";"` et on n'utilisera pas de `Sniffer`.
 
 10. Appliquez cette fonction pour déterminer les nombres de lignes et colonnes de chacun des fichiers de votre répertoire `"data"`{.haskell} dont l'extension est `".csv"`{.haskell}.
+Que remarquez-vous pour le fichier `test.csv` ?
 
 ## Fichiers JSON
 

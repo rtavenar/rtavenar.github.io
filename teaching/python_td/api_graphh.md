@@ -144,6 +144,6 @@ soit quelque chose du type :
         "name": "TraceGPS Issued  Coemes-Retiers",
         "D+": 260.64,
         "D-": 260.64
-    },
+    }
 ]
 ```

@@ -77,12 +77,12 @@ GPS correspondant à la position `"Rennes, République"`{.haskell}.
 ## C'est parti !
 
 1. Écrivez une fonction qui prenne en entrée deux chaînes de caractères
-décrivant des lieux et une clé d'API GraphHopper et retourne la distance en
+décrivant des lieux et un client GraphHopper et retourne la distance en
 kilomètres séparant ces lieux.
 
 2. Écrivez une fonction qui prenne en entrée une liste de positions GPS
-(chacune codée sous la forme d'un dictionnaire comme précisé plus bas) et une
-clé GraphHopper API et retourne une liste d'altitudes.
+(chacune codée sous la forme d'un dictionnaire comme précisé plus bas) et un
+client GraphHopper et retourne une liste d'altitudes.
 Vous pourrez utiliser l'exemple suivant pour vos tests :
 ```python
 lst_gps = [
@@ -93,8 +93,9 @@ lst_gps = [
 ]
 ```
 
-3. Écrivez une fonction qui prenne en entrée une liste de positions GPS et une
-clé GraphHopper API et retourne la somme des dénivelés positifs (d'une part) et
+3. **En utilisant la fonction écrite à la question précédente**,
+écrivez une fonction qui prenne en entrée une liste de positions GPS et un
+client GraphHopper et retourne la somme des dénivelés positifs (d'une part) et
 négatifs (d'autre part).
 Par exemple, si on a une liste de coordonnées GPS pour lesquelles on a obtenu
 les altitudes suivantes :
@@ -106,13 +107,43 @@ on devrait retourner la paire de valeurs :
 (30.52, 32.21)
 ```
 
-5. Écrivez une fonction qui prenne en entrée un nom de fichier JSON
-(contenant des informations sur diverses randonnées) et une clé GraphHopper API
+4. **En utilisant la fonction écrite à la question précédente**,
+écrivez une fonction qui prenne en entrée un nom de fichier JSON
+(contenant des informations sur diverses randonnées) et un client GraphHopper
 et affiche, pour chaque randonnée, son nom (attribut `"name"`{.haskell}) et la
 somme de ses dénivelés positifs (d'une part) et négatifs (d'autre part).
-Pour le fichier `rando_gps.json`, on doit obtenir une sortie du type :
+Pour le fichier `rando_gps.json`, on doit obtenir (après quelque temps, le
+nombre de requêtes à effectuer étant assez grand) une sortie du type :
 ```
-TraceGPS Le long de la quincampoix - Pire-sur-Seiche D+:  111.39449691772464 , D-:  111.38713455200201
-TraceGPS Issued  Messac - CIRCUIT DU PORT D+:  31.650634765625 , D-:  31.650634765625
-TraceGPS Issued  Coemes-Retiers D+:  417.91231536865234 , D-:  417.91231536865223
+TraceGPS Le long de la quincampoix - Pire-sur-Seiche D+:  70.11 , D-:  70.11
+TraceGPS Issued  Messac - CIRCUIT DU PORT D+:  29.79 , D-:  29.79
+TraceGPS Issued  Coemes-Retiers D+:  260.64 , D-:  260.64
+```
+
+## Pour aller plus loin
+
+4. Écrivez une fonction qui prenne en entrée un nom de fichier JSON
+(contenant des informations sur diverses randonnées) et un client GraphHopper
+et écrit dans un nouveau fichier JSON (dont le nom sera passé en paramètre de
+la fonction) une liste de dictionnaires contenant le nom de la randonnée et
+les informations de dénivelés positif et négatif),
+soit quelque chose du type :
+```json
+[
+    {
+        "name": "TraceGPS Le long de la quincampoix - Pire-sur-Seiche",
+        "D+": 70.11,
+        "D-": 70.11
+    },
+    {
+        "name": "TraceGPS Issued  Messac - CIRCUIT DU PORT",
+        "D+": 29.79,
+        "D-": 29.79
+    },
+    {
+        "name": "TraceGPS Issued  Coemes-Retiers",
+        "D+": 260.64,
+        "D-": 260.64
+    },
+]
 ```

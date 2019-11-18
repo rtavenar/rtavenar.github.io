@@ -100,11 +100,11 @@ négatifs (d'autre part).
 Par exemple, si on a une liste de coordonnées GPS pour lesquelles on a obtenu
 les altitudes suivantes :
 ```python
-[38.11, 68.63, 54.60, 36.42]
+[36.61, 65.18, 50.53, 35.80]
 ```
 on devrait retourner la paire de valeurs :
 ```python
-(30.52, 32.21)
+(28.57, 29.38)
 ```
 
 4. **En utilisant la fonction écrite à la question précédente**,
@@ -122,7 +122,7 @@ TraceGPS Issued  Coemes-Retiers D+:  260.64 , D-:  260.64
 
 ## Pour aller plus loin
 
-4. Écrivez une fonction qui prenne en entrée un nom de fichier JSON
+5. Écrivez une fonction qui prenne en entrée un nom de fichier JSON
 (contenant des informations sur diverses randonnées) et un client GraphHopper
 et écrit dans un nouveau fichier JSON (dont le nom sera passé en paramètre de
 la fonction) une liste de dictionnaires contenant le nom de la randonnée et

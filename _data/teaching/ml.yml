@@ -26,6 +26,10 @@ sections:
       html-link: "https://colab.research.google.com/drive/1TdaahaiW4BgMr4Z1tmbQIQc-YWt_PCHd"
       skip-epub: True
       skip-pdf: True
+    - name: "HyperBand"
+      html-link: "https://colab.research.google.com/drive/1VeUEnfYZcUkfJVKUGeTYWCNyQMeZdUty"
+      skip-epub: True
+      skip-pdf: True
     # - name: "R&eacute;seaux de neurones convolutionnels"
     #   html-link: "https://colab.research.google.com/drive/1Cr58HYDNMH2DAQwRaouKYXSJ_n-6am3S"
     #   skip-epub: True

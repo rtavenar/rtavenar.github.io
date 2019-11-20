@@ -344,7 +344,7 @@ line-height:1.1;
 <li>Charger votre clé d’API lue dans le fichier <code>data/credentials.json</code> dans une variable <code>cle_api</code></li>
 <li>créer un client que l’on initialise en lui fournissant notre clé d’API :</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">gh_client <span class="op">=</span> graphh.GraphHopper(key<span class="op">=</span>cle_api)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">gh_client <span class="op">=</span> graphh.GraphHopper(api_key<span class="op">=</span>cle_api)</a></code></pre></div>
 <p>Enfin, on appelle, pour ce client, la fonction qui nous intéresse. Par exemple, l’instruction :</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">gps_rennes <span class="op">=</span> gh_client.address_to_latlong(<span class="st">&quot;Rennes, République&quot;</span>)</a></code></pre></div>
 <p>permettra de stocker dans la variable <code>gps_rennes</code> une paire de coordonnées GPS correspondant à la position <code class="sourceCode haskell"><span class="st">&quot;Rennes, République&quot;</span></code>.</p>
@@ -371,6 +371,7 @@ line-height:1.1;
 <pre><code>TraceGPS Le long de la quincampoix - Pire-sur-Seiche D+:  70.11 , D-:  70.11
 TraceGPS Issued  Messac - CIRCUIT DU PORT D+:  29.79 , D-:  29.79
 TraceGPS Issued  Coemes-Retiers D+:  260.64 , D-:  260.64</code></pre>
+<p>Il est possible que vous ayez une erreur vous indiquant que vous avez atteint votre quota de requêtes à l’API GraphHopper, dans ce cas, ré-essayez avec le fichier <code>mini-rando_gps.json</code> disponible sur CURSUS, pour lequel vous devriez obtenir des dénivelés (positifs et négatifs) de 14.77m, 8.34m et 74.71m respectivement.</p>
 <h2 id="pour-aller-plus-loin"><span class="header-section-number">3.3</span> Pour aller plus loin</h2>
 <ol start="5" type="1">
 <li>Écrivez une fonction qui prenne en entrée un nom de fichier JSON (contenant des informations sur diverses randonnées) et un client GraphHopper et écrit dans un nouveau fichier JSON (dont le nom sera passé en paramètre de la fonction) une liste de dictionnaires contenant le nom de la randonnée et les informations de dénivelés positif et négatif), soit quelque chose du type :</li>

@@ -63,7 +63,7 @@ a. Charger votre clé d'API lue dans le fichier `data/credentials.json` dans une
 variable `cle_api`
 b. créer un client que l'on initialise en lui fournissant notre clé d'API :
 ```python
-gh_client = graphh.GraphHopper(key=cle_api)
+gh_client = graphh.GraphHopper(api_key=cle_api)
 ```
 
 Enfin, on appelle, pour ce client, la fonction qui nous intéresse.
@@ -119,6 +119,11 @@ TraceGPS Le long de la quincampoix - Pire-sur-Seiche D+:  70.11 , D-:  70.11
 TraceGPS Issued  Messac - CIRCUIT DU PORT D+:  29.79 , D-:  29.79
 TraceGPS Issued  Coemes-Retiers D+:  260.64 , D-:  260.64
 ```
+Il est possible que vous ayez une erreur vous indiquant que vous avez atteint
+votre quota de requêtes à l'API GraphHopper, dans ce cas, ré-essayez avec le
+fichier `mini-rando_gps.json` disponible sur CURSUS, pour lequel vous devriez
+obtenir des dénivelés (positifs et négatifs) de 14.77m, 8.34m et 74.71m
+respectivement.
 
 ## Pour aller plus loin
 

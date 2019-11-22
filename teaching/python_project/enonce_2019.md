@@ -35,6 +35,7 @@ a. Un fichier `targets.csv` de la forme :
 INTITULE;
 Rennes, République;
 Rennes, Villejean;
+10 Rue de Saint Malo, Rennes
 [...]
 ```
 Ce fichier définit la liste des points d'intérêts autour desquels on souhaite
@@ -58,3 +59,10 @@ Pour accéder aux données de position des bus, vous interrogerez l'API STAR via
 une requête HTTP.
 Pour ce qui est de l'API GraphHopper, vous utiliserez
 [le module `graphh`](https://graphh.readthedocs.io).
+
+# Évaluation
+
+Pour l'évaluation, il sera porté une attention particulière à ce que votre code
+soit lisible (commentaires : ni trop ni trop peu, nom de variables / fonctions
+pertinents, etc.) et bien découpé en blocs comme vous avez pu le voir lors
+du TD "Analyse et decomposition de problèmes".

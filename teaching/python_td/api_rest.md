@@ -1,5 +1,5 @@
 ---
-title : API web d'accès aux données
+title : API REST d'accès aux données
 subtitle: Planche de TD pour un cours dispensé à l'université de Rennes 2
 language: fr
 <!-- author: Aurélie Lemaitre, Romain Tavenard -->

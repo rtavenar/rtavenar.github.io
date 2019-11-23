@@ -15,6 +15,7 @@ Dans ce fichier, votre code sera organisé de la manière suivante :
 # Imports
 import urllib.request
 import json
+import datetime
 
 # Fonctions
 def [...]
@@ -47,10 +48,12 @@ et trouver l'API indiquant les prochains passages de métro rennais.
 
 3. Écrire une fonction qui fasse une requête à l'API STAR et retourne
 la liste de tous les passages de métros à venir ayant pour valeur
-`Temps réel` pour le champ `precision` (limiter le résultat à 100 lignes).
+`Temps réel` pour l'attribut `precision` (limiter le résultat à 100 lignes).
 La liste retournée stockera des dictionnaires composés de 3 clés :
 `"arrivee"` (contenant l'heure d'arrivée au format `datetime`), `"destination"`
 et `"nomarret"`.
+**Attention**, pour certains passages, l'attribut `"arrivee"` n'existe pas :
+ces passages doivent donc être ignorés
 
 
 4. Écrire une fonction qui prenne en entrée une liste de dictionnaires

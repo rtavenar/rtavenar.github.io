@@ -323,12 +323,13 @@ line-height:1.1;
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Imports</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> urllib.request</a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="im">import</span> json</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co"># Fonctions</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="kw">def</span> [...]</a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co"># Tests</span></a>
-<a class="sourceLine" id="cb1-9" title="9">[...]</a></code></pre></div>
+<a class="sourceLine" id="cb1-4" title="4"><span class="im">import</span> datetime</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># Fonctions</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="kw">def</span> [...]</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co"># Tests</span></a>
+<a class="sourceLine" id="cb1-10" title="10">[...]</a></code></pre></div>
 <p>Notamment, vous définirez vos fonctions en début de fichier et les appels seront listés en fin de fichier. De cette manière, vous pourrez, d’une question à l’autre, réutiliser les fonctions déjà codées au besoin.</p>
 <h1 id="énoncé"><span class="header-section-number">2</span> Énoncé</h1>
 <ol type="1">
@@ -338,7 +339,7 @@ line-height:1.1;
 <li>si la fin de la chaîne de caractères est <code>&quot;+01:00&quot;</code> : la date sera considérée comme correcte.</li>
 </ol></li>
 <li><p>Rendez vous sur le <a href="https://data.explore.star.fr/explore/">site de la STAR</a> et trouver l’API indiquant les prochains passages de métro rennais.</p></li>
-<li><p>Écrire une fonction qui fasse une requête à l’API STAR et retourne la liste de tous les passages de métros à venir ayant pour valeur <code>Temps réel</code> pour le champ <code>precision</code> (limiter le résultat à 100 lignes). La liste retournée stockera des dictionnaires composés de 3 clés : <code>&quot;arrivee&quot;</code> (contenant l’heure d’arrivée au format <code>datetime</code>), <code>&quot;destination&quot;</code> et <code>&quot;nomarret&quot;</code>.</p></li>
+<li><p>Écrire une fonction qui fasse une requête à l’API STAR et retourne la liste de tous les passages de métros à venir ayant pour valeur <code>Temps réel</code> pour l’attribut <code>precision</code> (limiter le résultat à 100 lignes). La liste retournée stockera des dictionnaires composés de 3 clés : <code>&quot;arrivee&quot;</code> (contenant l’heure d’arrivée au format <code>datetime</code>), <code>&quot;destination&quot;</code> et <code>&quot;nomarret&quot;</code>. <strong>Attention</strong>, pour certains passages, l’attribut <code>&quot;arrivee&quot;</code> n’existe pas : ces passages doivent donc être ignorés</p></li>
 <li><p>Écrire une fonction qui prenne en entrée une liste de dictionnaires tels que ceux retournés par la question précédente et qui retourne une version de la liste avec uniquement les dates dans les 10 minutes après l’instant présent.</p></li>
 <li><p>Écrire une fonction qui retourne la liste des prochains passages de métro dans les 10 minutes à venir.</p></li>
 </ol>

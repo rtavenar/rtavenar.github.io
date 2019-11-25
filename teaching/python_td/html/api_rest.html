@@ -333,15 +333,14 @@ line-height:1.1;
 <p>Notamment, vous définirez vos fonctions en début de fichier et les appels seront listés en fin de fichier. De cette manière, vous pourrez, d’une question à l’autre, réutiliser les fonctions déjà codées au besoin.</p>
 <h1 id="énoncé"><span class="header-section-number">2</span> Énoncé</h1>
 <ol type="1">
+<li><p>Se rendre sur le <a href="https://data.explore.star.fr/explore/">site de la STAR</a> et trouver l’API indiquant les prochains passages de métro rennais.</p></li>
 <li><p>Écrire une fonction qui prenne en entrée une chaîne de caractères représentant une date et retourne une date en ignorant la “timezone” (fuseau horaire, partie à partir du symbole <code>&quot;+&quot;</code> dans la chaîne de caractères). La date devra être de la même forme que dans l’exemple suivant : <code class="sourceCode haskell"><span class="st">&quot;2019-11-23T09:01:52+00:00&quot;</span></code>. <strong>Attention:</strong> vous devrez considérer deux cas de figure différents :</p>
 <ol type="a">
 <li>si la fin de la chaîne de caractères est <code>&quot;+00:00&quot;</code> : il faudra ajouter 1h à la date extraite car le fuseau horaire n’est pas le bon ;</li>
 <li>si la fin de la chaîne de caractères est <code>&quot;+01:00&quot;</code> : la date sera considérée comme correcte.</li>
 </ol></li>
-<li><p>Rendez vous sur le <a href="https://data.explore.star.fr/explore/">site de la STAR</a> et trouver l’API indiquant les prochains passages de métro rennais.</p></li>
 <li><p>Écrire une fonction qui fasse une requête à l’API STAR et retourne la liste de tous les passages de métros à venir ayant pour valeur <code>Temps réel</code> pour l’attribut <code>precision</code> (limiter le résultat à 100 lignes). La liste retournée stockera des dictionnaires composés de 3 clés : <code>&quot;arrivee&quot;</code> (contenant l’heure d’arrivée au format <code>datetime</code>), <code>&quot;destination&quot;</code> et <code>&quot;nomarret&quot;</code>. <strong>Attention</strong>, pour certains passages, l’attribut <code>&quot;arrivee&quot;</code> n’existe pas : ces passages doivent donc être ignorés</p></li>
-<li><p>Écrire une fonction qui prenne en entrée une liste de dictionnaires tels que ceux retournés par la question précédente et qui retourne une version de la liste avec uniquement les dates dans les 10 minutes après l’instant présent.</p></li>
-<li><p>Écrire une fonction qui retourne la liste des prochains passages de métro dans les 10 minutes à venir.</p></li>
+<li><p>Écrire une fonction qui prenne en entrée une liste de dictionnaires tels que ceux retournés par la question précédente et un délai <code>t</code> en minutes et qui retourne une version de cette liste privée des métros qui n’arrivent pas dans les <code>t</code> minutes après l’instant présent. Tester cette fonction en affichant la liste des prochains passages de métro dans les 10 minutes à venir.</p></li>
 </ol>
 </body>
 </html>

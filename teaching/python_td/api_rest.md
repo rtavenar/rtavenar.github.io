@@ -31,7 +31,10 @@ seront listés en fin de fichier. De cette manière, vous pourrez, d'une questio
 
 # Énoncé
 
-1. Écrire une fonction qui prenne en entrée une chaîne de caractères
+1. Se rendre sur le [site de la STAR](https://data.explore.star.fr/explore/)
+et trouver l'API indiquant les prochains passages de métro rennais.
+
+2. Écrire une fonction qui prenne en entrée une chaîne de caractères
 représentant une date et retourne une date en ignorant la "timezone"
 (fuseau horaire, partie à partir du symbole `"+"` dans la chaîne de caractères).
 La date devra être de la même forme que dans l'exemple
@@ -41,9 +44,6 @@ suivant : `"2019-11-23T09:01:52+00:00"`{.haskell}.
     la date extraite car le fuseau horaire n'est pas le bon ;
     b. si la fin de la chaîne de caractères est `"+01:00"` : la date sera
     considérée comme correcte.
-
-2. Rendez vous sur le [site de la STAR](https://data.explore.star.fr/explore/)
-et trouver l'API indiquant les prochains passages de métro rennais.
 
 
 3. Écrire une fonction qui fasse une requête à l'API STAR et retourne
@@ -57,9 +57,7 @@ ces passages doivent donc être ignorés
 
 
 4. Écrire une fonction qui prenne en entrée une liste de dictionnaires
-tels que ceux retournés par la question précédente et qui retourne une version
-de la liste avec uniquement les dates dans les 10 minutes après l'instant
-présent.
-
-5. Écrire une fonction qui retourne la liste des prochains passages de métro
-dans les 10 minutes à venir.
+tels que ceux retournés par la question précédente et un délai `t` en minutes et
+qui retourne une version de cette liste privée des métros qui n'arrivent pas
+dans les `t` minutes après l'instant présent. Tester cette fonction en affichant
+la liste des prochains passages de métro dans les 10 minutes à venir.

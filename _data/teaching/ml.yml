@@ -5,6 +5,8 @@ sections:
     - name: "<a href=\"pdf/00_scikit-learn.pdf\">Machine learning en Python: <code>scikit-learn</code></a>"
     - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"
   - title: "Tutoriels <code>sklearn</code> (notebooks)"
+  - name: "<a href=\"pdf/02_convnets_tavenard.pdf\">Réseaux de neurones convolutionnels</a>"
+- title: "Tutoriels <code>sklearn</code> (notebooks)"
     items:
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00_Introduction.ipynb\">Introduction</a><br /><a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00b_Scaling.ipynb\">Bonus 1 : Standardisation des données</a><br /><a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00c_CategoricalData.ipynb\">Bonus 2 : Cas des variables cat&eacute;gorielles</a>"
       index: 0
@@ -30,10 +32,10 @@ sections:
       html-link: "https://colab.research.google.com/drive/1VeUEnfYZcUkfJVKUGeTYWCNyQMeZdUty"
       skip-epub: True
       skip-pdf: True
-    # - name: "R&eacute;seaux de neurones convolutionnels"
-    #   html-link: "https://colab.research.google.com/drive/1Cr58HYDNMH2DAQwRaouKYXSJ_n-6am3S"
-    #   skip-epub: True
-    #   skip-pdf: True
+    - name: "R&eacute;seaux de neurones convolutionnels"
+      html-link: "https://colab.research.google.com/drive/1Cr58HYDNMH2DAQwRaouKYXSJ_n-6am3S"
+      skip-epub: True
+      skip-pdf: True
     # - name: "Modèles génératifs"
     #   html-link: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
     #   skip-epub: True

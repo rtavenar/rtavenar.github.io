@@ -55,6 +55,16 @@
                                         {% endunless %}
                                         </span>
                                         {% endif %}
+                                        {% if item.colab or item.colab-corr%}
+                                        <span class="item-link">
+                                        {% if item.colab %}
+                                        [<a href="{{ item.colab }}">Colab</a>]
+                                        {% endif %}
+                                        {% if item.colab-corr %}
+                                        [<a href="{{ item.colab-corr }}">Colab (correction)</a>]
+                                        {% endif %}
+                                        </span>
+                                        {% endif %}
                                     </li>
                                 {% endfor %}
                             </ol>

@@ -46,12 +46,13 @@ suivant : `"2019-11-23T09:01:52+00:00"`{.haskell}.
     considérée comme correcte.
 
 
-3. Écrire une fonction qui fasse une requête à l'API STAR et retourne
-la liste de tous les passages de métros à venir ayant pour valeur
-`Temps réel` pour l'attribut `precision` (limiter le résultat à 100 lignes).
-La liste retournée stockera des dictionnaires composés de 3 clés :
-`"depart"` (contenant l'heure de départ au format `datetime`), `"destination"`
-et `"nomarret"`.
+3. Écrire une fonction qui retourne la liste de tous les passages de métro à
+venir. Cette fonction fera une requête API, en limitant le nombre de résultats
+ à 100 lignes.
+La liste retournée par cette fonction contiendra des dictionnaires composés de
+3 clés : `"depart"` (contenant l'heure de départ au format `datetime`),
+`"destination"` et `"nomarret"` et vous ne conserverez quer les passages pour
+lesquels l'attribut `precision` vaut `Temps réel`.
 **Attention #1.**, contrairement à ce qui vous a été enseigné en CM, le filtrage
 sur les métros ayant la valeur `Temps réel` pour l'attribut `precision` devra
 se faire dans le code Python car si vous le faites via l'API STAR, les résultats
@@ -60,8 +61,8 @@ obtenus ne sont pas fiables.
 ces passages doivent donc être ignorés
 
 
-4. Écrire une fonction qui prenne en entrée une liste de dictionnaires
+4. Écrire une fonction qui prenne en entrée une liste de passages
 tels que ceux retournés par la question précédente et un délai `t` en minutes et
-qui retourne une version de cette liste privée des métros qui n'arrivent pas
-dans les `t` minutes après l'instant présent. Tester cette fonction en affichant
-la liste des prochains passages de métro dans les 10 minutes à venir.
+qui retourne la liste des passages qui auront lieu dans un délai de `t` minutes
+après l’instant présent. Tester cette fonction en affichant la liste des
+prochains passages de métro dans les 10 minutes à venir.

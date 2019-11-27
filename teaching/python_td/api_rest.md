@@ -50,9 +50,13 @@ suivant : `"2019-11-23T09:01:52+00:00"`{.haskell}.
 la liste de tous les passages de métros à venir ayant pour valeur
 `Temps réel` pour l'attribut `precision` (limiter le résultat à 100 lignes).
 La liste retournée stockera des dictionnaires composés de 3 clés :
-`"arrivee"` (contenant l'heure d'arrivée au format `datetime`), `"destination"`
+`"depart"` (contenant l'heure de départ au format `datetime`), `"destination"`
 et `"nomarret"`.
-**Attention**, pour certains passages, l'attribut `"arrivee"` n'existe pas :
+**Attention #1.**, contrairement à ce qui vous a été enseigné en CM, le filtrage
+sur les métros ayant la valeur `Temps réel` pour l'attribut `precision` devra
+se faire dans le code Python car si vous le faites via l'API STAR, les résultats
+obtenus ne sont pas fiables.
+**Attention #2.**, pour certains passages, l'attribut `"depart"` n'existe pas :
 ces passages doivent donc être ignorés
 
 

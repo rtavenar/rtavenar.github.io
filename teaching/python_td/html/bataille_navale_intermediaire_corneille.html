@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Bataille navale</title>
+  <title>Bataille navale, un choix cornélien</title>
   <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -315,22 +315,28 @@ line-height:1.1;
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Bataille navale</h1>
-<p class="subtitle">Suggestion de découpage numéro 2</p>
+<h1 class="title">Bataille navale, un choix cornélien</h1>
+<p class="subtitle">Suggestion de découpage</p>
 </header>
-<p>Dans votre code, la grille de bataille navale sera représentée sous la forme d’un dictionnaire. Ce dictionaire aura pour clés les noms de case (par exemple <code class="sourceCode haskell"><span class="st">&quot;B3&quot;</span></code>) et pour valeurs les indices de bateaux. Si une case est vide, la clé correspondante ne sera pas pas stockée dans le dictionaire. Enfin, au cours du jeu, ces valeurs pourront être remplacées par les valeurs suivantes :</p>
+<p>Lors de la séance de CM de vendredi dernier, vous avez décidé d’une partie des structures de données à utiliser pour le problème de la bataille navale. Mais vous n’avez pas discuté de comment représenter les bateaux eux-mêmes.</p>
+<p>Pour ce faire, vous avez deux options :</p>
+<ul>
+<li><p>Option 1 :la grille de bataille navale sera représentée sous la forme d’un dictionnaire. Ce dictionaire aura pour clés les noms de case (par exemple <code class="sourceCode haskell"><span class="st">&quot;B3&quot;</span></code>) et pour valeurs l’état de la case correspondante :</p>
 <ul>
 <li><code class="sourceCode haskell"><span class="st">&quot;O&quot;</span></code> indiquera que la case était auparavant occupée par un bateau qui a été attaqué ;</li>
 <li><code class="sourceCode haskell"><span class="st">&quot;X&quot;</span></code> indique que la case a été attaquée sans succès (car elle était vide).</li>
 </ul>
-<ol type="1">
-<li><p>Écrivez une fonction <code>charger_grille</code> qui prend en entrée un nom de fichier et retourne une grille (telle que définie plus haut) correspondant au contenu du fichier.</p></li>
-<li><p>Écrivez une fonction <code>affiche</code> qui prend en entrée une grille et affiche son contenu.</p></li>
-<li><p>Écrivez une fonction <code>bateau_coule</code> qui prend en entrée un numéro de bateau et une grille et retourne un booléen qui indique s’il reste au moins un morceau de ce bateau sur une case.</p></li>
-<li><p>Écrivez une fonction <code>partie_finie</code> qui prend en entrée une grille et retourne un booléen indiquant si la grille correspond à une partie finie (c’est-à-dire que tous les bateaux ont été coulés) ou non.</p></li>
-<li><p>Écrivez une fonction <code>faire_jouer</code> qui demande à l’utilisateur où il souhaite jouer et retourne une chaine de caractères indiquant la case jouée.</p></li>
-<li><p>Écrivez une fonction <code>verif_et_met_a_jour</code> qui prend en entrée une grille et une case jouée, affiche l’effet de ce coup (<code class="sourceCode haskell"><span class="st">&quot;À l&#39;eau&quot;</span></code>, <code class="sourceCode haskell"><span class="st">&quot;Touché&quot;</span></code> ou <code class="sourceCode haskell"><span class="st">&quot;Bateau X coulé&quot;</span></code>) et retourne la grille mise à jour.</p></li>
-<li><p>Écrivez une fonction <code>bataille</code> qui prend en entrée un nom de fichier contenant la description des positions de bateaux pour une partie de bataille navale et déroule la partie correspondante.</p></li>
-</ol>
+<p>Si une case est vide, la clé correspondante ne sera pas pas stockée dans le dictionaire. Dans ce cas, les positions des bateaux sont stockées dans un dictionnaire de listes de positions, chaque position étant représentée par une chaine de caractères du type <code class="sourceCode haskell"><span class="st">&quot;B3&quot;</span></code></p></li>
+<li><p>Option 2 : la grille de bataille navale sera représentée sous la forme d’un dictionnaire. Ce dictionaire aura pour clés les noms de case (par exemple <code class="sourceCode haskell"><span class="st">&quot;B3&quot;</span></code>) et pour valeurs les indices de bateaux. Si une case est vide, la clé correspondante ne sera pas pas stockée dans le dictionaire. Enfin, au cours du jeu, ces valeurs pourront être remplacées par les valeurs suivantes :</p>
+<ul>
+<li><code class="sourceCode haskell"><span class="st">&quot;O&quot;</span></code> indiquera que la case était auparavant occupée par un bateau qui a été attaqué ;</li>
+<li><code class="sourceCode haskell"><span class="st">&quot;X&quot;</span></code> indique que la case a été attaquée sans succès (car elle était vide).</li>
+</ul></li>
+</ul>
+<p><strong>Vous devez faire un choix collectif (une décision par groupe de TD) :</strong></p>
+<ul>
+<li>Si vous choisissez l’option 1, suivez <a href="bataille_navale_intermediaire3.html">ce lien</a>.</li>
+<li>Si vous choisissez l’option 2, suivez <a href="bataille_navale_intermediaire2.html">ce lien</a>.</li>
+</ul>
 </body>
 </html>

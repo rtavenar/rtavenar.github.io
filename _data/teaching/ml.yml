@@ -6,6 +6,7 @@ sections:
     - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"
     - name: "<a href=\"pdf/02_convnets_tavenard.pdf\">R&eacute;seaux de neurones convolutionnels</a>"
     - name: "<a href=\"pdf/03_generative_tavenard.pdf\">Mod&egrave;les g&eacute;n&eacute;ratifs</a>"
+    - name: "<a href=\"pdf/04_sequences_tavenard_b.pdf\">Séquences</a>"
   - title: "Tutoriels <code>sklearn</code> (notebooks)"
     items:
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00_Introduction.ipynb\">Introduction</a><br /><a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00b_Scaling.ipynb\">Bonus 1 : Standardisation des données</a><br /><a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00c_CategoricalData.ipynb\">Bonus 2 : Cas des variables cat&eacute;gorielles</a>"
@@ -36,4 +37,7 @@ sections:
       colab-corr: "https://colab.research.google.com/drive/12izbBPXdWbpxbIWq6YGeCloUWPcGwnP3"
     - name: "Modèles génératifs"
       colab: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
-      # colab-corr: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
+      colab-corr: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
+    - name: "Séquences"
+      colab: "https://colab.research.google.com/drive/1sD1QXhMZhIi1oyW0IoQF4mYBKIZ8H0lN"
+      # colab-corr: "https://colab.research.google.com/drive/1SCP_mduxSWZigsPJ6f_yejcv365HIuNS"

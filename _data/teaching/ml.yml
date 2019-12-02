@@ -40,4 +40,4 @@ sections:
       colab-corr: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
     - name: "Séquences"
       colab: "https://colab.research.google.com/drive/1sD1QXhMZhIi1oyW0IoQF4mYBKIZ8H0lN"
-      # colab-corr: "https://colab.research.google.com/drive/1SCP_mduxSWZigsPJ6f_yejcv365HIuNS"
+      colab-corr: "https://colab.research.google.com/drive/1SCP_mduxSWZigsPJ6f_yejcv365HIuNS"

@@ -7,7 +7,7 @@ rights: Creative Commons CC BY-NC-SA
 
 
 Dans votre code, la grille de bataille navale sera représentée sous la forme
-d'un dictionnaire. Ce dictionaire aura pour clés les noms de case (par exemple
+d'un dictionnaire. Ce dictionnaire aura pour clés les noms de case (par exemple
 `"B3"`{.haskell}) et pour valeurs l'état de la case correspondante :
 
 - `"O"`{.haskell} indiquera que la case était auparavant occupée par un bateau qui a été
@@ -15,7 +15,7 @@ attaqué ;
 - `"X"`{.haskell} indique que la case a été attaquée sans succès (car elle était vide).
 
 Si une case est vide,
-la clé correspondante ne sera pas pas stockée dans le dictionaire.
+la clé correspondante ne sera pas pas stockée dans le dictionnaire.
 
 0. Écrivez une fonction `lire_positions` qui prend en entrée un nom de fichier
 et retourne les positions des bateaux (dictionnaire de listes de positions, chaque

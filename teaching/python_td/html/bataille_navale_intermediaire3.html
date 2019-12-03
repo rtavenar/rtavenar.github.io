@@ -318,12 +318,12 @@ line-height:1.1;
 <h1 class="title">Bataille navale</h1>
 <p class="subtitle">Suggestion de découpage numéro 1</p>
 </header>
-<p>Dans votre code, la grille de bataille navale sera représentée sous la forme d’un dictionnaire. Ce dictionaire aura pour clés les noms de case (par exemple <code class="sourceCode haskell"><span class="st">&quot;B3&quot;</span></code>) et pour valeurs l’état de la case correspondante :</p>
+<p>Dans votre code, la grille de bataille navale sera représentée sous la forme d’un dictionnaire. Ce dictionnaire aura pour clés les noms de case (par exemple <code class="sourceCode haskell"><span class="st">&quot;B3&quot;</span></code>) et pour valeurs l’état de la case correspondante :</p>
 <ul>
 <li><code class="sourceCode haskell"><span class="st">&quot;O&quot;</span></code> indiquera que la case était auparavant occupée par un bateau qui a été attaqué ;</li>
 <li><code class="sourceCode haskell"><span class="st">&quot;X&quot;</span></code> indique que la case a été attaquée sans succès (car elle était vide).</li>
 </ul>
-<p>Si une case est vide, la clé correspondante ne sera pas pas stockée dans le dictionaire.</p>
+<p>Si une case est vide, la clé correspondante ne sera pas pas stockée dans le dictionnaire.</p>
 <ol start="0" type="1">
 <li><p>Écrivez une fonction <code>lire_positions</code> qui prend en entrée un nom de fichier et retourne les positions des bateaux (dictionnaire de listes de positions, chaque position étant représentée par une chaine de caractères du type <code class="sourceCode haskell"><span class="st">&quot;B3&quot;</span></code>) correspondant au contenu du fichier. Les clés du dictionnaire retourné seront les identifiants des bateaux tels que fournis dans le fichier.</p></li>
 <li><p>Écrivez une fonction <code>init_grille</code> qui retourne une grille vide.</p></li>

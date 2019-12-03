@@ -7,9 +7,9 @@ rights: Creative Commons CC BY-NC-SA
 
 
 Dans votre code, la grille de bataille navale sera représentée sous la forme
-d'un dictionnaire. Ce dictionaire aura pour clés les noms de case (par exemple
+d'un dictionnaire. Ce dictionnaire aura pour clés les noms de case (par exemple
 `"B3"`{.haskell}) et pour valeurs les indices de bateaux. Si une case est vide, la clé
-correspondante ne sera pas pas stockée dans le dictionaire. Enfin, au cours du
+correspondante ne sera pas pas stockée dans le dictionnaire. Enfin, au cours du
 jeu, ces valeurs pourront être remplacées par les valeurs suivantes :
 
 - `"O"`{.haskell} indiquera que la case était auparavant occupée par un bateau qui a été

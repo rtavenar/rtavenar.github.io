@@ -11,7 +11,7 @@ vous n'avez pas discuté de comment représenter les bateaux eux-mêmes.
 
 Pour ce faire, vous avez deux options :
 
-* Option 1 :la grille de bataille navale sera représentée sous la forme
+* Option 1 : la grille de bataille navale sera représentée sous la forme
 d'un dictionnaire. Ce dictionnaire aura pour clés les noms de case (par exemple
 `"B3"`{.haskell}) et pour valeurs l'état de la case correspondante :
 

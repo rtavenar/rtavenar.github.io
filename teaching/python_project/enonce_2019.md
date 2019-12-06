@@ -16,7 +16,7 @@ rights: Creative Commons CC BY-NC-SA
 # Énoncé
 
 Dans ce projet, vous allez permettre à un utilisateur, étant donné un ensemble
-de points d'intérêt, de retourner la liste de tous les bus du réseau STAR qui,
+de points d'intérêt, de retrouver la liste de tous les bus du réseau STAR qui,
 à l'instant présent, se trouvent à moins de 500m (par la route, pas à vol
     d'oiseau) d'au moins un de ces lieux.
 Pour chacun des bus concernés, vous devrez afficher :

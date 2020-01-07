@@ -1,16 +1,17 @@
 - name: Yichang Wang
   level: PhD student
   year: 2018-2021
+  url: "https://yichangwang.github.io"
 - name: Titouan Vayer
   level: PhD student
   year: 2017-2020
   url: "https://tvayer.github.io"
 - name: Adeline Bailly
-  level: PhD student
+  level: PhD student (now at CEA)
   year: 2015-2018
   url: "http://people.irisa.fr/Adeline.Bailly/"
 - name: Pierre Gloaguen
-  level: Postdoc
+  level: Postdoc (now assistant professor at AgroParisTech)
   year: 2017-2018
   url: "https://papayoun.github.io"
 - name: Arnaud Lods

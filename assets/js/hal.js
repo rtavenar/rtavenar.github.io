@@ -189,7 +189,7 @@ var hals={
             hals[target_id]=docextra;
             query="authIdHal_s:"+idhal;
         }
-        xmlhttp.open("POST","https://api.archives-ouvertes.fr/search/?q="+query+"&wt=json&fl=docid,docType_s,halId_s,authFullName_s,producedDateY_i,producedDateM_i,defenseDateY_i,defenseDateM_i,volume_s,page_s,issue_s,fileMain_s,doiId_s,title_s,conferenceTitle_s,bookTitle_s,journalTitle_s,city_s,country_s,journalPublisher_s,uri_s,pages_s,number_s,authorityInstitution_s,labStructAcronym_s,labStructName_s,director_s,authorityInstitution_s,label_bibtex&rows=200",true);
+        xmlhttp.open("POST","https://api.archives-ouvertes.fr/search/?q="+query+"&wt=json&fl=docid,docType_s,halId_s,arxivId_s,authFullName_s,producedDateY_i,producedDateM_i,defenseDateY_i,defenseDateM_i,volume_s,page_s,issue_s,fileMain_s,doiId_s,title_s,conferenceTitle_s,bookTitle_s,journalTitle_s,city_s,country_s,journalPublisher_s,uri_s,pages_s,number_s,authorityInstitution_s,labStructAcronym_s,labStructName_s,director_s,authorityInstitution_s,label_bibtex&rows=200",true);
         xmlhttp.send();
     }
     function ifndef(x,val){
@@ -203,7 +203,11 @@ var hals={
         } else if (typeof doc.uri_s=='undefined'){
             s +='<span class="doc_title">'+doc.title_s[doc.title_s.length-1]+'</span>'+'. ';
         } else {
-            s +='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
+            if(doc.arxivId_s == 'undefined') {
+                s +='<span class="doc_title"><a class="doc_links_hal" target="_blank" href="'+doc.uri_s+'">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
+            } else {
+                s +='<span class="doc_title"><a class="doc_links_hal_pdf" target="_blank" href="https://arxiv.org/pdf/'+doc.arxivId_s+'.pdf">'+doc.title_s[doc.title_s.length-1]+'</a></span>'+'. ';
+            }
         }
         return s;
     }

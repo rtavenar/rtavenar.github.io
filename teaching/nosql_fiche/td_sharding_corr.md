@@ -10,7 +10,7 @@ rights: Creative Commons CC BY-NC-SA
 
 Vous allez simuler l'existence d'un _cluster_ de 3 machines (sauf que, dans votre cas, les trois noeuds seront situés sur la même machine : la vôtre). Pour cela, lancez un client MongoDB à l'aide de la commande :
 
-```
+```bash
 mongo --nodb
 ```
 
@@ -24,19 +24,19 @@ Le paramètre `--nodb` permet d'indiquer au client MongoDB de ne pas se connecte
 
 Cette commande, si elle a fonctionné, a dû lancer 3 processus `mongod`. Pour le vérifier, lancez la commande suivante dans un nouveau terminal (dans le shell) :
 
-```
+```bash_alt
 ps all
 ```
 
 Si la commande précédente renvoie trop de résultats, on peut limiter l'affichage des résultats aux lignes qui contiennent le terme `mongo` :
 
-```
+```bash_alt
 ps all | grep mongo
 ```
 
 1. Dans la suite, tous les messages d'avertissement correspondant à ce _Replica Set_ seront affichés dans la console MongoDB dans laquelle vous avez créé le cluster, rendant les sorties difficilement lisibles. Gardez donc cette fenêtre ouverte dans un coin sans y toucher et ouvrez un nouveau client MongoDB en lui indiquant de se connecter au processus tournant sur le port 31000 en utilisant la base test.
 
-```
+```bash
 mongo localhost:31000/test
 ```
 
@@ -76,7 +76,7 @@ Pour finir, stoppez votre cluster en entrant la commande suivante dans la fenêt
 # Répartition (_Sharding_)
 Vous allez simuler l'existence d'un cluster de 3 machines (sauf que, dans votre cas, les trois noeuds seront situés sur la même machine : la vôtre). Pour cela, lancez un client MongoDB à l'aide de la commande (ou utilisez la fenêtre précédemment ouverte avec la même commande) :
 
-```
+```bash
 mongo --nodb
 ```
 
@@ -89,13 +89,13 @@ Le paramètre `--nodb` permet d'indiquer au client MongoDB de ne pas se connecte
 Ignorez pour le moment l'attribut `chunksize`.
 Cette commande, si elle a fonctionné, a dû lancer 3 processus `mongod` et un processus `mongos`. Pour le vérifier, lancez la commande suivante dans un nouveau terminal (dans le shell) :
 
-```
+```bash
 ps all
 ```
 
 Si la commande précédente renvoie trop de résultats, on peut limiter l'affichage des résultats aux lignes qui contiennent le terme mongo :
 
-```
+```bash
 ps all | grep mongo
 ```
 
@@ -116,7 +116,7 @@ Par défaut, les processus `mongod` sont créés sur les ports 30000, 30001 et 3
 
 3. Dans la suite, tous les messages d'avertissement correspondant à ce cluster seront affichés dans la console MongoDB dans laquelle vous avez créé le cluster, rendant les sorties difficilement lisibles. Gardez donc cette fenêtre ouverte dans un coin sans y toucher et ouvrez un nouveau client MongoDB en lui indiquant de se connecter au processus mongos (dont vous devez connaître le port) en utilisant la base test.
 
-```
+```bash
 mongo localhost:30999/test
 ```
 
@@ -128,7 +128,7 @@ mongos>
 
 Dans la suite, vous allez interagir avec le processus mongos d'une manière transparente (quel que soit le nombre de _shards_). Toutefois, vous pourrez toujours obtenir de l'info sur la structure du cluster utilisé à l'aide de la commande :
 
-```
+```javascript
 mongos> sh.status(true)
 ```
 

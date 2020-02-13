@@ -10,7 +10,7 @@ rights: Creative Commons CC BY-NC-SA
 
 Vous allez simuler l'existence d'un _cluster_ de 3 machines (sauf que, dans votre cas, les trois noeuds seront situés sur la même machine : la vôtre). Pour cela, lancez un client MongoDB à l'aide de la commande :
 
-```
+```bash
 mongo --nodb
 ```
 
@@ -24,13 +24,13 @@ Le paramètre `--nodb` permet d'indiquer au client MongoDB de ne pas se connecte
 
 Cette commande, si elle a fonctionné, a dû lancer 3 processus `mongod`. Pour le vérifier, lancez la commande suivante dans un nouveau terminal (dans le shell) :
 
-```
+```bash_alt
 ps all
 ```
 
 Si la commande précédente renvoie trop de résultats, on peut limiter l'affichage des résultats aux lignes qui contiennent le terme `mongo` :
 
-```
+```bash_alt
 ps all | grep mongo
 ```
 
@@ -73,7 +73,7 @@ Pour finir, stoppez votre cluster en entrant la commande suivante dans la fenêt
 
 Vous allez simuler l'existence d'un cluster de 3 machines (sauf que, dans votre cas, les trois noeuds seront situés sur la même machine : la vôtre). Pour cela, lancez un client MongoDB à l'aide de la commande (ou utilisez la fenêtre précédemment ouverte avec la même commande) :
 
-```
+```bash
 mongo --nodb
 ```
 
@@ -86,13 +86,13 @@ Le paramètre `--nodb` permet d'indiquer au client MongoDB de ne pas se connecte
 Ignorez pour le moment l'attribut `chunksize`.
 Cette commande, si elle a fonctionné, a dû lancer 3 processus `mongod` et un processus `mongos`. Pour le vérifier, lancez la commande suivante dans un nouveau terminal (dans le shell) :
 
-```
+```bash_alt
 ps all
 ```
 
 Si la commande précédente renvoie trop de résultats, on peut limiter l'affichage des résultats aux lignes qui contiennent le terme mongo :
 
-```
+```bash_alt
 ps all | grep mongo
 ```
 
@@ -121,7 +121,7 @@ mongos>
 
 Dans la suite, vous allez interagir avec le processus mongos d'une manière transparente (quel que soit le nombre de _shards_). Toutefois, vous pourrez toujours obtenir de l'info sur la structure du cluster utilisé à l'aide de la commande :
 
-```
+```javascript
 mongos> sh.status(true)
 ```
 

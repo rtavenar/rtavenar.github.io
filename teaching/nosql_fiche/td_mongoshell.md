@@ -13,7 +13,7 @@ Dans le cadre de ce TD, le serveur MongoDB sera lui aussi lancé depuis votre po
 
 1. Pour cela, ouvrez une fenêtre de terminal et exécutez la commande suivante, en choisissant pour `port_num` un entier entre 1001 et 9999 :
 
-```
+```bash
 mongod --port port_num --dbpath /export/db/
 ```
 
@@ -21,7 +21,7 @@ mongod --port port_num --dbpath /export/db/
 
 2. Vous allez maintenant démarrer un _shell_ MongoDB se connectant au serveur de bases de données accessible _via_ le port `port_num` de l'hôte `host_name` (dans la suite vous pourrez utiliser `localhost` comme valeur pour `host_name`) :
 
-```
+```bash
 mongo host_name:port_num
 ```
 
@@ -34,7 +34,7 @@ test
 
 Si vous souhaitiez vous connecter à une autre base de données, appelée par exemple `myDB`, la commande à utiliser pour lancer le _shell_ serait :
 
-```
+```bash
 mongo host_name:port_num/myDB
 ```
 
@@ -61,7 +61,7 @@ Enfin, pour connaître le nombre de documents dans une collection, la syntaxe à
 
 Remarquez que la base de données initiale ne contient aucune collection (liste vide retournée par `getCollectionInfos`). Pour pallier à cela, importez les bases fournies sur CURSUS depuis un nouveau terminal :
 
-```
+```bash_alt
 mongorestore --host host_name:port_num -d test /chemin/vers/test/
 mongorestore --host host_name:port_num -d test_singlecollec /chemin/vers/test_singlecollec/
 mongorestore --host host_name:port_num -d etudiants /chemin/vers/etudiants/
@@ -88,7 +88,7 @@ De plus, lorsqu'on utilise la méthode `find()`{.javascript}, on peut rendre le 
 
 Nous allons maintenant changer de base de données de travail. Pour cela, téléchargez le fichier `NYfood.json` sur CURSUS et importez son contenu dans une base appelée `food` à l'aide de la commande suivante (entrée dans un shell quelconque, pas dans MongoDB) :
 
-```
+```bash_alt
 mongoimport --db food --file NYfood.json --jsonArray --host host_name:port_num
 ```
 

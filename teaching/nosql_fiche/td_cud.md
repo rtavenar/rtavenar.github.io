@@ -11,6 +11,7 @@ rights: Creative Commons CC BY-NC-SA
 1. Créez une nouvelle base `voitures` dans laquelle une collection `ventes` servira à tenir le compte des voitures à la vente dans un garage.
 
 2. Insérez dans cette base les documents suivants :
+
 ```
 {"modèle" : "C1", "quantité" : 15, "date_maj": new Date()}
 {"modèle" : "Mégane", "quantité" : 2, "date_maj": new Date()}

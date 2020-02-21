@@ -10,7 +10,9 @@ section: research
 				<article class="post-content">
 					<h2>Contact</h2>
 					<p>
-						E-mail: <a class="obfuscated" onclick="var aaa='@'; var m='romain.tavenard'+aaa+'univ-rennes2.fr';       this.innerHTML = m;       this.title = m;       this.href = 'mail'+'to:'+m;       this.onclick = null;       return false;       ">click to reveal</a><br />
+						E-mail: <a class="obfuscated" onclick="var aaa='@'; var m='romain.tavenard'+aaa+'univ-rennes2.fr';       this.innerHTML = m;       this.title = m;       this.href = 'mail'+'to:'+m;       this.onclick = null;       return false;       ">click to reveal</a>
+                        [<i class="fa fa-github"></i> <a href="https://github.com/rtavenar">rtavenar</a>,
+                         <i class="fa fa-twitter"></i> <a href="https://twitter.com/rtavenar">@rtavenar</a>]<br />
 						Phone: +33 (0)2 99 14 18 04<br />
 						Office: A201 (Villejean, Rennes, France)<br />
 						<a href="https://www.google.com/maps/place/Université+Rennes+2/@48.118075,-1.703345,17z/">My University on Google Maps</a>
@@ -28,7 +30,7 @@ Here, I investigate dedicated machine learning methods for environmental time se
                         {% endfor %}
 					</ul>
 
-					<h2>Students (past &amp; present)</h2>
+					<h2>Students and Post-docs (past &amp; present)</h2>
 					<ul>
                         {% for student in site.data.research.students %}
                             {% if student.url %}

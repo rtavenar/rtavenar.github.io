@@ -9,7 +9,7 @@
   description: ": Titouan's work on optimal transport for graphs has been accepted at ICML'19."
 - title: "MATS project"
   url: "/research/projects/mats.html"
-  description: " on machine learning for time series has been funded by ANR. We will be looking for a highly qualified PhD student starting in 2019! If you are interested, contact me."
+  description: " on machine learning for time series has been funded by ANR. We are looking for a highly qualified engineer to work on tslearn! If you are interested, contact me."
 - title: "Check out <code>tslearn</code>"
   url: "https://github.com/rtavenar/tslearn"
   description: ": a machine learning toolkit dedicated to time series data."

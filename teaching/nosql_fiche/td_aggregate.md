@@ -1,6 +1,6 @@
 ---
 title: "Requêtes d'agrégation"
-subtitle: Corrigé de TD pour un cours dispensé à l'université de Rennes 2
+subtitle: Sujet de TD pour un cours dispensé à l'université de Rennes 2
 language: fr
 author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
@@ -9,6 +9,12 @@ rights: Creative Commons CC BY-NC-SA
 # Avant-propos
 
 Les bases de données utilisées ici sont les bases `food`, `etudiants` et `keolis` (issue de `metro.json` disponible sur CURSUS).
+Pour importer `metro.json` avec une version récente de MongoDB, vous devrez spécifier que le format de ce fichier est du `MongoDB Extended JSON v1` en ajoutant `--legacy` à votre ligne de commande :
+
+```bash
+mongoimport --host localhost:1234 --db keolis --file "path/to/metro.json" --jsonArray --legacy
+```
+
 Vérifiez qu'elles sont bien chargées sur le serveur avant de débuter le TD.
 
 # Agrégations "simples"

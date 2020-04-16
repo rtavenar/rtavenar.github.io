@@ -14,10 +14,10 @@ items:
   links:
   - text: "Multi-Layer Perceptron (Google Colab)"
     url: "https://colab.research.google.com/drive/1v6lIi976sT2vvQZUVc3nkg8iAzG-eKvN"
-  # - text: "Multi-Layer Perceptron (Google Colab, live)"
-  #   url: "https://colab.research.google.com/drive/1tjZvD7o8gKC8C-hcEAZ3gOW8KJ11wzDf"
   - text: "Multi-Layer Perceptron (Google Colab, with correction)"
     url: "https://colab.research.google.com/drive/1FRt1YhlUiYR4Zhr9qtNTHmqR1QX96SXI"
+  - text: "A note on numpy.random (Google Colab)"
+    url: "https://colab.research.google.com/drive/1TwcUIaVsteV7qeQKHz_HNu-ztOauYXNy"
 - title: "Images and Convolutional models"
   description: "An overview of 2d convolutional neural networks."
   links:

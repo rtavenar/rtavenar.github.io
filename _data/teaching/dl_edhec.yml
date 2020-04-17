@@ -39,8 +39,8 @@ items:
     url: "data/03_generative_tavenard.pdf"
   - text: "Generative models (Google Colab)"
     url: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
-#   - text: "Generative models (Google Colab, with correction)"
-#     url: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
+  - text: "Generative models (Google Colab, with correction)"
+    url: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
 # - title: "Assignment"
 #   description: "Take-home lab session"
 #   links:

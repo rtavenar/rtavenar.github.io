@@ -41,8 +41,8 @@ items:
     url: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
   - text: "Generative models (Google Colab, with correction)"
     url: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
-# - title: "Assignment"
-#   description: "Take-home lab session"
-#   links:
-#   - text: "Link to Google Colab"
-#     url: "https://colab.research.google.com/drive/1Efvc-Y9I6Pxckdf--d7qUuqBZZHiDCrS"
+- title: "Assignment"
+  description: "Take-home lab session"
+  links:
+  - text: "Link to Google Colab"
+    url: "https://colab.research.google.com/drive/1Efvc-Y9I6Pxckdf--d7qUuqBZZHiDCrS"

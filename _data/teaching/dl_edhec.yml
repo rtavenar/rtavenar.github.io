@@ -31,12 +31,12 @@ items:
   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
   links:
   - text: "Slides (pdf)"
-    url: "data/03_sequences_tavenard.pdf"
+    url: "data/04_sequences_tavenard.pdf"
 - title: "Generative models"
   description: "Variational Auto-Encoders, GANs"
   links:
   - text: "Slides (pdf)"
-    url: "data/04_generative_tavenard.pdf"
+    url: "data/03_generative_tavenard.pdf"
   - text: "Generative models (Google Colab)"
     url: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
 #   - text: "Generative models (Google Colab, with correction)"

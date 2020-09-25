@@ -47,7 +47,8 @@ def mon_autre_fonction(truc, machin):
     [...]
 
 # Section 3 : les tests (un ou plusieurs par fonction codée)
-# Vous prendrez soin d'indiquer sous l'appel de fonction la sortie observée.
+# Vous prendrez soin d'indiquer sous l'appel de fonction
+# la sortie observée.
 print(fibonacci(3))
 # [Sortie] 3
 ```

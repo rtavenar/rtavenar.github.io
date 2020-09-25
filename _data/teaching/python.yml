@@ -3,36 +3,38 @@ sections:
   - title: "Liens relatifs au polycopi&eacute;"
     items:
     - name: "Polycopi&eacute;"
-      html-link: ../python_poly/html/poly.html
-    - name: "Corrig&eacute; des exercices du polycopi&eacute;"
-      html-link: ../python_poly/html/solutions.html
-  - title: "Liens relatifs au projet Twitter"
-    items:
-    - name: "&Eacute;nonc&eacute; du projet"
-      html-link: ../python_project/html/enonce_2018.html
-    - name: "Activer son profil d&eacute;veloppeur Twitter"
-      html-link: ../python_project/html/tweepy_createapp.html
-    - name: "Aide-m&eacute;moire <code>tweepy</code> et <code>googlemaps</code>"
-      html-link: ../python_project/html/tweepy_gmaps.html
+      html-link: https://rtavenar.github.io/poly_python/
+      skip-epub: True
+      skip-pdf: True
+  # - title: "Liens relatifs au projet Twitter"
+  #   items:
+  #   - name: "&Eacute;nonc&eacute; du projet"
+  #     html-link: ../python_project/html/enonce_2018.html
+  #   - name: "Activer son profil d&eacute;veloppeur Twitter"
+  #     html-link: ../python_project/html/tweepy_createapp.html
+  #   - name: "Aide-m&eacute;moire <code>tweepy</code> et <code>googlemaps</code>"
+  #     html-link: ../python_project/html/tweepy_gmaps.html
   - title: "Liens vers les sujets de TD"
     items:
-    - name: "Introduction &agrave; Python et PyCharm"
-      html-link: ../python_td/html/intro.html
+    # - name: "Introduction &agrave; Python et PyCharm"
+    #   html-link: ../python_td/html/intro.html
     - name: "Les fonctions en Python"
       html-link: ../python_td/html/fonctions.html
     - name: "Utilisation du module <code>turtle</code>"
       html-link: ../python_td/html/turtle.html
     - name: "Les listes et les dates en Python"
       html-link: ../python_td/html/listes_dates.html
-    - name: "Manipulations avanc&eacute;es de listes en Python"
-      html-link: ../python_td/html/listes_avancees.html
+    # - name: "Manipulations avanc&eacute;es de listes en Python"
+    #   html-link: ../python_td/html/listes_avancees.html
     - name: "Analyse et d&eacute;composition de probl&egrave;mes"
       html-link: ../python_td/html/tdinverse.html
     - name: "Les dictionnaires en Python"
       html-link: ../python_td/html/dict.html
     - name: "La lecture et l'&eacute;criture de fichiers en Python"
       html-link: ../python_td/html/fichiers.html
-    - name: "Les API web d'acc&egrave;s aux donn&eacute;es"
+    - name: "Les API web d'acc&egrave;s aux donn&eacute;es (1/2)"
       html-link: ../python_td/html/api.html
+    - name: "Les API web d'acc&egrave;s aux donn&eacute;es (2/2)"
+      html-link: ../python_td/html/api_rest.html
     - name: "Bataille navale"
       html-link: ../python_td/html/bataille_navale.html

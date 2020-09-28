@@ -1,4 +1,4 @@
-TARGETS=enonce enonce_2018 enonce_2019 tweepy_gmaps tweepy_createapp
+TARGETS=enonce enonce_2018 enonce_2019 enonce_2020 tweepy_gmaps tweepy_createapp
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

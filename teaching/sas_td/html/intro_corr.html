@@ -323,7 +323,7 @@ line-height:1.1;
 <li><p>Créer un fichier sous Geany et l’enregistrer. Tout le code utilisé lors du TD devra être enregistré dans cet éditeur. Les instructions SAS seront exécutées dans SAS au fur et à mesure.</p></li>
 <li><p>Créer la bibliothèque <code>tp1</code> qui pointe sur une clé USB ou sur votre disque réseau MASS.</p></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">libname</span> tp1 <span class="st">&quot;/home/tavenard_r/Cours SAS/&quot;</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">libname</span> tp1 <span class="st">&quot;~/Cours SAS/&quot;</span>;</a></code></pre></div>
 <ol start="3" type="1">
 <li>Importer des données</li>
 </ol>
@@ -331,7 +331,7 @@ line-height:1.1;
 <li>Importer les données disponibles dans le fichier <code>patients.csv</code> dans la bibliothèque <code>tp1</code> via le menu SAS. Enregistrer le programme créé par SAS pour faire l’import.</li>
 </ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">PROC</span> IMPORT OUT= tp1.patients</a>
-<a class="sourceLine" id="cb2-2" title="2">            DATAFILE= <span class="st">&quot;/home/tavenard_r/Cours SAS/patients.csv&quot;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">            DATAFILE= <span class="st">&quot;~/Cours SAS/patients.csv&quot;</span></a>
 <a class="sourceLine" id="cb2-3" title="3">            DBMS=CSV <span class="kw">REPLACE</span>;</a>
 <a class="sourceLine" id="cb2-4" title="4">     GETNAMES=YES;</a>
 <a class="sourceLine" id="cb2-5" title="5">     DATAROW=<span class="dv">2</span>;</a>
@@ -478,10 +478,16 @@ line-height:1.1;
 <ol start="9" type="1">
 <li>Exporter les données <code>tp1.jeunes</code> dans un fichier excel (méthode de votre choix).</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">Proc</span> export<span class="kw"> data</span>=tp1.jeunes</a>
-<a class="sourceLine" id="cb10-2" title="2">Outfile= <span class="st">&quot;/home/tavenard_r/Cours SAS/jeunes.csv&quot;</span></a>
-<a class="sourceLine" id="cb10-3" title="3">Dbms=DLM <span class="kw">replace</span>;</a>
-<a class="sourceLine" id="cb10-4" title="4">Delimiter= <span class="st">&quot;09&quot;</span>x ;</a>
-<a class="sourceLine" id="cb10-5" title="5"><span class="kw">Run</span> ;</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">proc</span> export<span class="kw"> data</span>=work.tab</a>
+<a class="sourceLine" id="cb10-2" title="2">      outfile=<span class="st">&#39;~/Cours SAS/ages.xls&#39;</span></a>
+<a class="sourceLine" id="cb10-3" title="3">      dbms=excel <span class="kw">replace</span>;</a>
+<a class="sourceLine" id="cb10-4" title="4">      sheet=<span class="st">&quot;feuille1&quot;</span>;</a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="kw">run</span>;</a></code></pre></div>
+<p>ou, si l’on souhaite exporter vers le format CSV :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">Proc</span> export<span class="kw"> data</span>=tp1.jeunes</a>
+<a class="sourceLine" id="cb11-2" title="2">Outfile= <span class="st">&quot;~/Cours SAS/jeunes.csv&quot;</span></a>
+<a class="sourceLine" id="cb11-3" title="3">Dbms=DLM <span class="kw">replace</span>;</a>
+<a class="sourceLine" id="cb11-4" title="4">Delimiter= <span class="st">&quot;09&quot;</span>x ;</a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="kw">Run</span> ;</a></code></pre></div>
 </body>
 </html>

@@ -13,7 +13,7 @@ exécutées dans SAS au fur et à mesure.
 réseau MASS.
 
 ```SAS
-libname tp1 "/home/tavenard_r/Cours SAS/";
+libname tp1 "~/Cours SAS/";
 ```
 
 3.	Importer des données
@@ -24,7 +24,7 @@ a.	Importer les données disponibles dans le fichier `patients.csv` dans la
 
 ```SAS
 PROC IMPORT OUT= tp1.patients
-            DATAFILE= "/home/tavenard_r/Cours SAS/patients.csv"
+            DATAFILE= "~/Cours SAS/patients.csv"
             DBMS=CSV REPLACE;
      GETNAMES=YES;
      DATAROW=2;
@@ -193,8 +193,18 @@ run ;
 (méthode de votre choix).
 
 ```SAS
+proc export data=work.tab
+      outfile='~/Cours SAS/ages.xls'
+      dbms=excel replace;
+      sheet="feuille1";
+run;
+```
+
+ou, si l'on souhaite exporter vers le format CSV :
+
+```SAS
 Proc export data=tp1.jeunes
-Outfile= "/home/tavenard_r/Cours SAS/jeunes.csv"
+Outfile= "~/Cours SAS/jeunes.csv"
 Dbms=DLM replace;
 Delimiter= "09"x ;
 Run ;

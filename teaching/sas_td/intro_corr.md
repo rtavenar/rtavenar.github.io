@@ -131,27 +131,27 @@ Run ;
 
 6.	Créer les variables suivantes en utilisant les données disponibles :
 
-  a.	Variable `AGE` avec le label "Age (années)" et le format `best12.`
+  a.	Variable `AGE` avec le label "Age (annees)" et le format `best12.`
   b.	Variable `IMC` définie comme poids/taille^2 où le poids est exprimé en
   kg et la taille en m avec le label "IMC (kg/m2)" et le format `best12.`
-  c.	Variable `IMC_CAT` avec le label "Catégorie IMC" et le format `$10.`
+  c.	Variable `IMC_CAT` avec le label "Categorie IMC" et le format `$10.`
   contenant les catégories de l'IMC (<20, 20-25, >25)
-  d.	Variable `NAISSY` avec le label "Année de naissance" et le format
+  d.	Variable `NAISSY` avec le label "Annee de naissance" et le format
   `best12.` contenant l'année de naissance
 
 ```SAS
 Data tp1.donnees ;
 Set tp1.donnees ;
 Attrib
-age format=best12. Label= "Age (années)"
+age format=best12. Label= "Age (annees)"
 imc format=best12. Label= "IMC (kg/m2)"
-imc_cat format=$10. Label= "Catégorie IMC"
-naissy format=best12. Label= "Année de naissance"
+imc_cat format=$10. Label= "Categorie IMC"
+naissy format=best12. Label= "Annee de naissance"
 ;
 age=YEAR(TODAY())-YEAR(datenais) ;
 imc=poids/((taille/100) **2);
 naissy=year(datenais) ;
-if imc<20 then imc_cat= "<20 kg/m2" ;
+if imc<20 then imc_cat= "<20" ;
 	else if imc>=20 or imc<=25 then imc_cat= "20-25" ;
 else if imc>25 then imc_cat= ">25" ;
 Run ;
@@ -184,23 +184,13 @@ Run ;
 `patid`.
 
 ```SAS
-Proc sort data=tp1.filles  nodukey out=filluni (keep=patid datnais);
+Proc sort data=tp1.filles  nodupkey out=filluni (keep=patid datnais);
 by patid ;
 run ;
 ```
 
-9.	Exporter les données `tp1.jeunes` dans un fichier excel
+9.	Exporter les données `tp1.jeunes` dans un fichier CSV
 (méthode de votre choix).
-
-```SAS
-proc export data=work.tab
-      outfile='~/Cours SAS/ages.xls'
-      dbms=excel replace;
-      sheet="feuille1";
-run;
-```
-
-ou, si l'on souhaite exporter vers le format CSV :
 
 ```SAS
 Proc export data=tp1.jeunes

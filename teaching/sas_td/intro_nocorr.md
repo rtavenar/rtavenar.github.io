@@ -99,12 +99,12 @@ naissance mais en utilisant les formats respectifs suivants :
 
 6.	Créer les variables suivantes en utilisant les données disponibles :
 
-  a.	Variable `AGE` avec le label "Age (années)" et le format `best12.`
+  a.	Variable `AGE` avec le label "Age (annees)" et le format `best12.`
   b.	Variable `IMC` définie comme poids/taille^2 où le poids est exprimé en
   kg et la taille en m avec le label "IMC (kg/m2)" et le format `best12.`
-  c.	Variable `IMC_CAT` avec le label "Catégorie IMC" et le format `$10.`
+  c.	Variable `IMC_CAT` avec le label "Categorie IMC" et le format `$10.`
   contenant les catégories de l'IMC (<20, 20-25, >25)
-  d.	Variable `NAISSY` avec le label "Année de naissance" et le format
+  d.	Variable `NAISSY` avec le label "Annee de naissance" et le format
   `best12.` contenant l'année de naissance
 
 7.	Créer les tables suivantes dans la bibliothèque `tp1` à partir du fichier
@@ -118,5 +118,5 @@ fusionné à l'étape 4 et modifié à l'étape 6:
 `patid` et la date de naissance `datenais` sans répétition de l'identifiant
 `patid`.
 
-9.	Exporter les données `tp1.jeunes` dans un fichier excel
+9.	Exporter les données `tp1.jeunes` dans un fichier CSV
 (méthode de votre choix).

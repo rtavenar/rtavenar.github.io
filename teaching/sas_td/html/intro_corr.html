@@ -432,23 +432,23 @@ line-height:1.1;
 <li>Créer les variables suivantes en utilisant les données disponibles :</li>
 </ol>
 <ol type="a">
-<li>Variable <code>AGE</code> avec le label “Age (années)” et le format <code>best12.</code></li>
+<li>Variable <code>AGE</code> avec le label “Age (annees)” et le format <code>best12.</code></li>
 <li>Variable <code>IMC</code> définie comme poids/taille^2 où le poids est exprimé en kg et la taille en m avec le label “IMC (kg/m2)” et le format <code>best12.</code></li>
-<li>Variable <code>IMC_CAT</code> avec le label “Catégorie IMC” et le format <code>$10.</code> contenant les catégories de l’IMC (&lt;20, 20-25, &gt;25)</li>
-<li>Variable <code>NAISSY</code> avec le label “Année de naissance” et le format <code>best12.</code> contenant l’année de naissance</li>
+<li>Variable <code>IMC_CAT</code> avec le label “Categorie IMC” et le format <code>$10.</code> contenant les catégories de l’IMC (&lt;20, 20-25, &gt;25)</li>
+<li>Variable <code>NAISSY</code> avec le label “Annee de naissance” et le format <code>best12.</code> contenant l’année de naissance</li>
 </ol>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">Data</span> tp1.donnees ;</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw">Set</span> tp1.donnees ;</a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="kw">Attrib</span></a>
-<a class="sourceLine" id="cb6-4" title="4">age <span class="kw">format</span>=best12. <span class="kw">Label</span>= <span class="st">&quot;Age (années)&quot;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">age <span class="kw">format</span>=best12. <span class="kw">Label</span>= <span class="st">&quot;Age (annees)&quot;</span></a>
 <a class="sourceLine" id="cb6-5" title="5">imc <span class="kw">format</span>=best12. <span class="kw">Label</span>= <span class="st">&quot;IMC (kg/m2)&quot;</span></a>
-<a class="sourceLine" id="cb6-6" title="6">imc_cat <span class="kw">format</span>=$<span class="dv">10</span>. <span class="kw">Label</span>= <span class="st">&quot;Catégorie IMC&quot;</span></a>
-<a class="sourceLine" id="cb6-7" title="7">naissy <span class="kw">format</span>=best12. <span class="kw">Label</span>= <span class="st">&quot;Année de naissance&quot;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">imc_cat <span class="kw">format</span>=$<span class="dv">10</span>. <span class="kw">Label</span>= <span class="st">&quot;Categorie IMC&quot;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">naissy <span class="kw">format</span>=best12. <span class="kw">Label</span>= <span class="st">&quot;Annee de naissance&quot;</span></a>
 <a class="sourceLine" id="cb6-8" title="8">;</a>
 <a class="sourceLine" id="cb6-9" title="9">age=<span class="fu">YEAR</span>(<span class="fu">TODAY</span>())-<span class="fu">YEAR</span>(datenais) ;</a>
 <a class="sourceLine" id="cb6-10" title="10">imc=poids/((taille/<span class="dv">100</span>) **<span class="dv">2</span>);</a>
 <a class="sourceLine" id="cb6-11" title="11">naissy=<span class="fu">year</span>(datenais) ;</a>
-<a class="sourceLine" id="cb6-12" title="12"><span class="kw">if</span> imc&lt;<span class="dv">20</span> <span class="kw">then</span> imc_cat= <span class="st">&quot;&lt;20 kg/m2&quot;</span> ;</a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="kw">if</span> imc&lt;<span class="dv">20</span> <span class="kw">then</span> imc_cat= <span class="st">&quot;&lt;20&quot;</span> ;</a>
 <a class="sourceLine" id="cb6-13" title="13">    <span class="kw">else</span> <span class="kw">if</span> imc&gt;=<span class="dv">20</span> <span class="kw">or</span> imc&lt;=<span class="dv">25</span> <span class="kw">then</span> imc_cat= <span class="st">&quot;20-25&quot;</span> ;</a>
 <a class="sourceLine" id="cb6-14" title="14"><span class="kw">else</span> <span class="kw">if</span> imc&gt;<span class="dv">25</span> <span class="kw">then</span> imc_cat= <span class="st">&quot;&gt;25&quot;</span> ;</a>
 <a class="sourceLine" id="cb6-15" title="15"><span class="kw">Run</span> ;</a></code></pre></div>
@@ -472,22 +472,16 @@ line-height:1.1;
 <ol start="8" type="1">
 <li>Créer une table à partir de la table <code>FILLES</code> contenant l’identifiant <code>patid</code> et la date de naissance <code>datenais</code> sans répétition de l’identifiant <code>patid</code>.</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">Proc</span> sort<span class="kw"> data</span>=tp1.filles  nodukey out=filluni (<span class="kw">keep</span>=patid datnais);</a>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">Proc</span> sort<span class="kw"> data</span>=tp1.filles  nodupkey out=filluni (<span class="kw">keep</span>=patid datnais);</a>
 <a class="sourceLine" id="cb9-2" title="2"><span class="kw">by</span> patid ;</a>
 <a class="sourceLine" id="cb9-3" title="3"><span class="kw">run</span> ;</a></code></pre></div>
 <ol start="9" type="1">
-<li>Exporter les données <code>tp1.jeunes</code> dans un fichier excel (méthode de votre choix).</li>
+<li>Exporter les données <code>tp1.jeunes</code> dans un fichier CSV (méthode de votre choix).</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">proc</span> export<span class="kw"> data</span>=work.tab</a>
-<a class="sourceLine" id="cb10-2" title="2">      outfile=<span class="st">&#39;~/Cours SAS/ages.xls&#39;</span></a>
-<a class="sourceLine" id="cb10-3" title="3">      dbms=excel <span class="kw">replace</span>;</a>
-<a class="sourceLine" id="cb10-4" title="4">      sheet=<span class="st">&quot;feuille1&quot;</span>;</a>
-<a class="sourceLine" id="cb10-5" title="5"><span class="kw">run</span>;</a></code></pre></div>
-<p>ou, si l’on souhaite exporter vers le format CSV :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">Proc</span> export<span class="kw"> data</span>=tp1.jeunes</a>
-<a class="sourceLine" id="cb11-2" title="2">Outfile= <span class="st">&quot;~/Cours SAS/jeunes.csv&quot;</span></a>
-<a class="sourceLine" id="cb11-3" title="3">Dbms=DLM <span class="kw">replace</span>;</a>
-<a class="sourceLine" id="cb11-4" title="4">Delimiter= <span class="st">&quot;09&quot;</span>x ;</a>
-<a class="sourceLine" id="cb11-5" title="5"><span class="kw">Run</span> ;</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">Proc</span> export<span class="kw"> data</span>=tp1.jeunes</a>
+<a class="sourceLine" id="cb10-2" title="2">Outfile= <span class="st">&quot;~/Cours SAS/jeunes.csv&quot;</span></a>
+<a class="sourceLine" id="cb10-3" title="3">Dbms=DLM <span class="kw">replace</span>;</a>
+<a class="sourceLine" id="cb10-4" title="4">Delimiter= <span class="st">&quot;09&quot;</span>x ;</a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="kw">Run</span> ;</a></code></pre></div>
 </body>
 </html>

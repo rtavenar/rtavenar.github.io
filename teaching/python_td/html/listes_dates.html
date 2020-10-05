@@ -329,51 +329,52 @@ line-height:1.1;
 <ol type="1">
 <li>Écrivez, en pseudo-code, un algorithme calculant la différence minimale (en valeur absolue) entre éléments consécutifs d’une liste fournie en entrée. Par exemple, pour la liste <code>[1, 3, 5, 4]</code>, la différence retournée devra être <code>1</code> (la différence entre les deux derniers éléments de la liste).</li>
 </ol>
-<h1 id="les-listes"><span class="header-section-number">2</span> Les listes</h1>
-<h2 id="création-de-liste"><span class="header-section-number">2.1</span> Création de liste</h2>
-<p>La première chose à faire pour pouvoir manipuler des listes est d’apprendre comment les définir en Python. Il existe pour cela plusieurs syntaxes possibles (nous ne les verrons pas toutes aujourd’hui et reviendrons sur ce point lors d’un prochain TD). Le cas le plus simple est celui pour lequel la liste que l’on souhaite créer est de taille suffisamment réduite pour pouvoir l’écrire de manière explicite :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">ma_liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">12</span>]</a></code></pre></div>
-<p>Toutefois, dans certains cas, on souhaitera générer des listes très longues, par exemple, la liste des entiers de 0 à <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n - 1</annotation></semantics></math> (avec <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> possiblement grand):</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">ma_liste <span class="op">=</span> <span class="bu">range</span>(n)  <span class="co"># Entiers de 0 à n-1</span></a>
-<a class="sourceLine" id="cb2-2" title="2">ma_liste <span class="op">=</span> <span class="bu">range</span>(n0, n)  <span class="co"># Entiers de n0 à n-1</span></a></code></pre></div>
+<h1 id="organisation-de-votre-code"><span class="header-section-number">2</span> Organisation de votre code</h1>
+<p>Pour ce TD, vous créerez un nouveau fichier <code>td3.py</code> dans le répertoire que vous avez créé à la première séance.</p>
+<p>Dans ce nouveau nouveau fichier, votre code sera organisé de la manière suivante :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Section 1 : les imports</span></a>
+<a class="sourceLine" id="cb1-2" title="2">[...]</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co"># Section 2 : les définitions de fonctions</span></a>
+<a class="sourceLine" id="cb1-5" title="5">[...]</a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co"># Section 3 : les tests (un ou plusieurs par fonction codée)</span></a>
+<a class="sourceLine" id="cb1-8" title="8">[...]</a></code></pre></div>
+<p>Notamment, vous définirez vos fonctions en début de fichier et les appels seront listés en fin de fichier. De cette manière, vous pourrez, d’une question à l’autre, réutiliser les fonctions déjà codées au besoin. Si vous souhaitez, à un certain moment, ne plus ré-exécuter vos tests de début de TD, il suffira de commenter les appels de fonction correspondants (mais pas les fonctions elles-mêmes !).</p>
+<h1 id="les-listes"><span class="header-section-number">3</span> Les listes</h1>
+<h2 id="recherche-délément-dans-une-liste"><span class="header-section-number">3.1</span> Recherche d’élément dans une liste</h2>
 <ol start="2" type="1">
-<li>Affichez la liste obtenue : que remarquez-vous ?</li>
-</ol>
-<p>En fait, je vous ai menti, la fonction <code class="sourceCode python"><span class="bu">range</span></code> ne retourne pas une liste mais un itérateur (<code>iterator</code>). Un itérateur est un flux de valeurs pour lequel la principale opération disponible est de demander la valeur suivante. Ainsi, si l’on souhaite juste parcourir de manière linéaire l’ensemble des entiers entre 0 et <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n - 1</annotation></semantics></math>, il n’y aura pas de différence entre l’utilisation d’une liste et celle d’un itérateur : la syntaxe Python sera la même et vous aurez même tendance à oublier que vous ne manipulez pas exactement une liste. Si toutefois vous deviez à tout prix manipuler une liste (mais cela est peu probable), il est possible de transformer un itérateur en liste :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">ma_liste <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(n))</a></code></pre></div>
-<h2 id="recherche-délément-dans-une-liste"><span class="header-section-number">2.2</span> Recherche d’élément dans une liste</h2>
-<ol start="3" type="1">
 <li><p>Écrivez une fonction qui prend en entrée une liste et un élément (par exemple un entier) et retourne l’indice de cet élément dans la liste (ou <code class="sourceCode python"><span class="va">None</span></code> si l’élément n’est pas présent dans la liste) sans faire appel à la méthode <code class="sourceCode python">index</code>.</p></li>
 <li><p>Écrivez une fonction qui prend en entrée une liste et un élément (par exemple un entier) et retourne une version de la liste passée en argument dans laquelle toutes les occurrences de cet élément ont été supprimées.</p></li>
 </ol>
-<h2 id="copie-de-liste"><span class="header-section-number">2.3</span> Copie de liste</h2>
+<h2 id="copie-de-liste"><span class="header-section-number">3.2</span> Copie de liste</h2>
 <p>La copie de liste en Python est un exercice délicat. En effet, si l’on crée une première liste <code class="sourceCode python">liste1</code> puis que l’on écrit</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">liste2 <span class="op">=</span> liste1</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">liste2 <span class="op">=</span> liste1</a></code></pre></div>
 <p>le contenu de <code class="sourceCode python">liste1</code> ne sera pas recopié dans <code class="sourceCode python">liste2</code>, les deux objets ne feront qu’un. Cela signifie notamment que si l’on modifie l’une des deux listes, la modification sera répercutée sur l’autre liste.</p>
-<ol start="5" type="1">
+<ol start="4" type="1">
 <li>Pour vous en convaincre, mettez en œuvre ce scénario et affichez le contenu des deux listes après modification de l’une des deux.</li>
 </ol>
 <p>Ainsi, si l’on veut copier le contenu d’une liste dans une autre, on devra utiliser une astuce syntaxique. Deux approches sont possibles. La première utilise une liste en compréhension, la deuxième la fonction <code class="sourceCode python"><span class="bu">list</span></code> qui effectue une copie de la liste passée en argument.</p>
-<ol start="6" type="1">
+<ol start="5" type="1">
 <li>Mettez en œuvre ces deux approches et vérifiez que le problème observé lors de la manipulation précédente ne se pose plus.</li>
 </ol>
-<h1 id="les-dates"><span class="header-section-number">3</span> Les dates</h1>
+<h1 id="les-dates"><span class="header-section-number">4</span> Les dates</h1>
 <p>Le type date (plus précisément le type <code>datetime</code> qui permet de représenter conjointement une date et une heure) est défini dans le module <code>datetime</code>. Commencez donc par ajouter l’instruction d’importation de ce module <strong>en début de votre script Python</strong>.</p>
-<ol start="7" type="1">
+<ol start="6" type="1">
 <li><p>Supposons que soit stocké, dans une chaîne de caractères <code class="sourceCode python">s</code>, le contenu suivant : <code class="sourceCode python"><span class="co">&quot;24-08, 2019, 16:53&quot;</span></code>. Chargez cette date dans une variable <code>d1</code> de type <code>datetime</code> et affichez le contenu de cette variable.</p></li>
 <li><p>Écrivez une fonction qui prenne en entrée une date et retourne le nombre d’heures écoulées depuis cette date. Combien d’heures se sont écoulées depuis <code>d1</code> ?</p></li>
 <li><p>Écrivez une fonction qui prenne en entrée une date <code>d0</code> et retourne la date située une semaine après <code>d0</code>. À quelle date sera-t-on rendus dans une semaine ?</p></li>
 </ol>
-<h1 id="exercice-de-synthèse"><span class="header-section-number">4</span> Exercice de synthèse</h1>
-<ol start="10" type="1">
+<h1 id="exercice-de-synthèse"><span class="header-section-number">5</span> Exercice de synthèse</h1>
+<ol start="9" type="1">
 <li>Écrivez une fonction qui prenne en entrée (i) une liste de chaînes de caractères représentant des dates et (ii) une chaîne de caractères définissant le format de date utilisé dans la liste. Votre fonction devra retourner la durée la plus grande (en valeur absolue) entre deux dates consécutives de la liste. Vous pourrez par exemple tester votre fonction avec la liste suivante :</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1">l_dates <span class="op">=</span> [</a>
-<a class="sourceLine" id="cb5-2" title="2">    <span class="st">&quot;16h12, 22/09/2019&quot;</span>,</a>
-<a class="sourceLine" id="cb5-3" title="3">    <span class="st">&quot;9h23, 31/12/2018&quot;</span>,</a>
-<a class="sourceLine" id="cb5-4" title="4">    <span class="st">&quot;12h56, 08/02/2019&quot;</span>,</a>
-<a class="sourceLine" id="cb5-5" title="5">    <span class="st">&quot;0h00, 01/01/2019&quot;</span></a>
-<a class="sourceLine" id="cb5-6" title="6">]</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">l_dates <span class="op">=</span> [</a>
+<a class="sourceLine" id="cb3-2" title="2">    <span class="st">&quot;16h12, 22/09/2019&quot;</span>,</a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="st">&quot;9h23, 31/12/2018&quot;</span>,</a>
+<a class="sourceLine" id="cb3-4" title="4">    <span class="st">&quot;12h56, 08/02/2019&quot;</span>,</a>
+<a class="sourceLine" id="cb3-5" title="5">    <span class="st">&quot;0h00, 01/01/2019&quot;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">]</a></code></pre></div>
 <p><strong>N.B.</strong> : Pour calculer la valeur absolue d’une quantité numérique, on pourra utiliser la fonction <code>abs</code>.</p>
 </body>
 </html>

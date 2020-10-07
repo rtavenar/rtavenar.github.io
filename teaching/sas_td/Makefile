@@ -1,4 +1,4 @@
-TARGETS=intro_corr intro_nocorr
+TARGETS=intro_corr intro_nocorr nyfood_corr nyfood_nocorr
 
 all: $(TARGETS)
 

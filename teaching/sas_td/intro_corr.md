@@ -148,10 +148,10 @@ imc format=best12. Label= "IMC (kg/m2)"
 imc_cat format=$10. Label= "Categorie IMC"
 naissy format=best12. Label= "Annee de naissance"
 ;
-age=YEAR(TODAY())-YEAR(datenais) ;
+age=YEAR(TODAY())-YEAR(datenais) ;/*autre possibilité: (today()-datenais)/365.25*/
 imc=poids/((taille/100) **2);
 naissy=year(datenais) ;
-if imc<20 then imc_cat= "<20" ;
+if .<imc<20 then imc_cat= "<20" ;
 	else if imc>=20 or imc<=25 then imc_cat= "20-25" ;
 else if imc>25 then imc_cat= ">25" ;
 Run ;

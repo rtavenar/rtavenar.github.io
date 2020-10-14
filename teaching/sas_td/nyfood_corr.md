@@ -98,3 +98,24 @@ proc tabulate data=resto;
 	table  (quartier),(annee)*(n_clients_moy)*(mean);
 run ;
 ```
+
+9. Sauvegarder dans une table les résultats de la PROC TABULATE.
+
+```SAS
+ods output table=item9;
+proc tabulate data=resto;
+	class annee quartier ;
+	var n_clients_moy;
+	table  (quartier),(annee)*(n_clients_moy)*(mean);
+run ;
+```
+
+10. Sortir les résultats de la PROC FREQ dans un fichier rtf en utilisant le style journal.
+
+```SAS
+ods rtf file="/folders/myfolders/Cours SAS/td2/frequences.rtf" style=journal;
+proc freq data=resto (where=(index(upcase(nom), "PIZZA")>0)) ;
+	table  type;
+run ;
+ods rtf close;
+```

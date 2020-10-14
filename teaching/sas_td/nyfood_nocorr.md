@@ -21,6 +21,6 @@ rights: Creative Commons CC BY-NC-SA
 
 8.	Présenter la moyenne du nombre de clients par mois par quartier et par année  dans un même tableau.
 
-9. Sauvegarder dans une table les résultats de la PROC TABULATE.
+9. Sauvegarder dans une table les résultats de la `PROC TABULATE`.
 
-10. Sortir les résultats de la PROC FREQ dans un fichier rtf en utilisant le style journal.
+10. Sortir les résultats de la `PROC FREQ` dans un fichier rtf en utilisant le style journal.

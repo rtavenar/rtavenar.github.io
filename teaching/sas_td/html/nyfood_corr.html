@@ -399,7 +399,7 @@ line-height:1.1;
 <a class="sourceLine" id="cb8-4" title="4">    <span class="kw">table</span>  (quartier),(annee)*(n_clients_moy)*(<span class="fu">mean</span>);</a>
 <a class="sourceLine" id="cb8-5" title="5"><span class="kw">run</span> ;</a></code></pre></div>
 <ol start="9" type="1">
-<li>Sauvegarder dans une table les résultats de la PROC TABULATE.</li>
+<li>Sauvegarder dans une table les résultats de la <code>PROC TABULATE</code>.</li>
 </ol>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb9-1" title="1">ods <span class="kw">output</span> <span class="kw">table</span>=item9;</a>
 <a class="sourceLine" id="cb9-2" title="2"><span class="kw">proc</span> tabulate<span class="kw"> data</span>=resto;</a>
@@ -408,7 +408,7 @@ line-height:1.1;
 <a class="sourceLine" id="cb9-5" title="5">    <span class="kw">table</span>  (quartier),(annee)*(n_clients_moy)*(<span class="fu">mean</span>);</a>
 <a class="sourceLine" id="cb9-6" title="6"><span class="kw">run</span> ;</a></code></pre></div>
 <ol start="10" type="1">
-<li>Sortir les résultats de la PROC FREQ dans un fichier rtf en utilisant le style journal.</li>
+<li>Sortir les résultats de la <code>PROC FREQ</code> dans un fichier rtf en utilisant le style journal.</li>
 </ol>
 <div class="sourceCode" id="cb10"><pre class="sourceCode sas"><code class="sourceCode sas"><a class="sourceLine" id="cb10-1" title="1">ods rtf <span class="kw">file</span>=<span class="st">&quot;/folders/myfolders/Cours SAS/td2/frequences.rtf&quot;</span> style=journal;</a>
 <a class="sourceLine" id="cb10-2" title="2"><span class="kw">proc</span> freq<span class="kw"> data</span>=resto (<span class="kw">where</span>=(<span class="kw">index</span>(<span class="fu">upcase</span>(nom), <span class="st">&quot;PIZZA&quot;</span>)&gt;<span class="dv">0</span>)) ;</a>

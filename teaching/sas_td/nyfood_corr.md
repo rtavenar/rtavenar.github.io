@@ -99,7 +99,7 @@ proc tabulate data=resto;
 run ;
 ```
 
-9. Sauvegarder dans une table les résultats de la PROC TABULATE.
+9. Sauvegarder dans une table les résultats de la `PROC TABULATE`.
 
 ```SAS
 ods output table=item9;
@@ -110,7 +110,7 @@ proc tabulate data=resto;
 run ;
 ```
 
-10. Sortir les résultats de la PROC FREQ dans un fichier rtf en utilisant le style journal.
+10. Sortir les résultats de la `PROC FREQ` dans un fichier rtf en utilisant le style journal.
 
 ```SAS
 ods rtf file="/folders/myfolders/Cours SAS/td2/frequences.rtf" style=journal;

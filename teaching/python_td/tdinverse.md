@@ -141,7 +141,7 @@ On souhaite réaliser une implémentation qui respecte les contraintes suivantes
 # Match nul
 ```
 
-# Resultat des premières investigations
+<!-- # Resultat des premières investigations
 
 Ce sujet a déjà commencé à être étudié en CM. Vous êtes arrivés, collectivement,
 aux choix suivants :
@@ -174,4 +174,4 @@ vous indiquerez explicitement :
 # Implémentation
 
 Une fois le sujet de TD rédigé et validé par votre enseignant(e) de TD,
-implémentez-le !
+implémentez-le ! -->

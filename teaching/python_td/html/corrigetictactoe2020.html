@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Aurélie Lemaitre, Agnès Maunoury, Romain Tavenard" />
-  <title>Analyse et décomposition de problèmes</title>
+  <meta name="author" content="Romain Tavenard" />
+  <title>Sujet du problème Tic-Tac-Toe</title>
   <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -316,20 +316,11 @@ line-height:1.1;
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Analyse et décomposition de problèmes</h1>
+<h1 class="title">Sujet du problème Tic-Tac-Toe</h1>
 <p class="subtitle">Planche de TD pour un cours dispensé à l’université de Rennes 2</p>
-<p class="author">Aurélie Lemaitre, Agnès Maunoury, Romain Tavenard</p>
+<p class="author">Romain Tavenard</p>
 </header>
-<h1 id="philosophie-du-sujet"><span class="header-section-number">1</span> Philosophie du sujet</h1>
-<p>Lorsqu’on souhaite résoudre un problème, il est souvent nécessaire de le décomposer en sous-fonctions. En TD d’informatique, les sujets que vous recevez sont souvent déjà “pré-mâchés” par les enseignants : ils réfléchissent pour vous aux structures de données, à la signature des fonctions à utiliser, ainsi qu’à l’appel de la fonction principale pour résoudre un problème global.</p>
-<p>Lors de cette séance, vous allez devoir rédiger un sujet de TD, afin de vous guider pour coder les fonctions pour réaliser un jeu : le Tic Tac Toe. Pour rédiger ce sujet de TD, vous indiquerez explicitement :</p>
-<ul>
-<li>les structures de données utiles pour représenter les éléments principaux (ex : xxx sera représenté sous la forme d’une liste, d’une matrice…)</li>
-<li>les noms, les signatures et le rôle des fonctions (ex : coder la fonction xxx qui prend en entrée zzz, qui calcule/affiche yyy et qui renvoie www)</li>
-<li>l’appel nécessaire pour lancer le jeu (ex : coder la fonction principale yyy qui sera appelée pour lancer le jeu)</li>
-</ul>
-<p>Dans un second temps, vous implémenterez le sujet de TD proposé.</p>
-<h1 id="tic-tac-toe"><span class="header-section-number">2</span> Tic Tac Toe</h1>
+<h1 id="présentation-du-sujet"><span class="header-section-number">1</span> Présentation du sujet</h1>
 <p>Le Tic Tac Toe est un jeu qui se joue à deux joueurs, identifiés par les symboles “X” ou “O”. Les joueurs jouent chacun leur tour, en plaçant leur symbole dans une grille de 3 cases par 3. Le gagnant est le premier à réaliser un alignement de trois symboles, en vertical, en horizontal ou en diagonale. Si les joueurs remplissent toute la grille sans réussir à réaliser un alignement, alors il y a match nul.</p>
 <p>On souhaite réaliser une implémentation qui respecte les contraintes suivantes :</p>
 <ul>
@@ -447,39 +438,25 @@ line-height:1.1;
 <a class="sourceLine" id="cb2-63" title="63"><span class="co">#</span></a>
 <a class="sourceLine" id="cb2-64" title="64"><span class="co"># Match nul</span></a></code></pre></div></li>
 </ul>
-<!-- # Resultat des premi&egrave;res investigations
-
-Ce sujet a d&eacute;j&agrave; commenc&eacute; &agrave; &ecirc;tre &eacute;tudi&eacute; en CM. Vous &ecirc;tes arriv&eacute;s, collectivement,
-aux choix suivants :
-
-1. La grille sera repr&eacute;sent&eacute;e par 3 listes de cha&icirc;nes de caract&egrave;res repr&eacute;sentant
-chacune une ligne de cette grille, par exemple :
-```python
-ligne1 = ["X", "-", "O"]
-ligne2 = ["-", "-", "X"]
-ligne3 = ["-", "-", "-"]
-```
-2. Une partie se d&eacute;roule selon le sch&eacute;ma suivant :
-    1. Cr&eacute;atiion d'une grille vide
-    2. Affichage de la grille
-    3. &Agrave; qui le tour ?
-    4. Interactions avec le joueur (dont v&eacute;rification si case vide)
-    5. Modification de la valeur de la case jou&eacute;e
-    6. Affichage de la grille
-    7. Si la partie n'est pas finie, retour &agrave; l'&eacute;tape 3
-    8. Sinon, affichage du vainqueur ou du texte "match nul"
-
-Partant de ce d&eacute;but de mise en forme, r&eacute;digez un &eacute;nonc&eacute; de TD dans lequel
-vous indiquerez explicitement :
-
-* les noms, les signatures et le r&ocirc;le des fonctions (ex : coder la fonction xxx
-    qui prend en entr&eacute;e zzz, qui calcule/affiche yyy et qui renvoie www)
-* l'appel n&eacute;cessaire pour lancer le jeu (ex : coder la fonction principale yyy
-    qui sera appel&eacute;e pour lancer le jeu)
-
-# Impl&eacute;mentation
-
-Une fois le sujet de TD r&eacute;dig&eacute; et valid&eacute; par votre enseignant(e) de TD,
-impl&eacute;mentez-le ! -->
+<h1 id="représentation-des-données"><span class="header-section-number">2</span> Représentation des données</h1>
+<p>On représentera la grille sous la forme d’une liste de trois lignes, chaque ligne étant stockée sous la forme d’une liste de trois chaînes de caractères. Chaque chaîne de caractère vaudra soit <code class="sourceCode haskell"><span class="st">&quot;X&quot;</span></code>, soit <code class="sourceCode haskell"><span class="st">&quot;O&quot;</span></code>, soit <code class="sourceCode haskell"><span class="st">&quot;-&quot;</span></code>, correspondant aux trois configurations possibles :</p>
+<ul>
+<li>le joueur <code class="sourceCode haskell"><span class="st">&quot;X&quot;</span></code> a joué dans cette case ;</li>
+<li>le joueur <code class="sourceCode haskell"><span class="st">&quot;O&quot;</span></code> a joué dans cette case ;</li>
+<li>aucun joueur n’a joué dans cette case.</li>
+</ul>
+<h1 id="codage-des-fonctions"><span class="header-section-number">3</span> Codage des fonctions</h1>
+<ol type="1">
+<li><p>Ecrire une fonction <code class="sourceCode python">init_tictactoe</code> qui retourne une grille de Tic-Tac-Toe vide (c’est-à-dire dans laquelle aucune case n’a été jouée). Cette fonction de prendra pas d’argument.</p></li>
+<li><p>Ecrire une fonction <code class="sourceCode python">print_tictactoe</code> qui affiche dans le terminal une grille de Tic-Tac-Toe passée en argument (<em>cf.</em> traces d’exécution plus haut).</p></li>
+<li><p>Ecrire une fonction <code class="sourceCode python">est_pleine</code> qui indique (par sa valeur de retour) si une grille passée en argument est pleine ou non.</p></li>
+<li><p>Ecrire une fonction <code class="sourceCode python">a_gagne</code> qui prend en argument une grille et un joueur et indique (par sa valeur de retour) si le joueur en question a gagné ou non dans la grille. Il faudra pour cela vérifié tous les cas possibles de victoire (par ligne, par colonne, en diagonale).</p></li>
+<li><p>Ecrire une fonction <code class="sourceCode python">tictactoe_1coup</code> qui prend en argument une grille et un joueur et propose au joueur en question de jouer dans la grille à la position qu’il désire (<em>cf.</em> trace d’exécution plus haut pour les questions à poser au joueur). Si le joueur demande à jouer dans une case déjà occupée, il faudra lui redemander de jouer dans une autre case, jusqu’à ce qu’il propose une case libre. La fonction <code class="sourceCode python">tictactoe_1coup</code> devra retourner l’état de la grille après que le joueur ait joué.</p></li>
+<li><p>Ecrire une fonction <code class="sourceCode python">tictactoe</code> qui ne prend pas de paramètre. C’est la fonction principale qui sera appelée pour jouer au jeu. Cette fonction doit initialiser la grille, lancer le jeu et le faire dérouler tant que :</p></li>
+</ol>
+<ul>
+<li>personne n’a gagné ;</li>
+<li>la grille n’est pas pleine.</li>
+</ul>
 </body>
 </html>

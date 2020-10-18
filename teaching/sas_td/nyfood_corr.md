@@ -43,7 +43,7 @@ data resto;
 	set resto ;
     /* quand on ne sait pas combien de caractères on souhaite,
        on ne précise que la position de départ                 */
-	quartier=substr(10) ;
+	quartier=substr(quartier,10) ;
 run ;
 ```
 

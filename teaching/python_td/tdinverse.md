@@ -8,7 +8,7 @@ rights: Creative Commons CC BY-NC-SA
 
 # Philosophie du sujet
 
-Lorsqu'on souhaite résoudre un problème, il est souvent nécessaire de le décomposer en sous-fonctions. En TD d'informatique, les sujets que vous recevez sont souvent déjà "pré-mâchés" par les enseignants : ils réfléchissent pour vous aux structures de données, à la signature des fonctions à utiliser, ainsi qu'à l'appel de la fonction principale pour résoudre un problème global.
+Lorsqu'on souhaite résoudre un problème, il est souvent nécessaire de le décomposer en sous-fonctions. En TD d'informatique, les sujets que vous recevez sont souvent déjà décomposés par les enseignants : ils réfléchissent pour vous aux structures de données, à la signature des fonctions à utiliser, ainsi qu'à l'appel de la fonction principale pour résoudre un problème global.
 
 Lors de cette séance, vous allez devoir rédiger un sujet de TD, afin de vous guider pour coder les fonctions pour réaliser un jeu : le Tic Tac Toe.
 Pour rédiger ce sujet de TD, vous indiquerez explicitement :

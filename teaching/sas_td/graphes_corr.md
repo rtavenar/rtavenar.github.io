@@ -27,7 +27,7 @@ proc sgplot data=freq;
 run;
 ```
 
-3.	Modifier le titre de la légende pour qu'il soit en français `'Type de cholesterol'` ainsi que les catégories représentées.
+3.	Modifier le titre de la légende pour qu'il soit en français `'Type de cholesterol'`.
 
 ```SAS
 proc sgplot data=freq;

@@ -11,7 +11,7 @@ rights: Creative Commons CC BY-NC-SA
 
 2.	Modifier le label de l'axe y pour utiliser le label `'Proportion (%)'`.
 
-3.	Modifier le titre de la légende pour qu'il soit en français `'Type de cholesterol'` ainsi que les catégories représentées.
+3.	Modifier le titre de la légende pour qu'il soit en français `'Type de cholesterol'`.
 
 # Graphe 2
 

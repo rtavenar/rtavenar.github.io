@@ -177,3 +177,46 @@ grille = [["X", "-", "O"],
           ["-", "-", "-"]]
 affiche(grille)
 ```
+
+2. Écrivez une fonction `pleine` qui prenne en entrée une grille et retourne `True` si elle est pleine et `False` sinon.
+Vous testerez cette fonction à l'aide du code suivant :
+```python
+print(pleine(grille))
+grille2 = [["X", "O", "X"],
+           ["O", "X", "O"],
+           ["X", "O", "O"]]
+print(pleine(grille2))
+```
+
+3. Écrivez une fonction `libre` qui prenne en entrée une grille et une position et retourne `True` si la case située à la position spécifiée est libre dans la grille et `False` sinon.
+Vous testerez cette fonction à l'aide du code suivant :
+```python
+print(libre(grille, 0, 0))
+print(libre(grille, 1, 0))
+```
+
+4. Écrivez une fonction `ou_jouer` qui prenne en entrée une grille, demande à l'utilisateur les coordonnées où il veut jouer (jusqu'à ce que celles-ci soient valides) et retourne ces coordonnées.
+Vous testerez cette fonction à l'aide du code suivant :
+```python
+print(ou_jouer(grille))
+# En tant qu'utilisateur, on entrera d'abord les valeurs 1 0 puis 0 0
+```
+
+5. Écrivez une fonction `placer_pion` qui prenne en entrée des coordonnées, un joueur et une grille et retourne la grille mise à jour.
+Vous testerez cette fonction à l'aide du code suivant :
+```python
+affiche(placer_pion(0, 0, "X", grille))
+```
+
+6. Écrivez une fonction `gagne` qui prenne en entrée une grille et un joueur et retourne `True` si le joueur a gagné et `False` sinon.
+Vous testerez cette fonction à l'aide du code suivant :
+```python
+print(gagne(grille2, "X"))
+print(gagne(grille2, "O"))
+```
+
+7. Écrivez une fonction `morpion` qui déroule le jeu de morpion.
+Vous testerez cette fonction à l'aide du code suivant :
+```python
+morpion()
+```

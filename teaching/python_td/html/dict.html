@@ -321,16 +321,19 @@ line-height:1.1;
 <p class="author">Romain Tavenard</p>
 </header>
 <h1 id="organisation-de-votre-code"><span class="header-section-number">1</span> Organisation de votre code</h1>
-<p>Pour ce TD, vous créerez un nouveau fichier <code>td6.py</code> dans le répertoire que vous avez créé à la première séance. Dans ce fichier, votre code sera organisé de la manière suivante :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> ma_premiere_fonction_qui_a_un_meilleur_nom_que_celui_la(n):</a>
-<a class="sourceLine" id="cb1-2" title="2">    [...]</a>
-<a class="sourceLine" id="cb1-3" title="3"></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">def</span> mon_autre_fonction(truc, machin):</a>
+<p>Pour ce TD, vous créerez un nouveau fichier <code>td5.py</code> dans le répertoire que vous avez créé à la première séance. Dans ce fichier, votre code sera organisé de la manière suivante :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Section 1 : les imports (optionnel)</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># Section 2 : les fonctions</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">def</span> ma_premiere_fonction_qui_a_un_meilleur_nom_que_celui_la(n):</a>
 <a class="sourceLine" id="cb1-5" title="5">    [...]</a>
 <a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co"># Tests</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="bu">print</span>(ma_premiere_fonction_qui_a_un_meilleur_nom_que_celui_la(<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co"># [Sortie] 3</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-7" title="7"><span class="kw">def</span> mon_autre_fonction(truc, machin):</a>
+<a class="sourceLine" id="cb1-8" title="8">    [...]</a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co"># Section 3 : les tests</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="bu">print</span>(ma_premiere_fonction_qui_a_un_meilleur_nom_que_celui_la(<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co"># [Sortie] 3</span></a></code></pre></div>
 <p>Notamment, vous définirez vos fonctions en début de fichier et les appels seront listés en fin de fichier. De cette manière, vous pourrez, d’une question à l’autre, réutiliser les fonctions déjà codées au besoin.</p>
 <h1 id="manipulations-de-base-des-dictionnaires"><span class="header-section-number">2</span> Manipulations de base des dictionnaires</h1>
 <ol type="1">
@@ -356,5 +359,10 @@ line-height:1.1;
 <li>Écrivez une fonction qui prend en entrée un dictionnaire associant à un nom une liste de notes et qui retourne la liste des noms des personnes qui ont la moyenne la plus élevée (s’il y a des <em>ex-aequo</em>, cette liste contiendra plusieurs éléments, sinon, elle n’en contiendra qu’un) et la moyenne correspondante. On pourra utiliser le dictionnaire suivant pour tester la fonction ainsi écrite :</li>
 </ol>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">notes <span class="op">=</span> {<span class="st">&quot;Tom&quot;</span>: [<span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>], <span class="st">&quot;Mila&quot;</span>: [<span class="dv">10</span>, <span class="dv">9</span>], <span class="st">&quot;Alex&quot;</span>: [], <span class="st">&quot;Lina&quot;</span>: [<span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">8</span>]}</a></code></pre></div>
+<h1 id="pour-aller-plus-loin"><span class="header-section-number">4</span> Pour aller plus loin</h1>
+<p><strong>Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine prochaine. Le rendu se fera sous la forme d’un unique fichier Python structuré comme demandé plus haut et contenant le code relatif à cette partie.</strong></p>
+<ol start="6" type="1">
+<li>Écrivez une fonction qui prend en entrée 1, 2 ou 3 dictionnaires et retourne un dictionnaire fusionnant les informations de ces dictionnaires de la manière suivante : pour chaque clef présente dans au moins un dictionnaire, la valeur associée sera la liste des valeurs associées à cette clef dans les dictionnaires passés en argument à la fonction.</li>
+</ol>
 </body>
 </html>

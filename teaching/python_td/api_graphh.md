@@ -125,7 +125,7 @@ fichier `mini-rando_gps.json` disponible sur CURSUS, pour lequel vous devriez
 obtenir des dénivelés (positifs et négatifs) de 14.77m, 8.34m et 74.71m
 respectivement.
 
-## Pour aller plus loin
+## Pour aller plus loin (ce travail n'est pas à rendre)
 
 5. Écrivez une fonction qui prenne en entrée un nom de fichier JSON
 (contenant des informations sur diverses randonnées) et un client GraphHopper

@@ -8,18 +8,21 @@ rights: Creative Commons CC BY-NC-SA
 
 # Organisation de votre code
 
-Pour ce TD, vous créerez un nouveau fichier `td6.py` dans le répertoire que vous
+Pour ce TD, vous créerez un nouveau fichier `td5.py` dans le répertoire que vous
 avez créé à la première séance.
 Dans ce fichier, votre code sera organisé de la manière suivante :
 
 ```python
+# Section 1 : les imports (optionnel)
+
+# Section 2 : les fonctions
 def ma_premiere_fonction_qui_a_un_meilleur_nom_que_celui_la(n):
     [...]
 
 def mon_autre_fonction(truc, machin):
     [...]
 
-# Tests
+# Section 3 : les tests
 print(ma_premiere_fonction_qui_a_un_meilleur_nom_que_celui_la(3))
 # [Sortie] 3
 ```
@@ -74,3 +77,15 @@ On pourra utiliser le dictionnaire suivant pour tester la fonction ainsi
 ```python
 notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]}
 ```
+
+# Pour aller plus loin
+
+**Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine
+prochaine. Le rendu se fera sous la forme d'un unique fichier Python structuré
+comme demandé plus haut et contenant le code relatif à cette partie.**
+
+6. Écrivez une fonction qui prend en entrée 1, 2 ou 3 dictionnaires et retourne
+un dictionnaire fusionnant les informations de ces dictionnaires de la manière
+suivante : pour chaque clef présente dans au moins un dictionnaire, la
+valeur associée sera la liste des valeurs associées à cette clef dans les
+dictionnaires passés en argument à la fonction.

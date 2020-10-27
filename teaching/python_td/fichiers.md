@@ -8,7 +8,7 @@ rights: Creative Commons CC BY-NC-SA
 
 # Organisation de votre code et de vos fichiers
 
-Pour ce TD, vous écrirez toutes vos fonctions dans un même script Python nommé `TD_fichiers.py`. Celui-ci sera organisé comme indiqué lors des séances précédentes. De plus, vous aurez besoin des données disponibles sur CURSUS dans un fichier `data.zip` (que vous avez dû télécharger lors du premier TD mais que vous pouvez re-télécharger au besoin).
+Pour ce TD, vous écrirez toutes vos fonctions dans un même script Python nommé `TD_fichiers.py`. Celui-ci sera organisé comme indiqué lors des séances précédentes. De plus, vous aurez besoin des données disponibles sur CURSUS dans un fichier `data.zip`.
 
 Le projet que vous ouvrez dans Pycharm doit être organisé comme suit :
 

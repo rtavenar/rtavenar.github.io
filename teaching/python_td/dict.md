@@ -81,7 +81,8 @@ notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]}
 # Pour aller plus loin
 
 **Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine
-prochaine. Le rendu se fera sous la forme d'un unique fichier Python structuré
+prochaine. Le rendu se fera sous la forme d'un unique fichier Python
+(pas de version `.txt` ou `.pdf`) structuré
 comme demandé plus haut et contenant le code relatif à cette partie.**
 
 6. Écrivez une fonction qui prend en entrée 1, 2 ou 3 dictionnaires et retourne

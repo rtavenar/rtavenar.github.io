@@ -37,9 +37,9 @@ Les fichiers de données (`.csv`, `.xls`, `.txt`, etc.) doivent être chargés d
 
 ![halfwidth](img/charger_fichier.png)&nbsp;
 
-Attention, le chemin vers ce fichier est assez peu prévisible car le début de ce chemin est généré par SAS OnDemand (ou SAS University). Pour connaître ce chemin et l'utiliser dans une `PROC IMPORT`, on peut le trouver en bas du panneau d'éditeur :
+Attention, le chemin vers ce fichier est assez peu prévisible car le début de ce chemin est généré par SAS OnDemand (ou SAS University). Pour connaître ce chemin (et l'utiliser dans une `PROC IMPORT` ou toute autre commande qui utilise un chemin), on peut le trouver en bas du panneau d'éditeur :
 
-![halfwidth](img/chemin_sasuniv.png)&nbsp;
+![fullwidth](img/chemin_sasuniv.png)&nbsp;
 
 # Étape 4 : accéder aux bibliothèques
 

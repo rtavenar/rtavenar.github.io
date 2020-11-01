@@ -30,11 +30,16 @@ Cela va ouvrir un nouveau fichier dans la fenêtre de programme que vous pourrez
 
 ![halfwidth](img/enregistrer_sous.png)&nbsp;
 
+
 # Étape 3 : charger un fichier de données dans votre répertoire
 
 Les fichiers de données (`.csv`, `.xls`, `.txt`, etc.) doivent être chargés dans le répertoire de travail pour pouvoir être lus par votre programme SAS :
 
 ![halfwidth](img/charger_fichier.png)&nbsp;
+
+Attention, le chemin vers ce fichier est assez peu prévisible car le début de ce chemin est généré par SAS OnDemand (ou SAS University). Pour connaître ce chemin et l'utiliser dans une `PROC IMPORT`, on peut le trouver en bas du panneau d'éditeur :
+
+![halfwidth](img/chemin_sasuniv.png)&nbsp;
 
 # Étape 4 : accéder aux bibliothèques
 

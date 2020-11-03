@@ -1,5 +1,5 @@
 ---
-title : Le projet GeoJSON
+title : Le projet "Course à pied"
 language: fr
 author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA

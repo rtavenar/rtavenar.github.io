@@ -66,7 +66,8 @@ une idée rapide de l'état d'avancement de la course pour le coureur en questio
 2. **Suggestion de points de rencontre pour les groupes de suiveurs**. Étant
 données les positions d'un nombre fixé de suiveurs, proposer un point de
 rencontre pour que ces suiveurs viennent encourager leur coureur sur la portion
-du parcours non encore empruntée. Le point choisi sera celui (ou un de ceux)
+du parcours non encore empruntée. Le point choisi sera celui (ou un de ceux),
+parmi les points du parcours non encore atteints,
 qui minimise la distance maximale aux positions actuelles des suiveurs.
 
 3. **Publication de l'état courant sur Twitter**. Étant données des informations

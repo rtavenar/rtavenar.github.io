@@ -54,7 +54,7 @@ séparé (idéalement un seul fichier contenant les informations d'identificatio
 pour l'ensemble des services utilisés) et ce fichier ne devra pas être inclus
 dans le rendu.
 
-## Extensions
+# Extensions
 
 Il vous est proposé d'implémenter une ou plusieurs des extensions suivantes :
 

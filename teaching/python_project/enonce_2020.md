@@ -44,7 +44,7 @@ limite du nombre de requêtes par jour est relativement élevée, elle).
 
 La trace GPS est fournie dans un fichier au format
 [GeoJSON](https://fr.wikipedia.org/wiki/GeoJSON), comme dans l'exemple du
-fichier `XXX.json` fourni sur CURSUS.
+fichier `marseille-cassis.json` fourni sur CURSUS.
 
 La position instantanée devra être fournie comme entrée à votre programme.
 

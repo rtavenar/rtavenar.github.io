@@ -69,6 +69,8 @@ rencontre pour que ces suiveurs viennent encourager leur coureur sur la portion
 du parcours non encore empruntée. Le point choisi sera celui (ou un de ceux),
 parmi les points du parcours non encore atteints,
 qui minimise la distance maximale aux positions actuelles des suiveurs.
+Autrement dit, on veut qu'aucun suiveur n'ait un chemin trop important à
+parcourir.
 
 3. **Publication de l'état courant sur Twitter**. Étant données des informations
 d'identification pour un compte Twitter, publier  sur le fil Twitter de ce

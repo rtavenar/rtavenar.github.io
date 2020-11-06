@@ -7,7 +7,7 @@ rights: Creative Commons CC BY-NC-SA
 
 # Organisation
 
-* Groupes de 2 ou 3 étudiants **du même groupe de TD**
+* Groupes de 2 ou 3 étudiants ~~du même groupe de TD~~
 * Déclaration des groupes :
   * au plus tard le jeudi 19/11/2020, par dépôt sur CURSUS d'un fichier
   contenant le nom des membres du groupe

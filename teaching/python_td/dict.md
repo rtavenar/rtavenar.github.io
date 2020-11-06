@@ -78,7 +78,7 @@ On pourra utiliser le dictionnaire suivant pour tester la fonction ainsi
 notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]}
 ```
 
-# Pour aller plus loin
+# Devoir
 
 **Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine
 prochaine. Le rendu se fera sous la forme d'un unique fichier Python
@@ -90,3 +90,16 @@ un dictionnaire fusionnant les informations de ces dictionnaires de la manière
 suivante : pour chaque clef présente dans au moins un dictionnaire, la
 valeur associée sera la liste des valeurs associées à cette clef dans les
 dictionnaires passés en argument à la fonction.
+
+Par exemple, pour les dictionnaires suivants :
+
+```python
+dict1 = {"a": 1, "d": 4, "g": 7}
+dict2 = {"a": 1, "b": 2, "h": [8]}
+dict3 = {"a": 2, "c": 3, "h": 9}
+```
+
+La fonction devra retourner :
+```python
+{'a': [1, 1, 2], 'd': [4], 'g': [7], 'b': [2], 'h': [[8], 9], 'c': [3]}
+```

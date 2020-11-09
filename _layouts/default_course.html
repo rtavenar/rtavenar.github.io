@@ -63,6 +63,12 @@
                                         {% if item.colab-corr %}
                                         [<a href="{{ item.colab-corr }}">Colab (correction)</a>]
                                         {% endif %}
+                                        {% if item.colab %}
+                                        [<a href="{{ item.deepnote }}">Deepnote</a>]
+                                        {% endif %}
+                                        {% if item.colab-corr %}
+                                        [<a href="{{ item.deepnote-corr }}">Deepnote (correction)</a>]
+                                        {% endif %}
                                         </span>
                                         {% endif %}
                                     </li>

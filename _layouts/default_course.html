@@ -55,7 +55,7 @@
                                         {% endunless %}
                                         </span>
                                         {% endif %}
-                                        {% if item.colab or item.colab-corr%}
+                                        {% if item.colab or item.colab-corr or item.deepnote or item.deepnote-corr %}
                                         <span class="item-link">
                                         {% if item.colab %}
                                         [<a href="{{ item.colab }}">Colab</a>]

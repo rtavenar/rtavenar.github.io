@@ -3,7 +3,7 @@ sections:
   - title: "Transparents de cours"
     items:
     - name: "<a href=\"pdf/00_scikit-learn.pdf\">Machine learning en Python: <code>scikit-learn</code></a>"
-    # - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"
+    - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"
     # - name: "<a href=\"pdf/02_convnets_tavenard.pdf\">R&eacute;seaux de neurones convolutionnels</a>"
     # - name: "<a href=\"pdf/03_generative_tavenard.pdf\">Mod&egrave;les g&eacute;n&eacute;ratifs</a>"
   - title: "Tutoriels <code>sklearn</code> (notebooks)"

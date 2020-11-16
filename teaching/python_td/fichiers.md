@@ -48,14 +48,14 @@ L2_Python (ou tout autre nom de répertoire parent)
 
 quel est le chemin relatif permettant d'ouvrir le fichier `chose.txt` ?
 
-4. Comment feriez-vous pour définir ce chemin relatif dans votre code Python tout en vous assurant que votre code soit valide quel que soit le système d'exploitation qui l'exécute ?
+4.  Pourquoi préfère-t-on indiquer le chemin relatif, plutôt que le chemin absolu du fichier de données dans le fichier programme ?
 
 
 # Lecture de fichier textuel
 
 5. Écrivez une fonction qui prend en entrée un nom de fichier et retourne le nombre de mots non vides contenus dans le fichier en question (on suppose que les mots sont séparés par des espaces).
 
-6. Utilisez le module `os`{.python} et la fonction codée précédemment pour afficher, fichier par fichier, le nombre de mots des fichiers de votre répertoire `"data"`{.haskell} dont l'extension est `".txt"`{.haskell}.
+6. Utilisez la fonction codée précédemment pour afficher, fichier par fichier, le nombre de mots des fichiers de votre répertoire `"data"`{.haskell} dont l'extension est `".txt"`{.haskell}.
 
 # Écriture de fichier textuel
 
@@ -80,7 +80,7 @@ Ainsi, ces flux sont utilisés de la même manière que les objets `file`{.pytho
 5. Écrivez une fonction qui prend en entrée une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne sur la sortie standard.
 6. Écrivez une fonction qui prend en entrée une liste de chaînes de caractères et écrit chaque chaîne de la liste dans une nouvelle ligne sur l'erreur standard. -->
 
-# Fichers texte structurés
+# Fichiers texte structurés
 
 ## Fichiers CSV
 

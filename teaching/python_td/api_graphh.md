@@ -24,22 +24,10 @@ format suivant :
 
 # Cas des ordinateurs de l'Université de Rennes 2
 
-Sur les ordinateurs de l'Université de Rennes 2, le module `graphh` n'est pas
-installé par défaut.
+Par défaut, le module `graphh` n'est pas
+installé sur votre ordinateur.
 Pour pouvoir l'utiliser, il va donc falloir commencer par l'installer.
-Pour cela, vous devrez :
-
-a. Ouvrir le logiciel `Anaconda Prompt` (bienvenue dans le monde merveilleux
-des lignes de commande :)
-b. Entrer la ligne suivante :
-```
-pip install --user graphh
-```
-
-Une fois cela fait, vous pouvez fermer la fenêtre `Anaconda Prompt` et vous
-devriez pouvoir utiliser ces modules sans soucis (au moins pour la durée de
-votre session, potentiellement un peu plus que cela si vous restez sur la même
-machine) dans PyCharm.
+Pour cela, vous devrez, dans PyCharm, choisir "Fichier -> Préférences", puis dans la barre de gauche "Project" puis "Project Interpreter". Vous avez alors une liste des packages qui s'affiche et, en cliquant sur le "+" en bas à gauche, vous allez pouvoir installer `graphh`.
 
 
 # Énoncé
@@ -100,11 +88,11 @@ négatifs (d'autre part).
 Par exemple, si on a une liste de coordonnées GPS pour lesquelles on a obtenu
 les altitudes suivantes :
 ```python
-[36.61, 65.18, 50.53, 35.80]
+[35.89, 65.73, 51.02, 34.62]
 ```
 on devrait retourner la paire de valeurs :
 ```python
-(28.57, 29.38)
+(29.84, 31.11)
 ```
 
 4. **En utilisant la fonction écrite à la question précédente**,

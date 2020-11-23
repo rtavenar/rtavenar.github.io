@@ -8,6 +8,8 @@ rights: Creative Commons CC BY-NC-SA
 
 # Travail à préparer chez vous avant la séance
 
+## Compte GraphHopper
+
 * Créez-vous un compte GraphHopper en
 [cliquant ici](https://graphhopper.com/dashboard/#/register) (vous
 utiliserez l'URL `http://www.univ-rennes2.fr` pour le champ "site web")
@@ -22,7 +24,7 @@ format suivant :
 ```
 
 
-# Cas des ordinateurs de l'Université de Rennes 2
+## Installation du module `graphh`
 
 Par défaut, le module `graphh` n'est pas
 installé sur votre ordinateur.

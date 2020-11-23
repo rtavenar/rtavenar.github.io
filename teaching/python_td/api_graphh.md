@@ -102,7 +102,7 @@ on devrait retourner la paire de valeurs :
 (contenant des informations sur diverses randonnées) et un client GraphHopper
 et affiche, pour chaque randonnée, son nom (attribut `"name"`{.haskell}) et la
 somme de ses dénivelés positifs (d'une part) et négatifs (d'autre part).
-Pour le fichier `rando_gps.json`, on doit obtenir (après quelque temps, le
+Pour le fichier `mini-rando_gps.json`, on doit obtenir (après quelque temps, le
 nombre de requêtes à effectuer étant assez grand) une sortie du type :
 ```
 TraceGPS Le long de la quincampoix - Pire-sur-Seiche
@@ -115,11 +115,11 @@ TraceGPS Issued  Coemes-Retiers
 	- son dénivelé positif cumulé  73.39 m
 	- son dénivelé négatif cumulé  73.39 m
 ```
-Il est possible que vous ayez une erreur vous indiquant que vous avez atteint
+<!-- Il est possible que vous ayez une erreur vous indiquant que vous avez atteint
 votre quota de requêtes à l'API GraphHopper, dans ce cas, ré-essayez avec le
 fichier `mini-rando_gps.json` disponible sur CURSUS, pour lequel vous devriez
 obtenir des dénivelés (positifs et négatifs) de 14.77m, 8.34m et 74.71m
-respectivement.
+respectivement. -->
 
 ## Pour aller plus loin (ce travail n'est pas à rendre)
 

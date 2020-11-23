@@ -32,7 +32,7 @@ Pour cela, vous devrez, dans PyCharm, choisir "Fichier -> Préférences", puis d
 
 # Énoncé
 
-Le fichier `rando_gps.json` fournit des séries de positions GPS correspondant à
+Le fichier `mini-rando_gps.json` fournit des séries de positions GPS correspondant à
 des traces GPS de sorties randonnée de M. Toulemonde.
 On cherchera dans ce TD à écrire un programme calculant les dénivelés cumulés
 positif et négatif de chacune de ces randonnées.
@@ -103,9 +103,15 @@ somme de ses dénivelés positifs (d'une part) et négatifs (d'autre part).
 Pour le fichier `rando_gps.json`, on doit obtenir (après quelque temps, le
 nombre de requêtes à effectuer étant assez grand) une sortie du type :
 ```
-TraceGPS Le long de la quincampoix - Pire-sur-Seiche D+:  70.11 , D-:  70.11
-TraceGPS Issued  Messac - CIRCUIT DU PORT D+:  29.79 , D-:  29.79
-TraceGPS Issued  Coemes-Retiers D+:  260.64 , D-:  260.64
+TraceGPS Le long de la quincampoix - Pire-sur-Seiche
+	- son dénivelé positif cumulé  16.54 m
+	- son dénivelé négatif cumulé  16.54 m
+TraceGPS Issued  Messac - CIRCUIT DU PORT
+	- son dénivelé positif cumulé   8.97 m
+	- son dénivelé négatif cumulé   8.97 m
+TraceGPS Issued  Coemes-Retiers
+	- son dénivelé positif cumulé  73.39 m
+	- son dénivelé négatif cumulé  73.39 m
 ```
 Il est possible que vous ayez une erreur vous indiquant que vous avez atteint
 votre quota de requêtes à l'API GraphHopper, dans ce cas, ré-essayez avec le
@@ -125,18 +131,18 @@ soit quelque chose du type :
 [
     {
         "name": "TraceGPS Le long de la quincampoix - Pire-sur-Seiche",
-        "D+": 70.11,
-        "D-": 70.11
+        "D+": 16.54,
+        "D-": 16.54
     },
     {
         "name": "TraceGPS Issued  Messac - CIRCUIT DU PORT",
-        "D+": 29.79,
-        "D-": 29.79
+        "D+": 8.97,
+        "D-": 8.97
     },
     {
         "name": "TraceGPS Issued  Coemes-Retiers",
-        "D+": 260.64,
-        "D-": 260.64
+        "D+": 73.39,
+        "D-": 73.39
     }
 ]
 ```

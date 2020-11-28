@@ -33,15 +33,16 @@ seront listés en fin de fichier. De cette manière, vous pourrez, d'une questio
 
 1. Se rendre sur le [site de la STAR](https://data.explore.star.fr/explore/)
 et trouver l'API indiquant les prochains passages de métro rennais.
+Cliquez sur l'onglet "API" pour accéder aux options de requête.
 
 2. Écrire une fonction qui prenne en entrée une chaîne de caractères
 représentant une date et retourne une date en ignorant la "timezone"
 (fuseau horaire, partie à partir du symbole `"+"` dans la chaîne de caractères).
 La date devra être de la même forme que dans l'exemple
 suivant : `"2019-11-23T09:01:52+00:00"`{.haskell}.
-**Attention:** vous devrez considérer deux cas de figure différents :
+**Attention :** vous devrez considérer deux cas de figure différents :
     a. si la fin de la chaîne de caractères est `"+00:00"` : il faudra ajouter 1h à
-    la date extraite car le fuseau horaire n'est pas le bon ;
+    la date extraite car le fuseau horaire n'est pas le nôtre ;
     b. si la fin de la chaîne de caractères est `"+01:00"` : la date sera
     considérée comme correcte.
 
@@ -52,12 +53,8 @@ venir. Cette fonction fera une requête API, en limitant le nombre de résultats
 La liste retournée par cette fonction contiendra des dictionnaires composés de
 3 clés : `"depart"` (contenant l'heure de départ au format `datetime`),
 `"destination"` et `"nomarret"` et vous ne conserverez quer les passages pour
-lesquels l'attribut `precision` vaut `Temps réel`.
-**Attention #1.**, contrairement à ce qui vous a été enseigné en CM, le filtrage
-sur les métros ayant la valeur `Temps réel` pour l'attribut `precision` devra
-se faire dans le code Python car si vous le faites via l'API STAR, les résultats
-obtenus ne sont pas fiables.
-**Attention #2.**, pour certains passages, l'attribut `"depart"` n'existe pas :
+lesquels l'attribut `"precision"` vaut `"Temps réel"`.
+**Attention :** pour certains passages, l'attribut `"depart"` n'existe pas :
 ces passages doivent donc être ignorés
 
 

@@ -333,13 +333,27 @@ line-height:1.1;
 <p>Notamment, vous définirez vos fonctions en début de fichier et les appels seront listés en fin de fichier. De cette manière, vous pourrez, d’une question à l’autre, réutiliser les fonctions déjà codées au besoin.</p>
 <h1 id="énoncé"><span class="header-section-number">2</span> Énoncé</h1>
 <ol type="1">
-<li><p>Se rendre sur le <a href="https://data.explore.star.fr/explore/">site de la STAR</a> et trouver l’API indiquant les prochains passages de métro rennais. Cliquez sur l’onglet “API” pour accéder aux options de requête.</p></li>
+<li>Se rendre sur le <a href="https://data.explore.star.fr/explore/">site de la STAR</a> et trouver l’API indiquant les prochains passages de métro rennais. Cliquez sur l’onglet “API” pour accéder aux options de requête. Essayez notamment d’ajouter le <em>facet</em> <code>&quot;depart&quot;</code> et notez le format de date utilisé.</li>
+</ol>
+<p>Petit point sur :</p>
+<p><strong>UTC, Temps Universel Coordonné, (Coordinated Universal Time)</strong> est une échelle de temps adoptée comme base universelle. En France, nous avons une heure d’avance sur ce temps de référence. Pour représenter une date complète utilisable à l’international l’API de la Star utilise le modèle suivant <code>&quot;jourThoraire+timezone&quot;</code> en trois parties avec pour séparateurs <code>&quot;T&quot;</code> et <code>&quot;+&quot;</code> où :</p>
+<ul>
+<li>jour = <code>&quot;aaaa-mm-jj&quot;</code> ,</li>
+<li>horaire = <code>&quot;hh:mn:sc&quot;</code>,</li>
+<li>timezone <code>IN {&quot;00:00&quot;, &quot;01:00&quot;...}</code></li>
+</ul>
+<p>Ainsi :</p>
+<ul>
+<li>si timezone vaut <code>&quot;01:00&quot;</code> il s’agit de l’heure “en France”,</li>
+<li>si timezone vaut <code>&quot;00:00&quot;</code>, il y a une heure de retard</li>
+</ul>
+<ol start="2" type="1">
 <li><p>Écrire une fonction qui prenne en entrée une chaîne de caractères représentant une date et retourne une date en ignorant la “timezone” (fuseau horaire, partie à partir du symbole <code>&quot;+&quot;</code> dans la chaîne de caractères). La date devra être de la même forme que dans l’exemple suivant : <code class="sourceCode haskell"><span class="st">&quot;2019-11-23T09:01:52+00:00&quot;</span></code>. <strong>Attention :</strong> vous devrez considérer deux cas de figure différents :</p>
 <ol type="a">
 <li>si la fin de la chaîne de caractères est <code>&quot;+00:00&quot;</code> : il faudra ajouter 1h à la date extraite car le fuseau horaire n’est pas le nôtre ;</li>
 <li>si la fin de la chaîne de caractères est <code>&quot;+01:00&quot;</code> : la date sera considérée comme correcte.</li>
 </ol></li>
-<li><p>Écrire une fonction qui retourne la liste de tous les passages de métro à venir. Cette fonction fera une requête API, en limitant le nombre de résultats à 100 lignes. La liste retournée par cette fonction contiendra des dictionnaires composés de 3 clés : <code>&quot;depart&quot;</code> (contenant l’heure de départ au format <code>datetime</code>), <code>&quot;destination&quot;</code> et <code>&quot;nomarret&quot;</code> et vous ne conserverez quer les passages pour lesquels l’attribut <code>&quot;precision&quot;</code> vaut <code>&quot;Temps réel&quot;</code>. <strong>Attention :</strong> pour certains passages, l’attribut <code>&quot;depart&quot;</code> n’existe pas : ces passages doivent donc être ignorés</p></li>
+<li><p>Écrire une fonction qui retourne la liste de tous les passages de métro à venir. Cette fonction fera une requête API, en limitant le nombre de résultats à 100 lignes. La liste retournée par cette fonction contiendra des dictionnaires composés de 3 clés : <code>&quot;depart&quot;</code> (contenant l’heure de départ au format <code>datetime</code>), <code>&quot;destination&quot;</code> et <code>&quot;nomarret&quot;</code> et vous ne conserverez que les passages pour lesquels l’attribut <code>&quot;precision&quot;</code> vaut <code>&quot;Temps réel&quot;</code>. <strong>Attention :</strong> pour certains passages, l’attribut <code>&quot;depart&quot;</code> n’existe pas : ces passages doivent donc être ignorés</p></li>
 <li><p>Écrire une fonction qui prenne en entrée une liste de passages tels que ceux retournés par la question précédente et un délai <code>t</code> en minutes et qui retourne la liste des passages qui auront lieu dans un délai de <code>t</code> minutes après l’instant présent. Tester cette fonction en affichant la liste des prochains passages de métro dans les 10 minutes à venir.</p></li>
 </ol>
 </body>

@@ -14,7 +14,6 @@ Dans ce fichier, votre code sera organisé de la manière suivante :
 ```python
 # Imports
 import requests
-import json
 import datetime
 
 # Fonctions
@@ -59,8 +58,13 @@ utilisé.
 2. Écrire une fonction qui prenne en entrée une chaîne de caractères
 représentant une date et retourne une date en ignorant la "timezone"
 (fuseau horaire, partie à partir du symbole `"+"` dans la chaîne de caractères).
-La date devra être de la même forme que dans l'exemple
-suivant : `"2019-11-23T09:01:52+00:00"`{.haskell}.
+La date d'entrée de cette fonction devra être une chaine de caractères dont le
+modèle suit les caractéristiques de l'exemple
+suivant : `"2020-11-23T09:01:52+00:00"`{.haskell}
+et la date de sortie doit être :
+- du type date de Python (ce qui permet la réalisation de calculs, de comparaison...) ,
+- privé de timezone et
+- son horaire doit être celui de fuseau horaire français.
 **Attention :** vous devrez considérer deux cas de figure différents :
     a. si la fin de la chaîne de caractères est `"+00:00"` : il faudra ajouter 1h à
     la date extraite car le fuseau horaire n'est pas le nôtre ;

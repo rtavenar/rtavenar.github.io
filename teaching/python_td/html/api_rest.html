@@ -335,6 +335,7 @@ line-height:1.1;
 <ol type="1">
 <li>Se rendre sur le <a href="https://data.explore.star.fr/explore/">site de la STAR</a> et trouver l’API indiquant les prochains passages de métro rennais. Cliquez sur l’onglet “API” pour accéder aux options de requête. Essayez notamment d’ajouter le <em>facet</em> <code>&quot;depart&quot;</code> et notez le format de date utilisé.</li>
 </ol>
+<blockquote>
 <p>Petit point sur :</p>
 <p><strong>UTC, Temps Universel Coordonné, (Coordinated Universal Time)</strong> est une échelle de temps adoptée comme base universelle. En France, nous avons une heure d’avance sur ce temps de référence. Pour représenter une date complète utilisable à l’international l’API de la Star utilise le modèle suivant <code>&quot;jourThoraire+timezone&quot;</code> en trois parties avec pour séparateurs <code>&quot;T&quot;</code> et <code>&quot;+&quot;</code> où :</p>
 <ul>
@@ -347,6 +348,7 @@ line-height:1.1;
 <li>si timezone vaut <code>&quot;01:00&quot;</code> il s’agit de l’heure “en France”,</li>
 <li>si timezone vaut <code>&quot;00:00&quot;</code>, il y a une heure de retard</li>
 </ul>
+</blockquote>
 <ol start="2" type="1">
 <li><p>Écrire une fonction qui prenne en entrée une chaîne de caractères représentant une date et retourne une date en ignorant la “timezone” (fuseau horaire, partie à partir du symbole <code>&quot;+&quot;</code> dans la chaîne de caractères). La date devra être de la même forme que dans l’exemple suivant : <code class="sourceCode haskell"><span class="st">&quot;2019-11-23T09:01:52+00:00&quot;</span></code>. <strong>Attention :</strong> vous devrez considérer deux cas de figure différents :</p>
 <ol type="a">

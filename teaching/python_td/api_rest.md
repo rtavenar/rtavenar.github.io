@@ -37,24 +37,24 @@ Cliquez sur l'onglet "API" pour accéder aux options de requête.
 Essayez notamment d'ajouter le _facet_ `"depart"` et notez le format de date
 utilisé.
 
-Petit point sur :
-
-**UTC, Temps Universel Coordonné, (Coordinated Universal Time)**
-est une échelle de temps adoptée comme base universelle.
-En France, nous avons une heure d'avance sur ce temps de référence.
-Pour représenter une date complète utilisable à l'international
-l'API de la Star utilise le modèle suivant
-`"jourThoraire+timezone"` en trois parties avec pour séparateurs `"T"` et `"+"`
-où :
-
-- jour = `"aaaa-mm-jj"` ,
--  horaire = `"hh:mn:sc"`,
--  timezone `IN {"00:00", "01:00"...}`
-
-Ainsi :
-
-- si timezone vaut `"01:00"` il s'agit de l'heure "en France",
-- si timezone vaut `"00:00"`, il y a une heure de retard
+> Petit point sur :
+>
+> **UTC, Temps Universel Coordonné, (Coordinated Universal Time)**
+> est une échelle de temps adoptée comme base universelle.
+> En France, nous avons une heure d'avance sur ce temps de référence.
+> Pour représenter une date complète utilisable à l'international
+> l'API de la Star utilise le modèle suivant
+> `"jourThoraire+timezone"` en trois parties avec pour séparateurs `"T"` et `"+"`
+> où :
+>
+> - jour = `"aaaa-mm-jj"` ,
+> -  horaire = `"hh:mn:sc"`,
+> -  timezone `IN {"00:00", "01:00"...}`
+>
+> Ainsi :
+>
+> - si timezone vaut `"01:00"` il s'agit de l'heure "en France",
+> - si timezone vaut `"00:00"`, il y a une heure de retard
 
 2. Écrire une fonction qui prenne en entrée une chaîne de caractères
 représentant une date et retourne une date en ignorant la "timezone"

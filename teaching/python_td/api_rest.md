@@ -65,6 +65,7 @@ et la date de sortie doit être :
 - du type date de Python (ce qui permet la réalisation de calculs, de comparaison...) ,
 - privé de timezone et
 - son horaire doit être celui de fuseau horaire français.
+
 **Attention :** vous devrez considérer deux cas de figure différents :
     a. si la fin de la chaîne de caractères est `"+00:00"` : il faudra ajouter 1h à
     la date extraite car le fuseau horaire n'est pas le nôtre ;
@@ -79,6 +80,7 @@ La liste retournée par cette fonction contiendra des dictionnaires composés de
 3 clés : `"depart"` (contenant l'heure de départ au format `datetime`),
 `"destination"` et `"nomarret"` et vous ne conserverez que les passages pour
 lesquels l'attribut `"precision"` vaut `"Temps réel"`.
+
 **Attention :** pour certains passages, l'attribut `"depart"` n'existe pas :
 ces passages doivent donc être ignorés
 

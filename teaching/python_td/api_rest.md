@@ -101,4 +101,4 @@ précisément, le nombre de points dans cette rue pour lesquels le traffic est
 fluide (`"freeFlow"`) et le nombre de points pour lesquels le traffic est
 chargé (`"congested"` ou `"heavy"`).
 Votre fonction devra s'assurer que les données récoltées sont récentes
-(datent de moins de 2h) et afficher un message d'erreur si ce n'est pas le cas.
+(datent toutes de moins de 2h) et afficher un message d'erreur si ce n'est pas le cas.

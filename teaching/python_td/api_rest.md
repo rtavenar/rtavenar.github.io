@@ -84,3 +84,21 @@ tels que ceux retournés par la question précédente et un délai `t` en minute
 qui retourne la liste des passages qui auront lieu dans un délai de `t` minutes
 après l’instant présent. Tester cette fonction en affichant la liste des
 prochains passages de métro dans les 10 minutes à venir.
+
+# Devoir
+
+**Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine
+prochaine. Le rendu se fera sous la forme d'un unique fichier Python
+(pas de version `.txt` ou `.pdf`) structuré
+comme demandé plus haut et contenant le code relatif à cette partie. Ce code
+devra se suffire à lui-même et devra donc contenir les éventuelles fonctions
+annexes appelées par ce code.**
+
+5. En utilisant le service
+[Open Data de Rennes Métropole](https://data.rennesmetropole.fr/), écrivez une
+fonction qui affiche l'état de la circulation dans la rue de Vezin, et plus
+précisément, le nombre de points dans cette rue pour lesquels le traffic est
+fluide (`"freeFlow"`) et le nombre de points pour lesquels le traffic est
+chargé (`"congested"` ou `"heavy"`).
+Votre fonction devra s'assurer que les données récoltées sont récentes
+(datent de moins de 2h) et afficher un message d'erreur si ce n'est pas le cas.

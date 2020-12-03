@@ -13,7 +13,7 @@ Dans ce fichier, votre code sera organisé de la manière suivante :
 
 ```python
 # Imports
-import urllib.request
+import requests
 import json
 import datetime
 

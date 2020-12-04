@@ -1,4 +1,4 @@
-TARGETS=intro fonctions turtle listes_dates listes_avancees chaines dict fichiers numpy chifoumi racine premier kpg nettoyage entrainement entrainement_nocorr tdinverse tdinverse_post_cm tdinverse_milieu_td corrigemastermind corrigetictactoe2020 bataille_navale api bataille_navale_intermediaire1 bataille_navale_intermediaire2  bataille_navale_intermediaire3  bataille_navale_intermediaire_corneille corrigetictactoe2019 api_graphh api_rest
+TARGETS=intro fonctions turtle listes_dates listes_avancees chaines dict fichiers numpy chifoumi racine premier kpg nettoyage entrainement entrainement_nocorr tdinverse tdinverse_post_cm tdinverse_milieu_td corrigemastermind corrigetictactoe2020 bataille_navale bataille_navale_post_cm2020 api bataille_navale_intermediaire1 bataille_navale_intermediaire2  bataille_navale_intermediaire3  bataille_navale_intermediaire_corneille corrigetictactoe2019 api_graphh api_rest
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

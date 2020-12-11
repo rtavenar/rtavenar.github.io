@@ -12,7 +12,8 @@ rights: Creative Commons CC BY-NC-SA
   * au plus tard le jeudi 19/11/2020, par dépôt sur CURSUS d'un fichier
   contenant le nom des membres du groupe
   * si pas inscrit dans un groupe à cette date : note de 0 au projet
-* Rendu final : au plus tard le vendredi 18/12/2020, 23h59
+* Rendu final : au plus tard le ~~vendredi 18/12/2020~~ **dimanche 27/12/2020**,
+23h59
 
 # Énoncé
 

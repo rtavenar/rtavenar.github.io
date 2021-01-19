@@ -28,7 +28,6 @@ Pour connaître la liste des collections contenues dans une base de données, on
 
 ```javascript
 db.getCollectionInfos()
-[...]
 ```
 
 Enfin, pour connaître le nombre de documents dans une collection, la syntaxe à utiliser est :

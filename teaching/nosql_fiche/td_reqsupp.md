@@ -8,7 +8,8 @@ rights: Creative Commons CC BY-NC-SA
 
 # Avant-propos
 
-Les bases de données utilisées ici sont les mêmes que celles utilisées lors du TD précédent. Si besoin, pensez à les recharger sur le serveur.
+Les bases de données utilisées ici sont les mêmes que celles utilisées lors du TD précédent.
+
 
 # La base `test`
 

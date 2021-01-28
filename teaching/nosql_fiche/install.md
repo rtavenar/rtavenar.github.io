@@ -28,6 +28,27 @@ d'accueil indiquant qu'il s'agit bien de la machine virtuelle qui vous servira
 de serveur MongoDB pour ce cours. Conservez la fenêtre de cette machine
 virtuelle (éventuellement en arrière-plan).
 
+## Si votre ordinateur ne supporte pas la virtualisation
+
+Il semble que sur certaines machines, la virtualisation ne puisse pas
+fonctionner.
+Dans ce cas, deux solutions s'offrent à vous (la première étant probablement la
+plus simple à mettre en oeuvre) :
+
+1. pendant les TD, vous utiliserez une connexion à une instance
+MongoDB Atlas pour laquelle les informations de connexion vous sont fournies à
+l'étape 2 :
+les bases de données auxquelles vous vous connecterez seront
+alors hébergées en ligne et vous n'aurez pas de droit de modification sur ces
+bases.
+2. une autre option consiste à installer (puis lancer) un
+serveur MongoDB
+sur votre machine en suivant les instructions fournies à l'adresse :
+<https://docs.mongodb.com/manual/administration/install-community/>
+
+Dans ces deux cas, la solution proposée est à effectuer en lieu et place de
+l'étape 1, mais l'étape 2 qui suit reste nécessaire (_cf._ "Alternative 2").
+
 # Étape 2 : installation d'un client avec interface graphique
 
 Il existe plusieurs clients MongoDB. Pour ce cours, je vous propose d'utiliser
@@ -90,25 +111,3 @@ Si cette installation s'est bien passée, pour utiliser MongoDB durant le
 semestre, vous n'aurez qu'à redémarrer la machine virtuelle dans VirtualBox
 (d'une part) et le client Robo 3T en lui demandant de se connecter à la même
 adresse que précédemment (d'autre part).
-
-# Si votre ordinateur ne supporte pas la virtualisation
-
-Il semble que sur certaines machines, la virtualisation ne puisse pas
-fonctionner.
-Dans ce cas, deux solutions s'offrent à vous :
-
-1. la plus simple sera d'utiliser, pendant les TD, une connexion à une instance
-MongoDB Atlas pour laquelle les informations de connexion vous sont fournies à
-l'étape 2 :
-les bases de données auxquelles vous vous connecterez seront
-alors hébergées en ligne et vous n'aurez pas de droit de modification sur ces
-bases.
-2. une autre option consiste à installer (puis lancer) un
-serveur MongoDB
-sur votre machine en suivant les instructions fournies à l'adresse :
-<https://docs.mongodb.com/manual/administration/install-community/>
-
-Dans ces deux cas, la solution proposée est à effectuer en lieu et place de
-l'étape 1 ci-dessus. La connexion à la base de données depuis le client Robo 3T
-(et donc l'installation de ce client)
-reste nécessaire quelle que soit l'option retenue.

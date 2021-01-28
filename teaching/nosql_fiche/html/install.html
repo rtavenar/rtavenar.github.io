@@ -191,15 +191,7 @@ img[alt=fullwidth] { width: 100%; }
 img[alt=fullwidth_with_border] { width: 100%; border: 1px solid black; }
 img[alt=halfwidth] { width: 45%; margin-left: auto; margin-right: auto;}
 img[alt=halfwidth_with_border] { width: 45%; margin-left: auto; margin-right: auto; border: 1px solid black; }
-.javascript, .bash_client, pre.bash_client code {
-background-color: #FFB6C1;
-}
-.bash {
-background-color: #90EE90;
-}
-.bash_alt, pre.bash_alt code {
-background-color: #ADD8E6;
-}
+
 
 body#index li {
 margin-bottom: 1em;
@@ -269,6 +261,13 @@ line-height:1.1;
 <p>Pour installer ce serveur, nous allons utiliser une machine virtuelle, qui tournera grâce au logiciel virtualbox. Si vous ne disposez pas déjà de ce logiciel, vous pouvez l’installer en suivant les instructions à cette adresse : <a href="https://www.virtualbox.org/wiki/Downloads" class="uri">https://www.virtualbox.org/wiki/Downloads</a>.</p>
 <p>Ensuite, téléchargez l’image préparée pour ce cours<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Démarrez VirtualBox, puis sélectionnez “Fichier -&gt; Importer un appareil virtuel”. Cela devrait ajouter une machine virtuelle nommée “VM_MongoDB” dans la liste de VirtualBox.</p>
 <p>Dans VirtualBox, sélectionnez cette machine et cliquez sur “Démarrer” (flèche verte). Une fois la machine correctement démarrée, vous devriez voir un message d’accueil indiquant qu’il s’agit bien de la machine virtuelle qui vous servira de serveur MongoDB pour ce cours. Conservez la fenêtre de cette machine virtuelle (éventuellement en arrière-plan).</p>
+<h2 id="si-votre-ordinateur-ne-supporte-pas-la-virtualisation"><span class="header-section-number">1.1</span> Si votre ordinateur ne supporte pas la virtualisation</h2>
+<p>Il semble que sur certaines machines, la virtualisation ne puisse pas fonctionner. Dans ce cas, deux solutions s’offrent à vous (la première étant probablement la plus simple à mettre en oeuvre) :</p>
+<ol type="1">
+<li>pendant les TD, vous utiliserez une connexion à une instance MongoDB Atlas pour laquelle les informations de connexion vous sont fournies à l’étape 2 : les bases de données auxquelles vous vous connecterez seront alors hébergées en ligne et vous n’aurez pas de droit de modification sur ces bases.</li>
+<li>une autre option consiste à installer (puis lancer) un serveur MongoDB sur votre machine en suivant les instructions fournies à l’adresse : <a href="https://docs.mongodb.com/manual/administration/install-community/" class="uri">https://docs.mongodb.com/manual/administration/install-community/</a></li>
+</ol>
+<p>Dans ces deux cas, la solution proposée est à effectuer en lieu et place de l’étape 1, mais l’étape 2 qui suit reste nécessaire (<em>cf.</em> “Alternative 2”).</p>
 <h1 id="étape-2-installation-dun-client-avec-interface-graphique"><span class="header-section-number">2</span> Étape 2 : installation d’un client avec interface graphique</h1>
 <p>Il existe plusieurs clients MongoDB. Pour ce cours, je vous propose d’utiliser un client appelé Robo 3T. Vous pourrez le télécharger à cette adresse : <a href="https://robomongo.org/download" class="uri">https://robomongo.org/download</a> (sélectionnez “Download Robo 3T only”).</p>
 <p>Une fois téléchargé et installé, si vous le lancez, il vous proposera de créer de nouvelles connexions à des bases de données.</p>
@@ -297,13 +296,6 @@ line-height:1.1;
 <p>Enfin, cliquez sur “Connect”. Si tout se passe bien, vous devriez voir, dans votre fenêtre Robo 3T plusieurs bases auxquelles vous connecter : c’est que tout fonctionne.</p>
 <h1 id="pour-utiliser-mongodb-durant-le-semestre"><span class="header-section-number">3</span> Pour utiliser MongoDB durant le semestre</h1>
 <p>Si cette installation s’est bien passée, pour utiliser MongoDB durant le semestre, vous n’aurez qu’à redémarrer la machine virtuelle dans VirtualBox (d’une part) et le client Robo 3T en lui demandant de se connecter à la même adresse que précédemment (d’autre part).</p>
-<h1 id="si-votre-ordinateur-ne-supporte-pas-la-virtualisation"><span class="header-section-number">4</span> Si votre ordinateur ne supporte pas la virtualisation</h1>
-<p>Il semble que sur certaines machines, la virtualisation ne puisse pas fonctionner. Dans ce cas, deux solutions s’offrent à vous :</p>
-<ol type="1">
-<li>la plus simple sera d’utiliser, pendant les TD, une connexion à une instance MongoDB Atlas pour laquelle les informations de connexion vous sont fournies à l’étape 2 : les bases de données auxquelles vous vous connecterez seront alors hébergées en ligne et vous n’aurez pas de droit de modification sur ces bases.</li>
-<li>une autre option consiste à installer (puis lancer) un serveur MongoDB sur votre machine en suivant les instructions fournies à l’adresse : <a href="https://docs.mongodb.com/manual/administration/install-community/" class="uri">https://docs.mongodb.com/manual/administration/install-community/</a></li>
-</ol>
-<p>Dans ces deux cas, la solution proposée est à effectuer en lieu et place de l’étape 1 ci-dessus. La connexion à la base de données depuis le client Robo 3T (et donc l’installation de ce client) reste nécessaire quelle que soit l’option retenue.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>

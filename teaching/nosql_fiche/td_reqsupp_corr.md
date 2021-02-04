@@ -56,8 +56,9 @@ Les bases de données utilisées ici sont les mêmes que celles utilisées lors 
 7. Même question en rejetant les étudiants n'ayant pas eu de note.
 
 ```javascript
-> db.notes.find({$and: [{"notes": {$exists: true, $not: {$size: 0}}},
-                        {"notes": {$not: {$lt: 10}}}]})
+> db.notes.find({$nor: [{"notes": {$exists: false}},
+                        {"notes": {$size: 0}},
+                        {"notes": {$lt: 10}}]})
 ```
 
 # La base `food`
@@ -93,5 +94,7 @@ Les bases de données utilisées ici sont les mêmes que celles utilisées lors 
 12. Affichez la liste des restaurants n'ayant que des notes `"A"`{.javascript}.
 
 ```javascript
-> db.NYfood.find({"grades.grade": {$not: {$gte: "B"}}})
+> db.NYfood.find({$nor: [{"grades.grade": {$exists: false}},
+                         {"grades.grade": {$size: 0}},
+                         {"grades.grade": {$gt: "A"}}]})
 ```

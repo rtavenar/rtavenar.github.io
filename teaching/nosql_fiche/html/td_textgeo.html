@@ -254,15 +254,7 @@ img[alt=fullwidth] { width: 100%; }
 img[alt=fullwidth_with_border] { width: 100%; border: 1px solid black; }
 img[alt=halfwidth] { width: 45%; margin-left: auto; margin-right: auto;}
 img[alt=halfwidth_with_border] { width: 45%; margin-left: auto; margin-right: auto; border: 1px solid black; }
-.javascript {
-background-color: #FFB6C1;
-}
-.bash {
-background-color: #90EE90;
-}
-.bash_alt, pre.bash_alt code {
-background-color: #ADD8E6;
-}
+
 
 body#index li {
 margin-bottom: 1em;
@@ -328,14 +320,9 @@ line-height:1.1;
 <p class="subtitle">Planche de TD pour un cours dispensé à  l’université de Rennes 2</p>
 <p class="author">Romain Tavenard</p>
 </header>
-<h1 id="chargement-de-la-base-discours"><span class="header-section-number">1</span> Chargement de la base <code>discours</code></h1>
-<ol start="0" type="1">
-<li>Chargez la base <code>elections2007</code> disponible sous forme de fichier JSON sur CURSUS et nommez la collection contenant ces données <code>discours</code> (<em>cf.</em> l’aide de la commande <code>mongoimport</code> si besoin). Ajoutez, sur l’attribut <code>content</code> de la collection <code>discours</code>, un index textuel en langue française (<em>cf.</em> <a href="https://docs.mongodb.com/manual/tutorial/specify-language-for-text-index/">doc de MongoDB</a>).</li>
-</ol>
-<p>Si vous n’avez plus la base <code>food</code> à votre disposition sur votre serveur MongoDB, il faudra la recharger également, et mettre en place l’index géo-spatial comme vu au TD précédent.</p>
-<h1 id="requêtes-textuelles"><span class="header-section-number">2</span> Requêtes textuelles</h1>
+<h1 id="requêtes-textuelles"><span class="header-section-number">1</span> Requêtes textuelles</h1>
 <p>Pour cette partie, vous travaillerez sur la base <code>elections2007</code>.</p>
-<h2 id="expressions-régulières"><span class="header-section-number">2.1</span> Expressions régulières</h2>
+<h2 id="expressions-régulières"><span class="header-section-number">1.1</span> Expressions régulières</h2>
 <p>Lorsque l’on souhaite interroger des champs textuels, il existe, en plus des outils précédemment introduits, deux méthodes spécifiques :</p>
 <ol type="1">
 <li>l’utilisation d’expressions régulières ;</li>
@@ -358,13 +345,15 @@ line-height:1.1;
 <li><p>Affichez la liste des discours pour lesquels l’orateur a un nom qui commence par la lettre S.</p></li>
 <li><p>Affichez la liste des discours pour lesquels l’orateur a un prénom composé.</p></li>
 </ol>
-<h2 id="requêtes-de-type-moteur-de-recherche"><span class="header-section-number">2.2</span> Requêtes de type “moteur de recherche”</h2>
-<p>Dans certains cas, on souhaitera chercher dans des champs textuels comme on le ferait à  l’aide d’un moteur de recherche. Pour cela, il faut qu’un index spécifique soit mis en place sur le champ en question. Nous verrons plus tard dans ce cours la notion d’index, mais vous pouvez dès maintenant vérifier qu’un tel index existe :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">getIndexes</span>()</a></code></pre></div>
+<h2 id="requêtes-de-type-moteur-de-recherche"><span class="header-section-number">1.2</span> Requêtes de type “moteur de recherche”</h2>
+<p>Dans certains cas, on souhaitera chercher dans des champs textuels comme on le ferait à  l’aide d’un moteur de recherche. Pour cela, il faut qu’un index spécifique soit mis en place sur le champ en question.</p>
+<ol start="5" type="1">
+<li>Vérifiez qu’un tel index existe.</li>
+</ol>
 <p>Lorsqu’un tel index existe, MongoDB saura que c’est sur le champ correspondant qu’il faudra effectuer les requêtes textuelles et il ne sera donc plus utile de le préciser. On obtiendra alors une requête de la forme :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text </span><span class="op">:</span> <span class="op">{</span><span class="dt">$search </span><span class="op">:</span> <span class="st">&quot;ma requête&quot;}})</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text </span><span class="op">:</span> <span class="op">{</span><span class="dt">$search </span><span class="op">:</span> <span class="st">&quot;ma requête&quot;}})</span></a></code></pre></div>
 <p>Par défaut, lorsque l’on effectue une requête contenant plusieurs termes, un <code>OU</code> logique est effectué : les documents retournés sont ceux qui contiennent au moins l’un des termes. On peut également effectuer une requête impliquant une expression exacte, qui sera encadrée de guillemets échappés par un caractère <code class="sourceCode javascript"><span class="st">&quot;</span><span class="sc">\&quot;</span></code> :</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text </span><span class="op">:</span> <span class="op">{</span><span class="dt">$search </span><span class="op">:</span> <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">ma requête\&quot;&quot;}})</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text </span><span class="op">:</span> <span class="op">{</span><span class="dt">$search </span><span class="op">:</span> <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">ma requête\&quot;&quot;}})</span></a></code></pre></div>
 <p>Enfin, on peut exclure les documents contenant certains termes en précédant chacun de ces termes par le symbole <code class="sourceCode javascript"><span class="st">&quot;-&quot;</span></code>. Toutefois, si l’on mélange plusieurs types de conditions, un <code>ET</code> logique est effectué entre les différents types, comme par exemple :</p>
 <ul>
 <li>chaîne exacte et termes isolés ;</li>
@@ -372,15 +361,15 @@ line-height:1.1;
 <li>inclusion de certains termes et exclusion d’autre termes.</li>
 </ul>
 <p>Par exemple, la requête suivante retournera tous les documents contenant le terme <code class="sourceCode javascript"><span class="st">&quot;bla&quot;</span></code> <code>ET</code> ne contenant pas le terme <code class="sourceCode javascript"><span class="st">&quot;bli&quot;</span></code> :</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text </span><span class="op">:</span> <span class="op">{</span><span class="dt">$search </span><span class="op">:</span> <span class="st">&quot;bla -bli&quot;</span><span class="op">}}</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text </span><span class="op">:</span> <span class="op">{</span><span class="dt">$search </span><span class="op">:</span> <span class="st">&quot;bla -bli&quot;</span><span class="op">}}</span>)</a></code></pre></div>
 <p>Enfin, il est possible d’afficher les scores (type tf-idf) obtenus par les différents documents à  l’aide de la commande :</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text</span><span class="op">:</span> <span class="op">{</span><span class="dt">$search</span><span class="op">:</span> <span class="st">&quot;ma requête&quot;}},</span></a>
-<a class="sourceLine" id="cb6-2" title="2">                            <span class="op">{</span><span class="st">&quot;score&quot;</span><span class="op">:</span> <span class="op">{</span><span class="dt">$meta</span><span class="op">:</span> <span class="st">&quot;textScore&quot;</span><span class="op">}}</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text</span><span class="op">:</span> <span class="op">{</span><span class="dt">$search</span><span class="op">:</span> <span class="st">&quot;ma requête&quot;}},</span></a>
+<a class="sourceLine" id="cb5-2" title="2">                            <span class="op">{</span><span class="st">&quot;score&quot;</span><span class="op">:</span> <span class="op">{</span><span class="dt">$meta</span><span class="op">:</span> <span class="st">&quot;textScore&quot;</span><span class="op">}}</span>)</a></code></pre></div>
 <p>Dans ce cas, il sera souvent utile de trier les résultats par ordre de pertinence décroissante :</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text</span><span class="op">:</span> <span class="op">{</span><span class="dt">$search</span><span class="op">:</span> <span class="st">&quot;ma requête&quot;}},</span></a>
-<a class="sourceLine" id="cb7-2" title="2">                            <span class="op">{</span><span class="st">&quot;score&quot;</span><span class="op">:</span> <span class="op">{</span><span class="dt">$meta</span><span class="op">:</span> <span class="st">&quot;textScore&quot;</span><span class="op">}}</span>).<span class="at">sort</span>(</a>
-<a class="sourceLine" id="cb7-3" title="3">                                <span class="op">{</span><span class="dt">score</span><span class="op">:</span> <span class="op">{</span><span class="dt">$meta</span><span class="op">:</span> <span class="st">&quot;textScore&quot;</span><span class="op">}}</span>)</a></code></pre></div>
-<ol start="5" type="1">
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="dt">$text</span><span class="op">:</span> <span class="op">{</span><span class="dt">$search</span><span class="op">:</span> <span class="st">&quot;ma requête&quot;}},</span></a>
+<a class="sourceLine" id="cb6-2" title="2">                            <span class="op">{</span><span class="st">&quot;score&quot;</span><span class="op">:</span> <span class="op">{</span><span class="dt">$meta</span><span class="op">:</span> <span class="st">&quot;textScore&quot;</span><span class="op">}}</span>).<span class="at">sort</span>(</a>
+<a class="sourceLine" id="cb6-3" title="3">                                <span class="op">{</span><span class="dt">score</span><span class="op">:</span> <span class="op">{</span><span class="dt">$meta</span><span class="op">:</span> <span class="st">&quot;textScore&quot;</span><span class="op">}}</span>)</a></code></pre></div>
+<ol start="6" type="1">
 <li><p>Affichez la liste des documents contenant l’expression exacte suivante : <code class="sourceCode javascript"><span class="st">&quot;l&#39;effet sera nul&quot;</span></code>.</p></li>
 <li><p>Affichez la liste des discours dans lesquels ont été prononcés :</p></li>
 </ol>
@@ -389,11 +378,11 @@ line-height:1.1;
 <li>l’un des termes écologie ou politique</li>
 <li>les deux termes écologie et politique</li>
 </ul>
-<ol start="7" type="1">
+<ol start="8" type="1">
 <li><p>Vérifiez que les scores retournés dans la deuxième requête de la question précédente tendent à  favoriser les documents contenant les deux termes (les autres documents ont des scores plus faibles).</p></li>
 <li><p>Affichez la liste des documents comportant le terme <code class="sourceCode javascript"><span class="st">&quot;famille&quot;</span></code> mais pas le terme <code class="sourceCode javascript"><span class="st">&quot;politique&quot;</span></code>.</p></li>
 </ol>
-<h1 id="requêtes-géo-spatiales"><span class="header-section-number">3</span> Requêtes géo-spatiales</h1>
+<h1 id="requêtes-géo-spatiales"><span class="header-section-number">2</span> Requêtes géo-spatiales</h1>
 <p>Dans le cas de données géo-spatiales, on peut avoir à  effectuer des requêtes spécifiques, comme par exemple :</p>
 <ul>
 <li>trouver les éléments de la base les plus proches d’un point donné ;</li>
@@ -401,7 +390,7 @@ line-height:1.1;
 <li>trouver les éléments de la base dont au moins une partie est incluse dans un polygone donné (ce qui peut être utile si la base représente des rues par exemple et que l’on veut retourner toutes les rues appartenant au moins partiellement au polygone défini).</li>
 </ul>
 <p>Pour cela, il faut tout d’abord s’assurer qu’un index géo-spatial (de type <code>2dsphere</code> pour des coordonnées à  la surface de la terre) existe sur le champ visé.</p>
-<ol start="9" type="1">
+<ol start="10" type="1">
 <li>Vérifiez qu’un index géo-spatial existe sur l’un des champs de la collection <code>NYfood</code> de la base <code>food</code>.</li>
 </ol>
 <p>MongoDB définit trois mots-clés correspondant aux situations définies précédemment :</p>
@@ -410,22 +399,22 @@ line-height:1.1;
 <li><code>$within</code>.</li>
 </ul>
 <p>La syntaxe correspondante est toujours de la même forme (remplacer <code>$near</code> par <code>$within</code> au besoin) :</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="st">&quot;clé&quot;</span><span class="op">:</span> <span class="op">{</span><span class="dt">$near </span><span class="op">:</span> <span class="op">{</span><span class="dt">$geometry </span><span class="op">:</span> ref<span class="op">}}}</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span><span class="st">&quot;clé&quot;</span><span class="op">:</span> <span class="op">{</span><span class="dt">$near </span><span class="op">:</span> <span class="op">{</span><span class="dt">$geometry </span><span class="op">:</span> ref<span class="op">}}}</span>)</a></code></pre></div>
 <p>où <code>ref</code> est une variable correspondant à  la référence à  laquelle on souhaite se comparer :</p>
 <ul>
 <li>un point dans le cas du mot-clé <code>$near</code> :</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="op">&gt;</span> <span class="kw">var</span> ref <span class="op">=</span> <span class="op">{</span><span class="st">&quot;type&quot;</span><span class="op">:</span> <span class="st">&quot;Point&quot;</span><span class="op">,</span> <span class="st">&quot;coordinates&quot;</span><span class="op">:</span> [longitude<span class="op">,</span> latitude]<span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="op">&gt;</span> <span class="kw">var</span> ref <span class="op">=</span> <span class="op">{</span><span class="st">&quot;type&quot;</span><span class="op">:</span> <span class="st">&quot;Point&quot;</span><span class="op">,</span> <span class="st">&quot;coordinates&quot;</span><span class="op">:</span> [longitude<span class="op">,</span> latitude]<span class="op">}</span></a></code></pre></div>
 <ul>
 <li>un polygone dans le cas du mots-clé <code>$within</code> :</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="op">&gt;</span> <span class="kw">var</span> ref <span class="op">=</span> <span class="op">{</span><span class="st">&quot;type&quot;</span><span class="op">:</span> <span class="st">&quot;Polygon&quot;</span><span class="op">,</span> <span class="st">&quot;coordinates&quot;</span><span class="op">:</span> [[[long1<span class="op">,</span> lat1]<span class="op">,</span></a>
-<a class="sourceLine" id="cb10-2" title="2">                                                 [long2<span class="op">,</span> lat2]<span class="op">,</span></a>
-<a class="sourceLine" id="cb10-3" title="3">                                                 [long3<span class="op">,</span> lat3]<span class="op">,</span></a>
-<a class="sourceLine" id="cb10-4" title="4">                                                 [long4<span class="op">,</span> lat4]<span class="op">,</span></a>
-<a class="sourceLine" id="cb10-5" title="5">                                                 [long1<span class="op">,</span> lat1]]]<span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="op">&gt;</span> <span class="kw">var</span> ref <span class="op">=</span> <span class="op">{</span><span class="st">&quot;type&quot;</span><span class="op">:</span> <span class="st">&quot;Polygon&quot;</span><span class="op">,</span> <span class="st">&quot;coordinates&quot;</span><span class="op">:</span> [[[long1<span class="op">,</span> lat1]<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-2" title="2">                                                 [long2<span class="op">,</span> lat2]<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-3" title="3">                                                 [long3<span class="op">,</span> lat3]<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-4" title="4">                                                 [long4<span class="op">,</span> lat4]<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-5" title="5">                                                 [long1<span class="op">,</span> lat1]]]<span class="op">}</span></a></code></pre></div>
 <p>Ainsi, il faudra veiller à  ce que les polygones que vous créez sont bien fermés (les dernières coordonnées sont égales aux premières).</p>
-<ol start="10" type="1">
+<ol start="11" type="1">
 <li><p>Trouver les restaurants les plus proches de Crown Heights (supposé ponctuel de coordonnées approximatives <code>[-73.923, 40.676]</code>).</p></li>
 <li><p>Trouver les restaurants chinois les plus proches de Crown Heights.</p></li>
 <li><p>Même question en ne conservant que les restaurants situés à  moins de 500m de Crown Heights (voir la doc MongoDB si besoin).</p></li>

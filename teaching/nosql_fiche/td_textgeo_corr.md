@@ -6,26 +6,6 @@ author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
-# Chargement de la base `discours`
-
-0. Chargez la base `elections2007` disponible sous forme de fichier JSON sur CURSUS et nommez la collection contenant ces données `discours` (_cf._ l'aide de la commande `mongoimport` si besoin).
-Ajoutez, sur l'attribut `content` de la collection `discours`, un index textuel en langue française (_cf._ [doc de MongoDB](https://docs.mongodb.com/manual/tutorial/specify-language-for-text-index/)).
-
-a. Dans votre terminal "annexe" (si votre serveur tourne sur le port `1234`) :
-
-```bash
-mongoimport --host localhost:1234 --jsonArray --db elections2007 --collection discours --file discours.json
-```
-
-b. Dans votre terminal "client" :
-
-```javascript
-> use elections2007
-> db.discours.createIndex({"content": "text"})
-```
-
-Si vous n'avez plus la base `food` à votre disposition sur votre serveur MongoDB, il faudra la recharger également, et mettre en place l'index géo-spatial comme vu au TD précédent.
-
 # Requêtes textuelles
 
 Pour cette partie, vous travaillerez sur la base `elections2007`.
@@ -79,7 +59,10 @@ En langage MongoDB, une requête utilisant une expression régulière sera de la
 
 ## Requêtes de type "moteur de recherche"
 
-Dans certains cas, on souhaitera chercher dans des champs textuels comme on le ferait à  l'aide d'un moteur de recherche. Pour cela, il faut qu'un index spécifique soit mis en place sur le champ en question. Nous verrons plus tard dans ce cours la notion d'index, mais vous pouvez dès maintenant vérifier qu'un tel index existe :
+Dans certains cas, on souhaitera chercher dans des champs textuels comme on le ferait à  l'aide d'un moteur de recherche.
+Pour cela, il faut qu'un index spécifique soit mis en place sur le champ en question.
+
+5. Vérifiez qu'un tel index existe.
 
 ```javascript
 > db.nomDeLaCollection.getIndexes()
@@ -126,13 +109,13 @@ Dans ce cas, il sera souvent utile de trier les résultats par ordre de pertinen
                                 {score: {$meta: "textScore"}})
 ```
 
-5. Affichez la liste des documents contenant l'expression exacte suivante : `"l'effet sera nul"`{.javascript}.
+6. Affichez la liste des documents contenant l'expression exacte suivante : `"l'effet sera nul"`{.javascript}.
 
 ```javascript
 > db.discours.find({$text: {$search: "\"l'effet sera nul\""}})
 ```
 
-6. Affichez la liste des discours dans lesquels ont été prononcés :
+7. Affichez la liste des discours dans lesquels ont été prononcés :
 
 * le terme écologie
 * l'un des termes écologie ou politique
@@ -150,7 +133,7 @@ Dans ce cas, il sera souvent utile de trier les résultats par ordre de pertinen
 > db.discours.find({$text: {$search: "\"écologie\" \"politique\""}})
 ```
 
-7. Vérifiez que les scores retournés dans la deuxième requête de la question précédente tendent à  favoriser les documents contenant les deux termes (les autres documents ont des scores plus faibles).
+8. Vérifiez que les scores retournés dans la deuxième requête de la question précédente tendent à  favoriser les documents contenant les deux termes (les autres documents ont des scores plus faibles).
 
 ```javascript
 > db.discours.find({$text: {$search: "écologie politique"}},
@@ -158,7 +141,7 @@ Dans ce cas, il sera souvent utile de trier les résultats par ordre de pertinen
                        {score: {$meta: "textScore"}})
 ```
 
-8. Affichez la liste des documents comportant le terme `"famille"`{.javascript} mais pas le terme `"politique"`{.javascript}.
+9. Affichez la liste des documents comportant le terme `"famille"`{.javascript} mais pas le terme `"politique"`{.javascript}.
 
 ```javascript
 > db.discours.find({$text: {$search: "famille -politique"}})
@@ -174,7 +157,7 @@ Dans le cas de données géo-spatiales, on peut avoir à  effectuer des requêt
 
 Pour cela, il faut tout d'abord s'assurer qu'un index géo-spatial (de type `2dsphere` pour des coordonnées à  la surface de la terre) existe sur le champ visé.
 
-9. Vérifiez qu'un index géo-spatial existe sur l'un des champs de la collection `NYfood` de la base `food`.
+10. Vérifiez qu'un index géo-spatial existe sur l'un des champs de la collection `NYfood` de la base `food`.
 
 ```javascript
 > use food
@@ -209,21 +192,21 @@ où `ref` est une variable correspondant à  la référence à  laquelle on so
 
 Ainsi, il faudra veiller à  ce que les polygones que vous créez sont bien fermés (les dernières coordonnées sont égales aux premières).
 
-10. Trouver les restaurants les plus proches de Crown Heights (supposé ponctuel de coordonnées approximatives `[-73.923, 40.676]`).
+11. Trouver les restaurants les plus proches de Crown Heights (supposé ponctuel de coordonnées approximatives `[-73.923, 40.676]`).
 
 ```javascript
 > var CrownHeights = {"type": "Point", "coordinates": [-73.923, 40.676]}
 > db.NYfood.find({"address.loc": {$near : {$geometry : CrownHeights}}})
 ```
 
-11. Trouver les restaurants chinois les plus proches de Crown Heights.
+12. Trouver les restaurants chinois les plus proches de Crown Heights.
 
 ```javascript
 > db.NYfood.find({"address.loc": {$near: {$geometry: CrownHeights}},
                   "cuisine": "Chinese"})
 ```
 
-12. Même question en ne conservant que les restaurants situés à  moins de 500m de Crown Heights (voir la doc MongoDB si besoin).
+13. Même question en ne conservant que les restaurants situés à  moins de 500m de Crown Heights (voir la doc MongoDB si besoin).
 
 ```javascript
 > db.NYfood.find({"address.loc": {$near: {$geometry: CrownHeights,
@@ -231,7 +214,7 @@ Ainsi, il faudra veiller à  ce que les polygones que vous créez sont bien fer
                   "cuisine": "Chinese"})
 ```
 
-13. Trouver tous les restaurants du quartier d'East Village à  New York (vous pourrez utiliser Google Maps pour connaître les coordonnées du polygone entourant ce quartier).
+14. Trouver tous les restaurants du quartier d'East Village à  New York (vous pourrez utiliser Google Maps pour connaître les coordonnées du polygone entourant ce quartier).
 
 ```javascript
 > var eastVillage = {"type": "Polygon",

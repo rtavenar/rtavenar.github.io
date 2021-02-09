@@ -254,15 +254,7 @@ img[alt=fullwidth] { width: 100%; }
 img[alt=fullwidth_with_border] { width: 100%; border: 1px solid black; }
 img[alt=halfwidth] { width: 45%; margin-left: auto; margin-right: auto;}
 img[alt=halfwidth_with_border] { width: 45%; margin-left: auto; margin-right: auto; border: 1px solid black; }
-.javascript {
-background-color: #FFB6C1;
-}
-.bash {
-background-color: #90EE90;
-}
-.bash_alt, pre.bash_alt code {
-background-color: #ADD8E6;
-}
+
 
 body#index li {
 margin-bottom: 1em;
@@ -325,38 +317,29 @@ line-height:1.1;
 <body>
 <header id="title-block-header">
 <h1 class="title">Index</h1>
-<p class="subtitle">Planche de TD pour un cours dispensé à  l’université de Rennes 2</p>
+<p class="subtitle">Corrigé de TD pour un cours dispensé à  l’université de Rennes 2</p>
 <p class="author">Romain Tavenard</p>
 </header>
-<h1 id="création-dune-base-fictive"><span class="header-section-number">1</span> Création d’une base fictive</h1>
-<p>Ouvrez un client MongoDB et exécutez la ligne suivante, qui va créer une base appelée <code>large_db</code> et sa collection <code>users</code> contenant <code>n</code> (ici 500000) utilisateurs :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&gt;</span> use large_db</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="op">&gt;</span> n <span class="op">=</span> <span class="dv">500000</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="op">&gt;</span> <span class="cf">for</span> (i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>n<span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="va">db</span>.<span class="va">users</span>.<span class="at">insert</span>(<span class="op">{</span><span class="st">&quot;i&quot;</span><span class="op">:</span> i<span class="op">,</span> <span class="st">&quot;name&quot;</span><span class="op">:</span> <span class="st">&quot;user&quot;</span><span class="op">+</span>i<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-5" title="5">                     <span class="st">&quot;age&quot;</span><span class="op">:</span> <span class="va">Math</span>.<span class="at">floor</span>(<span class="va">Math</span>.<span class="at">random</span>()<span class="op">*</span><span class="dv">120</span>)<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-6" title="6">                     <span class="st">&quot;created&quot;</span> <span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">}</span>)</a>
-<a class="sourceLine" id="cb1-7" title="7">    <span class="op">}</span></a></code></pre></div>
-<p>L’exécution de cette commande peut prendre plusieurs minutes.</p>
+<p>Pour ce TD, vous allez travailler sur une base nommée <code>large_db</code> et sa collection <code>users</code>.</p>
 <ol type="1">
-<li>Surveillez sa progression en ouvrant, dans un autre terminal, un second client MongoDB (connecté au même serveur) et lui demandant d’afficher le nombre d’éléments de la collection <code>users</code> de la base <code>large_db</code>.</li>
+<li>Combien de documents contient cette collection ? Quels sont les attributs des documents de la collection ?</li>
 </ol>
-<h1 id="sans-index"><span class="header-section-number">2</span> Sans index</h1>
+<h1 id="sans-index"><span class="header-section-number">1</span> Sans index</h1>
 <p>MongoDB permet d’obtenir un certain nombre d’informations sur le déroulement d’une requête à l’aide de la fonction <code>explain()</code> :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span>...<span class="op">}</span>).<span class="at">explain</span>(<span class="st">&quot;executionStats&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&gt;</span> <span class="va">db</span>.<span class="va">nomDeLaCollection</span>.<span class="at">find</span>(<span class="op">{</span>...<span class="op">}</span>).<span class="at">explain</span>(<span class="st">&quot;executionStats&quot;</span>)</a></code></pre></div>
 <ol start="2" type="1">
 <li><p>Utilisez cette méthode pour obtenir (i) le temps d’exécution, (ii) le nombre de documents parcourus et (iii) le nombre de documents retournés par une simple requête demandant d’afficher les informations des utilisateurs dont la clé <code class="sourceCode javascript"><span class="st">&quot;name&quot;</span></code> vaut <code class="sourceCode javascript"><span class="st">&quot;user101&quot;</span></code>.</p></li>
 <li><p>Même chose en ne demandant de retourner qu’un utilisateur. Que remarquez-vous ?</p></li>
 <li><p>Répétez encore cette opération en cherchant maintenant l’utilisateur <code class="sourceCode javascript"><span class="st">&quot;user499999&quot;</span></code>. Que remarquez-vous ?</p></li>
 </ol>
-<h1 id="avec-un-index"><span class="header-section-number">3</span> Avec un index</h1>
+<h1 id="avec-un-index"><span class="header-section-number">2</span> Avec un index</h1>
 <ol start="5" type="1">
-<li><p>Mettez maintenant en place un index sur la clé <code class="sourceCode javascript"><span class="st">&quot;name&quot;</span></code>.</p></li>
-<li><p>Répétez les opérations précédentes (questions 2 à 4). Que remarquez-vous ?</p></li>
+<li><p>Passez maintenant à la base <code>large_db_with_index</code> ayant le même contenu que la base précédente, mais disposant d’index. Affichez les index existant sur la collection <code>users</code> de cette base : sur quel(s) attribut(s) portent-ils ?</p></li>
+<li><p>Répétez les opérations précédentes (questions 2 à 4). Que remarquez-vous ? Quel(s) index ont été utilisés par ces requêtes ?</p></li>
 </ol>
-<h1 id="index-composés"><span class="header-section-number">4</span> Index composés</h1>
+<h1 id="index-composés"><span class="header-section-number">3</span> Index composés</h1>
 <ol start="7" type="1">
-<li>Effectuez les requêtes suivantes et examinez leur exécution :</li>
+<li>Effectuez les requêtes suivantes et examinez leur exécution (nombre de documents parcourus, index utilisés) :</li>
 </ol>
 <ul>
 <li>Afficher les utilisateurs âgés de 20 ans ;</li>
@@ -364,11 +347,7 @@ line-height:1.1;
 <li>Afficher les utilisateurs âgés de 20 ans par ordre croissant de date de création ;</li>
 <li>Afficher les utilisateurs âgés de 20 ans dont le nom d’utilisateur est compris entre <code class="sourceCode javascript"><span class="st">&quot;user100000&quot;</span></code> et <code class="sourceCode javascript"><span class="st">&quot;user500000&quot;</span></code>.</li>
 </ul>
-<ol start="8" type="1">
-<li><p>Mettez en place un index composé sur les clés <code class="sourceCode javascript"><span class="st">&quot;age&quot;</span></code> et <code class="sourceCode javascript"><span class="st">&quot;name&quot;</span></code> (dans cet ordre).</p></li>
-<li><p>Répétez les requêtes de la question 7. Quelles sont les requêtes qui ont été accélérées ?</p></li>
-</ol>
-<h1 id="exercice-de-synthèse"><span class="header-section-number">5</span> Exercice de synthèse</h1>
+<h1 id="exercice-de-synthèse"><span class="header-section-number">4</span> Exercice de synthèse</h1>
 <p>Liens utiles :</p>
 <ul>
 <li><a href="http://docs.mongodb.org/master/core/2dsphere/" class="uri">http://docs.mongodb.org/master/core/2dsphere/</a></li>
@@ -376,13 +355,8 @@ line-height:1.1;
 <li><a href="http://docs.mongodb.org/master/core/index-single/" class="uri">http://docs.mongodb.org/master/core/index-single/</a></li>
 </ul>
 <ol start="10" type="1">
-<li>Passez à la base <code>food</code>. Créez sur la collection <code>NYfood</code> de cette base quatre index :</li>
+<li><p>Passez à la base <code>food</code>. Quels sont les index définis sur la collection <code>NYfood</code> et de quel type sont-ils ? Quelles commandes a-t-il fallu exécuter pour les créer ?</p></li>
+<li><p>Vérifiez que ces index sont effectivement utilisés à l’aide de quelques requêtes simples (éventuellement issues des TD précédents).</p></li>
 </ol>
-<ul>
-<li>un index géospatial sur la localisation des restaurants ;</li>
-<li>un index textuel couvrant tous les champs textuels de la collection ;</li>
-<li>un index classique sur le quartier et un autre sur le type de cuisine.</li>
-</ul>
-<p>Vérifiez l’efficacité de ces index à l’aide de quelques requêtes simples (éventuellement issues des TD précédents).</p>
 </body>
 </html>

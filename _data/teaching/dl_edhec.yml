@@ -1,6 +1,6 @@
 course-title: "Deep learning"
 description: "This page gathers material for the Deep Learning course at EDHEC
-(Spring semester, 2020).
+(Spring semester, 2021).
 Instructor for this course is <a href=\"http://rtavenar.github.io\">Romain Tavenard</a>, assistant professor at Université de Rennes (@rtavenar on <a href=\"https://twitter.com/rtavenar\">twitter</a> and <a href=\"https://github.com/rtavenar\">github</a>)."
 items:
 - title: "An introduction to deep learning"
@@ -8,41 +8,34 @@ items:
   links:
   - text: "Slides (pdf)"
     url: "data/01_intro_dl_tavenard.pdf"
-  - text: "Pre-requisite (Google Colab)"
-    url: "https://colab.research.google.com/drive/1I1OjF3lhOrSNnYOFpnMh0gM__Yjwa1aU"
 - title: "Fully-connected models"
   links:
-  - text: "Multi-Layer Perceptron (Google Colab)"
+  - text: "Multi-Layer Perceptron (Deepnote notebook)"
     url: "https://colab.research.google.com/drive/1v6lIi976sT2vvQZUVc3nkg8iAzG-eKvN"
-  - text: "Multi-Layer Perceptron (Google Colab, with correction)"
-    url: "https://colab.research.google.com/drive/1FRt1YhlUiYR4Zhr9qtNTHmqR1QX96SXI"
-  - text: "A note on numpy.random (Google Colab)"
-    url: "https://colab.research.google.com/drive/1TwcUIaVsteV7qeQKHz_HNu-ztOauYXNy"
-- title: "Images and Convolutional models"
-  description: "An overview of 2d convolutional neural networks."
-  links:
-  - text: "Slides (pdf)"
-    url: "data/02_convnets_tavenard.pdf"
-  - text: "Images and ConvNets (Google Colab)"
-    url: "https://colab.research.google.com/drive/1vVA2vVrvEa9W3bKQnuCcyV3ojB1uz26v"
-  - text: "Images and ConvNets (Google Colab, with correction)"
-    url: "https://colab.research.google.com/drive/1HZ012oS7lsYYyMW11CwF5JoTRcxFFI-u"
-- title: "Sequences"
-  description: "1d convolutional neural networks and recurrent neural networks for sequential data."
-  links:
-  - text: "Slides (pdf)"
-    url: "data/04_sequences_tavenard.pdf"
-- title: "Generative models"
-  description: "Variational Auto-Encoders, GANs"
-  links:
-  - text: "Slides (pdf)"
-    url: "data/03_generative_tavenard.pdf"
-  - text: "Generative models (Google Colab)"
-    url: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
-  - text: "Generative models (Google Colab, with correction)"
-    url: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
-- title: "Assignment"
-  description: "Take-home lab session"
-  links:
-  - text: "Link to Google Colab"
-    url: "https://colab.research.google.com/drive/1Efvc-Y9I6Pxckdf--d7qUuqBZZHiDCrS"
+# - title: "Images and Convolutional models"
+#   description: "An overview of 2d convolutional neural networks."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "data/02_convnets_tavenard.pdf"
+#   - text: "Images and ConvNets (Deepnote notebook)"
+#     url: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
+# - title: "Sequences"
+#   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "data/04_sequences_tavenard.pdf"
+
+# - title: "Generative models"
+#   description: "Variational Auto-Encoders, GANs"
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "data/03_generative_tavenard.pdf"
+#   - text: "Generative models (Google Colab)"
+#     url: "https://colab.research.google.com/drive/1X1UVw2hKRAB8vCWj7lVPPTv7o1Hbib6Y"
+#   - text: "Generative models (Google Colab, with correction)"
+#     url: "https://colab.research.google.com/drive/1gSsSIfhhngFEeSn7jv0l4IWtx5NOpqY6"
+# - title: "Assignment"
+#   description: "Take-home lab session"
+#   links:
+#   - text: "Link to Google Colab"
+#     url: "https://colab.research.google.com/drive/1Efvc-Y9I6Pxckdf--d7qUuqBZZHiDCrS"

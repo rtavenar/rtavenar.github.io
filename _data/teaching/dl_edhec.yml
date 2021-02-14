@@ -11,7 +11,7 @@ items:
 - title: "Fully-connected models"
   links:
   - text: "Multi-Layer Perceptron (Deepnote notebook)"
-    url: "https://colab.research.google.com/drive/1v6lIi976sT2vvQZUVc3nkg8iAzG-eKvN"
+    url: "https://deepnote.com/project/42d3e808-a75c-4f9e-8bf1-115b96f89fc0"
 # - title: "Images and Convolutional models"
 #   description: "An overview of 2d convolutional neural networks."
 #   links:
@@ -23,7 +23,7 @@ items:
 #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
 #   links:
 #   - text: "Slides (pdf)"
-#     url: "data/04_sequences_tavenard.pdf"
+#     url: "data/03_sequences_tavenard.pdf"
 
 # - title: "Generative models"
 #   description: "Variational Auto-Encoders, GANs"

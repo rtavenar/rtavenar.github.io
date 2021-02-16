@@ -12,13 +12,13 @@ items:
   links:
   - text: "Multi-Layer Perceptron (Deepnote notebook)"
     url: "https://deepnote.com/project/42d3e808-a75c-4f9e-8bf1-115b96f89fc0"
-# - title: "Images and Convolutional models"
-#   description: "An overview of 2d convolutional neural networks."
-#   links:
-#   - text: "Slides (pdf)"
-#     url: "data/02_convnets_tavenard.pdf"
-#   - text: "Images and ConvNets (Deepnote notebook)"
-#     url: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
+- title: "Images and Convolutional models"
+  description: "An overview of 2d convolutional neural networks."
+  links:
+  - text: "Slides (pdf)"
+    url: "data/02_convnets_tavenard.pdf"
+  - text: "Images and ConvNets (Deepnote notebook)"
+    url: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
 # - title: "Sequences"
 #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
 #   links:

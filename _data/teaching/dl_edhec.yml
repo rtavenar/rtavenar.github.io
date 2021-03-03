@@ -19,11 +19,15 @@ items:
     url: "data/02_convnets_tavenard.pdf"
   - text: "Images and ConvNets (Deepnote notebook)"
     url: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
-# - title: "Sequences"
+  # - text: "Images and ConvNets continued (Deepnote notebook)"
+  #   url: "https://deepnote.com/project/4418dda1-7b27-41aa-8376-9ca7c94fae59"
+# - title: "Time Series and Sequences"
 #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
 #   links:
 #   - text: "Slides (pdf)"
 #     url: "data/03_sequences_tavenard.pdf"
+#   - text: "Time Series and Sequences (Deepnote notebook)"
+#     url: "https://deepnote.com/project/179b2a66-b219-4e41-8ac1-fbea6c4f4533"
 
 # - title: "Generative models"
 #   description: "Variational Auto-Encoders, GANs"

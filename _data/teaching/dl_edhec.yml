@@ -28,7 +28,6 @@ items:
     url: "data/03_sequences_tavenard.pdf"
   - text: "Time Series and Sequences (Deepnote notebook)"
     url: "https://deepnote.com/project/179b2a66-b219-4e41-8ac1-fbea6c4f4533"
-
 # - title: "Generative models"
 #   description: "Variational Auto-Encoders, GANs"
 #   links:

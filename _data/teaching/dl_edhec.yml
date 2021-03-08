@@ -19,8 +19,8 @@ items:
     url: "data/02_convnets_tavenard.pdf"
   - text: "Images and ConvNets (Deepnote notebook)"
     url: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
-  # - text: "Images and ConvNets continued (Deepnote notebook)"
-  #   url: "https://deepnote.com/project/4418dda1-7b27-41aa-8376-9ca7c94fae59"
+  - text: "Images and ConvNets continued (Deepnote notebook)"
+    url: "https://deepnote.com/project/4418dda1-7b27-41aa-8376-9ca7c94fae59"
 # - title: "Time Series and Sequences"
 #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
 #   links:

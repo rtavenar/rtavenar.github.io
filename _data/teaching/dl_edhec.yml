@@ -32,7 +32,7 @@ items:
   description: "Variational Auto-Encoders, GANs"
   links:
   - text: "Slides (pdf)"
-    url: "data/03_generative_tavenard.pdf"
+    url: "data/04_generative_tavenard.pdf"
   - text: "Generative models (Deepnote notebook)"
     url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
 # - title: "Assignment"

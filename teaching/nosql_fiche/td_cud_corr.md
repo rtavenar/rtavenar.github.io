@@ -6,6 +6,24 @@ author: Romain Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
+# Préambule
+
+Cette séance est un peu particulière.
+En effet, il va s'agir, pour vous, de vous essayer à la modification du contenu d'une base.
+Vous ne pourrez donc pas continuer, comme c'était le cas jusqu'alors, à tous travailler en même temps sur une base hébergée par MongoDB Atlas.
+Pour simuler le fonctionnement d'un serveur MongoDB tournant sur votre machine, nous allons utiliser Docker.
+
+Voici la liste des étapes à suivre pour lancer votre serveur MongoDB :
+
+1. Téléchargez et installez [Docker Desktop](https://docs.docker.com/get-docker/) (ou Docker Engine si vous êtes sous linux) ; **attention : cette étape risque de prendre beaucoup de temps, notamment si votre connexion internet est lente** ;
+2. Lancez Docker Desktop, créez un compte sur `hub.docker.com` et saisissez vos identifiants pour ce compte dans Docker Desktop (j'imagine, sans en être sûr, que cette étape est sensiblement similaire pour les utilisateurs de linux, en utilisant Docker Engine) ;
+3. Dans un terminal (ou une "invite de commande" si vous êtes sous Windows), entrez la commande suivante : `docker pull mongo` ; cela va importer l'image (sorte de machine virtuelle) nommée `mongo` sur votre machine, et celle-ci devrait donc apparaître dans l'onglet "Images", dans Docker Desktop ;
+4. Dans ce même onglet "Images", cliquez sur "Run" en face de cette image pour créer un conteneur dérivé de cette image et, dans les paramètres optionnels (_Optional Settings_), choisissez de rediriger le port 27017 du conteneur vers le port 1234 de votre machine, comme indiqué sur ces captures d'écran :
+![fullwidth](img/docker_mongo_run.png)
+![fullwidth](img/docker_mongo_settings.png)
+Cette étape 4. peut être réalisée sans passer par l'interface graphique de Docker Desktop en lançant dans un terminal la commande : `docker run --publish 1234:27017 mongo` : lorsque vous exécutez cette commande, vous lancez votre serveur dans le terminal, et vous devrez donc prendre garde à ne pas fermer cette fenêtre de terminal avant la fin du TD ;
+5. Créez dans Robo3T une connexion vers `localhost` sur le port `1234` et vérifiez que cette connexion se fait sans encombre.
+
 # Création de la base
 
 1. Créez une nouvelle base `voitures` dans laquelle une collection `ventes` servira à tenir le compte des voitures à la vente dans un garage.

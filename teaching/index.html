@@ -8,15 +8,24 @@ section: teaching
 		<article class="content">
 			<section class="post">
 				<article class="post-content">
-                    <p><em>Associated content is in French.</em></p>
-					<p>J'enseigne la programmation en Python, les bases de données MongoDB et le <emph>machine learning</emph> (en utilisant <emph>sklearn</emph> et <emph>keras</emph>) à nos étudiants en statistiques. Vous trouverez sur ces pages les ressources correspondant à ces enseignements.</p>
-					<p>J'enseigne également les langages du web et les bases de l'informatique à des étudiants aux profils très divers.</p>
 
-					<!-- <h2>Responsabilités</h2>
+					<h2>Liste non exhaustive de cours dispensés</h2>
 					<ul>
-						<li>Directeur adjoint du <a href="http://www.sites.univ-rennes2.fr/mass/">département de statistiques</a> de mon université</li>
-						<li>Correspondant Pix pour mon université</li>
-					</ul> -->
+                        {% for course in site.data.teaching.all_courses %}
+                            <li>
+								{{ course.title }} <em>({{ course.context }})</em>
+								{% if course.lang == "fr" %}
+									<br /><em>Associated content is in French.</em>
+								{% endif %}
+								{% if course.links %}
+									<br />
+									{% for course_link in course.links %}
+										[<a href="{{ course_link.url }}">{{ course_link.text }}</a>]
+									{% endfor %}
+								{% endif %}
+							</li>
+                        {% endfor %}
+					</ul>
 
 					<section class="clear"></section>
 

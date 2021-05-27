@@ -1,0 +1,26 @@
+- title: "Structures de données en Python"
+  context: "Licence 2 MIASHS, Université de Rennes 2"
+  lang: fr
+  links:
+    - url: "https://rtavenar.github.io/poly_python/"
+      text: "Polycopié"
+    - url: "https://cursus.univ-rennes2.fr/course/view.php?id=8373"
+      text: "Page du cours"
+- title: "Bases de données MongoDB"
+  context: "Master 1 Data Science, Université de Rennes 2"
+  lang: fr
+  links:
+    - url: "https://rtavenar.github.io/mongo_book/"
+      text: "Polycopié"
+    - url: "https://cursus.univ-rennes2.fr/course/view.php?id=9001"
+      text: "Page du cours"
+- title: "Deep learning"
+  context: "MSc Data Analytics & Artificial Intelligence, EDHEC"
+  links:
+    - url: "https://rtavenar.github.io/teaching/deep_edhec/"
+      text: "Course page"
+- title: "Machine learning for time series"
+  context: "MSc Statistics for Smart Data, ENSAI"
+  links:
+    - url: "https://rtavenar.github.io/ml4ts_ensai/"
+      text: "Lecture notes"

@@ -28,11 +28,7 @@
         {% endif %}
 	</head>
     <body lang="fr-FR" class="page page-template no-customize-support custom-background">
-        {% if page.section == "research" %}
-            {% include navigation_research.html %}
-        {% else %}
-            {% include navigation_teaching.html %}
-        {% endif %}
+        {% include navigation_research.html %}
         {{ content }}
     </body>
 </html>

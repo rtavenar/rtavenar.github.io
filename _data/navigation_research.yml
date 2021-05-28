@@ -10,6 +10,6 @@
 - name: Code &amp; data
   link: /research/src.html
   fa-item: fa-code
-- name: <i class="fa fa-arrow-right" aria-hidden="true"></i> Teaching
+- name: Teaching
   link: /teaching/index.html
   fa-item: fa-graduation-cap

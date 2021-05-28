@@ -20,20 +20,23 @@
   - name: Dense Bag-of-Temporal-SIFT-Words
     url: "https://github.com/a-bailly/dbotsw"
     description: " (Adeline Bailly's code)"
-- title: Machine Learning for Environmental Data
+- title: Machine Learning for Earth Observation
   image: map_cropped.png
-  text: "A lot of environmental data are timestamped. Designing ML techniques that can handle this time dimension can often lead to much improved performance. We have so far turned our focus on 2 different types of environmental data: chemistry data in streams and remote sensing data (such as satellite image time series)."
+  text: "A lot of earth observation data are timestamped. Designing ML techniques that can handle this time dimension can often lead to much improved performance. We have so far turned our focus on 3 different types of environmental data: chemistry data in streams, remote sensing data (such as satellite image time series) and ship trajectory data."
   fundings:
   - name: MATS (ANR JCJC, 2019-2023)
     url: /research/projects/mats.html
   div_id: ml_env
   datasets:
+  - name: Ushant AIS dataset
+    url: "https://figshare.com/articles/dataset/Ushant_AIS_dataset/8966273"
+    description: ": a dataset of ship trajectories in the Ushant traffic separation scheme (in Brittany, West of France)"
   - name: GEE-TSDA
     url: "https://github.com/a-bailly/time_series_data/tree/master/gee_tsda"
     description: ": a remote sensing dataset to evaluate domain adaptation on time series"
 - title: Time-Sensitive Graphical Models
   image: hdlsm-supervised.svg
-  text: "We have been using time-sensitive topic models (such as Probabilistic Latent Semantic Motifs or Hierarchical Dirichlet Latent Semantic Motifs) to perform action recognition in videos. We are still investigating the design of richer models to better capture information from streams of numerical features."
+  text: "We have been using time-sensitive topic models (such as Probabilistic Latent Semantic Motifs or Hierarchical Dirichlet Latent Semantic Motifs) to perform action recognition in videos. More recently, we have turned our focus towards the design of richer models to better model continuous processes in continuous time."
   div_id: topic_models
 - title: Indexing &amp; IR [Past]
   image: lbub.svg

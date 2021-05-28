@@ -1,6 +1,6 @@
 - title: "Scalable clustering of segmented trajectories within a continuous time framework. Application to maritime traffic data"
   url: "https://hal.archives-ouvertes.fr/hal-02617575v3"
-  description: ": our paper on clustering of ship trajectories is finally out."
+  description: ": our paper on clustering of ship trajectories is accepted in Machine Learning (to appear, preprint version available)."
 - title: "Time Series Alignment with Global Invariances"
   url: "https://arxiv.org/abs/2002.03848"
   description: ": our new preprint on joint temporal and feature space alignment is out."

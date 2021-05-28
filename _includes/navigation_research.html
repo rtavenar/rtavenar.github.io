@@ -5,15 +5,18 @@
             <div id="title-slogan">
                 <p id="title" class="site-title site-title-no-logo no-logo">Romain Tavenard</p>
                 <p id="slogan" class="slogan ">
-                    Assistant Professor (MCF)<br />
-                    Université de Rennes 2 / LETG-COSTEL<!--<br />Associate member at IRISA-Obelix group-->
+                    Assistant Professor (MCF HDR)<br />
+                    Université de Rennes 2 / LETG-COSTEL<br />
+                    Associate researcher at IRISA-Obelix
                 </p>
             </div>
 
             <nav class="primary-nav-container">
             <ul id="primary-nav" class="primary-nav menu">
                 {% for item in site.data.navigation_research %}
-                    <li class={% if page.url == item.link %}"menu-item current-menu-item"{% else %}"menu-item"{% endif %}>
+                    {% assign slice_sz = page.url | size %}
+                    {% assign slice_str = item.link | slice: 0, slice_sz %}
+                    <li class="menu-item{% if page.url == slice_str %} current-menu-item{% endif %}">
                         <a href="{{ item.link }}">
                             <i class="fa {{ item.fa-item }} fa-2x"></i>
                             <p class="menu-text">{{ item.name }}</p>

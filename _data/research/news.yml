@@ -1,3 +1,7 @@
+- title: "A new blog post on the differentiability of Dynamic Time Warping."
+  url: "blog/html/softdtw.html"
+- title: "A blog post on Dynamic Time Warping."
+  url: "blog/html/dtw.html"
 - title: "A new position is open to work on tslearn"
   url: "projects/tslearn_position.html"
   description: ". Come work in beautiful Rennes on an open source project!"

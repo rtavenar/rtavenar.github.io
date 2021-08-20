@@ -53,8 +53,8 @@ var hals={
                 console.warn('Missing field (volume) in document '+doc.docid+' ('+doc.title_s+')');
             if(typeof doc.issue_s!='undefined'&&doc.issue_s.length>0)
                 s_+=', no '+doc.issue_s[0];
-            if(s_=='')
-                s_+=', to appear';
+            // if(s_=='')
+            //     s_+=', to appear';
             if(typeof doc.page_s!='undefined')
                 if(doc.page_s.indexOf('-')>-1)
                     s_+=', pp. '+doc.page_s;

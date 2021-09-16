@@ -166,28 +166,28 @@ turtle.begin_fill()
 turtle.end_fill()
 ```
 
-# Pour aller plus loin : le pavage à base de losanges
+# Pour aller plus loin : le château de cartes
 
 **Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine
 prochaine.**
 
-Dans cet exercice, vous allez tenter de dessiner à l'écran un pavage à base de
-losanges similaire à celui-ci :
+Dans cet exercice, vous allez tenter de dessiner à l'écran un château de cartes
+similaire à celui-ci :
 
-![](img/pavage_losange.png)
+![](img/chateau_cartes.png)
 
-Pour cela, vous devrez tout d'abord être capable de tracer un losange
-(dont les diagonales sont parallèles aux axes du repère) à une position donnée.
+Pour cela, vous devrez tout d'abord être capable de tracer un triangle
+(dont la base est horizontale) à une position donnée.
 
 10. Écrivez une fonction qui prenne en entrée une position (sous la forme de
-    deux entiers `x`{.python} et `y`{.python}), une largeur `largeur`{.python}
-    et une hauteur `hauteur`{.python} et qui trace à l'écran un losange dont le
-    point le plus à gauche a pour coordonnées `(x, y)`{.python} et ayant les
-    largeur (diagonale horizontale) et hauteur (diagonale verticale) demandées.
+    deux entiers `x`{.python} et `y`{.python}), une longueur de la base `base`{.python}
+    et une hauteur `hauteur`{.python} et qui trace à l'écran un triangle dont le
+    point en bas à gauche a pour coordonnées `(x, y)`{.python} et dont la base et la 
+    hauteur ont les dimensions demandées.
 
-11. Écrivez une fonction qui prenne en entrée deux nombres `n_x`{.python} et
-    `n_y`{.python} et trace à l'écran un pavage à base de losanges comportant
-    `n_y`{.python} lignes telles que chaque ligne soit elle même constituée de
-    `n_x`{.python} losanges. L'image fournie plus haut devra typiquement
-    être générée par un appel à votre fonction avec pour arguments
-    `(n_x=5, n_y=4)`{.python}.
+11. Écrivez une fonction qui prenne en entrée un nombre `n`{.python} 
+    et trace à l'écran un château de cartes dont la base est composée de
+    `n`{.python} triangles.
+    L'image fournie plus haut devra typiquement
+    être générée par un appel à votre fonction avec pour argument
+    `n=4`{.python}.

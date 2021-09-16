@@ -5,26 +5,24 @@ author: Aude Tavenard
 rights: Creative Commons CC BY-NC-SA
 ---
 
-1.	Créer un fichier sous Geany et l'enregistrer. Tout le code utilisé lors du
-TD devra être enregistré dans cet éditeur. Les instructions SAS seront
-exécutées dans SAS au fur et à mesure.
+1.	Créer un répertoire SAS2021 dans Fichiers en utilisant l’aide d’utilisation de SAS OnDemand. 
+Puis créer un programme nommé TD1 et l’enregistrer dans le répertoire SAS2021. 
 
-2.	Créer la bibliothèque `tp1` qui pointe sur une clé USB ou sur votre disque
-réseau MASS.
+2.	Créer la bibliothèque `td1` qui pointe sur le répertoire SAS2021.
 
 ```SAS
-libname tp1 "~/Cours SAS/";
+libname TD1 "/home/u49948743/SAS2021";
 ```
 
 3.	Importer des données
 
 a.	Importer les données disponibles dans le fichier `patients.csv` dans la
-    bibliothèque `tp1` via le menu SAS.
+    bibliothèque `td1` via le menu SAS.
     Enregistrer le programme créé par SAS pour faire l'import.
 
 ```SAS
-PROC IMPORT OUT= tp1.patients
-            DATAFILE= "~/Cours SAS/patients.csv"
+PROC IMPORT OUT= td1.patients
+            DATAFILE= "/home/u49948743/SAS2021/patients.csv"
             DBMS=CSV REPLACE;
      GETNAMES=YES;
      DATAROW=2;
@@ -34,7 +32,7 @@ RUN;
 b.	Importer les données poids en utilisant le code SAS input suivant :
 
 ```SAS
-data tp1.poids;
+data td1.poids;
 Input patid $ visite $ poids;
 datalines;
 1007-012 V2 .
@@ -106,10 +104,10 @@ run;
 enregistrée dans la bibliothèque.
 
 ```SAS
-Proc sort data=tp1.patients; by patid ; run ;
-Proc sort data=tp1.poids; by patid ; run ;
-Data tp1.donnees;
-Merge tp1.patients tp1.poids ;
+Proc sort data=td1.patients; by patid ; run ;
+Proc sort data=td1.poids; by patid ; run ;
+Data td1.donnees;
+Merge td1.patients td1.poids ;
 By patid ;
 Run ;
 ```
@@ -120,8 +118,8 @@ naissance mais en utilisant les formats respectifs suivants :
   b.	`MMYYS7.`
 
 ```SAS
-Data tp1.donnees ;
-Set tp1.donnees ;
+Data td1.donnees ;
+Set td1.donnees ;
 Format datnais1 FRADFWDX. ;
 Format datnais2 MMYYS7. ;
 Datnais1=datenais ;
@@ -140,8 +138,8 @@ Run ;
   `best12.` contenant l'année de naissance
 
 ```SAS
-Data tp1.donnees ;
-Set tp1.donnees ;
+Data td1.donnees ;
+Set td1.donnees ;
 Attrib
 age format=best12. Label= "Age (annees)"
 imc format=best12. Label= "IMC (kg/m2)"
@@ -157,14 +155,14 @@ else if imc>25 then imc_cat= ">25" ;
 Run ;
 ```
 
-7.	Créer les tables suivantes dans la bibliothèque `tp1` à partir du fichier
+7.	Créer les tables suivantes dans la bibliothèque `td1` à partir du fichier
 fusionné à l'étape 4 et modifié à l'étape 6:
 
   a.	JEUNES contenant les patients avec date de naissance après le 01/01/1999
 
 ```SAS
-Data tp1.jeunes ;
-Set tp1.donnees ;
+Data td1.jeunes ;
+Set td1.donnees ;
 WHERE datenais > "01JAN1999"d ;
 Run ;
 ```
@@ -173,8 +171,8 @@ Run ;
 
 
 ```Sas
-Data tp1.filles;
-Set tp1.donnees ;
+Data td1.filles;
+Set td1.donnees ;
 WHERE sexe='F' ;
 Run ;
 ```
@@ -184,17 +182,17 @@ Run ;
 `patid`.
 
 ```SAS
-Proc sort data=tp1.filles  nodupkey out=filluni (keep=patid datnais);
+Proc sort data=td1.filles  nodupkey out=filluni (keep=patid datnais);
 by patid ;
 run ;
 ```
 
-9.	Exporter les données `tp1.jeunes` dans un fichier CSV
+9.	Exporter les données `td1.jeunes` dans un fichier CSV
 (méthode de votre choix).
 
 ```SAS
-Proc export data=tp1.jeunes
-Outfile= "~/Cours SAS/jeunes.csv"
+Proc export data=td1.jeunes
+Outfile= "/home/u49948743/SAS2021/jeunes.csv"
 Dbms=DLM replace;
 Delimiter= "09"x ;
 Run ;

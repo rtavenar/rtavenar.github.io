@@ -191,3 +191,4 @@ Pour cela, vous devrez tout d'abord être capable de tracer un triangle
     L'image fournie plus haut devra typiquement
     être générée par un appel à votre fonction avec pour argument
     `n=4`{.python}.
+    La hauteur et la largeur du château de carte seront définies de manière arbitraire.

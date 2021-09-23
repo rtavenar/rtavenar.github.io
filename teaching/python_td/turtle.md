@@ -166,10 +166,13 @@ turtle.begin_fill()
 turtle.end_fill()
 ```
 
-# Pour aller plus loin : le château de cartes
+# Devoir à rendre : le château de cartes
 
 **Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine
-prochaine.**
+prochaine.
+Vous pouvez le rendre par binôme ou trinôme, mais dans ce cas, le nom de tous 
+les membres du groupe doit être inscrit dans le fichier python en commentaire 
+avant le `import turtle`.**
 
 Dans cet exercice, vous allez tenter de dessiner à l'écran un château de cartes
 similaire à celui-ci :

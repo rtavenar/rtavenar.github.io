@@ -16,6 +16,7 @@ Comme d'habitude, un rappel : la documentation Python est de très bonne qualit�
 # Échauffement
 
 1. Écrivez, en pseudo-code, un algorithme calculant la différence minimale (en valeur absolue) entre éléments consécutifs d'une liste fournie en entrée.
+On supposera sans le vérifier que la liste est de taille au moins 2.
 Par exemple, pour la liste `[1, 3, 5, 4]`, la différence retournée devra être `1` (la différence entre les deux derniers éléments de la liste).
 
 # Organisation de votre code

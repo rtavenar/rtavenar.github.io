@@ -8,7 +8,7 @@ rights: Creative Commons CC BY-NC-SA
 1.	Importer les fichiers `notes.txt` et `clients.txt` .
 ```SAS
 PROC IMPORT OUT= notes
-            DATAFILE= "/folders/myfolders/Cours SAS/td2/notes.txt"
+            DATAFILE= "/home/u49948743/SAS2021/notes.txt"
             DBMS=DLM REPLACE;
      DELIMITER=";";
      GETNAMES=YES;
@@ -17,7 +17,7 @@ RUN;
 
 
 PROC IMPORT OUT= clients
-            DATAFILE= "/folders/myfolders/Cours SAS/td2/clients.txt"
+            DATAFILE= "/home/u49948743/SAS2021/clients.txt"
             DBMS=DLM REPLACE;
      DELIMITER=";";
      GETNAMES=YES;
@@ -113,7 +113,7 @@ run ;
 10. Sortir les résultats de la `PROC FREQ` dans un fichier rtf en utilisant le style journal.
 
 ```SAS
-ods rtf file="/folders/myfolders/Cours SAS/td2/frequences.rtf" style=journal;
+ods rtf file="/home/u49948743/SAS2021/frequences.rtf" style=journal;
 proc freq data=resto (where=(index(upcase(nom), "PIZZA")>0)) ;
 	table  type;
 run ;

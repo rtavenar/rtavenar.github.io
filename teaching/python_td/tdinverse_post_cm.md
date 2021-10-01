@@ -154,13 +154,18 @@ grille = [["X", "-", "O"],
           ["-", "-", "-"]]
 ```
 
-2. Les briques suivantes ont été proposées :
+2. Le fonctionnement général du programme consiste en la répétition d'un tour, 
+qui est constitué des éléments suivants :
+    a. Afficher quel est le joueur qui doit jouer à ce tour
+    b. Demander au joueur de proposer une case dans laquelle jouer
+    c. Vérifier si cette case et valide et, si ce n'est pas le cas, revenir à l'étape b
+    d. Mettre à jour la grille avec le coup qui vient d'être joué
+    e. Afficher la grille
 
-![fullwidth](img/tableau_1_2020.jpg)&nbsp;
+Partant de ce début de mise en forme, transformez ces différents items en fonctions
+dont vous préciserez les noms, arguments et valeur de retour éventuelle.
 
-![fullwidth](img/tableau_2_2020.jpg)&nbsp;
-
-Partant de ce début de mise en forme, rédigez un énoncé de TD dans lequel
+Ensuite, rédigez un énoncé de TD dans lequel
 vous indiquerez explicitement :
 
 * les noms, les signatures et le rôle des fonctions (ex : coder la fonction xxx

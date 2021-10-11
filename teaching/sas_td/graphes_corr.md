@@ -89,7 +89,7 @@ run;
 
 6. Enregistrer le graphe obtenu sur votre disque.
 ```SAS
-ods rtf file="/folders/myfolders/Cours SAS/td3/graph.rtf";
+ods rtf file="/home/u49948743/SAS2021/graph.rtf";
 proc sgplot data=heart noautolegend;
 	scatter x=height y=weight;
 	reg x=height y=weight;

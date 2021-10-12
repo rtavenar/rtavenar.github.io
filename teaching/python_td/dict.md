@@ -91,8 +91,8 @@ On pourra utiliser le dictionnaire suivant pour tester la fonction ainsi
 ```python
 notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]}
 ```
- -->
- 
+
+
 # Devoir
 
 **Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine
@@ -118,3 +118,4 @@ La fonction devra retourner :
 ```python
 {'a': 1, 'd': 2, 'g': 7, 'h': 8, 'c': 3}
 ```
+ -->

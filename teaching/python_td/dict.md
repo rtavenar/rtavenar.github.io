@@ -89,9 +89,10 @@ correspondante.
 On pourra utiliser le dictionnaire suivant pour tester la fonction ainsi
 écrite :
 ```python
-notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]} -->
+notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]}
 ```
-
+ -->
+ 
 # Devoir
 
 **Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine

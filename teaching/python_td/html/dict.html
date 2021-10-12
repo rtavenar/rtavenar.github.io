@@ -138,27 +138,18 @@ correspondante.
 On pourra utiliser le dictionnaire suivant pour tester la fonction ainsi
 &#xE9;crite :
 ```python
-notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]} -->
-<pre><code>
-# Devoir
-
-**Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine
-prochaine. Le rendu se fera sous la forme d&#39;un unique fichier Python
-(pas de version `.txt` ou `.pdf`) structuré
-comme demandé plus haut et contenant le code relatif à cette partie.**
-
-8. Écrivez une fonction qui prend en entrée 1, 2 ou 3 dictionnaires et retourne
-un dictionnaire fusionnant les informations de ces dictionnaires de la manière
-suivante : pour chaque clef présente dans au moins un dictionnaire, la
-valeur associée sera la plus petite des valeurs associées à cette clef dans les
-dictionnaires passés en argument à la fonction.
-
-Par exemple, pour les dictionnaires suivants :
-
-```python
-dict1 = {&quot;a&quot;: 1, &quot;d&quot;: 4, &quot;g&quot;: 7}
-dict2 = {&quot;a&quot;: 1, &quot;d&quot;: 2, &quot;h&quot;: 8}
-dict3 = {&quot;a&quot;: 2, &quot;c&quot;: 3, &quot;h&quot;: 9}</code></pre>
+notes = {"Tom": [8, 10, 12], "Mila": [10, 9], "Alex": [], "Lina": [12, 10, 8]}
+```
+ -->
+<h1 data-number="5" id="devoir"><span class="header-section-number">5</span> Devoir</h1>
+<p><strong>Cet exercice est à rendre sur CURSUS avant la séance de TD de la semaine prochaine. Le rendu se fera sous la forme d’un unique fichier Python (pas de version <code>.txt</code> ou <code>.pdf</code>) structuré comme demandé plus haut et contenant le code relatif à cette partie.</strong></p>
+<ol start="8" type="1">
+<li>Écrivez une fonction qui prend en entrée 1, 2 ou 3 dictionnaires et retourne un dictionnaire fusionnant les informations de ces dictionnaires de la manière suivante : pour chaque clef présente dans au moins un dictionnaire, la valeur associée sera la plus petite des valeurs associées à cette clef dans les dictionnaires passés en argument à la fonction.</li>
+</ol>
+<p>Par exemple, pour les dictionnaires suivants :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dict1 <span class="op">=</span> {<span class="st">&quot;a&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;d&quot;</span>: <span class="dv">4</span>, <span class="st">&quot;g&quot;</span>: <span class="dv">7</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dict2 <span class="op">=</span> {<span class="st">&quot;a&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;d&quot;</span>: <span class="dv">2</span>, <span class="st">&quot;h&quot;</span>: <span class="dv">8</span>}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dict3 <span class="op">=</span> {<span class="st">&quot;a&quot;</span>: <span class="dv">2</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">3</span>, <span class="st">&quot;h&quot;</span>: <span class="dv">9</span>}</span></code></pre></div>
 <p>La fonction devra retourner :</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">&#39;a&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;d&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;g&#39;</span>: <span class="dv">7</span>, <span class="st">&#39;h&#39;</span>: <span class="dv">8</span>, <span class="st">&#39;c&#39;</span>: <span class="dv">3</span>}</span></code></pre></div>
 </body>

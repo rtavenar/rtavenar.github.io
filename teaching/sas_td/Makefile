@@ -1,4 +1,4 @@
-TARGETS=intro_corr intro_nocorr nyfood_corr nyfood_nocorr graphes_corr graphes sas_ondemand CC_GroupeA CC_GroupeB CC_sess2
+TARGETS=td4 td4_corr intro_corr intro_nocorr nyfood_corr nyfood_nocorr graphes_corr graphes sas_ondemand CC_GroupeA CC_GroupeB CC_sess2
 
 all: $(TARGETS)
 

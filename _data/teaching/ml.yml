@@ -14,7 +14,7 @@ sections:
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/04_Regression_VariableSelection.ipynb\">R&eacute;gression et s&eacute;lection de variable</a>"
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/05_PCA.ipynb\">Analyse en Composantes Principales</a>"
     - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection.ipynb\">S&eacute;lection de mod&egrave;le</a> (sklearn v0.18+)"
-    - name: "<a href=\"https://scikit-learn.org/stable/modules/compose.html\">Les Pipelines (lien vers la doc scikit-learn)</a>"
+    - name: "Liens vers la doc <code>sklearn</code> pour : <a href=\"https://scikit-learn.org/stable/modules/compose.html\">les Pipelines</a>, <a href=\"https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer_mixed_types.html#sphx-glr-auto-examples-compose-plot-column-transformer-mixed-types-py\">les ColumnTransformer</a> et <a href=\"https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_1_0_0.html#feature-names-support\">l'intégration de dataframes pandas</a> (nouveau dans la version 1.0)"
   - title: "Deep learning : transparents de cours"
     items:
     - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"

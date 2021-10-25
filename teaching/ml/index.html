@@ -11,17 +11,17 @@ section: teaching
         {% for section in site.data.teaching.ml.sections %}
             <article class="post-content">
                 <h2>{{ forloop.index }}. {{ section.title }}</h2>
-                <ul>
+                <ol>
                 {% for item in section.items %}
-                    <li>
+                    <li {% if item.index %} value={{ item.index }} {% endif %}>
                     {% if item.deepnote %}
-                        <a href="{{ item.deepnote }}">{{ item.name  }}</a>
+                        <a href="{{ item.deepnote }}">{{ item.name }}</a>
                     {% else %}
                         {{ item.name }}
                     {% endif %}
                     </li>
                 {% endfor %}
-                </ul>
+                </ol>
             </article>
         {% endfor %}
 	</section>

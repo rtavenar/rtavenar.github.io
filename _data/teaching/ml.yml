@@ -33,3 +33,7 @@ sections:
     #   deepnote: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
     # - name: "Récapitulatif (+ extras)"
     #   deepnote: "https://deepnote.com/project/8af76abe-b054-4e4d-ac13-109378915ccb"
+  - title: "Pour aller plus loin"
+    items:
+    - name: "Intro à la différentiation automatique"
+      deepnote: "https://deepnote.com/project/An-autodiff-minimal-example-naVAZr_rQY-yTqu8yCgaLw/%2Fnotebook.ipynb"

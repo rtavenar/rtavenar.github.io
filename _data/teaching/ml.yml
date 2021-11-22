@@ -19,14 +19,14 @@ sections:
     items:
     - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"
     - name: "<a href=\"pdf/zz_recap_01.pdf\">Récapitulatif (très bref) séance 1</a>"
-    # - name: "<a href=\"pdf/02_convnets_tavenard.pdf\">R&eacute;seaux de neurones convolutionnels</a>"
+    - name: "<a href=\"pdf/02_convnets_tavenard.pdf\">R&eacute;seaux de neurones convolutionnels</a>"
     # - name: "<a href=\"pdf/03_generative_tavenard.pdf\">Mod&egrave;les g&eacute;n&eacute;ratifs</a>"
   - title: "Deep learning : travaux dirigés (notebooks)"
     items:
     - name: "Perceptron multi-couches"
       deepnote: "https://deepnote.com/project/42d3e808-a75c-4f9e-8bf1-115b96f89fc0"
-    # - name: "R&eacute;seaux de neurones convolutionnels"
-    #   deepnote: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
+    - name: "R&eacute;seaux de neurones convolutionnels"
+      deepnote: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
     # - name: "R&eacute;seaux de neurones convolutionnels (suite)"
     #   deepnote: "https://deepnote.com/project/4418dda1-7b27-41aa-8376-9ca7c94fae59"
     # - name: "Modèles génératifs"

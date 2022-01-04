@@ -20,7 +20,7 @@ sections:
     - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"
     - name: "<a href=\"pdf/zz_recap_01.pdf\">Récapitulatif (très bref) séance 1</a>"
     - name: "<a href=\"pdf/02_convnets_tavenard.pdf\">R&eacute;seaux de neurones convolutionnels</a>"
-    # - name: "<a href=\"pdf/03_generative_tavenard.pdf\">Mod&egrave;les g&eacute;n&eacute;ratifs</a>"
+    - name: "<a href=\"pdf/03_generative_tavenard.pdf\">Mod&egrave;les g&eacute;n&eacute;ratifs</a>"
   - title: "Deep learning : travaux dirigés (notebooks)"
     items:
     - name: "Perceptron multi-couches"

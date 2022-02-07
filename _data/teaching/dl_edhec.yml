@@ -8,8 +8,6 @@ items:
   links:
   - text: "Slides (pdf)"
     url: "data/01_intro_dl_tavenard.pdf"
-- title: "Fully-connected models"
-  links:
   - text: "Multi-Layer Perceptron"
     deepnote: "https://deepnote.com/project/MLP-Deep-Learning-course-21-22-QtPoCKdcT56L8RFblvifwA/%2FMLP.ipynb"
     notebook: "https://github.com/rtavenar/deep-notebooks/raw/main/MLP.ipynb"

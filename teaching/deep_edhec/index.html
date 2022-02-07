@@ -17,21 +17,21 @@ section: teaching
                 <ul>
                     {% for l in item.links %}
                     <li>
-                        {{ l.text }}
-                        {% if l.notebook %}
-                            [<a href="{{ l.notebook }}">Link to raw notebook</a>] 
+                        {% if l.url %}
+                            <a href="{{ l.url }}">{{ l.text }}</a>
+                        {% else %}
+                            {{ l.text }}<br />
+                            {% if l.notebook %}
+                                <a href="{{ l.notebook }}">Notebook</a>
+                            {% endif %}
+                            {% if l.colab %}
+                                <a href="{{ l.colab }}"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+                            {% endif %}
+                            {% if l.deepnote %}
+                            <a href="{{ l.deepnote }}"><img src="https://deepnote.com/buttons/launch-in-deepnote-white-small.svg" alt="Open in Deepnote"/></a>
+                            {% endif %}
                         {% endif %}
-                        {% if l.colab %}
-                            <a href="{{ l.colab }}">
-                                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-                            </a>
-                        {% endif %}
-                        {% if l.deepnote %}
-                        <a href="{{ l.deepnote }}">
-                            <img src="https://deepnote.com/buttons/launch-in-deepnote-white-small.svg" alt="Open in Deepnote"/>
-                        </a>
-                        {% endif %}
-                    </li>
+                        </li>
                     {% endfor %}
                 </ul>
                 {% endif %}

@@ -1,7 +1,7 @@
 course-title: "Deep learning"
 description: "This page gathers material for the Deep Learning course at EDHEC
-(Spring semester, 2021).
-Instructor for this course is <a href=\"http://rtavenar.github.io\">Romain Tavenard</a>, assistant professor at Université de Rennes (@rtavenar on <a href=\"https://twitter.com/rtavenar\">twitter</a> and <a href=\"https://github.com/rtavenar\">github</a>)."
+(Spring semester, 2022).
+Instructor for this course is <a href=\"https://rtavenar.github.io\">Romain Tavenard</a>, assistant professor at Université de Rennes (@rtavenar on <a href=\"https://twitter.com/rtavenar\">twitter</a> and <a href=\"https://github.com/rtavenar\">github</a>)."
 items:
 - title: "An introduction to deep learning"
   description: "Course details and basics of neural networks."
@@ -10,35 +10,37 @@ items:
     url: "data/01_intro_dl_tavenard.pdf"
 - title: "Fully-connected models"
   links:
-  - text: "Multi-Layer Perceptron (Deepnote notebook)"
-    url: "https://deepnote.com/project/42d3e808-a75c-4f9e-8bf1-115b96f89fc0"
-- title: "Images and Convolutional models"
-  description: "An overview of 2d convolutional neural networks."
-  links:
-  - text: "Slides (pdf)"
-    url: "data/02_convnets_tavenard.pdf"
-  - text: "Images and ConvNets (Deepnote notebook)"
-    url: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
-  - text: "Images and ConvNets continued (Deepnote notebook)"
-    url: "https://deepnote.com/project/4418dda1-7b27-41aa-8376-9ca7c94fae59"
-- title: "Time Series and Sequences"
-  description: "1d convolutional neural networks and recurrent neural networks for sequential data."
-  links:
-  - text: "Slides (pdf)"
-    url: "data/03_sequences_tavenard.pdf"
-  - text: "Time Series and Sequences (Deepnote notebook)"
-    url: "https://deepnote.com/project/179b2a66-b219-4e41-8ac1-fbea6c4f4533"
-- title: "Generative models"
-  description: "Variational Auto-Encoders, GANs"
-  links:
-  - text: "Slides (pdf)"
-    url: "data/04_generative_tavenard.pdf"
-  - text: "Generative models (Deepnote notebook)"
-    url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
-- title: "Recap"
-  links:
-  - text: "Recap (+extras) notebook"
-    url: "https://deepnote.com/project/8af76abe-b054-4e4d-ac13-109378915ccb"
+  - text: "Multi-Layer Perceptron"
+    deepnote: "https://deepnote.com/project/MLP-Deep-Learning-course-21-22-QtPoCKdcT56L8RFblvifwA/%2FMLP.ipynb"
+    notebook: "https://github.com/rtavenar/deep-notebooks/raw/main/MLP.ipynb"
+    colab: "https://colab.research.google.com/github/rtavenar/deep-notebooks/blob/main/MLP.ipynb"
+# - title: "Images and Convolutional models"
+#   description: "An overview of 2d convolutional neural networks."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "data/02_convnets_tavenard.pdf"
+#   - text: "Images and ConvNets (Deepnote notebook)"
+#     url: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
+#   - text: "Images and ConvNets continued (Deepnote notebook)"
+#     url: "https://deepnote.com/project/4418dda1-7b27-41aa-8376-9ca7c94fae59"
+# - title: "Time Series and Sequences"
+#   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "data/03_sequences_tavenard.pdf"
+#   - text: "Time Series and Sequences (Deepnote notebook)"
+#     url: "https://deepnote.com/project/179b2a66-b219-4e41-8ac1-fbea6c4f4533"
+# - title: "Generative models"
+#   description: "Variational Auto-Encoders, GANs"
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "data/04_generative_tavenard.pdf"
+#   - text: "Generative models (Deepnote notebook)"
+#     url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
+# - title: "Recap"
+#   links:
+#   - text: "Recap (+extras) notebook"
+#     url: "https://deepnote.com/project/8af76abe-b054-4e4d-ac13-109378915ccb"
 # - title: "Assignment"
 #   description: "Take-home lab session"
 #   links:

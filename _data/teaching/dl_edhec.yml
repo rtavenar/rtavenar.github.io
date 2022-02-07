@@ -10,18 +10,15 @@ items:
     url: "data/01_intro_dl_tavenard.pdf"
   - text: "Multi-Layer Perceptron (lab)"
     github: rtavenar/deep-notebooks/blob/main/MLP.ipynb
-    deepnote: "https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Frtavenar%2Fdeep-notebooks%2Fblob%2Fmain%2FMLP.ipynb"
-    notebook: "https://github.com/rtavenar/deep-notebooks/raw/main/MLP.ipynb"
-    colab: "https://colab.research.google.com/github/rtavenar/deep-notebooks/blob/main/MLP.ipynb"
 # - title: "Images and Convolutional models"
 #   description: "An overview of 2d convolutional neural networks."
 #   links:
 #   - text: "Slides (pdf)"
 #     url: "data/02_convnets_tavenard.pdf"
-#   - text: "Images and ConvNets (Deepnote notebook)"
-#     url: "https://deepnote.com/project/de648b12-30d1-4278-ad83-8761337c2497"
-#   - text: "Images and ConvNets continued (Deepnote notebook)"
-#     url: "https://deepnote.com/project/4418dda1-7b27-41aa-8376-9ca7c94fae59"
+#   - text: "Images and ConvNets (lab)"
+#     github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
+#   - text: "Images and ConvNets, cont'd (lab)"
+#     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
 # - title: "Time Series and Sequences"
 #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
 #   links:

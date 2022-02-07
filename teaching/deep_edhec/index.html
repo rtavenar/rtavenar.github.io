@@ -22,7 +22,7 @@ section: teaching
                         {% else %}
                             {{ l.text }}<br />
                             {% if l.notebook %}
-                                <a href="{{ l.notebook }}">Notebook</a>
+                                <a href="{{ l.notebook }}"><img src="https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=Jupyter" alt="Download Jupyter Notebook"></a>
                             {% endif %}
                             {% if l.colab %}
                                 <a href="{{ l.colab }}"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>

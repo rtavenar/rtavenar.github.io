@@ -10,6 +10,8 @@ items:
     url: "data/01_intro_dl_tavenard.pdf"
   - text: "Multi-Layer Perceptron (lab)"
     github: rtavenar/deep-notebooks/blob/main/MLP.ipynb
+  - text: "Multi-Layer Perceptron (lab, with solution)"
+    github: rtavenar/deep-notebooks/blob/main/MLP_corr.ipynb
 # - title: "Images and Convolutional models"
 #   description: "An overview of 2d convolutional neural networks."
 #   links:

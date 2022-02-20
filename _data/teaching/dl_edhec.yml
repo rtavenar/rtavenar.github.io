@@ -35,12 +35,7 @@ items:
 #     url: "data/04_generative_tavenard.pdf"
 #   - text: "Generative models (Deepnote notebook)"
 #     url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
-# - title: "Recap"
-#   links:
-#   - text: "Recap (+extras) notebook"
-#     url: "https://deepnote.com/project/8af76abe-b054-4e4d-ac13-109378915ccb"
-# - title: "Assignment"
-#   description: "Take-home lab session"
-#   links:
-#   - text: "Link to Google Colab"
-#     url: "https://colab.research.google.com/drive/1Efvc-Y9I6Pxckdf--d7qUuqBZZHiDCrS"
+- title: "Home assignment"
+  links:
+  - text: "Multi-Layer Perceptron (lab, with solution)"
+    github: rtavenar/deep-notebooks/blob/main/home_assignment.ipynb

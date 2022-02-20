@@ -12,15 +12,15 @@ items:
     github: rtavenar/deep-notebooks/blob/main/MLP.ipynb
   - text: "Multi-Layer Perceptron (lab, with solution)"
     github: rtavenar/deep-notebooks/blob/main/MLP_corr.ipynb
-# - title: "Images and Convolutional models"
-#   description: "An overview of 2d convolutional neural networks."
-#   links:
-#   - text: "Slides (pdf)"
-#     url: "data/02_convnets_tavenard.pdf"
-#   - text: "Images and ConvNets (lab)"
-#     github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
-#   - text: "Images and ConvNets, cont'd (lab)"
-#     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
+- title: "Images and Convolutional models"
+  description: "An overview of 2d convolutional neural networks."
+  links:
+  - text: "Slides (pdf)"
+    url: "data/02_convnets_tavenard.pdf"
+  - text: "Images and ConvNets (lab)"
+    github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
+  - text: "Images and ConvNets, cont'd (lab)"
+    github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
 # - title: "Time Series and Sequences"
 #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
 #   links:
@@ -37,5 +37,5 @@ items:
 #     url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
 - title: "Home assignment"
   links:
-  - text: "Multi-Layer Perceptron (lab, with solution)"
+  - text: "Due date: March 6th"
     github: rtavenar/deep-notebooks/blob/main/home_assignment.ipynb

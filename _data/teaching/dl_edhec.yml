@@ -36,6 +36,7 @@ items:
 #   - text: "Generative models (Deepnote notebook)"
 #     url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
 - title: "Home assignment"
+  description: "Due date for this assignment is **March 6th**"
   links:
-  - text: "Due date: March 6th"
+  - text: "Wrap-up lab"
     github: rtavenar/deep-notebooks/blob/main/home_assignment.ipynb

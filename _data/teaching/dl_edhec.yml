@@ -19,6 +19,8 @@ items:
     url: "data/02_convnets_tavenard.pdf"
   - text: "Images and ConvNets (lab)"
     github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
+  - text: "Images and ConvNets (lab, with solution)"
+    github: rtavenar/deep-notebooks/blob/main/ConvNets_corr.ipynb
   - text: "Images and ConvNets, cont'd (lab)"
     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
 # - title: "Time Series and Sequences"

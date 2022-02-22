@@ -40,3 +40,7 @@ items:
   links:
   - text: "Wrap-up lab"
     github: rtavenar/deep-notebooks/blob/main/home_assignment.ipynb
+- title: "Brief recap"
+  links:
+  - text: "Slides (pdf)"
+    url: "data/zz_recap_01.pdf"

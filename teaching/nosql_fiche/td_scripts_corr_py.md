@@ -15,11 +15,11 @@ sous forme  de _dataframe_ dans  R  pour  ensuite  y  appliquer  vos
 traitements statistiques: un utilisera pour cela la librairie `mongolite`;
 * les scripts Python vous permettront de récupérer les résultats de vos
 requêtes sous forme de variable Python: on utilisera pour cela la librairie
-`pymongo` qui présente  l'avantage  d’être  maintenue  par  les  développeurs
+`pymongo` qui présente  l'avantage  d'être  maintenue  par  les  développeurs
 de  MongoDB  (ce qui garantit, a priori, une certaine pérennité et une
 cohérence avec l'interface MongoDB).
 
-Ainsi, pour chaque manipulation de cet énoncé, il est demandé d’effectuer le
+Ainsi, pour chaque manipulation de cet énoncé, il est demandé d'effectuer le
 travail dans  chacun  de  ces deux langages.
 
 # Connexion à la base de données
@@ -90,7 +90,7 @@ for doc in coll.find(query).sort("name", -1).limit(5):
     print(doc)
 ```
 
-9. Affichez la liste des notes attribuées à des restaurants de `Manhattan`.  
+<!-- 9. Affichez la liste des notes attribuées à des restaurants de `Manhattan`.  
 En  R,  réalisez  un  test  statistique  pour  vérifier  l'hypothèse  selon
 laquelle  les  notes  des  restaurants  suivent  la  même  distribution  dans  
 les quartiers de Manhattan et Brooklyn.
@@ -100,6 +100,24 @@ q_aggreg = [{"$match": {"borough": "Manhattan"}},
             {"$unwind": "$grades.grade"}]
 for doc in coll.aggregate(q_aggreg):
     print(doc)
+``` -->
+
+9. Affichez la liste des notes attribuées à des restaurants de `Manhattan`.
+À l'aide d'une boucle, stockez, pour chaque note attribuée, le nombre de restaurants 
+qui ont reçu cette note au moins une fois.
+Visualisez ces données sous la forme d'un diagramme en bâton.
+
+```python
+import seaborn as sns
+
+possible_grades = list(coll.distinct("grades.grade", {"borough": "Manhattan"}))
+counts = []
+for grade in possible_grades:
+    counts.append(
+        coll.count({"grades.grade": possible_grade, "borough": "Manhattan"})
+    )
+
+sns.barplot(x=possible_grades, y=counts)
 ```
 
 10. Affichez la liste des notes existant dans la base.

@@ -111,11 +111,16 @@ Visualisez ces données sous la forme d'un diagramme en bâton.
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-possible_grades = list(coll.distinct("grades.grade", {"borough": "Manhattan"}))
+cursor = coll.distinct("grades.grade", 
+                       {"borough": "Manhattan"})
+possible_grades = list(cursor)
 counts = []
 for grade in possible_grades:
     counts.append(
-        coll.count_documents({"grades.grade": grade, "borough": "Manhattan"})
+        coll.count_documents(
+            {"grades.grade": grade, 
+            "borough": "Manhattan"}
+        )
     )
 
 sns.barplot(x=possible_grades, y=counts)

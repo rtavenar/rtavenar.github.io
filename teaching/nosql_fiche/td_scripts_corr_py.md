@@ -119,7 +119,7 @@ for grade in possible_grades:
     counts.append(
         coll.count_documents(
             {"grades.grade": grade, 
-            "borough": "Manhattan"}
+             "borough": "Manhattan"}
         )
     )
 

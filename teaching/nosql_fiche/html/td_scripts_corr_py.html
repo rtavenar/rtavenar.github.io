@@ -388,15 +388,17 @@ for doc in coll.aggregate(q_aggreg):
 <li>Affichez la liste des notes attribuées à des restaurants de <code>Manhattan</code>. À l’aide d’une boucle, stockez, pour chaque note attribuée, le nombre de restaurants qui ont reçu cette note au moins une fois. Visualisez ces données sous la forme d’un diagramme en bâton.</li>
 </ol>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>possible_grades <span class="op">=</span> <span class="bu">list</span>(coll.distinct(<span class="st">&quot;grades.grade&quot;</span>, {<span class="st">&quot;borough&quot;</span>: <span class="st">&quot;Manhattan&quot;</span>}))</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> []</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> grade <span class="kw">in</span> possible_grades:</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    counts.append(</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        coll.count({<span class="st">&quot;grades.grade&quot;</span>: possible_grade, <span class="st">&quot;borough&quot;</span>: <span class="st">&quot;Manhattan&quot;</span>})</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>possible_grades, y<span class="op">=</span>counts)</span></code></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>possible_grades <span class="op">=</span> <span class="bu">list</span>(coll.distinct(<span class="st">&quot;grades.grade&quot;</span>, {<span class="st">&quot;borough&quot;</span>: <span class="st">&quot;Manhattan&quot;</span>}))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> []</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> grade <span class="kw">in</span> possible_grades:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    counts.append(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        coll.count_documents({<span class="st">&quot;grades.grade&quot;</span>: grade, <span class="st">&quot;borough&quot;</span>: <span class="st">&quot;Manhattan&quot;</span>})</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>possible_grades, y<span class="op">=</span>counts)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <ol start="10" type="1">
 <li>Affichez la liste des notes existant dans la base.</li>
 </ol>

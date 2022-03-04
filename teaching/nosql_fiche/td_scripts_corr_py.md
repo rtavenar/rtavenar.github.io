@@ -109,15 +109,17 @@ Visualisez ces données sous la forme d'un diagramme en bâton.
 
 ```python
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 possible_grades = list(coll.distinct("grades.grade", {"borough": "Manhattan"}))
 counts = []
 for grade in possible_grades:
     counts.append(
-        coll.count({"grades.grade": possible_grade, "borough": "Manhattan"})
+        coll.count_documents({"grades.grade": grade, "borough": "Manhattan"})
     )
 
 sns.barplot(x=possible_grades, y=counts)
+plt.show()
 ```
 
 10. Affichez la liste des notes existant dans la base.

@@ -268,7 +268,7 @@ traitements statistiques: un utilisera pour cela la librairie <code>mongolite</c
 <p>Ainsi, pour chaque manipulation de cet énoncé, il est demandé d’effectuer le travail dans chacun de ces deux langages.</p>
 <h1 data-number="1" id="connexion-à-la-base-de-données"><span class="header-section-number">1</span> Connexion à la base de données</h1>
 <ol type="1">
-<li><p>Connectez vous à la base <code>food</code> hébergée sur le serveur MongoDB Atlas dont l’URL est <code>clusterm1.0rm7t.mongodb.net</code>. Vous utiliserez l’URI de connexion suivante : <code>&quot;mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/?tls=true&amp;tlsAllowInvalidCertificates=true&quot;</code></p></li>
+<li><p>Connectez vous à la base <code>food</code> hébergée sur le serveur MongoDB Atlas dont l’URL est <code>clusterm1.0rm7t.mongodb.net</code>. En python, avec <code>pymongo</code>, vous utiliserez l’URI de connexion suivante : <code>&quot;mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/?tls=true&amp;tlsAllowInvalidCertificates=true&quot;</code> En R, vous utiliserez l’URI : <code>&quot;mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/food&quot;</code> et passerez l’argument <code>options = ssl_options(allow_invalid_hostname=TRUE, weak_cert_validation=TRUE)</code> à la fonction <code>mongo()</code>.</p></li>
 <li><p>Affichez la liste des collections de la base (ceci n’est pas possible en R avec <code>mongolite</code>).</p></li>
 <li><p>Affichez la liste des index de la collection <code>NYfood</code>.</p></li>
 </ol>

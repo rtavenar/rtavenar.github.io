@@ -26,7 +26,7 @@ travail dans  chacun  de  ces deux langages.
 
 1. Connectez  vous  à  la  base `food` hébergée sur le serveur MongoDB Atlas
 dont l'URL est `clusterm1.0rm7t.mongodb.net`. Vous utiliserez l'URI de connexion suivante :
-`"mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/"`
+`"mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/?tls=true&tlsAllowInvalidCertificates=true"`
 
 2. Affichez la liste des collections de la base (ceci n'est pas possible en R
 avec `mongolite`).

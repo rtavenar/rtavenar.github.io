@@ -364,14 +364,32 @@ traitements statistiques: un utilisera pour cela la librairie <code>mongolite</c
 </ol>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mdb<span class="sc">$</span><span class="fu">find</span>(<span class="at">query =</span> q, <span class="at">limit =</span> <span class="dv">5</span>, <span class="at">sort =</span> <span class="st">&#39;{&quot;name&quot;: -1}&#39;</span>))</span></code></pre></div>
 <ol start="9" type="1">
-<li><p>Affichez la liste des notes attribuées à des restaurants de <code>Manhattan</code>. À l’aide d’une boucle, stockez, pour chaque note attribuée, le nombre de restaurants qui ont reçu cette note au moins une fois. Visualisez ces données sous la forme d’un diagramme en bâton.</p></li>
-<li><p>Affichez la liste des notes existant dans la base.</p></li>
+<li>Affichez la liste des notes attribuées à des restaurants de <code>Manhattan</code>. À l’aide d’une boucle, stockez, pour chaque note attribuée, le nombre de restaurants qui ont reçu cette note au moins une fois. Visualisez ces données sous la forme d’un diagramme en bâton.</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mdb<span class="sc">$</span><span class="fu">distinct</span>(<span class="at">key =</span> <span class="st">&quot;grades.grade&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">=</span> <span class="st">&#39;{&quot;borough&quot;: &quot;Manhattan&quot;}&#39;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>liste_notes <span class="ot">&lt;-</span> coll<span class="sc">$</span><span class="fu">distinct</span>(<span class="at">key =</span> <span class="st">&quot;grades.grade&quot;</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">query =</span> q)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>cpt <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(liste_notes))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (note <span class="cf">in</span> liste_notes){</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  cpt[i] <span class="ot">&lt;-</span> coll<span class="sc">$</span><span class="fu">count</span>(<span class="at">query =</span> <span class="fu">paste0</span>(<span class="st">&#39;{&quot;borough&quot;: &quot;Manhattan&quot;,</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="st">                                       &quot;grades.grade&quot;: &quot;&#39;</span>, note, <span class="st">&#39;&quot;}&#39;</span>))</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(cpt,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">names.arg =</span> liste_notes,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Répartition des notes </span><span class="sc">\n</span><span class="st"> Restaurants de Manhattan&quot;</span>)</span></code></pre></div>
+<ol start="10" type="1">
+<li>Affichez la liste des notes existant dans la base.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mdb<span class="sc">$</span><span class="fu">distinct</span>(<span class="at">key =</span> <span class="st">&quot;grades.grade&quot;</span>))</span></code></pre></div>
 <ol start="11" type="1">
 <li>Affichez la liste des restaurants ayant au moins une note postérieure au 20 janvier 2015.</li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">=</span> <span class="st">&#39;{&quot;grades.date&quot;: {&quot;$gte&quot;: {&quot;$date&quot;: &quot;2015-01-20T00:00:00Z&quot;}}}&#39;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mdb<span class="sc">$</span><span class="fu">find</span>(<span class="at">query=</span>q))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">=</span> <span class="st">&#39;{&quot;grades.date&quot;: {&quot;$gte&quot;: {&quot;$date&quot;: &quot;2015-01-20T00:00:00Z&quot;}}}&#39;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mdb<span class="sc">$</span><span class="fu">find</span>(<span class="at">query=</span>q))</span></code></pre></div>
 </body>
 </html>

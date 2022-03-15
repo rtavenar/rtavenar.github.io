@@ -83,6 +83,25 @@ print(mdb$find(query = q, limit = 5, sort = '{"name": -1}'))
 qui ont reçu cette note au moins une fois.
 Visualisez ces données sous la forme d'un diagramme en bâton.
 
+```R
+q = '{"borough": "Manhattan"}'
+
+liste_notes <- coll$distinct(key = "grades.grade",
+                             query = q)
+
+i <- 1
+cpt <- numeric(length(liste_notes))
+for (note in liste_notes){
+  cpt[i] <- coll$count(query = paste0('{"borough": "Manhattan",
+                                       "grades.grade": "', note, '"}'))
+  i <- i + 1
+}
+
+barplot(cpt,
+        names.arg = liste_notes,
+        main = "Répartition des notes \n Restaurants de Manhattan")
+```
+
 10. Affichez la liste des notes existant dans la base.
 
 ```R

@@ -26,11 +26,13 @@ travail dans  chacun  de  ces deux langages.
 
 1. Connectez  vous  à  la  base `food` hébergée sur le serveur MongoDB Atlas
 dont l'URL est `clusterm1.0rm7t.mongodb.net`. 
-En python, avec `pymongo`, vous utiliserez l'URI de connexion suivante :
+    * En python, avec `pymongo`, vous utiliserez l'URI de connexion suivante :
 `"mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/?tls=true&tlsAllowInvalidCertificates=true"`
-En R, vous utiliserez l'URI : `"mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/food"` et 
+    * En R, vous utiliserez l'URI : `"mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/food"` et 
 passerez l'argument `options = ssl_options(allow_invalid_hostname=TRUE, weak_cert_validation=TRUE)` 
-à la fonction `mongo()`.
+à la fonction `mongo()`. Si cela échoue, vous pourrez tester avec l'URI suivante : 
+
+```mongodb://etudiant:ur2@clusterm1-shard-00-00.0rm7t.mongodb.net:27017,clusterm1-shard-00-01.0rm7t.mongodb.net:27017,clusterm1-shard-00-02.0rm7t.mongodb.net:27017/?ssl=true&replicaSet=atlas-l4xi61-shard-0```
 
 2. Affichez la liste des collections de la base (ceci n'est pas possible en R
 avec `mongolite`).

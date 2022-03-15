@@ -32,8 +32,10 @@ dont l'URL est `clusterm1.0rm7t.mongodb.net`.
 ```R
 library("mongolite")
 
+url="mongodb://etudiant:ur2@clusterm1-shard-00-00.0rm7t.mongodb.net:27017,clusterm1-shard-00-01.0rm7t.mongodb.net:27017,clusterm1-shard-00-02.0rm7t.mongodb.net:27017/?ssl=true&replicaSet=atlas-l4xi61-shard-0"
+
 mdb = mongo(collection="NYfood", db="food",
-            url="mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/",
+            url=url,
             verbose=TRUE)
 ```
 

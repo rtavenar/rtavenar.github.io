@@ -336,9 +336,11 @@ traitements statistiques: un utilisera pour cela la librairie <code>mongolite</c
 <p><strong>Attention: ci-dessous les identifiants et mot de passe sont inscrits en clair pour que vous puissiez tester ces bouts de code chez vous, mais il s’agit d’une très mauvaise pratique : ceux-ci doivent toujours être lus dans un fichier externe de manière à ce que vous puissiez partager votre code sans révéler vos identifiants.</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mongolite&quot;</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>mdb <span class="ot">=</span> <span class="fu">mongo</span>(<span class="at">collection=</span><span class="st">&quot;NYfood&quot;</span>, <span class="at">db=</span><span class="st">&quot;food&quot;</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">url=</span><span class="st">&quot;mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/&quot;</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url<span class="ot">=</span><span class="st">&quot;mongodb://etudiant:ur2@clusterm1-shard-00-00.0rm7t.mongodb.net:27017,clusterm1-shard-00-01.0rm7t.mongodb.net:27017,clusterm1-shard-00-02.0rm7t.mongodb.net:27017/?ssl=true&amp;replicaSet=atlas-l4xi61-shard-0&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>mdb <span class="ot">=</span> <span class="fu">mongo</span>(<span class="at">collection=</span><span class="st">&quot;NYfood&quot;</span>, <span class="at">db=</span><span class="st">&quot;food&quot;</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">url=</span>url,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <ol start="2" type="1">
 <li><p>Affichez la liste des collections de la base (ceci n’est pas possible en R avec <code>mongolite</code>).</p></li>
 <li><p>Affichez la liste des index de la collection <code>NYfood</code>.</p></li>

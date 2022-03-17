@@ -11,6 +11,7 @@ rights: Creative Commons CC BY-NC-SA
 * Rendu final : au plus tard le vendredi 29/04/2022, 23h59
 * Exemple de notebook `R` hébergé sur Google Colab pour celles et ceux qui auraient des soucis pour interroger les base de données hébergées sur MongoDB Atlas depuis leur machine (sous R) : [ici](https://colab.research.google.com/drive/1MwSpXY8BKFlTNudC65cQm-oWfi0OOYsq?usp=sharing)
 
+
 # Contenu du projet
 
 Dans ce projet, vous serez amenés à manipuler des données issues de bases MongoDB pour générer des visualisations.

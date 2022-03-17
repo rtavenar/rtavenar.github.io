@@ -70,7 +70,7 @@ Vous savez déjà que les attributs de type date doivent être considérés de f
 
 # Questions avancées
 
-18. Référez-vous à [l'aide du mot-clé $out](https://docs.mongodb.org/manual/reference/operator/aggregation/out/#out-aggregation) pour générer une nouvelle collection, appelée `summary`, dans la base `food` qui contienne les statistiques pour chaque année et chaque quartier des nombres moyen, minimum et maximum de notes obtenues par restaurant. Les données seront triées pour faire apparaître les années les plus récentes en premières et, pour une même année, les quartiers par ordre alphabétique.
+18. Affichez les statistiques pour chaque année et chaque quartier des nombres moyen, minimum et maximum de notes obtenues par restaurant. Les données seront triées pour faire apparaître les années les plus récentes en premières et, pour une même année, les quartiers par ordre alphabétique.
 
 19. Passez à la base `etudiants` et calculez, pour chaque étudiant, sa moyenne.
 

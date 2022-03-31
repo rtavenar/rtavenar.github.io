@@ -51,7 +51,7 @@ En vous basant sur les polygones de définition des centres de votes disponibles
 Pour l'évaluation, il sera porté une attention particulière à ce que :
 
 1. votre code minimise la quantité de calculs à faire par votre machine (en Python ou en R) et que, au contraire, la majeure partie des calculs, sélections de données, _etc._, soit intégrée dans vos requêtes MongoDB ;
-2. votre code minimise la quantité de données à faire transiter du serveur de bases de données à votre machine (vos requêtes MongoDB devront donc synthétiser l'information de manière à ne récupérer que les informations nécessaires à vos visualisation).
+2. votre code minimise la quantité de données à faire transiter du serveur de bases de données à votre machine (vos requêtes MongoDB devront donc synthétiser l'information de manière à ne récupérer que les informations nécessaires à vos visualisations).
 
 De plus, les éléments notés "Bonus" plus haut n'en sont pas vraiment : il n’est pas envisageable d'obtenir la note maximale en se contentant d'implémenter le "but principal".
 Typiquement, sur les 20 points de la note finale, 6 seront dédiés à la qualité et l'originalité des bonus proposés.

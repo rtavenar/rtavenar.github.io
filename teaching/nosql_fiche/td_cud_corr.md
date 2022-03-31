@@ -101,7 +101,7 @@ Dans la suite, vous travaillerez donc sur la base `voitures` pour laquelle vous 
 )
 ```
 
-7. Suite à une vente, il faut décrémenter le compteur du nombre de C1 à la vente (et mettre à jour la `date_maj`). Proposez une requête pour le faire en utilisant [l'opérateur `$inc`](https://docs.mongodb.org/v3.0/reference/operator/update/inc/#up._S_inc)
+7. Suite à une vente, il faut décrémenter le compteur du nombre de C1 à la vente (et mettre à jour la `date_maj`). Proposez une requête pour le faire en utilisant [l'opérateur `$inc`](https://www.mongodb.com/docs/manual/reference/operator/update/inc/)
 
 ```javascript
 > db.ventes_NomPrenom.update(
@@ -113,7 +113,7 @@ Dans la suite, vous travaillerez donc sur la base `voitures` pour laquelle vous 
 )
 ```
 
-8. Proposez une nouvelle requête pour s'assurer que le document correspondant au modèle Xsara, s'il existe, contienne bien pour marque Citroën. Si ce document n'existe pas, créer un document avec une `quantité` de `0` et une `date_maj` égale à la date courante. <https://docs.mongodb.org/v3.0/reference/operator/update/setOnInsert/>
+8. Proposez une nouvelle requête pour s'assurer que le document correspondant au modèle Xsara, s'il existe, contienne bien pour marque Citroën. Si ce document n'existe pas, créer un document avec une `quantité` de `0` et une `date_maj` égale à la date courante. <https://www.mongodb.com/docs/manual/reference/operator/update/setOnInsert/>
 
 ```javascript
 > db.ventes_NomPrenom.update(

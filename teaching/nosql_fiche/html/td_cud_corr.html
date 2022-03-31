@@ -392,7 +392,7 @@ line-height:1.1;
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>{<span class="dt">multi</span><span class="op">:</span> <span class="kw">true</span>}</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <ol start="7" type="1">
-<li>Suite à une vente, il faut décrémenter le compteur du nombre de C1 à la vente (et mettre à jour la <code>date_maj</code>). Proposez une requête pour le faire en utilisant <a href="https://docs.mongodb.org/v3.0/reference/operator/update/inc/#up._S_inc">l’opérateur <code>$inc</code></a></li>
+<li>Suite à une vente, il faut décrémenter le compteur du nombre de C1 à la vente (et mettre à jour la <code>date_maj</code>). Proposez une requête pour le faire en utilisant <a href="https://www.mongodb.com/docs/manual/reference/operator/update/inc/">l’opérateur <code>$inc</code></a></li>
 </ol>
 <div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> db<span class="op">.</span><span class="at">ventes_NomPrenom</span><span class="op">.</span><span class="fu">update</span>(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>{<span class="st">&quot;modèle&quot;</span><span class="op">:</span> <span class="st">&quot;C1&quot;</span>}<span class="op">,</span></span>
@@ -402,7 +402,7 @@ line-height:1.1;
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <ol start="8" type="1">
-<li>Proposez une nouvelle requête pour s’assurer que le document correspondant au modèle Xsara, s’il existe, contienne bien pour marque Citroën. Si ce document n’existe pas, créer un document avec une <code>quantité</code> de <code>0</code> et une <code>date_maj</code> égale à la date courante. <a href="https://docs.mongodb.org/v3.0/reference/operator/update/setOnInsert/" class="uri">https://docs.mongodb.org/v3.0/reference/operator/update/setOnInsert/</a></li>
+<li>Proposez une nouvelle requête pour s’assurer que le document correspondant au modèle Xsara, s’il existe, contienne bien pour marque Citroën. Si ce document n’existe pas, créer un document avec une <code>quantité</code> de <code>0</code> et une <code>date_maj</code> égale à la date courante. <a href="https://www.mongodb.com/docs/manual/reference/operator/update/setOnInsert/" class="uri">https://www.mongodb.com/docs/manual/reference/operator/update/setOnInsert/</a></li>
 </ol>
 <div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> db<span class="op">.</span><span class="at">ventes_NomPrenom</span><span class="op">.</span><span class="fu">update</span>(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>{<span class="st">&quot;modèle&quot;</span><span class="op">:</span> <span class="st">&quot;Xsara&quot;</span>}<span class="op">,</span></span>

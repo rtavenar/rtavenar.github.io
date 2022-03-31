@@ -44,7 +44,7 @@ Pour ce troisième exercice, vous êtes libres de visualiser les données conten
 
 Dans le cas d'un groupe de 3 étudiants, vous avez une visualisation supplémentaire à faire, dont voici les instructions.
 La base `elections_rennes` contient les informations relatives aux élections municipales de 2020 à Rennes.
-En vous basant sur les polygones de définition des circonscriptions disponibles ici (**TODO**), proposez une visualisation qui place sur une carte les différents bureaux de vote, indique par un code couleur le taux de participation des bureaux de vote, et indique au survol de chaque circonscription les totaux des nombre de voix pour chaque candidat (additionnés sur tous les bureaux de vote de la circonscription).
+En vous basant sur les polygones de définition des centres de votes disponibles ici (<https://data.rennesmetropole.fr/explore/dataset/perimetres_centres_vote_2014/download/?format=json&timezone=Europe/Berlin&lang=fr>), proposez une visualisation qui place sur une carte les différents bureaux de vote, indique par un code couleur le taux de participation des bureaux de vote, et indique au survol de chaque centre de vote (représenté par un polygone, donc) les totaux des nombre de voix pour chaque candidat (additionnés sur tous les bureaux de vote du centre).
 
 # Évaluation
 

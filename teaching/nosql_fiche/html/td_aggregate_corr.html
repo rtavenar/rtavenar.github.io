@@ -515,7 +515,7 @@ line-height:1.1;
 </ol>
 <div class="sourceCode" id="cb20"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> db<span class="op">.</span><span class="at">notes</span><span class="op">.</span><span class="fu">aggregate</span>([</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                        {<span class="dt">$unwind</span><span class="op">:</span> <span class="st">&quot;$notes&quot;</span>}<span class="op">,</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                        {<span class="dt">$group</span><span class="op">:</span> {<span class="dt">_id</span><span class="op">:</span> <span class="st">&quot;$nom&quot;</span><span class="op">,</span> <span class="dt">moyenne</span><span class="op">:</span> {<span class="dt">avg</span><span class="op">:</span> <span class="st">&quot;$notes&quot;</span>}}}</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                        {<span class="dt">$group</span><span class="op">:</span> {<span class="dt">_id</span><span class="op">:</span> <span class="st">&quot;$nom&quot;</span><span class="op">,</span> <span class="dt">moyenne</span><span class="op">:</span> {<span class="dt">$avg</span><span class="op">:</span> <span class="st">&quot;$notes&quot;</span>}}}</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                      ])</span></code></pre></div>
 <ol start="20" type="1">
 <li>Quel est le jour durant lequel ont été données le plus de notes pour des restaurants de <code>&quot;Manhattan&quot;</code> ?</li>

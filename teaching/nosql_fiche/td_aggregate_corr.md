@@ -246,7 +246,7 @@ Vous savez déjà que les attributs de type date doivent être considérés de f
 ```javascript
 > db.notes.aggregate([
                         {$unwind: "$notes"},
-                        {$group: {_id: "$nom", moyenne: {avg: "$notes"}}}
+                        {$group: {_id: "$nom", moyenne: {$avg: "$notes"}}}
                       ])
 ```
 

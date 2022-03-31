@@ -1,4 +1,4 @@
-TARGETS=install intro td_mongoshell td_mongoshell_corr td_reqsupp td_reqsupp_corr td_textgeo td_textgeo_corr td_index td_index_corr td_aggregate td_aggregate_corr td_cud_corr td_cud td_sharding_corr td_sharding td_mapreduce_corr td_mapreduce install_atlas td_scripts_corr_py td_scripts_corr_R td_scripts projet_visu
+TARGETS=install intro td_mongoshell td_mongoshell_corr td_reqsupp td_reqsupp_corr td_textgeo td_textgeo_corr td_index td_index_corr td_aggregate td_aggregate_corr td_cud_corr td_cud td_sharding_corr td_sharding td_mapreduce_corr td_mapreduce install_atlas td_scripts_corr_py td_scripts_corr_R td_scripts projet_visu projet_visu_groupe_de_3
 all: $(TARGETS)
 
 $(TARGETS): %: html/%.html epub/%.epub pdf/%.pdf

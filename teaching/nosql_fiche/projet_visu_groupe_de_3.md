@@ -40,6 +40,12 @@ Le nombre d'auteurs présents dans la base étant très grand, vous vous focalis
 La base `NYfood` contient des informations relatives à des restaurants de New-York.
 Pour ce troisième exercice, vous êtes libres de visualiser les données contenues dans cette base comme bon vous semble.
 
+## Visualisation supplémentaire pour un groupe de 3 étudiants
+
+Dans le cas d'un groupe de 3 étudiants, vous avez une visualisation supplémentaire à faire, dont voici les instructions.
+La base `elections_rennes` contient les informations relatives aux élections municipales de 2020 à Rennes.
+En vous basant sur les polygones de définition des circonscriptions disponibles ici (**TODO**), proposez une visualisation qui place sur une carte les différents bureaux de vote, indique par un code couleur le taux de participation des bureaux de vote, et indique au survol de chaque circonscription les totaux des nombre de voix pour chaque candidat (additionnés sur tous les bureaux de vote de la circonscription).
+
 # Évaluation
 
 Pour l'évaluation, il sera porté une attention particulière à ce que :

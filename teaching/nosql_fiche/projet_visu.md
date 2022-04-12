@@ -26,6 +26,7 @@ Vous devrez pour cette première visualisation générer une carte des centres d
 L'icône associée à chaque centre sera de couleur rouge, orange ou vert selon le nombre de créneaux de vaccination ouverts sur la période du 26 au 29 janvier 2022 (inclus).
 
 **Exemple de bonus.** Vous pourrez ajouter une seconde visualisation qui se concentrera sur les vaccinations pour première dose (voire même, vous pourrez ajouter un bouton qui bascule d'une visualisation à l'aure lorsque l'utilisateur clique dessus).
+**Mise à jour :** Pour ce bonus, vous vous concentrerez sur la période 1er janvier - 1er juin au lieu de la période citée plus haut.
 
 ## Réseau de publications scientifiques
 

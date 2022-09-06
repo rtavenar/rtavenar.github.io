@@ -24,7 +24,7 @@ sections:
   - title: "Deep learning : travaux dirigés (notebooks)"
     items:
     - name: "Perceptron multi-couches"
-      deepnote: "https://deepnote.com/project/42d3e808-a75c-4f9e-8bf1-115b96f89fc0"
+      deepnote: "https://github.com/rtavenar/deep-notebooks/blob/main/MLP_corr.ipynb"
     - name: "R&eacute;seaux de neurones convolutionnels"
       deepnote: "https://github.com/rtavenar/deep-notebooks/blob/main/ConvNets_corr.ipynb"
     - name: "R&eacute;seaux de neurones convolutionnels (suite)"

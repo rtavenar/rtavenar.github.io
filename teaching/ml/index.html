@@ -13,15 +13,21 @@ section: teaching
             <article class="post-content">
                 <h2>{{ forloop.index }}. {{ section.title }}</h2>
                 <ol>
-                {% for item in section.items %}
-                    <li {% if item.index %} value={{ item.index }} {% endif %}>
-                    {% if item.deepnote %}
-                        <a href="{{ item.deepnote }}">{{ item.name }}</a>
-                    {% else %}
-                        {{ item.name }}
-                    {% endif %}
-                    </li>
-                {% endfor %}
+                    {% for l in section.links %}
+                    <li>
+                        {% if l.url %}
+                            <a href="{{ l.url }}">{{ l.text }}</a>
+                        {% else %}
+                            {{ l.text }}
+                            {% if l.github %}
+                                <br />
+                                <a href="https://github.com/{{ l.github | replace: '/blob/', '/raw/' }}"><img src="https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=Jupyter" alt="Download Jupyter Notebook"></a>
+                                <a href="https://colab.research.google.com/github/{{ l.github }}"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+                                <a href="https://deepnote.com/launch?url={{ 'https://github.com/' | append: l.github | uri_escape }}"><img src="https://deepnote.com/buttons/launch-in-deepnote-white-small.svg" alt="Open in Deepnote"/></a>
+                            {% endif %}
+                        {% endif %}
+                        </li>
+                    {% endfor %}
                 </ol>
             </article>
         {% endfor %}

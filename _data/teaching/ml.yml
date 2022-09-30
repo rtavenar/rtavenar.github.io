@@ -1,39 +1,77 @@
 course-title: "Deep learning"
 description: "Page du cours de Machine Learning en Python pour les M2 Stats/Data Science de l'Universit&eacute; de Rennes 2"
 sections:
+  - title: "Généralités"
+    links:
+    - text: "Généralités sur le module"
+      url: "pdf/00_course_details.pdf"
   - title: "Projet Machine learning en Python : transparents de cours"
-    items:
-    - name: "<a href=\"pdf/00_scikit-learn.pdf\">Machine learning en Python: <code>scikit-learn</code></a>"
+    links:
+    - text: "Machine learning en Python: <code>scikit-learn</code>"
+      url: "pdf/00_scikit-learn.pdf"
   - title: "Projet Machine learning en Python : tutoriels <code>sklearn</code> (notebooks)"
-    items:
-    - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00_Introduction.ipynb\">Introduction</a><br /><a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00b_Scaling.ipynb\">Bonus 1 : Standardisation des données</a><br /><a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00c_CategoricalData.ipynb\">Bonus 2 : Cas des variables cat&eacute;gorielles</a>"
-      index: 0
-    - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/01_SVM.ipynb\">Classification supervis&eacute;e : SVM</a>"
-    - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/02_RandomForests.ipynb\">Classification supervis&eacute;e : Random Forest</a>"
-    - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/03_KMeans.ipynb\">Clustering : k-means</a>"
-    - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/04_Regression_VariableSelection.ipynb\">R&eacute;gression et s&eacute;lection de variable</a>"
-    - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/05_PCA.ipynb\">Analyse en Composantes Principales</a>"
-    - name: "<a href=\"http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection.ipynb\">S&eacute;lection de mod&egrave;le</a> (sklearn v0.18+)"
-    - name: "Liens vers la doc <code>sklearn</code> pour : <a href=\"https://scikit-learn.org/stable/modules/compose.html\">les Pipelines</a>, <a href=\"https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer_mixed_types.html#sphx-glr-auto-examples-compose-plot-column-transformer-mixed-types-py\">les ColumnTransformer</a> et <a href=\"https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_1_0_0.html#feature-names-support\">l'intégration de dataframes pandas</a> (nouveau dans la version 1.0)"
-  - title: "Deep learning : transparents de cours"
-    items:
-    - name: "<a href=\"pdf/01_intro_dl_tavenard.pdf\">Introduction au deep learning</a>"
-    - name: "<a href=\"pdf/zz_recap_01.pdf\">Récapitulatif (très bref) séance 1</a>"
-    - name: "<a href=\"pdf/02_convnets_tavenard.pdf\">R&eacute;seaux de neurones convolutionnels</a>"
-    - name: "<a href=\"pdf/03_generative_tavenard.pdf\">Mod&egrave;les g&eacute;n&eacute;ratifs</a>"
-  - title: "Deep learning : travaux dirigés (notebooks)"
-    items:
-    - name: "Perceptron multi-couches"
-      deepnote: "https://github.com/rtavenar/deep-notebooks/blob/main/MLP_corr.ipynb"
-    - name: "R&eacute;seaux de neurones convolutionnels"
-      deepnote: "https://github.com/rtavenar/deep-notebooks/blob/main/ConvNets_corr.ipynb"
-    - name: "R&eacute;seaux de neurones convolutionnels (suite)"
-      deepnote: "https://github.com/rtavenar/deep-notebooks/blob/main/ConvNets_contd_corr.ipynb"
-    - name: "Modèles génératifs"
-      deepnote: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
-    # - name: "Récapitulatif (+ extras)"
-    #   deepnote: "https://deepnote.com/project/8af76abe-b054-4e4d-ac13-109378915ccb"
-  - title: "Pour aller plus loin"
-    items:
-    - name: "Intro à la différentiation automatique"
-      deepnote: "https://deepnote.com/project/An-autodiff-minimal-example-naVAZr_rQY-yTqu8yCgaLw/%2Fnotebook.ipynb"
+    links:
+    - text: "Introduction"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00_Introduction.ipynb"
+    - text: "Standardisation des données"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00b_Scaling.ipynb"
+    - text: "Cas des variables cat&eacute;gorielles"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/00c_CategoricalData.ipynb"
+    - text: "Classification supervis&eacute;e : SVM"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/01_SVM.ipynb"
+    - text: "Classification supervis&eacute;e : Random Forest"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/02_RandomForests.ipynb"
+    - text: "Clustering : k-means"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/03_KMeans.ipynb"
+    - text: "R&eacute;gression et s&eacute;lection de variable"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/04_Regression_VariableSelection.ipynb"
+    - text: "Analyse en Composantes Principales"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/05_PCA.ipynb"
+    - text: "S&eacute;lection de mod&egrave;le (sklearn v0.18+)"
+      url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection.ipynb"
+    - text: "Liens vers la doc <code>sklearn</code> pour : <a href=\"https://scikit-learn.org/stable/modules/compose.html\">les Pipelines</a>, <a href=\"https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer_mixed_types.html#sphx-glr-auto-examples-compose-plot-column-transformer-mixed-types-py\">les ColumnTransformer</a> et <a href=\"https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_1_0_0.html#feature-names-support\">l'intégration de dataframes pandas</a> (nouveau dans la version 1.0)"
+  # - title: "An introduction to deep learning"
+  #   description: "Course details and basics of neural networks."
+  #   links:
+  #   - text: "Slides (pdf)"
+  #     url: "data/01_intro_dl_tavenard.pdf"
+  #   - text: "Multi-Layer Perceptron (lab)"
+  #     github: rtavenar/deep-notebooks/blob/main/MLP.ipynb
+  #   - text: "Multi-Layer Perceptron (lab, with solution)"
+  #     github: rtavenar/deep-notebooks/blob/main/MLP_corr.ipynb
+  # - title: "Images and Convolutional models"
+  #   description: "An overview of 2d convolutional neural networks."
+  #   links:
+  #   - text: "Slides (pdf)"
+  #     url: "data/02_convnets_tavenard.pdf"
+  #   - text: "Images and ConvNets (lab)"
+  #     github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
+  #   - text: "Images and ConvNets (lab, with solution)"
+  #     github: rtavenar/deep-notebooks/blob/main/ConvNets_corr.ipynb
+  #   - text: "Images and ConvNets, cont'd (lab)"
+  #     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
+  #   - text: "Images and ConvNets, cont'd (lab, with solution)"
+  #     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd_corr.ipynb
+  # - title: "Time Series and Sequences"
+  #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
+  #   links:
+  #   - text: "Slides (pdf)"
+  #     url: "data/03_sequences_tavenard.pdf"
+  #   - text: "Time Series and Sequences (Deepnote notebook)"
+  #     url: "https://deepnote.com/project/179b2a66-b219-4e41-8ac1-fbea6c4f4533"
+  # - title: "Generative models"
+  #   description: "Variational Auto-Encoders, GANs"
+  #   links:
+  #   - text: "Slides (pdf)"
+  #     url: "data/04_generative_tavenard.pdf"
+  #   - text: "Generative models (Deepnote notebook)"
+  #     url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
+  # - title: "Home assignment"
+  #   description: "Due date for this assignment is <b>March 6th</b>"
+  #   links:
+  #   - text: "Wrap-up lab"
+  #     github: rtavenar/deep-notebooks/blob/main/home_assignment.ipynb
+  # - title: "Brief recap"
+  #   links:
+  #   - text: "Slides (pdf)"
+  #     url: "data/zz_recap_01.pdf"

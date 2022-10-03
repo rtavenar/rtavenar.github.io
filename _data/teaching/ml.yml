@@ -30,11 +30,11 @@ sections:
     - text: "S&eacute;lection de mod&egrave;le (sklearn v0.18+)"
       url: "http://nbviewer.jupyter.org/github/rtavenar/rtavenar.github.io/blob/master/teaching/ml/notebooks/07_ModelSelection.ipynb"
     - text: "Liens vers la doc <code>sklearn</code> pour : <a href=\"https://scikit-learn.org/stable/modules/compose.html\">les Pipelines</a>, <a href=\"https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer_mixed_types.html#sphx-glr-auto-examples-compose-plot-column-transformer-mixed-types-py\">les ColumnTransformer</a> et <a href=\"https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_1_0_0.html#feature-names-support\">l'intégration de dataframes pandas</a> (nouveau dans la version 1.0)"
-  # - title: "An introduction to deep learning"
-  #   description: "Course details and basics of neural networks."
-  #   links:
-  #   - text: "Slides (pdf)"
-  #     url: "data/01_intro_dl_tavenard.pdf"
+  - title: "An introduction to deep learning"
+    description: "Course details and basics of neural networks."
+    links:
+    - text: "Slides (pdf)"
+      url: "data/01_intro_dl_tavenard.pdf"
   #   - text: "Multi-Layer Perceptron (lab)"
   #     github: rtavenar/deep-notebooks/blob/main/MLP.ipynb
   #   - text: "Multi-Layer Perceptron (lab, with solution)"

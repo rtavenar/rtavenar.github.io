@@ -39,13 +39,13 @@ sections:
       github: rtavenar/deep-notebooks/blob/main/MLP.ipynb
   #   - text: "Multi-Layer Perceptron (lab, with solution)"
   #     github: rtavenar/deep-notebooks/blob/main/MLP_corr.ipynb
-  # - title: "Images and Convolutional models"
-  #   description: "An overview of 2d convolutional neural networks."
-  #   links:
-  #   - text: "Slides (pdf)"
-  #     url: "pdf/02_convnets_tavenard.pdf"
-  #   - text: "Images and ConvNets (lab)"
-  #     github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
+  - title: "Images and Convolutional models"
+    description: "An overview of 2d convolutional neural networks."
+    links:
+    - text: "Slides (pdf)"
+      url: "pdf/02_convnets_tavenard.pdf"
+    - text: "Images and ConvNets (lab)"
+      github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
   #   - text: "Images and ConvNets (lab, with solution)"
   #     github: rtavenar/deep-notebooks/blob/main/ConvNets_corr.ipynb
   #   - text: "Images and ConvNets, cont'd (lab)"

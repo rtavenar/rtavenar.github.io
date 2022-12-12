@@ -50,8 +50,8 @@ sections:
       github: rtavenar/deep-notebooks/blob/main/ConvNets_corr_2022.ipynb
     - text: "Images and ConvNets, cont'd (lab)"
       github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
-  #   - text: "Images and ConvNets, cont'd (lab, with solution)"
-  #     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd_corr.ipynb
+    - text: "Images and ConvNets, cont'd (lab, with solution)"
+      github: rtavenar/deep-notebooks/blob/main/ConvNets_contd_corr_2022.ipynb
   # - title: "Time Series and Sequences"
   #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
   #   links:

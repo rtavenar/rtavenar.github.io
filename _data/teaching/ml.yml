@@ -68,7 +68,7 @@ sections:
       github: rtavenar/deep-notebooks/blob/main/Generative_models.ipynb
   - title: "Misc."
     description: "Additional content"
-  #   links:
+    links:
     - text: "Wrap-up lab"
       github: rtavenar/deep-notebooks/blob/main/wrap-up.ipynb
   # - title: "Brief recap"

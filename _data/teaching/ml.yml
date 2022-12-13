@@ -66,6 +66,8 @@ sections:
       url: "pdf/04_generative_tavenard.pdf"
     - text: "Generative models (lab)"
       github: rtavenar/deep-notebooks/blob/main/Generative_models.ipynb
+    - text: "Generative models (lab, with solution)"
+      github: rtavenar/deep-notebooks/blob/main/Generative_models_corr_2022.ipynb
   - title: "Misc."
     description: "Additional content"
     links:

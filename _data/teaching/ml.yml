@@ -73,6 +73,8 @@ sections:
     links:
     - text: "Wrap-up lab"
       github: rtavenar/deep-notebooks/blob/main/wrap-up.ipynb
+    - text: "Wrap-up lab, with solution"
+      github: rtavenar/deep-notebooks/blob/main/wrap-up_corr_2022.ipynb
   # - title: "Brief recap"
   #   links:
   #   - text: "Slides (pdf)"

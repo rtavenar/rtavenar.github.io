@@ -4,7 +4,9 @@ description: |
   (Spring semester, 2023).
   Instructor for this course is <a href="https://rtavenar.github.io">Romain Tavenard</a>, professor at <emph>Université de Rennes</emph> (@rtavenar on <a href="https://twitter.com/rtavenar">twitter</a> and <a href="https://github.com/rtavenar">github</a>).
   <br><br>
-  Lecture notes for this course are available at: <a href="https://rtavenar.github.io/deep_book/">https://rtavenar.github.io/deep_book/</a>.
+  Useful links:
+  * <a href="https://rtavenar.github.io/deep_book/">Lecture notes</a>
+  * <a href="https://rtavenar.github.io/deep-edhec/blob/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a>
 items:
 - title: "An introduction to deep learning"
   description: "Course details and a first model: the Perceptron."
@@ -60,8 +62,3 @@ items:
 #   links:
 #   - text: "Slides (pdf)"
 #     url: "data/zz_recap_01.pdf"
-- title: "Elements of keras syntax"
-  description: ""
-  links:
-  - text: "Slides (pdf)"
-    github: rtavenar/deep-edhec/blob/main/contents/slides/keras.pdf

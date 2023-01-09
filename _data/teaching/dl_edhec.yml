@@ -2,9 +2,9 @@ course-title: "Deep learning"
 description: |
   This page gathers material for the Deep Learning course at EDHEC
   (Spring semester, 2023).
-  Instructor for this course is <a href=\"https://rtavenar.github.io\">Romain Tavenard</a>, professor at Université de Rennes (@rtavenar on <a href=\"https://twitter.com/rtavenar\">twitter</a> and <a href=\"https://github.com/rtavenar\">github</a>).
+  Instructor for this course is <a href="https://rtavenar.github.io">Romain Tavenard</a>, professor at <emph>Université de Rennes</emph> (@rtavenar on <a href="https://twitter.com/rtavenar">twitter</a> and <a href="https://github.com/rtavenar">github</a>).
   <br><br>
-  Lecture notes for this course are available at: <https://rtavenar.github.io/deep_book/>.
+  Lecture notes for this course are available at: <a href="https://rtavenar.github.io/deep_book/">https://rtavenar.github.io/deep_book/</a>.
 items:
 - title: "An introduction to deep learning"
   description: "Course details and a first model: the Perceptron."

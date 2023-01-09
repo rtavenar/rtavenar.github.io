@@ -1,30 +1,40 @@
 course-title: "Deep learning"
-description: "This page gathers material for the Deep Learning course at EDHEC
-(Spring semester, 2022).
-Instructor for this course is <a href=\"https://rtavenar.github.io\">Romain Tavenard</a>, assistant professor at Université de Rennes (@rtavenar on <a href=\"https://twitter.com/rtavenar\">twitter</a> and <a href=\"https://github.com/rtavenar\">github</a>)."
+description: |
+  This page gathers material for the Deep Learning course at EDHEC
+  (Spring semester, 2023).
+  Instructor for this course is <a href=\"https://rtavenar.github.io\">Romain Tavenard</a>, professor at Université de Rennes (@rtavenar on <a href=\"https://twitter.com/rtavenar\">twitter</a> and <a href=\"https://github.com/rtavenar\">github</a>).
+  <br><br>
+  Lecture notes for this course are available at: <https://rtavenar.github.io/deep_book/>.
 items:
 - title: "An introduction to deep learning"
-  description: "Course details and basics of neural networks."
+  description: "Course details and a first model: the Perceptron."
   links:
   - text: "Slides (pdf)"
-    url: "data/01_intro_dl_tavenard.pdf"
+    url: https://github.com/rtavenar/deep-edhec/blob/main/contents/slides/01_intro.pdf
+  - text: "The Perceptron model (lecture notes)"
+    url: https://rtavenar.github.io/deep_book/content/perceptron.html
+- title: "Multi Layer Perceptrons"
+  description: "Stacking perceptrons in layers for better expressivity"
+  links:
+  - text: "Slides (pdf)"
+    url: https://github.com/rtavenar/deep-edhec/blob/main/contents/slides/02_mlp.pdf
   - text: "Multi-Layer Perceptron (lab)"
-    github: rtavenar/deep-notebooks/blob/main/MLP.ipynb
-  - text: "Multi-Layer Perceptron (lab, with solution)"
-    github: rtavenar/deep-notebooks/blob/main/MLP_corr.ipynb
-- title: "Images and Convolutional models"
-  description: "An overview of 2d convolutional neural networks."
-  links:
-  - text: "Slides (pdf)"
-    url: "data/02_convnets_tavenard.pdf"
-  - text: "Images and ConvNets (lab)"
-    github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
-  - text: "Images and ConvNets (lab, with solution)"
-    github: rtavenar/deep-notebooks/blob/main/ConvNets_corr.ipynb
-  - text: "Images and ConvNets, cont'd (lab)"
-    github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
-  - text: "Images and ConvNets, cont'd (lab, with solution)"
-    github: rtavenar/deep-notebooks/blob/main/ConvNets_contd_corr.ipynb
+    github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP.ipynb
+  # - text: "Multi-Layer Perceptron (lab, with solution)"
+  #   github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP_corr.ipynb
+# - title: "Images and Convolutional models"
+#   description: "An overview of 2d convolutional neural networks."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "data/02_convnets_tavenard.pdf"
+#   - text: "Images and ConvNets (lab)"
+#     github: rtavenar/deep-notebooks/blob/main/ConvNets.ipynb
+#   - text: "Images and ConvNets (lab, with solution)"
+#     github: rtavenar/deep-notebooks/blob/main/ConvNets_corr.ipynb
+#   - text: "Images and ConvNets, cont'd (lab)"
+#     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
+#   - text: "Images and ConvNets, cont'd (lab, with solution)"
+#     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd_corr.ipynb
 # - title: "Time Series and Sequences"
 #   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
 #   links:
@@ -40,11 +50,11 @@ items:
 #   - text: "Generative models (Deepnote notebook)"
 #     url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
 - title: "Home assignment"
-  description: "Due date for this assignment is <b>March 6th</b>"
+  description: "Due date for this assignment is <b>February 24th</b>"
   links:
   - text: "Wrap-up lab"
-    github: rtavenar/deep-notebooks/blob/main/home_assignment.ipynb
-- title: "Brief recap"
-  links:
-  - text: "Slides (pdf)"
-    url: "data/zz_recap_01.pdf"
+    github: rtavenar/deep-edhec/blob/main/contents/notebooks/wrap-up.ipynb
+# - title: "Brief recap"
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "data/zz_recap_01.pdf"

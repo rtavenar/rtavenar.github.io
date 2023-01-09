@@ -5,8 +5,10 @@ description: |
   Instructor for this course is <a href="https://rtavenar.github.io">Romain Tavenard</a>, professor at <emph>Université de Rennes</emph> (@rtavenar on <a href="https://twitter.com/rtavenar">twitter</a> and <a href="https://github.com/rtavenar">github</a>).
   <br><br>
   Useful links:
-  * <a href="https://rtavenar.github.io/deep_book/">Lecture notes</a>
-  * <a href="https://rtavenar.github.io/deep-edhec/blob/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a>
+  <ul>
+    <li><a href="https://rtavenar.github.io/deep_book/">Lecture notes</a></li>
+    <li><a href="https://rtavenar.github.io/deep-edhec/blob/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
+  </ul>
 items:
 - title: "An introduction to deep learning"
   description: "Course details and a first model: the Perceptron."

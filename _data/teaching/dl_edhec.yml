@@ -60,3 +60,8 @@ items:
 #   links:
 #   - text: "Slides (pdf)"
 #     url: "data/zz_recap_01.pdf"
+- title: "Elements of keras syntax"
+  description: ""
+  links:
+  - text: "Slides (pdf)"
+    github: rtavenar/deep-edhec/blob/main/contents/slides/keras.pdf

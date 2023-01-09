@@ -7,21 +7,21 @@ description: |
   Useful links:
   <ul>
     <li><a href="https://rtavenar.github.io/deep_book/">Lecture notes</a></li>
-    <li><a href="https://githum.com/rtavenar/deep-edhec/blob/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
+    <li><a href="https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
   </ul>
 items:
 - title: "An introduction to deep learning"
   description: "Course details and a first model: the Perceptron."
   links:
   - text: "Slides (pdf)"
-    url: https://github.com/rtavenar/deep-edhec/blob/main/contents/slides/01_intro.pdf
+    url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/01_intro.pdf
   - text: "The Perceptron model (lecture notes)"
     url: https://rtavenar.github.io/deep_book/content/perceptron.html
 - title: "Multi Layer Perceptrons"
   description: "Stacking perceptrons in layers for better expressivity."
   links:
   - text: "Slides (pdf)"
-    url: https://github.com/rtavenar/deep-edhec/blob/main/contents/slides/02_mlp.pdf
+    url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/02_mlp.pdf
   - text: "Multi-Layer Perceptrons (lecture notes)"
     url: https://rtavenar.github.io/deep_book/content/perceptron.html
   - text: "Multi-Layer Perceptron (lab)"

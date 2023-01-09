@@ -29,8 +29,12 @@ items:
   links:
   - text: "Slides (pdf)"
     url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/03_optim.pdf
+  - text: "Losses (lecture notes)"
+    url: https://rtavenar.github.io/deep_book/content/loss.html
   - text: "Optimization (lecture notes)"
     url: https://rtavenar.github.io/deep_book/content/optim.html
+  - text: "Regularization (lecture notes)"
+    url: https://rtavenar.github.io/deep_book/content/regularization.html
   - text: "Multi-Layer Perceptron (lab)"
     github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP.ipynb
   # - text: "Multi-Layer Perceptron (lab, with solution)"

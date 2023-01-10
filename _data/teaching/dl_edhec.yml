@@ -43,7 +43,7 @@ items:
   description: "An overview of 2d convolutional neural networks."
   links:
   - text: "Slides (pdf)"
-    url: "data/04_convnets.pdf"
+    url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/04_convnets.pdf"
   - text: "Images and ConvNets (lab)"
     github: rtavenar/deep-edhec/blob/main/contents/notebooks/ConvNets.ipynb
 #   - text: "Images and ConvNets (lab, with solution)"

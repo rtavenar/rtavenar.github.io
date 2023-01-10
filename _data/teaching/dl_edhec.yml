@@ -48,8 +48,8 @@ items:
     github: rtavenar/deep-edhec/blob/main/contents/notebooks/ConvNets.ipynb
   - text: "Link to the draw-convnet lib"
     url: "https://github.com/rtavenar/draw_convnet"
-#   - text: "Images and ConvNets (lab, with solution)"
-#     github: rtavenar/deep-notebooks/blob/main/ConvNets_corr.ipynb
+  - text: "Images and ConvNets (lab, with solution)"
+    github: rtavenar/deep-edhec/blob/main/contents/notebooks/ConvNets_corr.ipynb
 #   - text: "Images and ConvNets, cont'd (lab)"
 #     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
 #   - text: "Images and ConvNets, cont'd (lab, with solution)"

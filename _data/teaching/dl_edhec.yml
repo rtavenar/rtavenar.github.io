@@ -37,8 +37,8 @@ items:
     url: https://rtavenar.github.io/deep_book/content/regularization.html
   - text: "Multi-Layer Perceptron (lab)"
     github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP.ipynb
-  # - text: "Multi-Layer Perceptron (lab, with solution)"
-  #   github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP_corr.ipynb
+  - text: "Multi-Layer Perceptron (lab, with solution)"
+    github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP_corr.ipynb
 # - title: "Images and Convolutional models"
 #   description: "An overview of 2d convolutional neural networks."
 #   links:

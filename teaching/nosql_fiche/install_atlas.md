@@ -9,8 +9,8 @@ rights: Creative Commons CC BY-NC-SA
 # Installation d'un client avec interface graphique
 
 Il existe plusieurs clients MongoDB. Pour ce cours, je vous propose d'utiliser
-un client appelé Robo 3T. Vous pourrez le télécharger à cette adresse :
-<https://robomongo.org/download> (sélectionnez "Download Robo 3T only").
+un client appelé Studio 3T Free. Vous pourrez le télécharger à cette adresse :
+<https://studio3t.com/download-studio3t-free> (sélectionnez "Download Studio 3T Free").
 
 Une fois téléchargé et installé, si vous le lancez, il vous proposera de créer
 de nouvelles connexions à des bases de données.

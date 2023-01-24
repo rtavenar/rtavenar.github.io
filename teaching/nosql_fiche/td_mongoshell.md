@@ -8,7 +8,7 @@ rights: Creative Commons CC BY-NC-SA
 
 # Avant-propos
 
-Lors de ce TD, vous allez utiliser l'interface Robo 3T pour vous connecter à
+Lors de ce TD, vous allez utiliser l'interface Studio 3T (ou Robo 3T) pour vous connecter à
 des bases de données MongoDB.
 Dans le cadre de ce TD, le serveur MongoDB sera soit lancé dans une machine
 virtuelle sur votre poste, soit une instance MongoDB Atlas
@@ -19,7 +19,7 @@ observez les noms des bases de données disponibles
 (panneau de gauche de votre fenêtre)
 
 2. Vous devriez voir une base nommée `test`.
-Cliquez droit sur le nom de cette base et choisissez "Open Shell".
+Cliquez droit sur le nom de cette base et choisissez "Open (Intelli)Shell".
 Une invite de commande s'ouvre alors dans le panneau de droite : c'est là que
 vous entrerez vos requêtes (et vous cliquerez sur la flèche verte pour exécuter
 votre commande).

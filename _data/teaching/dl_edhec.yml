@@ -50,30 +50,16 @@ items:
     url: "https://github.com/rtavenar/draw_convnet"
   - text: "Images and ConvNets (lab, with solution)"
     github: rtavenar/deep-edhec/blob/main/contents/notebooks/ConvNets_corr.ipynb
-#   - text: "Images and ConvNets, cont'd (lab)"
-#     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd.ipynb
-#   - text: "Images and ConvNets, cont'd (lab, with solution)"
-#     github: rtavenar/deep-notebooks/blob/main/ConvNets_contd_corr.ipynb
-# - title: "Time Series and Sequences"
-#   description: "1d convolutional neural networks and recurrent neural networks for sequential data."
-#   links:
-#   - text: "Slides (pdf)"
-#     url: "data/03_sequences_tavenard.pdf"
-#   - text: "Time Series and Sequences (Deepnote notebook)"
-#     url: "https://deepnote.com/project/179b2a66-b219-4e41-8ac1-fbea6c4f4533"
-# - title: "Generative models"
-#   description: "Variational Auto-Encoders, GANs"
-#   links:
-#   - text: "Slides (pdf)"
-#     url: "data/04_generative_tavenard.pdf"
-#   - text: "Generative models (Deepnote notebook)"
-#     url: "https://deepnote.com/project/a23cc704-2799-4fb8-965c-9376f705dd61"
+- title: "Time series and Sequences"
+  description: "Models for sequential data."
+  links:
+  - text: "Slides (pdf)"
+    url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/05_sequences.pdf"
+  - text: "Images and ConvNets (lab)"
+    github: rtavenar/deep-edhec/blob/main/contents/notebooks/Sequences.ipynb
 - title: "Home assignment"
   description: "Due date for this assignment is <b>February 24th</b>"
   links:
   - text: "Wrap-up lab"
     github: rtavenar/deep-edhec/blob/main/contents/notebooks/wrap-up.ipynb
-# - title: "Brief recap"
-#   links:
-#   - text: "Slides (pdf)"
-#     url: "data/zz_recap_01.pdf"
+    

@@ -55,8 +55,10 @@ items:
   links:
   - text: "Slides (pdf)"
     url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/05_sequences.pdf"
-  - text: "Images and ConvNets (lab)"
+  - text: "Sequences (lab)"
     github: rtavenar/deep-edhec/blob/main/contents/notebooks/Sequences.ipynb
+  - text: "Sequences (lab, with solution)"
+    github: rtavenar/deep-edhec/blob/main/contents/notebooks/Sequences_corr.ipynb
 - title: "Home assignment"
   description: "Due date for this assignment is <b>February 24th</b>"
   links:

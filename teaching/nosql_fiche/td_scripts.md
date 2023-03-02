@@ -30,9 +30,17 @@ dont l'URL est `clusterm1.0rm7t.mongodb.net`.
 `"mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/?tls=true&tlsAllowInvalidCertificates=true"`
     * En R, vous utiliserez l'URI : `"mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/food"` et 
 passerez l'argument `options = ssl_options(allow_invalid_hostname=TRUE, weak_cert_validation=TRUE)` 
-à la fonction `mongo()`. Si cela échoue, vous pourrez tester avec l'URI suivante : 
+à la fonction `mongo()`. 
 
-```mongodb://etudiant:ur2@clusterm1-shard-00-00.0rm7t.mongodb.net:27017,clusterm1-shard-00-01.0rm7t.mongodb.net:27017,clusterm1-shard-00-02.0rm7t.mongodb.net:27017/?ssl=true&replicaSet=atlas-l4xi61-shard-0```
+Si cela échoue, vous pourrez tester avec l'URI suivante : 
+
+```
+mongodb://etudiant:ur2@clusterm1-shard-00-00.0rm7t.mongodb.net:27017,clusterm1-shard-00-01.0rm7t.mongodb.net:27017,clusterm1-shard-00-02.0rm7t.mongodb.net:27017/?ssl=true&replicaSet=atlas-l4xi61-shard-0
+```
+
+Si cela échoue toujours et que vous êtes sous Python, il est recommandé de se référer à [la page d'aide dédiée](https://pymongo.readthedocs.io/en/stable/examples/tls.html).
+
+
 
 2. Affichez la liste des collections de la base (ceci n'est pas possible en R
 avec `mongolite`).

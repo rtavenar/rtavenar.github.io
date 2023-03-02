@@ -271,10 +271,12 @@ traitements statistiques: un utilisera pour cela la librairie <code>mongolite</c
 <li>Connectez vous à la base <code>food</code> hébergée sur le serveur MongoDB Atlas dont l’URL est <code>clusterm1.0rm7t.mongodb.net</code>.
 <ul>
 <li>En python, avec <code>pymongo</code>, vous utiliserez l’URI de connexion suivante : <code>&quot;mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/?tls=true&amp;tlsAllowInvalidCertificates=true&quot;</code></li>
-<li>En R, vous utiliserez l’URI : <code>&quot;mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/food&quot;</code> et passerez l’argument <code>options = ssl_options(allow_invalid_hostname=TRUE, weak_cert_validation=TRUE)</code> à la fonction <code>mongo()</code>. Si cela échoue, vous pourrez tester avec l’URI suivante :</li>
+<li>En R, vous utiliserez l’URI : <code>&quot;mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/food&quot;</code> et passerez l’argument <code>options = ssl_options(allow_invalid_hostname=TRUE, weak_cert_validation=TRUE)</code> à la fonction <code>mongo()</code>.</li>
 </ul></li>
 </ol>
-<p><code>mongodb://etudiant:ur2@clusterm1-shard-00-00.0rm7t.mongodb.net:27017,clusterm1-shard-00-01.0rm7t.mongodb.net:27017,clusterm1-shard-00-02.0rm7t.mongodb.net:27017/?ssl=true&amp;replicaSet=atlas-l4xi61-shard-0</code></p>
+<p>Si cela échoue, vous pourrez tester avec l’URI suivante :</p>
+<pre><code>mongodb://etudiant:ur2@clusterm1-shard-00-00.0rm7t.mongodb.net:27017,clusterm1-shard-00-01.0rm7t.mongodb.net:27017,clusterm1-shard-00-02.0rm7t.mongodb.net:27017/?ssl=true&amp;replicaSet=atlas-l4xi61-shard-0</code></pre>
+<p>Si cela échoue toujours et que vous êtes sous Python, il est recommandé de se référer à <a href="https://pymongo.readthedocs.io/en/stable/examples/tls.html">la page d’aide dédiée</a>.</p>
 <ol start="2" type="1">
 <li><p>Affichez la liste des collections de la base (ceci n’est pas possible en R avec <code>mongolite</code>).</p></li>
 <li><p>Affichez la liste des index de la collection <code>NYfood</code>.</p></li>

@@ -17,6 +17,8 @@
 - title: "Deep learning"
   context: "MSc Data Analytics & Artificial Intelligence, EDHEC"
   links:
+    - url: "https://rtavenar.github.io/deep_book/"
+      text: "Lecture notes"
     - url: "https://rtavenar.github.io/teaching/deep_edhec/"
       text: "Course page"
 - title: "Machine learning for time series"

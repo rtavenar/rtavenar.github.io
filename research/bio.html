@@ -24,7 +24,13 @@ section: research
 					<h2>News</h2>
 					<ul>
                         {% for news in site.data.research.news %}
-                            <li><a href="{{ news.url }}">{{ news.title }}</a>{{ news.description }}</li>
+                            <li>
+								{% if news.url %}
+									<a href="{{ news.url }}">{{ news.title }}</a>{{ news.description }}
+								{% else %}
+									{{ news.title }} {{ news.description }}
+								{% endif %}
+							</li>
                         {% endfor %}
 					</ul>
 

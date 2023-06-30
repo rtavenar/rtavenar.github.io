@@ -11,7 +11,7 @@ function GetAjaxObject() {
     }
     return xmlHttp;
 }
-var blacklist=[519490, 662905, 1254455, 916970, 1565586,1662258];
+var blacklist=[519490, 662905, 1254455, 916970, 1565586,1662258, 4125711];
 var idhal='rtavenar';
 var num_paper=0;
 var header_pub = "<p>This publication list is generated automatically from my <a href=\"https://halshs.archives-ouvertes.fr/index/index\">HAL</a> record. You can also have a look at my <a href=\"http://scholar.google.com/citations?user=wn1XFWMAAAAJ&amp;hl=fr\">Google Scholar Profile</a> if you prefer.</p>";

@@ -242,8 +242,10 @@ var hals={
         var groups=new Array();
         for(var i=0;i<docs.length;++i){
             var doc=docs[i];
-            if(blacklist.indexOf(doc.docid)>-1)
+            if(blacklist.indexOf(doc.docid)>-1) {
+                console.log(doc.docid);
                 continue;
+            }
             var group=clean(doc[group_key],metagroups);
             if(!(group in doc_by_group)){
                 doc_by_group[group]=new Array();

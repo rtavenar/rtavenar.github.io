@@ -1,3 +1,6 @@
+- title: "Match-And-Deform: Time Series Domain Adaptation through Optimal Transport and Temporal Alignment"
+  url: "https://arxiv.org/abs/2308.12686"
+  description: ": our paper has been accepted at ECML'23."
 - title: "Three new papers accepted on <a href='https://hal.science/hal-04076399'>trajectory reconstruction from pen sensor data (IJDAR)</a>, <a href='https://hal.science/hal-04003119'>inference of personality traits from wearable data (USENIX)</a> and <a href='https://arxiv.org/abs/1901.10681'>early classification for crop monitoring (ISPRS)</a>."
 - title: "Time Series Alignment with Global Invariances"
   url: "https://openreview.net/forum?id=JXCH5N4Ujy"

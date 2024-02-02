@@ -1,7 +1,7 @@
 course-title: "Deep learning"
 description: |
   This page gathers material for the Deep Learning course at EDHEC
-  (Spring semester, 2023).
+  (Spring semester, 2024).
   Instructor for this course is <a href="https://rtavenar.github.io">Romain Tavenard</a>, professor at <emph>Université de Rennes 2</emph> (@rtavenar on <a href="https://twitter.com/rtavenar">twitter</a> and <a href="https://github.com/rtavenar">github</a>).
   <br><br>
   Useful links:
@@ -9,7 +9,7 @@ description: |
     <li><a href="https://rtavenar.github.io/deep_book/">Lecture notes</a></li>
     <li><a href="https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
   </ul>
-  In this course, we will use `keras` v3, which you can install using `pip install --upgrade keras==3.*`.
+  In this course, we will use <code>keras</code> v3, which you can install using <code>pip install --upgrade keras==3.*</code>.
 items:
 - title: "An introduction to deep learning"
   description: "Course details and a first model: the Perceptron."

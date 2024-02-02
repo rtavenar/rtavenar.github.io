@@ -2,13 +2,14 @@ course-title: "Deep learning"
 description: |
   This page gathers material for the Deep Learning course at EDHEC
   (Spring semester, 2023).
-  Instructor for this course is <a href="https://rtavenar.github.io">Romain Tavenard</a>, professor at <emph>Université de Rennes</emph> (@rtavenar on <a href="https://twitter.com/rtavenar">twitter</a> and <a href="https://github.com/rtavenar">github</a>).
+  Instructor for this course is <a href="https://rtavenar.github.io">Romain Tavenard</a>, professor at <emph>Université de Rennes 2</emph> (@rtavenar on <a href="https://twitter.com/rtavenar">twitter</a> and <a href="https://github.com/rtavenar">github</a>).
   <br><br>
   Useful links:
   <ul>
     <li><a href="https://rtavenar.github.io/deep_book/">Lecture notes</a></li>
     <li><a href="https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
   </ul>
+  In this course, we will use `keras` v3, which you can install using `pip install --upgrade keras==3.*`.
 items:
 - title: "An introduction to deep learning"
   description: "Course details and a first model: the Perceptron."
@@ -37,31 +38,31 @@ items:
     url: https://rtavenar.github.io/deep_book/content/regularization.html
   - text: "Multi-Layer Perceptron (lab)"
     github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP.ipynb
-  - text: "Multi-Layer Perceptron (lab, with solution)"
-    github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP_corr.ipynb
-- title: "Images and Convolutional models"
-  description: "An overview of 2d convolutional neural networks."
-  links:
-  - text: "Slides (pdf)"
-    url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/04_convnets.pdf"
-  - text: "Images and ConvNets (lab)"
-    github: rtavenar/deep-edhec/blob/main/contents/notebooks/ConvNets.ipynb
-  - text: "Link to the draw-convnet lib"
-    url: "https://github.com/rtavenar/draw_convnet"
-  - text: "Images and ConvNets (lab, with solution)"
-    github: rtavenar/deep-edhec/blob/main/contents/notebooks/ConvNets_corr.ipynb
-- title: "Time series and Sequences"
-  description: "Models for sequential data."
-  links:
-  - text: "Slides (pdf)"
-    url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/05_sequences.pdf"
-  - text: "Sequences (lab)"
-    github: rtavenar/deep-edhec/blob/main/contents/notebooks/Sequences.ipynb
-  - text: "Sequences (lab, with solution)"
-    github: rtavenar/deep-edhec/blob/main/contents/notebooks/Sequences_corr.ipynb
-- title: "Home assignment"
-  description: "Due date for this assignment is <b>February 24th</b>"
-  links:
-  - text: "Wrap-up lab"
-    github: rtavenar/deep-edhec/blob/main/contents/notebooks/wrap-up.ipynb
+#   - text: "Multi-Layer Perceptron (lab, with solution)"
+#     github: rtavenar/deep-edhec/blob/main/contents/notebooks/MLP_corr.ipynb
+# - title: "Images and Convolutional models"
+#   description: "An overview of 2d convolutional neural networks."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/04_convnets.pdf"
+#   - text: "Images and ConvNets (lab)"
+#     github: rtavenar/deep-edhec/blob/main/contents/notebooks/ConvNets.ipynb
+#   - text: "Link to the draw-convnet lib"
+#     url: "https://github.com/rtavenar/draw_convnet"
+#   - text: "Images and ConvNets (lab, with solution)"
+#     github: rtavenar/deep-edhec/blob/main/contents/notebooks/ConvNets_corr.ipynb
+# - title: "Time series and Sequences"
+#   description: "Models for sequential data."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/05_sequences.pdf"
+#   - text: "Sequences (lab)"
+#     github: rtavenar/deep-edhec/blob/main/contents/notebooks/Sequences.ipynb
+#   - text: "Sequences (lab, with solution)"
+#     github: rtavenar/deep-edhec/blob/main/contents/notebooks/Sequences_corr.ipynb
+# - title: "Home assignment"
+#   description: "Due date for this assignment is <b>February 24th</b>"
+#   links:
+#   - text: "Wrap-up lab"
+#     github: rtavenar/deep-edhec/blob/main/contents/notebooks/wrap-up.ipynb
     

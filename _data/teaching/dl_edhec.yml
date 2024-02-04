@@ -9,7 +9,13 @@ description: |
     <li><a href="https://rtavenar.github.io/deep_book/">Lecture notes</a></li>
     <li><a href="https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
   </ul>
-  In this course, we will use <code>keras</code> v3, which you can install using <code>pip install --upgrade keras==3.*</code>.
+  In this course, we will use <code>keras</code> v3, <code>tensorflow</code> and <code>tslearn</code>.
+  Execute the following commands to install these libraries:
+  <pre>
+  pip install tensorflow
+  pip install tslearn
+  pip install --upgrade keras==3.*
+  </pre>
 items:
 - title: "An introduction to deep learning"
   description: "Course details and a first model: the Perceptron."

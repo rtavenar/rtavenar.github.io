@@ -23,25 +23,25 @@ items:
   - text: "Slides (pdf)"
     url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/01_intro.pdf
   - text: "The Perceptron model (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/content/perceptron.html
+    url: https://rtavenar.github.io/deep_book/en/content/en/perceptron.html
 - title: "Multi Layer Perceptrons"
   description: "Stacking perceptrons in layers for better expressivity."
   links:
   - text: "Slides (pdf)"
     url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/02_mlp.pdf
   - text: "Multi-Layer Perceptrons (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/content/perceptron.html
+    url: https://rtavenar.github.io/deep_book/en/content/en/perceptron.html
 - title: "Optimization"
   description: ""
   links:
   - text: "Slides (pdf)"
     url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/03_optim.pdf
   - text: "Losses (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/content/loss.html
+    url: https://rtavenar.github.io/deep_book/en/content/en/loss.html
   - text: "Optimization (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/content/optim.html
+    url: https://rtavenar.github.io/deep_book/en/content/en/optim.html
   - text: "Regularization (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/content/regularization.html
+    url: https://rtavenar.github.io/deep_book/en/content/en/regularization.html
   - text: "Multi-Layer Perceptron (lab)"
     github: rtavenar/deep-notebooks/blob/edhec/MLP_nocorr.ipynb
 #   - text: "Multi-Layer Perceptron (lab, with solution)"
@@ -51,6 +51,8 @@ items:
 #   links:
 #   - text: "Slides (pdf)"
 #     url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/04_convnets.pdf"
+  # - text: "Convolutional Neural Networks"
+  #   url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
 #   - text: "Images and ConvNets (lab)"
 #     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
 #   - text: "Link to the draw-convnet lib"
@@ -62,6 +64,10 @@ items:
 #   links:
 #   - text: "Slides (pdf)"
 #     url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/05_sequences.pdf"
+  # - text: "Convolutional Neural Networks"
+  #   url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
+  # - text: "Recurrent Neural Networks"
+  #   url: https://rtavenar.github.io/deep_book/en/content/en/recurrent.html
 #   - text: "Sequences (lab)"
 #     github: rtavenar/deep-notebooks/blob/edhec/Sequences_nocorr.ipynb
 #   - text: "Sequences (lab, with solution)"

@@ -7,7 +7,7 @@ description: |
   Useful links:
   <ul>
     <li><a href="https://rtavenar.github.io/deep_book/">Lecture notes</a></li>
-    <li><a href="https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
+    <li><a href="https://github.com/rtavenar/deep-edhec/raw/main/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
   </ul>
   In this course, we will use <code>keras</code> v3, <code>tensorflow</code> and <code>tslearn</code>.
   Execute the following commands to install these libraries:
@@ -21,21 +21,21 @@ items:
   description: "Course details and a first model: the Perceptron."
   links:
   - text: "Slides (pdf)"
-    url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/01_intro.pdf
+    url: https://github.com/rtavenar/deep-edhec/raw/main/slides/01_intro.pdf
   - text: "The Perceptron model (lecture notes)"
     url: https://rtavenar.github.io/deep_book/en/content/en/perceptron.html
 - title: "Multi Layer Perceptrons"
   description: "Stacking perceptrons in layers for better expressivity."
   links:
   - text: "Slides (pdf)"
-    url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/02_mlp.pdf
+    url: https://github.com/rtavenar/deep-edhec/raw/main/slides/02_mlp.pdf
   - text: "Multi-Layer Perceptrons (lecture notes)"
     url: https://rtavenar.github.io/deep_book/en/content/en/mlp.html
 - title: "Optimization"
   description: ""
   links:
   - text: "Slides (pdf)"
-    url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/03_optim.pdf
+    url: https://github.com/rtavenar/deep-edhec/raw/main/slides/03_optim.pdf
   - text: "Losses (lecture notes)"
     url: https://rtavenar.github.io/deep_book/en/content/en/loss.html
   - text: "Optimization (lecture notes)"
@@ -50,7 +50,7 @@ items:
 #   description: "An overview of 2d convolutional neural networks."
 #   links:
 #   - text: "Slides (pdf)"
-#     url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/04_convnets.pdf"
+#     url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/04_convnets.pdf"
   # - text: "Convolutional Neural Networks"
   #   url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
 #   - text: "Images and ConvNets (lab)"
@@ -63,7 +63,7 @@ items:
 #   description: "Models for sequential data."
 #   links:
 #   - text: "Slides (pdf)"
-#     url: "https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/05_sequences.pdf"
+#     url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/05_sequences.pdf"
   # - text: "Convolutional Neural Networks"
   #   url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
   # - text: "Recurrent Neural Networks"

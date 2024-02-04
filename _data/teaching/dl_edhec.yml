@@ -30,7 +30,7 @@ items:
   - text: "Slides (pdf)"
     url: https://github.com/rtavenar/deep-edhec/raw/main/contents/slides/02_mlp.pdf
   - text: "Multi-Layer Perceptrons (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/perceptron.html
+    url: https://rtavenar.github.io/deep_book/en/content/en/mlp.html
 - title: "Optimization"
   description: ""
   links:

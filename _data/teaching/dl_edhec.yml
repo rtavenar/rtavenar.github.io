@@ -12,6 +12,7 @@ description: |
   In this course, we will use <code>keras</code> v3, <code>tensorflow</code> and <code>tslearn</code>.
   Execute the following commands to install these libraries:
   <pre>
+  pip install scikit-learn
   pip install tensorflow
   pip install tslearn
   pip install --upgrade keras==3.*

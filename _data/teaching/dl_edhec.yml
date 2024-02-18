@@ -52,10 +52,10 @@ items:
   links:
   - text: "Slides (pdf)"
     url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/04_convnets.pdf"
-  - text: "Convolutional Neural Networks"
+  - text: "Convolutional Neural Networks (lecture notes)"
     url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
-#   - text: "Images and ConvNets (lab)"
-#     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
+  - text: "Images and ConvNets (lab)"
+    github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
 #   - text: "Link to the draw-convnet lib"
 #     url: "https://github.com/rtavenar/draw_convnet"
 #   - text: "Images and ConvNets (lab, with solution)"
@@ -65,9 +65,9 @@ items:
 #   links:
 #   - text: "Slides (pdf)"
 #     url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/05_sequences.pdf"
-  # - text: "Convolutional Neural Networks"
+  # - text: "Convolutional Neural Networks (lecture notes)"
   #   url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
-  # - text: "Recurrent Neural Networks"
+  # - text: "Recurrent Neural Networks (lecture notes)"
   #   url: https://rtavenar.github.io/deep_book/en/content/en/recurrent.html
 #   - text: "Sequences (lab)"
 #     github: rtavenar/deep-notebooks/blob/edhec/Sequences_nocorr.ipynb

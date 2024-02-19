@@ -58,8 +58,8 @@ items:
     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
 #   - text: "Link to the draw-convnet lib"
 #     url: "https://github.com/rtavenar/draw_convnet"
-#   - text: "Images and ConvNets (lab, with solution)"
-#     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_corr.ipynb
+  - text: "Images and ConvNets (lab, with solution)"
+    github: rtavenar/deep-notebooks/blob/edhec/ConvNets_corr.ipynb
 # - title: "Time series and Sequences"
 #   description: "Models for sequential data."
 #   links:

@@ -60,17 +60,17 @@ items:
 #     url: "https://github.com/rtavenar/draw_convnet"
   - text: "Images and ConvNets (lab, with solution)"
     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_corr.ipynb
-# - title: "Time series and Sequences"
-#   description: "Models for sequential data."
-#   links:
-#   - text: "Slides (pdf)"
-#     url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/05_sequences.pdf"
-  # - text: "Convolutional Neural Networks (lecture notes)"
-  #   url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
-  # - text: "Recurrent Neural Networks (lecture notes)"
-  #   url: https://rtavenar.github.io/deep_book/en/content/en/recurrent.html
-#   - text: "Sequences (lab)"
-#     github: rtavenar/deep-notebooks/blob/edhec/Sequences_nocorr.ipynb
+- title: "Time series and Sequences"
+  description: "Models for sequential data."
+  links:
+  - text: "Slides (pdf)"
+    url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/05_sequences.pdf"
+  - text: "Convolutional Neural Networks (lecture notes)"
+    url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
+  - text: "Recurrent Neural Networks (lecture notes)"
+    url: https://rtavenar.github.io/deep_book/en/content/en/recurrent.html
+  - text: "Sequences (lab)"
+    github: rtavenar/deep-notebooks/blob/edhec/Sequences_nocorr.ipynb
 #   - text: "Sequences (lab, with solution)"
 #     github: rtavenar/deep-notebooks/blob/edhec/Sequences_corr.ipynb
 - title: "Home assignment"

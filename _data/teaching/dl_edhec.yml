@@ -68,7 +68,7 @@ items:
   - text: "Convolutional Neural Networks (lecture notes)"
     url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
   - text: "Recurrent Neural Networks (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/recurrent.html
+    url: https://rtavenar.github.io/deep_book/en/content/en/rnn.html
   - text: "Sequences (lab)"
     github: rtavenar/deep-notebooks/blob/edhec/Sequences_nocorr.ipynb
 #   - text: "Sequences (lab, with solution)"

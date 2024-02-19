@@ -74,7 +74,7 @@ items:
 #   - text: "Sequences (lab, with solution)"
 #     github: rtavenar/deep-notebooks/blob/edhec/Sequences_corr.ipynb
 - title: "Home assignment"
-  description: "Due date for this assignment is <b>February 28th</b>"
+  description: "Due date for this assignment is <b>March 8th</b>"
   links:
   - text: "Group project"
     github: rtavenar/deep-notebooks/blob/edhec/group_project_24.ipynb

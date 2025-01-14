@@ -9,12 +9,11 @@ description: |
     <li><a href="https://rtavenar.github.io/deep_book/">Lecture notes</a></li>
     <li><a href="https://github.com/rtavenar/deep-edhec/raw/main/slides/keras.pdf">Elements of keras syntax (pdf)</a></li>
   </ul>
-  In this course, we will use <code>keras</code> v3, <code>pytorch</code> and <code>tslearn</code>.
-  Execute the following commands to install these libraries:
+  In this course, we will use <code>keras</code> v3 and <code>pytorch</code>.
+  Execute the following commands to install these libraries (no need for that on Google Colab since these libraries are pre-installed there):
   <pre>
   pip install scikit-learn
   pip install torch
-  pip install tslearn
   pip install --upgrade keras==3.*
   </pre>
 items:

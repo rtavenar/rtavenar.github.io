@@ -12,9 +12,9 @@ description: |
   In this course, we will use <code>keras</code> v3 and <code>pytorch</code>.
   Execute the following commands to install these libraries (no need for that on Google Colab since these libraries are pre-installed there):
   <pre>
-  pip install scikit-learn
-  pip install torch
-  pip install --upgrade keras==3.*
+  pip install scikit-learn pillow matplotlib
+  pip install torch==2.4
+  pip install --upgrade keras==3
   </pre>
 items:
 - title: "An introduction to deep learning"

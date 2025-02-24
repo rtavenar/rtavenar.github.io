@@ -1,3 +1,6 @@
+- title: " One for all and all for one: Efficient Computation of Partial Wasserstein Distances on the Line"
+  url: "https://openreview.net/forum?id=kzEPsHbJDv"
+  description: ": our paper has been accepted at ICLR'25."
 - title: "Match-And-Deform: Time Series Domain Adaptation through Optimal Transport and Temporal Alignment"
   url: "https://arxiv.org/abs/2308.12686"
   description: ": our paper has been accepted at ECML'23."

@@ -1,7 +1,7 @@
 course-title: "Deep learning"
 description: |
   This page gathers material for the Deep Learning course at EDHEC
-  (Spring semester, 2025).
+  (Spring semester, 2026).
   Instructor for this course is <a href="https://rtavenar.github.io">Romain Tavenard</a>, professor at <emph>Université de Rennes 2</emph> (@rtavenar on <a href="https://bsky.app/profile/rtavenar.bsky.social">Bluesky</a> and <a href="https://github.com/rtavenar">github</a>).
   <br><br>
   Useful links:
@@ -24,55 +24,55 @@ items:
     url: https://github.com/rtavenar/deep-edhec/raw/main/slides/01_intro.pdf
   - text: "The Perceptron model (lecture notes)"
     url: https://rtavenar.github.io/deep_book/en/content/en/perceptron.html
-- title: "Multi Layer Perceptrons"
-  description: "Stacking perceptrons in layers for better expressivity."
-  links:
-  - text: "Slides (pdf)"
-    url: https://github.com/rtavenar/deep-edhec/raw/main/slides/02_mlp.pdf
-  - text: "Multi-Layer Perceptrons (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/mlp.html
-- title: "Optimization"
-  description: ""
-  links:
-  - text: "Slides (pdf)"
-    url: https://github.com/rtavenar/deep-edhec/raw/main/slides/03_optim.pdf
-  - text: "Losses (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/loss.html
-  - text: "Optimization (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/optim.html
-  - text: "Regularization (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/regularization.html
-  - text: "Multi-Layer Perceptron (lab)"
-    github: rtavenar/deep-notebooks/blob/edhec/MLP_nocorr.ipynb
-  - text: "Multi-Layer Perceptron (lab, with solution)"
-    github: rtavenar/deep-notebooks/blob/edhec/MLP_corr.ipynb
-- title: "Images and Convolutional models"
-  description: "An overview of 2d convolutional neural networks."
-  links:
-  - text: "Slides (pdf)"
-    url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/04_convnets.pdf"
-  - text: "Convolutional Neural Networks (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
-  - text: "Images and ConvNets (lab)"
-    github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
-  - text: "Images and ConvNets (lab, with solution)"
-    github: rtavenar/deep-notebooks/blob/edhec/ConvNets_corr.ipynb
-- title: "Time series and Sequences"
-  description: "Models for sequential data."
-  links:
-  - text: "Slides (pdf)"
-    url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/05_sequences.pdf"
-  - text: "Convolutional Neural Networks (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
-  - text: "Recurrent Neural Networks (lecture notes)"
-    url: https://rtavenar.github.io/deep_book/en/content/en/rnn.html
-  - text: "Sequences (lab)"
-    github: rtavenar/deep-notebooks/blob/edhec/Sequences_nocorr.ipynb
-  - text: "Sequences (lab, with solution)"
-    github: rtavenar/deep-notebooks/blob/edhec/Sequences_corr.ipynb
-- title: "Home assignment"
-  description: "Due date for this assignment is <b>February, 28th</b>"
-  links:
-  - text: "Group project"
-    github: rtavenar/deep-notebooks/blob/edhec/group_project_25.ipynb
+# - title: "Multi Layer Perceptrons"
+#   description: "Stacking perceptrons in layers for better expressivity."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: https://github.com/rtavenar/deep-edhec/raw/main/slides/02_mlp.pdf
+#   - text: "Multi-Layer Perceptrons (lecture notes)"
+#     url: https://rtavenar.github.io/deep_book/en/content/en/mlp.html
+# - title: "Optimization"
+#   description: ""
+#   links:
+#   - text: "Slides (pdf)"
+#     url: https://github.com/rtavenar/deep-edhec/raw/main/slides/03_optim.pdf
+#   - text: "Losses (lecture notes)"
+#     url: https://rtavenar.github.io/deep_book/en/content/en/loss.html
+#   - text: "Optimization (lecture notes)"
+#     url: https://rtavenar.github.io/deep_book/en/content/en/optim.html
+#   - text: "Regularization (lecture notes)"
+#     url: https://rtavenar.github.io/deep_book/en/content/en/regularization.html
+#   - text: "Multi-Layer Perceptron (lab)"
+#     github: rtavenar/deep-notebooks/blob/edhec/MLP_nocorr.ipynb
+#   - text: "Multi-Layer Perceptron (lab, with solution)"
+#     github: rtavenar/deep-notebooks/blob/edhec/MLP_corr.ipynb
+# - title: "Images and Convolutional models"
+#   description: "An overview of 2d convolutional neural networks."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/04_convnets.pdf"
+#   - text: "Convolutional Neural Networks (lecture notes)"
+#     url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
+#   - text: "Images and ConvNets (lab)"
+#     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
+#   - text: "Images and ConvNets (lab, with solution)"
+#     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_corr.ipynb
+# - title: "Time series and Sequences"
+#   description: "Models for sequential data."
+#   links:
+#   - text: "Slides (pdf)"
+#     url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/05_sequences.pdf"
+#   - text: "Convolutional Neural Networks (lecture notes)"
+#     url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
+#   - text: "Recurrent Neural Networks (lecture notes)"
+#     url: https://rtavenar.github.io/deep_book/en/content/en/rnn.html
+#   - text: "Sequences (lab)"
+#     github: rtavenar/deep-notebooks/blob/edhec/Sequences_nocorr.ipynb
+#   - text: "Sequences (lab, with solution)"
+#     github: rtavenar/deep-notebooks/blob/edhec/Sequences_corr.ipynb
+# - title: "Home assignment"
+#   description: "Due date for this assignment is <b>February, 28th</b>"
+#   links:
+#   - text: "Group project"
+#     github: rtavenar/deep-notebooks/blob/edhec/group_project_25.ipynb
     

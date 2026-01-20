@@ -24,12 +24,12 @@ items:
     url: https://github.com/rtavenar/deep-edhec/raw/main/slides/01_intro.pdf
   - text: "The Perceptron model (lecture notes)"
     url: https://rtavenar.github.io/deep_book/en/content/en/perceptron.html
-# - title: "Multi Layer Perceptrons"
-#   description: "Stacking perceptrons in layers for better expressivity."
-#   links:
-#   - text: "Slides (pdf)"
-#     url: https://github.com/rtavenar/deep-edhec/raw/main/slides/02_mlp.pdf
-#   - text: "Multi-Layer Perceptrons (lecture notes)"
+- title: "Multi Layer Perceptrons"
+  description: "Stacking perceptrons in layers for better expressivity."
+  links:
+  - text: "Slides (pdf)"
+    url: https://github.com/rtavenar/deep-edhec/raw/main/slides/02_mlp.pdf
+  - text: "Multi-Layer Perceptrons (lecture notes)"
 #     url: https://rtavenar.github.io/deep_book/en/content/en/mlp.html
 # - title: "Optimization"
 #   description: ""

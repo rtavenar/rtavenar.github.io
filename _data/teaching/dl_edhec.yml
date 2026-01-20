@@ -42,8 +42,8 @@ items:
     url: https://rtavenar.github.io/deep_book/en/content/en/optim.html
   - text: "Regularization (lecture notes)"
     url: https://rtavenar.github.io/deep_book/en/content/en/regularization.html
-#   - text: "Multi-Layer Perceptron (lab)"
-#     github: rtavenar/deep-notebooks/blob/edhec/MLP_nocorr.ipynb
+  - text: "Multi-Layer Perceptron (lab)"
+    github: rtavenar/deep-notebooks/blob/edhec/MLP_nocorr.ipynb
 #   - text: "Multi-Layer Perceptron (lab, with solution)"
 #     github: rtavenar/deep-notebooks/blob/edhec/MLP_corr.ipynb
 # - title: "Images and Convolutional models"

@@ -55,8 +55,8 @@ items:
     url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
   - text: "Images and ConvNets (lab)"
     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
-#   - text: "Images and ConvNets (lab, with solution)"
-#     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_corr.ipynb
+  - text: "Images and ConvNets (lab, with solution)"
+    github: rtavenar/deep-notebooks/blob/edhec/ConvNets_corr.ipynb
 # - title: "Time series and Sequences"
 #   description: "Models for sequential data."
 #   links:

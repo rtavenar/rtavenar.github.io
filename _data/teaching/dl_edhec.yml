@@ -44,17 +44,17 @@ items:
     url: https://rtavenar.github.io/deep_book/en/content/en/regularization.html
   - text: "Multi-Layer Perceptron (lab)"
     github: rtavenar/deep-notebooks/blob/edhec/MLP_nocorr.ipynb
-#   - text: "Multi-Layer Perceptron (lab, with solution)"
-#     github: rtavenar/deep-notebooks/blob/edhec/MLP_corr.ipynb
-# - title: "Images and Convolutional models"
-#   description: "An overview of 2d convolutional neural networks."
-#   links:
-#   - text: "Slides (pdf)"
-#     url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/04_convnets.pdf"
-#   - text: "Convolutional Neural Networks (lecture notes)"
-#     url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
-#   - text: "Images and ConvNets (lab)"
-#     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
+  - text: "Multi-Layer Perceptron (lab, with solution)"
+    github: rtavenar/deep-notebooks/blob/edhec/MLP_corr.ipynb
+- title: "Images and Convolutional models"
+  description: "An overview of 2d convolutional neural networks."
+  links:
+  - text: "Slides (pdf)"
+    url: "https://github.com/rtavenar/deep-edhec/raw/main/slides/04_convnets.pdf"
+  - text: "Convolutional Neural Networks (lecture notes)"
+    url: https://rtavenar.github.io/deep_book/en/content/en/convnets.html
+  - text: "Images and ConvNets (lab)"
+    github: rtavenar/deep-notebooks/blob/edhec/ConvNets_nocorr.ipynb
 #   - text: "Images and ConvNets (lab, with solution)"
 #     github: rtavenar/deep-notebooks/blob/edhec/ConvNets_corr.ipynb
 # - title: "Time series and Sequences"

@@ -70,9 +70,15 @@ items:
 #     github: rtavenar/deep-notebooks/blob/edhec/Sequences_nocorr.ipynb
 #   - text: "Sequences (lab, with solution)"
 #     github: rtavenar/deep-notebooks/blob/edhec/Sequences_corr.ipynb
-# - title: "Home assignment"
-#   description: "Due date for this assignment is <b>February, 28th</b>"
-#   links:
-#   - text: "Group project"
-#     github: rtavenar/deep-notebooks/blob/edhec/group_project_25.ipynb
+- title: "Home assignment"
+  description: "Due date for this assignment is <b>March, 1st</b>"
+  links:
+  - text: "Group project"
+    github: rtavenar/deep-notebooks/blob/edhec/group_project_26.ipynb
+  - text: "auxiliary.csv"
+    github: rtavenar/deep-notebooks/blob/edhec/defi-ia-2025-cnes/auxiliary.csv
+  - text: "targets.csv"
+    github: rtavenar/deep-notebooks/blob/edhec/defi-ia-2025-cnes/targets.csv
+  - text: "spectra.npy"
+    github: rtavenar/deep-notebooks/blob/edhec/defi-ia-2025-cnes/spectra.npy
     

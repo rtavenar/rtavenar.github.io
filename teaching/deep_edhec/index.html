@@ -21,7 +21,7 @@ section: teaching
                             <a href="{{ l.url }}">{{ l.text }}</a>
                         {% else %}
                             {{ l.text }}
-                            {% if l.github endswith '.ipynb' %}
+                            {% if l.github contains '.ipynb' %}
                                 <br />
                                 <a href="https://github.com/{{ l.github | replace: '/blob/', '/raw/' }}">
                                 <img src="https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=Jupyter" alt="Download Jupyter Notebook">

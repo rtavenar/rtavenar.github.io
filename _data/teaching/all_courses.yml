@@ -21,7 +21,12 @@
       text: "Lecture notes"
     - url: "https://rtavenar.github.io/teaching/deep_edhec/"
       text: "Course page"
-- title: "Machine learning for time series"
+- title: "Deep learning for time series"
+  context: "MSc Data Science, IP Paris"
+  links:
+    - url: "https://rtavenar.github.io/x-dl4ts/"
+      text: "Course page"
+- title: "OLD: Machine learning for time series"
   context: "MSc Statistics for Smart Data, ENSAI"
   links:
     - url: "https://rtavenar.github.io/ml4ts_ensai/"

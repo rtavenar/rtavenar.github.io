@@ -176,7 +176,7 @@ var hals={
                         }
                     }
                 }else{
-                    document.getElementById(target_id).innerHTML='<p><span class="error">An error has occured, publications could not be retrieved from HAL. Check out my <a href=\"http://scholar.google.com/citations?user=wn1XFWMAAAAJ&amp;hl=fr\">Google Scholar Profile</a> instead.</span></p>';
+                    document.getElementById(target_id).innerHTML='<p><span class="error">An error has occurred, publications could not be retrieved from HAL. Check out my <a href=\"http://scholar.google.com/citations?user=wn1XFWMAAAAJ&amp;hl=fr\">Google Scholar Profile</a> instead.</span></p>';
                 }
             }
         }
@@ -271,7 +271,7 @@ var hals={
         document.getElementById(target_id).innerHTML=formatPublicationsByGroup(hals[target_id],group_key,header);
     };
     jQuery(document).ready(function(){fetchPublications("publications","producedDateY_i",[],header_pub);});
-    jQuery(document).ready(function(){fetchPublications("ml_ot","",[3932463, 2174309, 2174316, 2174322, 4928469, 5345011],"");});
+    jQuery(document).ready(function(){fetchPublications("ml_ot","",[3932463, 2174309, 2174316, 2174322, 4938468, 5345011],"");});
     jQuery(document).ready(function(){fetchPublications("ml_env","",[4023073, 3187591, 2343851, 1515283, 1620604, 1343211, 1228397, 906292],"");});
     jQuery(document).ready(function(){fetchPublications("ml_ts","",[4023073, 3835907, 4003119, 3025671, 3932463, 3187591, 1622094,1561461,1339007,1357973,1321327,912512],"");});
     jQuery(document).ready(function(){fetchPublications("topic_models","",[3187591, 1473556, 906292],"");});

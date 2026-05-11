@@ -1,3 +1,6 @@
+- title: "Vision Transformer Finetuning Benefits from Non-Smooth Components"
+  url: "https://arxiv.org/abs/2602.06883"
+  description: ": Ambroise's paper has been accepted at ICML'26."
 - title: "Differentiable Generalized Sliced Wasserstein Plans"
   url: "https://openreview.net/forum?id=hKKbtN4cp9"
   description: ": our paper has been accepted at NeurIPS'25."

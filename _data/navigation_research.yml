@@ -1,9 +1,9 @@
 - name: Bio &amp; Contact
   link: /research/bio.html
   fa-item: fa-at
-- name: Projects
-  link: /research/projects.html
-  fa-item: fa-flask
+# - name: Projects
+#   link: /research/projects.html
+#   fa-item: fa-flask
 - name: Publications
   link: /research/pub.html
   fa-item: fa-book

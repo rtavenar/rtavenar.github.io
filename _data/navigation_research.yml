@@ -7,9 +7,13 @@
 - name: Publications
   link: /research/pub.html
   fa-item: fa-book
-- name: Code &amp; data
-  link: /research/src.html
-  fa-item: fa-code
+# Uncomment below when the jobs page is ready:
+# - name: Jobs
+#   link: /research/jobs.html
+#   fa-item: fa-briefcase
+# - name: Code &amp; data
+#   link: /research/src.html
+#   fa-item: fa-code
 - name: Teaching
   link: /teaching/index.html
   fa-item: fa-graduation-cap

@@ -10,18 +10,19 @@ section: teaching
 				<article class="post-content">
 
 					<h2>Available course material</h2>
-					<ul>
+					<ul class="courses">
                         {% for course in site.data.teaching.all_courses %}
                             <li>
-								{{ course.title }} <em>({{ course.context }})</em>
+								<span class="course-title">{{ course.title }}</span> <em>({{ course.context }})</em>
 								{% if course.lang == "fr" %}
 									<br /><em>Associated content is in French.</em>
 								{% endif %}
 								{% if course.links %}
-									<br />
-									{% for course_link in course.links %}
-										[<a href="{{ course_link.url }}">{{ course_link.text }}</a>]
-									{% endfor %}
+									<div class="course-links">
+										{% for course_link in course.links %}
+											<a href="{{ course_link.url }}">{{ course_link.text }}</a>
+										{% endfor %}
+									</div>
 								{% endif %}
 							</li>
                         {% endfor %}

@@ -121,6 +121,35 @@ ul {
 }
 ul li { margin-bottom: 0.25rem; }
 
+.contact-rows {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.25rem 1rem;
+  font-size: 0.9rem;
+}
+.contact-rows .k { color: var(--text-muted); }
+
+.social {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+.social a {
+  font-size: 0.8rem;
+  color: #374151;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.65rem;
+  text-decoration: none;
+  transition: border-color .15s, color .15s;
+}
+.social a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
 ul.news {
   list-style: none;
   padding-left: 0;
@@ -134,6 +163,40 @@ ul.news li {
 }
 ul.news li:last-child { border-bottom: none; }
 ul.news a { font-weight: 500; }
+
+ul.courses {
+  list-style: none;
+  padding-left: 0;
+}
+ul.courses li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border-light);
+  color: #374151;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+ul.courses li:last-child { border-bottom: none; }
+.course-title { font-weight: 500; }
+.course-links {
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.course-links a {
+  font-size: 0.8rem;
+  color: #374151;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15rem 0.55rem;
+  text-decoration: none;
+  transition: border-color .15s, color .15s;
+}
+.course-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
 
 /* ── FOOTER ── */
 

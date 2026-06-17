@@ -126,8 +126,11 @@ ul li { margin-bottom: 0.25rem; }
   grid-template-columns: 6rem 1fr;
   gap: 0.25rem 1rem;
   font-size: 0.9rem;
+  width: 100%;
 }
 .contact-rows .k { color: var(--text-muted); }
+
+div + h2, div + .post-title { margin-top: 2rem; }
 
 .social {
   display: flex;
@@ -165,8 +168,8 @@ ul.news li:last-child { border-bottom: none; }
 ul.news a { font-weight: 500; }
 
 ul.courses {
-  list-style: none;
-  padding-left: 0;
+  list-style: none !important;
+  padding-left: 0 !important;
 }
 ul.courses li {
   padding: 0.55rem 0;
@@ -184,18 +187,18 @@ ul.courses li:last-child { border-bottom: none; }
   flex-wrap: wrap;
 }
 .course-links a {
-  font-size: 0.8rem;
-  color: #374151;
+  font-size: 0.8rem !important;
+  color: #374151 !important;
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 0.15rem 0.55rem;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: border-color .15s, color .15s;
 }
 .course-links a:hover {
   border-color: var(--accent);
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--accent) !important;
+  text-decoration: none !important;
 }
 
 /* ── FOOTER ── */

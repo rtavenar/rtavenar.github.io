@@ -97,6 +97,12 @@ div.in {
 
 section + section { margin-top: 2.5rem; }
 
+ul + h2, ul + .post-title,
+p + h2, p + .post-title,
+table + h2, table + .post-title {
+  margin-top: 2rem;
+}
+
 h2, .post-title {
   font-size: 0.85rem;
   font-weight: 700;
@@ -114,6 +120,20 @@ ul {
   color: #374151;
 }
 ul li { margin-bottom: 0.25rem; }
+
+ul.news {
+  list-style: none;
+  padding-left: 0;
+}
+ul.news li {
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+  color: #374151;
+  margin-bottom: 0;
+}
+ul.news li:last-child { border-bottom: none; }
+ul.news a { font-weight: 500; }
 
 /* ── FOOTER ── */
 

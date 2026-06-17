@@ -22,7 +22,7 @@ section: research
 					<p>I am currently a full professor at University of Rennes 2 since September 2022, following nine years as an assistant professor. I conduct research at IRISA, with a focus on machine learning and indexing for time series data, specifically for environmental time series.</p>
 
 					<h2>News</h2>
-					<ul>
+					<ul class="news">
                         {% for news in site.data.research.news %}
                             <li>
 								{% if news.url %}
@@ -35,18 +35,21 @@ section: research
 					</ul>
 
 					<h2>Students and Post-docs (past &amp; present)</h2>
-					<ul>
+					<table>
+						<thead>
+							<tr><th>Name</th><th>Level</th><th>Period</th><th>Now at</th></tr>
+						</thead>
+						<tbody>
                         {% for student in site.data.research.students %}
-                            {% if student.url %}
-                                <li>
-                                    <a href="{{ student.url }}">{{ student.name }}</a>
-                                    ({{ student.level }}, {{ student.year }}{% if student.now-at %}, {{ student.now-at }}{% endif %})
-                                </li>
-                            {% else %}
-                                <li>{{ student.name }} ({{ student.level }}, {{ student.year }}{% if student.now-at %}, {{ student.now-at }}{% endif %})</li>
-                            {% endif %}
+							<tr>
+								<td>{% if student.url %}<a href="{{ student.url }}">{{ student.name }}</a>{% else %}{{ student.name }}{% endif %}</td>
+								<td>{{ student.level }}</td>
+								<td>{{ student.year }}</td>
+								<td>{% if student.now-at %}{{ student.now-at }}{% else %}—{% endif %}</td>
+							</tr>
                         {% endfor %}
-					</ul>
+						</tbody>
+					</table>
 
 					<section class="clear"></section>
 

@@ -3,9 +3,246 @@ layout: default
 title: Jobs
 section: research
 ---
+<style>
+  .jobs-intro { color:#374151; margin-bottom:1.5rem; }
+  .jobs-intro strong { font-weight:600; }
+
+  .filters {
+    display:flex; flex-wrap:wrap; gap:.4rem; align-items:center;
+    margin:0 0 2rem; padding:.85rem 1rem;
+    border:1px solid var(--border); border-radius:8px; background:#fff;
+  }
+  .filters .label { font-size:.8rem; color:var(--text-muted); margin-right:.2rem; font-weight:500; }
+  .tag-btn {
+    border:1px solid var(--border); background:#fff; color:var(--text);
+    border-radius:999px; padding:.28rem .7rem; font-size:.78rem; cursor:pointer;
+    font-family:inherit; transition:all .15s;
+  }
+  .tag-btn:hover { border-color:var(--accent); }
+  .tag-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .clear { margin-left:auto; font-size:.78rem; color:var(--accent); background:none; border:none; cursor:pointer; font-family:inherit; }
+
+  .offer {
+    border:1px solid var(--border); border-radius:10px;
+    padding:1.3rem 1.4rem; margin-bottom:1.2rem; transition:box-shadow .15s;
+  }
+  .offer:hover { box-shadow:0 4px 18px rgba(127,119,221,.10); }
+  .offer.hidden { display:none; }
+  .offer .num {
+    font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--accent);
+  }
+  .offer h3 { font-size:1.12rem; font-weight:600; margin:.15rem 0 0; color:#111; }
+  .offer h3 a { color:#111; }
+  .offer h3 a:hover { color:var(--accent); text-decoration:none; }
+  .offer .sub { color:var(--text-muted); font-size:.9rem; }
+  .offer .abstract { color:#374151; font-size:.92rem; margin:.6rem 0 1rem; }
+  .offer .abstract em { font-style:italic; }
+
+  .offer-meta { display:grid; grid-template-columns:1fr 1fr; gap:1rem 1.5rem; margin-bottom:1rem; }
+  @media (max-width:560px){ .offer-meta { grid-template-columns:1fr; } }
+  .offer-meta h4 {
+    font-size:.68rem; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--text-muted); font-weight:600; margin-bottom:.35rem;
+  }
+  .bg-list { list-style:none; padding-left:0; margin:0; font-size:.86rem; color:#374151; }
+  .bg-list li { padding:.05rem 0 .05rem 1rem; position:relative; margin-bottom:0; }
+  .bg-list li::before { content:"\203A"; position:absolute; left:0; color:var(--accent); }
+
+  .balance-row { display:flex; align-items:center; gap:.55rem; font-size:.75rem; color:var(--text-muted); }
+  .balance-bar { flex:1; height:7px; border-radius:999px; background:linear-gradient(90deg,#7f77dd,#d6d6e0); position:relative; }
+  .balance-bar .dot {
+    position:absolute; top:50%; width:14px; height:14px; border-radius:50%;
+    background:var(--accent); border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.25);
+    transform:translate(-50%,-50%);
+  }
+  .balance-cap { font-size:.78rem; color:var(--text-muted); margin-top:.3rem; }
+
+  .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.3rem; }
+  .tag { background:#eeedfe; color:#3c3489; border-radius:999px; padding:.2rem .55rem; font-size:.74rem; }
+
+  .offer-foot { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:.4rem; }
+  .pdf-link {
+    display:inline-flex; align-items:center; gap:.35rem; font-size:.84rem; font-weight:500;
+    color:#fff; background:var(--accent); border-radius:6px; padding:.4rem .8rem;
+  }
+  .pdf-link:hover { background:var(--accent-hover); color:#fff; text-decoration:none; }
+  .funding { font-size:.78rem; color:var(--text-muted); }
+  .funding a { font-weight:500; }
+  .noresult { display:none; color:var(--text-muted); font-style:italic; padding:1.5rem 0; }
+</style>
+
 <div class="in">
   <section>
-    <h2>Open Positions</h2>
-    <p>This page is under construction. Check back soon for open positions in my group.</p>
+    <h2>Research internships</h2>
+    <p class="jobs-intro">
+      Master's-level (M2) research internships on differentiable solvers, optimal transport,
+      and time series &mdash; based in Rennes / Vannes (IRISA / Inria Rennes). Each topic can
+      continue into a <strong>fully funded PhD</strong>. Use the tags to filter, and the
+      &ldquo;theory &harr; code&rdquo; indicator and required-background list to find the topic
+      that best fits your profile. To apply, email a CV, transcript, and a short note on which
+      topic appeals to you to
+      <a href="mailto:romain.tavenard@univ-rennes2.fr?subject=Research%20internship%20application">romain.tavenard@univ-rennes2.fr</a>.
+    </p>
+
+    <div class="filters" id="filters">
+      <span class="label">Filter by keyword:</span>
+      <button class="clear" id="clearBtn" hidden>Clear ✕</button>
+    </div>
+
+    <div id="grid"></div>
+    <p class="noresult" id="noresult">No offer matches all selected tags. Try removing some.</p>
   </section>
 </div>
+
+<script>
+const PEOPLE = {
+  "R. Tavenard":"https://rtavenar.github.io/",
+  "L. Chapel":"https://people.irisa.fr/Laetitia.Chapel/",
+  "P. Viallard":"https://paulviallard.github.io/"
+};
+
+const OFFERS = [
+  {
+    n:1,
+    title:"Differentiable shortest-path computation on graphs with cycles",
+    subtitle:"relaxation versus perturbation",
+    pdf:"/assets/jobs/internship_1_differentiable_shortest_paths_cycles.pdf",
+    abstract:"Many problems — for example aligning two signals — boil down to finding a shortest path through a graph. To plug such a discrete solver into a neural network, we need it to be <em>differentiable</em> (to pass gradients back through it). This works on graphs without loops; once the graph has cycles, the two standard tricks (smoothing the solver, or randomly perturbing its inputs) each break in a different way. The internship studies and compares these failure modes.",
+    balance:45,
+    background:["Python + autodiff (PyTorch/JAX)","Graph algorithms &amp; dynamic programming","Comfort with numerical optimization"],
+    tags:["Differentiable solvers","Time series & graphs","Dynamic programming"],
+    supervision:"R. Tavenard"
+  },
+  {
+    n:2,
+    title:"Stabilizing differentiable partial optimal transport through sliced approaches",
+    subtitle:"",
+    pdf:"/assets/jobs/internship_2_stabilizing_partial_sliced_OT.pdf",
+    abstract:"Optimal transport (OT) measures how to move one distribution of mass onto another at lowest cost — a powerful but expensive way to compare datasets. <em>Sliced</em> OT speeds it up by projecting data onto random lines; <em>partial</em> OT allows leaving some mass behind (useful with outliers). Combining the two makes the gradient unstable, because which mass is kept changes from one projection to the next. The goal is to make this combination smoothly differentiable.",
+    balance:40,
+    background:["Python (familiarity with POT a plus)","Fundamentals of optimal transport","Numerical optimization"],
+    tags:["Optimal transport","Differentiable solvers","Numerical experiments"],
+    supervision:"R. Tavenard, L. Chapel"
+  },
+  {
+    n:3,
+    title:"Statistical analysis of differentiable sliced optimal transport plans",
+    subtitle:"PAC-Bayes and beyond",
+    pdf:"/assets/jobs/internship_3_PAC_Bayes_sliced_OT.pdf",
+    abstract:"Optimal transport (OT) compares two datasets by the cheapest way to morph one into the other; <em>sliced</em> OT approximates it via random one-dimensional projections. When this approximation is tuned on a finite sample, how well does it carry over to unseen data? This is a <em>generalization</em> question. The internship studies it with PAC-Bayes (a theory that turns such averages into provable error guarantees) and related tools, asking when the guarantees are actually tight.",
+    balance:70,
+    background:["Solid probability &amp; statistics","Able to read PAC-Bayes-style proofs","Python for experimental sweeps"],
+    tags:["Optimal transport","ML theory & stats"],
+    supervision:"R. Tavenard, P. Viallard"
+  },
+  {
+    n:4,
+    title:"Differentiable solvers for time series segmentation",
+    subtitle:"",
+    pdf:"/assets/jobs/internship_4_differentiable_time_series_segmentation.pdf",
+    abstract:"Segmenting a time series means cutting it into meaningful pieces — detecting when its behaviour changes, or summarizing it as a few simple segments. These cuts are computed by discrete algorithms that a neural network cannot pass gradients through (they are not <em>differentiable</em>). The hard part is that the algorithm also decides <em>how many</em> pieces to use. Can that decision itself be made differentiable, so the whole pipeline trains end to end?",
+    balance:35,
+    background:["Python","Dynamic programming","Time series fundamentals"],
+    tags:["Differentiable solvers","Time series & graphs","Dynamic programming","Numerical experiments"],
+    supervision:"R. Tavenard"
+  },
+  {
+    n:5,
+    title:"Exactness conditions for differentiable sliced optimal transport plans",
+    subtitle:"a more theoretical topic",
+    pdf:"/assets/jobs/internship_5_geometric_analysis_DGSWP.pdf",
+    abstract:"Optimal transport (OT) not only measures the distance between two datasets but also produces a <em>plan</em> — a precise matching of one set of points to the other. A fast approximation builds this plan from one-dimensional projections, but no one knows exactly when the approximate plan equals the true one. This is a mathematical question: the internship looks for conditions (on the projection and the data) that guarantee they coincide, and checks them numerically.",
+    balance:90,
+    background:["Strong maths (analysis, linear algebra, convexity)","Ability to formulate &amp; prove results","Python for numerical validation"],
+    tags:["Optimal transport","ML theory & stats","Geometry"],
+    supervision:"R. Tavenard, L. Chapel, P. Viallard"
+  }
+];
+
+const grid = document.getElementById('grid');
+const filtersBox = document.getElementById('filters');
+const clearBtn = document.getElementById('clearBtn');
+const noresult = document.getElementById('noresult');
+let active = new Set();
+
+function balanceLabel(v){
+  if(v>=80) return "Strongly theoretical";
+  if(v>=60) return "Theory-leaning, with experiments";
+  if(v>=45) return "Balanced theory &amp; implementation";
+  if(v>=35) return "Implementation-leaning";
+  return "Mostly implementation";
+}
+
+function supervisionHTML(str){
+  return str.split(',').map(s=>{
+    const name=s.trim();
+    const url=PEOPLE[name];
+    return url ? `<a href="${url}" target="_blank" rel="noopener">${name}</a>` : name;
+  }).join(', ');
+}
+
+OFFERS.forEach(o=>{
+  const card=document.createElement('article');
+  card.className='offer';
+  card.dataset.tags=o.tags.join('|');
+  card.innerHTML=`
+    <span class="num">Internship ${o.n}</span>
+    <h3><a href="${o.pdf}" target="_blank" rel="noopener">${o.title}</a></h3>
+    ${o.subtitle?`<div class="sub">${o.subtitle}</div>`:''}
+    <p class="abstract">${o.abstract}</p>
+    <div class="offer-meta">
+      <div>
+        <h4>Required background</h4>
+        <ul class="bg-list">${o.background.map(b=>`<li>${b}</li>`).join('')}</ul>
+      </div>
+      <div>
+        <h4>Theory ↔ code balance</h4>
+        <div class="balance-row">
+          <span>code</span>
+          <div class="balance-bar"><span class="dot" style="left:${o.balance}%"></span></div>
+          <span>theory</span>
+        </div>
+        <div class="balance-cap">${balanceLabel(o.balance)}</div>
+        <h4 style="margin-top:.8rem">Keywords</h4>
+        <div class="tags">${o.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>
+    </div>
+    <div class="offer-foot">
+      <a class="pdf-link" href="${o.pdf}" target="_blank" rel="noopener">📄 Read full offer (PDF)</a>
+      <span class="funding">PhD continuation funded · Supervision: ${supervisionHTML(o.supervision)}</span>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+const allTags=[...new Set(OFFERS.flatMap(o=>o.tags))].sort();
+allTags.forEach(t=>{
+  const b=document.createElement('button');
+  b.className='tag-btn'; b.textContent=t;
+  b.onclick=()=>{
+    if(active.has(t)){active.delete(t);b.classList.remove('active');}
+    else{active.add(t);b.classList.add('active');}
+    apply();
+  };
+  filtersBox.insertBefore(b,clearBtn);
+});
+
+clearBtn.onclick=()=>{
+  active.clear();
+  document.querySelectorAll('.tag-btn').forEach(b=>b.classList.remove('active'));
+  apply();
+};
+
+function apply(){
+  let visible=0;
+  document.querySelectorAll('.offer').forEach(c=>{
+    const tags=c.dataset.tags.split('|');
+    const match=[...active].every(t=>tags.includes(t));
+    c.classList.toggle('hidden',!match);
+    if(match) visible++;
+  });
+  clearBtn.hidden = active.size===0;
+  noresult.style.display = visible===0 ? 'block':'none';
+}
+</script>

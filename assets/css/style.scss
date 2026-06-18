@@ -212,6 +212,30 @@ ul.courses li:last-child { border-bottom: none; }
   border-top: 1px solid var(--border-light);
 }
 
+/* ── PUBLICATIONS ── */
+
+p.doc {
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+span.ART, span.COMM, span.ALLTHESE, span.REPORT, span.PATENT {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+span.ART    { background: #ede9fe; color: #5b21b6; }
+span.COMM   { background: #dbeafe; color: #1d4ed8; }
+span.ALLTHESE { background: #d1fae5; color: #065f46; }
+span.REPORT { background: #fef3c7; color: #92400e; }
+span.PATENT { background: #fee2e2; color: #991b1b; }
+
 /* ── SHOW/HIDE (publications) ── */
 
 .hide { display: none; }

@@ -122,7 +122,7 @@ const OFFERS = [
     abstract:"Optimal transport (OT) measures how to move one distribution of mass onto another at lowest cost, and produces a <em>plan</em> — a matching between the two. <em>Sliced</em> OT speeds it up via random one-dimensional projections; <em>partial</em> OT allows leaving some mass behind (useful with outliers). Existing sliced-partial methods only return a distance, never a plan — and simply averaging the per-projection plans would give a dense, blurred matching, losing the sparsity that makes partial OT useful. The goal is a sliced partial OT that yields a <em>sparse, differentiable plan</em> in the original space.",
     balance:40,
     background:["Python (familiarity with POT a plus)","Fundamentals of optimal transport","Numerical optimization"],
-    tags:["Optimal transport","Differentiable solvers","Numerical experiments"],
+    tags:["Optimal transport","Differentiable solvers"],
     supervision:"R. Tavenard, L. Chapel"
   },
   {
@@ -144,7 +144,7 @@ const OFFERS = [
     abstract:"Segmenting a time series means cutting it into meaningful pieces — detecting when its behaviour changes, or summarizing it as a few simple segments. These cuts are computed by discrete algorithms that a neural network cannot pass gradients through (they are not <em>differentiable</em>). The hard part is that the algorithm also decides <em>how many</em> pieces to use. Can that decision itself be made differentiable, so the whole pipeline trains end to end?",
     balance:35,
     background:["Python","Dynamic programming","Time series fundamentals"],
-    tags:["Differentiable solvers","Time series & graphs","Dynamic programming","Numerical experiments"],
+    tags:["Differentiable solvers","Time series & graphs","Dynamic programming"],
     supervision:"R. Tavenard"
   },
   {
